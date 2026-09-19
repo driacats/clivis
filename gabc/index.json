@@ -1,0 +1,4525 @@
+[
+  {
+    "id": "compieta.C1",
+    "office": "compieta",
+    "role": "versicolo di apertura",
+    "printedIncipit": "Deus, in adiutórium meum inténde",
+    "printedContext": "ogni giorno (con variante \"in Quadragesima\" senza Alleluia)",
+    "pdfPage": "p. 3",
+    "status": "found",
+    "gregobase": {
+      "id": 4121,
+      "url": "https://gregobase.selapa.net/chant.php?id=4121"
+    },
+    "file": "gabc/chants/4121-deus-in-adiutorium-meum-intende.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      7864,
+      18178,
+      15709,
+      4121
+    ]
+  },
+  {
+    "id": "compieta.C2",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Te lucis ante términum",
+    "printedContext": "ferie durante l'anno, H. VIII",
+    "pdfPage": "p. 8",
+    "status": "found",
+    "gregobase": {
+      "id": 4681,
+      "url": "https://gregobase.selapa.net/chant.php?id=4681"
+    },
+    "file": "gabc/chants/4681-te-lucis-ante-terminum.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 8 coerente con \"H. VIII\"; office-part=\"Hymnus\". Riusato da compieta.C3 (stesso incipit+ruolo+modo).",
+    "candidatesConsidered": [
+      4681
+    ],
+    "_reuseKey": "te lucis ante terminum|inno|8"
+  },
+  {
+    "id": "compieta.C3",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Te lucis ante términum",
+    "printedContext": "memorie, H. VIII",
+    "pdfPage": "p. 8",
+    "status": "found",
+    "gregobase": {
+      "id": 4681,
+      "url": "https://gregobase.selapa.net/chant.php?id=4681"
+    },
+    "file": "gabc/chants/4681-te-lucis-ante-terminum.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 8 coerente con \"H. VIII\"; office-part=\"Hymnus\". Riusato da compieta.C3 (stesso incipit+ruolo+modo). Riusato da compieta.C2 (stesso incipit+ruolo+modo).",
+    "candidatesConsidered": [
+      4681
+    ],
+    "_reuseKey": "te lucis ante terminum|inno|8"
+  },
+  {
+    "id": "compieta.C4",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Te lucis ante términum",
+    "printedContext": "feste, H. II",
+    "pdfPage": "p. 8",
+    "status": "found",
+    "gregobase": {
+      "id": 8892,
+      "url": "https://gregobase.selapa.net/chant.php?id=8892"
+    },
+    "file": "gabc/chants/8892-te-lucis-ante-terminum.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 2 coerente con \"H. II\"; office-part=\"Hymnus\". Riusato da compieta.C32 (stesso incipit+ruolo+modo).",
+    "candidatesConsidered": [
+      12897,
+      8898,
+      13339,
+      8892
+    ],
+    "_reuseKey": "te lucis ante terminum|inno|2"
+  },
+  {
+    "id": "compieta.C5",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Te lucis ante términum",
+    "printedContext": "domeniche per annum, H. VIII",
+    "pdfPage": "p. 9",
+    "status": "found",
+    "gregobase": {
+      "id": 4681,
+      "url": "https://gregobase.selapa.net/chant.php?id=4681"
+    },
+    "file": "gabc/chants/4681-te-lucis-ante-terminum.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 8 coerente con \"H. VIII\"; office-part=\"Hymnus\". Riusato da compieta.C3 (stesso incipit+ruolo+modo). Riusato da compieta.C2 (stesso incipit+ruolo+modo).",
+    "candidatesConsidered": [
+      4681
+    ],
+    "_reuseKey": "te lucis ante terminum|inno|8"
+  },
+  {
+    "id": "compieta.C6",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Te lucis ante términum",
+    "printedContext": "solennità, H. VIII",
+    "pdfPage": "p. 9",
+    "status": "found",
+    "gregobase": {
+      "id": 4681,
+      "url": "https://gregobase.selapa.net/chant.php?id=4681"
+    },
+    "file": "gabc/chants/4681-te-lucis-ante-terminum.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 8 coerente con \"H. VIII\"; office-part=\"Hymnus\". Riusato da compieta.C3 (stesso incipit+ruolo+modo). Riusato da compieta.C2 (stesso incipit+ruolo+modo).",
+    "candidatesConsidered": [
+      4681
+    ],
+    "_reuseKey": "te lucis ante terminum|inno|8"
+  },
+  {
+    "id": "compieta.C7",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Christe, qui splendor et dies",
+    "printedContext": "ferie durante l'anno, H. VIII",
+    "pdfPage": "p. 10",
+    "status": "found",
+    "gregobase": {
+      "id": 7518,
+      "url": "https://gregobase.selapa.net/chant.php?id=7518"
+    },
+    "file": "gabc/chants/7518-christe-qui-splendor-et-dies.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 8 coerente con \"H. VIII\"; office-part=\"Hymnus\". Riusato da compieta.C8 (stesso incipit+ruolo+modo).",
+    "candidatesConsidered": [
+      7518
+    ],
+    "_reuseKey": "christe qui splendor et dies|inno|8"
+  },
+  {
+    "id": "compieta.C8",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Christe, qui splendor et dies",
+    "printedContext": "memorie, H. VIII",
+    "pdfPage": "p. 10",
+    "status": "found",
+    "gregobase": {
+      "id": 7518,
+      "url": "https://gregobase.selapa.net/chant.php?id=7518"
+    },
+    "file": "gabc/chants/7518-christe-qui-splendor-et-dies.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 8 coerente con \"H. VIII\"; office-part=\"Hymnus\". Riusato da compieta.C8 (stesso incipit+ruolo+modo). Riusato da compieta.C7 (stesso incipit+ruolo+modo).",
+    "candidatesConsidered": [
+      7518
+    ],
+    "_reuseKey": "christe qui splendor et dies|inno|8"
+  },
+  {
+    "id": "compieta.C9",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Christe, qui splendor et dies",
+    "printedContext": "feste, H. II",
+    "pdfPage": "p. 10",
+    "status": "found",
+    "gregobase": {
+      "id": 7517,
+      "url": "https://gregobase.selapa.net/chant.php?id=7517"
+    },
+    "file": "gabc/chants/7517-christe-qui-splendor-et-dies.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 2 coerente con \"H. II\"; office-part=\"Hymnus\".",
+    "candidatesConsidered": [
+      7517
+    ],
+    "_reuseKey": "christe qui splendor et dies|inno|2"
+  },
+  {
+    "id": "compieta.C10",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Christe, qui splendor et dies",
+    "printedContext": "domeniche per annum, H. VIII",
+    "pdfPage": "p. 11",
+    "status": "found",
+    "gregobase": {
+      "id": 7518,
+      "url": "https://gregobase.selapa.net/chant.php?id=7518"
+    },
+    "file": "gabc/chants/7518-christe-qui-splendor-et-dies.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 8 coerente con \"H. VIII\"; office-part=\"Hymnus\". Riusato da compieta.C8 (stesso incipit+ruolo+modo). Riusato da compieta.C7 (stesso incipit+ruolo+modo).",
+    "candidatesConsidered": [
+      7518
+    ],
+    "_reuseKey": "christe qui splendor et dies|inno|8"
+  },
+  {
+    "id": "compieta.C11",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Christe, qui splendor et dies",
+    "printedContext": "solennità, Hymn 8",
+    "pdfPage": "p. 11",
+    "status": "found",
+    "gregobase": {
+      "id": 7518,
+      "url": "https://gregobase.selapa.net/chant.php?id=7518"
+    },
+    "file": "gabc/chants/7518-christe-qui-splendor-et-dies.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 8 coerente con \"H. VIII\"; office-part=\"Hymnus\". Riusato da compieta.C8 (stesso incipit+ruolo+modo). Riusato da compieta.C7 (stesso incipit+ruolo+modo).",
+    "candidatesConsidered": [
+      7518
+    ],
+    "_reuseKey": "christe qui splendor et dies|inno|8"
+  },
+  {
+    "id": "compieta.C12",
+    "office": "compieta",
+    "role": "responsorio breve",
+    "printedIncipit": "In manus tuas Dómine, comméndo spíritum meum. Redemísti nos Dómine, Deus veritátis",
+    "printedContext": "tempo ordinario e Natale",
+    "pdfPage": "p. 13",
+    "status": "found",
+    "gregobase": {
+      "id": 13059,
+      "url": "https://gregobase.selapa.net/chant.php?id=13059"
+    },
+    "file": "gabc/chants/13059-in-manus-tuas-domine-commendo-spiritum-meum-redemisti-nos-do.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Responsorium\".",
+    "candidatesConsidered": [
+      13059
+    ],
+    "_reuseKey": "in manus tuas domine commendo spiritum meum redemisti nos domine deus veritatis|responsorio breve|"
+  },
+  {
+    "id": "compieta.C13",
+    "office": "compieta",
+    "role": "antifona al cantico evangelico",
+    "printedIncipit": "Salva nos, Dómine, vigilántes, custódi nos dormiéntes",
+    "printedContext": "ogni giorno, 3A",
+    "pdfPage": "p. 14",
+    "status": "found",
+    "gregobase": {
+      "id": 17654,
+      "url": "https://gregobase.selapa.net/chant.php?id=17654"
+    },
+    "file": "gabc/chants/17654-salva-nos-domine-vigilantes-custodi-nos-dormientes.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      17654,
+      17803,
+      6749,
+      20213,
+      11231,
+      20549,
+      17046
+    ]
+  },
+  {
+    "id": "compieta.C14",
+    "office": "compieta",
+    "role": "cantico (tono salmodico)",
+    "printedIncipit": "Nunc dimíttis servum tuum, Dómine",
+    "printedContext": "ogni giorno (Lc 2,29-32)",
+    "pdfPage": "p. 14-15",
+    "status": "found",
+    "gregobase": {
+      "id": 13718,
+      "url": "https://gregobase.selapa.net/chant.php?id=13718"
+    },
+    "file": "gabc/chants/13718-nunc-dimittis-servum-tuum-domine.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      13718,
+      13505,
+      3359,
+      6907
+    ],
+    "_reuseKey": "nunc dimittis servum tuum domine|cantico (tono salmodico)|"
+  },
+  {
+    "id": "compieta.C15",
+    "office": "compieta",
+    "role": "congedo",
+    "printedIncipit": "Noctem quiétam et finem perféctum concédat nobis Dóminus omnípotens",
+    "printedContext": "ogni giorno",
+    "pdfPage": "p. 17",
+    "status": "found",
+    "gregobase": {
+      "id": 20685,
+      "url": "https://gregobase.selapa.net/chant.php?id=20685"
+    },
+    "file": "gabc/chants/20685-noctem-quietam-et-finem-perfectum-concedat-nobis-dominus-omn.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      20685,
+      19810
+    ]
+  },
+  {
+    "id": "compieta.C16",
+    "office": "compieta",
+    "role": "antifona salmica",
+    "printedIncipit": "Miserére mihi Dómine, et exáudi oratiónem meam",
+    "printedContext": "Domenica I Vespri, 1a ant., VIII g",
+    "pdfPage": "p. 18",
+    "status": "found",
+    "gregobase": {
+      "id": 12592,
+      "url": "https://gregobase.selapa.net/chant.php?id=12592"
+    },
+    "file": "gabc/chants/12592-miserere-mihi-domine-et-exaudi-orationem-meam.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 8 coerente con \"VIII g\"; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      12592,
+      1668,
+      1553,
+      9950,
+      20541,
+      11229
+    ],
+    "_reuseKey": "miserere mihi domine et exaudi orationem meam|antifona salmica|8"
+  },
+  {
+    "id": "compieta.C17",
+    "office": "compieta",
+    "role": "antifona salmica",
+    "printedIncipit": "In nóctibus benedícite Dóminum",
+    "printedContext": "Domenica I Vespri, 2a ant.",
+    "pdfPage": "p. 19",
+    "status": "found",
+    "gregobase": {
+      "id": 16102,
+      "url": "https://gregobase.selapa.net/chant.php?id=16102"
+    },
+    "file": "gabc/chants/16102-in-noctibus-benedicite-dominum.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      16102,
+      4688,
+      11230
+    ],
+    "_reuseKey": "in noctibus benedicite dominum|antifona salmica|"
+  },
+  {
+    "id": "compieta.C18",
+    "office": "compieta",
+    "role": "antifona salmica",
+    "printedIncipit": "Qui hábitat in adiutório Altíssimi, in protectióne Dei cæli commorábitur",
+    "printedContext": "Domenica II Vespri, VIII g",
+    "pdfPage": "p. 20",
+    "status": "found",
+    "gregobase": {
+      "id": 11232,
+      "url": "https://gregobase.selapa.net/chant.php?id=11232"
+    },
+    "file": "gabc/chants/11232-qui-habitat-in-adiutorio-altissimi-in-protectione-dei-caeli-.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      1653,
+      13664,
+      18975,
+      5592,
+      16441,
+      11232
+    ]
+  },
+  {
+    "id": "compieta.C19",
+    "office": "compieta",
+    "role": "antifona salmica alternativa",
+    "printedIncipit": "Angelis suis Deus mandávit de te",
+    "printedContext": "Domenica II Vespri, VIII g",
+    "pdfPage": "p. 20",
+    "status": "found",
+    "gregobase": {
+      "id": 9007,
+      "url": "https://gregobase.selapa.net/chant.php?id=9007"
+    },
+    "file": "gabc/chants/9007-angelis-suis-deus-mandavit-de-te.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      9007,
+      11975,
+      17943,
+      14017,
+      2991,
+      3875,
+      13690,
+      5301,
+      6498,
+      20660
+    ]
+  },
+  {
+    "id": "compieta.C20",
+    "office": "compieta",
+    "role": "antifona salmica",
+    "printedIncipit": "Inclína, Dómine, aurem tuam mihi, et exáudi verba mea",
+    "printedContext": "Lunedì, VII c",
+    "pdfPage": "p. 22",
+    "status": "found",
+    "gregobase": {
+      "id": 8664,
+      "url": "https://gregobase.selapa.net/chant.php?id=8664"
+    },
+    "file": "gabc/chants/8664-inclina-domine-aurem-tuam-mihi-et-exaudi-verba-mea.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 7 coerente con \"VII c\"; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      8664,
+      18915,
+      7788,
+      18536,
+      13923,
+      20112,
+      14201,
+      4285,
+      10732,
+      11148,
+      20116
+    ],
+    "_reuseKey": "inclina domine aurem tuam mihi et exaudi verba mea|antifona salmica|7"
+  },
+  {
+    "id": "compieta.C21",
+    "office": "compieta",
+    "role": "antifona salmica alternativa (LHG)",
+    "printedIncipit": "Inténde vóci oratiónis meæ",
+    "printedContext": "Lunedì, III a",
+    "pdfPage": "p. 23",
+    "status": "found",
+    "gregobase": {
+      "id": 15401,
+      "url": "https://gregobase.selapa.net/chant.php?id=15401"
+    },
+    "file": "gabc/chants/15401-intende-voci-orationis-meae.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 3 coerente con \"III a\"; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      12094,
+      13522,
+      11215,
+      1481,
+      15401,
+      5288,
+      5467,
+      11233
+    ],
+    "_reuseKey": "intende voci orationis meae|antifona salmica alternativa (LHG)|3"
+  },
+  {
+    "id": "compieta.C22",
+    "office": "compieta",
+    "role": "antifona salmica",
+    "printedIncipit": "In veritáte tua exáudi me, Dómine",
+    "printedContext": "Martedì, VIII g",
+    "pdfPage": "p. 25",
+    "status": "found",
+    "gregobase": {
+      "id": 10433,
+      "url": "https://gregobase.selapa.net/chant.php?id=10433"
+    },
+    "file": "gabc/chants/10433-in-veritate-tua-exaudi-me-domine.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      10433,
+      19071,
+      20121,
+      10801
+    ]
+  },
+  {
+    "id": "compieta.C23",
+    "office": "compieta",
+    "role": "antifona salmica alternativa (LHG)",
+    "printedIncipit": "Ne intres in iudícium cum servo tuo, Dómine",
+    "printedContext": "Martedì, VIII g",
+    "pdfPage": "p. 25",
+    "status": "found",
+    "gregobase": {
+      "id": 11234,
+      "url": "https://gregobase.selapa.net/chant.php?id=11234"
+    },
+    "file": "gabc/chants/11234-ne-intres-in-iudicium-cum-servo-tuo-domine.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 8 coerente con \"VIII g\"; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      11234
+    ],
+    "_reuseKey": "ne intres in iudicium cum servo tuo domine|antifona salmica alternativa (LHG)|8"
+  },
+  {
+    "id": "compieta.C24",
+    "office": "compieta",
+    "role": "antifona salmica",
+    "printedIncipit": "In tua iustítia líbera me, Dómine",
+    "printedContext": "Mercoledì (1a ant.), VIII g",
+    "pdfPage": "p. 27",
+    "status": "found",
+    "gregobase": {
+      "id": 11031,
+      "url": "https://gregobase.selapa.net/chant.php?id=11031"
+    },
+    "file": "gabc/chants/11031-in-tua-iustitia-libera-me-domine.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 8 coerente con \"VIII g\"; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      11031
+    ],
+    "_reuseKey": "in tua iustitia libera me domine|antifona salmica|8"
+  },
+  {
+    "id": "compieta.C25",
+    "office": "compieta",
+    "role": "antifona salmica alternativa (LHG)",
+    "printedIncipit": "Esto mihi, Dómine, in Deum protectórem",
+    "printedContext": "Mercoledì (1a ant.), I f",
+    "pdfPage": "p. 27",
+    "status": "found",
+    "gregobase": {
+      "id": 17590,
+      "url": "https://gregobase.selapa.net/chant.php?id=17590"
+    },
+    "file": "gabc/chants/17590-esto-mihi-domine-in-deum-protectorem.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 1 coerente con \"I f\"; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      17590,
+      20639,
+      13407,
+      13663,
+      1819,
+      1652,
+      4916,
+      5683,
+      11235
+    ],
+    "_reuseKey": "esto mihi domine in deum protectorem|antifona salmica alternativa (LHG)|1"
+  },
+  {
+    "id": "compieta.C26",
+    "office": "compieta",
+    "role": "antifona salmica",
+    "printedIncipit": "De profúndis clamávi ad te, Dómine",
+    "printedContext": "Mercoledì (2a ant.), VIII g",
+    "pdfPage": "p. 28",
+    "status": "found",
+    "gregobase": {
+      "id": 7565,
+      "url": "https://gregobase.selapa.net/chant.php?id=7565"
+    },
+    "file": "gabc/chants/7565-de-profundis-clamavi-ad-te-domine.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      7565,
+      12738,
+      8134,
+      16307,
+      13940,
+      1670,
+      3471,
+      16332,
+      13543,
+      3829,
+      13408,
+      6740,
+      20083,
+      4725
+    ]
+  },
+  {
+    "id": "compieta.C27",
+    "office": "compieta",
+    "role": "antifona salmica",
+    "printedIncipit": "Caro mea requiéscet in spe",
+    "printedContext": "Giovedì, VII c transp. / IV* e (LHG)",
+    "pdfPage": "p. 29",
+    "status": "found",
+    "gregobase": {
+      "id": 10086,
+      "url": "https://gregobase.selapa.net/chant.php?id=10086"
+    },
+    "file": "gabc/chants/10086-caro-mea-requiescet-in-spe.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase). Nota dell'utente: C'è un pezzo in più qui: \"Consérva me, Deus\" non fa parte dell'antifona, credo sia l'incipit del salmo ma non la voglio così Corretto: rimosso l'incipit salmico aggiuntivo (\"Consérva me, Deus\" + formula EUOUAE) che non fa parte dell'antifona, segnalato dall'utente.",
+    "candidatesConsidered": [
+      19318,
+      2667,
+      10086,
+      1614,
+      15541,
+      13640,
+      15694,
+      15153
+    ]
+  },
+  {
+    "id": "compieta.C28",
+    "office": "compieta",
+    "role": "antifona salmica",
+    "printedIncipit": "Intret orátio mea in conspéctu tuo, Dómine",
+    "printedContext": "Venerdì, V a",
+    "pdfPage": "p. 31",
+    "status": "found",
+    "gregobase": {
+      "id": 9603,
+      "url": "https://gregobase.selapa.net/chant.php?id=9603"
+    },
+    "file": "gabc/chants/9603-intret-oratio-mea-in-conspectu-tuo-domine.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 5 coerente con \"V a\"; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      9603,
+      1459,
+      9974,
+      5682,
+      10785,
+      20547
+    ],
+    "_reuseKey": "intret oratio mea in conspectu tuo domine|antifona salmica|5"
+  },
+  {
+    "id": "compieta.C29",
+    "office": "compieta",
+    "role": "antifona salmica alternativa (LHG)",
+    "printedIncipit": "Dómine, Deus salútis meæ, in die clamávi et nocte coram te",
+    "printedContext": "Venerdì, IV* e",
+    "pdfPage": "p. 31",
+    "status": "found",
+    "gregobase": {
+      "id": 11240,
+      "url": "https://gregobase.selapa.net/chant.php?id=11240"
+    },
+    "file": "gabc/chants/11240-domine-deus-salutis-meae-in-die-clamavi-et-nocte-coram-te.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      3745,
+      1717,
+      13611,
+      1545,
+      9965,
+      20117,
+      5134,
+      5460,
+      11239,
+      11240
+    ]
+  },
+  {
+    "id": "compieta.C30",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Te lucis ante términum",
+    "printedContext": "Avvento fino al 16 dic., H. IV",
+    "pdfPage": "p. 34",
+    "status": "found",
+    "gregobase": {
+      "id": 7413,
+      "url": "https://gregobase.selapa.net/chant.php?id=7413"
+    },
+    "file": "gabc/chants/7413-te-lucis-ante-terminum.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 4 coerente con \"H. IV\"; office-part=\"Hymnus\".",
+    "candidatesConsidered": [
+      7413,
+      12752,
+      4659,
+      9954
+    ],
+    "_reuseKey": "te lucis ante terminum|inno|4"
+  },
+  {
+    "id": "compieta.C31",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Christe, qui splendor et dies",
+    "printedContext": "Avvento dal 17 dic., H. IV",
+    "pdfPage": "p. 34-35",
+    "status": "found",
+    "gregobase": {
+      "id": 4685,
+      "url": "https://gregobase.selapa.net/chant.php?id=4685"
+    },
+    "file": "gabc/chants/4685-christe-qui-splendor-et-dies.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 4 coerente con \"H. IV\"; office-part=\"Hymnus\".",
+    "candidatesConsidered": [
+      4685
+    ],
+    "_reuseKey": "christe qui splendor et dies|inno|4"
+  },
+  {
+    "id": "compieta.C32",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Te lucis ante términum",
+    "printedContext": "Natale fino all'Epifania, H. II",
+    "pdfPage": "p. 35",
+    "status": "found",
+    "gregobase": {
+      "id": 8892,
+      "url": "https://gregobase.selapa.net/chant.php?id=8892"
+    },
+    "file": "gabc/chants/8892-te-lucis-ante-terminum.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 2 coerente con \"H. II\"; office-part=\"Hymnus\". Riusato da compieta.C32 (stesso incipit+ruolo+modo). Riusato da compieta.C4 (stesso incipit+ruolo+modo).",
+    "candidatesConsidered": [
+      12897,
+      8898,
+      13339,
+      8892
+    ],
+    "_reuseKey": "te lucis ante terminum|inno|2"
+  },
+  {
+    "id": "compieta.C33",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Christe, qui splendor et dies",
+    "printedContext": "Natale dopo l'Epifania, H. VIII",
+    "pdfPage": "p. 35-36",
+    "status": "found",
+    "gregobase": {
+      "id": 7518,
+      "url": "https://gregobase.selapa.net/chant.php?id=7518"
+    },
+    "file": "gabc/chants/7518-christe-qui-splendor-et-dies.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 8 coerente con \"H. VIII\"; office-part=\"Hymnus\". Riusato da compieta.C8 (stesso incipit+ruolo+modo). Riusato da compieta.C7 (stesso incipit+ruolo+modo).",
+    "candidatesConsidered": [
+      7518
+    ],
+    "_reuseKey": "christe qui splendor et dies|inno|8"
+  },
+  {
+    "id": "compieta.C34",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Te lucis ante términum",
+    "printedContext": "Quaresima, settimane 1-3-5, H. II",
+    "pdfPage": "p. 37",
+    "status": "found",
+    "gregobase": {
+      "id": 8892,
+      "url": "https://gregobase.selapa.net/chant.php?id=8892"
+    },
+    "file": "gabc/chants/8892-te-lucis-ante-terminum.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 2 coerente con \"H. II\"; office-part=\"Hymnus\". Riusato da compieta.C32 (stesso incipit+ruolo+modo). Riusato da compieta.C4 (stesso incipit+ruolo+modo).",
+    "candidatesConsidered": [
+      12897,
+      8898,
+      13339,
+      8892
+    ],
+    "_reuseKey": "te lucis ante terminum|inno|2"
+  },
+  {
+    "id": "compieta.C35",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Christe, qui splendor et dies",
+    "printedContext": "Quaresima, settimane 2-4, H. II",
+    "pdfPage": "p. 37",
+    "status": "found",
+    "gregobase": {
+      "id": 7517,
+      "url": "https://gregobase.selapa.net/chant.php?id=7517"
+    },
+    "file": "gabc/chants/7517-christe-qui-splendor-et-dies.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 2 coerente con \"H. II\"; office-part=\"Hymnus\". Riusato da compieta.C9 (stesso incipit+ruolo+modo).",
+    "candidatesConsidered": [
+      7517
+    ],
+    "_reuseKey": "christe qui splendor et dies|inno|2"
+  },
+  {
+    "id": "compieta.C36",
+    "office": "compieta",
+    "role": "inno",
+    "printedIncipit": "Iesu, redémptor sæculi, Verbum Patris altíssimi",
+    "printedContext": "Pasqua e Pentecoste, H. I",
+    "pdfPage": "p. 38",
+    "status": "found",
+    "gregobase": {
+      "id": 4676,
+      "url": "https://gregobase.selapa.net/chant.php?id=4676"
+    },
+    "file": "gabc/chants/4676-iesu-redemptor-saeculi-verbum-patris-altissimi.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 1 coerente con \"H. I\"; office-part=\"Hymnus\".",
+    "candidatesConsidered": [
+      4676
+    ],
+    "_reuseKey": "iesu redemptor saeculi verbum patris altissimi|inno|1"
+  },
+  {
+    "id": "compieta.C37",
+    "office": "compieta",
+    "role": "responsorio breve",
+    "printedIncipit": "In manus tuas, Dómine, comméndo spíritum meum",
+    "printedContext": "Avvento e Quaresima, R. br. IV",
+    "pdfPage": "p. 39",
+    "status": "found",
+    "gregobase": {
+      "id": 12702,
+      "url": "https://gregobase.selapa.net/chant.php?id=12702"
+    },
+    "file": "gabc/chants/12702-in-manus-tuas-domine-commendo-spiritum-meum.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 4 coerente con \"R. br. IV\"; office-part=\"Responsorium\".",
+    "candidatesConsidered": [
+      12702
+    ],
+    "_reuseKey": "in manus tuas domine commendo spiritum meum|responsorio breve|4"
+  },
+  {
+    "id": "compieta.C38",
+    "office": "compieta",
+    "role": "responsorio breve",
+    "printedIncipit": "Christus factus est pro nobis obédiens usque ad mortem",
+    "printedContext": "Triduo Pasquale (+ \"mortem autem crucis\" Venerdì Santo, + \"Propter quod et Deus exaltávit illum\" Sabato Santo)",
+    "pdfPage": "p. 40",
+    "status": "found",
+    "gregobase": {
+      "id": 6737,
+      "url": "https://gregobase.selapa.net/chant.php?id=6737"
+    },
+    "file": "gabc/chants/6737-christus-factus-est-pro-nobis-obediens-usque-ad-mortem.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Responsorium\".",
+    "candidatesConsidered": [
+      17735,
+      19679,
+      13775,
+      1649,
+      13403,
+      5292,
+      18122,
+      14729,
+      17772,
+      6737,
+      6883
+    ],
+    "_reuseKey": "christus factus est pro nobis obediens usque ad mortem|responsorio breve|"
+  },
+  {
+    "id": "compieta.C39",
+    "office": "compieta",
+    "role": "responsorio breve",
+    "printedIncipit": "Haec dies, quam fecit Dóminus: exsultémus, et laetémur in ea",
+    "printedContext": "Pasqua e Ottava, mode II",
+    "pdfPage": "p. 41",
+    "status": "found",
+    "gregobase": {
+      "id": 12993,
+      "url": "https://gregobase.selapa.net/chant.php?id=12993"
+    },
+    "file": "gabc/chants/12993-haec-dies-quam-fecit-dominus-exsultemus-et-laetemur-in-ea.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 2 coerente con \"mode II\"; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      17893,
+      12993,
+      18455,
+      1555,
+      17864,
+      6839,
+      4755,
+      15316
+    ],
+    "_reuseKey": "haec dies quam fecit dominus exsultemus et laetemur in ea|responsorio breve|2"
+  },
+  {
+    "id": "compieta.C40",
+    "office": "compieta",
+    "role": "responsorio breve (versione pasquale)",
+    "printedIncipit": "In manus tuas Dómine, comméndo spíritum meum. Allelúia, allelúia",
+    "printedContext": "Tempo di Pasqua",
+    "pdfPage": "p. 41",
+    "status": "found",
+    "gregobase": {
+      "id": 12649,
+      "url": "https://gregobase.selapa.net/chant.php?id=12649"
+    },
+    "file": "gabc/chants/12649-in-manus-tuas-domine-commendo-spiritum-meum-alleluia-allelui.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Responsorium breve\".",
+    "candidatesConsidered": [
+      12649,
+      17653,
+      20854
+    ],
+    "_reuseKey": "in manus tuas domine commendo spiritum meum alleluia alleluia|responsorio breve (versione pasquale)|"
+  },
+  {
+    "id": "compieta.C41",
+    "office": "compieta",
+    "role": "antifona mariana, tono semplice",
+    "printedIncipit": "Alma Redemptóris Mater, quæ pérvia cæli porta manes",
+    "printedContext": "Avvento e Natale (fino al 2 feb.), mode V",
+    "pdfPage": "p. 42",
+    "status": "found",
+    "gregobase": {
+      "id": 15264,
+      "url": "https://gregobase.selapa.net/chant.php?id=15264"
+    },
+    "file": "gabc/chants/15264-alma-redemptoris-mater-quae-pervia-caeli-porta-manes.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 5 coerente con \"mode V\"; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      4694,
+      8146,
+      16751,
+      15264,
+      4971,
+      18926,
+      18312,
+      18927,
+      17006
+    ],
+    "_reuseKey": "alma redemptoris mater quae pervia caeli porta manes|antifona mariana, tono semplice|5"
+  },
+  {
+    "id": "compieta.C42",
+    "office": "compieta",
+    "role": "antifona mariana, tono semplice",
+    "printedIncipit": "Ave, Regína cælórum, Ave Dómina Angelórum",
+    "printedContext": "Quaresima (dal 2 feb.), mode VI",
+    "pdfPage": "p. 43",
+    "status": "found",
+    "gregobase": {
+      "id": 15265,
+      "url": "https://gregobase.selapa.net/chant.php?id=15265"
+    },
+    "file": "gabc/chants/15265-ave-regina-caelorum-ave-domina-angelorum.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 6 coerente con \"mode VI\"; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      18754,
+      12705,
+      12108,
+      3300,
+      18333,
+      15265,
+      4586,
+      18385,
+      7216,
+      5936,
+      18911,
+      18912,
+      17008
+    ],
+    "_reuseKey": "ave regina caelorum ave domina angelorum|antifona mariana, tono semplice|6"
+  },
+  {
+    "id": "compieta.C43",
+    "office": "compieta",
+    "role": "antifona mariana, tono semplice solenne",
+    "printedIncipit": "Regína cæli lætáre, allelúia",
+    "printedContext": "Tempo di Pasqua, mode VI",
+    "pdfPage": "p. 43-44",
+    "status": "found",
+    "gregobase": {
+      "id": 15266,
+      "url": "https://gregobase.selapa.net/chant.php?id=15266"
+    },
+    "file": "gabc/chants/15266-regina-caeli-laetare-alleluia.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 6 coerente con \"mode VI\"; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      18753,
+      18441,
+      20463,
+      12975,
+      10093,
+      12130,
+      3301,
+      14963,
+      18964,
+      15266,
+      3287,
+      18914,
+      18913,
+      17850,
+      17763,
+      4579,
+      5320,
+      17052
+    ],
+    "_reuseKey": "regina caeli laetare alleluia|antifona mariana, tono semplice solenne|6"
+  },
+  {
+    "id": "compieta.C44",
+    "office": "compieta",
+    "role": "antifona mariana, tono semplice",
+    "printedIncipit": "Salve, Regína, máter misericórdiæ",
+    "printedContext": "Tempo Ordinario, mode V",
+    "pdfPage": "p. 44-45",
+    "status": "found",
+    "gregobase": {
+      "id": 18655,
+      "url": "https://gregobase.selapa.net/chant.php?id=18655"
+    },
+    "file": "gabc/chants/18655-salve-regina-mater-misericordiae.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      20212,
+      3299,
+      8127,
+      13136,
+      18654,
+      18655,
+      18918,
+      19489,
+      16168,
+      18969,
+      20500,
+      7363,
+      4577,
+      18874,
+      17012,
+      9961,
+      18924
+    ]
+  },
+  {
+    "id": "compieta.C45",
+    "office": "compieta",
+    "role": "antifona mariana ad libitum",
+    "printedIncipit": "Sub tuum praesídium confúgimus, sancta Dei Génitrix",
+    "printedContext": "-, mode VII",
+    "pdfPage": "p. 45",
+    "status": "found",
+    "gregobase": {
+      "id": 18652,
+      "url": "https://gregobase.selapa.net/chant.php?id=18652"
+    },
+    "file": "gabc/chants/18652-sub-tuum-praesidium-confugimus-sancta-dei-genitrix.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      16752,
+      18284,
+      18652,
+      18134,
+      18315,
+      15267,
+      18957,
+      3289,
+      4578,
+      17292,
+      6308,
+      18075
+    ]
+  },
+  {
+    "id": "compieta.C46",
+    "office": "compieta",
+    "role": "antifona mariana ad libitum",
+    "printedIncipit": "Ave María, grátia pléna, Dóminus técum",
+    "printedContext": "-, mode I",
+    "pdfPage": "p. 46",
+    "status": "found",
+    "gregobase": {
+      "id": 12596,
+      "url": "https://gregobase.selapa.net/chant.php?id=12596"
+    },
+    "file": "gabc/chants/12596-ave-maria-gratia-plena-dominus-tecum.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      9016,
+      12596,
+      12056,
+      9492,
+      10198,
+      20629,
+      17677,
+      8971,
+      9779,
+      15209,
+      10209,
+      12082,
+      20819
+    ]
+  },
+  {
+    "id": "compieta.C47",
+    "office": "compieta",
+    "role": "antifona mariana ad libitum",
+    "printedIncipit": "Memoráre, o píissima Vírgo María",
+    "printedContext": "S. Bernardo",
+    "pdfPage": "p. 46-47",
+    "status": "found",
+    "gregobase": {
+      "id": 13125,
+      "url": "https://gregobase.selapa.net/chant.php?id=13125"
+    },
+    "file": "gabc/chants/13125-memorare-o-piissima-virgo-maria.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      13125,
+      7521,
+      18804,
+      15263,
+      18169
+    ],
+    "_reuseKey": "memorare o piissima virgo maria|antifona mariana ad libitum|"
+  },
+  {
+    "id": "compieta.C48",
+    "office": "compieta",
+    "role": "antifona mariana ad libitum",
+    "printedIncipit": "Inviolata, íntegra et casta es, María",
+    "printedContext": "-, mode VI",
+    "pdfPage": "p. 47-48",
+    "status": "found",
+    "gregobase": {
+      "id": 13025,
+      "url": "https://gregobase.selapa.net/chant.php?id=13025"
+    },
+    "file": "gabc/chants/13025-inviolata-integra-et-casta-es-maria.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 6 coerente con \"mode VI\"; office-part=\"Prosa\".",
+    "candidatesConsidered": [
+      13025,
+      4581,
+      20839,
+      5127
+    ],
+    "_reuseKey": "inviolata integra et casta es maria|antifona mariana ad libitum|6"
+  },
+  {
+    "id": "compieta.C49",
+    "office": "compieta",
+    "role": "antifona mariana ad libitum",
+    "printedIncipit": "Tota pulchra es, María",
+    "printedContext": "Immacolata Concezione, mode I",
+    "pdfPage": "p. 48-49",
+    "status": "found",
+    "gregobase": {
+      "id": 7556,
+      "url": "https://gregobase.selapa.net/chant.php?id=7556"
+    },
+    "file": "gabc/chants/7556-tota-pulchra-es-maria.gabc",
+    "matchNotes": "Individuato dall'utente direttamente su GregoBase durante la disambiguazione visiva (non incluso nella shortlist generata automaticamente). Modo/office-part: 1 / Varia.",
+    "candidatesConsidered": [
+      7556,
+      11950,
+      16160,
+      9075,
+      13200,
+      11380,
+      3608,
+      14041,
+      18830,
+      4982,
+      7038,
+      7556
+    ]
+  },
+  {
+    "id": "compieta.C50",
+    "office": "compieta",
+    "role": "antifona mariana, tono semplice",
+    "printedIncipit": "Regína cæli lætáre, allelúia",
+    "printedContext": "Tempo di Pasqua (Officium Parvum, melodia distinta da C43/C53), mode I D2",
+    "pdfPage": "p. 49",
+    "status": "found",
+    "gregobase": {
+      "id": 14963,
+      "url": "https://gregobase.selapa.net/chant.php?id=14963"
+    },
+    "file": "gabc/chants/14963-regina-caeli-laetare-alleluia.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      18753,
+      18441,
+      20463,
+      12975,
+      10093,
+      12130,
+      3301,
+      14963,
+      18964,
+      15266,
+      3287,
+      18914,
+      18913,
+      17850,
+      17763,
+      4579,
+      5320,
+      17052
+    ]
+  },
+  {
+    "id": "compieta.C51",
+    "office": "compieta",
+    "role": "antifona mariana, tono solenne monastico",
+    "printedIncipit": "Alma Redemptóris Mater",
+    "printedContext": "Avvento e Natale (fino al 2 feb.), mode V",
+    "pdfPage": "p. 50",
+    "status": "found",
+    "gregobase": {
+      "id": 8146,
+      "url": "https://gregobase.selapa.net/chant.php?id=8146"
+    },
+    "file": "gabc/chants/8146-alma-redemptoris-mater.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 5 coerente con \"mode V\"; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      4694,
+      8146,
+      16751,
+      15264,
+      17006,
+      4971,
+      18926,
+      18312,
+      18927,
+      17057
+    ],
+    "_reuseKey": "alma redemptoris mater|antifona mariana, tono solenne monastico|5"
+  },
+  {
+    "id": "compieta.C52",
+    "office": "compieta",
+    "role": "antifona mariana, tono solenne monastico",
+    "printedIncipit": "Ave Regína cælórum",
+    "printedContext": "Quaresima (dal 2 feb.), mode VI",
+    "pdfPage": "p. 50-51",
+    "status": "found",
+    "gregobase": {
+      "id": 3300,
+      "url": "https://gregobase.selapa.net/chant.php?id=3300"
+    },
+    "file": "gabc/chants/3300-ave-regina-caelorum.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 6 coerente con \"mode VI\"; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      18754,
+      12705,
+      12108,
+      3300,
+      18333,
+      15265,
+      4586,
+      18385,
+      7216,
+      5936,
+      18911,
+      18912,
+      17008,
+      17051
+    ],
+    "_reuseKey": "ave regina caelorum|antifona mariana, tono solenne monastico|6"
+  },
+  {
+    "id": "compieta.C53",
+    "office": "compieta",
+    "role": "antifona mariana, tono solenne monastico",
+    "printedIncipit": "Regína cæli lætáre",
+    "printedContext": "Tempo di Pasqua, mode VI",
+    "pdfPage": "p. 51",
+    "status": "found",
+    "gregobase": {
+      "id": 3301,
+      "url": "https://gregobase.selapa.net/chant.php?id=3301"
+    },
+    "file": "gabc/chants/3301-regina-caeli-laetare.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 6 coerente con \"mode VI\"; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      12975,
+      10093,
+      12130,
+      18753,
+      18441,
+      20463,
+      3301,
+      14963,
+      18964,
+      15266,
+      3287,
+      18914,
+      18913,
+      17850,
+      17763,
+      4579,
+      5320,
+      17052
+    ],
+    "_reuseKey": "regina caeli laetare|antifona mariana, tono solenne monastico|6"
+  },
+  {
+    "id": "compieta.C54",
+    "office": "compieta",
+    "role": "antifona mariana, tono solenne monastico",
+    "printedIncipit": "Salve, Regína, máter misericórdiæ",
+    "printedContext": "Tempo Ordinario, mode I",
+    "pdfPage": "p. 52",
+    "status": "found",
+    "gregobase": {
+      "id": 3299,
+      "url": "https://gregobase.selapa.net/chant.php?id=3299"
+    },
+    "file": "gabc/chants/3299-salve-regina-mater-misericordiae.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 1 coerente con \"mode I\"; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      20212,
+      3299,
+      8127,
+      13136,
+      18654,
+      18655,
+      18918,
+      19489,
+      16168,
+      18969,
+      20500,
+      7363,
+      4577,
+      18874,
+      17012,
+      9961,
+      18924
+    ],
+    "_reuseKey": "salve regina mater misericordiae|antifona mariana, tono solenne monastico|1"
+  },
+  {
+    "id": "lodi.LH1",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Aeterne rerum cónditor",
+    "printedContext": "Domenica, settimane 1 e 3, H. I",
+    "pdfPage": "p. 1 / p. 88",
+    "status": "found",
+    "gregobase": {
+      "id": 15724,
+      "url": "https://gregobase.selapa.net/chant.php?id=15724"
+    },
+    "file": "gabc/chants/15724-aeterne-rerum-conditor.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      4137,
+      13348,
+      15724,
+      4630,
+      19477,
+      7877,
+      19478
+    ]
+  },
+  {
+    "id": "lodi.LH2",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Splendor patérnae glóriae",
+    "printedContext": "Lunedì, settimane 1 e 3, H. I",
+    "pdfPage": "p. 7 / p. 95",
+    "status": "found",
+    "gregobase": {
+      "id": 15608,
+      "url": "https://gregobase.selapa.net/chant.php?id=15608"
+    },
+    "file": "gabc/chants/15608-splendor-paternae-gloriae.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      4141,
+      4140,
+      15608,
+      15781,
+      8213,
+      7879
+    ]
+  },
+  {
+    "id": "lodi.LH3",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Pergráta mundo núntiat auróra solis spícula",
+    "printedContext": "Martedì, settimane 1 e 3, H. I",
+    "pdfPage": "p. 13 / p. 102",
+    "status": "found",
+    "gregobase": {
+      "id": 15629,
+      "url": "https://gregobase.selapa.net/chant.php?id=15629"
+    },
+    "file": "gabc/chants/15629-pergrata-mundo-nuntiat-aurora-solis-spicula.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 1 coerente con \"H. I\"; office-part=\"Hymnus\".",
+    "candidatesConsidered": [
+      15629
+    ],
+    "_reuseKey": "pergrata mundo nuntiat aurora solis spicula|inno|1"
+  },
+  {
+    "id": "lodi.LH4",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Nox et ténebrae et núbila",
+    "printedContext": "Mercoledì, settimane 1 e 3, H. I",
+    "pdfPage": "p. 20 / p. 108",
+    "status": "found",
+    "gregobase": {
+      "id": 15630,
+      "url": "https://gregobase.selapa.net/chant.php?id=15630"
+    },
+    "file": "gabc/chants/15630-nox-et-tenebrae-et-nubila.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      15630,
+      12147,
+      4154,
+      4153
+    ]
+  },
+  {
+    "id": "lodi.LH5",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Sol ecce súrgit ígneus",
+    "printedContext": "Giovedì, settimane 1 e 3, H. I",
+    "pdfPage": "p. 26 / p. 114",
+    "status": "found",
+    "gregobase": {
+      "id": 15631,
+      "url": "https://gregobase.selapa.net/chant.php?id=15631"
+    },
+    "file": "gabc/chants/15631-sol-ecce-surgit-igneus.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 1 coerente con \"H. I\"; office-part=\"Hymnus\".",
+    "candidatesConsidered": [
+      15631
+    ],
+    "_reuseKey": "sol ecce surgit igneus|inno|1"
+  },
+  {
+    "id": "lodi.LH6",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Aetérna cæli glória",
+    "printedContext": "Venerdì, settimane 1 e 3, H. I",
+    "pdfPage": "p. 32 / p. 121",
+    "status": "found",
+    "gregobase": {
+      "id": 15632,
+      "url": "https://gregobase.selapa.net/chant.php?id=15632"
+    },
+    "file": "gabc/chants/15632-aeterna-caeli-gloria.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      13176,
+      15632,
+      8445,
+      8446,
+      8444
+    ]
+  },
+  {
+    "id": "lodi.LH7",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Auróra iam spárgit polum",
+    "printedContext": "Sabato, settimane 1 e 3, H. I",
+    "pdfPage": "p. 39 / p. 127-128",
+    "status": "found",
+    "gregobase": {
+      "id": 15633,
+      "url": "https://gregobase.selapa.net/chant.php?id=15633"
+    },
+    "file": "gabc/chants/15633-aurora-iam-spargit-polum.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 1 coerente con \"H. I\"; office-part=\"Hymnus\".",
+    "candidatesConsidered": [
+      15633
+    ],
+    "_reuseKey": "aurora iam spargit polum|inno|1"
+  },
+  {
+    "id": "lodi.LH8",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Ecce iam noctis tenuátur umbra",
+    "printedContext": "Domenica, settimane 2 e 4, H. IV",
+    "pdfPage": "p. 44 / 133",
+    "status": "found",
+    "gregobase": {
+      "id": 19480,
+      "url": "https://gregobase.selapa.net/chant.php?id=19480"
+    },
+    "file": "gabc/chants/19480-ecce-iam-noctis-tenuatur-umbra.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 4 coerente con \"H. IV\"; office-part=\"Hymnus\".",
+    "candidatesConsidered": [
+      19480,
+      7880
+    ],
+    "_reuseKey": "ecce iam noctis tenuatur umbra|inno|4"
+  },
+  {
+    "id": "lodi.LH9",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Lucis largítor spléndide",
+    "printedContext": "Lunedì, settimane 2 e 4, H. IV",
+    "pdfPage": "p. 49-50 / 139",
+    "status": "found",
+    "gregobase": {
+      "id": 7502,
+      "url": "https://gregobase.selapa.net/chant.php?id=7502"
+    },
+    "file": "gabc/chants/7502-lucis-largitor-splendide.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 4 coerente con \"H. IV\"; office-part=\"Hymnus\".",
+    "candidatesConsidered": [
+      7502
+    ],
+    "_reuseKey": "lucis largitor splendide|inno|4"
+  },
+  {
+    "id": "lodi.LH10",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Aetérne lucis cónditor",
+    "printedContext": "Martedì, settimane 2 e 4, H. IV",
+    "pdfPage": "p. 56 / 145",
+    "status": "found",
+    "gregobase": {
+      "id": 16710,
+      "url": "https://gregobase.selapa.net/chant.php?id=16710"
+    },
+    "file": "gabc/chants/16710-aeterne-lucis-conditor.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 4 coerente con \"H. IV\"; office-part=\"Hymnus\".",
+    "candidatesConsidered": [
+      16710
+    ],
+    "_reuseKey": "aeterne lucis conditor|inno|4"
+  },
+  {
+    "id": "lodi.LH11",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Fulgéntis auctor ætheris",
+    "printedContext": "Mercoledì, settimane 2 e 4, H. IV",
+    "pdfPage": "p. 62 / 152",
+    "status": "found",
+    "gregobase": {
+      "id": 14141,
+      "url": "https://gregobase.selapa.net/chant.php?id=14141"
+    },
+    "file": "gabc/chants/14141-fulgentis-auctor-aetheris.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 4 coerente con \"H. IV\"; office-part=\"Hymnus\".",
+    "candidatesConsidered": [
+      14141
+    ],
+    "_reuseKey": "fulgentis auctor aetheris|inno|4"
+  },
+  {
+    "id": "lodi.LH12",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Iam lucis orto sídere",
+    "printedContext": "Giovedì, settimane 2 e 4, H. IV",
+    "pdfPage": "p. 68-74 / 157-163 (inno a p. 69 / 158)",
+    "status": "found",
+    "gregobase": {
+      "id": 18673,
+      "url": "https://gregobase.selapa.net/chant.php?id=18673"
+    },
+    "file": "gabc/chants/18673-iam-lucis-orto-sidere.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 7 coerente con \"H. IV\"; office-part=\"Hymnus\".",
+    "candidatesConsidered": [
+      18673,
+      18674
+    ],
+    "_reuseKey": "iam lucis orto sidere|inno|4"
+  },
+  {
+    "id": "lodi.LH13",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Deus, qui cæli lumen es",
+    "printedContext": "Venerdì, settimane 2 e 4, H. IV",
+    "pdfPage": "p. 75 / 164",
+    "status": "found",
+    "gregobase": {
+      "id": 16748,
+      "url": "https://gregobase.selapa.net/chant.php?id=16748"
+    },
+    "file": "gabc/chants/16748-deus-qui-caeli-lumen-es.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 4 coerente con \"H. IV\"; office-part=\"Hymnus\".",
+    "candidatesConsidered": [
+      16748,
+      5703
+    ],
+    "_reuseKey": "deus qui caeli lumen es|inno|4"
+  },
+  {
+    "id": "lodi.LH14",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Diéi luce reddíta",
+    "printedContext": "Sabato, settimane 2 e 4, H. IV",
+    "pdfPage": "p. 82 / 171",
+    "status": "found",
+    "gregobase": {
+      "id": 16058,
+      "url": "https://gregobase.selapa.net/chant.php?id=16058"
+    },
+    "file": "gabc/chants/16058-diei-luce-reddita.gabc",
+    "matchNotes": "incipit corrispondente; modo GregoBase 4 coerente con \"H. IV\"; office-part=\"Hymnus\".",
+    "candidatesConsidered": [
+      16058
+    ],
+    "_reuseKey": "diei luce reddita|inno|4"
+  },
+  {
+    "id": "lodi.LR1",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Christe, Fili Dei vivi, Miserére nobis. Qui sedes ad déxteram Patris",
+    "printedContext": "Domenica, sett. 1 e 3",
+    "pdfPage": "p. 6 / p. 94",
+    "status": "found",
+    "gregobase": {
+      "id": 19019,
+      "url": "https://gregobase.selapa.net/chant.php?id=19019"
+    },
+    "file": "gabc/chants/19019-christe-fili-dei-vivi-miserere-nobis-qui-sedes-ad-dexteram-p.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      19019,
+      4354,
+      8430,
+      11818,
+      13127,
+      12439,
+      18105
+    ]
+  },
+  {
+    "id": "lodi.LR2",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Confitébimur tibi, Deus, et invocábimus nomen tuum. Narrábimus mirabília tua",
+    "printedContext": "Domenica, sett. 2 e 4",
+    "pdfPage": "p. 49 / p. 138",
+    "status": "found",
+    "gregobase": {
+      "id": 20806,
+      "url": "https://gregobase.selapa.net/chant.php?id=20806"
+    },
+    "file": "gabc/chants/20806-confitebimur-tibi-deus-et-invocabimus-nomen-tuum-narrabimus-.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Responsorium breve\".",
+    "candidatesConsidered": [
+      20806
+    ],
+    "_reuseKey": "confitebimur tibi deus et invocabimus nomen tuum narrabimus mirabilia tua|responsorio breve|"
+  },
+  {
+    "id": "lodi.LR3",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Benedíctus Dóminus a sæculo et usque in sæculum. Qui facit mirabília solus",
+    "printedContext": "Lunedì, sett. 1 e 3",
+    "pdfPage": "p. 11-12 / p. 100",
+    "status": "found",
+    "gregobase": {
+      "id": 19022,
+      "url": "https://gregobase.selapa.net/chant.php?id=19022"
+    },
+    "file": "gabc/chants/19022-benedictus-dominus-a-saeculo-et-usque-in-saeculum-qui-facit-.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Responsorium breve\".",
+    "candidatesConsidered": [
+      12989,
+      9129,
+      18855,
+      19022,
+      15922,
+      10064,
+      3407,
+      18537,
+      13609,
+      10368,
+      1547,
+      9967,
+      20625
+    ],
+    "_reuseKey": "benedictus dominus a saeculo et usque in saeculum qui facit mirabilia solus|responsorio breve|"
+  },
+  {
+    "id": "lodi.LR4",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Exsultáte, iusti, in Dómino; Rectos decet collaudátio. Cantáte ei cánticum novum",
+    "printedContext": "Lunedì, sett. 2 e 4",
+    "pdfPage": "p. 54-55 / p. 143",
+    "status": "found",
+    "gregobase": {
+      "id": 7731,
+      "url": "https://gregobase.selapa.net/chant.php?id=7731"
+    },
+    "file": "gabc/chants/7731-exsultate-iusti-in-domino-rectos-decet-collaudatio-cantate-e.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      7731
+    ],
+    "_reuseKey": "exsultate iusti in domino rectos decet collaudatio cantate ei canticum novum|responsorio breve|"
+  },
+  {
+    "id": "lodi.LR5",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Deus meus, adiútor meus, et sperábo in eum. Refúgium meum et liberátor meus",
+    "printedContext": "Martedì, sett. 1 e 3",
+    "pdfPage": "p. 18 / p. 106",
+    "status": "found",
+    "gregobase": {
+      "id": 19084,
+      "url": "https://gregobase.selapa.net/chant.php?id=19084"
+    },
+    "file": "gabc/chants/19084-deus-meus-adiutor-meus-et-sperabo-in-eum-refugium-meum-et-li.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Responsorium breve\".",
+    "candidatesConsidered": [
+      9784,
+      19084,
+      10969
+    ],
+    "_reuseKey": "deus meus adiutor meus et sperabo in eum refugium meum et liberator meus|responsorio breve|"
+  },
+  {
+    "id": "lodi.LR6",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Vocem meam audi, Dómine, in verba tua supersperávi. Prævéni díluculo et clamávi",
+    "printedContext": "Martedì, sett. 2 e 4",
+    "pdfPage": "p. 61 / p. 150",
+    "status": "found",
+    "gregobase": {
+      "id": 20765,
+      "url": "https://gregobase.selapa.net/chant.php?id=20765"
+    },
+    "file": "gabc/chants/20765-vocem-meam-audi-domine-in-verba-tua-supersperavi-praeveni-di.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Responsorium breve\".",
+    "candidatesConsidered": [
+      20765
+    ],
+    "_reuseKey": "vocem meam audi domine in verba tua supersperavi praeveni diluculo et clamavi|responsorio breve|"
+  },
+  {
+    "id": "lodi.LR7",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Inclína cor meum, Deus, in testimónia tua. In via tua vivífica me",
+    "printedContext": "Mercoledì, sett. 1 e 3",
+    "pdfPage": "p. 24-25 / p. 113",
+    "status": "found",
+    "gregobase": {
+      "id": 20372,
+      "url": "https://gregobase.selapa.net/chant.php?id=20372"
+    },
+    "file": "gabc/chants/20372-inclina-cor-meum-deus-in-testimonia-tua-in-via-tua-vivifica-.gabc",
+    "matchNotes": "Individuato dall'utente direttamente su GregoBase durante la disambiguazione visiva (non incluso nella shortlist generata automaticamente). Modo/office-part: 6 / Responsorium breve.",
+    "candidatesConsidered": [
+      12571,
+      4128,
+      18059,
+      10882,
+      20372,
+      7105,
+      20372
+    ]
+  },
+  {
+    "id": "lodi.LR8",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Benedícam Dóminum in omni témpore. Semper laus eius in ore meo",
+    "printedContext": "Mercoledì, sett. 2 e 4",
+    "pdfPage": "p. 67 / p. 156-157",
+    "status": "found",
+    "gregobase": {
+      "id": 19030,
+      "url": "https://gregobase.selapa.net/chant.php?id=19030"
+    },
+    "file": "gabc/chants/19030-benedicam-dominum-in-omni-tempore-semper-laus-eius-in-ore-me.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      11837,
+      19030,
+      10424,
+      10316,
+      13689,
+      16266,
+      1430,
+      13770,
+      1752,
+      19987,
+      9508,
+      5686,
+      4892,
+      6141,
+      16618
+    ]
+  },
+  {
+    "id": "lodi.LR9",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Clamávi in toto corde meo: Exáudi me, Dómine. Iustificatiónes tuas servábo",
+    "printedContext": "Giovedì, sett. 1 e 3",
+    "pdfPage": "p. 31 / p. 119",
+    "status": "found",
+    "gregobase": {
+      "id": 19037,
+      "url": "https://gregobase.selapa.net/chant.php?id=19037"
+    },
+    "file": "gabc/chants/19037-clamavi-in-toto-corde-meo-exaudi-me-domine-iustificationes-t.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      11782,
+      19037,
+      9920
+    ]
+  },
+  {
+    "id": "lodi.LR10",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "In matutínis, Dómine, meditábor de te. Quia factus es adiútor meus",
+    "printedContext": "Giovedì, sett. 2 e 4",
+    "pdfPage": "p. 74 / p. 162",
+    "status": "found",
+    "gregobase": {
+      "id": 19746,
+      "url": "https://gregobase.selapa.net/chant.php?id=19746"
+    },
+    "file": "gabc/chants/19746-in-matutinis-domine-meditabor-de-te-quia-factus-es-adiutor-m.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      19746,
+      5375,
+      10756
+    ],
+    "_reuseKey": "in matutinis domine meditabor de te quia factus es adiutor meus|responsorio breve|"
+  },
+  {
+    "id": "lodi.LR11",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Audítam fac mihi mane misericórdiam tuam. Notam fac mihi viam in qua ámbulem",
+    "printedContext": "Venerdì, sett. 1 e 3",
+    "pdfPage": "p. 38 / p. 126",
+    "status": "found",
+    "gregobase": {
+      "id": 19045,
+      "url": "https://gregobase.selapa.net/chant.php?id=19045"
+    },
+    "file": "gabc/chants/19045-auditam-fac-mihi-mane-misericordiam-tuam-notam-fac-mihi-viam.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Responsorium breve\".",
+    "candidatesConsidered": [
+      19045
+    ],
+    "_reuseKey": "auditam fac mihi mane misericordiam tuam notam fac mihi viam in qua ambulem|responsorio breve|"
+  },
+  {
+    "id": "lodi.LR12",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Clamábo ad Dóminum altíssimum, Qui benefécit mihi. Mittet de cælo, et liberávit me",
+    "printedContext": "Venerdì, sett. 2 e 4",
+    "pdfPage": "p. 80-81 / p. 169",
+    "status": "not-found",
+    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
+    "_reuseKey": "clamabo ad dominum altissimum qui benefecit mihi mittet de caelo et liberavit me|responsorio breve|"
+  },
+  {
+    "id": "lodi.LR13",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Clamávi ad te, Dómine; Tu es refúgium meum. Pórtio mea in terra vivéntium",
+    "printedContext": "Sabato, sett. 1 e 3",
+    "pdfPage": "p. 43 / p. 131",
+    "status": "found",
+    "gregobase": {
+      "id": 19074,
+      "url": "https://gregobase.selapa.net/chant.php?id=19074"
+    },
+    "file": "gabc/chants/19074-clamavi-ad-te-domine-tu-es-refugium-meum-portio-mea-in-terra.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Responsorium breve\".",
+    "candidatesConsidered": [
+      19074,
+      20615
+    ],
+    "_reuseKey": "clamavi ad te domine tu es refugium meum portio mea in terra viventium|responsorio breve|"
+  },
+  {
+    "id": "lodi.LR14",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Exsultábunt lábia mea, Cum cantávero tibi. Lingua mea meditábitur iustítiam tuam",
+    "printedContext": "Sabato, sett. 2 e 4",
+    "pdfPage": "p. 87 / p. 175",
+    "status": "not-found",
+    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
+    "_reuseKey": "exsultabunt labia mea cum cantavero tibi lingua mea meditabitur iustitiam tuam|responsorio breve|"
+  },
+  {
+    "id": "lodi.LB1",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Benedíctus Deus Israel",
+    "printedContext": "Lunedì, sett. 1 e 3 (Lc 1,68)",
+    "pdfPage": "p. 12 / p. 101",
+    "status": "found",
+    "gregobase": {
+      "id": 8452,
+      "url": "https://gregobase.selapa.net/chant.php?id=8452"
+    },
+    "file": "gabc/chants/8452-benedictus-deus-israel.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      8452,
+      10064,
+      16413,
+      20153,
+      11130
+    ],
+    "_reuseKey": "benedictus deus israel|antifona (Benedictus)|"
+  },
+  {
+    "id": "lodi.LB2",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Benedíctus Dóminus Deus Israel, quia visitávit et liberávit nos",
+    "printedContext": "Lunedì, sett. 2 e 4",
+    "pdfPage": "p. 55 / p. 144",
+    "status": "found",
+    "gregobase": {
+      "id": 19023,
+      "url": "https://gregobase.selapa.net/chant.php?id=19023"
+    },
+    "file": "gabc/chants/19023-benedictus-dominus-deus-israel-quia-visitavit-et-liberavit-n.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      12989,
+      9129,
+      18855,
+      11723,
+      12723,
+      10532,
+      19023,
+      15922,
+      10064,
+      3407,
+      18537,
+      13609,
+      10368,
+      1547,
+      10322,
+      9534
+    ]
+  },
+  {
+    "id": "lodi.LB3",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Eréxit Dóminus nobis cornu salútis in domo David púeri sui",
+    "printedContext": "Martedì, sett. 1 e 3 (Lc 1,69)",
+    "pdfPage": "p. 19 / p. 107",
+    "status": "found",
+    "gregobase": {
+      "id": 18039,
+      "url": "https://gregobase.selapa.net/chant.php?id=18039"
+    },
+    "file": "gabc/chants/18039-erexit-dominus-nobis-cornu-salutis-in-domo-david-pueri-sui.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      18039,
+      11142,
+      20154
+    ],
+    "_reuseKey": "erexit dominus nobis cornu salutis in domo david pueri sui|antifona (Benedictus)|"
+  },
+  {
+    "id": "lodi.LB4",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "De manu ómnium qui odérunt nos líberet nos Dómine",
+    "printedContext": "Martedì, sett. 2 e 4",
+    "pdfPage": "p. 61 / p. 150-151",
+    "status": "found",
+    "gregobase": {
+      "id": 8453,
+      "url": "https://gregobase.selapa.net/chant.php?id=8453"
+    },
+    "file": "gabc/chants/8453-de-manu-omnium-qui-oderunt-nos-liberet-nos-domine.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      20764,
+      11871,
+      8453,
+      10852,
+      20155,
+      5389
+    ]
+  },
+  {
+    "id": "lodi.LB5",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Salútem ex inimícis nostris, et de manu ómnium qui nos odérunt, líberet nos, Dómine",
+    "printedContext": "Mercoledì, sett. 1 e 3 (Lc 1,71)",
+    "pdfPage": "p. 25 / p. 113",
+    "status": "found",
+    "gregobase": {
+      "id": 19025,
+      "url": "https://gregobase.selapa.net/chant.php?id=19025"
+    },
+    "file": "gabc/chants/19025-salutem-ex-inimicis-nostris-et-de-manu-omnium-qui-nos-oderun.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      19025
+    ],
+    "_reuseKey": "salutem ex inimicis nostris et de manu omnium qui nos oderunt liberet nos domine|antifona (Benedictus)|"
+  },
+  {
+    "id": "lodi.LB6",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Liberáti serviámus Deo nostro in sanctitáte",
+    "printedContext": "Mercoledì, sett. 2 e 4",
+    "pdfPage": "p. 68 / p. 157",
+    "status": "found",
+    "gregobase": {
+      "id": 19031,
+      "url": "https://gregobase.selapa.net/chant.php?id=19031"
+    },
+    "file": "gabc/chants/19031-liberati-serviamus-deo-nostro-in-sanctitate.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      19031,
+      10844
+    ],
+    "_reuseKey": "liberati serviamus deo nostro in sanctitate|antifona (Benedictus)|"
+  },
+  {
+    "id": "lodi.LB7",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "In sanctitáte serviámus Dómino, et liberábit nos ab inimícis nostris",
+    "printedContext": "Giovedì, sett. 1 e 3 (Lc 1,74-75)",
+    "pdfPage": "p. 31 / p. 119-120",
+    "status": "found",
+    "gregobase": {
+      "id": 8454,
+      "url": "https://gregobase.selapa.net/chant.php?id=8454"
+    },
+    "file": "gabc/chants/8454-in-sanctitate-serviamus-domino-et-liberabit-nos-ab-inimicis-.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      19038,
+      12907,
+      8454,
+      11165,
+      20156,
+      6525
+    ]
+  },
+  {
+    "id": "lodi.LB8",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Da sciéntiam plebi tuæ, Dómine, in remissiónem peccatórum eórum",
+    "printedContext": "Giovedì, sett. 2 e 4",
+    "pdfPage": "p. 74 / p. 163",
+    "status": "found",
+    "gregobase": {
+      "id": 19039,
+      "url": "https://gregobase.selapa.net/chant.php?id=19039"
+    },
+    "file": "gabc/chants/19039-da-scientiam-plebi-tuae-domine-in-remissionem-peccatorum-eor.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      19039,
+      18376,
+      10842
+    ],
+    "_reuseKey": "da scientiam plebi tuae domine in remissionem peccatorum eorum|antifona (Benedictus)|"
+  },
+  {
+    "id": "lodi.LB9",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Visitávit et fecit redemptiónem Dóminus plebis suæ",
+    "printedContext": "Venerdì, sett. 1 e 3 (Lc 1,68)",
+    "pdfPage": "p. 38 / p. 126-127",
+    "status": "found",
+    "gregobase": {
+      "id": 18058,
+      "url": "https://gregobase.selapa.net/chant.php?id=18058"
+    },
+    "file": "gabc/chants/18058-visitavit-et-fecit-redemptionem-dominus-plebis-suae.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      18058,
+      10881
+    ],
+    "_reuseKey": "visitavit et fecit redemptionem dominus plebis suae|antifona (Benedictus)|"
+  },
+  {
+    "id": "lodi.LB10",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Per víscera misericórdiæ Dei nostri visitávit nos Oriens ex alto",
+    "printedContext": "Venerdì, sett. 2 e 4",
+    "pdfPage": "p. 81 / p. 169-170",
+    "status": "found",
+    "gregobase": {
+      "id": 8455,
+      "url": "https://gregobase.selapa.net/chant.php?id=8455"
+    },
+    "file": "gabc/chants/8455-per-viscera-misericordiae-dei-nostri-visitavit-nos-oriens-ex.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      19046,
+      8455,
+      12053,
+      10836,
+      20157
+    ]
+  },
+  {
+    "id": "lodi.LB11",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Illumináre Dómine his qui in ténebris sedent et dírige pedes nostros in viam pacis, Deus Israel",
+    "printedContext": "Sabato, sett. 1 e 3",
+    "pdfPage": "p. 43 / p. 132",
+    "status": "found",
+    "gregobase": {
+      "id": 8456,
+      "url": "https://gregobase.selapa.net/chant.php?id=8456"
+    },
+    "file": "gabc/chants/8456-illuminare-domine-his-qui-in-tenebris-sedent-et-dirige-pedes.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      20438,
+      19077,
+      8456,
+      13392,
+      1594,
+      13866,
+      19984,
+      11268,
+      5998,
+      20158,
+      10875
+    ]
+  },
+  {
+    "id": "lodi.LB12",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "In viam pacis dírige nos, Dómine",
+    "printedContext": "Sabato, sett. 2 e 4 (Lc 2,79)",
+    "pdfPage": "p. 87 / p. 176",
+    "status": "found",
+    "gregobase": {
+      "id": 19078,
+      "url": "https://gregobase.selapa.net/chant.php?id=19078"
+    },
+    "file": "gabc/chants/19078-in-viam-pacis-dirige-nos-domine.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      19078,
+      10946
+    ],
+    "_reuseKey": "in viam pacis dirige nos domine|antifona (Benedictus)|"
+  },
+  {
+    "id": "lodi.LA1",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "A te de luce vigilo, Deus, ut videam virtútem tuam",
+    "printedContext": "settimana 1, Domenica, 1a ant., Ps 62",
+    "pdfPage": "p. 3",
+    "status": "not-found",
+    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
+    "_reuseKey": "a te de luce vigilo deus ut videam virtutem tuam|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA2",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Res púeri iussu regis in fornácem missi sunt, non timéntes flammam ignis, dicéntes: Benedíctus Deus",
+    "printedContext": "settimana 1, Domenica, 2a ant., Cant. Dan 3,57-88.56",
+    "pdfPage": "p. 3-4",
+    "status": "not-found",
+    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
+    "_reuseKey": "res pueri iussu regis in fornacem missi sunt non timentes flammam ignis dicentes benedictus deus|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA3",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Beneplácitum est Dómino in pópulo suo, et honorábit mansuétos in salútem",
+    "printedContext": "settimana 1, Domenica, 3a ant., Ps 149",
+    "pdfPage": "p. 5",
+    "status": "found",
+    "gregobase": {
+      "id": 14493,
+      "url": "https://gregobase.selapa.net/chant.php?id=14493"
+    },
+    "file": "gabc/chants/14493-beneplacitum-est-domino-in-populo-suo-et-honorabit-mansuetos.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      7110,
+      14493
+    ]
+  },
+  {
+    "id": "lodi.LA4",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Intéllege clamórem meum, Dómine",
+    "printedContext": "settimana 1, Lunedì, 1a ant., Ps 5",
+    "pdfPage": "p. 8",
+    "status": "found",
+    "gregobase": {
+      "id": 10415,
+      "url": "https://gregobase.selapa.net/chant.php?id=10415"
+    },
+    "file": "gabc/chants/10415-intellege-clamorem-meum-domine.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      10415,
+      9159,
+      10960,
+      11127
+    ]
+  },
+  {
+    "id": "lodi.LA5",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Laudámus nomen tuum inclytum, Deus noster",
+    "printedContext": "settimana 1, Lunedì, 2a ant., Cant. 1 Cron 29,10-13",
+    "pdfPage": "p. 9-10",
+    "status": "found",
+    "gregobase": {
+      "id": 11128,
+      "url": "https://gregobase.selapa.net/chant.php?id=11128"
+    },
+    "file": "gabc/chants/11128-laudamus-nomen-tuum-inclytum-deus-noster.gabc",
+    "matchNotes": "Individuato dall'utente direttamente su GregoBase durante la disambiguazione visiva (non incluso nella shortlist generata automaticamente). Modo/office-part: 1 / Antiphona.",
+    "candidatesConsidered": [
+      9161,
+      12173,
+      15184,
+      6535,
+      11128,
+      11128
+    ]
+  },
+  {
+    "id": "lodi.LA6",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Adoráte Dóminum in aula sancta eius",
+    "printedContext": "settimana 1, Lunedì, 3a ant., Ps 28",
+    "pdfPage": "p. 10",
+    "status": "found",
+    "gregobase": {
+      "id": 17988,
+      "url": "https://gregobase.selapa.net/chant.php?id=17988"
+    },
+    "file": "gabc/chants/17988-adorate-dominum-in-aula-sancta-eius.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      17988,
+      12947,
+      16979,
+      10240,
+      10639,
+      11129,
+      16583
+    ],
+    "_reuseKey": "adorate dominum in aula sancta eius|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA7",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Innocens mánibus et mundo corde ascéndet in montem Dómini",
+    "printedContext": "settimana 1, Martedì, 1a ant., Ps 23",
+    "pdfPage": "p. 14",
+    "status": "found",
+    "gregobase": {
+      "id": 12545,
+      "url": "https://gregobase.selapa.net/chant.php?id=12545"
+    },
+    "file": "gabc/chants/12545-innocens-manibus-et-mundo-corde-ascendet-in-montem-domini.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      12545,
+      17995,
+      5987,
+      4878,
+      11139
+    ],
+    "_reuseKey": "innocens manibus et mundo corde ascendet in montem domini|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA8",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Exaltáte regem sæculórum in opéribus vestris",
+    "printedContext": "settimana 1, Martedì, 2a ant., Cant. Tob 13,2-10a",
+    "pdfPage": "p. 15",
+    "status": "found",
+    "gregobase": {
+      "id": 15187,
+      "url": "https://gregobase.selapa.net/chant.php?id=15187"
+    },
+    "file": "gabc/chants/15187-exaltate-regem-saeculorum-in-operibus-vestris.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      12373,
+      15187,
+      20786,
+      11140
+    ]
+  },
+  {
+    "id": "lodi.LA9",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Benedícite Dóminum, omnes elécti eius: agite dies lætítiæ, et confitémini illi, allelúia",
+    "printedContext": "settimana 1, Martedì, 2a ant., Cant. Tob 13,2-10a (T.P.)",
+    "pdfPage": "p. 15",
+    "status": "found",
+    "gregobase": {
+      "id": 9037,
+      "url": "https://gregobase.selapa.net/chant.php?id=9037"
+    },
+    "file": "gabc/chants/9037-benedicite-dominum-omnes-electi-eius-agite-dies-laetitiae-et.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase). Nota dell'utente: Manca l'alleluia del tempo pasquale",
+    "candidatesConsidered": [
+      12072,
+      9037,
+      20318,
+      16212,
+      13554,
+      15241,
+      3478,
+      14037,
+      13771,
+      13810,
+      6138,
+      7059
+    ]
+  },
+  {
+    "id": "lodi.LA10",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Rectos decet collaudátio",
+    "printedContext": "settimana 1, Martedì, 3a ant., Ps 32",
+    "pdfPage": "p. 16",
+    "status": "found",
+    "gregobase": {
+      "id": 7732,
+      "url": "https://gregobase.selapa.net/chant.php?id=7732"
+    },
+    "file": "gabc/chants/7732-rectos-decet-collaudatio.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      7732,
+      20441,
+      10312,
+      11141
+    ],
+    "_reuseKey": "rectos decet collaudatio|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA11",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Dómine, in cælo misericórdia tua",
+    "printedContext": "settimana 1, Mercoledì, 1a ant., Ps 35",
+    "pdfPage": "p. 21",
+    "status": "found",
+    "gregobase": {
+      "id": 9158,
+      "url": "https://gregobase.selapa.net/chant.php?id=9158"
+    },
+    "file": "gabc/chants/9158-domine-in-caelo-misericordia-tua.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      19928,
+      10438,
+      9158,
+      13193,
+      11150,
+      20052,
+      5931
+    ]
+  },
+  {
+    "id": "lodi.LA12",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Dómine, magnus es tu, et præclárus in virtúte tua",
+    "printedContext": "settimana 1, Mercoledì, 2a ant., Cant. Giuditta 16,1-2a.13-15",
+    "pdfPage": "p. 22",
+    "status": "found",
+    "gregobase": {
+      "id": 15190,
+      "url": "https://gregobase.selapa.net/chant.php?id=15190"
+    },
+    "file": "gabc/chants/15190-domine-magnus-es-tu-et-praeclarus-in-virtute-tua.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      15190,
+      12568,
+      7154,
+      11151
+    ]
+  },
+  {
+    "id": "lodi.LA13",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Emítte Spíritum tuum, et creabúntur: et renovábis fáciem terræ, allelúia, allelúia",
+    "printedContext": "settimana 1, Mercoledì, 2a ant., Cant. Giuditta 16,1-2a.13-15 (T.P.)",
+    "pdfPage": "p. 22",
+    "status": "found",
+    "gregobase": {
+      "id": 17799,
+      "url": "https://gregobase.selapa.net/chant.php?id=17799"
+    },
+    "file": "gabc/chants/17799-emitte-spiritum-tuum-et-creabuntur-et-renovabis-faciem-terra.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      8041,
+      17799,
+      3459,
+      15176,
+      14089,
+      1413,
+      1751,
+      13737,
+      16313,
+      19124,
+      14083,
+      6932,
+      6596,
+      15053,
+      15217
+    ],
+    "_reuseKey": "emitte spiritum tuum et creabuntur et renovabis faciem terrae alleluia alleluia|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA14",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Iubiláte Deo in voce exsultatiónis",
+    "printedContext": "settimana 1, Mercoledì, 3a ant., Ps 46",
+    "pdfPage": "p. 23",
+    "status": "found",
+    "gregobase": {
+      "id": 18057,
+      "url": "https://gregobase.selapa.net/chant.php?id=18057"
+    },
+    "file": "gabc/chants/18057-iubilate-deo-in-voce-exsultationis.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      18057,
+      11108,
+      10054,
+      11211,
+      10880
+    ],
+    "_reuseKey": "iubilate deo in voce exsultationis|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA15",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Quóniam in te confídit ánima mea",
+    "printedContext": "settimana 1, Giovedì, 1a ant., Ps 56",
+    "pdfPage": "p. 27",
+    "status": "found",
+    "gregobase": {
+      "id": 10422,
+      "url": "https://gregobase.selapa.net/chant.php?id=10422"
+    },
+    "file": "gabc/chants/10422-quoniam-in-te-confidit-anima-mea.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      10422,
+      20867,
+      10838
+    ],
+    "_reuseKey": "quoniam in te confidit anima mea|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA16",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Pópulus meus, ait Dóminus, bonis meis adimplébitur",
+    "printedContext": "settimana 1, Giovedì, 2a ant., Cant. Ger 31,10-14",
+    "pdfPage": "p. 28",
+    "status": "found",
+    "gregobase": {
+      "id": 15195,
+      "url": "https://gregobase.selapa.net/chant.php?id=15195"
+    },
+    "file": "gabc/chants/15195-populus-meus-ait-dominus-bonis-meis-adimplebitur.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase). Nota dell'utente: Il finale euouae è diverso però! Se non riesci a ricostruirlo non metterlo.",
+    "candidatesConsidered": [
+      15195,
+      12045,
+      5967,
+      11162
+    ]
+  },
+  {
+    "id": "lodi.LA17",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Pastor bonus ánimam suam ponit pro óvibus suis, allelúia",
+    "printedContext": "settimana 1, Giovedì, 2a ant., Cant. Ger 31,10-14 (T.P.)",
+    "pdfPage": "p. 28",
+    "status": "found",
+    "gregobase": {
+      "id": 10148,
+      "url": "https://gregobase.selapa.net/chant.php?id=10148"
+    },
+    "file": "gabc/chants/10148-pastor-bonus-animam-suam-ponit-pro-ovibus-suis-alleluia.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      10148,
+      4512,
+      12204,
+      5265,
+      14891
+    ]
+  },
+  {
+    "id": "lodi.LA18",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Magnus Dóminus et laudábilis nimis",
+    "printedContext": "settimana 1, Giovedì, 3a ant., Ps 47",
+    "pdfPage": "p. 29",
+    "status": "found",
+    "gregobase": {
+      "id": 18049,
+      "url": "https://gregobase.selapa.net/chant.php?id=18049"
+    },
+    "file": "gabc/chants/18049-magnus-dominus-et-laudabilis-nimis.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      18049,
+      13525,
+      1595,
+      17982,
+      9536,
+      15261,
+      4745,
+      11164,
+      11163
+    ],
+    "_reuseKey": "magnus dominus et laudabilis nimis|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA19",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Miserére mei, Deus",
+    "printedContext": "settimana 1, Venerdì, 1a ant., Ps 50",
+    "pdfPage": "p. 33-34",
+    "status": "found",
+    "gregobase": {
+      "id": 10436,
+      "url": "https://gregobase.selapa.net/chant.php?id=10436"
+    },
+    "file": "gabc/chants/10436-miserere-mei-deus.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      19020,
+      10436,
+      16066,
+      13183,
+      11769,
+      17581,
+      13475,
+      16280,
+      1608,
+      14255,
+      14256,
+      19675,
+      10940,
+      15594,
+      20043,
+      17179,
+      5398,
+      19674
+    ]
+  },
+  {
+    "id": "lodi.LA20",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Dixit Dóminus paralýtico: Confíde fili: remittúntur tibi peccáta tua, allelúia",
+    "printedContext": "settimana 1, Venerdì, 1a ant., Ps 50 (T.P.)",
+    "pdfPage": "p. 33-34",
+    "status": "not-found",
+    "notFoundReason": "L'utente segnala che la pagina del libretto mostrata durante la disambiguazione non contiene questa antifona (nota utente: \"Nell'immagine presa dal libretto non c'è nessuna antifona \"Dixit Dominus\"...\"): probabile errore nel riferimento di pagina in PDF-INVENTORY.md/gabc/inventory.json, da riverificare manualmente sul PDF sorgente — non è detto che il canto non esista su GregoBase.",
+    "candidatesConsidered": [
+      19895,
+      8314,
+      12889,
+      4690,
+      17744
+    ]
+  },
+  {
+    "id": "lodi.LA21",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "In Dómino iustificábitur, et laudábitur omne semen Israel",
+    "printedContext": "settimana 1, Venerdì, 2a ant., Cant. Is 45,15-26",
+    "pdfPage": "p. 35",
+    "status": "found",
+    "gregobase": {
+      "id": 10879,
+      "url": "https://gregobase.selapa.net/chant.php?id=10879"
+    },
+    "file": "gabc/chants/10879-in-domino-iustificabitur-et-laudabitur-omne-semen-israel.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      10879,
+      5007
+    ]
+  },
+  {
+    "id": "lodi.LA22",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": null,
+    "printedContext": "settimana 1, Venerdì, 2a ant., Cant. Is 45,15-26 (T.P.)",
+    "pdfPage": "p. 35",
+    "status": "not-applicable",
+    "notApplicableReason": "verificare — nessuna alternativa pasquale indicata per questa settimana"
+  },
+  {
+    "id": "lodi.LA23",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Iubiláte Deo, omnis terra",
+    "printedContext": "settimana 1, Venerdì, 3a ant., Ps 99",
+    "pdfPage": "p. 37",
+    "status": "found",
+    "gregobase": {
+      "id": 18057,
+      "url": "https://gregobase.selapa.net/chant.php?id=18057"
+    },
+    "file": "gabc/chants/18057-iubilate-deo-omnis-terra.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      18057,
+      11108,
+      10054,
+      17704,
+      10880
+    ],
+    "_reuseKey": "iubilate deo omnis terra|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA24",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Da mihi intelléctum et scrutábor, Dómine, legem tuam",
+    "printedContext": "settimana 1, Sabato, 1a ant., Ps 118 (145-152, XIX Coph)",
+    "pdfPage": "p. 40",
+    "status": "found",
+    "gregobase": {
+      "id": 10759,
+      "url": "https://gregobase.selapa.net/chant.php?id=10759"
+    },
+    "file": "gabc/chants/10759-da-mihi-intellectum-et-scrutabor-domine-legem-tuam.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      10759
+    ],
+    "_reuseKey": "da mihi intellectum et scrutabor domine legem tuam|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA25",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Fortitúdo mea et laus mea Dóminus: et factus est mihi in salútem",
+    "printedContext": "settimana 1, Sabato, 2a ant., Cant. Es 15,1-4a.8-13.17-18",
+    "pdfPage": "p. 41",
+    "status": "found",
+    "gregobase": {
+      "id": 12852,
+      "url": "https://gregobase.selapa.net/chant.php?id=12852"
+    },
+    "file": "gabc/chants/12852-fortitudo-mea-et-laus-mea-dominus-et-factus-est-mihi-in-salu.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      7873,
+      12852,
+      20793,
+      4870,
+      11114,
+      6353
+    ],
+    "_reuseKey": "fortitudo mea et laus mea dominus et factus est mihi in salutem|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA26",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Laudáte Dóminum, omnes gentes",
+    "printedContext": "settimana 1, Sabato, 3a ant., Ps 116",
+    "pdfPage": "p. 42",
+    "status": "found",
+    "gregobase": {
+      "id": 12483,
+      "url": "https://gregobase.selapa.net/chant.php?id=12483"
+    },
+    "file": "gabc/chants/12483-laudate-dominum-omnes-gentes.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      8297,
+      7832,
+      12483,
+      11198,
+      14031,
+      3545,
+      3533,
+      14986,
+      1657,
+      18026,
+      20338,
+      13616,
+      18278,
+      19317
+    ],
+    "_reuseKey": "laudate dominum omnes gentes|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA27",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Si mihi Dóminus salvátor fúerit, non timébo quid fáciat mihi homo",
+    "printedContext": "settimana 2, Domenica, 1a ant., Ps 117",
+    "pdfPage": "p. 45",
+    "status": "found",
+    "gregobase": {
+      "id": 20470,
+      "url": "https://gregobase.selapa.net/chant.php?id=20470"
+    },
+    "file": "gabc/chants/20470-si-mihi-dominus-salvator-fuerit-non-timebo-quid-faciat-mihi-.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      20470,
+      11943,
+      10692
+    ]
+  },
+  {
+    "id": "lodi.LA28",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Hymnum dicámus Dómino Deo nostro",
+    "printedContext": "settimana 2, Domenica, 2a ant., Cant. Dan 3,52-57",
+    "pdfPage": "p. 47",
+    "status": "found",
+    "gregobase": {
+      "id": 9771,
+      "url": "https://gregobase.selapa.net/chant.php?id=9771"
+    },
+    "file": "gabc/chants/9771-hymnum-dicamus-domino-deo-nostro.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      9771,
+      11117,
+      12703,
+      9778
+    ]
+  },
+  {
+    "id": "lodi.LA29",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "In sanctis eius laudáte Deum",
+    "printedContext": "settimana 2, Domenica, 3a ant., Ps 150",
+    "pdfPage": "p. 48",
+    "status": "not-found",
+    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
+    "_reuseKey": "in sanctis eius laudate deum|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA30",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Sitívit ánima mea ad Deum vivum: quando véniam, et apparébo ante fáciem Dómini?",
+    "printedContext": "settimana 2, Lunedì, 1a ant., Ps 41",
+    "pdfPage": "p. 51",
+    "status": "found",
+    "gregobase": {
+      "id": 15659,
+      "url": "https://gregobase.selapa.net/chant.php?id=15659"
+    },
+    "file": "gabc/chants/15659-sitivit-anima-mea-ad-deum-vivum-quando-veniam-et-apparebo-an.gabc",
+    "matchNotes": "Individuato dall'utente direttamente su GregoBase durante la disambiguazione visiva (non incluso nella shortlist generata automaticamente). Modo/office-part: 2 / Antiphona.",
+    "candidatesConsidered": [
+      4258,
+      12722,
+      15659,
+      5197,
+      6230,
+      20603,
+      15659
+    ]
+  },
+  {
+    "id": "lodi.LA31",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Osténde nobis, Dómine, lucem misericordiárum tuárum",
+    "printedContext": "settimana 2, Lunedì, 2a ant., Cant. Sir 36,1-6.10-13",
+    "pdfPage": "p. 52-53",
+    "status": "found",
+    "gregobase": {
+      "id": 15203,
+      "url": "https://gregobase.selapa.net/chant.php?id=15203"
+    },
+    "file": "gabc/chants/15203-ostende-nobis-domine-lucem-misericordiarum-tuarum.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      12941,
+      4422,
+      11344,
+      15203,
+      11745,
+      18649,
+      14080,
+      1708,
+      7440,
+      1725,
+      4668,
+      6327,
+      5522,
+      18785,
+      9905,
+      4904,
+      10679
+    ]
+  },
+  {
+    "id": "lodi.LA32",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Cæli enárrant glóriam Dei",
+    "printedContext": "settimana 2, Lunedì, 3a ant., Ps 18A",
+    "pdfPage": "p. 53",
+    "status": "found",
+    "gregobase": {
+      "id": 18605,
+      "url": "https://gregobase.selapa.net/chant.php?id=18605"
+    },
+    "file": "gabc/chants/18605-caeli-enarrant-gloriam-dei.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      18605
+    ],
+    "_reuseKey": "caeli enarrant gloriam dei|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA33",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Salutáre vultus mei, Deus meus",
+    "printedContext": "settimana 2, Martedì, 1a ant., Ps 42",
+    "pdfPage": "p. 57",
+    "status": "found",
+    "gregobase": {
+      "id": 13345,
+      "url": "https://gregobase.selapa.net/chant.php?id=13345"
+    },
+    "file": "gabc/chants/13345-salutare-vultus-mei-deus-meus.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      13345,
+      10421,
+      20865,
+      5419,
+      10849,
+      20056
+    ]
+  },
+  {
+    "id": "lodi.LA34",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Cunctis diébus vitæ nostræ salvos nos fac Dómine",
+    "printedContext": "settimana 2, Martedì, 2a ant., Cant. Is 38,10-14.17-20",
+    "pdfPage": "p. 58",
+    "status": "found",
+    "gregobase": {
+      "id": 10127,
+      "url": "https://gregobase.selapa.net/chant.php?id=10127"
+    },
+    "file": "gabc/chants/10127-cunctis-diebus-vitae-nostrae-salvos-nos-fac-domine.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      10127,
+      10850,
+      20057
+    ],
+    "_reuseKey": "cunctis diebus vitae nostrae salvos nos fac domine|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA35",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Corrípies me Dómine, et vivificábis me, allelúia",
+    "printedContext": "settimana 2, Martedì, 2a ant., Cant. Is 38,10-14.17-20 (T.P.)",
+    "pdfPage": "p. 58",
+    "status": "found",
+    "gregobase": {
+      "id": 12351,
+      "url": "https://gregobase.selapa.net/chant.php?id=12351"
+    },
+    "file": "gabc/chants/12351-corripies-me-domine-et-vivificabis-me-alleluia.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      12351,
+      5034
+    ],
+    "_reuseKey": "corripies me domine et vivificabis me alleluia|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA36",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Te decet hymnus, Deus, in Sion",
+    "printedContext": "settimana 2, Martedì, 3a ant., Ps 64",
+    "pdfPage": "p. 59",
+    "status": "found",
+    "gregobase": {
+      "id": 19028,
+      "url": "https://gregobase.selapa.net/chant.php?id=19028"
+    },
+    "file": "gabc/chants/19028-te-decet-hymnus-deus-in-sion.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      15614,
+      12333,
+      19028,
+      13490,
+      1706,
+      20812,
+      5633,
+      6617,
+      20073,
+      10851
+    ]
+  },
+  {
+    "id": "lodi.LA37",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Deus, in sancto via tua; quis Deus magnus sicut Deus noster?",
+    "printedContext": "settimana 2, Mercoledì, 1a ant., Ps 76",
+    "pdfPage": "p. 63",
+    "status": "found",
+    "gregobase": {
+      "id": 10686,
+      "url": "https://gregobase.selapa.net/chant.php?id=10686"
+    },
+    "file": "gabc/chants/10686-deus-in-sancto-via-tua-quis-deus-magnus-sicut-deus-noster.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      10686
+    ],
+    "_reuseKey": "deus in sancto via tua quis deus magnus sicut deus noster|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA38",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Exsultávit cor meum in Dómino, qui humíliat et sublévat",
+    "printedContext": "settimana 2, Mercoledì, 2a ant., Cant. 1 Sam 2,1-10",
+    "pdfPage": "p. 65",
+    "status": "found",
+    "gregobase": {
+      "id": 4903,
+      "url": "https://gregobase.selapa.net/chant.php?id=4903"
+    },
+    "file": "gabc/chants/4903-exsultavit-cor-meum-in-domino-qui-humiliat-et-sublevat.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase). Nota dell'utente: Ma in quello di gregobase c'è un \"Ant\" di troppo all'inizio e mancherebbe un alleluia per il tempo pasquale Corretto: rimossa l'etichetta di rubrica \"Ant.\" erroneamente inclusa all'inizio del corpo GABC, segnalata dall'utente. Manca ancora l'alleluia del tempo pasquale (non ricostruibile automaticamente).",
+    "candidatesConsidered": [
+      20877,
+      4903,
+      10843
+    ]
+  },
+  {
+    "id": "lodi.LA39",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Dóminus regnávit, exsúltet terra",
+    "printedContext": "settimana 2, Mercoledì, 3a ant., Ps 96",
+    "pdfPage": "p. 66",
+    "status": "found",
+    "gregobase": {
+      "id": 12452,
+      "url": "https://gregobase.selapa.net/chant.php?id=12452"
+    },
+    "file": "gabc/chants/12452-dominus-regnavit-exsultet-terra.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      12452,
+      10053,
+      13659,
+      1692,
+      5818,
+      10687,
+      6766
+    ],
+    "_reuseKey": "dominus regnavit exsultet terra|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA40",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Excita, Dómine, poténtiam tuam, ut salvos fácias nos",
+    "printedContext": "settimana 2, Giovedì, 1a ant., Ps 79",
+    "pdfPage": "p. 70",
+    "status": "found",
+    "gregobase": {
+      "id": 13278,
+      "url": "https://gregobase.selapa.net/chant.php?id=13278"
+    },
+    "file": "gabc/chants/13278-excita-domine-potentiam-tuam-ut-salvos-facias-nos.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      13278,
+      13941,
+      16315,
+      1642,
+      1534,
+      5097,
+      7118,
+      9848
+    ],
+    "_reuseKey": "excita domine potentiam tuam ut salvos facias nos|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA41",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Convérsus est furor tuus Dómine, et consolátus es me",
+    "printedContext": "settimana 2, Giovedì, 2a ant., Cant. Is 12,1-6",
+    "pdfPage": "p. 71-72",
+    "status": "found",
+    "gregobase": {
+      "id": 10126,
+      "url": "https://gregobase.selapa.net/chant.php?id=10126"
+    },
+    "file": "gabc/chants/10126-conversus-est-furor-tuus-domine-et-consolatus-es-me.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      9160,
+      10126,
+      13129,
+      19021,
+      6381,
+      10840,
+      20046
+    ]
+  },
+  {
+    "id": "lodi.LA42",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Hauriétis aquas in gáudio de fóntibus Salvatóris, allelúia",
+    "printedContext": "settimana 2, Giovedì, 2a ant., Cant. Is 12,1-6 (T.P.)",
+    "pdfPage": "p. 71-72",
+    "status": "found",
+    "gregobase": {
+      "id": 18878,
+      "url": "https://gregobase.selapa.net/chant.php?id=18878"
+    },
+    "file": "gabc/chants/18878-haurietis-aquas-in-gaudio-de-fontibus-salvatoris-alleluia.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      12197,
+      4377,
+      18878,
+      11480,
+      5952
+    ]
+  },
+  {
+    "id": "lodi.LA43",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Exsultáte Deo adiutóri nostro",
+    "printedContext": "settimana 2, Giovedì, 3a ant., Ps 80",
+    "pdfPage": "p. 72",
+    "status": "found",
+    "gregobase": {
+      "id": 20596,
+      "url": "https://gregobase.selapa.net/chant.php?id=20596"
+    },
+    "file": "gabc/chants/20596-exsultate-deo-adiutori-nostro.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      20596,
+      13819,
+      1560,
+      6539,
+      7005,
+      10841
+    ],
+    "_reuseKey": "exsultate deo adiutori nostro|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA44",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Dele, Dómine, iniquitátem meam",
+    "printedContext": "settimana 2, Venerdì, 1a ant., Ps 50",
+    "pdfPage": "p. 76-77",
+    "status": "found",
+    "gregobase": {
+      "id": 10420,
+      "url": "https://gregobase.selapa.net/chant.php?id=10420"
+    },
+    "file": "gabc/chants/10420-dele-domine-iniquitatem-meam.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      10420,
+      10954,
+      20055
+    ],
+    "_reuseKey": "dele domine iniquitatem meam|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA45",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Dixit Dóminus paralýtico: Confíde fili: remittúntur tibi peccáta tua, allelúia",
+    "printedContext": "settimana 2, Venerdì, 1a ant., Ps 50 (T.P.)",
+    "pdfPage": "p. 76-77",
+    "status": "found",
+    "gregobase": {
+      "id": 8314,
+      "url": "https://gregobase.selapa.net/chant.php?id=8314"
+    },
+    "file": "gabc/chants/8314-dixit-dominus-paralytico-confide-fili-remittuntur-tibi-pecca.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      19895,
+      8314,
+      12889,
+      4690,
+      17744
+    ]
+  },
+  {
+    "id": "lodi.LA46",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Cum irátus fúeris Dómine, misericórdiæ recordáberis",
+    "printedContext": "settimana 2, Venerdì, 2a ant., Cant. Ab 3,2-4.13a.15-19",
+    "pdfPage": "p. 78",
+    "status": "found",
+    "gregobase": {
+      "id": 12804,
+      "url": "https://gregobase.selapa.net/chant.php?id=12804"
+    },
+    "file": "gabc/chants/12804-cum-iratus-fueris-domine-misericordiae-recordaberis.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      12804,
+      5193
+    ],
+    "_reuseKey": "cum iratus fueris domine misericordiae recordaberis|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA47",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Ego autem in Dómino gaudébo, et exsultábo in Deo Iesu meo, allelúia",
+    "printedContext": "settimana 2, Venerdì, 2a ant., Cant. Ab 3,2-4.13a.15-19 (T.P.)",
+    "pdfPage": "p. 78",
+    "status": "found",
+    "gregobase": {
+      "id": 20431,
+      "url": "https://gregobase.selapa.net/chant.php?id=20431"
+    },
+    "file": "gabc/chants/20431-ego-autem-in-domino-gaudebo-et-exsultabo-in-deo-iesu-meo-all.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      12934,
+      20431,
+      1658,
+      3606,
+      16271,
+      19523,
+      3835,
+      4296
+    ]
+  },
+  {
+    "id": "lodi.LA48",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Lauda, Ierúsalem, Dóminum",
+    "printedContext": "settimana 2, Venerdì, 3a ant., Ps 147",
+    "pdfPage": "p. 79",
+    "status": "found",
+    "gregobase": {
+      "id": 19391,
+      "url": "https://gregobase.selapa.net/chant.php?id=19391"
+    },
+    "file": "gabc/chants/19391-lauda-ierusalem-dominum.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      19391
+    ],
+    "_reuseKey": "lauda ierusalem dominum|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA49",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Quam magnificáta sunt ópera tua, Dómine",
+    "printedContext": "settimana 2, Sabato, 1a ant., Ps 91",
+    "pdfPage": "p. 83",
+    "status": "found",
+    "gregobase": {
+      "id": 13235,
+      "url": "https://gregobase.selapa.net/chant.php?id=13235"
+    },
+    "file": "gabc/chants/13235-quam-magnificata-sunt-opera-tua-domine.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      10393,
+      18104,
+      13235,
+      19353,
+      4183,
+      10826,
+      4936
+    ]
+  },
+  {
+    "id": "lodi.LA50",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Date magnitúdinem Deo nostro",
+    "printedContext": "settimana 2, Sabato, 2a ant., Cant. Deut 32,1-12",
+    "pdfPage": "p. 84",
+    "status": "found",
+    "gregobase": {
+      "id": 10128,
+      "url": "https://gregobase.selapa.net/chant.php?id=10128"
+    },
+    "file": "gabc/chants/10128-date-magnitudinem-deo-nostro.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      10128,
+      19072,
+      10699
+    ]
+  },
+  {
+    "id": "lodi.LA51",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "In servis suis miserébitur Dóminus, et propítius erit terræ pópuli sui, allelúia",
+    "printedContext": "settimana 2, Sabato, 2a ant., Cant. Deut 32,1-12 (T.P.)",
+    "pdfPage": "p. 84",
+    "status": "found",
+    "gregobase": {
+      "id": 13132,
+      "url": "https://gregobase.selapa.net/chant.php?id=13132"
+    },
+    "file": "gabc/chants/13132-in-servis-suis-miserebitur-dominus-et-propitius-erit-terrae-.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      13132,
+      6892
+    ],
+    "_reuseKey": "in servis suis miserebitur dominus et propitius erit terrae populi sui alleluia|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA52",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Quam admirábile est nomen tuum, Dómine, in univérsa terra",
+    "printedContext": "settimana 2, Sabato, 3a ant., Ps 8",
+    "pdfPage": "p. 86",
+    "status": "found",
+    "gregobase": {
+      "id": 8657,
+      "url": "https://gregobase.selapa.net/chant.php?id=8657"
+    },
+    "file": "gabc/chants/8657-quam-admirabile-est-nomen-tuum-domine-in-universa-terra.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      8657,
+      18824,
+      10700,
+      14189
+    ],
+    "_reuseKey": "quam admirabile est nomen tuum domine in universa terra|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA53",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Regnávit Dóminus, decórem indútus est",
+    "printedContext": "settimana 3, Domenica, 1a ant., Ps 92",
+    "pdfPage": "p. 90",
+    "status": "found",
+    "gregobase": {
+      "id": 3305,
+      "url": "https://gregobase.selapa.net/chant.php?id=3305"
+    },
+    "file": "gabc/chants/3305-regnavit-dominus-decorem-indutus-est.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      3305,
+      1513,
+      13682,
+      10947,
+      14666
+    ],
+    "_reuseKey": "regnavit dominus decorem indutus est|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA54",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Hymnum dícite, et superexaltáte eum in sæcula",
+    "printedContext": "settimana 3, Domenica, 2a ant., Cant. Dan 3,57-88.56",
+    "pdfPage": "p. 91",
+    "status": "found",
+    "gregobase": {
+      "id": 9786,
+      "url": "https://gregobase.selapa.net/chant.php?id=9786"
+    },
+    "file": "gabc/chants/9786-hymnum-dicite-et-superexaltate-eum-in-saecula.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      13031,
+      3263,
+      9786,
+      14574,
+      6705
+    ]
+  },
+  {
+    "id": "lodi.LA55",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Laudáte Dóminum de cælis",
+    "printedContext": "settimana 3, Domenica, 3a ant., Ps 148",
+    "pdfPage": "p. 93",
+    "status": "found",
+    "gregobase": {
+      "id": 18347,
+      "url": "https://gregobase.selapa.net/chant.php?id=18347"
+    },
+    "file": "gabc/chants/18347-laudate-dominum-de-caelis.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      10439,
+      18347,
+      11198,
+      14031,
+      3545,
+      3533,
+      14986,
+      1657,
+      18026,
+      20338,
+      13616,
+      18278,
+      19317,
+      10707,
+      20047
+    ]
+  },
+  {
+    "id": "lodi.LA56",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Beáti qui hábitant in domo tua, Dómine",
+    "printedContext": "settimana 3, Lunedì, 1a ant., Ps 83",
+    "pdfPage": "p. 96",
+    "status": "found",
+    "gregobase": {
+      "id": 2372,
+      "url": "https://gregobase.selapa.net/chant.php?id=2372"
+    },
+    "file": "gabc/chants/2372-beati-qui-habitant-in-domo-tua-domine.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      7628,
+      2372,
+      12185,
+      3686,
+      10713,
+      6759,
+      16717,
+      5954,
+      5395
+    ]
+  },
+  {
+    "id": "lodi.LA57",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "De Sion exíbit lex, et verbum Dómini de Ierúsalem",
+    "printedContext": "settimana 3, Lunedì, 2a ant., Cant. Is 2,2-5",
+    "pdfPage": "p. 97-98",
+    "status": "found",
+    "gregobase": {
+      "id": 4373,
+      "url": "https://gregobase.selapa.net/chant.php?id=4373"
+    },
+    "file": "gabc/chants/4373-de-sion-exibit-lex-et-verbum-domini-de-ierusalem.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      19601,
+      11819,
+      4373,
+      11437,
+      7061
+    ]
+  },
+  {
+    "id": "lodi.LA58",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Veníte, ascendámus ad montem Dómini, et ad domum Dei Iacob, allelúia, allelúia, allelúia",
+    "printedContext": "settimana 3, Lunedì, 2a ant., Cant. Is 2,2-5 (T.P.)",
+    "pdfPage": "p. 97-98",
+    "status": "not-found",
+    "notFoundReason": "L'utente segnala che la pagina del libretto mostrata durante la disambiguazione non contiene questa antifona (nota utente: \"Nella pagina del pdf che mi mostri non c'è l'antifona che devo controllare\"): probabile errore nel riferimento di pagina in PDF-INVENTORY.md/gabc/inventory.json, da riverificare manualmente sul PDF sorgente — non è detto che il canto non esista su GregoBase.",
+    "candidatesConsidered": [
+      8997,
+      13316,
+      10714,
+      7172
+    ]
+  },
+  {
+    "id": "lodi.LA59",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Cantáte Dómino, et benedícite nómini eius",
+    "printedContext": "settimana 3, Lunedì, 3a ant., Ps 95",
+    "pdfPage": "p. 99",
+    "status": "found",
+    "gregobase": {
+      "id": 12541,
+      "url": "https://gregobase.selapa.net/chant.php?id=12541"
+    },
+    "file": "gabc/chants/12541-cantate-domino-et-benedicite-nomini-eius.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase). Nota dell'utente: Ma l'EUOUAE è sbagliato",
+    "candidatesConsidered": [
+      4442,
+      10302,
+      7668,
+      12541,
+      13438,
+      1393,
+      19458,
+      11107,
+      1559,
+      11109,
+      19827,
+      15501,
+      7330,
+      20644,
+      14053,
+      16304,
+      13994
+    ]
+  },
+  {
+    "id": "lodi.LA60",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Benedixísti Dómine terram tuam",
+    "printedContext": "settimana 3, Martedì, 1a ant., Ps 84",
+    "pdfPage": "p. 103",
+    "status": "found",
+    "gregobase": {
+      "id": 20422,
+      "url": "https://gregobase.selapa.net/chant.php?id=20422"
+    },
+    "file": "gabc/chants/20422-benedixisti-domine-terram-tuam.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      11790,
+      20422,
+      10927,
+      13954,
+      9424,
+      7791,
+      1419,
+      6400,
+      4304,
+      10723
+    ]
+  },
+  {
+    "id": "lodi.LA61",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Deus Deus meus, ad te de luce vígilo, quia factus es adiútor meus",
+    "printedContext": "settimana 3, Martedì, 2a ant., Cant. Is 26,1-4.7-9.12",
+    "pdfPage": "p. 104",
+    "status": "found",
+    "gregobase": {
+      "id": 12711,
+      "url": "https://gregobase.selapa.net/chant.php?id=12711"
+    },
+    "file": "gabc/chants/12711-deus-deus-meus-ad-te-de-luce-vigilo-quia-factus-es-adiutor-m.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      12711,
+      13877,
+      19813,
+      1503,
+      16333,
+      1669,
+      13988,
+      13526,
+      18325,
+      10055,
+      6257,
+      9851,
+      5884,
+      14525
+    ],
+    "_reuseKey": "deus deus meus ad te de luce vigilo quia factus es adiutor meus|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA62",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Urbs fortitúdinis nostræ Sion, Salvátor ponétur in ea murus et antemurále: aperíte portas, quia nobíscum Deus, allelúia",
+    "printedContext": "settimana 3, Martedì, 2a ant., Cant. Is 26,1-4.7-9.12 (T.P.)",
+    "pdfPage": "p. 104",
+    "status": "found",
+    "gregobase": {
+      "id": 15565,
+      "url": "https://gregobase.selapa.net/chant.php?id=15565"
+    },
+    "file": "gabc/chants/15565-urbs-fortitudinis-nostrae-sion-salvator-ponetur-in-ea-murus-.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      15565,
+      12660,
+      4358,
+      11536
+    ]
+  },
+  {
+    "id": "lodi.LA63",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Illúmina, Dómine, vultum tuum super nos",
+    "printedContext": "settimana 3, Martedì, 3a ant., Ps 66",
+    "pdfPage": "p. 105",
+    "status": "found",
+    "gregobase": {
+      "id": 12398,
+      "url": "https://gregobase.selapa.net/chant.php?id=12398"
+    },
+    "file": "gabc/chants/12398-illumina-domine-vultum-tuum-super-nos.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      12398,
+      13392,
+      1594,
+      13866,
+      19984,
+      11268,
+      5998,
+      10725,
+      6668,
+      4809
+    ],
+    "_reuseKey": "illumina domine vultum tuum super nos|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA64",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Inclína, Dómine, aurem tuam mihi, et exáudi verba mea",
+    "printedContext": "settimana 3, Mercoledì, 1a ant., Ps 85",
+    "pdfPage": "p. 109",
+    "status": "found",
+    "gregobase": {
+      "id": 8664,
+      "url": "https://gregobase.selapa.net/chant.php?id=8664"
+    },
+    "file": "gabc/chants/8664-inclina-domine-aurem-tuam-mihi-et-exaudi-verba-mea.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      8664,
+      18915,
+      7788,
+      18536,
+      13923,
+      20112,
+      14201,
+      4285,
+      10732,
+      11148,
+      20116
+    ],
+    "_reuseKey": "inclina domine aurem tuam mihi et exaudi verba mea|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA65",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Habitábit in tabernáculo tuo, requiéscet in monte sancto tuo",
+    "printedContext": "settimana 3, Mercoledì, 2a ant., Cant. Is 33,13-16",
+    "pdfPage": "p. 110-111",
+    "status": "found",
+    "gregobase": {
+      "id": 18663,
+      "url": "https://gregobase.selapa.net/chant.php?id=18663"
+    },
+    "file": "gabc/chants/18663-habitabit-in-tabernaculo-tuo-requiescet-in-monte-sancto-tuo.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      18663,
+      15445,
+      15152,
+      11132,
+      16887
+    ],
+    "_reuseKey": "habitabit in tabernaculo tuo requiescet in monte sancto tuo|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA66",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "In civitáte Dómini clare sonant iúgiter órgana Sanctórum: ibi cinnamómum et bálsamum odor suavíssimus cármina eórum: ibi Angeli et Archángeli hymnum Deo decántant ante thronum Dei, allelúia",
+    "printedContext": "settimana 3, Mercoledì, 2a ant., Cant. Is 33,13-16 (T.P.)",
+    "pdfPage": "p. 110-111",
+    "status": "found",
+    "gregobase": {
+      "id": 16182,
+      "url": "https://gregobase.selapa.net/chant.php?id=16182"
+    },
+    "file": "gabc/chants/16182-in-civitate-domini-clare-sonant-iugiter-organa-sanctorum-ibi.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      16182,
+      5321
+    ],
+    "_reuseKey": "in civitate domini clare sonant iugiter organa sanctorum ibi cinnamomum et balsamum odor suavissimus carmina eorum ibi angeli et archangeli hymnum deo decantant ante thronum dei alleluia|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA67",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Quia mirabília fecit Dóminus",
+    "printedContext": "settimana 3, Mercoledì, 3a ant., Ps 97",
+    "pdfPage": "p. 112",
+    "status": "found",
+    "gregobase": {
+      "id": 10733,
+      "url": "https://gregobase.selapa.net/chant.php?id=10733"
+    },
+    "file": "gabc/chants/10733-quia-mirabilia-fecit-dominus.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      10733
+    ],
+    "_reuseKey": "quia mirabilia fecit dominus|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA68",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Fundaménta eius in móntibus sanctis",
+    "printedContext": "settimana 3, Giovedì, 1a ant., Ps 86",
+    "pdfPage": "p. 115",
+    "status": "found",
+    "gregobase": {
+      "id": 7797,
+      "url": "https://gregobase.selapa.net/chant.php?id=7797"
+    },
+    "file": "gabc/chants/7797-fundamenta-eius-in-montibus-sanctis.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      18088,
+      7797,
+      7796,
+      20642,
+      10740
+    ]
+  },
+  {
+    "id": "lodi.LA69",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Ecce vénio cito et merces mea mecum est, dicit Dóminus: dare unicuíque secúndum ópera sua",
+    "printedContext": "settimana 3, Giovedì, 2a ant., Cant. Is 40,10-17",
+    "pdfPage": "p. 116-117",
+    "status": "found",
+    "gregobase": {
+      "id": 7636,
+      "url": "https://gregobase.selapa.net/chant.php?id=7636"
+    },
+    "file": "gabc/chants/7636-ecce-venio-cito-et-merces-mea-mecum-est-dicit-dominus-dare-u.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      7636,
+      18783,
+      18836,
+      19687,
+      14191,
+      11463
+    ],
+    "_reuseKey": "ecce venio cito et merces mea mecum est dicit dominus dare unicuique secundum opera sua|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA70",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Ego sum pastor bonus, qui pasco oves meas, et pro óvibus meis pono ánimam meam, allelúia",
+    "printedContext": "settimana 3, Giovedì, 2a ant., Cant. Is 40,10-17 (T.P.)",
+    "pdfPage": "p. 116-117",
+    "status": "found",
+    "gregobase": {
+      "id": 10145,
+      "url": "https://gregobase.selapa.net/chant.php?id=10145"
+    },
+    "file": "gabc/chants/10145-ego-sum-pastor-bonus-qui-pasco-oves-meas-et-pro-ovibus-meis-.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      20692,
+      7974,
+      12182,
+      4510,
+      10145,
+      13563,
+      1765,
+      1549,
+      11103,
+      8784,
+      6712,
+      7120,
+      6143,
+      5391
+    ]
+  },
+  {
+    "id": "lodi.LA71",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Exaltáte Dóminum Deum nostrum, et adoráte ad montem sanctum eius",
+    "printedContext": "settimana 3, Giovedì, 3a ant., Ps 98",
+    "pdfPage": "p. 118",
+    "status": "found",
+    "gregobase": {
+      "id": 11808,
+      "url": "https://gregobase.selapa.net/chant.php?id=11808"
+    },
+    "file": "gabc/chants/11808-exaltate-dominum-deum-nostrum-et-adorate-ad-montem-sanctum-e.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      11808,
+      20786,
+      4834,
+      20371
+    ],
+    "_reuseKey": "exaltate dominum deum nostrum et adorate ad montem sanctum eius|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA72",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Tibi soli peccávi, Dómine, miserére mei",
+    "printedContext": "settimana 3, Venerdì, 1a ant., Ps 50",
+    "pdfPage": "p. 122",
+    "status": "found",
+    "gregobase": {
+      "id": 12456,
+      "url": "https://gregobase.selapa.net/chant.php?id=12456"
+    },
+    "file": "gabc/chants/12456-tibi-soli-peccavi-domine-miserere-mei.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      12456,
+      10425,
+      5730,
+      20088,
+      10748
+    ]
+  },
+  {
+    "id": "lodi.LA73",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Amplius lava me, Dómine ab iniustítia mea, allelúia",
+    "printedContext": "settimana 3, Venerdì, 1a ant., Ps 50 (T.P.)",
+    "pdfPage": "p. 122",
+    "status": "found",
+    "gregobase": {
+      "id": 15612,
+      "url": "https://gregobase.selapa.net/chant.php?id=15612"
+    },
+    "file": "gabc/chants/15612-amplius-lava-me-domine-ab-iniustitia-mea-alleluia.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      15612,
+      19026,
+      12040,
+      20866,
+      10833,
+      6902,
+      20072
+    ]
+  },
+  {
+    "id": "lodi.LA74",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Ne reminiscáris Dómine delícta mea, vel paréntum meórum: neque vindíctam sumas de peccátis meis",
+    "printedContext": "settimana 3, Venerdì, 2a ant., Cant. Ger 14,17-21",
+    "pdfPage": "p. 124",
+    "status": "found",
+    "gregobase": {
+      "id": 8513,
+      "url": "https://gregobase.selapa.net/chant.php?id=8513"
+    },
+    "file": "gabc/chants/8513-ne-reminiscaris-domine-delicta-mea-vel-parentum-meorum-neque.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      19329,
+      8513,
+      13328,
+      15652,
+      6939,
+      15988
+    ]
+  },
+  {
+    "id": "lodi.LA75",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Alligávit Dóminus plagam pópuli sui, et percussúram eius sanávit, allelúia",
+    "printedContext": "settimana 3, Venerdì, 2a ant., Cant. Ger 14,17-21 (T.P.)",
+    "pdfPage": "p. 124",
+    "status": "not-found",
+    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
+    "_reuseKey": "alligavit dominus plagam populi sui et percussuram eius sanavit alleluia|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA76",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Suávis est Dóminus, et in ætérnum misericórdia eius",
+    "printedContext": "settimana 3, Venerdì, 3a ant., Ps 99",
+    "pdfPage": "p. 125",
+    "status": "found",
+    "gregobase": {
+      "id": 5806,
+      "url": "https://gregobase.selapa.net/chant.php?id=5806"
+    },
+    "file": "gabc/chants/5806-suavis-est-dominus-et-in-aeternum-misericordia-eius.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      5806
+    ],
+    "_reuseKey": "suavis est dominus et in aeternum misericordia eius|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA77",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Adspíce in me, et miserére mei, Dómine",
+    "printedContext": "settimana 3, Sabato, 1a ant., Ps 118 (145-152, XIX Coph)",
+    "pdfPage": "p. 128",
+    "status": "found",
+    "gregobase": {
+      "id": 20364,
+      "url": "https://gregobase.selapa.net/chant.php?id=20364"
+    },
+    "file": "gabc/chants/20364-adspice-in-me-et-miserere-mei-domine.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      20364,
+      18661,
+      19538,
+      11226
+    ]
+  },
+  {
+    "id": "lodi.LA78",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Ego in altíssimis hábito, et thronus meus in colúmna nubis",
+    "printedContext": "settimana 3, Sabato, 2a ant., Cant. Sap 9,1-6.9-11",
+    "pdfPage": "p. 129-130",
+    "status": "found",
+    "gregobase": {
+      "id": 8565,
+      "url": "https://gregobase.selapa.net/chant.php?id=8565"
+    },
+    "file": "gabc/chants/8565-ego-in-altissimis-habito-et-thronus-meus-in-columna-nubis.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      12988,
+      8565,
+      6643
+    ]
+  },
+  {
+    "id": "lodi.LA79",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Omnis sapiéntia a Dómino Deo est, et cum illo fuit semper, et est ante ævum, allelúia",
+    "printedContext": "settimana 3, Sabato, 2a ant., Cant. Sap 9,1-6.9-11 (T.P.)",
+    "pdfPage": "p. 129-130",
+    "status": "found",
+    "gregobase": {
+      "id": 8579,
+      "url": "https://gregobase.selapa.net/chant.php?id=8579"
+    },
+    "file": "gabc/chants/8579-omnis-sapientia-a-domino-deo-est-et-cum-illo-fuit-semper-et-.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase). Nota dell'utente: Ma manca l'alleluia finale del tempo pasquale in fondo all'antifona",
+    "candidatesConsidered": [
+      13270,
+      8579,
+      18649,
+      7109,
+      16017
+    ]
+  },
+  {
+    "id": "lodi.LA80",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Laudáte Dóminum, omnes gentes",
+    "printedContext": "settimana 3, Sabato, 3a ant., Ps 116",
+    "pdfPage": "p. 131",
+    "status": "found",
+    "gregobase": {
+      "id": 12483,
+      "url": "https://gregobase.selapa.net/chant.php?id=12483"
+    },
+    "file": "gabc/chants/12483-laudate-dominum-omnes-gentes.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\". Riusato da lodi.LA26 (stesso incipit+ruolo+modo).",
+    "candidatesConsidered": [
+      8297,
+      7832,
+      12483,
+      11198,
+      14031,
+      3545,
+      3533,
+      14986,
+      1657,
+      18026,
+      20338,
+      13616,
+      18278,
+      19317
+    ],
+    "_reuseKey": "laudate dominum omnes gentes|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA81",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Dóminus mihi adiútor est, non timébo quid fáciat mihi homo",
+    "printedContext": "settimana 4, Domenica, 1a ant., Ps 117",
+    "pdfPage": "p. 134",
+    "status": "found",
+    "gregobase": {
+      "id": 18756,
+      "url": "https://gregobase.selapa.net/chant.php?id=18756"
+    },
+    "file": "gabc/chants/18756-dominus-mihi-adiutor-est-non-timebo-quid-faciat-mihi-homo.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      18756,
+      10865
+    ],
+    "_reuseKey": "dominus mihi adiutor est non timebo quid faciat mihi homo|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA82",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Trium puerórum cantémus hymnum, quem cantábant in camíno ignis, benedicéntes Dóminum",
+    "printedContext": "settimana 4, Domenica, 2a ant., Cant. Dan 3,52-57",
+    "pdfPage": "p. 136",
+    "status": "found",
+    "gregobase": {
+      "id": 3310,
+      "url": "https://gregobase.selapa.net/chant.php?id=3310"
+    },
+    "file": "gabc/chants/3310-trium-puerorum-cantemus-hymnum-quem-cantabant-in-camino-igni.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      3310,
+      13283,
+      14739,
+      14700,
+      7224
+    ]
+  },
+  {
+    "id": "lodi.LA83",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Omnis spíritus laudet Dóminum",
+    "printedContext": "settimana 4, Domenica, 3a ant., Ps 150",
+    "pdfPage": "p. 137",
+    "status": "found",
+    "gregobase": {
+      "id": 9096,
+      "url": "https://gregobase.selapa.net/chant.php?id=9096"
+    },
+    "file": "gabc/chants/9096-omnis-spiritus-laudet-dominum.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      9096,
+      13312,
+      15719,
+      18649,
+      7163,
+      10766
+    ]
+  },
+  {
+    "id": "lodi.LA84",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Dómine, refúgium factus es nobis",
+    "printedContext": "settimana 4, Lunedì, 1a ant., Ps 89",
+    "pdfPage": "p. 140",
+    "status": "found",
+    "gregobase": {
+      "id": 19032,
+      "url": "https://gregobase.selapa.net/chant.php?id=19032"
+    },
+    "file": "gabc/chants/19032-domine-refugium-factus-es-nobis.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      19032,
+      12624,
+      10450,
+      10426,
+      20552,
+      16270,
+      1630,
+      16146,
+      1546,
+      14082,
+      14029,
+      20815,
+      16311,
+      8178,
+      20089,
+      5789,
+      5977
+    ]
+  },
+  {
+    "id": "lodi.LA85",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Cantáte Dómino cánticum novum: laus eius ab extrémis terræ",
+    "printedContext": "settimana 4, Lunedì, 2a ant., Cant. Is 42,10-16",
+    "pdfPage": "p. 141",
+    "status": "found",
+    "gregobase": {
+      "id": 8407,
+      "url": "https://gregobase.selapa.net/chant.php?id=8407"
+    },
+    "file": "gabc/chants/8407-cantate-domino-canticum-novum-laus-eius-ab-extremis-terrae.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase). Nota dell'utente: Manca un Alleluia per il tempo pasquale",
+    "candidatesConsidered": [
+      4442,
+      10302,
+      7668,
+      13277,
+      8407,
+      13438,
+      1393,
+      19458,
+      11107,
+      1559,
+      11109,
+      19827,
+      15501,
+      7330,
+      20644,
+      14053,
+      16304
+    ]
+  },
+  {
+    "id": "lodi.LA86",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Laudáte nomen Dómini, qui statis in domo Dómini",
+    "printedContext": "settimana 4, Lunedì, 3a ant., Ps 134 (1-12)",
+    "pdfPage": "p. 142",
+    "status": "found",
+    "gregobase": {
+      "id": 12909,
+      "url": "https://gregobase.selapa.net/chant.php?id=12909"
+    },
+    "file": "gabc/chants/12909-laudate-nomen-domini-qui-statis-in-domo-domini.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      12909,
+      11198,
+      8179,
+      10775
+    ],
+    "_reuseKey": "laudate nomen domini qui statis in domo domini|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA87",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Tibi, Dómine, psallam, et intéllegam in via immaculáta",
+    "printedContext": "settimana 4, Martedì, 1a ant., Ps 100",
+    "pdfPage": "p. 146",
+    "status": "found",
+    "gregobase": {
+      "id": 12835,
+      "url": "https://gregobase.selapa.net/chant.php?id=12835"
+    },
+    "file": "gabc/chants/12835-tibi-domine-psallam-et-intellegam-in-via-immaculata.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      12835,
+      1628,
+      5316,
+      6191
+    ],
+    "_reuseKey": "tibi domine psallam et intellegam in via immaculata|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA88",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "In spíritu humilitátis et in ánimo contríto suscipiámur, Dómine, a te: et sic fiat sacrifícium nostrum, ut a te suscipiátur hódie, et pláceat tibi, Dómine Deus",
+    "printedContext": "settimana 4, Martedì, 2a ant., Cant. Dan 3,26.27.29.34-41",
+    "pdfPage": "p. 147-148",
+    "status": "found",
+    "gregobase": {
+      "id": 9749,
+      "url": "https://gregobase.selapa.net/chant.php?id=9749"
+    },
+    "file": "gabc/chants/9749-in-spiritu-humilitatis-et-in-animo-contrito-suscipiamur-domi.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      9749,
+      11966,
+      6906,
+      14582
+    ]
+  },
+  {
+    "id": "lodi.LA89",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Et nunc séquimur in toto corde, timémus te et quærimus fáciem tuam vidére, allelúia",
+    "printedContext": "settimana 4, Martedì, 2a ant., Cant. Dan 3,26.27.29.34-41 (T.P.)",
+    "pdfPage": "p. 147-148",
+    "status": "not-found",
+    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
+    "_reuseKey": "et nunc sequimur in toto corde timemus te et quaerimus faciem tuam videre alleluia|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA90",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Misericórdia mea et refúgium meum Dóminus: suscéptor meus, et liberátor meus",
+    "printedContext": "settimana 4, Martedì, 3a ant., Ps 143 (1-10)",
+    "pdfPage": "p. 149",
+    "status": "not-found",
+    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
+    "_reuseKey": "misericordia mea et refugium meum dominus susceptor meus et liberator meus|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA91",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Psallam tibi in natiónibus, quia magna est super cælos misericórdia tua",
+    "printedContext": "settimana 4, Mercoledì, 1a ant., Ps 107",
+    "pdfPage": "p. 153",
+    "status": "found",
+    "gregobase": {
+      "id": 15342,
+      "url": "https://gregobase.selapa.net/chant.php?id=15342"
+    },
+    "file": "gabc/chants/15342-psallam-tibi-in-nationibus-quia-magna-est-super-caelos-miser.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      20671,
+      15342
+    ],
+    "_reuseKey": "psallam tibi in nationibus quia magna est super caelos misericordia tua|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA92",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Propter Sion non tacébo, donec egrediátur ut splendor iustus eius",
+    "printedContext": "settimana 4, Mercoledì, 2a ant., Cant. Is 61,10-62,5",
+    "pdfPage": "p. 154",
+    "status": "found",
+    "gregobase": {
+      "id": 7460,
+      "url": "https://gregobase.selapa.net/chant.php?id=7460"
+    },
+    "file": "gabc/chants/7460-propter-sion-non-tacebo-donec-egrediatur-ut-splendor-iustus-.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      4419,
+      11836,
+      4383,
+      7460,
+      11519,
+      6013
+    ]
+  },
+  {
+    "id": "lodi.LA93",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Laudábo Deum meum in vita mea",
+    "printedContext": "settimana 4, Mercoledì, 3a ant., Ps 145",
+    "pdfPage": "p. 155",
+    "status": "found",
+    "gregobase": {
+      "id": 19389,
+      "url": "https://gregobase.selapa.net/chant.php?id=19389"
+    },
+    "file": "gabc/chants/19389-laudabo-deum-meum-in-vita-mea.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      10142,
+      15718,
+      13276,
+      19389,
+      10791,
+      4736,
+      4836,
+      16416,
+      20150
+    ]
+  },
+  {
+    "id": "lodi.LA94",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "In veritáte tua exáudi me, Dómine",
+    "printedContext": "settimana 4, Giovedì, 1a ant., Ps 142 (1-11)",
+    "pdfPage": "p. 159",
+    "status": "found",
+    "gregobase": {
+      "id": 19071,
+      "url": "https://gregobase.selapa.net/chant.php?id=19071"
+    },
+    "file": "gabc/chants/19071-in-veritate-tua-exaudi-me-domine.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      10433,
+      19071,
+      20121,
+      10801
+    ]
+  },
+  {
+    "id": "lodi.LA95",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Lætámini cum Ierúsalem, et exsultáte in ea omnes qui dilígitis eam, in ætérnum",
+    "printedContext": "settimana 4, Giovedì, 2a ant., Cant. Is 66,10-14a",
+    "pdfPage": "p. 160",
+    "status": "found",
+    "gregobase": {
+      "id": 4418,
+      "url": "https://gregobase.selapa.net/chant.php?id=4418"
+    },
+    "file": "gabc/chants/4418-laetamini-cum-ierusalem-et-exsultate-in-ea-omnes-qui-diligit.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      4418,
+      13856,
+      11491
+    ],
+    "_reuseKey": "laetamini cum ierusalem et exsultate in ea omnes qui diligitis eam in aeternum|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA96",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Deo nostro iucúnda sit laudátio",
+    "printedContext": "settimana 4, Giovedì, 3a ant., Ps 146",
+    "pdfPage": "p. 161",
+    "status": "found",
+    "gregobase": {
+      "id": 19390,
+      "url": "https://gregobase.selapa.net/chant.php?id=19390"
+    },
+    "file": "gabc/chants/19390-deo-nostro-iucunda-sit-laudatio.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      19390,
+      3250,
+      20706,
+      11269,
+      6728,
+      10803
+    ]
+  },
+  {
+    "id": "lodi.LA97",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Cor mundum crea in me Deus: spíritum rectum ínnova in viscéribus meis",
+    "printedContext": "settimana 4, Venerdì, 1a ant., Ps 50",
+    "pdfPage": "p. 165-166",
+    "status": "found",
+    "gregobase": {
+      "id": 9745,
+      "url": "https://gregobase.selapa.net/chant.php?id=9745"
+    },
+    "file": "gabc/chants/9745-cor-mundum-crea-in-me-deus-spiritum-rectum-innova-in-visceri.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      9745,
+      11969,
+      10809,
+      6254
+    ]
+  },
+  {
+    "id": "lodi.LA98",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Nemo te condemnávit, múlier? Nemo, Dómine. Nec ego te condemnábo: iam ámplius noli peccáre, allelúia",
+    "printedContext": "settimana 4, Venerdì, 1a ant., Ps 50 (T.P.)",
+    "pdfPage": "p. 165-166",
+    "status": "found",
+    "gregobase": {
+      "id": 19722,
+      "url": "https://gregobase.selapa.net/chant.php?id=19722"
+    },
+    "file": "gabc/chants/19722-nemo-te-condemnavit-mulier-nemo-domine-nec-ego-te-condemnabo.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase). Nota dell'utente: manca l'alleluia del tempo pasquale",
+    "candidatesConsidered": [
+      19722,
+      12614,
+      19783,
+      1694,
+      16383,
+      7175,
+      14608,
+      6132
+    ]
+  },
+  {
+    "id": "lodi.LA99",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Benedícite Dóminum, omnes elécti eius: agite dies lætítiæ, et confitémini illi",
+    "printedContext": "settimana 4, Venerdì, 2a ant., Cant. Tob 13,8-11.13.14ab.16",
+    "pdfPage": "p. 167",
+    "status": "found",
+    "gregobase": {
+      "id": 9037,
+      "url": "https://gregobase.selapa.net/chant.php?id=9037"
+    },
+    "file": "gabc/chants/9037-benedicite-dominum-omnes-electi-eius-agite-dies-laetitiae-et.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      12072,
+      9037,
+      20318,
+      16212,
+      13554,
+      15241,
+      3478,
+      14037,
+      13771,
+      13810,
+      6138,
+      7059
+    ]
+  },
+  {
+    "id": "lodi.LA100",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Ierúsalem, cívitas Dei, luce spléndida fulgébis, et omnes fines terræ te adorábunt, allelúia",
+    "printedContext": "settimana 4, Venerdì, 2a ant., Cant. Tob 13,8-11.13.14ab.16 (T.P.)",
+    "pdfPage": "p. 167",
+    "status": "not-found",
+    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
+    "_reuseKey": "ierusalem civitas dei luce splendida fulgebis et omnes fines terrae te adorabunt alleluia|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA101",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Lauda Deum tuum Sion, qui annúntiat iudícia sua Israel",
+    "printedContext": "settimana 4, Venerdì, 3a ant., Ps 147",
+    "pdfPage": "p. 168",
+    "status": "found",
+    "gregobase": {
+      "id": 12280,
+      "url": "https://gregobase.selapa.net/chant.php?id=12280"
+    },
+    "file": "gabc/chants/12280-lauda-deum-tuum-sion-qui-annuntiat-iudicia-sua-israel.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      12280
+    ],
+    "_reuseKey": "lauda deum tuum sion qui annuntiat iudicia sua israel|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA102",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Bonum est confitéri Dómino",
+    "printedContext": "settimana 4, Sabato, 1a ant., Ps 91",
+    "pdfPage": "p. 172",
+    "status": "found",
+    "gregobase": {
+      "id": 19042,
+      "url": "https://gregobase.selapa.net/chant.php?id=19042"
+    },
+    "file": "gabc/chants/19042-bonum-est-confiteri-domino.gabc",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "candidatesConsidered": [
+      17986,
+      10430,
+      19042,
+      10967,
+      20627,
+      1754,
+      14204,
+      19779,
+      14070,
+      13441,
+      6112,
+      20136,
+      7242,
+      10818,
+      10217
+    ]
+  },
+  {
+    "id": "lodi.LA103",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Aquam quam ego dédero, qui bíberit ex ea, non sítiet unquam",
+    "printedContext": "settimana 4, Sabato, 2a ant., Cant. Ez 36,24-28",
+    "pdfPage": "p. 173",
+    "status": "found",
+    "gregobase": {
+      "id": 12769,
+      "url": "https://gregobase.selapa.net/chant.php?id=12769"
+    },
+    "file": "gabc/chants/12769-aquam-quam-ego-dedero-qui-biberit-ex-ea-non-sitiet-unquam.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      12769
+    ],
+    "_reuseKey": "aquam quam ego dedero qui biberit ex ea non sitiet unquam|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA104",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Effúndam super vos aquam mundam, et mundabímini ab ómnibus inquinaméntis vestris, dicit Dóminus, allelúia",
+    "printedContext": "settimana 4, Sabato, 2a ant., Cant. Ez 36,24-28 (T.P.)",
+    "pdfPage": "p. 173",
+    "status": "not-found",
+    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
+    "_reuseKey": "effundam super vos aquam mundam et mundabimini ab omnibus inquinamentis vestris dicit dominus alleluia|antifona (salmo/cantico)|"
+  },
+  {
+    "id": "lodi.LA105",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Glória et honóre coronásti eum, Dómine; ómnia subiecísti sub pédibus eius",
+    "printedContext": "settimana 4, Sabato, 3a ant., Ps 8",
+    "pdfPage": "p. 174",
+    "status": "found",
+    "gregobase": {
+      "id": 20027,
+      "url": "https://gregobase.selapa.net/chant.php?id=20027"
+    },
+    "file": "gabc/chants/20027-gloria-et-honore-coronasti-eum-domine-omnia-subiecisti-sub-p.gabc",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "candidatesConsidered": [
+      10476,
+      12552,
+      10522,
+      20027,
+      10480,
+      4169,
+      19136,
+      19146,
+      13953,
+      13879,
+      13596,
+      3522,
+      3779,
+      18696,
+      13631,
+      13952
+    ],
+    "_reuseKey": "gloria et honore coronasti eum domine omnia subiecisti sub pedibus eius|antifona (salmo/cantico)|"
+  }
+]
