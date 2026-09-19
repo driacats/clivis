@@ -134,7 +134,10 @@
             ]
           }
         ],
-        "letturaBreve": { "kind": "lettura", "file": "ger-14-9.json" }
+        "letturaBreve": {
+          "kind": "lettura",
+          "file": "ger-14-9.json"
+        }
       }
     ],
     "hymns": [
@@ -305,9 +308,8 @@
               "note": "proprio della Domenica, non incluso nel libretto"
             },
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "ap-7-10-12-la-salvezza-appartiene-al-nostro-dio.json"
             }
           },
           {
@@ -330,9 +332,8 @@
             "responsory": "lodi.LR3",
             "benedictusAntiphon": "lodi.LB1",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "2-tess-3-10b-13-chi-non-vuol-lavorare-neppure-mangi.json"
             }
           },
           {
@@ -356,9 +357,8 @@
             "responsory": "lodi.LR5",
             "benedictusAntiphon": "lodi.LB3",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "rom-13-11b-13a-e-ormai-tempo-di-svegliarvi-dal.json"
             }
           },
           {
@@ -382,9 +382,8 @@
             "responsory": "lodi.LR7",
             "benedictusAntiphon": "lodi.LB5",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "tob-4-14-15a-16ab-19-non-fare-a-nessuno-cio-che.json"
             }
           },
           {
@@ -408,9 +407,8 @@
             "responsory": "lodi.LR9",
             "benedictusAntiphon": "lodi.LB7",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "is-66-1-2-cosi-dice-il-signore-il-cielo.json"
             }
           },
           {
@@ -435,9 +433,8 @@
             "responsory": "lodi.LR11",
             "benedictusAntiphon": "lodi.LB9",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "eph-4-29-32-nessuna-parola-cattiva-esca-piu-dalla.json"
             }
           },
           {
@@ -460,9 +457,8 @@
             "responsory": "lodi.LR13",
             "benedictusAntiphon": "lodi.LB11",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "2-petr-1-10-11-fratelli-cercate-di-render-sempre-piu.json"
             }
           }
         ]
@@ -494,9 +490,8 @@
               "note": "proprio della Domenica, non incluso nel libretto"
             },
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "ez-36-25-27-vi-aspergero-con-acqua-pura-e.json"
             }
           },
           {
@@ -519,9 +514,8 @@
             "responsory": "lodi.LR4",
             "benedictusAntiphon": "lodi.LB2",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "ger-15-16-quando-le-tue-parole-mi-vennero.json"
             }
           },
           {
@@ -545,9 +539,8 @@
             "responsory": "lodi.LR6",
             "benedictusAntiphon": "lodi.LB4",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "1-tess-5-4-5-voi-fratelli-non-siete-nelle-tenebre.json"
             }
           },
           {
@@ -570,9 +563,8 @@
             "responsory": "lodi.LR8",
             "benedictusAntiphon": "lodi.LB6",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "rom-8-35-37-chi-ci-separera-dallamore-di-cristo.json"
             }
           },
           {
@@ -596,9 +588,8 @@
             "responsory": "lodi.LR10",
             "benedictusAntiphon": "lodi.LB8",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "rom-14-17-19-il-regno-di-dio-non-e.json"
             }
           },
           {
@@ -623,9 +614,8 @@
             "responsory": "lodi.LR12",
             "benedictusAntiphon": "lodi.LB10",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "eph-2-13-16-ora-in-cristo-gesu-voi-che.json"
             }
           },
           {
@@ -649,9 +639,8 @@
             "responsory": "lodi.LR14",
             "benedictusAntiphon": "lodi.LB12",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "rom-12-14-16a-benedite-coloro-che-vi-perseguitano-benedite.json"
             }
           }
         ]
@@ -683,9 +672,8 @@
               "note": "proprio della Domenica, non incluso nel libretto"
             },
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "ez-37-12b-14-ecco-io-apro-i-vostri-sepolcri.json"
             }
           },
           {
@@ -709,9 +697,8 @@
             "responsory": "lodi.LR3",
             "benedictusAntiphon": "lodi.LB1",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "giac-2-12-13-parlate-e-agite-come-persone-che.json"
             }
           },
           {
@@ -735,9 +722,8 @@
             "responsory": "lodi.LR5",
             "benedictusAntiphon": "lodi.LB3",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "1-io-4-14-15-noi-stessi-abbiamo-veduto-e-attestiamo.json"
             }
           },
           {
@@ -761,9 +747,8 @@
             "responsory": "lodi.LR7",
             "benedictusAntiphon": "lodi.LB5",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "iob-1-21-2-10b-nudo-uscii-dal-seno-di-mia.json"
             }
           },
           {
@@ -787,9 +772,8 @@
             "responsory": "lodi.LR9",
             "benedictusAntiphon": "lodi.LB7",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "1-petr-4-10-11-ciascuno-viva-secondo-la-grazia-ricevuta.json"
             }
           },
           {
@@ -814,9 +798,8 @@
             "responsory": "lodi.LR11",
             "benedictusAntiphon": "lodi.LB9",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "2-cor-12-9b-10-mi-vantero-ben-volentieri-delle-mie.json"
             }
           },
           {
@@ -840,9 +823,8 @@
             "responsory": "lodi.LR13",
             "benedictusAntiphon": "lodi.LB11",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "fil-2-14-15-fate-tutto-senza-mormorazioni-e-senza.json"
             }
           }
         ]
@@ -874,9 +856,8 @@
               "note": "proprio della Domenica, non incluso nel libretto"
             },
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "2-tim-2-8-11-13-ricordati-che-gesu-cristo-della-stirpe.json"
             }
           },
           {
@@ -899,9 +880,8 @@
             "responsory": "lodi.LR4",
             "benedictusAntiphon": "lodi.LB2",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "iudt-8-25-26a-27-ricordatevi-che-i-vostri-padri-furono.json"
             }
           },
           {
@@ -925,9 +905,8 @@
             "responsory": "lodi.LR6",
             "benedictusAntiphon": "lodi.LB4",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "is-55-1-o-voi-tutti-assetati-venite-all.json"
             }
           },
           {
@@ -950,9 +929,8 @@
             "responsory": "lodi.LR8",
             "benedictusAntiphon": "lodi.LB6",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "deut-4-39-40a-sappi-dunque-oggi-e-conserva-bene.json"
             }
           },
           {
@@ -975,9 +953,8 @@
             "responsory": "lodi.LR10",
             "benedictusAntiphon": "lodi.LB8",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "rom-8-18-21-io-ritengo-che-le-sofferenze-del.json"
             }
           },
           {
@@ -1002,9 +979,8 @@
             "responsory": "lodi.LR12",
             "benedictusAntiphon": "lodi.LB10",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "gal-2-20-sono-stato-crocifisso-con-cristo-e.json"
             }
           },
           {
@@ -1028,9 +1004,8 @@
             "responsory": "lodi.LR14",
             "benedictusAntiphon": "lodi.LB12",
             "letturaBreve": {
-              "kind": "gap",
-              "reason": "not-extracted",
-              "note": "lettura breve non ancora disponibile"
+              "kind": "lettura",
+              "file": "2-petr-3-13-15a-secondo-la-sua-promessa-noi-aspettiamo.json"
             }
           }
         ]
