@@ -16,6 +16,12 @@ Le corrispondenze sono state trovate in due fasi: (1) un abbinamento automatico 
 
 Inoltre, il tempo pasquale sostituisce nella maggior parte delle antifone salmiche di Lodi il testo proprio con la formula generica "Allelúia, allelúia, allelúia": questa formula non è stata cercata riga per riga su GregoBase (sarebbero decine di ricerche identiche) — resta da coprire a parte con poche formule riusabili per modo, se e quando servirà.
 
+## Testi dei salmi e cantici (italiano/latino)
+
+Oltre ai canti gregoriani notati (sopra), i due libretti stampano per intero anche i salmi e i cantici che seguono ogni antifona. Questi testi **non sono notazione gregoriana** (in Compieta sono stampati in due colonne, italiano e latino, ma senza puntatura musicale; in Lodi sono stampati **solo in italiano**) e quindi **non sono stati cercati su GregoBase**: sono stati estratti direttamente dal testo dei due PDF sorgente e salvati come JSON strutturato (campi `ref`, `title`, `epigraph`, `verses[]`, con `it`/`la` per versetto — `la` è `null` dove il latino non è stampato) nella cartella `salmi/`, collegati agli slot corrispondenti di `gabc/index.json` tramite il campo `psalm`.
+
+**Copertura**: 87 testi unici estratti (10 di Compieta, con italiano e latino; 77 di Lodi, solo italiano), che coprono 120 slot in `gabc/index.json` (15 di Compieta: i salmi feriali/domenicali dopo l'antifona più il Cantico di Simeone/Nunc Dimittis; 105 di Lodi, comprese le antifone con sostituto pasquale a testo reale che riusano il salmo/cantico della riga base). Come per il resto di questo report, la copertura di Lodi si ferma al solo salterio delle quattro settimane (pp. 1-176); la sezione "Proprio del Tempo" non è coperta. Le formule pasquali generiche "Allelúia, allelúia, allelúia" (vedi sopra) non hanno un testo salmico proprio da estrarre.
+
 ## Note e criticità da verificare
 
 Le righe seguenti sono marcate **trovato** in questo report, ma portano un limite noto segnalato durante la disambiguazione — da tenere presente prima dell'uso liturgico/di stampa:

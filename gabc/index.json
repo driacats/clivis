@@ -276,7 +276,12 @@
       3359,
       6907
     ],
-    "_reuseKey": "nunc dimittis servum tuum domine|cantico (tono salmodico)|"
+    "_reuseKey": "nunc dimittis servum tuum domine|cantico (tono salmodico)|",
+    "psalm": {
+      "ref": "Lc 2,29-33",
+      "title": "Cantico di Simeone",
+      "file": "salmi/cant-lc-2-29-32-ora-lascia-signore.json"
+    }
   },
   {
     "id": "compieta.C15",
@@ -319,7 +324,12 @@
       20541,
       11229
     ],
-    "_reuseKey": "miserere mihi domine et exaudi orationem meam|antifona salmica|8"
+    "_reuseKey": "miserere mihi domine et exaudi orationem meam|antifona salmica|8",
+    "psalm": {
+      "ref": "Ps 4",
+      "title": "Rendimento di grazie",
+      "file": "salmi/ps-4-quando-ti-invoco-rispondimi-dio.json"
+    }
   },
   {
     "id": "compieta.C17",
@@ -340,7 +350,12 @@
       4688,
       11230
     ],
-    "_reuseKey": "in noctibus benedicite dominum|antifona salmica|"
+    "_reuseKey": "in noctibus benedicite dominum|antifona salmica|",
+    "psalm": {
+      "ref": "Ps 133",
+      "title": "Orazione notturna nel tempio",
+      "file": "salmi/ps-133-ecco-benedite-il-signore.json"
+    }
   },
   {
     "id": "compieta.C18",
@@ -363,7 +378,12 @@
       5592,
       16441,
       11232
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 90",
+      "title": "Beato chi si pone sotto la protezione dell'Altissimo",
+      "file": "salmi/ps-90-tu-che-abiti-al-riparo-dell-altissimo.json"
+    }
   },
   {
     "id": "compieta.C19",
@@ -390,7 +410,12 @@
       5301,
       6498,
       20660
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 90",
+      "title": "Beato chi si pone sotto la protezione dell'Altissimo",
+      "file": "salmi/ps-90-tu-che-abiti-al-riparo-dell-altissimo.json"
+    }
   },
   {
     "id": "compieta.C20",
@@ -419,7 +444,12 @@
       11148,
       20116
     ],
-    "_reuseKey": "inclina domine aurem tuam mihi et exaudi verba mea|antifona salmica|7"
+    "_reuseKey": "inclina domine aurem tuam mihi et exaudi verba mea|antifona salmica|7",
+    "psalm": {
+      "ref": "Ps 85",
+      "title": "Preghiera a Dio nell'afflizione",
+      "file": "salmi/ps-85-signore-tendi-l-orecchio-rispondimi-compieta.json"
+    }
   },
   {
     "id": "compieta.C21",
@@ -445,7 +475,12 @@
       5467,
       11233
     ],
-    "_reuseKey": "intende voci orationis meae|antifona salmica alternativa (LHG)|3"
+    "_reuseKey": "intende voci orationis meae|antifona salmica alternativa (LHG)|3",
+    "psalm": {
+      "ref": "Ps 85",
+      "title": "Preghiera a Dio nell'afflizione",
+      "file": "salmi/ps-85-signore-tendi-l-orecchio-rispondimi-compieta.json"
+    }
   },
   {
     "id": "compieta.C22",
@@ -466,7 +501,12 @@
       19071,
       20121,
       10801
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 142",
+      "title": "Preghiera a Dio nell'afflizione",
+      "file": "salmi/ps-142-signore-ascolta-la-mia-preghiera-compieta.json"
+    }
   },
   {
     "id": "compieta.C23",
@@ -485,7 +525,12 @@
     "candidatesConsidered": [
       11234
     ],
-    "_reuseKey": "ne intres in iudicium cum servo tuo domine|antifona salmica alternativa (LHG)|8"
+    "_reuseKey": "ne intres in iudicium cum servo tuo domine|antifona salmica alternativa (LHG)|8",
+    "psalm": {
+      "ref": "Ps 142",
+      "title": "Preghiera a Dio nell'afflizione",
+      "file": "salmi/ps-142-signore-ascolta-la-mia-preghiera-compieta.json"
+    }
   },
   {
     "id": "compieta.C24",
@@ -504,7 +549,12 @@
     "candidatesConsidered": [
       11031
     ],
-    "_reuseKey": "in tua iustitia libera me domine|antifona salmica|8"
+    "_reuseKey": "in tua iustitia libera me domine|antifona salmica|8",
+    "psalm": {
+      "ref": "Ps 30,2-6",
+      "title": "Supplica fiduciosa nell'afflizione",
+      "file": "salmi/ps-30-2-6-in-te-signore-mi-sono-rifugiato.json"
+    }
   },
   {
     "id": "compieta.C25",
@@ -531,7 +581,12 @@
       5683,
       11235
     ],
-    "_reuseKey": "esto mihi domine in deum protectorem|antifona salmica alternativa (LHG)|1"
+    "_reuseKey": "esto mihi domine in deum protectorem|antifona salmica alternativa (LHG)|1",
+    "psalm": {
+      "ref": "Ps 30,2-6",
+      "title": "Supplica fiduciosa nell'afflizione",
+      "file": "salmi/ps-30-2-6-in-te-signore-mi-sono-rifugiato.json"
+    }
   },
   {
     "id": "compieta.C26",
@@ -562,7 +617,12 @@
       6740,
       20083,
       4725
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 129",
+      "title": "Dal profondo a te grido",
+      "file": "salmi/ps-129-dal-profondo-a-te-grido-signore.json"
+    }
   },
   {
     "id": "compieta.C27",
@@ -587,7 +647,12 @@
       13640,
       15694,
       15153
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 15",
+      "title": "Il Signore è mia eredità",
+      "file": "salmi/ps-15-proteggimi-o-dio-in-te-mi-rifugio-compieta.json"
+    }
   },
   {
     "id": "compieta.C28",
@@ -611,7 +676,12 @@
       10785,
       20547
     ],
-    "_reuseKey": "intret oratio mea in conspectu tuo domine|antifona salmica|5"
+    "_reuseKey": "intret oratio mea in conspectu tuo domine|antifona salmica|5",
+    "psalm": {
+      "ref": "Ps 87",
+      "title": "Preghiera di un uomo gravemente malato",
+      "file": "salmi/ps-87-signore-dio-della-mia-salvezza.json"
+    }
   },
   {
     "id": "compieta.C29",
@@ -638,7 +708,12 @@
       5460,
       11239,
       11240
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 87",
+      "title": "Preghiera di un uomo gravemente malato",
+      "file": "salmi/ps-87-signore-dio-della-mia-salvezza.json"
+    }
   },
   {
     "id": "compieta.C30",
@@ -2160,7 +2235,12 @@
     "pdfPage": "p. 3",
     "status": "not-found",
     "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
-    "_reuseKey": "a te de luce vigilo deus ut videam virtutem tuam|antifona (salmo/cantico)|"
+    "_reuseKey": "a te de luce vigilo deus ut videam virtutem tuam|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 62",
+      "title": "L’anima assetata del Signore",
+      "file": "salmi/ps-62-o-dio-tu-sei-il-mio.json"
+    }
   },
   {
     "id": "lodi.LA2",
@@ -2171,7 +2251,12 @@
     "pdfPage": "p. 3-4",
     "status": "not-found",
     "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
-    "_reuseKey": "res pueri iussu regis in fornacem missi sunt non timentes flammam ignis dicentes benedictus deus|antifona (salmo/cantico)|"
+    "_reuseKey": "res pueri iussu regis in fornacem missi sunt non timentes flammam ignis dicentes benedictus deus|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Dan 3,57-88.56",
+      "title": "Ogni creatura lodi il Signore",
+      "file": "salmi/cant-dan-3-57-88-56-benedite-opere-tutte-del-signore-il.json"
+    }
   },
   {
     "id": "lodi.LA3",
@@ -2190,7 +2275,12 @@
     "candidatesConsidered": [
       7110,
       14493
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 149",
+      "title": "Festa degli amici di Dio",
+      "file": "salmi/ps-149-cantate-al-signore-un-canto-nuovo.json"
+    }
   },
   {
     "id": "lodi.LA4",
@@ -2211,7 +2301,12 @@
       9159,
       10960,
       11127
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 5",
+      "title": "Preghiera del mattino per avere l’aiuto del Signore",
+      "file": "salmi/ps-5-porgi-l-orecchio-signore-alle-mie.json"
+    }
   },
   {
     "id": "lodi.LA5",
@@ -2234,7 +2329,12 @@
       6535,
       11128,
       11128
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. 1 Cron 29,10-13",
+      "title": "Solo a Dio l’onore e la gloria",
+      "file": "salmi/cant-1-cron-29-10-13-sii-benedetto-signore-dio-di-israele.json"
+    }
   },
   {
     "id": "lodi.LA6",
@@ -2259,7 +2359,12 @@
       11129,
       16583
     ],
-    "_reuseKey": "adorate dominum in aula sancta eius|antifona (salmo/cantico)|"
+    "_reuseKey": "adorate dominum in aula sancta eius|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 28",
+      "title": "Il Signore proclama solennemente la sua parola",
+      "file": "salmi/ps-28-date-al-signore-figli-di-dio.json"
+    }
   },
   {
     "id": "lodi.LA7",
@@ -2282,7 +2387,12 @@
       4878,
       11139
     ],
-    "_reuseKey": "innocens manibus et mundo corde ascendet in montem domini|antifona (salmo/cantico)|"
+    "_reuseKey": "innocens manibus et mundo corde ascendet in montem domini|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 23",
+      "title": "Il Signore entra nel suo tempio",
+      "file": "salmi/ps-23-del-signore-e-la-terra-e.json"
+    }
   },
   {
     "id": "lodi.LA8",
@@ -2303,7 +2413,12 @@
       15187,
       20786,
       11140
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Tob 13,2-10a",
+      "title": "Dio castiga e salva",
+      "file": "salmi/cant-tob-13-2-10a-benedetto-dio-che-vive-in-eterno.json"
+    }
   },
   {
     "id": "lodi.LA9",
@@ -2332,7 +2447,12 @@
       13810,
       6138,
       7059
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Tob 13,2-10a",
+      "title": "Dio castiga e salva",
+      "file": "salmi/cant-tob-13-2-10a-benedetto-dio-che-vive-in-eterno.json"
+    }
   },
   {
     "id": "lodi.LA10",
@@ -2354,7 +2474,12 @@
       10312,
       11141
     ],
-    "_reuseKey": "rectos decet collaudatio|antifona (salmo/cantico)|"
+    "_reuseKey": "rectos decet collaudatio|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 32",
+      "title": "Inno alla provvidenza di Dio",
+      "file": "salmi/ps-32-esultate-giusti-nel-signore.json"
+    }
   },
   {
     "id": "lodi.LA11",
@@ -2378,7 +2503,12 @@
       11150,
       20052,
       5931
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 35",
+      "title": "Malizia del peccatore, bontà del Signore",
+      "file": "salmi/ps-35-nel-cuore-dell-empio-parla-il.json"
+    }
   },
   {
     "id": "lodi.LA12",
@@ -2399,7 +2529,12 @@
       12568,
       7154,
       11151
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Giuditta 16,1-2a.13-15",
+      "title": "Il Signore, creatore del mondo, protegge il suo popolo.",
+      "file": "salmi/cant-giuditta-16-1-2a-13-15-lodate-il-signore-con-i-timpani.json"
+    }
   },
   {
     "id": "lodi.LA13",
@@ -2432,7 +2567,12 @@
       15053,
       15217
     ],
-    "_reuseKey": "emitte spiritum tuum et creabuntur et renovabis faciem terrae alleluia alleluia|antifona (salmo/cantico)|"
+    "_reuseKey": "emitte spiritum tuum et creabuntur et renovabis faciem terrae alleluia alleluia|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Giuditta 16,1-2a.13-15",
+      "title": "Il Signore, creatore del mondo, protegge il suo popolo.",
+      "file": "salmi/cant-giuditta-16-1-2a-13-15-lodate-il-signore-con-i-timpani.json"
+    }
   },
   {
     "id": "lodi.LA14",
@@ -2455,7 +2595,12 @@
       11211,
       10880
     ],
-    "_reuseKey": "iubilate deo in voce exsultationis|antifona (salmo/cantico)|"
+    "_reuseKey": "iubilate deo in voce exsultationis|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 46",
+      "title": "Il Signore re dell’universo",
+      "file": "salmi/ps-46-applaudite-popoli-tutti.json"
+    }
   },
   {
     "id": "lodi.LA15",
@@ -2476,7 +2621,12 @@
       20867,
       10838
     ],
-    "_reuseKey": "quoniam in te confidit anima mea|antifona (salmo/cantico)|"
+    "_reuseKey": "quoniam in te confidit anima mea|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 56",
+      "title": "Preghiera del mattino della sofferenza",
+      "file": "salmi/ps-56-pieta-di-me-pieta-di-me.json"
+    }
   },
   {
     "id": "lodi.LA16",
@@ -2497,7 +2647,12 @@
       12045,
       5967,
       11162
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Ger 31,10-14",
+      "title": "Dio libera e raduna il suo popolo nella gioia",
+      "file": "salmi/cant-ger-31-10-14-ascoltate-popoli-la-parola-del-signore.json"
+    }
   },
   {
     "id": "lodi.LA17",
@@ -2519,7 +2674,12 @@
       12204,
       5265,
       14891
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Ger 31,10-14",
+      "title": "Dio libera e raduna il suo popolo nella gioia",
+      "file": "salmi/cant-ger-31-10-14-ascoltate-popoli-la-parola-del-signore.json"
+    }
   },
   {
     "id": "lodi.LA18",
@@ -2546,7 +2706,12 @@
       11164,
       11163
     ],
-    "_reuseKey": "magnus dominus et laudabilis nimis|antifona (salmo/cantico)|"
+    "_reuseKey": "magnus dominus et laudabilis nimis|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 47",
+      "title": "Azione di grazie per la salvezza del popolo",
+      "file": "salmi/ps-47-grande-e-il-signore-e-degno.json"
+    }
   },
   {
     "id": "lodi.LA19",
@@ -2581,7 +2746,12 @@
       17179,
       5398,
       19674
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 50",
+      "title": "Pietà di me, o Signore",
+      "file": "salmi/ps-50-pieta-di-me-o-dio-secondo.json"
+    }
   },
   {
     "id": "lodi.LA20",
@@ -2598,7 +2768,12 @@
       12889,
       4690,
       17744
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 50",
+      "title": "Pietà di me, o Signore",
+      "file": "salmi/ps-50-pieta-di-me-o-dio-secondo.json"
+    }
   },
   {
     "id": "lodi.LA21",
@@ -2617,7 +2792,12 @@
     "candidatesConsidered": [
       10879,
       5007
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Is 45,15-26",
+      "title": "Tutti i popoli si convertano al Signore",
+      "file": "salmi/cant-is-45-15-26-veramente-tu-sei-un-dio-misterioso.json"
+    }
   },
   {
     "id": "lodi.LA22",
@@ -2627,7 +2807,12 @@
     "printedContext": "settimana 1, Venerdì, 2a ant., Cant. Is 45,15-26 (T.P.)",
     "pdfPage": "p. 35",
     "status": "not-applicable",
-    "notApplicableReason": "verificare — nessuna alternativa pasquale indicata per questa settimana"
+    "notApplicableReason": "verificare — nessuna alternativa pasquale indicata per questa settimana",
+    "psalm": {
+      "ref": "Cant. Is 45,15-26",
+      "title": "Tutti i popoli si convertano al Signore",
+      "file": "salmi/cant-is-45-15-26-veramente-tu-sei-un-dio-misterioso.json"
+    }
   },
   {
     "id": "lodi.LA23",
@@ -2650,7 +2835,12 @@
       17704,
       10880
     ],
-    "_reuseKey": "iubilate deo omnis terra|antifona (salmo/cantico)|"
+    "_reuseKey": "iubilate deo omnis terra|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 99",
+      "title": "La gioia di coloro che entrano nel tempio.",
+      "file": "salmi/ps-99-acclamate-al-signore-voi-tutti-della.json"
+    }
   },
   {
     "id": "lodi.LA24",
@@ -2669,7 +2859,12 @@
     "candidatesConsidered": [
       10759
     ],
-    "_reuseKey": "da mihi intellectum et scrutabor domine legem tuam|antifona (salmo/cantico)|"
+    "_reuseKey": "da mihi intellectum et scrutabor domine legem tuam|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 118 (145-152, XIX Coph)",
+      "title": "Promessa di osservare la legge di Dio",
+      "file": "salmi/ps-118-145-152-xix-coph-t-invoco-con-tutto-il-cuore.json"
+    }
   },
   {
     "id": "lodi.LA25",
@@ -2693,7 +2888,12 @@
       11114,
       6353
     ],
-    "_reuseKey": "fortitudo mea et laus mea dominus et factus est mihi in salutem|antifona (salmo/cantico)|"
+    "_reuseKey": "fortitudo mea et laus mea dominus et factus est mihi in salutem|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Es 15,1-4a.8-13.17-18",
+      "title": "Inno di vittoria per il passaggio del Mar Rosso",
+      "file": "salmi/cant-es-15-1-4a-8-13-17-18-voglio-cantare-in-onore-del-signore.json"
+    }
   },
   {
     "id": "lodi.LA26",
@@ -2725,7 +2925,12 @@
       18278,
       19317
     ],
-    "_reuseKey": "laudate dominum omnes gentes|antifona (salmo/cantico)|"
+    "_reuseKey": "laudate dominum omnes gentes|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 116",
+      "title": "Invito a lodare Dio per il suo amore",
+      "file": "salmi/ps-116-lodate-il-signore-popoli-tutti.json"
+    }
   },
   {
     "id": "lodi.LA27",
@@ -2745,7 +2950,12 @@
       20470,
       11943,
       10692
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 117",
+      "title": "Canto di gioia e di vittoria.",
+      "file": "salmi/ps-117-celebrate-il-signore-perche-e-buono.json"
+    }
   },
   {
     "id": "lodi.LA28",
@@ -2766,7 +2976,12 @@
       11117,
       12703,
       9778
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Dan 3,52-57",
+      "title": "Ogni creatura lodi il Signore",
+      "file": "salmi/cant-dan-3-52-57-benedetto-sei-tu-signore-dio-dei.json"
+    }
   },
   {
     "id": "lodi.LA29",
@@ -2777,7 +2992,12 @@
     "pdfPage": "p. 48",
     "status": "not-found",
     "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
-    "_reuseKey": "in sanctis eius laudate deum|antifona (salmo/cantico)|"
+    "_reuseKey": "in sanctis eius laudate deum|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 150",
+      "title": "Ogni vivente dia lode al Signore",
+      "file": "salmi/ps-150-lodate-il-signore-nel-suo-santuario.json"
+    }
   },
   {
     "id": "lodi.LA30",
@@ -2801,7 +3021,12 @@
       6230,
       20603,
       15659
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 41",
+      "title": "Desiderio del Signore e del suo tempio",
+      "file": "salmi/ps-41-22-17.json"
+    }
   },
   {
     "id": "lodi.LA31",
@@ -2835,7 +3060,12 @@
       9905,
       4904,
       10679
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Sir 36,1-6.10-13",
+      "title": "Preghiera per il popolo santo di Dio",
+      "file": "salmi/cant-sir-36-1-6-10-13-abbi-pieta-di-noi-signore-dio.json"
+    }
   },
   {
     "id": "lodi.LA32",
@@ -2854,7 +3084,12 @@
     "candidatesConsidered": [
       18605
     ],
-    "_reuseKey": "caeli enarrant gloriam dei|antifona (salmo/cantico)|"
+    "_reuseKey": "caeli enarrant gloriam dei|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 18A",
+      "title": "Inno a Dio creatore",
+      "file": "salmi/ps-18a-i-cieli-narrano-la-gloria-di.json"
+    }
   },
   {
     "id": "lodi.LA33",
@@ -2877,7 +3112,12 @@
       5419,
       10849,
       20056
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 42",
+      "title": "Desiderio del tempio di Dio",
+      "file": "salmi/ps-42-fammi-giustizia-o-dio.json"
+    }
   },
   {
     "id": "lodi.LA34",
@@ -2898,7 +3138,12 @@
       10850,
       20057
     ],
-    "_reuseKey": "cunctis diebus vitae nostrae salvos nos fac domine|antifona (salmo/cantico)|"
+    "_reuseKey": "cunctis diebus vitae nostrae salvos nos fac domine|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Is 38,10-14.17-20",
+      "title": "Angosce di un moribondo, gioia di un risanato",
+      "file": "salmi/cant-is-38-10-14-17-20-io-dicevo-a-meta-della-mia.json"
+    }
   },
   {
     "id": "lodi.LA35",
@@ -2918,7 +3163,12 @@
       12351,
       5034
     ],
-    "_reuseKey": "corripies me domine et vivificabis me alleluia|antifona (salmo/cantico)|"
+    "_reuseKey": "corripies me domine et vivificabis me alleluia|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Is 38,10-14.17-20",
+      "title": "Angosce di un moribondo, gioia di un risanato",
+      "file": "salmi/cant-is-38-10-14-17-20-io-dicevo-a-meta-della-mia.json"
+    }
   },
   {
     "id": "lodi.LA36",
@@ -2945,7 +3195,12 @@
       6617,
       20073,
       10851
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 64",
+      "title": "Gioia delle creature di Dio per la sua provvidenza",
+      "file": "salmi/ps-64-a-te-si-deve-lode-o.json"
+    }
   },
   {
     "id": "lodi.LA37",
@@ -2964,7 +3219,12 @@
     "candidatesConsidered": [
       10686
     ],
-    "_reuseKey": "deus in sancto via tua quis deus magnus sicut deus noster|antifona (salmo/cantico)|"
+    "_reuseKey": "deus in sancto via tua quis deus magnus sicut deus noster|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 76",
+      "title": "Dio rinnova i prodigi del suo amore",
+      "file": "salmi/ps-76-la-mia-voce-sale-a-dio.json"
+    }
   },
   {
     "id": "lodi.LA38",
@@ -2984,7 +3244,12 @@
       20877,
       4903,
       10843
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. 1 Sam 2,1-10",
+      "title": "La gioia e la speranza degli umili è in Dio",
+      "file": "salmi/cant-1-sam-2-1-10-il-mio-cuore-esulta-nel-signore.json"
+    }
   },
   {
     "id": "lodi.LA39",
@@ -3009,7 +3274,12 @@
       10687,
       6766
     ],
-    "_reuseKey": "dominus regnavit exsultet terra|antifona (salmo/cantico)|"
+    "_reuseKey": "dominus regnavit exsultet terra|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 96",
+      "title": "La gloria del Signore nel giudizio",
+      "file": "salmi/ps-96-il-signore-regna-esulti-la-terra.json"
+    }
   },
   {
     "id": "lodi.LA40",
@@ -3035,7 +3305,12 @@
       7118,
       9848
     ],
-    "_reuseKey": "excita domine potentiam tuam ut salvos facias nos|antifona (salmo/cantico)|"
+    "_reuseKey": "excita domine potentiam tuam ut salvos facias nos|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 79",
+      "title": "Visita, o Signore, la tua vigna",
+      "file": "salmi/ps-79-tu-pastore-d-israele-ascolta.json"
+    }
   },
   {
     "id": "lodi.LA41",
@@ -3059,7 +3334,12 @@
       6381,
       10840,
       20046
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Is 12,1-6",
+      "title": "Esultanza del popolo redento.",
+      "file": "salmi/cant-is-12-1-6-ti-ringrazio-signore.json"
+    }
   },
   {
     "id": "lodi.LA42",
@@ -3081,7 +3361,12 @@
       18878,
       11480,
       5952
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Is 12,1-6",
+      "title": "Esultanza del popolo redento.",
+      "file": "salmi/cant-is-12-1-6-ti-ringrazio-signore.json"
+    }
   },
   {
     "id": "lodi.LA43",
@@ -3105,7 +3390,12 @@
       7005,
       10841
     ],
-    "_reuseKey": "exsultate deo adiutori nostro|antifona (salmo/cantico)|"
+    "_reuseKey": "exsultate deo adiutori nostro|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 80",
+      "title": "Solenne rinnovazione dell’alleanza",
+      "file": "salmi/ps-80-esultate-in-dio-nostra-forza.json"
+    }
   },
   {
     "id": "lodi.LA44",
@@ -3126,7 +3416,12 @@
       10954,
       20055
     ],
-    "_reuseKey": "dele domine iniquitatem meam|antifona (salmo/cantico)|"
+    "_reuseKey": "dele domine iniquitatem meam|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 50",
+      "title": "Pietà di me, o Signore",
+      "file": "salmi/ps-50-pieta-di-me-o-dio-secondo-2.json"
+    }
   },
   {
     "id": "lodi.LA45",
@@ -3148,7 +3443,12 @@
       12889,
       4690,
       17744
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 50",
+      "title": "Pietà di me, o Signore",
+      "file": "salmi/ps-50-pieta-di-me-o-dio-secondo-2.json"
+    }
   },
   {
     "id": "lodi.LA46",
@@ -3168,7 +3468,12 @@
       12804,
       5193
     ],
-    "_reuseKey": "cum iratus fueris domine misericordiae recordaberis|antifona (salmo/cantico)|"
+    "_reuseKey": "cum iratus fueris domine misericordiae recordaberis|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Ab 3,2-4.13a.15-19",
+      "title": "Dio appare per il giudizio",
+      "file": "salmi/cant-ab-3-2-4-13a-15-19-signore-ho-ascoltato-il-tuo-annunzio.json"
+    }
   },
   {
     "id": "lodi.LA47",
@@ -3193,7 +3498,12 @@
       19523,
       3835,
       4296
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Ab 3,2-4.13a.15-19",
+      "title": "Dio appare per il giudizio",
+      "file": "salmi/cant-ab-3-2-4-13a-15-19-signore-ho-ascoltato-il-tuo-annunzio.json"
+    }
   },
   {
     "id": "lodi.LA48",
@@ -3212,7 +3522,12 @@
     "candidatesConsidered": [
       19391
     ],
-    "_reuseKey": "lauda ierusalem dominum|antifona (salmo/cantico)|"
+    "_reuseKey": "lauda ierusalem dominum|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 147",
+      "title": "La Gerusalemme riedificata",
+      "file": "salmi/ps-147-glorifica-il-signore-gerusalemme.json"
+    }
   },
   {
     "id": "lodi.LA49",
@@ -3236,7 +3551,12 @@
       4183,
       10826,
       4936
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 91",
+      "title": "Lode al Signore creatore",
+      "file": "salmi/ps-91-e-bello-dar-lode-al-signore.json"
+    }
   },
   {
     "id": "lodi.LA50",
@@ -3256,7 +3576,12 @@
       10128,
       19072,
       10699
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Deut 32,1-12",
+      "title": "I benefici di Dio in favore del popolo",
+      "file": "salmi/cant-deut-32-1-12-ascoltate-o-cieli-io-voglio-parlare.json"
+    }
   },
   {
     "id": "lodi.LA51",
@@ -3276,7 +3601,12 @@
       13132,
       6892
     ],
-    "_reuseKey": "in servis suis miserebitur dominus et propitius erit terrae populi sui alleluia|antifona (salmo/cantico)|"
+    "_reuseKey": "in servis suis miserebitur dominus et propitius erit terrae populi sui alleluia|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Deut 32,1-12",
+      "title": "I benefici di Dio in favore del popolo",
+      "file": "salmi/cant-deut-32-1-12-ascoltate-o-cieli-io-voglio-parlare.json"
+    }
   },
   {
     "id": "lodi.LA52",
@@ -3298,7 +3628,12 @@
       10700,
       14189
     ],
-    "_reuseKey": "quam admirabile est nomen tuum domine in universa terra|antifona (salmo/cantico)|"
+    "_reuseKey": "quam admirabile est nomen tuum domine in universa terra|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 8",
+      "title": "Grandezza del Signore e dignità dell’uomo",
+      "file": "salmi/ps-8-o-signore-nostro-dio.json"
+    }
   },
   {
     "id": "lodi.LA53",
@@ -3321,7 +3656,12 @@
       10947,
       14666
     ],
-    "_reuseKey": "regnavit dominus decorem indutus est|antifona (salmo/cantico)|"
+    "_reuseKey": "regnavit dominus decorem indutus est|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 92",
+      "title": "Esaltazione della potenza di Dio creatore",
+      "file": "salmi/ps-92-il-signore-regna-si-ammanta-di.json"
+    }
   },
   {
     "id": "lodi.LA54",
@@ -3343,7 +3683,12 @@
       9786,
       14574,
       6705
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Dan 3,57-88.56",
+      "title": "Ogni creatura lodi il Signore",
+      "file": "salmi/cant-dan-3-57-88-56-benedite-opere-tutte-del-signore-il-2.json"
+    }
   },
   {
     "id": "lodi.LA55",
@@ -3375,7 +3720,12 @@
       19317,
       10707,
       20047
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 148",
+      "title": "Glorificazione di Dio Signore e Creatore",
+      "file": "salmi/ps-148-lodate-il-signore-dai-cieli.json"
+    }
   },
   {
     "id": "lodi.LA56",
@@ -3401,7 +3751,12 @@
       16717,
       5954,
       5395
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 83",
+      "title": "Desiderio del tempio del Signore",
+      "file": "salmi/ps-83-quanto-sono-amabili-le-tue-dimore.json"
+    }
   },
   {
     "id": "lodi.LA57",
@@ -3423,7 +3778,12 @@
       4373,
       11437,
       7061
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Is 2,2-5",
+      "title": "La nuova città di Dio, centro dell’umanità intera.",
+      "file": "salmi/cant-is-2-2-5-alla-fine-dei-giorni.json"
+    }
   },
   {
     "id": "lodi.LA58",
@@ -3439,7 +3799,12 @@
       13316,
       10714,
       7172
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Is 2,2-5",
+      "title": "La nuova città di Dio, centro dell’umanità intera.",
+      "file": "salmi/cant-is-2-2-5-alla-fine-dei-giorni.json"
+    }
   },
   {
     "id": "lodi.LA59",
@@ -3473,7 +3838,12 @@
       14053,
       16304,
       13994
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 95",
+      "title": "Dio, re e giudice dell’universo.",
+      "file": "salmi/ps-95-cantate-al-signore-un-canto-nuovo.json"
+    }
   },
   {
     "id": "lodi.LA60",
@@ -3500,7 +3870,12 @@
       6400,
       4304,
       10723
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 84",
+      "title": "La nostra salvezza è vicina",
+      "file": "salmi/ps-84-signore-sei-stato-buono-con-la.json"
+    }
   },
   {
     "id": "lodi.LA61",
@@ -3532,7 +3907,12 @@
       5884,
       14525
     ],
-    "_reuseKey": "deus deus meus ad te de luce vigilo quia factus es adiutor meus|antifona (salmo/cantico)|"
+    "_reuseKey": "deus deus meus ad te de luce vigilo quia factus es adiutor meus|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Is 26,1-4.7-9.12",
+      "title": "Inno dopo la vittoria",
+      "file": "salmi/cant-is-26-1-4-7-9-12-abbiamo-una-citta-forte.json"
+    }
   },
   {
     "id": "lodi.LA62",
@@ -3553,7 +3933,12 @@
       12660,
       4358,
       11536
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Is 26,1-4.7-9.12",
+      "title": "Inno dopo la vittoria",
+      "file": "salmi/cant-is-26-1-4-7-9-12-abbiamo-una-citta-forte.json"
+    }
   },
   {
     "id": "lodi.LA63",
@@ -3581,7 +3966,12 @@
       6668,
       4809
     ],
-    "_reuseKey": "illumina domine vultum tuum super nos|antifona (salmo/cantico)|"
+    "_reuseKey": "illumina domine vultum tuum super nos|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 66",
+      "title": "Tutti i popoli glorifichino il Signore.",
+      "file": "salmi/ps-66-dio-abbia-pieta-di-noi-e.json"
+    }
   },
   {
     "id": "lodi.LA64",
@@ -3610,7 +4000,12 @@
       11148,
       20116
     ],
-    "_reuseKey": "inclina domine aurem tuam mihi et exaudi verba mea|antifona (salmo/cantico)|"
+    "_reuseKey": "inclina domine aurem tuam mihi et exaudi verba mea|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 85",
+      "title": "Preghiera a Dio nell’afflizione",
+      "file": "salmi/ps-85-signore-tendi-l-orecchio-rispondimi.json"
+    }
   },
   {
     "id": "lodi.LA65",
@@ -3633,7 +4028,12 @@
       11132,
       16887
     ],
-    "_reuseKey": "habitabit in tabernaculo tuo requiescet in monte sancto tuo|antifona (salmo/cantico)|"
+    "_reuseKey": "habitabit in tabernaculo tuo requiescet in monte sancto tuo|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Is 33,13-16",
+      "title": "Dio giudicherà con giustizia",
+      "file": "salmi/cant-is-33-13-16-sentiranno-i-lontani-quanto-ho-fatto.json"
+    }
   },
   {
     "id": "lodi.LA66",
@@ -3653,7 +4053,12 @@
       16182,
       5321
     ],
-    "_reuseKey": "in civitate domini clare sonant iugiter organa sanctorum ibi cinnamomum et balsamum odor suavissimus carmina eorum ibi angeli et archangeli hymnum deo decantant ante thronum dei alleluia|antifona (salmo/cantico)|"
+    "_reuseKey": "in civitate domini clare sonant iugiter organa sanctorum ibi cinnamomum et balsamum odor suavissimus carmina eorum ibi angeli et archangeli hymnum deo decantant ante thronum dei alleluia|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Is 33,13-16",
+      "title": "Dio giudicherà con giustizia",
+      "file": "salmi/cant-is-33-13-16-sentiranno-i-lontani-quanto-ho-fatto.json"
+    }
   },
   {
     "id": "lodi.LA67",
@@ -3672,7 +4077,12 @@
     "candidatesConsidered": [
       10733
     ],
-    "_reuseKey": "quia mirabilia fecit dominus|antifona (salmo/cantico)|"
+    "_reuseKey": "quia mirabilia fecit dominus|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 97",
+      "title": "Il Signore vincitore del giudizio",
+      "file": "salmi/ps-97-cantate-al-signore-un-canto-nuovo.json"
+    }
   },
   {
     "id": "lodi.LA68",
@@ -3694,7 +4104,12 @@
       7796,
       20642,
       10740
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 86",
+      "title": "Gerusalemme, madre di tutti i popoli",
+      "file": "salmi/ps-86-le-sue-fondamenta-sono-sui-monti.json"
+    }
   },
   {
     "id": "lodi.LA69",
@@ -3718,7 +4133,12 @@
       14191,
       11463
     ],
-    "_reuseKey": "ecce venio cito et merces mea mecum est dicit dominus dare unicuique secundum opera sua|antifona (salmo/cantico)|"
+    "_reuseKey": "ecce venio cito et merces mea mecum est dicit dominus dare unicuique secundum opera sua|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Is 40,10-17",
+      "title": "Il buon pastore: Dio l’altissimo e il sapientissimo",
+      "file": "salmi/cant-is-40-10-17-ecco-il-signore-dio-viene-con.json"
+    }
   },
   {
     "id": "lodi.LA70",
@@ -3749,7 +4169,12 @@
       7120,
       6143,
       5391
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Is 40,10-17",
+      "title": "Il buon pastore: Dio l’altissimo e il sapientissimo",
+      "file": "salmi/cant-is-40-10-17-ecco-il-signore-dio-viene-con.json"
+    }
   },
   {
     "id": "lodi.LA71",
@@ -3771,7 +4196,12 @@
       4834,
       20371
     ],
-    "_reuseKey": "exaltate dominum deum nostrum et adorate ad montem sanctum eius|antifona (salmo/cantico)|"
+    "_reuseKey": "exaltate dominum deum nostrum et adorate ad montem sanctum eius|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 98",
+      "title": "Santo è il Signore Dio nostro",
+      "file": "salmi/ps-98-il-signore-regna-tremino-i-popoli.json"
+    }
   },
   {
     "id": "lodi.LA72",
@@ -3793,7 +4223,12 @@
       5730,
       20088,
       10748
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 50",
+      "title": "Pietà di me, o Signore",
+      "file": "salmi/ps-50-pieta-di-me-o-dio-secondo.json"
+    }
   },
   {
     "id": "lodi.LA73",
@@ -3817,7 +4252,12 @@
       10833,
       6902,
       20072
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 50",
+      "title": "Pietà di me, o Signore",
+      "file": "salmi/ps-50-pieta-di-me-o-dio-secondo.json"
+    }
   },
   {
     "id": "lodi.LA74",
@@ -3840,7 +4280,12 @@
       15652,
       6939,
       15988
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Ger 14,17-21",
+      "title": "Lamento del popolo in tempo di fame e di guerra.",
+      "file": "salmi/cant-ger-14-17-21-i-miei-occhi-grondano-lacrime.json"
+    }
   },
   {
     "id": "lodi.LA75",
@@ -3851,7 +4296,12 @@
     "pdfPage": "p. 124",
     "status": "not-found",
     "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
-    "_reuseKey": "alligavit dominus plagam populi sui et percussuram eius sanavit alleluia|antifona (salmo/cantico)|"
+    "_reuseKey": "alligavit dominus plagam populi sui et percussuram eius sanavit alleluia|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Ger 14,17-21",
+      "title": "Lamento del popolo in tempo di fame e di guerra.",
+      "file": "salmi/cant-ger-14-17-21-i-miei-occhi-grondano-lacrime.json"
+    }
   },
   {
     "id": "lodi.LA76",
@@ -3870,7 +4320,12 @@
     "candidatesConsidered": [
       5806
     ],
-    "_reuseKey": "suavis est dominus et in aeternum misericordia eius|antifona (salmo/cantico)|"
+    "_reuseKey": "suavis est dominus et in aeternum misericordia eius|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 99",
+      "title": "La gioia di coloro che entrano nel tempio.",
+      "file": "salmi/ps-99-acclamate-al-signore-voi-tutti-della.json"
+    }
   },
   {
     "id": "lodi.LA77",
@@ -3891,7 +4346,12 @@
       18661,
       19538,
       11226
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 118 (145-152, XIX Coph)",
+      "title": "Promessa di osservare la legge di Dio",
+      "file": "salmi/ps-118-145-152-xix-coph-t-invoco-con-tutto-il-cuore-2.json"
+    }
   },
   {
     "id": "lodi.LA78",
@@ -3911,7 +4371,12 @@
       12988,
       8565,
       6643
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Sap 9,1-6.9-11",
+      "title": "Signore, dammi la sapienza!",
+      "file": "salmi/cant-sap-9-1-6-9-11-dio-dei-padri-e-signore-di.json"
+    }
   },
   {
     "id": "lodi.LA79",
@@ -3933,7 +4398,12 @@
       18649,
       7109,
       16017
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Sap 9,1-6.9-11",
+      "title": "Signore, dammi la sapienza!",
+      "file": "salmi/cant-sap-9-1-6-9-11-dio-dei-padri-e-signore-di.json"
+    }
   },
   {
     "id": "lodi.LA80",
@@ -3965,7 +4435,12 @@
       18278,
       19317
     ],
-    "_reuseKey": "laudate dominum omnes gentes|antifona (salmo/cantico)|"
+    "_reuseKey": "laudate dominum omnes gentes|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 116",
+      "title": "Invito a lodare Dio per il suo amore",
+      "file": "salmi/ps-116-lodate-il-signore-popoli-tutti.json"
+    }
   },
   {
     "id": "lodi.LA81",
@@ -3985,7 +4460,12 @@
       18756,
       10865
     ],
-    "_reuseKey": "dominus mihi adiutor est non timebo quid faciat mihi homo|antifona (salmo/cantico)|"
+    "_reuseKey": "dominus mihi adiutor est non timebo quid faciat mihi homo|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 117",
+      "title": "Canto di gioia e di vittoria.",
+      "file": "salmi/ps-117-celebrate-il-signore-perche-e-buono-2.json"
+    }
   },
   {
     "id": "lodi.LA82",
@@ -4007,7 +4487,12 @@
       14739,
       14700,
       7224
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Dan 3,52-57",
+      "title": "Ogni creatura lodi il Signore",
+      "file": "salmi/cant-dan-3-52-57-benedetto-sei-tu-signore-dio-dei-2.json"
+    }
   },
   {
     "id": "lodi.LA83",
@@ -4030,7 +4515,12 @@
       18649,
       7163,
       10766
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 150",
+      "title": "Ogni vivente dia lode al Signore",
+      "file": "salmi/ps-150-lodate-il-signore-nel-suo-santuario-2.json"
+    }
   },
   {
     "id": "lodi.LA84",
@@ -4064,7 +4554,12 @@
       20089,
       5789,
       5977
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 89",
+      "title": "Su di noi sia la bontà del Signore",
+      "file": "salmi/ps-89-signore-tu-sei-stato-per-noi.json"
+    }
   },
   {
     "id": "lodi.LA85",
@@ -4098,7 +4593,12 @@
       20644,
       14053,
       16304
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Is 42,10-16",
+      "title": "Inno al Signore vittorioso e salvatore",
+      "file": "salmi/cant-is-42-10-16-cantate-al-signore-un-canto-nuovo.json"
+    }
   },
   {
     "id": "lodi.LA86",
@@ -4120,7 +4620,12 @@
       8179,
       10775
     ],
-    "_reuseKey": "laudate nomen domini qui statis in domo domini|antifona (salmo/cantico)|"
+    "_reuseKey": "laudate nomen domini qui statis in domo domini|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 134 (1-12)",
+      "title": "Lodate il Signore che opera meraviglie",
+      "file": "salmi/ps-134-1-12-lodate-il-nome-del-signore.json"
+    }
   },
   {
     "id": "lodi.LA87",
@@ -4142,7 +4647,12 @@
       5316,
       6191
     ],
-    "_reuseKey": "tibi domine psallam et intellegam in via immaculata|antifona (salmo/cantico)|"
+    "_reuseKey": "tibi domine psallam et intellegam in via immaculata|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 100",
+      "title": "Programma di un re fedele a Dio",
+      "file": "salmi/ps-100-amore-e-giustizia-voglio-cantare.json"
+    }
   },
   {
     "id": "lodi.LA88",
@@ -4163,7 +4673,12 @@
       11966,
       6906,
       14582
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Dan 3,26.27.29.34-41",
+      "title": "Preghiera di Azaria nella fornace",
+      "file": "salmi/cant-dan-3-26-27-29-34-41-benedetto-sei-tu-signore-dio-dei.json"
+    }
   },
   {
     "id": "lodi.LA89",
@@ -4174,7 +4689,12 @@
     "pdfPage": "p. 147-148",
     "status": "not-found",
     "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
-    "_reuseKey": "et nunc sequimur in toto corde timemus te et quaerimus faciem tuam videre alleluia|antifona (salmo/cantico)|"
+    "_reuseKey": "et nunc sequimur in toto corde timemus te et quaerimus faciem tuam videre alleluia|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Dan 3,26.27.29.34-41",
+      "title": "Preghiera di Azaria nella fornace",
+      "file": "salmi/cant-dan-3-26-27-29-34-41-benedetto-sei-tu-signore-dio-dei.json"
+    }
   },
   {
     "id": "lodi.LA90",
@@ -4185,7 +4705,12 @@
     "pdfPage": "p. 149",
     "status": "not-found",
     "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
-    "_reuseKey": "misericordia mea et refugium meum dominus susceptor meus et liberator meus|antifona (salmo/cantico)|"
+    "_reuseKey": "misericordia mea et refugium meum dominus susceptor meus et liberator meus|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 143 (1-10)",
+      "title": "Preghiera del re per la vittoria e per la pace.",
+      "file": "salmi/ps-143-1-10-benedetto-il-signore-mia-roccia.json"
+    }
   },
   {
     "id": "lodi.LA91",
@@ -4205,7 +4730,12 @@
       20671,
       15342
     ],
-    "_reuseKey": "psallam tibi in nationibus quia magna est super caelos misericordia tua|antifona (salmo/cantico)|"
+    "_reuseKey": "psallam tibi in nationibus quia magna est super caelos misericordia tua|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 107",
+      "title": "Lode a Dio e invocazione di aiuto",
+      "file": "salmi/ps-107-saldo-e-il-mio-cuore-dio.json"
+    }
   },
   {
     "id": "lodi.LA92",
@@ -4228,7 +4758,12 @@
       7460,
       11519,
       6013
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Is 61,10-62,5",
+      "title": "Giubilo del Profeta per la nuova Gerusalemme",
+      "file": "salmi/cant-is-61-10-62-5-io-gioisco-pienamente-nel-signore.json"
+    }
   },
   {
     "id": "lodi.LA93",
@@ -4254,7 +4789,12 @@
       4836,
       16416,
       20150
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 145",
+      "title": "Beato chi spera nel Signore",
+      "file": "salmi/ps-145-loda-il-signore-anima-mia.json"
+    }
   },
   {
     "id": "lodi.LA94",
@@ -4275,7 +4815,12 @@
       19071,
       20121,
       10801
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 142 (1-11)",
+      "title": "Peghiera nella tribolazione",
+      "file": "salmi/ps-142-1-11-signore-ascolta-la-mia-preghiera.json"
+    }
   },
   {
     "id": "lodi.LA95",
@@ -4296,7 +4841,12 @@
       13856,
       11491
     ],
-    "_reuseKey": "laetamini cum ierusalem et exsultate in ea omnes qui diligitis eam in aeternum|antifona (salmo/cantico)|"
+    "_reuseKey": "laetamini cum ierusalem et exsultate in ea omnes qui diligitis eam in aeternum|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Is 66,10-14a",
+      "title": "Nella città di Dio consolazione e gioia",
+      "file": "salmi/cant-is-66-10-14a-rallegratevi-con-gerusalemme.json"
+    }
   },
   {
     "id": "lodi.LA96",
@@ -4319,7 +4869,12 @@
       11269,
       6728,
       10803
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 146",
+      "title": "Potenza e bontà del Signore",
+      "file": "salmi/ps-146-lodate-il-signore.json"
+    }
   },
   {
     "id": "lodi.LA97",
@@ -4340,7 +4895,12 @@
       11969,
       10809,
       6254
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 50",
+      "title": "Pietà di me, o Signore",
+      "file": "salmi/ps-50-pieta-di-me-o-dio-secondo.json"
+    }
   },
   {
     "id": "lodi.LA98",
@@ -4365,7 +4925,12 @@
       7175,
       14608,
       6132
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 50",
+      "title": "Pietà di me, o Signore",
+      "file": "salmi/ps-50-pieta-di-me-o-dio-secondo.json"
+    }
   },
   {
     "id": "lodi.LA99",
@@ -4394,7 +4959,12 @@
       13810,
       6138,
       7059
-    ]
+    ],
+    "psalm": {
+      "ref": "Cant. Tob 13,8-11.13.14ab.16",
+      "title": "Ringraziamento per la liberazione del popoplo",
+      "file": "salmi/cant-tob-13-8-11-13-14ab-16-tutti-parlino-del-signore.json"
+    }
   },
   {
     "id": "lodi.LA100",
@@ -4405,7 +4975,12 @@
     "pdfPage": "p. 167",
     "status": "not-found",
     "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
-    "_reuseKey": "ierusalem civitas dei luce splendida fulgebis et omnes fines terrae te adorabunt alleluia|antifona (salmo/cantico)|"
+    "_reuseKey": "ierusalem civitas dei luce splendida fulgebis et omnes fines terrae te adorabunt alleluia|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Tob 13,8-11.13.14ab.16",
+      "title": "Ringraziamento per la liberazione del popoplo",
+      "file": "salmi/cant-tob-13-8-11-13-14ab-16-tutti-parlino-del-signore.json"
+    }
   },
   {
     "id": "lodi.LA101",
@@ -4424,7 +4999,12 @@
     "candidatesConsidered": [
       12280
     ],
-    "_reuseKey": "lauda deum tuum sion qui annuntiat iudicia sua israel|antifona (salmo/cantico)|"
+    "_reuseKey": "lauda deum tuum sion qui annuntiat iudicia sua israel|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 147",
+      "title": "La Gerusalemme riedificata",
+      "file": "salmi/ps-147-glorifica-il-signore-gerusalemme.json"
+    }
   },
   {
     "id": "lodi.LA102",
@@ -4456,7 +5036,12 @@
       7242,
       10818,
       10217
-    ]
+    ],
+    "psalm": {
+      "ref": "Ps 91",
+      "title": "Lode al Signore creatore",
+      "file": "salmi/ps-91-e-bello-dar-lode-al-signore.json"
+    }
   },
   {
     "id": "lodi.LA103",
@@ -4475,7 +5060,12 @@
     "candidatesConsidered": [
       12769
     ],
-    "_reuseKey": "aquam quam ego dedero qui biberit ex ea non sitiet unquam|antifona (salmo/cantico)|"
+    "_reuseKey": "aquam quam ego dedero qui biberit ex ea non sitiet unquam|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Ez 36,24-28",
+      "title": "Dio rinnoverà il suo popolo",
+      "file": "salmi/cant-ez-36-24-28-vi-prendero-dalle-genti.json"
+    }
   },
   {
     "id": "lodi.LA104",
@@ -4486,7 +5076,12 @@
     "pdfPage": "p. 173",
     "status": "not-found",
     "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
-    "_reuseKey": "effundam super vos aquam mundam et mundabimini ab omnibus inquinamentis vestris dicit dominus alleluia|antifona (salmo/cantico)|"
+    "_reuseKey": "effundam super vos aquam mundam et mundabimini ab omnibus inquinamentis vestris dicit dominus alleluia|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Cant. Ez 36,24-28",
+      "title": "Dio rinnoverà il suo popolo",
+      "file": "salmi/cant-ez-36-24-28-vi-prendero-dalle-genti.json"
+    }
   },
   {
     "id": "lodi.LA105",
@@ -4520,6 +5115,11 @@
       13631,
       13952
     ],
-    "_reuseKey": "gloria et honore coronasti eum domine omnia subiecisti sub pedibus eius|antifona (salmo/cantico)|"
+    "_reuseKey": "gloria et honore coronasti eum domine omnia subiecisti sub pedibus eius|antifona (salmo/cantico)|",
+    "psalm": {
+      "ref": "Ps 8",
+      "title": "Grandezza del Signore e dignità dell’uomo",
+      "file": "salmi/ps-8-o-signore-nostro-dio.json"
+    }
   }
 ]
