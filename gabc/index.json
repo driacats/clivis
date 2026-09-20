@@ -1918,9 +1918,10 @@
     "printedIncipit": "Clamábo ad Dóminum altíssimum, Qui benefécit mihi. Mittet de cælo, et liberávit me",
     "printedContext": "Venerdì, sett. 2 e 4",
     "pdfPage": "p. 80-81 / p. 169",
-    "status": "not-found",
-    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
-    "_reuseKey": "clamabo ad dominum altissimum qui benefecit mihi mittet de caelo et liberavit me|responsorio breve|"
+    "status": "found",
+    "_reuseKey": "clamabo ad dominum altissimum qui benefecit mihi mittet de caelo et liberavit me|responsorio breve|",
+    "file": "gabc/chants/manual-clamabo-ad-dominum-altissimum.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (non presente su GregoBase) — verificare prima dell'uso liturgico."
   },
   {
     "id": "lodi.LR13",
@@ -1949,9 +1950,10 @@
     "printedIncipit": "Exsultábunt lábia mea, Cum cantávero tibi. Lingua mea meditábitur iustítiam tuam",
     "printedContext": "Sabato, sett. 2 e 4",
     "pdfPage": "p. 87 / p. 175",
-    "status": "not-found",
-    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
-    "_reuseKey": "exsultabunt labia mea cum cantavero tibi lingua mea meditabitur iustitiam tuam|responsorio breve|"
+    "status": "found",
+    "_reuseKey": "exsultabunt labia mea cum cantavero tibi lingua mea meditabitur iustitiam tuam|responsorio breve|",
+    "file": "gabc/chants/manual-exsultabunt-labia-mea.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (non presente su GregoBase) — verificare prima dell'uso liturgico."
   },
   {
     "id": "lodi.LB1",
@@ -2233,14 +2235,19 @@
     "printedIncipit": "A te de luce vigilo, Deus, ut videam virtútem tuam",
     "printedContext": "settimana 1, Domenica, 1a ant., Ps 62",
     "pdfPage": "p. 3",
-    "status": "not-found",
-    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
+    "status": "found",
     "_reuseKey": "a te de luce vigilo deus ut videam virtutem tuam|antifona (salmo/cantico)|",
     "psalm": {
       "ref": "Ps 62",
       "title": "L’anima assetata del Signore",
       "file": "salmi/ps-62-o-dio-tu-sei-il-mio.json"
-    }
+    },
+    "gregobase": {
+      "id": 11116,
+      "url": "https://gregobase.selapa.net/chant.php?id=11116"
+    },
+    "file": "gabc/chants/11116-ad-te-de-luce-vigilo-deus-ut.gabc",
+    "matchNotes": "Trovato manualmente dall'utente su GregoBase."
   },
   {
     "id": "lodi.LA2",
@@ -2249,14 +2256,19 @@
     "printedIncipit": "Res púeri iussu regis in fornácem missi sunt, non timéntes flammam ignis, dicéntes: Benedíctus Deus",
     "printedContext": "settimana 1, Domenica, 2a ant., Cant. Dan 3,57-88.56",
     "pdfPage": "p. 3-4",
-    "status": "not-found",
-    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
+    "status": "found",
     "_reuseKey": "res pueri iussu regis in fornacem missi sunt non timentes flammam ignis dicentes benedictus deus|antifona (salmo/cantico)|",
     "psalm": {
       "ref": "Cant. Dan 3,57-88.56",
       "title": "Ogni creatura lodi il Signore",
       "file": "salmi/cant-dan-3-57-88-56-benedite-opere-tutte-del-signore-il.json"
-    }
+    },
+    "gregobase": {
+      "id": 3309,
+      "url": "https://gregobase.selapa.net/chant.php?id=3309"
+    },
+    "file": "gabc/chants/3309-tres-pueri.gabc",
+    "matchNotes": "Trovato manualmente dall'utente su GregoBase."
   },
   {
     "id": "lodi.LA3",
@@ -2757,11 +2769,10 @@
     "id": "lodi.LA20",
     "office": "lodi",
     "role": "antifona (salmo/cantico)",
-    "printedIncipit": "Dixit Dóminus paralýtico: Confíde fili: remittúntur tibi peccáta tua, allelúia",
+    "printedIncipit": "Meménto mei, Dómine Deus, dum véneris in regnum tuum, allelúia",
     "printedContext": "settimana 1, Venerdì, 1a ant., Ps 50 (T.P.)",
     "pdfPage": "p. 33-34",
-    "status": "not-found",
-    "notFoundReason": "L'utente segnala che la pagina del libretto mostrata durante la disambiguazione non contiene questa antifona (nota utente: \"Nell'immagine presa dal libretto non c'è nessuna antifona \"Dixit Dominus\"...\"): probabile errore nel riferimento di pagina in PDF-INVENTORY.md/gabc/inventory.json, da riverificare manualmente sul PDF sorgente — non è detto che il canto non esista su GregoBase.",
+    "status": "found",
     "candidatesConsidered": [
       19895,
       8314,
@@ -2773,7 +2784,9 @@
       "ref": "Ps 50",
       "title": "Pietà di me, o Signore",
       "file": "salmi/ps-50-pieta-di-me-o-dio-secondo.json"
-    }
+    },
+    "file": "gabc/chants/manual-memento-mei-domine-deus.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (non presente su GregoBase) — verificare prima dell'uso liturgico."
   },
   {
     "id": "lodi.LA21",
@@ -2990,14 +3003,19 @@
     "printedIncipit": "In sanctis eius laudáte Deum",
     "printedContext": "settimana 2, Domenica, 3a ant., Ps 150",
     "pdfPage": "p. 48",
-    "status": "not-found",
-    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
+    "status": "found",
     "_reuseKey": "in sanctis eius laudate deum|antifona (salmo/cantico)|",
     "psalm": {
       "ref": "Ps 150",
       "title": "Ogni vivente dia lode al Signore",
       "file": "salmi/ps-150-lodate-il-signore-nel-suo-santuario.json"
-    }
+    },
+    "gregobase": {
+      "id": 10427,
+      "url": "https://gregobase.selapa.net/chant.php?id=10427"
+    },
+    "file": "gabc/chants/10427-in-sanctis-ejus.gabc",
+    "matchNotes": "Trovato manualmente dall'utente su GregoBase."
   },
   {
     "id": "lodi.LA30",
@@ -3792,8 +3810,7 @@
     "printedIncipit": "Veníte, ascendámus ad montem Dómini, et ad domum Dei Iacob, allelúia, allelúia, allelúia",
     "printedContext": "settimana 3, Lunedì, 2a ant., Cant. Is 2,2-5 (T.P.)",
     "pdfPage": "p. 97-98",
-    "status": "not-found",
-    "notFoundReason": "L'utente segnala che la pagina del libretto mostrata durante la disambiguazione non contiene questa antifona (nota utente: \"Nella pagina del pdf che mi mostri non c'è l'antifona che devo controllare\"): probabile errore nel riferimento di pagina in PDF-INVENTORY.md/gabc/inventory.json, da riverificare manualmente sul PDF sorgente — non è detto che il canto non esista su GregoBase.",
+    "status": "found",
     "candidatesConsidered": [
       8997,
       13316,
@@ -3804,7 +3821,9 @@
       "ref": "Cant. Is 2,2-5",
       "title": "La nuova città di Dio, centro dell’umanità intera.",
       "file": "salmi/cant-is-2-2-5-alla-fine-dei-giorni.json"
-    }
+    },
+    "file": "gabc/chants/manual-venite-ascendamus-ad-montem-domini.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (non presente su GregoBase) — verificare prima dell'uso liturgico."
   },
   {
     "id": "lodi.LA59",
@@ -4294,14 +4313,15 @@
     "printedIncipit": "Alligávit Dóminus plagam pópuli sui, et percussúram eius sanávit, allelúia",
     "printedContext": "settimana 3, Venerdì, 2a ant., Cant. Ger 14,17-21 (T.P.)",
     "pdfPage": "p. 124",
-    "status": "not-found",
-    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
+    "status": "found",
     "_reuseKey": "alligavit dominus plagam populi sui et percussuram eius sanavit alleluia|antifona (salmo/cantico)|",
     "psalm": {
       "ref": "Cant. Ger 14,17-21",
       "title": "Lamento del popolo in tempo di fame e di guerra.",
       "file": "salmi/cant-ger-14-17-21-i-miei-occhi-grondano-lacrime.json"
-    }
+    },
+    "file": "gabc/chants/manual-alligavit-dominus-plagam-populi-sui.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (non presente su GregoBase) — verificare prima dell'uso liturgico."
   },
   {
     "id": "lodi.LA76",
@@ -4687,14 +4707,14 @@
     "printedIncipit": "Et nunc séquimur in toto corde, timémus te et quærimus fáciem tuam vidére, allelúia",
     "printedContext": "settimana 4, Martedì, 2a ant., Cant. Dan 3,26.27.29.34-41 (T.P.)",
     "pdfPage": "p. 147-148",
-    "status": "not-found",
-    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
-    "_reuseKey": "et nunc sequimur in toto corde timemus te et quaerimus faciem tuam videre alleluia|antifona (salmo/cantico)|",
+    "status": "found",
     "psalm": {
       "ref": "Cant. Dan 3,26.27.29.34-41",
       "title": "Preghiera di Azaria nella fornace",
       "file": "salmi/cant-dan-3-26-27-29-34-41-benedetto-sei-tu-signore-dio-dei.json"
-    }
+    },
+    "file": "gabc/chants/manual-et-nunc-sequimur-in-toto-corde.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (non presente su GregoBase) — verificare prima dell'uso liturgico."
   },
   {
     "id": "lodi.LA90",
@@ -4703,14 +4723,14 @@
     "printedIncipit": "Misericórdia mea et refúgium meum Dóminus: suscéptor meus, et liberátor meus",
     "printedContext": "settimana 4, Martedì, 3a ant., Ps 143 (1-10)",
     "pdfPage": "p. 149",
-    "status": "not-found",
-    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
-    "_reuseKey": "misericordia mea et refugium meum dominus susceptor meus et liberator meus|antifona (salmo/cantico)|",
+    "status": "found",
     "psalm": {
       "ref": "Ps 143 (1-10)",
       "title": "Preghiera del re per la vittoria e per la pace.",
       "file": "salmi/ps-143-1-10-benedetto-il-signore-mia-roccia.json"
-    }
+    },
+    "file": "gabc/chants/manual-misericordia-mea-et-refugium.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (non presente su GregoBase) — verificare prima dell'uso liturgico."
   },
   {
     "id": "lodi.LA91",
@@ -4973,14 +4993,14 @@
     "printedIncipit": "Ierúsalem, cívitas Dei, luce spléndida fulgébis, et omnes fines terræ te adorábunt, allelúia",
     "printedContext": "settimana 4, Venerdì, 2a ant., Cant. Tob 13,8-11.13.14ab.16 (T.P.)",
     "pdfPage": "p. 167",
-    "status": "not-found",
-    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
-    "_reuseKey": "ierusalem civitas dei luce splendida fulgebis et omnes fines terrae te adorabunt alleluia|antifona (salmo/cantico)|",
+    "status": "found",
     "psalm": {
       "ref": "Cant. Tob 13,8-11.13.14ab.16",
       "title": "Ringraziamento per la liberazione del popoplo",
       "file": "salmi/cant-tob-13-8-11-13-14ab-16-tutti-parlino-del-signore.json"
-    }
+    },
+    "file": "gabc/chants/manual-ierusalem-civitas-dei.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (non presente su GregoBase) — verificare prima dell'uso liturgico."
   },
   {
     "id": "lodi.LA101",
@@ -5074,14 +5094,15 @@
     "printedIncipit": "Effúndam super vos aquam mundam, et mundabímini ab ómnibus inquinaméntis vestris, dicit Dóminus, allelúia",
     "printedContext": "settimana 4, Sabato, 2a ant., Cant. Ez 36,24-28 (T.P.)",
     "pdfPage": "p. 173",
-    "status": "not-found",
-    "notFoundReason": "Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.",
+    "status": "found",
     "_reuseKey": "effundam super vos aquam mundam et mundabimini ab omnibus inquinamentis vestris dicit dominus alleluia|antifona (salmo/cantico)|",
     "psalm": {
       "ref": "Cant. Ez 36,24-28",
       "title": "Dio rinnoverà il suo popolo",
       "file": "salmi/cant-ez-36-24-28-vi-prendero-dalle-genti.json"
-    }
+    },
+    "file": "gabc/chants/manual-effundam-super-vos-aquam-mundam.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (non presente su GregoBase) — verificare prima dell'uso liturgico."
   },
   {
     "id": "lodi.LA105",

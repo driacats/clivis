@@ -1223,14 +1223,14 @@
       "id": "LA20",
       "office": "lodi",
       "role": "antifona (salmo/cantico)",
-      "text": "Dixit Dóminus paralýtico: Confíde fili: remittúntur tibi peccáta tua, allelúia",
+      "text": "Meménto mei, Dómine Deus, dum véneris in regnum tuum, allelúia",
       "context": "settimana 1, Venerdì, 1a ant., Ps 50 (T.P.)",
-      "mode": null,
+      "mode": "VIII G",
       "page": "p. 33-34",
       "isPaschalSubstitute": true,
       "substituteFor": "LA19",
       "verificare": false,
-      "verificareNote": null,
+      "verificareNote": "Testo corretto in questa sessione: il testo precedente ('Dixit Dóminus paralýtico...') era un errore di trascrizione, duplicato dalla riga LA45 (stessa antifona, settimana 2). Il testo reale stampato a p.33 ('Oppure:') è questo.",
       "skip": false
     },
     {

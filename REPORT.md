@@ -11,8 +11,8 @@ Le corrispondenze sono state trovate in due fasi: (1) un abbinamento automatico 
 | Libretto | Trovati | Non trovati | Non applicabile | Totale |
 | --- | --- | --- | --- | --- |
 | Compieta | 54 | 0 | 0 | 54 |
-| Lodi (sett. 1-4) | 132 | 12 | 1 | 145 |
-| **Totale** | **186** | **12** | **1** | **199** |
+| Lodi (sett. 1-4) | 144 | 0 | 1 | 145 |
+| **Totale** | **198** | **0** | **1** | **199** |
 
 Inoltre, il tempo pasquale sostituisce nella maggior parte delle antifone salmiche di Lodi il testo proprio con la formula generica "Allelúia, allelúia, allelúia": questa formula non è stata cercata riga per riga su GregoBase (sarebbero decine di ricerche identiche) — resta da coprire a parte con poche formule riusabili per modo, se e quando servirà.
 
@@ -45,9 +45,16 @@ Le righe seguenti sono marcate **trovato** in questo report, ma portano un limit
 - `compieta.C27` — Caro mea requiéscet in spe — `gabc/chants/10086-caro-mea-requiescet-in-spe.gabc` — la trascrizione originale includeva un incipit salmico aggiuntivo ("Consérva me, Deus" + formula EUOUAE) non facente parte dell'antifona: rimosso.
 - `lodi.LA38` — Exsultávit cor meum in Dómino — `gabc/chants/4903-exsultavit-cor-meum-in-domino-qui-humiliat-et-sublevat.gabc` — rimossa un'etichetta di rubrica "Ant." erroneamente inclusa all'inizio del corpo GABC (vedi anche l'alleluia mancante sopra).
 
-**Riferimento di pagina da riverificare** (l'utente segnala che la pagina del libretto mostrata durante la disambiguazione non conteneva l'antifona in questione — probabile errore nel riferimento di pagina raccolto in `PDF-INVENTORY.md`/`gabc/inventory.json`, non necessariamente assenza del canto da GregoBase):
-- `lodi.LA20` — Dixit Dóminus paralýtico: Confíde fili: remittúntur tibi peccáta tua, allelúia — L'utente segnala che la pagina del libretto mostrata durante la disambiguazione non contiene questa antifona (nota utente: "Nell'immagine presa dal libretto non c'è nessuna antifona "Dixit Dominus"..."): probabile errore nel riferimento di pagina in PDF-INVENTORY.md/gabc/inventory.json, da riverificare manualmente sul PDF sorgente — non è detto che il canto non esista su GregoBase.
-- `lodi.LA58` — Veníte, ascendámus ad montem Dómini, et ad domum Dei Iacob, allelúia, allelúia, allelúia — L'utente segnala che la pagina del libretto mostrata durante la disambiguazione non contiene questa antifona (nota utente: "Nella pagina del pdf che mi mostri non c'è l'antifona che devo controllare"): probabile errore nel riferimento di pagina in PDF-INVENTORY.md/gabc/inventory.json, da riverificare manualmente sul PDF sorgente — non è detto che il canto non esista su GregoBase.
+**Trascritte manualmente dallo spartito stampato (non presenti su GregoBase) — da verificare prima dell'uso liturgico**: per queste 9 antifone/responsori non esiste alcuna trascrizione GABC su GregoBase; il codice è stato scritto leggendo direttamente la notazione quadrata stampata nel libretto (rilevamento preciso delle righe del pentagramma dall'immagine ad alta risoluzione, altezze delle note lette una per una contro una griglia di riferimento). Non esiste modo automatico di verificare la correttezza musicale di una trascrizione a mano — da far controllare da chi legge la notazione quadrata prima di un uso liturgico o di stampa:
+- `lodi.LA20` — Meménto mei, Dómine Deus, dum véneris in regnum tuum, allelúia — `gabc/chants/manual-memento-mei-domine-deus.gabc` — **nota aggiuntiva**: il testo di questa riga era stato registrato erroneamente nella fase di estrazione iniziale (copiato per errore dalla riga `lodi.LA45`, "Dixit Dóminus paralýtico..."); il testo corretto, quello realmente stampato a p. 33-34 del libretto ("Oppure:", dopo l'alleluia pasquale generico), è quello riportato qui — corretto in `gabc/inventory.json` e `gabc/index.json` in questa sessione, insieme alla riga qui sotto nella sezione Settimana 1.
+- `lodi.LA58` — Veníte, ascendámus ad montem Dómini, et ad domum Dei Iacob, allelúia, allelúia, allelúia — `gabc/chants/manual-venite-ascendamus-ad-montem-domini.gabc` — testo confermato corretto contro il PDF sorgente (l'avviso precedente sulla pagina era dovuto a un problema del solo strumento di disambiguazione visiva, non a un errore nei dati)
+- `lodi.LA75` — Alligávit Dóminus plagam pópuli sui, et percussúram eius sanávit, allelúia — `gabc/chants/manual-alligavit-dominus-plagam-populi-sui.gabc`
+- `lodi.LA89` — Et nunc séquimur in toto corde, timémus te et quærimus fáciem tuam vidére, allelúia — `gabc/chants/manual-et-nunc-sequimur-in-toto-corde.gabc`
+- `lodi.LA90` — Misericórdia mea et refúgium meum Dóminus: suscéptor meus, et liberátor meus — `gabc/chants/manual-misericordia-mea-et-refugium.gabc`
+- `lodi.LA100` — Ierúsalem, cívitas Dei, luce spléndida fulgébis, et omnes fines terræ te adorábunt, allelúia — `gabc/chants/manual-ierusalem-civitas-dei.gabc`
+- `lodi.LA104` — Effúndam super vos aquam mundam, et mundabímini ab ómnibus inquinaméntis vestris, dicit Dóminus, allelúia — `gabc/chants/manual-effundam-super-vos-aquam-mundam.gabc`
+- `lodi.LR12` — Clamábo ad Dóminum altíssimum, Qui benefécit mihi. Mittet de cælo, et liberávit me — `gabc/chants/manual-clamabo-ad-dominum-altissimum.gabc`
+- `lodi.LR14` — Exsultábunt lábia mea, Cum cantávero tibi. Lingua mea meditábitur iustítiam tuam — `gabc/chants/manual-exsultabunt-labia-mea.gabc`
 
 ## Compieta piccola.pdf
 
@@ -138,9 +145,9 @@ Le righe seguenti sono marcate **trovato** in questo report, ma portano un limit
 - ✓ Clamávi in toto corde meo: Exáudi me, Dómine. Iustificatiónes tuas servábo (Giovedì, sett. 1 e 3) — GregoBase #19037 — `gabc/chants/19037-clamavi-in-toto-corde-meo-exaudi-me-domine-iustificationes-t.gabc`
 - ✓ In matutínis, Dómine, meditábor de te. Quia factus es adiútor meus (Giovedì, sett. 2 e 4) — GregoBase #19746 — `gabc/chants/19746-in-matutinis-domine-meditabor-de-te-quia-factus-es-adiutor-m.gabc`
 - ✓ Audítam fac mihi mane misericórdiam tuam. Notam fac mihi viam in qua ámbulem (Venerdì, sett. 1 e 3) — GregoBase #19045 — `gabc/chants/19045-auditam-fac-mihi-mane-misericordiam-tuam-notam-fac-mihi-viam.gabc`
-- ✗ Clamábo ad Dóminum altíssimum, Qui benefécit mihi. Mittet de cælo, et liberávit me (Venerdì, sett. 2 e 4) — **non trovato**: Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.
+- ⚠ Clamábo ad Dóminum altíssimum, Qui benefécit mihi. Mittet de cælo, et liberávit me (Venerdì, sett. 2 e 4) — trascrizione manuale — `gabc/chants/manual-clamabo-ad-dominum-altissimum.gabc` *(vedi [Note e criticità](#note-e-criticità-da-verificare))*
 - ✓ Clamávi ad te, Dómine; Tu es refúgium meum. Pórtio mea in terra vivéntium (Sabato, sett. 1 e 3) — GregoBase #19074 — `gabc/chants/19074-clamavi-ad-te-domine-tu-es-refugium-meum-portio-mea-in-terra.gabc`
-- ✗ Exsultábunt lábia mea, Cum cantávero tibi. Lingua mea meditábitur iustítiam tuam (Sabato, sett. 2 e 4) — **non trovato**: Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.
+- ⚠ Exsultábunt lábia mea, Cum cantávero tibi. Lingua mea meditábitur iustítiam tuam (Sabato, sett. 2 e 4) — trascrizione manuale — `gabc/chants/manual-exsultabunt-labia-mea.gabc` *(vedi [Note e criticità](#note-e-criticità-da-verificare))*
 
 ### Antifone al Benedictus
 
@@ -162,8 +169,8 @@ Le righe seguenti sono marcate **trovato** in questo report, ma portano un limit
 
 #### Settimana 1
 
-- ✗ A te de luce vigilo, Deus, ut videam virtútem tuam (settimana 1, Domenica, 1a ant., Ps 62) — **non trovato**: Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.
-- ✗ Res púeri iussu regis in fornácem missi sunt, non timéntes flammam ignis, dicéntes: Benedíctus Deus (settimana 1, Domenica, 2a ant., Cant. Dan 3,57-88.56) — **non trovato**: Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.
+- ✓ A te de luce vigilo, Deus, ut videam virtútem tuam (settimana 1, Domenica, 1a ant., Ps 62) — GregoBase #11116 — `gabc/chants/11116-ad-te-de-luce-vigilo-deus-ut.gabc`
+- ✓ Res púeri iussu regis in fornácem missi sunt, non timéntes flammam ignis, dicéntes: Benedíctus Deus (settimana 1, Domenica, 2a ant., Cant. Dan 3,57-88.56) — GregoBase #3309 — `gabc/chants/3309-tres-pueri.gabc`
 - ✓ Beneplácitum est Dómino in pópulo suo, et honorábit mansuétos in salútem (settimana 1, Domenica, 3a ant., Ps 149) — GregoBase #14493 — `gabc/chants/14493-beneplacitum-est-domino-in-populo-suo-et-honorabit-mansuetos.gabc`
 - ✓ Intéllege clamórem meum, Dómine (settimana 1, Lunedì, 1a ant., Ps 5) — GregoBase #10415 — `gabc/chants/10415-intellege-clamorem-meum-domine.gabc`
 - ✓ Laudámus nomen tuum inclytum, Deus noster (settimana 1, Lunedì, 2a ant., Cant. 1 Cron 29,10-13) — GregoBase #11128 — `gabc/chants/11128-laudamus-nomen-tuum-inclytum-deus-noster.gabc`
@@ -181,7 +188,7 @@ Le righe seguenti sono marcate **trovato** in questo report, ma portano un limit
 - ✓ Pastor bonus ánimam suam ponit pro óvibus suis, allelúia (settimana 1, Giovedì, 2a ant., Cant. Ger 31,10-14 (T.P.)) — GregoBase #10148 — `gabc/chants/10148-pastor-bonus-animam-suam-ponit-pro-ovibus-suis-alleluia.gabc`
 - ✓ Magnus Dóminus et laudábilis nimis (settimana 1, Giovedì, 3a ant., Ps 47) — GregoBase #18049 — `gabc/chants/18049-magnus-dominus-et-laudabilis-nimis.gabc`
 - ✓ Miserére mei, Deus (settimana 1, Venerdì, 1a ant., Ps 50) — GregoBase #10436 — `gabc/chants/10436-miserere-mei-deus.gabc`
-- ✗ Dixit Dóminus paralýtico: Confíde fili: remittúntur tibi peccáta tua, allelúia (settimana 1, Venerdì, 1a ant., Ps 50 (T.P.)) — **non trovato**: L'utente segnala che la pagina del libretto mostrata durante la disambiguazione non contiene questa antifona (nota utente: "Nell'immagine presa dal libretto non c'è nessuna antifona "Dixit Dominus"..."): probabile errore nel riferimento di pagina in PDF-INVENTORY.md/gabc/inventory.json, da riverificare manualmente sul PDF sorgente — non è detto che il canto non esista su GregoBase.
+- ⚠ Meménto mei, Dómine Deus, dum véneris in regnum tuum, allelúia (settimana 1, Venerdì, 1a ant., Ps 50 (T.P.)) — trascrizione manuale — `gabc/chants/manual-memento-mei-domine-deus.gabc` *(testo corretto in questa sessione, vedi [Note e criticità](#note-e-criticità-da-verificare))*
 - ✓ In Dómino iustificábitur, et laudábitur omne semen Israel (settimana 1, Venerdì, 2a ant., Cant. Is 45,15-26) — GregoBase #10879 — `gabc/chants/10879-in-domino-iustificabitur-et-laudabitur-omne-semen-israel.gabc`
 - — null (settimana 1, Venerdì, 2a ant., Cant. Is 45,15-26 (T.P.)) — non applicabile: verificare — nessuna alternativa pasquale indicata per questa settimana
 - ✓ Iubiláte Deo, omnis terra (settimana 1, Venerdì, 3a ant., Ps 99) — GregoBase #18057 — `gabc/chants/18057-iubilate-deo-omnis-terra.gabc`
@@ -193,7 +200,7 @@ Le righe seguenti sono marcate **trovato** in questo report, ma portano un limit
 
 - ✓ Si mihi Dóminus salvátor fúerit, non timébo quid fáciat mihi homo (settimana 2, Domenica, 1a ant., Ps 117) — GregoBase #20470 — `gabc/chants/20470-si-mihi-dominus-salvator-fuerit-non-timebo-quid-faciat-mihi-.gabc`
 - ✓ Hymnum dicámus Dómino Deo nostro (settimana 2, Domenica, 2a ant., Cant. Dan 3,52-57) — GregoBase #9771 — `gabc/chants/9771-hymnum-dicamus-domino-deo-nostro.gabc`
-- ✗ In sanctis eius laudáte Deum (settimana 2, Domenica, 3a ant., Ps 150) — **non trovato**: Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.
+- ✓ In sanctis eius laudáte Deum (settimana 2, Domenica, 3a ant., Ps 150) — GregoBase #10427 — `gabc/chants/10427-in-sanctis-ejus.gabc`
 - ✓ Sitívit ánima mea ad Deum vivum: quando véniam, et apparébo ante fáciem Dómini? (settimana 2, Lunedì, 1a ant., Ps 41) — GregoBase #15659 — `gabc/chants/15659-sitivit-anima-mea-ad-deum-vivum-quando-veniam-et-apparebo-an.gabc`
 - ✓ Osténde nobis, Dómine, lucem misericordiárum tuárum (settimana 2, Lunedì, 2a ant., Cant. Sir 36,1-6.10-13) — GregoBase #15203 — `gabc/chants/15203-ostende-nobis-domine-lucem-misericordiarum-tuarum.gabc`
 - ✓ Cæli enárrant glóriam Dei (settimana 2, Lunedì, 3a ant., Ps 18A) — GregoBase #18605 — `gabc/chants/18605-caeli-enarrant-gloriam-dei.gabc`
@@ -225,7 +232,7 @@ Le righe seguenti sono marcate **trovato** in questo report, ma portano un limit
 - ✓ Laudáte Dóminum de cælis (settimana 3, Domenica, 3a ant., Ps 148) — GregoBase #18347 — `gabc/chants/18347-laudate-dominum-de-caelis.gabc`
 - ✓ Beáti qui hábitant in domo tua, Dómine (settimana 3, Lunedì, 1a ant., Ps 83) — GregoBase #2372 — `gabc/chants/2372-beati-qui-habitant-in-domo-tua-domine.gabc`
 - ✓ De Sion exíbit lex, et verbum Dómini de Ierúsalem (settimana 3, Lunedì, 2a ant., Cant. Is 2,2-5) — GregoBase #4373 — `gabc/chants/4373-de-sion-exibit-lex-et-verbum-domini-de-ierusalem.gabc`
-- ✗ Veníte, ascendámus ad montem Dómini, et ad domum Dei Iacob, allelúia, allelúia, allelúia (settimana 3, Lunedì, 2a ant., Cant. Is 2,2-5 (T.P.)) — **non trovato**: L'utente segnala che la pagina del libretto mostrata durante la disambiguazione non contiene questa antifona (nota utente: "Nella pagina del pdf che mi mostri non c'è l'antifona che devo controllare"): probabile errore nel riferimento di pagina in PDF-INVENTORY.md/gabc/inventory.json, da riverificare manualmente sul PDF sorgente — non è detto che il canto non esista su GregoBase.
+- ⚠ Veníte, ascendámus ad montem Dómini, et ad domum Dei Iacob, allelúia, allelúia, allelúia (settimana 3, Lunedì, 2a ant., Cant. Is 2,2-5 (T.P.)) — trascrizione manuale — `gabc/chants/manual-venite-ascendamus-ad-montem-domini.gabc` *(vedi [Note e criticità](#note-e-criticità-da-verificare))*
 - ⚠ Cantáte Dómino, et benedícite nómini eius (settimana 3, Lunedì, 3a ant., Ps 95) — GregoBase #12541 — `gabc/chants/12541-cantate-domino-et-benedicite-nomini-eius.gabc` *(vedi [Note e criticità](#note-e-criticità-da-verificare))*
 - ✓ Benedixísti Dómine terram tuam (settimana 3, Martedì, 1a ant., Ps 84) — GregoBase #20422 — `gabc/chants/20422-benedixisti-domine-terram-tuam.gabc`
 - ✓ Deus Deus meus, ad te de luce vígilo, quia factus es adiútor meus (settimana 3, Martedì, 2a ant., Cant. Is 26,1-4.7-9.12) — GregoBase #12711 — `gabc/chants/12711-deus-deus-meus-ad-te-de-luce-vigilo-quia-factus-es-adiutor-m.gabc`
@@ -242,7 +249,7 @@ Le righe seguenti sono marcate **trovato** in questo report, ma portano un limit
 - ✓ Tibi soli peccávi, Dómine, miserére mei (settimana 3, Venerdì, 1a ant., Ps 50) — GregoBase #12456 — `gabc/chants/12456-tibi-soli-peccavi-domine-miserere-mei.gabc`
 - ✓ Amplius lava me, Dómine ab iniustítia mea, allelúia (settimana 3, Venerdì, 1a ant., Ps 50 (T.P.)) — GregoBase #15612 — `gabc/chants/15612-amplius-lava-me-domine-ab-iniustitia-mea-alleluia.gabc`
 - ✓ Ne reminiscáris Dómine delícta mea, vel paréntum meórum: neque vindíctam sumas de peccátis meis (settimana 3, Venerdì, 2a ant., Cant. Ger 14,17-21) — GregoBase #8513 — `gabc/chants/8513-ne-reminiscaris-domine-delicta-mea-vel-parentum-meorum-neque.gabc`
-- ✗ Alligávit Dóminus plagam pópuli sui, et percussúram eius sanávit, allelúia (settimana 3, Venerdì, 2a ant., Cant. Ger 14,17-21 (T.P.)) — **non trovato**: Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.
+- ⚠ Alligávit Dóminus plagam pópuli sui, et percussúram eius sanávit, allelúia (settimana 3, Venerdì, 2a ant., Cant. Ger 14,17-21 (T.P.)) — trascrizione manuale — `gabc/chants/manual-alligavit-dominus-plagam-populi-sui.gabc` *(vedi [Note e criticità](#note-e-criticità-da-verificare))*
 - ✓ Suávis est Dóminus, et in ætérnum misericórdia eius (settimana 3, Venerdì, 3a ant., Ps 99) — GregoBase #5806 — `gabc/chants/5806-suavis-est-dominus-et-in-aeternum-misericordia-eius.gabc`
 - ✓ Adspíce in me, et miserére mei, Dómine (settimana 3, Sabato, 1a ant., Ps 118 (145-152, XIX Coph)) — GregoBase #20364 — `gabc/chants/20364-adspice-in-me-et-miserere-mei-domine.gabc`
 - ✓ Ego in altíssimis hábito, et thronus meus in colúmna nubis (settimana 3, Sabato, 2a ant., Cant. Sap 9,1-6.9-11) — GregoBase #8565 — `gabc/chants/8565-ego-in-altissimis-habito-et-thronus-meus-in-columna-nubis.gabc`
@@ -259,8 +266,8 @@ Le righe seguenti sono marcate **trovato** in questo report, ma portano un limit
 - ✓ Laudáte nomen Dómini, qui statis in domo Dómini (settimana 4, Lunedì, 3a ant., Ps 134 (1-12)) — GregoBase #12909 — `gabc/chants/12909-laudate-nomen-domini-qui-statis-in-domo-domini.gabc`
 - ✓ Tibi, Dómine, psallam, et intéllegam in via immaculáta (settimana 4, Martedì, 1a ant., Ps 100) — GregoBase #12835 — `gabc/chants/12835-tibi-domine-psallam-et-intellegam-in-via-immaculata.gabc`
 - ✓ In spíritu humilitátis et in ánimo contríto suscipiámur, Dómine, a te: et sic fiat sacrifícium nostrum, ut a te suscipiátur hódie, et pláceat tibi, Dómine Deus (settimana 4, Martedì, 2a ant., Cant. Dan 3,26.27.29.34-41) — GregoBase #9749 — `gabc/chants/9749-in-spiritu-humilitatis-et-in-animo-contrito-suscipiamur-domi.gabc`
-- ✗ Et nunc séquimur in toto corde, timémus te et quærimus fáciem tuam vidére, allelúia (settimana 4, Martedì, 2a ant., Cant. Dan 3,26.27.29.34-41 (T.P.)) — **non trovato**: Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.
-- ✗ Misericórdia mea et refúgium meum Dóminus: suscéptor meus, et liberátor meus (settimana 4, Martedì, 3a ant., Ps 143 (1-10)) — **non trovato**: Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.
+- ⚠ Et nunc séquimur in toto corde, timémus te et quærimus fáciem tuam vidére, allelúia (settimana 4, Martedì, 2a ant., Cant. Dan 3,26.27.29.34-41 (T.P.)) — trascrizione manuale — `gabc/chants/manual-et-nunc-sequimur-in-toto-corde.gabc` *(vedi [Note e criticità](#note-e-criticità-da-verificare))*
+- ⚠ Misericórdia mea et refúgium meum Dóminus: suscéptor meus, et liberátor meus (settimana 4, Martedì, 3a ant., Ps 143 (1-10)) — trascrizione manuale — `gabc/chants/manual-misericordia-mea-et-refugium.gabc` *(vedi [Note e criticità](#note-e-criticità-da-verificare))*
 - ✓ Psallam tibi in natiónibus, quia magna est super cælos misericórdia tua (settimana 4, Mercoledì, 1a ant., Ps 107) — GregoBase #15342 — `gabc/chants/15342-psallam-tibi-in-nationibus-quia-magna-est-super-caelos-miser.gabc`
 - ✓ Propter Sion non tacébo, donec egrediátur ut splendor iustus eius (settimana 4, Mercoledì, 2a ant., Cant. Is 61,10-62,5) — GregoBase #7460 — `gabc/chants/7460-propter-sion-non-tacebo-donec-egrediatur-ut-splendor-iustus-.gabc`
 - ✓ Laudábo Deum meum in vita mea (settimana 4, Mercoledì, 3a ant., Ps 145) — GregoBase #19389 — `gabc/chants/19389-laudabo-deum-meum-in-vita-mea.gabc`
@@ -270,9 +277,9 @@ Le righe seguenti sono marcate **trovato** in questo report, ma portano un limit
 - ✓ Cor mundum crea in me Deus: spíritum rectum ínnova in viscéribus meis (settimana 4, Venerdì, 1a ant., Ps 50) — GregoBase #9745 — `gabc/chants/9745-cor-mundum-crea-in-me-deus-spiritum-rectum-innova-in-visceri.gabc`
 - ⚠ Nemo te condemnávit, múlier? Nemo, Dómine. Nec ego te condemnábo: iam ámplius noli peccáre, allelúia (settimana 4, Venerdì, 1a ant., Ps 50 (T.P.)) — GregoBase #19722 — `gabc/chants/19722-nemo-te-condemnavit-mulier-nemo-domine-nec-ego-te-condemnabo.gabc` *(vedi [Note e criticità](#note-e-criticità-da-verificare))*
 - ✓ Benedícite Dóminum, omnes elécti eius: agite dies lætítiæ, et confitémini illi (settimana 4, Venerdì, 2a ant., Cant. Tob 13,8-11.13.14ab.16) — GregoBase #9037 — `gabc/chants/9037-benedicite-dominum-omnes-electi-eius-agite-dies-laetitiae-et.gabc`
-- ✗ Ierúsalem, cívitas Dei, luce spléndida fulgébis, et omnes fines terræ te adorábunt, allelúia (settimana 4, Venerdì, 2a ant., Cant. Tob 13,8-11.13.14ab.16 (T.P.)) — **non trovato**: Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.
+- ⚠ Ierúsalem, cívitas Dei, luce spléndida fulgébis, et omnes fines terræ te adorábunt, allelúia (settimana 4, Venerdì, 2a ant., Cant. Tob 13,8-11.13.14ab.16 (T.P.)) — trascrizione manuale — `gabc/chants/manual-ierusalem-civitas-dei.gabc` *(vedi [Note e criticità](#note-e-criticità-da-verificare))*
 - ✓ Lauda Deum tuum Sion, qui annúntiat iudícia sua Israel (settimana 4, Venerdì, 3a ant., Ps 147) — GregoBase #12280 — `gabc/chants/12280-lauda-deum-tuum-sion-qui-annuntiat-iudicia-sua-israel.gabc`
 - ✓ Bonum est confitéri Dómino (settimana 4, Sabato, 1a ant., Ps 91) — GregoBase #19042 — `gabc/chants/19042-bonum-est-confiteri-domino.gabc`
 - ✓ Aquam quam ego dédero, qui bíberit ex ea, non sítiet unquam (settimana 4, Sabato, 2a ant., Cant. Ez 36,24-28) — GregoBase #12769 — `gabc/chants/12769-aquam-quam-ego-dedero-qui-biberit-ex-ea-non-sitiet-unquam.gabc`
-- ✗ Effúndam super vos aquam mundam, et mundabímini ab ómnibus inquinaméntis vestris, dicit Dóminus, allelúia (settimana 4, Sabato, 2a ant., Cant. Ez 36,24-28 (T.P.)) — **non trovato**: Nessuna voce nell'indice GregoBase (incipit.php) corrisponde a questo incipit.
+- ⚠ Effúndam super vos aquam mundam, et mundabímini ab ómnibus inquinaméntis vestris, dicit Dóminus, allelúia (settimana 4, Sabato, 2a ant., Cant. Ez 36,24-28 (T.P.)) — trascrizione manuale — `gabc/chants/manual-effundam-super-vos-aquam-mundam.gabc` *(vedi [Note e criticità](#note-e-criticità-da-verificare))*
 - ✓ Glória et honóre coronásti eum, Dómine; ómnia subiecísti sub pédibus eius (settimana 4, Sabato, 3a ant., Ps 8) — GregoBase #20027 — `gabc/chants/20027-gloria-et-honore-coronasti-eum-domine-omnia-subiecisti-sub-p.gabc`
