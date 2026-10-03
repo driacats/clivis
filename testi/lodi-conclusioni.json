@@ -1,0 +1,758 @@
+[
+ {
+  "week": 1,
+  "day": "Domenica",
+  "invocazioni": {
+   "intro": "Acclamiamo Cristo, sole di giustizia apparso all'orizzonte dell’umanità:",
+   "response": "Signore, tu sei la vita e la salvezza nostra.",
+   "intercessions": [
+    {
+     "petition": "Creatore degli astri, noi ti consacriamo le primizie di questo giorno",
+     "answer": "nel ricordo della tua gloriosa risurrezione."
+    },
+    {
+     "petition": "Il tuo Spirito ci insegni a compiere la tua volontà,",
+     "answer": "e la tua sapienza ci guidi oggi e sempre."
+    },
+    {
+     "petition": "Donaci di partecipare con vera fede all'assemblea del tuo popolo",
+     "answer": "intorno alla mensa della tua Parola e del tuo Corpo."
+    },
+    {
+     "petition": "La tua Chiesa ti renda grazie, Signore,",
+     "answer": "per i tuoi innumerevoli benefici."
+    }
+   ]
+  },
+  "orazione": null
+ },
+ {
+  "week": 1,
+  "day": "Lunedì",
+  "invocazioni": {
+   "intro": "Glorifichiamo Cristo, nostro Signore, pieno di grazia e di Spirito Santo e con fiducia chiediamo:",
+   "response": "Donaci il tuo Spirito, Signore.",
+   "intercessions": [
+    {
+     "petition": "Concedi a noi di trascorrere questo giorno nella gioia, nella pace e senza peccato,",
+     "answer": "perché, giunti a sera, possiamo lodarti con cuore puro e riconoscente."
+    },
+    {
+     "petition": "Risplenda su di noi la luce del tuo amore,",
+     "answer": "e la tua sapienza ispiri i nostri progetti e le nostre opere."
+    },
+    {
+     "petition": "La tua mano ci sostenga nel servizio del bene,",
+     "answer": "e ci custodisca nella tua amicizia."
+    },
+    {
+     "petition": "Proteggi coloro che si affidano alle nostre preghiere,",
+     "answer": "colmali di ogni benedizione nel corpo e nello spirito."
+    }
+   ]
+  },
+  "orazione": "Ispira le nostre azioni, Signore, e accompagnale con il tuo aiuto: perché ogni nostra attività abbia da te il suo inizio e in te il suo compimento. Per il nostro Signore."
+ },
+ {
+  "week": 1,
+  "day": "Martedì",
+  "invocazioni": {
+   "intro": "Cristo, sommo sacerdote della nostra fede, ci ha resi partecipi di una vocazione santa. Eleviamo a lui la nostra lode e acclamiamo:",
+   "response": "Signore, nostro Dio e nostro Salvatore.",
+   "intercessions": [
+    {
+     "petition": "Re glorioso, che nel Battesimo ci hai rivestiti del sacerdozio regale,",
+     "answer": "rendici degni di offrirti il sacrificio della lode."
+    },
+    {
+     "petition": "Concedici di osservare sempre i tuoi comandamenti,",
+     "answer": "perché con la tua grazia rimaniamo in te e tu in noi."
+    },
+    {
+     "petition": "Infondi in noi il tuo Spirito,",
+     "answer": "la tua sapienza ci assista sempre e operi con noi."
+    },
+    {
+     "petition": "Fa’ che nessuno oggi sia rattristato per causa nostra,",
+     "answer": "e che diveniamo operatori di gioia e di pace."
+    }
+   ]
+  },
+  "orazione": "Accogli con bontà, o Signore, la preghiera mattutina della tua Chiesa e illumina con il tuo amore le profondità del nostro spirito, perché siano liberi dalle suggestioni del male coloro che hai chiamati allo splendore della tua luce. Per il nostro Signore."
+ },
+ {
+  "week": 1,
+  "day": "Mercoledì",
+  "invocazioni": {
+   "intro": "Ringraziamo il Cristo Redentore, che si compiace di chiamare fratelli coloro che ha santificato con il suo Spirito e invochiamo:",
+   "response": "Conferma nella fede i tuoi fratelli, o Signore.",
+   "intercessions": [
+    {
+     "petition": "Benedici questo giorno, che iniziamo nel ricordo della tua risurrezione,",
+     "answer": "fa’ che sia pieno di opere sante al servizio del tuo amore."
+    },
+    {
+     "petition": "Tu che disponi i nostri giorni ad un fine di salvezza e di gioia,",
+     "answer": "rinnova oggi il nostro essere e il nostro operare a lode della tua gloria."
+    },
+    {
+     "petition": "Insegnaci a riconoscerti in tutti gli uomini,",
+     "answer": "e soprattutto nei poveri e sofferenti."
+    },
+    {
+     "petition": "Donaci di vivere in pace con tutti,",
+     "answer": "e di non rendere a nessuno male per male."
+    }
+   ]
+  },
+  "orazione": "O Dio, nostra salvezza, che ci hai fatto figli della luce, guidaci nel nostro cammino, perché diventiamo operatori di verità e testimoni del tuo Vangelo. Per il nostro Signore."
+ },
+ {
+  "week": 1,
+  "day": "Giovedì",
+  "invocazioni": {
+   "intro": "Rendiamo grazie al Signore che ci dona la luce di un nuovo giorno e invochiamo la sua benedizione:",
+   "response": "Signore benedici e santifica la tua Chiesa.",
+   "intercessions": [
+    {
+     "petition": "Ti sei fatto vittima per i nostri peccati,",
+     "answer": "gradisci l’offerta dei nostri propositi e delle iniziative di questo giorno."
+    },
+    {
+     "petition": "Tu allieti i nostri occhi con le meraviglie del creato,",
+     "answer": "sorgi anche nel nostro spirito come sole di giustizia e di verità."
+    },
+    {
+     "petition": "Donaci un cuore generoso,",
+     "answer": "perché diventiamo segno e testimonianza della tua bontà."
+    },
+    {
+     "petition": "Fa’ che sperimentiamo fin da questa mattina la tua misericordia,",
+     "answer": "e la gioia che tu dai ai tuoi amici sia la nostra fortezza."
+    }
+   ]
+  },
+  "orazione": "Dio onnipotente ed eterno, esaudisci le preghiere della tua Chiesa che al mattino, a mezzogiorno e alla sera celebra le tue lodi; disperdi dal nostro cuore le tenebre del male, perché procediamo sicuri verso Cristo, vera luce che non tramonta. Egli è Dio, e vive e regna."
+ },
+ {
+  "week": 1,
+  "day": "Venerdì",
+  "invocazioni": {
+   "intro": "Invochiamo con fede il Cristo, che con la sua santa croce ha redento il mondo:",
+   "response": "Mostraci, Signore, la tua misericordia.",
+   "intercessions": [
+    {
+     "petition": "O Cristo, sole di giustizia, illumina la nostra vita,",
+     "answer": "allontana da noi le oscure suggestioni del male."
+    },
+    {
+     "petition": "Ispira i pensieri, le parole e le opere,",
+     "answer": "perché in questo giorno possiamo essere graditi alla tua volontà."
+    },
+    {
+     "petition": "Distogli il tuo sguardo dai nostri peccati,",
+     "answer": "cancella tutte le nostre colpe."
+    },
+    {
+     "petition": "Per la tua croce e la tua risurrezione,",
+     "answer": "riempi i nostri cuori della consolazione dello Spirito Santo."
+    }
+   ]
+  },
+  "orazione": "O Dio, che con la luce del tuo Figlio, parola di verità, disperdi le tenebre dell’ignoranza, accresci in noi il vigore della fede, perché nessuna tentazione possa estinguere quella fiamma che la tua grazia ha acceso nei nostri cuori. Per il nostro Signore."
+ },
+ {
+  "week": 1,
+  "day": "Sabato",
+  "invocazioni": {
+   "intro": "Benediciamo il Cristo, che ha voluto farsi in tutto simile ai fratelli, per divenire un sommo sacerdote misericordioso e fedele presso il Padre. A lui rivolgiamo la nostra comune preghiera:",
+   "response": "Aprici, Signore, i tesori della tua misericordia.",
+   "intercessions": [
+    {
+     "petition": "O Sole di giustizia, che ci hai illuminati nel Battesimo,",
+     "answer": "sia consacrato a te questo nuovo giorno."
+    },
+    {
+     "petition": "In ogni ora proclameremo la tua lode,",
+     "answer": "glorificheremo il tuo nome in ogni avvenimento."
+    },
+    {
+     "petition": "Tu che avesti come madre Maria, docile alla divina parola,",
+     "answer": "guida i nostri passi alla luce del tuo Vangelo."
+    },
+    {
+     "petition": "Ravviva in noi, pellegrini sulla terra, l’attesa sicura della vita immortale,",
+     "answer": "fa’ che pregustiamo fin d’ora la tua beatitudine."
+    }
+   ]
+  },
+  "orazione": "Risplenda sempre, o Dio, nei nostri cuori la luce del Figlio tuo risorto, perché liberi dalle tenebre del peccato, possiamo giungere alla pienezza della sua gloria. Egli è Dio, e vive e regna con te."
+ },
+ {
+  "week": 2,
+  "day": "Domenica",
+  "invocazioni": {
+   "intro": "Rendiamo grazie al Salvatore, che è disceso dal cielo per essere il Dio-con-noi. Acclamiamo:",
+   "response": "Cristo, Re della gloria, sii la nostra luce e la nostra gioia.",
+   "intercessions": [
+    {
+     "petition": "Cristo, sole nascente dall'alto, primizia della risurrezione futura,",
+     "answer": "donaci la grazia di seguirti sempre per camminare nella via della vita."
+    },
+    {
+     "petition": "Rivelaci la tua bontà, che opera in ogni creatura,",
+     "answer": "perché possiamo riconoscere in tutto e in tutti la luce della tua gloria."
+    },
+    {
+     "petition": "Non permettere che oggi siamo vinti dal male,",
+     "answer": "ma aiutaci a vincere il male con il bene."
+    },
+    {
+     "petition": "Tu che, battezzato nel Giordano, ricevesti l'unzione dello Spirito Santo,",
+     "answer": "donaci di essere guidati, oggi e sempre, dalla grazia dello Spirito."
+    }
+   ]
+  },
+  "orazione": null
+ },
+ {
+  "week": 2,
+  "day": "Lunedì",
+  "invocazioni": {
+   "intro": "Il Cristo, mediatore della nuova alleanza, ha dato a noi un sacerdozio regale, perché offriamo a Dio una lode perfetta. Uniti nella preghiera del mattino, invochiamo il nostro Salvatore:",
+   "response": "Confermaci, Signore, nel tuo santo servizio.",
+   "intercessions": [
+    {
+     "petition": "Cristo, sacerdote eterno, che ci hai resi partecipi della tua comunione di amore al Padre,",
+     "answer": "fa’ che presentiamo sempre sacrifici spirituali a Dio graditi."
+    },
+    {
+     "petition": "Donaci i frutti del tuo Spirito:",
+     "answer": "la pazienza, la benignità e la mitezza."
+    },
+    {
+     "petition": "Concedici di amare te, per avere in dono te, che sei l’Amore,",
+     "answer": "e donaci di bene operare per rendere tutta la vita una lode a te."
+    },
+    {
+     "petition": "Fa’ che ci dedichiamo al servizio dei fratelli,",
+     "answer": "perché abbiano a conseguire più facilmente la salvezza."
+    }
+   ]
+  },
+  "orazione": "Signore Dio nostro, che ci hai dato la grazia di giungere a questo giorno, accompagnaci oggi con la tua protezione, perché non deviamo mai verso il peccato e in pensieri, parole e opere aderiamo sempre alla tua volontà. Per il nostro Signore."
+ },
+ {
+  "week": 2,
+  "day": "Martedì",
+  "invocazioni": {
+   "intro": "Glorifichiamo il Salvatore, che con la sua risurrezione è divenuto luce e vita del mondo. A lui s’innalzi la nostra umile preghiera:",
+   "response": "Guidaci, Signore, nelle tue vie.",
+   "intercessions": [
+    {
+     "petition": "Con la lode mattutina celebriamo la tua risurrezione, Signore,",
+     "answer": "la speranza della tua gloria illumini la nostra giornata."
+    },
+    {
+     "petition": "Benedici le nostre aspirazioni e i nostri propositi,",
+     "answer": "siano le primizie della nostra offerta."
+    },
+    {
+     "petition": "Fa’ che oggi cresciamo nel tuo amore,",
+     "answer": "e tutto cooperi al bene nostro e di tutti."
+    },
+    {
+     "petition": "Fa’ che la nostra luce splenda davanti agli uomini,",
+     "answer": "perché vedano le nostre opere buone e glorifichino il Padre che è nei cieli."
+    }
+   ]
+  },
+  "orazione": "O Dio, che hai mandato a noi la luce vera che guida tutti gli uomini alla salvezza, donaci la forza dello Spirito, perché possiamo preparare davanti al Figlio tuo la via della giustizia e della pace. Egli è Dio."
+ },
+ {
+  "week": 2,
+  "day": "Mercoledì",
+  "invocazioni": {
+   "intro": "Lodiamo il Cristo, che ha promesso di rimanere con noi tutti i giorni sino alla fine dei secoli e rivolgiamogli la nostra preghiera:",
+   "response": "Resta con noi, Signore.",
+   "intercessions": [
+    {
+     "petition": "Resta con noi, Signore, durante questo giorno,",
+     "answer": "non tramonti mai nel nostro spirito il sole della tua grazia."
+    },
+    {
+     "petition": "Ti offriamo, Signore, le azioni e le sofferenze di questa giornata,",
+     "answer": "promettiamo di servirti sempre con cuore puro e leale."
+    },
+    {
+     "petition": "Fa’ che viviamo il tempo che ci dai, come un dono della tua bontà",
+     "answer": "per divenire il sale della terra e la luce del mondo."
+    },
+    {
+     "petition": "Il tuo Spirito orienti i nostri pensieri e le nostre parole,",
+     "answer": "perché rimaniamo sempre nel tuo amore e nella tua lode."
+    }
+   ]
+  },
+  "orazione": "Risplenda su di noi, Signore, la luce della tua sapienza, perché liberi da ogni compromesso col peccato camminiamo sempre nella via dei tuoi comandamenti. Per il nostro Signore."
+ },
+ {
+  "week": 2,
+  "day": "Giovedì",
+  "invocazioni": {
+   "intro": "Con la libertà dei figli invochiamo Dio Padre che ci ama e ascolta le nostre preghiere:",
+   "response": "Illumina i nostri occhi, Signore.",
+   "intercessions": [
+    {
+     "petition": "Ti ringraziamo di averci illuminati con lo Spirito che procede da te e dal Figlio tuo,",
+     "answer": "fa’ che ci saziamo della sua luce per tutta la lunghezza di questa giornata."
+    },
+    {
+     "petition": "La tua sapienza ci prenda per mano,",
+     "answer": "perché camminiamo nella via della vita."
+    },
+    {
+     "petition": "Insegnaci ad affrontare coraggiosamente ogni avversità,",
+     "answer": "per servirti sempre con animo generoso."
+    },
+    {
+     "petition": "Sii tu l’ispiratore dei nostri pensieri e delle nostre azioni,",
+     "answer": "perché collaboriamo docilmente con la tua Provvidenza."
+    }
+   ]
+  },
+  "orazione": "O Dio, vera luce e sorgente della luce, ascolta la nostra preghiera del mattino e fa’ che meditando con perseveranza la tua legge, viviamo sempre illuminati dallo splendore della tua verità. Per il nostro Signore."
+ },
+ {
+  "week": 2,
+  "day": "Venerdì",
+  "invocazioni": {
+   "intro": "Cristo, Agnello senza macchia, si è offerto al Padre per purificare le nostre coscienze dalle opere del male. A lui diciamo umilmente:",
+   "response": "Nella tua volontà è la nostra pace, o Signore.",
+   "intercessions": [
+    {
+     "petition": "Dalla tua bontà abbiamo ricevuto questo nuovo giorno,",
+     "answer": "fa’ che segni l’inizio di una vita nuova."
+    },
+    {
+     "petition": "Hai creato il mondo e lo conservi con la tua provvidenza,",
+     "answer": "donaci uno sguardo di fede, perché vediamo la tua presenza in ogni creatura."
+    },
+    {
+     "petition": "Nel tuo sangue, versato per noi, hai costituito la nuova ed eterna alleanza,",
+     "answer": "fa’ che, osservando la legge dell’amore, restiamo fedeli al nuovo patto."
+    },
+    {
+     "petition": "Sulla croce hai fatto sgorgare dal tuo costato sangue ed acqua,",
+     "answer": "in questo fiume di grazia lava le nostre colpe e allieta la città di Dio."
+    }
+   ]
+  },
+  "orazione": "Accogli, Dio onnipotente, la nostra lode del mattino, e fa’ che ci uniamo un giorno al coro dei tuoi santi per cantare in eterno la tua gloria. Per il nostro Signore."
+ },
+ {
+  "week": 2,
+  "day": "Sabato",
+  "invocazioni": {
+   "intro": "Cristo è presente nelle sue membra, specialmente nei poveri e nei sofferenti. Celebriamo la sua bontà e preghiamo con fede per crescere nel suo amore:",
+   "response": "Rendici perfetti nella carità, Signore.",
+   "intercessions": [
+    {
+     "petition": "Iniziamo questo nuovo giorno nel ricordo della tua risurrezione,",
+     "answer": "estendi a tutti gli uomini, Signore, i benefici della tua salvezza."
+    },
+    {
+     "petition": "Fa’ che oggi ti rendiamo testimonianza davanti agli uomini,",
+     "answer": "per essere degni di unirci all’offerta del tuo sacrificio."
+    },
+    {
+     "petition": "Aiutaci a riconoscere il tuo volto nei nostri fratelli,",
+     "answer": "e a servirti in ciascuno di essi."
+    },
+    {
+     "petition": "Tu che ci unisci a te come i tralci alla vite,",
+     "answer": "fa’ che rimaniamo nel tuo amore, per portare molto frutto a gloria di Dio Padre."
+    }
+   ]
+  },
+  "orazione": "Ti lodi, o Signore, la nostra voce, ti lodi il nostro spirito, e poiché il nostro essere è dono del tuo amore, tutta la nostra vita si trasformi in perenne liturgia di lode. Per il nostro Signore."
+ },
+ {
+  "week": 3,
+  "day": "Domenica",
+  "invocazioni": {
+   "intro": "Dio nostro Padre, ha mandato lo Spirito Santo, perché sia in noi sorgente inesauribile di luce. Animati da questa fede diciamo insieme:",
+   "response": "Illumina il tuo popolo, o Signore.",
+   "intercessions": [
+    {
+     "petition": "Sii benedetto, o Dio, nostra vita,",
+     "answer": "che nella tua bontà ci hai guidati all'alba di questo nuovo giorno,"
+    },
+    {
+     "petition": "Tu che hai illuminato il mondo con la risurrezione del tuo Figlio,",
+     "answer": "diffondi la sua luce in tutti gli uomini mediante l'opera della Chiesa."
+    },
+    {
+     "petition": "Hai trasformato i discepoli del tuo Figlio con il fuoco della Pentecoste,",
+     "answer": "manda ancora lo Spirito nella tua Chiesa, perché ti sia fedele."
+    },
+    {
+     "petition": "Luce delle genti, ricordati di quanti sono immersi nelle tenebre dell'errore,",
+     "answer": "apri i loro occhi alla luce della fede, perché riconoscano in te l'unico vero Dio."
+    }
+   ]
+  },
+  "orazione": null
+ },
+ {
+  "week": 3,
+  "day": "Lunedì",
+  "invocazioni": {
+   "intro": "Preghiamo Dio nostro Padre, che ha posto gli uomini nel mondo, perché cooperino in unità di intenti al gran disegno della creazione. Diciamo con fede:",
+   "response": "Fa’ che ti rendiamo gloria, o Signore.",
+   "intercessions": [
+    {
+     "petition": "Sii benedetto, o Dio creatore, noi ti ringraziamo per le meraviglie dell’universo,",
+     "answer": "e per la vita che ci hai donato."
+    },
+    {
+     "petition": "Guarda i tuoi figli che, attraverso le occupazioni quotidiane, partecipano alla tua opera,",
+     "answer": "fa’ che si conformino alla tua volontà."
+    },
+    {
+     "petition": "Il nostro lavoro giovi al bene dei fratelli,",
+     "answer": "concedici di edificare con loro e per loro un mondo come a te piace."
+    },
+    {
+     "petition": "Dona pace e gioia,",
+     "answer": "a noi e a quanti incontreremo oggi sul nostro cammino."
+    }
+   ]
+  },
+  "orazione": "Signore Dio, re del cielo e della terra, guida, santifica e custodisci il nostro corpo e il nostro spirito, sentimenti, parole e opere, nell’amore della tua legge, a servizio della tua volontà, perché oggi e sempre con il tuo aiuto procediamo sicuri nella via della salvezza. Per il nostro Signore."
+ },
+ {
+  "week": 3,
+  "day": "Martedì",
+  "invocazioni": {
+   "intro": "Adoriamo il Cristo che con il suo sangue, versato sulla croce, ha fatto di noi un popolo nuovo e supplichiamo:",
+   "response": "Ricordati del tuo popolo, o Signore.",
+   "intercessions": [
+    {
+     "petition": "Cristo, re e salvatore, accogli la lode della tua Chiesa all’alba del nuovo giorno,",
+     "answer": "insegnale ad unirsi a te in perenne rendimento di grazie."
+    },
+    {
+     "petition": "In te poniamo ogni speranza,",
+     "answer": "il tuo amore non lasci deluse le nostre attese."
+    },
+    {
+     "petition": "Guarda la nostra debolezza e vieni in nostro aiuto,",
+     "answer": "perché nulla possiamo senza di te."
+    },
+    {
+     "petition": "Non dimenticare i poveri e coloro che vivono nella solitudine e nell’abbandono,",
+     "answer": "il nuovo giorno non li opprima sotto il peso della tristezza, ma rechi loro gioia e consolazione."
+    }
+   ]
+  },
+  "orazione": "O Dio, creatore e Signore di tutte le cose, donaci di iniziare lietamente questo giorno e di concluderlo nel generoso servizio tuo e dei nostri fratelli. Per il nostro Signore."
+ },
+ {
+  "week": 3,
+  "day": "Mercoledì",
+  "invocazioni": {
+   "intro": "Riuniti nella lode del mattino, preghiamo il Cristo, che ha dato la vita per la sua Chiesa. Diciamo con fede:",
+   "response": "Custodisci la tua Chiesa, o Signore.",
+   "intercessions": [
+    {
+     "petition": "Benedetto sii tu, pastore della Chiesa, per la luce e la vita che ci doni in questo giorno,",
+     "answer": "concedici di accogliere con gioia e riconoscenza i tuoi benefici."
+    },
+    {
+     "petition": "Guarda con bontà il popolo che hai riunito nel tuo nome,",
+     "answer": "nessuno perisca di coloro che il Padre ti ha affidati."
+    },
+    {
+     "petition": "Guida la tua Chiesa nella via dei tuoi comandamenti,",
+     "answer": "il tuo Spirito la renda sempre docile alla tua volontà."
+    },
+    {
+     "petition": "Nutri il tuo popolo alla mensa della parola e del pane di vita eterna,",
+     "answer": "perché con la forza di questo cibo proceda sicuro verso il monte della tua gloria."
+    }
+   ]
+  },
+  "orazione": "Illumina, Signore, i nostri sensi con la luce del tuo Spirito, perché possiamo essere sempre fedeli a te, che con la tua sapienza ci hai creati e con la tua provvidenza ci guidi. Per il nostro Signore."
+ },
+ {
+  "week": 3,
+  "day": "Giovedì",
+  "invocazioni": {
+   "intro": "Rendiamo grazie a Dio che nutre e guida il suo popolo. Uniti nella preghiera del mattino, acclamiamo:",
+   "response": "Gloria a te nei secoli, Signore.",
+   "intercessions": [
+    {
+     "petition": "Padre clementissimo, ti benediciamo per il tuo immenso amore,",
+     "answer": "che risplende nella creazione e ancor più visibilmente nella redenzione."
+    },
+    {
+     "petition": "Fin dall’inizio di questo giorno ispiraci il desiderio di servirti,",
+     "answer": "perché nei pensieri e nelle opere glorifichiamo sempre il tuo santo nome."
+    },
+    {
+     "petition": "Purifica i nostri cuori da ogni desiderio di male,",
+     "answer": "perché siamo costantemente orientati alla tua volontà."
+    },
+    {
+     "petition": "Apri il nostro cuore alle necessità dei fratelli,",
+     "answer": "perché incontrandoci non ci trovino freddi e senza amore verso di loro."
+    }
+   ]
+  },
+  "orazione": "Dio onnipotente ed eterno, guarda benigno i popoli ancora immersi nell’ombra della morte, fa’ risplendere su di essi il sole di giustizia, che ci ha visitato sorgendo dall’alto, Gesù Cristo nostro Signore. Egli è Dio."
+ },
+ {
+  "week": 3,
+  "day": "Venerdì",
+  "invocazioni": {
+   "intro": "Volgiamo il nostro sguardo al Cristo, nato, morto e risorto per la nostra salvezza, e diciamo con fiducia:",
+   "response": "Salva il tuo popolo, Signore.",
+   "intercessions": [
+    {
+     "petition": "Benedetto sii tu, o Gesù Salvatore del mondo, che non hai ricusato di subire la passione e la croce per noi,",
+     "answer": "e ci hai redenti con il tuo sangue prezioso."
+    },
+    {
+     "petition": "Tu che hai promesso fiumi di acqua viva a quanti credono in te,",
+     "answer": "effondi il tuo Spirito sull’umanità intera."
+    },
+    {
+     "petition": "Hai inviato i tuoi discepoli ad evangelizzare le genti,",
+     "answer": "sostieni i missionari del Vangelo perché si estenda in ogni luogo la vittoria della croce."
+    },
+    {
+     "petition": "Rivolgi il tuo sguardo di bontà ai malati e ai sofferenti, che hai associato alla tua croce,",
+     "answer": "sentano il conforto della tua presenza."
+    }
+   ]
+  },
+  "orazione": "Donaci, o Padre buono, di godere sempre della presenza del Figlio tuo, perché seguendo lui, nostro pastore e guida, progrediamo nella via dei tuoi comandamenti. Egli è Dio, e vive e regna."
+ },
+ {
+  "week": 3,
+  "day": "Sabato",
+  "invocazioni": {
+   "intro": "Dio Padre ha voluto innalzare Maria, Madre di Cristo, al di sopra di tutte le creature angeliche e terrestri. Fiduciosi nella sua intercessione, preghiamo:",
+   "response": "Guarda la Madre del tuo Figlio e ascoltaci.",
+   "intercessions": [
+    {
+     "petition": "Ti rendiamo grazie, Padre immensamente buono, che ci hai dato Maria come madre e modello di vita cristiana,",
+     "answer": "per sua intercessione guidaci sulla via della santità."
+    },
+    {
+     "petition": "Tu che hai reso Maria attenta alla tua parola e l’hai fatta tua fedele ancella,",
+     "answer": "per sua intercessione rendici discepoli e servitori del Figlio tuo."
+    },
+    {
+     "petition": "Tu che hai dato a Maria il privilegio di essere madre per opera dello Spirito Santo,",
+     "answer": "per sua intercessione concedi a noi i frutti del tuo Spirito."
+    },
+    {
+     "petition": "Tu che hai reso intrepida la Vergine Maria presso la croce del tuo Figlio e l’hai rallegrata con l’immensa gioia della risurrezione,",
+     "answer": "per sua intercessione consola le nostre pene e ravviva la nostra speranza."
+    }
+   ]
+  },
+  "orazione": "O Dio, principio e sorgente della nostra salvezza, fa’ che tutta la nostra vita sia una testimonianza del tuo amore, perché possiamo un giorno cantare la tua lode nell’assemblea festosa dei santi. Per il nostro Signore."
+ },
+ {
+  "week": 4,
+  "day": "Domenica",
+  "invocazioni": {
+   "intro": "Apriamo con fiducia il nostro cuore al Dio della potenza e della misericordia, che ama e conosce le nostre necessità. A lui rivolgiamo la nostra lode e la nostra preghiera:",
+   "response": "Noi ti glorifichiamo, Signore, e confidiamo in te.",
+   "intercessions": [
+    {
+     "petition": "Benedetto sii tu, Re dell’universo, che ci hai tratto dalle tenebre dell’errore e del peccato alla splendida luce del tuo regno,",
+     "answer": "e ci hai chiamati a servirti nella santa Chiesa."
+    },
+    {
+     "petition": "Tu che ci hai aperto le braccia della tua misericordia,",
+     "answer": "non permettere che deviamo mai dal sentiero della vita."
+    },
+    {
+     "petition": "Concedici di trascorrere in letizia questo giorno,",
+     "answer": "in cui celebriamo la risurrezione del tuo Figlio."
+    },
+    {
+     "petition": "Dona ai tuoi fedeli lo spirito di orazione e di lode,",
+     "answer": "perché tutta la nostra vita sia un rendimento di grazie a te."
+    }
+   ]
+  },
+  "orazione": null
+ },
+ {
+  "week": 4,
+  "day": "Lunedì",
+  "invocazioni": {
+   "intro": "Cristo ascolta la voce degli umili che confidano in lui e li salva. Confortati da questa certezza invochiamo il suo nome:",
+   "response": "Tu sei la nostra speranza, Signore.",
+   "intercessions": [
+    {
+     "petition": "O Dio, ricco di misericordia,",
+     "answer": "noi ti ringraziamo per il tuo immenso amore."
+    },
+    {
+     "petition": "Tu che agisci sempre nella storia dell’umanità insieme al Padre,",
+     "answer": "rinnova gli uomini e le cose con la forza del tuo Spirito."
+    },
+    {
+     "petition": "Dona a noi e ai nostri fratelli uno sguardo di fede,",
+     "answer": "perché possiamo contemplare sempre le tue meraviglie."
+    },
+    {
+     "petition": "Redentore di tutti, che in questo giorno ci chiami a cooperare alla tua opera di salvezza,",
+     "answer": "rendici segno della tua grazia verso il nostro prossimo."
+    }
+   ]
+  },
+  "orazione": "O Dio, che hai affidato all’uomo l’opera della creazione e hai posto al suo servizio le immense energie del cosmo, fa’ che oggi collaboriamo a un mondo più giusto e fraterno a lode della tua gloria. Per il nostro Signore."
+ },
+ {
+  "week": 4,
+  "day": "Martedì",
+  "invocazioni": {
+   "intro": "In questo nuovo giorno il Signore, donandoci la grazia di cantare le sue lodi, rafforza la speranza che esaudirà la nostra preghiera. Uniti ai fratelli di fede diciamo:",
+   "response": "Ascoltaci, Signore, a gloria del tuo nome.",
+   "intercessions": [
+    {
+     "petition": "Ti rendiamo grazie, o Dio e Padre di Gesù nostro Salvatore,",
+     "answer": "per la conoscenza e la vita immortale che ci hai dato per mezzo del tuo Figlio."
+    },
+    {
+     "petition": "Donaci l’umiltà del cuore,",
+     "answer": "perché ci rendiamo disponibili all’aiuto fraterno nel timore di Cristo."
+    },
+    {
+     "petition": "Manda su di noi il tuo Spirito,",
+     "answer": "perché la nostra carità sia autentica e senza ipocrisia."
+    },
+    {
+     "petition": "Tu che hai comandato all’uomo il lavoro per dominare il mondo,",
+     "answer": "fa’ che il nostro lavoro ti glorifichi e santifichi i nostri fratelli."
+    }
+   ]
+  },
+  "orazione": "Accresci in noi, o Dio, il dono della fede, perché sia perfetta la nostra lode e porti alla tua Chiesa frutti di vita nuova. Per il nostro Signore."
+ },
+ {
+  "week": 4,
+  "day": "Mercoledì",
+  "invocazioni": {
+   "intro": "Cristo, splendore della gloria del Padre, è presente in mezzo a noi e ci illumina con la sua parola. Invochiamolo con fiducia e amore:",
+   "response": "Re dell’eterna gloria, ascolta la nostra preghiera.",
+   "intercessions": [
+    {
+     "petition": "Benedetto sii tu che ci hai chiamato dalle tenebre alla luce del tuo regno,",
+     "answer": "compi in noi l’opera che hai iniziato e guidaci alla pienezza della fede."
+    },
+    {
+     "petition": "Tu che hai aperto gli occhi ai ciechi e hai dato l’udito ai sordi,",
+     "answer": "guarisci la nostra incredulità."
+    },
+    {
+     "petition": "Concedi a noi di rimanere sempre nel tuo amore,",
+     "answer": "per non essere divisi gli uni dagli altri."
+    },
+    {
+     "petition": "Donaci fortezza nella tentazione e costanza nella prova,",
+     "answer": "e fa’ che ti rendiamo grazie nella prosperità."
+    }
+   ]
+  },
+  "orazione": "Ricordati, o Dio, della tua alleanza, rinnovata sulla croce col sangue dell’Agnello, e fa’ che il tuo popolo, libero da ogni colpa, progredisca sempre nella via della salvezza. Per il nostro Signore."
+ },
+ {
+  "week": 4,
+  "day": "Giovedì",
+  "invocazioni": {
+   "intro": "Uniti nella lode divina acclamiamo Dio nostro Padre, che ha salvato il suo popolo e diciamo con fede:",
+   "response": "Tu sei la nostra vita, Signore.",
+   "intercessions": [
+    {
+     "petition": "Benedetto sii tu, o Padre del Signore nostro Gesù Cristo,",
+     "answer": "che ci hai rigenerato a una speranza viva mediante la risurrezione del tuo Figlio."
+    },
+    {
+     "petition": "Nel Cristo hai rinnovato l’uomo, creato a tua immagine,",
+     "answer": "rendici conformi all’immagine del tuo Figlio."
+    },
+    {
+     "petition": "Guarisci l’umanità ferita dall’invidia e dall’odio,",
+     "answer": "trasformaci con la carità che è dono dello Spirito."
+    },
+    {
+     "petition": "Da’ il lavoro agli operai, il pane agli affamati, agli afflitti la gioia,",
+     "answer": "a tutti gli uomini la grazia e la salvezza."
+    }
+   ]
+  },
+  "orazione": "Donaci, o Dio, una profonda conoscenza del tuo mistero di salvezza, perché senza timore, liberati dall’oppressione dei nostri nemici, ti serviamo in santità e giustizia tutti i nostri giorni. Per il nostro Signore."
+ },
+ {
+  "week": 4,
+  "day": "Venerdì",
+  "invocazioni": {
+   "intro": "Invochiamo la provvidenza del Padre, che veglia su coloro che ha creati e redenti per mezzo del suo Figlio e diciamo:",
+   "response": "Conferma ciò che hai operato in noi, Signore.",
+   "intercessions": [
+    {
+     "petition": "Dio di misericordia, guidaci sulla via della santità,",
+     "answer": "perché cerchiamo sempre ciò che è vero, buono e giusto."
+    },
+    {
+     "petition": "Non abbandonarci, o Dio, per il tuo grande amore,",
+     "answer": "non dimenticare la tua alleanza."
+    },
+    {
+     "petition": "Accogli l’offerta del nostro cuore contrito e umiliato,",
+     "answer": "fa’ che non siano confusi quelli che si affidano a te."
+    },
+    {
+     "petition": "Tu che ci hai resi partecipi della missione profetica del Cristo,",
+     "answer": "fa’ che annunziamo con le parole e le opere le meraviglie del tuo amore."
+    }
+   ]
+  },
+  "orazione": "Concedi al tuo popolo, o Dio, l’abbondanza dei tuoi doni, perché sia sempre fedele agli impegni del suo Battesimo, e viva nella prosperità e nella pace in attesa della gioia eterna. Per il nostro Signore."
+ },
+ {
+  "week": 4,
+  "day": "Sabato",
+  "invocazioni": {
+   "intro": "Adoriamo Dio Padre, che nel Cristo, suo Figlio, ha ridato al mondo la speranza e la vita. Animati da questa certezza, diciamo:",
+   "response": "Signore, ascolta la nostra preghiera.",
+   "intercessions": [
+    {
+     "petition": "Dio, Padre di tutti, che ci hai fatto giungere all’alba del nuovo giorno,",
+     "answer": "fa’ che viviamo nell’amore del Cristo a lode e gloria del tuo nome."
+    },
+    {
+     "petition": "Rafforza in noi la fede, la speranza e la carità,",
+     "answer": "che lo Spirito Santo ha seminato nei nostri cuori."
+    },
+    {
+     "petition": "Il nostro sguardo sia sempre rivolto a te,",
+     "answer": "perché rispondiamo prontamente alla tua chiamata."
+    },
+    {
+     "petition": "Salvaci dalle insidie e dalle seduzioni del male,",
+     "answer": "difendici da ogni pericolo nel cammino verso la patria del cielo."
+    }
+   ]
+  },
+  "orazione": "O Dio, vera luce e giorno senza tramonto, accogli la lode mattutina del tuo popolo e fa’ che il nostro spirito, libero dalle tenebre della colpa, risplenda nel fulgore della tua venuta. Per il nostro Signore."
+ }
+]

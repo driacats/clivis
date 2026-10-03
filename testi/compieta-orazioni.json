@@ -1,0 +1,43 @@
+{
+ "_fonte": "Compieta piccola.pdf, pp. 15-16 (Orazione), trascritto dal libretto",
+ "domenica-I-vespri": {
+  "titolo": "Dopo i primi Vespri e durante l’ottava di Pasqua",
+  "it": "Veglia su di noi in questa notte, o Signore: la tua mano ci ridesti al nuovo giorno perché possiamo celebrare con gioia la risurrezione del tuo Figlio, che vive e regna nei secoli dei secoli.",
+  "la": "Visita nos, quæsumus, Dómine, hac nocte præsenti, † ut, diluculo tua virtúte surgéntes, * de resurrectióne Christi tui gaudére valeamus. Qui tecum vivit."
+ },
+ "domenica-II-vespri": {
+  "titolo": "Dopo i secondi Vespri e durante l’ottava di Pasqua",
+  "it": "Salga a te, o Padre, la nostra preghiera al termine di questo giorno, memoriale della risurrezione del Signore: la tua grazia ci conceda di riposare in pace, sicuri da ogni male, e di risvegliarci nella gioia, per cantare la tua lode. Per Cristo.",
+  "la": "Vox nostra te, Domine, humiliter deprecetur, † ut, domínicæ resurrectionis hac die mysterio celebrato, * in pace tua securi a malis omnibus quiescamus, et in tua resurgámus laude gaudentes. Per Christum."
+ },
+ "solennita": {
+  "titolo": "Nelle solennità e nel Triduo pasquale",
+  "it": "Visita, o Padre, la nostra casa e tieni lontano le insidie del nemico; vengano i santi angeli a custodirci nella pace, e la tua benedizione rimanga sempre con noi. Per Cristo nostro Signore.",
+  "la": "Visita, quæsumus, Domine, habitationem istam, et omnes insidias inimici ab ea longe repelle; † angeli tui sancti habitent in ea, qui nos in pace custodiant, * et benedictio tua sit super nos semper. Per Christum."
+ },
+ "lunedi": {
+  "titolo": "Lunedì",
+  "it": "Donaci, o Padre, un sonno ristoratore e fa’ che i germi di bene, seminati nei solchi di questa giornata, producano una messe abbondante. Per Cristo.",
+  "la": "Quietem, Domine, corporibus nostris tribue salutarem, † et quæ fudimus hodie semina per laborem, * fac ut messem germinent sempiternam. Per Christum."
+ },
+ "martedi": {
+  "titolo": "Martedì",
+  "it": "Illumina questa notte, o Signore, perché dopo un sonno tranquillo ci risvegliamo alla luce del nuovo giorno, per camminare lieti nel tuo nome. Per Cristo.",
+  "la": "Noctem istam, quæsumus, Domine, benígnus illumina, † et ita fac in pace nos tuos fámulos obdormíre, * ut læti ad novi diei claritatem in tuo nomine suscitemur. Per Christum."
+ },
+ "mercoledi": {
+  "titolo": "Mercoledì",
+  "it": "Signore Gesù Cristo, mite e umile di cuore, che rendi soave il giogo e lieve il peso dei tuoi fedeli, accogli i propositi e le opere di questa giornata e fa’ che il riposo della notte ci renda più generosi nel tuo servizio. Tu che vivi e regni nei secoli dei secoli.",
+  "la": "Domine Iesu Christe, qui iugum suave te sequentibus onusque leve perhibes mitis et humilis, † dignáre huius diei vota et opera nostra suscípere, et quietem tribuere, * qua tuo nos facias servitio promptiores. Qui vivis et regnas."
+ },
+ "giovedi": {
+  "titolo": "Giovedì",
+  "it": "Signore Dio nostro, donaci un sonno tranquillo, perché ristorati dalle fatiche del giorno, ci dedichiamo corpo e anima al tuo servizio. Per Cristo.",
+  "la": "Domine Deus noster, diurno labore fatigatos, quieto sopore nos rèfove, † ut, tuo semper auxílio recreáti, * tibi corpore simus et mente devoti. Per Christum."
+ },
+ "venerdi": {
+  "titolo": "Venerdì",
+  "it": "Donaci, o Padre, di unirci nella fede alla morte e sepoltura del tuo Figlio per risorgere con lui alla vita nuova. Egli vive e regna nei secoli dei secoli.",
+  "la": "Concéde nos, omnípotens Deus, † ita sepúlto Unigenito tuo fidéliter inhærére, * ut cum ipso in novitáte vitæ resúrgere mereámur. Qui vivit."
+ }
+}

@@ -1,9 +1,9 @@
 import type { LiturgicalDay } from '../calendar/calendar';
 import { compietaPlan, MARIAN_REFS, type HymnText } from '../calendar/plan';
-import { getEntry } from '../data/loader';
+import { getEntry, getTexts } from '../data/loader';
 import type { LiturgyData } from '../data/types';
 import { h, notice } from './dom';
-import { antiphonWithPsalm, chant, choice, letturaBreve, rubric, section } from './pieces';
+import { antiphonWithPsalm, bilingual, chant, choice, letturaBreve, rubric, section } from './pieces';
 
 const HYMN_TITLE: Record<HymnText, string> = {
   'te-lucis': 'Te lucis ante términum',
@@ -53,9 +53,8 @@ export function renderCompieta(day: LiturgicalDay, liturgy: LiturgyData): HTMLEl
       rubric('Antifona'),
       chant(c.nuncDimittis.antiphonRef),
       antiphonWithPsalm(c.nuncDimittis.canticleRef, 'Cantico', c.nuncDimittis.antiphonRef, 'Antifona')),
-    section('Orazione e congedo',
-      h('p', { class: 'rubric-text' }, 'Si dice l’orazione del giorno, poi il congedo.'),
-      chant(c.congedo)),
+    section('Orazione', ...oration(plan.orationKey)),
+    section('Congedo', chant(c.congedo)),
     section(`Antifona mariana · ${marian.title}`,
       choice('Tono dell’antifona', [
         { label: 'Tono semplice', build: () => chant(marian.simple) },
@@ -64,4 +63,10 @@ export function renderCompieta(day: LiturgicalDay, liturgy: LiturgyData): HTMLEl
       h('div', { class: 'ad-libitum' }, rubric('Oppure, ad libitum'), ...adLibitum)),
   );
   return root;
+}
+
+function oration(key: string): Node[] {
+  const o = getTexts().compietaOrazioni[key];
+  if (!o) return [notice(`Orazione «${key}» non trovata nel database.`, 'error')];
+  return [rubric(o.titolo), bilingual(o)];
 }

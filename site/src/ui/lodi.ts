@@ -1,9 +1,11 @@
 import type { LiturgicalDay } from '../calendar/calendar';
 import { lodiPlan } from '../calendar/plan';
-import { fetchGabc } from '../data/loader';
+import { fetchGabc, fetchPsalm, getTexts } from '../data/loader';
 import type { AntiphonSlot, LiturgyData } from '../data/types';
 import { deferred, h, notice } from './dom';
-import { antiphonWithPsalm, chant, letturaBreve, rubric, section } from './pieces';
+import { antiphonWithPsalm, chant, finalBlessing, invocations, letturaBreve, paterNoster, psalmText, rubric, section } from './pieces';
+
+const BENEDICTUS = 'salmi/cant-lc-1-68-79-benedictus.json';
 
 const SLOT_LABEL: Record<AntiphonSlot['slot'], string> = {
   '1a': '1ª antifona', '2a': '2ª antifona', '3a': '3ª antifona', unica: 'Antifona',
@@ -57,12 +59,33 @@ export function renderLodi(day: LiturgicalDay, liturgy: LiturgyData, showAnyway 
       plan.paschal ? paschalAntiphon(slot) : antiphonWithPsalm(slot.primary, SLOT_LABEL[slot.slot]))),
     section('Lettura breve', letturaBreve(data.letturaBreve)),
     section('Responsorio breve', chant(data.responsory)),
-    section('Cantico di Zaccaria',
-      rubric('Antifona al Benedictus'),
-      typeof data.benedictusAntiphon === 'string'
-        ? chant(data.benedictusAntiphon)
-        : notice('La domenica l’antifona al Benedictus è propria e cambia ogni settimana: non è nel libretto delle Lodi.', 'gap')),
-    section('Conclusione', h('p', { class: 'rubric-text' }, 'Invocazioni, Padre nostro, orazione e benedizione.')),
+    section('Cantico di Zaccaria', ...benedictus(data.benedictusAntiphon)),
+    ...conclusion(page.week, page.dayName),
   );
   return root;
+}
+
+function benedictus(antiphon: string | { note: string }): Node[] {
+  const text = deferred(async () => psalmText(await fetchPsalm(BENEDICTUS)));
+  if (typeof antiphon !== 'string') {
+    return [notice('La domenica l’antifona al Benedictus è propria e cambia ogni settimana: non è nel libretto delle Lodi.', 'gap'), text];
+  }
+  return [
+    rubric('Antifona al Benedictus'), chant(antiphon),
+    text,
+    rubric('Antifona al Benedictus'), chant(antiphon),
+  ];
+}
+
+/** Invocations, Our Father, oration and blessing of the psalter day. */
+function conclusion(week: number, dayName: string): HTMLElement[] {
+  const c = getTexts().lodi.find((e) => e.week === week && e.day === dayName);
+  return [
+    section('Invocazioni', c ? invocations(c.invocazioni) : notice('Invocazioni non trovate nel database.', 'error')),
+    section('Padre nostro', paterNoster()),
+    section('Orazione', c?.orazione
+      ? h('p', { class: 'prayer__single' }, c.orazione)
+      : notice('La domenica l’orazione è quella propria della domenica, che non è nel libretto delle Lodi.', 'gap')),
+    section('Benedizione', finalBlessing()),
+  ];
 }

@@ -1,0 +1,28 @@
+{
+ "_fonte": "Lodi complete.2.pdf, Ordinario dell’Ufficio pp. 316-321 (testo latino dei canti); traduzione italiana dal Messale Romano 2020 e dalla Liturgia delle Ore",
+ "paterNoster": {
+  "invito": {
+   "la": "Præcéptis salutáribus móniti, et divína institutióne formáti, audémus dícere:",
+   "it": "Obbedienti alla parola del Salvatore e formati al suo divino insegnamento, osiamo dire:"
+  },
+  "la": "Pater noster, qui es in cælis: sanctificétur nomen tuum; advéniat regnum tuum; fiat volúntas tua, sicut in cælo, et in terra. Panem nostrum cotidiánum da nobis hódie; et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris; et ne nos indúcas in tentatiónem; sed líbera nos a malo.",
+  "it": "Padre nostro, che sei nei cieli, sia santificato il tuo nome, venga il tuo regno, sia fatta la tua volontà, come in cielo così in terra. Dacci oggi il nostro pane quotidiano, e rimetti a noi i nostri debiti come anche noi li rimettiamo ai nostri debitori, e non abbandonarci alla tentazione, ma liberaci dal male."
+ },
+ "benedizione": {
+  "conMinistro": {
+   "titolo": "Se presiede un sacerdote o un diacono",
+   "la": "Dóminus vobíscum. ℟. Et cum spíritu tuo. Benedícat vos omnípotens Deus, Pater, et Fílius, et Spíritus Sanctus. ℟. Amen.",
+   "it": "Il Signore sia con voi. ℟. E con il tuo spirito. Vi benedica Dio onnipotente, Padre e Figlio e Spirito Santo. ℟. Amen."
+  },
+  "senzaMinistro": {
+   "titolo": "Altrimenti",
+   "la": "Dóminus nos benedícat, et ab omni malo deféndat, et ad vitam ætérnam perdúcat. ℟. Amen.",
+   "it": "Il Signore ci benedica, ci preservi da ogni male e ci conduca alla vita eterna. ℟. Amen."
+  },
+  "benedicamus": {
+   "titolo": "Congedo",
+   "la": "Benedicámus Dómino. ℟. Deo grátias.",
+   "it": "Benediciamo il Signore. ℟. Rendiamo grazie a Dio."
+  }
+ }
+}

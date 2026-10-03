@@ -1,4 +1,4 @@
-import type { GabcPiece, IndexEntry, LetturaDoc, LiturgyData, PsalmDoc } from './types';
+import type { GabcPiece, IndexEntry, LetturaDoc, LiturgyData, PsalmDoc, Texts } from './types';
 
 // Data files are served next to the site (public/ links to the database
 // folders), resolved against the page so the site works from any sub-path.
@@ -26,13 +26,25 @@ const fetchJson = async <T>(path: string): Promise<T> => JSON.parse(await fetchT
 
 let indexById: Map<string, IndexEntry> | null = null;
 
+let texts: Texts | null = null;
+
 export async function loadDatabase(): Promise<LiturgyData> {
-  const [index, liturgy] = await Promise.all([
+  const [index, liturgy, lodi, compietaOrazioni, ordinario] = await Promise.all([
     cached('index', () => fetchJson<IndexEntry[]>('gabc/index.json')),
     cached('liturgy', () => fetchJson<LiturgyData>('gabc/liturgy.json')),
+    cached('lodi-conclusioni', () => fetchJson<Texts['lodi']>('testi/lodi-conclusioni.json')),
+    cached('compieta-orazioni', () => fetchJson<Texts['compietaOrazioni']>('testi/compieta-orazioni.json')),
+    cached('ordinario', () => fetchJson<Texts['ordinario']>('testi/ordinario.json')),
   ]);
   indexById = new Map(index.map((e) => [e.id, e]));
+  texts = { lodi, compietaOrazioni, ordinario };
   return liturgy;
+}
+
+/** Prayer texts (invocations, orations, Pater noster…). Must be called after loadDatabase(). */
+export function getTexts(): Texts {
+  if (!texts) throw new Error('getTexts() prima di loadDatabase()');
+  return texts;
 }
 
 export function getEntry(id: string): IndexEntry | undefined {

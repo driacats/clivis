@@ -338,3 +338,20 @@ details.alternative[open] summary { color: var(--ink); }
   .loading-piece { animation: pulse 1.4s ease-in-out infinite; }
   @keyframes pulse { 50% { opacity: 0.4; } }
 }
+
+/* prayers (invocations, Pater noster, orations, blessing) */
+.response-sign { color: var(--rubric); font-weight: 600; }
+.prayer--bilingual { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; margin: 4px 0 10px; }
+.prayer--bilingual > * { min-width: 0; margin: 0; }
+.prayer__la { font-style: italic; }
+.prayer__it { color: var(--ink); }
+.prayer-invite .prayer__la, .prayer-invite .prayer__it { color: var(--muted); font-size: 0.95rem; }
+.prayer__single { margin: 4px 0 10px; }
+@media (max-width: 640px) {
+  .prayer--bilingual { grid-template-columns: 1fr; gap: 6px; }
+}
+.invocations__intro { margin: 0 0 6px; }
+.invocations__response { margin: 0 0 14px; font-style: italic; }
+.invocations__item { margin: 0 0 10px; }
+.invocations__item p { margin: 0; }
+.invocations__answer { padding-left: 1.4em; font-style: italic; }

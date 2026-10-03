@@ -1,5 +1,5 @@
-import { fetchGabc, fetchLettura, fetchPsalm, getEntry } from '../data/loader';
-import type { LetturaDoc, PsalmDoc, SlotRef } from '../data/types';
+import { fetchGabc, fetchLettura, fetchPsalm, getEntry, getTexts } from '../data/loader';
+import type { Bilingual, LetturaDoc, LodiConclusion, PsalmDoc, SlotRef } from '../data/types';
 import { deferred, h, notice } from './dom';
 
 /** A section of an office: rubric-red heading and its content. */
@@ -106,4 +106,35 @@ export function choice(label: string, options: { label: string; build: () => Nod
   return h('div', { class: 'choice' },
     h('div', { class: 'choice__bar', role: 'group', 'aria-label': label }, ...buttons),
     panel);
+}
+
+/** Prayer text in Latin and Italian side by side (stacked on phones), ℟. in red. */
+export function bilingual(text: Bilingual): HTMLElement {
+  const para = (s: string, cls: string, lang?: string) =>
+    h('p', { class: cls, lang }, ...s.split(/(℟\.)/).map((part) => part === '℟.' ? h('span', { class: 'response-sign' }, '℟.') : part));
+  return h('div', { class: 'prayer prayer--bilingual' }, para(text.la, 'prayer__la', 'la'), para(text.it, 'prayer__it'));
+}
+
+export function invocations(inv: LodiConclusion['invocazioni']): HTMLElement {
+  return h('div', { class: 'invocations' },
+    h('p', { class: 'invocations__intro' }, inv.intro),
+    h('p', { class: 'invocations__response' }, h('span', { class: 'response-sign' }, '℟. '), inv.response),
+    ...inv.intercessions.map((i) => h('div', { class: 'invocations__item' },
+      h('p', { class: 'invocations__petition' }, i.petition),
+      h('p', { class: 'invocations__answer' }, '— ', i.answer))),
+  );
+}
+
+export function paterNoster(): HTMLElement {
+  const { paterNoster: pn } = getTexts().ordinario;
+  return h('div', {}, h('div', { class: 'prayer-invite' }, bilingual(pn.invito)), bilingual(pn));
+}
+
+/** Blessing and dismissal at the end of Lodi. */
+export function finalBlessing(): HTMLElement {
+  const b = getTexts().ordinario.benedizione;
+  return h('div', {},
+    rubric(b.conMinistro.titolo), bilingual(b.conMinistro),
+    rubric(b.senzaMinistro.titolo), bilingual(b.senzaMinistro),
+    rubric(b.benedicamus.titolo), bilingual(b.benedicamus));
 }

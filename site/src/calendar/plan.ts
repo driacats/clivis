@@ -73,6 +73,8 @@ export interface CompietaPlan {
   hymnRefs: Partial<Record<HymnText, string>>;
   responsoryRef: string;
   marian: MarianSeason;
+  /** testi/compieta-orazioni.json key: the block id, or "solennita". */
+  orationKey: string;
   /** Lent: the opening versicle is sung without Alleluia. */
   openingWithoutAlleluia: boolean;
   notice: string | null;
@@ -172,6 +174,7 @@ export function compietaPlan(day: LiturgicalDay): CompietaPlan {
     hymnRefs,
     responsoryRef,
     marian,
+    orationKey: day.celebration?.rank === 'solennità' || day.season === 'triduo' || isHolyThursday ? 'solennita' : blockId,
     openingWithoutAlleluia: day.season === 'quaresima' || day.season === 'triduo',
     notice,
   };

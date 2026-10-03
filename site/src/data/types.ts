@@ -79,3 +79,30 @@ export interface GabcPiece {
   mode: string | null;
   body: string;
 }
+
+// --- prayer texts (testi/*.json) ---------------------------------------------
+
+export interface Bilingual {
+  it: string;
+  la: string;
+}
+
+export interface LodiConclusion {
+  week: number;
+  day: string;
+  invocazioni: { intro: string; response: string; intercessions: { petition: string; answer: string }[] };
+  /** null on Sundays: "Orazione dal Proprio". */
+  orazione: string | null;
+}
+
+export interface Ordinario {
+  paterNoster: Bilingual & { invito: Bilingual };
+  benedizione: Record<'conMinistro' | 'senzaMinistro' | 'benedicamus', Bilingual & { titolo: string }>;
+}
+
+export interface Texts {
+  lodi: LodiConclusion[];
+  /** keyed by vespersBlock id, plus "solennita" */
+  compietaOrazioni: Record<string, Bilingual & { titolo: string }>;
+  ordinario: Ordinario;
+}
