@@ -1,0 +1,68 @@
+import type { LiturgicalDay } from '../calendar/calendar';
+import { lodiPlan } from '../calendar/plan';
+import { fetchGabc } from '../data/loader';
+import type { AntiphonSlot, LiturgyData } from '../data/types';
+import { deferred, h, notice } from './dom';
+import { antiphonWithPsalm, chant, letturaBreve, rubric, section } from './pieces';
+
+const SLOT_LABEL: Record<AntiphonSlot['slot'], string> = {
+  '1a': '1ª antifona', '2a': '2ª antifona', '3a': '3ª antifona', unica: 'Antifona',
+};
+
+/** In Eastertide: the paschal antiphon, or a note that the generic Alleluia is missing. */
+function paschalAntiphon(slot: AntiphonSlot): HTMLElement {
+  const label = SLOT_LABEL[slot.slot];
+  if (slot.paschalSubstitute) return antiphonWithPsalm(slot.paschalSubstitute, `${label} · Tempo pasquale`);
+  return h('div', {},
+    antiphonWithPsalm(slot.primary, label),
+    // antiphons whose melody already carries the "T.P. allelúia" ending need no note
+    deferred(async () => {
+      const { body } = await fetchGabc(slot.primary);
+      return /T\.\s?P\./.test(body)
+        ? document.createTextNode('')
+        : notice('Nel Tempo pasquale il libretto sostituisce questa antifona con «Allelúia, allelúia, allelúia», la cui melodia non è ancora in questo breviario.', 'gap');
+    }),
+  );
+}
+
+export function renderLodi(day: LiturgicalDay, liturgy: LiturgyData, showAnyway = false): HTMLElement {
+  const plan = lodiPlan(day);
+  const root = h('div', { class: 'office' });
+
+  const page = showAnyway && plan.fallback ? plan.fallback : { week: plan.week, dayName: plan.dayName };
+  const pageName = `${page.dayName} della ${['', 'I', 'II', 'III', 'IV'][page.week]} settimana`;
+
+  if (plan.properNotice && plan.fallback && !showAnyway) {
+    const f = plan.fallback;
+    const button = h('button', { type: 'button', class: 'link-button' },
+      `Mostra i salmi del salterio: ${f.dayName} della ${['', 'I', 'II', 'III', 'IV'][f.week]} settimana`);
+    button.addEventListener('click', () => root.replaceWith(renderLodi(day, liturgy, true)));
+    root.append(notice(plan.properNotice, 'info'), button);
+    return root;
+  }
+  if (plan.properNotice) {
+    root.append(notice(`Salterio: ${pageName}. Le antifone, la lettura e le altre parti proprie di oggi non sono ancora in questo breviario.`, 'info'));
+  }
+  if (plan.seasonalNotice) root.append(notice(plan.seasonalNotice, 'info'));
+
+  const data = liturgy.lodi.weeks.find((w) => w.week === page.week)?.days.find((d) => d.day === page.dayName);
+  if (!data) {
+    root.append(notice(`Nel database mancano le Lodi di ${pageName}.`, 'error'));
+    return root;
+  }
+
+  root.append(
+    section('Inno', chant(data.hymn)),
+    section('Salmodia', ...data.psalmAntiphons.map((slot) =>
+      plan.paschal ? paschalAntiphon(slot) : antiphonWithPsalm(slot.primary, SLOT_LABEL[slot.slot]))),
+    section('Lettura breve', letturaBreve(data.letturaBreve)),
+    section('Responsorio breve', chant(data.responsory)),
+    section('Cantico di Zaccaria',
+      rubric('Antifona al Benedictus'),
+      typeof data.benedictusAntiphon === 'string'
+        ? chant(data.benedictusAntiphon)
+        : notice('La domenica l’antifona al Benedictus è propria e cambia ogni settimana: non è nel libretto delle Lodi.', 'gap')),
+    section('Conclusione', h('p', { class: 'rubric-text' }, 'Invocazioni, Padre nostro, orazione e benedizione.')),
+  );
+  return root;
+}

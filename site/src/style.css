@@ -1,0 +1,303 @@
+/* Breviario MLG — a page of a liturgical book: black text, red rubrics,
+   the day's liturgical colour as the only other accent. One reading column. */
+:root {
+  --paper: #fcfcfa;
+  --page: #ffffff;
+  --ink: #1c1b19;
+  --muted: #6a675f;
+  --rule: #e3e0d8;
+  --rubric: #b0261c;
+  --info-bg: #f3f1ec;
+  --gap-bg: #fbf1df;
+  --gap-ink: #7a4d00;
+  --season: #2f7a4a;
+
+  --text: 'EB Garamond', 'Garamond', 'Times New Roman', serif;
+  --ui: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --measure: 44rem;
+  color-scheme: light;
+}
+:root[data-season='viola'] { --season: #6b3d99; }
+:root[data-season='bianco'] { --season: #b8902a; }
+:root[data-season='verde'] { --season: #2f7a4a; }
+:root[data-season='rosso'] { --season: #b0261c; }
+:root[data-season='rosaceo'] { --season: #c76a92; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #161513;
+    --page: #1d1c1a;
+    --ink: #ece8df;
+    --muted: #a39e93;
+    --rule: #34312c;
+    --rubric: #e0675d;
+    --info-bg: #24221f;
+    --gap-bg: #33280f;
+    --gap-ink: #f0c36a;
+    color-scheme: dark;
+  }
+  :root[data-season='viola'] { --season: #a888d6; }
+  :root[data-season='bianco'] { --season: #d9b552; }
+  :root[data-season='verde'] { --season: #6cbf86; }
+  :root[data-season='rosso'] { --season: #e0675d; }
+  :root[data-season='rosaceo'] { --season: #e59bbb; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 1.15rem;
+  line-height: 1.5;
+  padding-inline: 16px;
+}
+
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--rubric); outline-offset: 3px; border-radius: 2px; }
+
+/* --- masthead ----------------------------------------------------------------- */
+.masthead {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding-block: 18px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 14px;
+  border-bottom: 1px solid var(--rule);
+}
+.masthead__name {
+  font-family: var(--text);
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.masthead__name span { color: var(--rubric); }
+.masthead__tag { font-family: var(--ui); font-size: 0.8rem; color: var(--muted); }
+
+/* --- day header ----------------------------------------------------------------- */
+.day {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding-block: 18px 0;
+  border-top: 4px solid var(--season);
+  margin-top: -1px;
+}
+.date-nav {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  font-family: var(--ui);
+}
+.date-nav__step {
+  display: grid;
+  place-items: center;
+  height: 44px;
+  font-size: 1.8rem;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--muted);
+  border-radius: 50%;
+}
+.date-nav__step:hover { color: var(--ink); background: var(--info-bg); }
+.date-nav__center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 2px 10px;
+  text-align: center;
+  position: relative;
+}
+.date-nav__date { font-size: 0.95rem; font-weight: 600; }
+.date-nav__date::first-letter { text-transform: uppercase; }
+.date-nav__today {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--season);
+  font-weight: 600;
+}
+.date-nav__today--link { color: var(--rubric); }
+.date-nav__picker {
+  font: inherit;
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.day__title {
+  font-weight: 500;
+  font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+  line-height: 1.15;
+  text-align: center;
+  text-wrap: balance;
+  margin: 18px 0 6px;
+}
+.day__subtitle { text-align: center; margin: 0 0 4px; color: var(--muted); font-style: italic; }
+.day__meta {
+  font-family: var(--ui);
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+  margin: 6px 0 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.day__dot { opacity: 0.6; }
+.swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--season);
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12);
+}
+
+.office-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--ui);
+}
+.office-tabs__tab {
+  padding: 10px 22px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+}
+.office-tabs__tab:hover { color: var(--ink); }
+.office-tabs__tab[aria-current='page'] { color: var(--ink); border-bottom-color: var(--rubric); }
+
+/* --- office ----------------------------------------------------------------------- */
+.office-wrap { max-width: var(--measure); margin: 0 auto; padding-block: 8px 56px; }
+.office { display: grid; gap: 0; }
+
+.office-section { padding-block: 22px 8px; border-bottom: 1px solid var(--rule); }
+.office-section:last-child { border-bottom: 0; }
+
+.rubric {
+  color: var(--rubric);
+  font-family: var(--text);
+  font-variant: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-size: 1.1rem;
+  margin: 0 0 10px;
+  text-wrap: balance;
+}
+.rubric--small { font-size: 0.95rem; margin: 14px 0 4px; }
+.rubric--after { font-variant: normal; font-weight: 400; font-style: italic; letter-spacing: 0; margin-top: 8px; }
+.rubric-text { color: var(--rubric); font-style: italic; margin: 6px 0; }
+
+.score { margin: 4px 0 6px; }
+.score > div { width: 100%; }
+chant-visual { display: block; }
+chant-visual svg { fill: var(--ink); stroke: var(--ink); max-width: 100%; height: auto; overflow: visible; }
+chant-visual svg text { stroke: none; }
+.loading-piece { min-height: 70px; border-radius: 6px; background: linear-gradient(90deg, var(--info-bg), transparent); }
+
+/* psalms */
+.psalmody-unit + .psalmody-unit { margin-top: 18px; padding-top: 6px; }
+.psalm { margin: 10px 0 0; }
+.psalm__title { font-size: 1.05rem; font-weight: 600; margin: 0; }
+.psalm__subtitle { display: block; font-weight: 400; font-style: italic; color: var(--muted); }
+.psalm__epigraph { font-size: 0.95rem; color: var(--muted); margin: 4px 0 0; }
+.psalm__verses { margin-top: 10px; }
+.psalm__verse p { margin: 0 0 6px; }
+.psalm__line { display: block; }
+.psalm__line--cont { padding-left: 1.4em; }
+.psalm--bilingual .psalm__verse { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
+.psalm--bilingual .psalm__verse > * { min-width: 0; }
+.psalm__la { color: var(--muted); font-style: italic; }
+@media (max-width: 640px) {
+  .psalm--bilingual .psalm__verse { grid-template-columns: 1fr; }
+  .psalm--bilingual .psalm__la { margin-bottom: 10px; }
+}
+
+.lettura__ref { font-family: var(--ui); font-size: 0.85rem; color: var(--muted); margin: 0 0 6px; }
+.lettura__it { margin: 0 0 8px; }
+.lettura__la { margin: 0; color: var(--muted); font-style: italic; }
+
+/* choices (hymn text, Marian tone) */
+.choice__bar { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; font-family: var(--ui); }
+.choice__button {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  background: var(--page);
+  color: var(--muted);
+  cursor: pointer;
+}
+.choice__button[aria-pressed='true'] { color: var(--ink); border-color: var(--rubric); box-shadow: inset 0 0 0 1px var(--rubric); }
+
+details.alternative { margin: 8px 0; }
+details.alternative summary {
+  cursor: pointer;
+  font-family: var(--ui);
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 4px 0;
+}
+details.alternative[open] summary { color: var(--ink); }
+.ad-libitum { margin-top: 14px; }
+
+/* notices */
+.notice {
+  font-family: var(--ui);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 12px 0;
+  background: var(--info-bg);
+  color: var(--ink);
+}
+.notice--gap { background: var(--gap-bg); color: var(--gap-ink); }
+.notice--error { background: var(--gap-bg); color: var(--rubric); }
+.link-button {
+  font: inherit;
+  font-family: var(--ui);
+  font-size: 0.9rem;
+  background: none;
+  border: 0;
+  padding: 4px 0;
+  color: var(--rubric);
+  text-decoration: underline;
+  cursor: pointer;
+  justify-self: start;
+}
+
+.loading-page { max-width: var(--measure); margin: 40px auto; font-family: var(--ui); color: var(--muted); }
+
+.colophon {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding-block: 18px 32px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--ui);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .loading-piece { animation: pulse 1.4s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: 0.4; } }
+}
