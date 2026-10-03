@@ -371,3 +371,5 @@ details.alternative[open] summary { color: var(--ink); }
 .esame__voci--plain { list-style: none; padding-left: 0; }
 .esame__intro { color: var(--muted); }
 .more-link, .back-link { font-family: var(--ui); font-size: 0.9rem; color: var(--rubric); }
+
+.translation { white-space: pre-line; color: var(--muted); font-style: italic; font-size: 0.98rem; margin: 6px 0 12px; }

@@ -33,7 +33,7 @@ export function renderCompieta(day: LiturgicalDay, liturgy: LiturgyData): HTMLEl
   const adLibitum = c.marianAntiphons.adLibitum.map((id) =>
     h('details', { class: 'alternative' },
       h('summary', {}, getEntry(id)?.printedIncipit?.split(/[,.!]/)[0] ?? id),
-      chant(id)));
+      marianPiece(id)));
 
   root.append(
     section('Introduzione',
@@ -58,8 +58,11 @@ export function renderCompieta(day: LiturgicalDay, liturgy: LiturgyData): HTMLEl
     section('Congedo', chant(c.congedo)),
     section(`Antifona mariana · ${marian.title}`,
       choice('Tono dell’antifona', [
-        { label: 'Tono semplice', build: () => chant(marian.simple) },
-        { label: 'Tono solenne', build: () => chant(marian.solemn) },
+        { label: 'Tono semplice', build: () => marianPiece(marian.simple) },
+        { label: 'Tono solenne', build: () => marianPiece(marian.solemn) },
+        ...(plan.marian === 'regina'
+          ? [{ label: 'Officium parvum', build: () => marianPiece('compieta.C50') }]
+          : []),
       ]),
       h('div', { class: 'ad-libitum' }, rubric('Oppure, ad libitum'), ...adLibitum)),
   );
@@ -119,4 +122,10 @@ function toneOf(contexts: string[]): string {
 function nuncDimittisText(canticleRef: string): HTMLElement | null {
   const psalm = getEntry(canticleRef)?.psalm;
   return psalm ? deferred(async () => psalmText(await fetchPsalm(psalm.file))) : null;
+}
+
+/** A Marian antiphon with the Italian translation printed in the libretto. */
+function marianPiece(id: string): HTMLElement {
+  const it = getTexts().marianeIt[id];
+  return h('div', {}, chant(id), it ? h('p', { class: 'translation' }, it) : null);
 }

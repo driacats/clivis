@@ -1117,12 +1117,8 @@
     "printedContext": "-, mode I",
     "pdfPage": "p. 46",
     "status": "found",
-    "gregobase": {
-      "id": 12596,
-      "url": "https://gregobase.selapa.net/chant.php?id=12596"
-    },
-    "file": "gabc/chants/12596-ave-maria-gratia-plena-dominus-tecum.gabc",
-    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "file": "gabc/chants/manual-ave-maria.gabc",
+    "matchNotes": "Trascritto manualmente dal libretto (p. 46): la versione GregoBase #12596 aveva solo la prima metà (fino a «in muliéribus»).",
     "candidatesConsidered": [
       9016,
       12596,
@@ -1147,12 +1143,8 @@
     "printedContext": "S. Bernardo",
     "pdfPage": "p. 46-47",
     "status": "found",
-    "gregobase": {
-      "id": 13125,
-      "url": "https://gregobase.selapa.net/chant.php?id=13125"
-    },
-    "file": "gabc/chants/13125-memorare-o-piissima-virgo-maria.gabc",
-    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "file": "gabc/chants/manual-memorare.gabc",
+    "matchNotes": "Trascritto manualmente dal libretto (pp. 46-47): la versione GregoBase #13125 ha un'altra melodia.",
     "candidatesConsidered": [
       13125,
       7521,

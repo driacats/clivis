@@ -107,6 +107,8 @@ export interface Texts {
   compietaOrazioni: Record<string, Bilingual & { titolo: string }>;
   ordinario: Ordinario;
   esame: EsameCoscienza;
+  /** Italian translation of the Marian antiphons, by index id. */
+  marianeIt: Record<string, string>;
 }
 
 export interface EsameCoscienza {
