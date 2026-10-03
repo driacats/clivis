@@ -3,8 +3,26 @@ office-part:Hymnus;
 mode:8;
 book:Liber Hymnarius, 1983, p. 241;
 transcriber:Boris Maire;
+% Strofe 2-4 e Amen aggiunte dal libretto Compieta piccola.pdf p. 9 (testo del libretto, melodia della strofa 1)
 %%
 (c4) TE(g) lu(i)cis(h) an(j)te(j) tér(j)mi(i)num(h_') (,)
 re(h)rum(j) cre(j)á(i)tor,(g) pós(h)ci(g)mus,(f.) (;)
 ut(h) só(h)li(g)ta(j) cle(i)mén(h)ti(g)a(hih___') (,)
 sis(h) præ(h)sul(g) ad(f) cus(g)tó(h)di(g)am.(g.) (::)
+
+2. Te(g) cor(i)da(h) nos(j)tra(j) sóm(j)ni(i)ent,(h_') (,)
+te(h) per(j) so(j)pó(i)rem(g) sén(h)ti(g)ant,(f.) (;)
+tu(h)ám(h)que(g) sem(j)per(i) gló(h)ri(g)am(hih___') (,)
+vi(h)cí(h)na(g) lu(f)ce(g) cón(h)ci(g)nant.(g.) (::)
+
+3. Vi(g)tam(i) sa(h)lú(j)brem(j) trí(j)bu(i)e,(h_') (,)
+nos(h)trum(j) ca(j)ló(i)rem(g) ré(h)fi(g)ce,(f.) (;)
+tæ(h)tram(h) noc(g)tis(j) ca(i)lí(h)gi(g)nem(hih___') (,)
+tu(h)a(h) col(g)lús(f)tret(g) clá(h)ri(g)tas.(g.) (::)
+
+4. Præ(g)sta,(i) Pa(h)ter(j) om(j)ní(j)po(i)tens,(h_') (,)
+per(h) Ie(j)sum(j) Chris(i)tum(g) Dó(h)mi(g)num,(f.) (;)
+qui(h) te(h)cum(g) in(j) per(i)pé(h)tu(g)um(hih___') (,)
+re(h)gnat(h) cum(g) Sanc(f)to(g) Spí(h)ri(g)tu.(g.) (::)
+
+A(ghg)men.(fg..) (::)
