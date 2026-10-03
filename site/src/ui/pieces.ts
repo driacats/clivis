@@ -1,6 +1,7 @@
 import { fetchGabc, fetchLettura, fetchPsalm, getEntry, getTexts } from '../data/loader';
 import type { Bilingual, LetturaDoc, LodiConclusion, PsalmDoc, SlotRef } from '../data/types';
 import { deferred, h, notice } from './dom';
+import { playerControls } from '../audio/controls';
 
 /** A section of an office: rubric-red heading and its content. */
 export function section(title: string, ...content: (Node | null)[]): HTMLElement {
@@ -21,7 +22,7 @@ async function buildChant(id: string): Promise<Node> {
   const cv = document.createElement('chant-visual');
   if (mode) cv.setAttribute('annotation', modeLabel(mode));
   cv.textContent = body;
-  return h('div', { class: 'score' }, h('div', {}, cv));
+  return h('div', { class: 'score' }, h('div', {}, cv), playerControls(body, (entry.file ?? id).split('/').pop() ?? id));
 }
 
 const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];

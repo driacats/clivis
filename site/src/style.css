@@ -355,3 +355,12 @@ details.alternative[open] summary { color: var(--ink); }
 .invocations__item { margin: 0 0 10px; }
 .invocations__item p { margin: 0; }
 .invocations__answer { padding-left: 1.4em; font-style: italic; }
+
+/* melody player under each score */
+.player { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 2px 0 8px; font-family: var(--ui); font-size: 0.82rem; }
+.player button { font: inherit; cursor: pointer; border-radius: 999px; border: 1px solid var(--rule); background: var(--page); color: var(--muted); padding: 4px 12px; }
+.player button:hover { color: var(--ink); border-color: var(--muted); }
+.player__play[aria-pressed='true'] { color: var(--rubric); border-color: var(--rubric); }
+.player__play span { font-size: 0.75em; margin-right: 2px; }
+.player__midi { color: var(--muted); }
+.player__midi:hover { color: var(--ink); }
