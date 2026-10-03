@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { easter, adventStart, fromDayNumber, liturgicalDay, parseIsoDate, toIsoDate } from './calendar';
-import { compietaPlan, lodiPlan } from './plan';
+import { benedicamusKey, compietaPlan, lodiPlan } from './plan';
 
 const iso = (n: number) => toIsoDate(fromDayNumber(n));
 const day = (s: string) => liturgicalDay(parseIsoDate(s)!);
@@ -149,5 +149,17 @@ describe('compietaPlan', () => {
     expect(compietaPlan(day('2026-05-01')).responsoryRef).toBe('compieta.C40');
     expect(compietaPlan(day('2026-05-01')).marian).toBe('regina');
     expect(compietaPlan(day('2026-05-01')).hymnRefs).toEqual({ iesu: 'compieta.C36' });
+  });
+});
+
+describe('benedicamusKey', () => {
+  it('follows the day', () => {
+    expect(benedicamusKey(day('2026-10-03'))).toBe('ferie');
+    expect(benedicamusKey(day('2026-10-04'))).toBe('domeniche');
+    expect(benedicamusKey(day('2026-11-01'))).toBe('solennita');
+    expect(benedicamusKey(day('2026-11-30'))).toBe('feste');
+    expect(benedicamusKey(day('2026-12-02'))).toBe('avvento-quaresima');
+    expect(benedicamusKey(day('2026-04-08'))).toBe('pasqua');
+    expect(benedicamusKey(day('2026-05-06'))).toBe('tempo-pasquale');
   });
 });

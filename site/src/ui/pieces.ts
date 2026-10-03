@@ -130,11 +130,27 @@ export function paterNoster(): HTMLElement {
   return h('div', {}, h('div', { class: 'prayer-invite' }, bilingual(pn.invito)), bilingual(pn));
 }
 
-/** Blessing and dismissal at the end of Lodi. */
-export function finalBlessing(): HTMLElement {
+const BENEDICAMUS_LABEL: Record<string, string> = {
+  solennita: 'Nelle solennità', feste: 'Nelle feste', 'memorie': 'Nelle memorie', 'memorie-alt': 'Nelle memorie (oppure)',
+  bvm: 'Nelle feste della B. V. Maria', sabato: 'Nell’ufficio di S. Maria in sabato', domeniche: 'Nelle domeniche per annum',
+  pasqua: 'A Pasqua e durante l’Ottava', 'tempo-pasquale': 'Nel Tempo pasquale', ferie: 'Nelle ferie per annum',
+  'avvento-quaresima': 'Nelle ferie di Avvento e Quaresima',
+};
+
+/** Blessing and dismissal at the end of Lodi, sung as in the libretto (pp. 318-321). */
+export function finalBlessing(benedicamus: string, solemn: boolean): HTMLElement {
   const b = getTexts().ordinario.benedizione;
+  const others = Object.keys(BENEDICAMUS_LABEL).filter((k) => k !== benedicamus);
   return h('div', {},
-    rubric(b.conMinistro.titolo), bilingual(b.conMinistro),
+    rubric(b.conMinistro.titolo),
+    choice('Tono della benedizione', [
+      { label: 'Tono semplice', build: () => chant('ordinario.BEN1') },
+      { label: 'Tono solenne', build: () => chant('ordinario.BEN2') },
+    ], solemn ? 1 : 0),
     rubric(b.senzaMinistro.titolo), bilingual(b.senzaMinistro),
-    rubric(b.benedicamus.titolo), bilingual(b.benedicamus));
+    rubric(`Congedo · ${BENEDICAMUS_LABEL[benedicamus]}`),
+    chant(`ordinario.BD-${benedicamus}`),
+    h('details', { class: 'alternative' },
+      h('summary', {}, 'Altre melodie del Benedicamus Domino'),
+      ...others.map((k) => h('div', {}, rubric(BENEDICAMUS_LABEL[k]), chant(`ordinario.BD-${k}`)))));
 }

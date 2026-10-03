@@ -5142,5 +5142,148 @@
       "title": "Grandezza del Signore e dignità dell’uomo",
       "file": "salmi/ps-8-o-signore-nostro-dio.json"
     }
+  },
+  {
+    "id": "ordinario.BEN1",
+    "office": "lodi",
+    "role": "benedizione e congedo",
+    "printedIncipit": "Dominus vobiscum. Benedicat vos omnipotens Deus",
+    "printedContext": "benedizione finale, tono semplice",
+    "pdfPage": "p. 318",
+    "status": "found",
+    "file": "gabc/chants/manual-benedizione-semplice.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.BEN2",
+    "office": "lodi",
+    "role": "benedizione e congedo",
+    "printedIncipit": "Dominus vobiscum. Benedicat vos omnipotens Deus",
+    "printedContext": "benedizione finale, tono solenne",
+    "pdfPage": "p. 319",
+    "status": "found",
+    "file": "gabc/chants/manual-benedizione-solenne.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.BD-solennita",
+    "office": "lodi",
+    "role": "benedizione e congedo",
+    "printedIncipit": "Benedicamus Domino. Deo gratias",
+    "printedContext": "Benedicamus Domino, solennità",
+    "pdfPage": "p. 319",
+    "status": "found",
+    "file": "gabc/chants/manual-benedicamus-solennita.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.BD-feste",
+    "office": "lodi",
+    "role": "benedizione e congedo",
+    "printedIncipit": "Benedicamus Domino. Deo gratias",
+    "printedContext": "Benedicamus Domino, feste",
+    "pdfPage": "p. 319",
+    "status": "found",
+    "file": "gabc/chants/manual-benedicamus-feste.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.BD-memorie",
+    "office": "lodi",
+    "role": "benedizione e congedo",
+    "printedIncipit": "Benedicamus Domino. Deo gratias",
+    "printedContext": "Benedicamus Domino, memorie",
+    "pdfPage": "p. 320",
+    "status": "found",
+    "file": "gabc/chants/manual-benedicamus-memorie.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.BD-memorie-alt",
+    "office": "lodi",
+    "role": "benedizione e congedo",
+    "printedIncipit": "Benedicamus Domino. Deo gratias",
+    "printedContext": "Benedicamus Domino, memorie (oppure)",
+    "pdfPage": "p. 320",
+    "status": "found",
+    "file": "gabc/chants/manual-benedicamus-memorie-alt.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.BD-bvm",
+    "office": "lodi",
+    "role": "benedizione e congedo",
+    "printedIncipit": "Benedicamus Domino. Deo gratias",
+    "printedContext": "Benedicamus Domino, feste della B. V. Maria",
+    "pdfPage": "p. 320",
+    "status": "found",
+    "file": "gabc/chants/manual-benedicamus-bvm.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.BD-sabato",
+    "office": "lodi",
+    "role": "benedizione e congedo",
+    "printedIncipit": "Benedicamus Domino. Deo gratias",
+    "printedContext": "Benedicamus Domino, S. Maria in sabato",
+    "pdfPage": "p. 320",
+    "status": "found",
+    "file": "gabc/chants/manual-benedicamus-sabato.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.BD-domeniche",
+    "office": "lodi",
+    "role": "benedizione e congedo",
+    "printedIncipit": "Benedicamus Domino. Deo gratias",
+    "printedContext": "Benedicamus Domino, domeniche per annum",
+    "pdfPage": "p. 320",
+    "status": "found",
+    "file": "gabc/chants/manual-benedicamus-domeniche.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.BD-pasqua",
+    "office": "lodi",
+    "role": "benedizione e congedo",
+    "printedIncipit": "Benedicamus Domino, alleluia, alleluia",
+    "printedContext": "Benedicamus Domino, Pasqua e Ottava",
+    "pdfPage": "p. 321",
+    "status": "found",
+    "file": "gabc/chants/manual-benedicamus-pasqua.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.BD-tempo-pasquale",
+    "office": "lodi",
+    "role": "benedizione e congedo",
+    "printedIncipit": "Benedicamus Domino. Deo gratias",
+    "printedContext": "Benedicamus Domino, Tempo pasquale",
+    "pdfPage": "p. 321",
+    "status": "found",
+    "file": "gabc/chants/manual-benedicamus-tempo-pasquale.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.BD-ferie",
+    "office": "lodi",
+    "role": "benedizione e congedo",
+    "printedIncipit": "Benedicamus Domino. Deo gratias",
+    "printedContext": "Benedicamus Domino, ferie per annum",
+    "pdfPage": "p. 321",
+    "status": "found",
+    "file": "gabc/chants/manual-benedicamus-ferie.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.BD-avvento-quaresima",
+    "office": "lodi",
+    "role": "benedizione e congedo",
+    "printedIncipit": "Benedicamus Domino. Deo gratias",
+    "printedContext": "Benedicamus Domino, ferie di Avvento e Quaresima",
+    "pdfPage": "p. 321",
+    "status": "found",
+    "file": "gabc/chants/manual-benedicamus-avvento-quaresima.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
   }
 ]

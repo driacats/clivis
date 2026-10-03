@@ -1,5 +1,5 @@
 import type { LiturgicalDay } from '../calendar/calendar';
-import { lodiPlan } from '../calendar/plan';
+import { benedicamusKey, lodiPlan, solemnBlessing } from '../calendar/plan';
 import { fetchGabc, fetchPsalm, getTexts } from '../data/loader';
 import type { AntiphonSlot, LiturgyData } from '../data/types';
 import { deferred, h, notice } from './dom';
@@ -60,7 +60,7 @@ export function renderLodi(day: LiturgicalDay, liturgy: LiturgyData, showAnyway 
     section('Lettura breve', letturaBreve(data.letturaBreve)),
     section('Responsorio breve', chant(data.responsory)),
     section('Cantico di Zaccaria', ...benedictus(data.benedictusAntiphon)),
-    ...conclusion(page.week, page.dayName),
+    ...conclusion(page.week, page.dayName, day),
   );
   return root;
 }
@@ -78,7 +78,7 @@ function benedictus(antiphon: string | { note: string }): Node[] {
 }
 
 /** Invocations, Our Father, oration and blessing of the psalter day. */
-function conclusion(week: number, dayName: string): HTMLElement[] {
+function conclusion(week: number, dayName: string, day: LiturgicalDay): HTMLElement[] {
   const c = getTexts().lodi.find((e) => e.week === week && e.day === dayName);
   return [
     section('Invocazioni', c ? invocations(c.invocazioni) : notice('Invocazioni non trovate nel database.', 'error')),
@@ -86,6 +86,6 @@ function conclusion(week: number, dayName: string): HTMLElement[] {
     section('Orazione', c?.orazione
       ? h('p', { class: 'prayer__single' }, c.orazione)
       : notice('La domenica l’orazione è quella propria della domenica, che non è nel libretto delle Lodi.', 'gap')),
-    section('Benedizione', finalBlessing()),
+    section('Benedizione', finalBlessing(benedicamusKey(day), solemnBlessing(day))),
   ];
 }

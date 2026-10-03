@@ -187,3 +187,28 @@ export const MARIAN_REFS: Record<MarianSeason, { title: string; simple: string; 
   regina: { title: 'Regína cæli', simple: C(43), solemn: C(53) },
   salve: { title: 'Salve, Regína', simple: C(44), solemn: C(54) },
 };
+
+// --- dismissal at the end of Lodi ---------------------------------------------
+
+export type BenedicamusKey =
+  | 'solennita' | 'feste' | 'pasqua' | 'tempo-pasquale' | 'avvento-quaresima' | 'domeniche' | 'ferie';
+
+/**
+ * Which "Benedicamus Domino" melody (Lodi complete, pp. 319-321) fits the day.
+ * Memorials are not tracked by the calendar, so their melodies are offered as
+ * alternatives only.
+ */
+export function benedicamusKey(day: LiturgicalDay): BenedicamusKey {
+  if (day.inOctave === 'pasqua') return 'pasqua';
+  if (day.celebration?.rank === 'solennità') return 'solennita';
+  if (day.celebration?.rank === 'festa') return 'feste';
+  if (day.season === 'pasqua') return 'tempo-pasquale';
+  if (day.season === 'avvento' || day.season === 'quaresima' || day.season === 'triduo') return 'avvento-quaresima';
+  if (day.weekday === 0) return 'domeniche';
+  return 'ferie';
+}
+
+/** Solemn tone of the blessing on solemnities and feasts, simple tone otherwise. */
+export function solemnBlessing(day: LiturgicalDay): boolean {
+  return day.celebration !== null || day.inOctave !== null;
+}
