@@ -127,6 +127,24 @@ export function parseGabcMelody(body: string): MelodyEvent[] {
   return events;
 }
 
+// --- antiphon / EUOUAE ------------------------------------------------------------
+
+/**
+ * Splits off the EUOUAE (the psalm-tone ending printed after an antiphon) so the
+ * two can be played separately. Returns null for `euouae` when there is none.
+ * The EUOUAE part starts with the clef in force where it begins.
+ */
+export function splitEuouae(body: string): { main: string; euouae: string | null } {
+  const tag = body.search(/<eu>/i);
+  const syll = body.search(/E\s*\([^)]*\)\s*u\s*\([^)]*\)\s*o\s*\([^)]*\)\s*u\s*\([^)]*\)\s*a\s*\(/);
+  const at = tag >= 0 ? tag : syll;
+  if (at <= 0) return { main: body, euouae: null };
+  const main = body.slice(0, at);
+  const clefs = [...main.matchAll(/\(\s*([cf]b?[1-4])/g)];
+  const clef = clefs.length ? clefs[clefs.length - 1][1] : 'c4';
+  return { main, euouae: `(${clef}) ${body.slice(at)}` };
+}
+
 // --- standard MIDI file ----------------------------------------------------------
 
 /** A type-0 MIDI file of the melody (choir "aahs", 1 beat = an eighth at 240 bpm). */

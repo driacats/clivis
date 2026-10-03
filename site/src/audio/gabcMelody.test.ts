@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { melodyToMidi, parseGabcMelody } from './gabcMelody';
+import { melodyToMidi, parseGabcMelody, splitEuouae } from './gabcMelody';
 
 const pitches = (gabc: string) => parseGabcMelody(gabc).map((e) => e.pitch);
 
@@ -34,5 +34,21 @@ describe('parseGabcMelody', () => {
     const midi = melodyToMidi(parseGabcMelody('(c4) A(j)'));
     expect(String.fromCharCode(...midi.slice(0, 4))).toBe('MThd');
     expect(String.fromCharCode(...midi.slice(14, 18))).toBe('MTrk');
+  });
+});
+
+describe('splitEuouae', () => {
+  it('separates the EUOUAE written as syllables, keeping the clef', () => {
+    const s = splitEuouae('(c3) Ve(f)ní(d_0e)te.(e.) (::) E(h)u(h)o(g)u(h)a(f)e.(e.) (::)');
+    expect(s.main).toBe('(c3) Ve(f)ní(d_0e)te.(e.) (::) ');
+    expect(s.euouae).toBe('(c3) E(h)u(h)o(g)u(h)a(f)e.(e.) (::)');
+    expect(parseGabcMelody(s.euouae!).map((e) => e.pitch)).toEqual([60, 60, 59, 60, 57, 55]);
+  });
+  it('separates the EUOUAE in <eu> tags', () => {
+    expect(splitEuouae('(f3) CAn(f)to(h) (::) <eu>E(h) u(h) o(h) u(g) a(ef) e.</eu>(f.) (::)').euouae)
+      .toBe('(f3) <eu>E(h) u(h) o(h) u(g) a(ef) e.</eu>(f.) (::)');
+  });
+  it('leaves chants without EUOUAE alone', () => {
+    expect(splitEuouae('(c4) TE(g) lu(i)cis(h)').euouae).toBeNull();
   });
 });
