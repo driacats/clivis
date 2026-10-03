@@ -10,7 +10,7 @@ export function section(title: string, ...content: (Node | null)[]): HTMLElement
 /** Small rubric label inside a section ("1ª antifona", "oppure"…). */
 export const rubric = (text: string) => h('p', { class: 'rubric rubric--small' }, text);
 
-async function buildChant(id: string): Promise<Node> {
+async function buildChant(id: string, dropCap = true): Promise<Node> {
   const entry = getEntry(id);
   if (!entry) return notice(`Canto sconosciuto: ${id}`, 'error');
   if (entry.status !== 'found') {
@@ -19,8 +19,16 @@ async function buildChant(id: string): Promise<Node> {
   const { mode, body } = await fetchGabc(id);
   // <chant-visual> reads its source and attributes when it is connected
   const cv = document.createElement('chant-visual');
-  if (mode) cv.setAttribute('annotation', modeLabel(mode));
-  cv.textContent = body;
+  if (dropCap) {
+    if (mode) cv.setAttribute('annotation', modeLabel(mode));
+    cv.textContent = body;
+  } else {
+    // a repeat: no large initial, no mode, and the first word in normal case
+    // ("IN nóctibus" -> "In nóctibus", the capitals belong to the drop cap)
+    cv.setAttribute('use-drop-cap', 'false');
+    cv.textContent = body.replace(/^((?:\([^)]*\)\s*)*)(\p{Lu})(\p{Lu}+)/u,
+      (_m, clef: string, first: string, rest: string) => clef + first + rest.toLowerCase());
+  }
   return h('div', { class: 'score' }, h('div', {}, cv));
 }
 
@@ -30,8 +38,9 @@ function modeLabel(mode: string): string {
   return Number.isInteger(n) && n >= 1 && n <= 8 ? ROMAN[n] : mode;
 }
 
-/** The chant of a gabc/index.json id. */
-export const chant = (id: string): HTMLElement => deferred(() => buildChant(id));
+/** The chant of a gabc/index.json id; repeats are drawn without the large initial. */
+export const chant = (id: string, opts: { dropCap?: boolean } = {}): HTMLElement =>
+  deferred(() => buildChant(id, opts.dropCap ?? true));
 
 export function psalmText(doc: PsalmDoc): HTMLElement {
   const bilingual = doc.verses.some((v) => v.la);
@@ -55,14 +64,19 @@ function verseLines(text: string, cls: string, lang?: string): HTMLElement {
     ...parts.map((part, i) => h('span', { class: i === 0 ? 'psalm__line' : 'psalm__line psalm__line--cont' }, part)));
 }
 
-/** Antiphon, the psalm or canticle it belongs to, and the repeated antiphon cue. */
-export function antiphonWithPsalm(id: string, label: string): HTMLElement {
+/**
+ * Antiphon, the psalm or canticle it belongs to, and the antiphon again after
+ * it, as it is sung. `repeat` is the antiphon to sing after the text when it
+ * differs from the chant above it (the Nunc dimittis: tone above, antiphon after).
+ */
+export function antiphonWithPsalm(id: string, label: string, repeat: string = id): HTMLElement {
   const psalm = getEntry(id)?.psalm;
   return h('div', { class: 'psalmody-unit' },
     rubric(label),
     chant(id),
     psalm ? deferred(async () => psalmText(await fetchPsalm(psalm.file))) : null,
-    psalm ? h('p', { class: 'rubric rubric--small rubric--after' }, 'Si ripete l’antifona.') : null,
+    psalm ? rubric('Si ripete l’antifona') : null,
+    psalm ? chant(repeat, { dropCap: false }) : null,
   );
 }
 

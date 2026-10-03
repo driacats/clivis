@@ -52,7 +52,7 @@ export function renderCompieta(day: LiturgicalDay, liturgy: LiturgyData): HTMLEl
     section('Cantico di Simeone',
       rubric('Antifona'),
       chant(c.nuncDimittis.antiphonRef),
-      antiphonWithPsalm(c.nuncDimittis.canticleRef, 'Cantico')),
+      antiphonWithPsalm(c.nuncDimittis.canticleRef, 'Cantico', c.nuncDimittis.antiphonRef)),
     section('Orazione e congedo',
       h('p', { class: 'rubric-text' }, 'Si dice l’orazione del giorno, poi il congedo.'),
       chant(c.congedo)),
