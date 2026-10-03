@@ -22,7 +22,7 @@ async function buildChant(id: string): Promise<Node> {
   const cv = document.createElement('chant-visual');
   if (mode) cv.setAttribute('annotation', modeLabel(mode));
   cv.textContent = body;
-  return h('div', { class: 'score' }, h('div', {}, cv), playerControls(body, (entry.file ?? id).split('/').pop() ?? id));
+  return h('div', { class: 'score' }, h('div', {}, cv), playerControls(body, (entry.file ?? id).split('/').pop() ?? id, mode));
 }
 
 const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];

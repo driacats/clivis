@@ -1,5 +1,6 @@
 import { melodyToMidi, parseGabcMelody, splitEuouae, type MelodyEvent } from './gabcMelody';
 import { getSpeed, play, secondsPerBeat, setSpeed } from './player';
+import { psalmToneFor } from './psalmTone';
 
 const SPEED_LABELS = ['lento', 'normale', 'veloce'];
 const KEY = 'speed';
@@ -19,7 +20,7 @@ function el<K extends keyof HTMLElementTagNameMap>(tag: K, cls: string, text = '
 }
 
 /** Listen / speed / MIDI bar shown under a score. */
-export function playerControls(gabcBody: string, fileName: string): HTMLElement {
+export function playerControls(gabcBody: string, fileName: string, mode: string | null = null): HTMLElement {
   const bar = el('div', 'player');
   const events = parseGabcMelody(gabcBody);
   if (events.length === 0) return bar;
@@ -31,6 +32,13 @@ export function playerControls(gabcBody: string, fileName: string): HTMLElement 
   const playButtons = euEvents.length && mainEvents.length
     ? [playButton('Antifona', mainEvents), playButton('Euouae', euEvents)]
     : [playButton('Ascolta', events)];
+
+  const tone = psalmToneFor(gabcBody, mode);
+  if (tone) {
+    const b = playButton('Tono del salmo', tone);
+    b.title = 'Come intonare il primo versetto: intonazione, corda di recita, mediante e terminazione';
+    playButtons.push(b);
+  }
 
   const speedBtn = el('button', 'player__speed');
   speedBtn.type = 'button';
