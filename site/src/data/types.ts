@@ -38,6 +38,7 @@ export interface VespersBlock {
 export interface CompietaStructure {
   openingVersicle: string;
   vespersBlocks: VespersBlock[];
+  hymns: { text: string; variants: { context: string; ref: string }[] }[];
   nuncDimittis: { canticleRef: string; antiphonRef: string };
   congedo: string;
   marianAntiphons: {
