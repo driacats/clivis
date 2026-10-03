@@ -1,9 +1,10 @@
 import type { LiturgicalDay } from '../calendar/calendar';
 import { compietaPlan, MARIAN_REFS } from '../calendar/plan';
-import { getEntry, getTexts } from '../data/loader';
+import { fetchPsalm, getEntry, getTexts } from '../data/loader';
+import { attoPenitenziale, esameDelGiorno } from './esame';
 import type { LiturgyData } from '../data/types';
-import { h, notice } from './dom';
-import { antiphonWithPsalm, bilingual, chant, choice, letturaBreve, rubric, section } from './pieces';
+import { deferred, h, notice } from './dom';
+import { antiphonWithPsalm, bilingual, chant, choice, letturaBreve, psalmText, rubric, section } from './pieces';
 
 export function renderCompieta(day: LiturgicalDay, liturgy: LiturgyData): HTMLElement {
   const plan = compietaPlan(day);
@@ -37,8 +38,12 @@ export function renderCompieta(day: LiturgicalDay, liturgy: LiturgyData): HTMLEl
   root.append(
     section('Introduzione',
       chant(c.openingVersicle),
-      plan.openingWithoutAlleluia ? notice('In Quaresima si omette l’Allelúia finale.', 'info') : null,
-      h('p', { class: 'rubric-text' }, 'Si può fare l’esame di coscienza, concluso dall’atto penitenziale.')),
+      plan.openingWithoutAlleluia ? notice('In Quaresima si omette l’Allelúia finale.', 'info') : null),
+    section('Esame di coscienza',
+      h('p', { class: 'rubric-text' }, 'Breve silenzio per l’esame di coscienza. Uno schema per oggi:'),
+      esameDelGiorno(day.weekday),
+      h('p', {}, h('a', { href: '#/esame', class: 'more-link' }, 'Tutti gli schemi di esame di coscienza ›')),
+      h('details', { class: 'alternative' }, h('summary', {}, 'Atto penitenziale'), attoPenitenziale())),
     section('Inno', choice('Inno', hymnOptions.options, hymnOptions.initial)),
     section('Salmodia', ...psalmody),
     section('Lettura breve', letturaBreve(block.letturaBreve)),
@@ -46,7 +51,9 @@ export function renderCompieta(day: LiturgicalDay, liturgy: LiturgyData): HTMLEl
     section('Cantico di Simeone',
       rubric('Antifona'),
       chant(c.nuncDimittis.antiphonRef),
-      antiphonWithPsalm(c.nuncDimittis.canticleRef, 'Cantico', c.nuncDimittis.antiphonRef, 'Antifona')),
+      nuncDimittisText(c.nuncDimittis.canticleRef),
+      rubric('Antifona'),
+      chant(c.nuncDimittis.antiphonRef, { repeat: true })),
     section('Orazione', ...oration(plan.orationKey)),
     section('Congedo', chant(c.congedo)),
     section(`Antifona mariana · ${marian.title}`,
@@ -106,4 +113,10 @@ function toneOf(contexts: string[]): string {
   if (c.startsWith('feste')) return 'feste';
   if (c.startsWith('avvento')) return 'Avvento';
   return contexts[0];
+}
+
+/** Text of the Nunc dimittis (the antiphon is sung before and after it). */
+function nuncDimittisText(canticleRef: string): HTMLElement | null {
+  const psalm = getEntry(canticleRef)?.psalm;
+  return psalm ? deferred(async () => psalmText(await fetchPsalm(psalm.file))) : null;
 }

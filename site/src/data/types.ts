@@ -106,4 +106,17 @@ export interface Texts {
   /** keyed by vespersBlock id, plus "solennita" */
   compietaOrazioni: Record<string, Bilingual & { titolo: string }>;
   ordinario: Ordinario;
+  esame: EsameCoscienza;
+}
+
+export interface EsameCoscienza {
+  introduzione: string;
+  schemi: { id: string; titolo: string; voci: { etichetta?: string; testo: string }[] }[];
+  giorni: Record<string, { nota?: string; voci: { n: string; testo: string }[] }[]>;
+  attoPenitenziale: {
+    rubrica: string;
+    confiteor: Bilingual;
+    alternative: [string, string][][];
+    conclusione: Bilingual & { rubrica: string };
+  };
 }

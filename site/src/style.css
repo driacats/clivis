@@ -364,3 +364,10 @@ details.alternative[open] summary { color: var(--ink); }
 .player__play span { font-size: 0.75em; margin-right: 2px; }
 .player__midi { color: var(--muted); }
 .player__midi:hover { color: var(--ink); }
+
+/* examination of conscience */
+.esame__voci { margin: 4px 0 12px; padding-left: 1.6em; }
+.esame__voci li { margin: 0 0 8px; }
+.esame__voci--plain { list-style: none; padding-left: 0; }
+.esame__intro { color: var(--muted); }
+.more-link, .back-link { font-family: var(--ui); font-size: 0.9rem; color: var(--rubric); }

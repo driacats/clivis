@@ -1,0 +1,272 @@
+{
+ "_fonte": "Compieta piccola.pdf, pp. 4-7",
+ "introduzione": "L’esame di coscienza è un atto privato e non legato a particolari formalità liturgiche. Di seguito viene proposto comunque qualche schema, pensato per i giovani, piuttosto ampio: può essere usato per crescere in profondità nell’esame di coscienza, ma senza appesantire questo momento della preghiera che comunque deve restare piuttosto “snello”.",
+ "schemi": [
+  {
+   "id": "cerchi",
+   "titolo": "A “cerchi concentrici”",
+   "voci": [
+    {
+     "etichetta": "Dio",
+     "testo": "mi sono ricordato di Lui? Sono stato fedele ai miei impegni di preghiera?"
+    },
+    {
+     "etichetta": "Me stesso",
+     "testo": "ho vissuto in sincerità e purezza, senza volgarità? Sono stato goloso? Ho coltivato pensieri negativi, tristi, accidiosi?"
+    },
+    {
+     "etichetta": "I vicini",
+     "testo": "ho amato i miei amici e i miei familiari?"
+    },
+    {
+     "etichetta": "I lontani",
+     "testo": "ho amato i compagni, i colleghi, i parenti lontani? Ho pregato per i vivi e per i morti?"
+    },
+    {
+     "etichetta": "La frontiera",
+     "testo": "ho cercato di amare le persone che non sono amate da nessuno? Ho vissuto il mio impegno di attività caritativa?"
+    }
+   ]
+  },
+  {
+   "id": "grazie-scusa",
+   "titolo": "Grazie-scusa",
+   "voci": [
+    {
+     "testo": "Qual è la cosa più bella che il Signore mi ha donato oggi?"
+    },
+    {
+     "testo": "Qual è il peccato più brutto che ho fatto oggi?"
+    }
+   ]
+  }
+ ],
+ "giorni": {
+  "Sabato": [
+   {
+    "voci": [
+     {
+      "n": "1",
+      "testo": "Oggi è la giornata dell’allegria, del gioco, del divertimento, delle feste. Ho cercato l’incontro con gli altri? Ho portato un sorriso?"
+     },
+     {
+      "n": "2",
+      "testo": "Oggi per tanti è anche la giornata per le attività di gruppo. Ho preso seriamente il mio impegno associativo? Ho partecipato con entusiasmo? O, invece, sono stato un assenteista o un peso morto?"
+     },
+     {
+      "n": "3",
+      "testo": "Oggi è la giornata dedicata a Maria. Per Maria non si fa mai abbastanza! Ho trovato il momento e il modo per esprimere il mio affetto per la mamma celeste? Cerco di acquisire lo stile di Maria, nel saper comprendere le preoccupazioni e le esigenze degli altri, e lo stile di Gesù, nell’andar incontro a chi ha bisogno?"
+     },
+     {
+      "n": "4",
+      "testo": "È incominciata la Domenica, il giorno del Signore. Mi sono preparato partecipando ai primi vespri o leggendo le letture della S. Messa? Ho organizzato la mia Messa di domani?"
+     }
+    ]
+   }
+  ],
+  "Domenica": [
+   {
+    "voci": [
+     {
+      "n": "1",
+      "testo": "Come ho glorificato il Signore in questo giorno di festa? Partecipando alla S. Messa? Soltanto?"
+     },
+     {
+      "n": "2",
+      "testo": "Mi sono preparato dando un’occhiata prima alle letture o, per lo meno, non arrivando in ritardo alla Celebrazione? Ho vissuto ogni parte della S. Messa con il giusto sentimento o l’ho subita?"
+     },
+     {
+      "n": "4",
+      "testo": "Ho vissuto il giusto riposo settimanale? Oppure mi sono dedicato alle attività quotidiane? Studio, lavoro, fatiche varie che non lasciano spazio per i momenti di preghiera e di “riposo spirituale”."
+     },
+     {
+      "n": "5",
+      "testo": "Domenica è anche il giorno della famiglia, degli amici e della carità. Ho cercato almeno di amare le persone vicine (famiglia, amici) dedicando loro tempo e attenzione?"
+     }
+    ]
+   }
+  ],
+  "Lunedì": [
+   {
+    "voci": [
+     {
+      "n": "1",
+      "testo": "Va a Dio il mio primo pensiero? Lo ringrazio di avermi creato e fatto cristiano? Gli offro le azioni della giornata e gli chiedo aiuto perché esse siano conformi alla sua santa volontà?"
+     },
+     {
+      "n": "2",
+      "testo": "Mi rapporto ai miei doveri quotidiani con la gioia propria del cristiano, che mi deve accompagnare per tutta la settimana, oppure mi lascio prendere dal malumore e dalla pesantezza?"
+     },
+     {
+      "n": "3",
+      "testo": "Lunedì è l’inizio della settimana: mi sono prefissato alcuni propositi che mi permettano nel mio ambito scolastico, lavorativo, o familiare di portare avanti i miei impegni di cristiano e di trasmetterli agli altri?"
+     }
+    ]
+   }
+  ],
+  "Martedì": [
+   {
+    "voci": [
+     {
+      "n": "1",
+      "testo": "Sono riuscito ad amare le persone con gioia, accettandole per quello che sono o per quello che mi danno?"
+     },
+     {
+      "n": "2",
+      "testo": "Ho cercato di dimostrare il mio affetto a ciascun membro della mia famiglia, rivolgendogli la parola almeno una volta nell’arco della giornata e partecipando alla sua vita?"
+     },
+     {
+      "n": "3",
+      "testo": "Sono stato gentile con chi mi ha esposto le sue critiche o ha voluto aprirmi il suo cuore? Ho cercato di capire?"
+     },
+     {
+      "n": "4",
+      "testo": "Ho messo impegno nel non far pesare sugli altri quelle che sono le mie personali preoccupazioni, e nel farmi invece veramente partecipe delle loro?"
+     },
+     {
+      "n": "5",
+      "testo": "Sono stato invidioso? Geloso?"
+     }
+    ]
+   }
+  ],
+  "Mercoledì": [
+   {
+    "voci": [
+     {
+      "n": "1",
+      "testo": "Sono riuscito a portare a termine i propositi quotidiani di preghiera e di carità?"
+     },
+     {
+      "n": "2",
+      "testo": "Ho dato la precedenza alle necessità dei miei fratelli più bisognosi, piuttosto che a me? Con quanto slancio mi sono adoperato nel tentativo di alleviare le sofferenze fisiche e morali altrui?"
+     },
+     {
+      "n": "3",
+      "testo": "Ho dedicato con gioia sincera un po’ del mio tempo allo scambio di qualche parola con le persone più sole ed emarginate? Ho pregato per loro e per la loro serenità? Li ho raccomandati al Signore?"
+     },
+     {
+      "n": "4",
+      "testo": "Tutto quello che ho fatto per il bene altrui, l’ho fatto per vanità e ambizione, o unicamente con l’intento di amare il mio prossimo come me stesso?"
+     }
+    ]
+   }
+  ],
+  "Giovedì": [
+   {
+    "nota": "Il Giovedì è il giorno della settimana dedicato specialmente al ricordo dell’istituzione della SS. Eucaristia.",
+    "voci": [
+     {
+      "n": "1",
+      "testo": "Se tu sapessi che da qualche parte, vicino a casa tua, appare Gesù in carne ed ossa probabilmente andresti a vedere dov’è per ascoltarlo. Oggi sei entrato nella chiesa più vicina per stare un po’ con Lui, presente nel tabernacolo in corpo, anima e divinità?"
+     },
+     {
+      "n": "2",
+      "testo": "Quando ricevi la S. Comunione, Gesù viene dentro di te e vi rimane realmente per alcuni minuti. Oggi hai avuto il desiderio di fare questa straordinaria esperienza? Quando fai la Comunione ti fermi in ringraziamento o scappi via?"
+     }
+    ]
+   },
+   {
+    "nota": "Giovedì la Chiesa ci propone anche di pregare per le vocazioni religiose e sacerdotali, e di meditare su questo mistero.",
+    "voci": [
+     {
+      "n": "1",
+      "testo": "Gesù ha chiamato alcune persone perché si dedichino totalmente a Lui nella preghiera e nel servizio dei fratelli. Ti interessa davvero che nel mondo ci siano dei sacerdoti che amministrino in ogni momento i Sacramenti, in modo che la Grazia del Signore possa giungere a quante più persone possibile? Che ci siano religiose e religiosi che preghino anche per te, quando non hai tempo o quando non hai voglia?"
+     },
+     {
+      "n": "2",
+      "testo": "È sempre facile criticare i religiosi, quando sembra che non siano all’altezza dell’abito che indossano. Tu hai criticato preti, suore, o “la Chiesa” in generale? Hai pregato il Signore perché i suoi ministri siano degni?"
+     },
+     {
+      "n": "3",
+      "testo": "Il Papa ha la responsabilità personale delle anime di tutti i battezzati, compresa la tua. Hai pregato perché il Signore lo sostenga sempre in un compito così grande?"
+     }
+    ]
+   }
+  ],
+  "Venerdì": [
+   {
+    "voci": [
+     {
+      "n": "1",
+      "testo": "Mi sono ricordato che oggi è il giorno che più richiama la passione di Cristo e che la Chiesa, per questo giorno, richiede un gesto concreto (astinenza dalla carne o altre opere di carità)?"
+     },
+     {
+      "n": "2",
+      "testo": "Lui, agnello senza macchia, è sacrificato sull’altare della croce. Io accetto le piccole sofferenze che la vita mi dona? Offro a Lui i miei piccoli sacrifici, le mortificazioni, così da partecipare un po’ delle sue sofferenze? O mi sono soltanto lamentato?"
+     },
+     {
+      "n": "4",
+      "testo": "Ho mai meditato sulla grandezza del Sacramento della Penitenza? Sul grande dono che Dio ci fa nella Riconciliazione? Mi confesso regolarmente?"
+     },
+     {
+      "n": "5",
+      "testo": "Sono consapevole che i miei debiti saranno rimessi solo se io li rimetterò ai miei debitori? E che con il metro con cui giudico sarò giudicato?"
+     },
+     {
+      "n": "6",
+      "testo": "Se oggi è il primo venerdì del mese: mi sono ricordato che è il giorno consacrato alla devozione al Sacro Cuore di Gesù?"
+     }
+    ]
+   }
+  ]
+ },
+ "attoPenitenziale": {
+  "rubrica": "Nella celebrazione comunitaria, dopo un momento di silenzio si può adottare uno dei formulari dell’atto penitenziale della S. Messa. Ad esempio:",
+  "confiteor": {
+   "it": "Confesso a Dio onnipotente e a voi, fratelli, che ho molto peccato in pensieri, parole, opere e omissioni, per mia colpa, mia colpa, mia grandissima colpa. E supplico la beata sempre vergine Maria, gli angeli, i santi e voi, fratelli, di pregare per me il Signore Dio nostro.",
+   "la": "Confiteor Deo omnipotenti et vobis, fratres, quia peccavi nimis cogitatione, verbo, opere, et omissione, mea culpa, mea culpa, mea maxima culpa. Ideo precor beatam Mariam semper Virginem, omnes Angelos et Sanctos, et vos, fratres, orare pro me ad Dominum Deum nostrum."
+  },
+  "alternative": [
+   [
+    [
+     "V",
+     "Pietà di noi, Signore."
+    ],
+    [
+     "R",
+     "Contro di te abbiamo peccato."
+    ],
+    [
+     "V",
+     "Mostraci, Signore, la tua misericordia."
+    ],
+    [
+     "R",
+     "E donaci la tua salvezza."
+    ]
+   ],
+   [
+    [
+     "V",
+     "Signore, mandato dal Padre a salvare i contriti di cuore, abbi pietà di noi."
+    ],
+    [
+     "R",
+     "Signore, pietà."
+    ],
+    [
+     "V",
+     "Cristo, che sei venuto a chiamare i peccatori, abbi pietà di noi."
+    ],
+    [
+     "R",
+     "Cristo, pietà."
+    ],
+    [
+     "V",
+     "Signore, che intercedi per noi presso il Padre, abbi pietà di noi."
+    ],
+    [
+     "R",
+     "Signore, pietà."
+    ]
+   ]
+  ],
+  "conclusione": {
+   "rubrica": "Quindi chi presiede conclude:",
+   "it": "Dio onnipotente abbia misericordia di noi, perdoni i nostri peccati e ci conduca alla vita eterna. ℟. Amen.",
+   "la": "Misereatur nostri omnipotens Deus et, dimissis peccatis nostris, perducat nos ad vitam aeternam. ℟. Amen."
+  }
+ }
+}

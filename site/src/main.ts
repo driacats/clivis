@@ -9,6 +9,7 @@ import type { LiturgyData, Office } from './data/types';
 import { renderCompieta } from './ui/compieta';
 import { h, notice } from './ui/dom';
 import { renderLodi } from './ui/lodi';
+import { renderEsamePage } from './ui/esame';
 import { setupThemeToggle } from './theme';
 
 // --- routing: #/2026-10-03/lodi ----------------------------------------------
@@ -74,6 +75,12 @@ const app = document.getElementById('app')!;
 
 function render(): void {
   if (!liturgy) return;
+  if (location.hash.replace(/^#\/?/, '') === 'esame') {
+    document.title = 'Esame di coscienza · Breviario MLG';
+    app.replaceChildren(h('main', { class: 'office-wrap' }, renderEsamePage()));
+    window.scrollTo({ top: 0 });
+    return;
+  }
   const route = readRoute();
   const day = liturgicalDay(route.date);
   document.documentElement.dataset.season = day.color;
