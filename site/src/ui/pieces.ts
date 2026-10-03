@@ -2,6 +2,7 @@ import { fetchGabc, fetchLettura, fetchPsalm, getEntry, getTexts } from '../data
 import type { Bilingual, LetturaDoc, LodiConclusion, PsalmDoc, SlotRef } from '../data/types';
 import { deferred, h, notice } from './dom';
 import { playerControls } from '../audio/controls';
+import { splitEuouae } from '../audio/gabcMelody';
 
 /** A section of an office: rubric-red heading and its content. */
 export function section(title: string, ...content: (Node | null)[]): HTMLElement {
@@ -11,18 +12,20 @@ export function section(title: string, ...content: (Node | null)[]): HTMLElement
 /** Small rubric label inside a section ("1ª antifona", "oppure"…). */
 export const rubric = (text: string) => h('p', { class: 'rubric rubric--small' }, text);
 
-async function buildChant(id: string): Promise<Node> {
+async function buildChant(id: string, repeat = false): Promise<Node> {
   const entry = getEntry(id);
   if (!entry) return notice(`Canto sconosciuto: ${id}`, 'error');
   if (entry.status !== 'found') {
     return notice(entry.notFoundReason ?? entry.notApplicableReason ?? 'Melodia non disponibile.', 'gap');
   }
-  const { mode, body } = await fetchGabc(id);
+  const { mode, body: full } = await fetchGabc(id);
+  // the antiphon repeated after the psalm is sung without the EUOUAE
+  const body = repeat ? splitEuouae(full).main.trimEnd() : full;
   // <chant-visual> reads its source and attributes when it is connected
   const cv = document.createElement('chant-visual');
   if (mode) cv.setAttribute('annotation', modeLabel(mode));
   cv.textContent = body;
-  return h('div', { class: 'score' }, h('div', {}, cv), playerControls(body, (entry.file ?? id).split('/').pop() ?? id, mode));
+  return h('div', { class: 'score' }, h('div', {}, cv), playerControls(body, (entry.file ?? id).split('/').pop() ?? id, mode, repeat));
 }
 
 const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
@@ -32,7 +35,8 @@ function modeLabel(mode: string): string {
 }
 
 /** The chant of a gabc/index.json id. */
-export const chant = (id: string): HTMLElement => deferred(() => buildChant(id));
+export const chant = (id: string, opts: { repeat?: boolean } = {}): HTMLElement =>
+  deferred(() => buildChant(id, opts.repeat ?? false));
 
 export function psalmText(doc: PsalmDoc): HTMLElement {
   const bilingual = doc.verses.some((v) => v.la);
@@ -69,7 +73,7 @@ export function antiphonWithPsalm(id: string, label: string, repeat: string = id
     chant(id),
     psalm ? deferred(async () => psalmText(await fetchPsalm(psalm.file))) : null,
     psalm ? rubric(repeatLabel) : null,
-    psalm ? chant(repeat) : null,
+    psalm ? chant(repeat, { repeat: true }) : null,
   );
 }
 

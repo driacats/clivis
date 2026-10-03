@@ -73,7 +73,7 @@ function benedictus(antiphon: string | { note: string }): Node[] {
   return [
     rubric('Antifona al Benedictus'), chant(antiphon),
     text,
-    rubric('Antifona al Benedictus'), chant(antiphon),
+    rubric('Antifona al Benedictus'), chant(antiphon, { repeat: true }),
   ];
 }
 

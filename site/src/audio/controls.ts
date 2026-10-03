@@ -20,7 +20,8 @@ function el<K extends keyof HTMLElementTagNameMap>(tag: K, cls: string, text = '
 }
 
 /** Listen / speed / MIDI bar shown under a score. */
-export function playerControls(gabcBody: string, fileName: string, mode: string | null = null): HTMLElement {
+/** `repeat`: the antiphon sung again after the psalm — only the antiphon itself, no EUOUAE or psalm tone. */
+export function playerControls(gabcBody: string, fileName: string, mode: string | null = null, repeat = false): HTMLElement {
   const bar = el('div', 'player');
   const events = parseGabcMelody(gabcBody);
   if (events.length === 0) return bar;
@@ -29,11 +30,13 @@ export function playerControls(gabcBody: string, fileName: string, mode: string 
   const mainEvents = split.euouae ? parseGabcMelody(split.main) : events;
   const euEvents = split.euouae ? parseGabcMelody(split.euouae) : [];
 
-  const playButtons = euEvents.length && mainEvents.length
+  const playButtons = repeat && euEvents.length && mainEvents.length
+    ? [playButton('Antifona', mainEvents)]
+    : euEvents.length && mainEvents.length
     ? [playButton('Antifona', mainEvents), playButton('Euouae', euEvents)]
     : [playButton('Ascolta', events)];
 
-  const tone = psalmToneFor(gabcBody, mode);
+  const tone = repeat ? null : psalmToneFor(gabcBody, mode);
   if (tone) {
     const b = playButton('Tono del salmo', tone);
     b.title = 'Come intonare il primo versetto: intonazione, corda di recita, mediante e terminazione';
