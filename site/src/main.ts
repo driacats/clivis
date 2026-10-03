@@ -9,6 +9,7 @@ import type { LiturgyData, Office } from './data/types';
 import { renderCompieta } from './ui/compieta';
 import { h, notice } from './ui/dom';
 import { renderLodi } from './ui/lodi';
+import { setupThemeToggle } from './theme';
 
 // --- routing: #/2026-10-03/lodi ----------------------------------------------
 
@@ -85,6 +86,7 @@ function render(): void {
 }
 
 window.addEventListener('hashchange', render);
+setupThemeToggle(document.getElementById('theme-toggle') as HTMLButtonElement);
 
 loadDatabase()
   .then((data) => { liturgy = data; render(); })

@@ -24,8 +24,28 @@
 :root[data-season='rosso'] { --season: #b0261c; }
 :root[data-season='rosaceo'] { --season: #c76a92; }
 
+/* Dark theme: follows the system unless the reader picked a theme with the
+   toggle (data-theme on <html>, see src/theme.ts). */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
+      --paper: #161513;
+      --page: #1d1c1a;
+      --ink: #ece8df;
+      --muted: #a39e93;
+      --rule: #34312c;
+      --rubric: #e0675d;
+      --info-bg: #24221f;
+      --gap-bg: #33280f;
+      --gap-ink: #f0c36a;
+      color-scheme: dark;
+  }
+  :root:not([data-theme='light'])[data-season='viola'] { --season: #a888d6; }
+  :root:not([data-theme='light'])[data-season='bianco'] { --season: #d9b552; }
+  :root:not([data-theme='light'])[data-season='verde'] { --season: #6cbf86; }
+  :root:not([data-theme='light'])[data-season='rosso'] { --season: #e0675d; }
+  :root:not([data-theme='light'])[data-season='rosaceo'] { --season: #e59bbb; }
+}
+:root[data-theme='dark'] {
     --paper: #161513;
     --page: #1d1c1a;
     --ink: #ece8df;
@@ -36,13 +56,12 @@
     --gap-bg: #33280f;
     --gap-ink: #f0c36a;
     color-scheme: dark;
-  }
-  :root[data-season='viola'] { --season: #a888d6; }
-  :root[data-season='bianco'] { --season: #d9b552; }
-  :root[data-season='verde'] { --season: #6cbf86; }
-  :root[data-season='rosso'] { --season: #e0675d; }
-  :root[data-season='rosaceo'] { --season: #e59bbb; }
 }
+:root[data-theme='dark'][data-season='viola'] { --season: #a888d6; }
+:root[data-theme='dark'][data-season='bianco'] { --season: #d9b552; }
+:root[data-theme='dark'][data-season='verde'] { --season: #6cbf86; }
+:root[data-theme='dark'][data-season='rosso'] { --season: #e0675d; }
+:root[data-theme='dark'][data-season='rosaceo'] { --season: #e59bbb; }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -79,6 +98,24 @@ a { color: inherit; }
 }
 .masthead__name span { color: var(--rubric); }
 .masthead__tag { font-family: var(--ui); font-size: 0.8rem; color: var(--muted); }
+.theme-toggle {
+  margin-left: auto;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: inherit;
+  font-family: var(--ui);
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 5px 12px 5px 9px;
+  cursor: pointer;
+}
+.theme-toggle:hover { color: var(--ink); border-color: var(--muted); }
+.theme-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
 
 /* --- day header ----------------------------------------------------------------- */
 .day {
