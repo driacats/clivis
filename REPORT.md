@@ -30,14 +30,14 @@ Come per il resto di questo report, la copertura di Lodi si ferma al solo salter
 
 Le righe seguenti sono marcate **trovato** in questo report, ma portano un limite noto segnalato durante la disambiguazione — da tenere presente prima dell'uso liturgico/di stampa:
 
-**Alleluia del tempo pasquale mancante** (la trascrizione GregoBase scelta non include l'alleluia proprio del tempo pasquale che il libretto prevede in coda all'antifona — non ricostruito automaticamente):
+**Alleluia del tempo pasquale mancante** — **risolto il 2026-10-03**: alleluia ed EUOUAE aggiunti/corretti confrontando ogni canto con il libretto (melodia per il resto identica), revisione approvata dall'utente (la trascrizione GregoBase scelta non include l'alleluia proprio del tempo pasquale che il libretto prevede in coda all'antifona — non ricostruito automaticamente):
 - `lodi.LA9` — Benedícite Dóminum, omnes elécti eius: agite dies lætítiæ, et confitémini illi, allelúia — `gabc/chants/9037-benedicite-dominum-omnes-electi-eius-agite-dies-laetitiae-et.gabc`
 - `lodi.LA38` — Exsultávit cor meum in Dómino, qui humíliat et sublévat — `gabc/chants/4903-exsultavit-cor-meum-in-domino-qui-humiliat-et-sublevat.gabc`
 - `lodi.LA79` — Omnis sapiéntia a Dómino Deo est, et cum illo fuit semper, et est ante ævum, allelúia — `gabc/chants/8579-omnis-sapientia-a-domino-deo-est-et-cum-illo-fuit-semper-et-.gabc`
 - `lodi.LA85` — Cantáte Dómino cánticum novum: laus eius ab extrémis terræ — `gabc/chants/8407-cantate-domino-canticum-novum-laus-eius-ab-extremis-terrae.gabc`
 - `lodi.LA98` — Nemo te condemnávit, múlier? Nemo, Dómine. Nec ego te condemnábo: iam ámplius noli peccáre, allelúia — `gabc/chants/19722-nemo-te-condemnavit-mulier-nemo-domine-nec-ego-te-condemnabo.gabc`
 
-**EUOUAE (formula del Sæculorum Amen) diverso da quello del libretto**:
+**EUOUAE (formula del Sæculorum Amen) diverso da quello del libretto** — **risolto il 2026-10-03**: alleluia ed EUOUAE aggiunti/corretti confrontando ogni canto con il libretto (melodia per il resto identica), revisione approvata dall'utente:
 - `lodi.LA16` — Pópulus meus, ait Dóminus, bonis meis adimplébitur — `gabc/chants/15195-populus-meus-ait-dominus-bonis-meis-adimplebitur.gabc` — il finale euouae della trascrizione GregoBase è diverso da quello del libretto (lasciato come scaricato, non ricostruito)
 - `lodi.LA59` — Cantáte Dómino, et benedícite nómini eius — `gabc/chants/12541-cantate-domino-et-benedicite-nomini-eius.gabc` — l'EUOUAE della trascrizione GregoBase è sbagliato/diverso rispetto al libretto
 

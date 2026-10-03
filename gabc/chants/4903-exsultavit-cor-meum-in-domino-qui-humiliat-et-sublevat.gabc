@@ -1,7 +1,8 @@
 name:Exsultavit cor meum;
 office-part:Antiphona;
-mode:5;
+mode:7;
 book:Antiphonarium O.P. (Gillet), 1933, p. 199;
 transcriber:Andrew Hinkley;
+% Modificato per corrispondere a Lodi complete.2.pdf (revisione 2026-10-03)
 %%
-(c3) Ex(e)sul(gh)tá(ij)vit(i) (::) cor(h) me(j)um(i) in(j) Dó(jk)mi(ji)no,(i) (;) qui(i) hu(g)mí(h)li(g)at(fh) et(g) súb(e)le(e)vat.(e) (::)
+(c3) Ex(e)sul(g_0h)tá(i_0j)vit(i.) *(,) cor(h) me(j)um(i') in(j) Dó(jk)mi(ji)no,(i.) (;) qui(i') hu(g)mí(h')li(g)at(fh) et(g) súb(e')le(e)vat.(e.) (::) <i><c>T.P.</c></i>() al(f)le(fg)lú(e.)ia.(e.) (::) E(i) u(i) o(j) u(i) a(h) e.(gf..) (::)
