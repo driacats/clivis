@@ -1,53 +1,56 @@
-# Clivis — sito
+# Clivis — site
 
-La Liturgia delle Ore in canto gregoriano per il Movimento Liturgico
-Giovanile. Il sito apre sul giorno di oggi e calcola da solo quale pagina del
-libretto usare.
+**English** · [Italiano](README.it.md)
 
-## Avvio
+The Liturgy of the Hours in Gregorian chant for the Movimento Liturgico
+Giovanile. The site opens on today's date and works out by itself which page
+of the booklet to use.
 
-Il sito usa exsurge (il motore che disegna gli spartiti) come cartella sorella:
-deve esistere `../../exsurge` accanto a questo repository.
+## Getting started
+
+The site uses exsurge (the engine that draws the scores) as a sibling folder:
+`../../exsurge` must exist next to this repository.
 
 ```sh
 npm install
-npm run dev      # sito in locale su http://localhost:5173
-npm test         # test del calendario e delle melodie
-npm run build    # sito statico in dist/, pubblicabile così com'è
+npm run dev      # local site at http://localhost:5173
+npm test         # tests of the calendar and of the melodies
+npm run build    # static site in dist/, ready to publish as is
 ```
 
-`public/` contiene solo collegamenti ai dati del repository (`gabc/`, `salmi/`,
-`letture/`, `testi/`): il sito legge direttamente il database, senza copie.
+`public/` only holds links to the repository's data (`gabc/`, `salmi/`,
+`letture/`, `testi/`): the site reads the database directly, with no copies.
 
-## Come è fatto
+## How it is built
 
-- `src/calendar/` — il calendario, senza interfaccia:
-  - `calendar.ts` calcola il giorno liturgico secondo il calendario romano
-    generale con le scelte della CEI (Epifania il 6 gennaio, Ascensione e
-    Corpus Domini la domenica): tempo, settimana, settimana del salterio,
-    colore, solennità e feste (comprese le trasferite) e memorie;
-  - `santi.ts` è l'unico elenco delle memorie dei santi, ciascuna con il suo
-    Comune; `saints.ts` prepara il «santo del giorno» della homepage;
-  - `plan.ts` traduce il giorno in pezzi del database: settimana e giorno del
-    salterio, Proprio del Tempo, Comune dei santi, toni dell'introduzione, del
-    Pater noster e del congedo; per la Compieta Domenica I o II Vespri o giorno
-    feriale, inno, responsorio e antifona mariana del tempo.
-- `src/data/` — lettura del database (`loader.ts`) e i suoi tipi.
-- `src/ui/` — le pagine: `home.ts`, `day.ts` (intestazione del giorno),
-  `lodi.ts`, `comune.ts`, `compieta.ts`, `esame.ts`; i pezzi comuni (spartito,
-  salmo, lettura, scelte) sono in `pieces.ts`.
-- `src/audio/` — ascolto delle melodie, tono del salmo, MIDI e segui-nota.
-- `src/style.css` — tutta la grafica. I colori sono definiti una volta per
-  tema in cima al file (`data-theme` su `<html>`).
+- `src/calendar/` — the calendar, with no user interface:
+  - `calendar.ts` computes the liturgical day according to the General Roman
+    Calendar with the choices of the Italian Bishops' Conference (Epiphany on
+    6 January, Ascension and Corpus Christi on Sunday): season, week, psalter
+    week, colour, solemnities and feasts (transferred ones included) and
+    memorials;
+  - `santi.ts` is the single list of the saints' memorials, each with its
+    Common; `saints.ts` prepares the «saint of the day» of the home page;
+  - `plan.ts` turns the day into pieces of the database: psalter week and day,
+    Proper of Seasons, Common of Saints, tones of the opening, of the Pater
+    noster and of the dismissal; for Compieta, Sunday I or II Vespers or
+    weekday, hymn, responsory and Marian antiphon of the season.
+- `src/data/` — reading the database (`loader.ts`) and its types.
+- `src/ui/` — the pages: `home.ts`, `day.ts` (header of the day), `lodi.ts`,
+  `comune.ts`, `compieta.ts`, `esame.ts`; the shared pieces (score, psalm,
+  reading, choices) are in `pieces.ts`.
+- `src/audio/` — listening to the melodies, psalm tone, MIDI and follow-the-note.
+- `src/style.css` — all of the styling. The colours are defined once per theme
+  at the top of the file (`data-theme` on `<html>`).
 
-Gli spartiti sono elementi `<chant-visual>` di exsurge: finché non sono
-disegnati restano vuoti e il sito mostra un rigo vuoto al loro posto, così il
-codice GABC non compare mai.
+Scores are exsurge `<chant-visual>` elements: until they are drawn they stay
+empty and the site shows an empty staff in their place, so the GABC code is
+never seen.
 
-Le date di confine sono coperte dai test in `src/calendar/*.test.ts`.
+Edge dates are covered by the tests in `src/calendar/*.test.ts`.
 
-## Cosa manca
+## Still missing
 
-Il resto del Proprio del Tempo e del Comune dei santi, le altre ore e la
-melodia generica «Allelúia, allelúia, allelúia» del Tempo pasquale. Il sito lo
-segnala nei giorni in cui serve.
+The rest of the Proper of Seasons and of the Commons of Saints, the other hours
+and the generic «Allelúia, allelúia, allelúia» melody of Eastertide. The site
+says so on the days where it matters.

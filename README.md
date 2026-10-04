@@ -1,44 +1,48 @@
 <p align="center">
-  <img src="site/logo-mlg.svg" alt="Logo di Clivis" width="96">
+  <img src="site/logo-mlg.svg" alt="Clivis logo" width="96">
 </p>
 
 <h1 align="center">Clivis</h1>
 
-<p align="center">La Liturgia delle Ore in canto gregoriano, per il Movimento Liturgico Giovanile.</p>
+<p align="center"><strong>English</strong> · <a href="README.it.md">Italiano</a></p>
 
-Il nome viene dalla clivis, il neuma di due note discendenti che è anche il logo del sito.
+<p align="center">The Liturgy of the Hours in Gregorian chant, for the Movimento Liturgico Giovanile.</p>
 
-Il sito apre sul giorno di oggi, calcola da solo quale ufficio pregare secondo il calendario romano in uso in Italia e mostra l'ora completa: testi in italiano e latino, spartiti in notazione quadrata e melodie da ascoltare. Il repository contiene sia il sito sia il database da cui legge, ricavato dai libretti del Movimento (Lodi e Compieta).
+The name comes from the clivis, the two-note descending neume that is also the site's logo.
 
-## Funzionalità
+The site opens on today's date, works out which office to pray according to the Roman calendar in use in Italy, and shows the whole hour: texts in Italian and Latin, scores in square notation and melodies you can listen to. The repository holds both the site and the database it reads, drawn from the Movimento's booklets (Lodi and Compieta).
 
-- **Il giorno di oggi**: data, giorno liturgico, colore, tempo e settimana del salterio; santo o memoria del giorno; i prossimi sette giorni con i loro colori e le feste.
-- **Lodi** del salterio delle quattro settimane, con Invitatorio o «Deus in adiutorium», inno, salmodia, lettura breve, responsorio, Benedictus, invocazioni, Pater noster e orazione. Il Proprio del Tempo è in corso di inserimento (per ora l'Avvento fino al 16 dicembre).
-- **Compieta** di ogni giorno, con esame di coscienza, inni selezionabili, responsorio breve, Nunc dimittis e antifona mariana del tempo.
-- **Spartiti gregoriani** disegnati nel browser a partire dal codice GABC, con il motore [exsurge](https://github.com/driacats/exsurge).
-- **Ascolto delle melodie**: antifona, intonazione (Euouae) e tono del salmo, con velocità regolabile, esportazione MIDI e segui-nota che evidenzia sullo spartito la nota che sta suonando.
-- **Salmi** in italiano, latino o entrambi affiancati.
-- **Tema chiaro e scuro**, impaginazione pensata anche per il telefono.
+## Features
 
-## Come si usa
+- **Today**: date, liturgical day, colour, season and psalter week; the saint or memorial of the day; the next seven days with their colours and feasts.
+- **Lodi** (Morning Prayer) from the four-week psalter, with «Deus in adiutorium» in the tone of the day, hymn, psalmody, short reading, responsory, Benedictus, intercessions, Pater noster and collect. The Proper of Seasons and the Commons of Saints are being added (so far Advent up to 16 December and the Common of the Dedication of a Church).
+- **Compieta** (Night Prayer) for every day, with examination of conscience, a choice of hymns, short responsory, Nunc dimittis and the Marian antiphon of the season.
+- **Gregorian scores** drawn in the browser from GABC code by the [exsurge](https://github.com/driacats/exsurge) engine.
+- **Listening**: antiphon, intonation (Euouae) and psalm tone, at three speeds, with MIDI export and a follow-the-note band that marks on the score the note being played.
+- **Psalms** in Italian, Latin or both side by side.
+- **Light and dark theme**, with a layout designed for phones too.
 
-Il sito si apre e si usa senza installare nulla: la pagina iniziale porta alle Lodi o alla Compieta del giorno, e la striscia «I prossimi giorni» porta a quelle dei giorni successivi.
+The texts of the offices are in Italian and Latin, as in the booklets.
 
-Per farlo girare in locale servono Node.js 18 o successivo e il repository di exsurge accanto a questo:
+## Usage
+
+The site needs no installation: the home page leads to today's Lodi or Compieta, and the «I prossimi giorni» strip to those of the following days.
+
+To run it locally you need Node.js 18 or later and the exsurge repository next to this one:
 
 ```sh
 git clone https://github.com/driacats/mlg-breviary.git
 git clone https://github.com/driacats/exsurge.git
 cd mlg-breviary/site
 npm install
-npm run dev      # sito in locale su http://localhost:5173
-npm test         # test del calendario liturgico e del player
-npm run build    # sito statico in dist/, pubblicabile su qualsiasi hosting (anche GitHub Pages)
+npm run dev      # local site at http://localhost:5173
+npm test         # tests of the liturgical calendar and of the player
+npm run build    # static site in dist/, ready for any hosting (GitHub Pages too)
 ```
 
-## Struttura
+## Structure
 
-- `site/` — il sito (TypeScript + Vite). Dettagli su calendario e scelta dell'ufficio in [`site/README.md`](site/README.md).
-- `gabc/` — i canti in formato GABC (`chants/`), l'indice dei pezzi (`index.json`) e la struttura delle ore (`liturgy.json`).
-- `salmi/`, `letture/`, `testi/` — salmi e cantici, letture brevi, inni tradotti, orazioni e altri testi, in JSON.
-- `gabc/tools/` — gli script usati per costruire e verificare il database.
+- `site/` — the site (TypeScript + Vite). How it picks the office of the day is explained in [`site/README.md`](site/README.md).
+- `gabc/` — the chants in GABC format (`chants/`), the index of the pieces (`index.json`) and the structure of the hours (`liturgy.json`).
+- `salmi/`, `letture/`, `testi/` — psalms and canticles, short readings, hymn translations, collects and other texts, in JSON.
+- `gabc/tools/` — the scripts used to build and check the database.
