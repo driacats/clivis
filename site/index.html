@@ -9,16 +9,25 @@
       try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
     </script>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23b0261c'/%3E%3Cpath d='M9 10h6v6H9zM17 16h6v6h-6z' fill='%23fff'/%3E%3C/svg%3E" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" />
   </head>
   <body>
-    <div class="masthead">
-      <a class="masthead__name" href="#/">Breviario <span>MLG</span></a>
-      <span class="masthead__tag">Lodi e Compieta in canto gregoriano</span>
-      <button type="button" class="theme-toggle" id="theme-toggle" hidden></button>
-    </div>
+    <header class="masthead">
+      <svg class="masthead__staff" viewBox="0 0 692 80" preserveAspectRatio="xMaxYMid slice" aria-hidden="true" focusable="false">
+        <g class="lines"><path d="M0 20H692"/><path d="M0 34H692"/><path d="M0 48H692"/><path d="M0 62H692"/></g>
+        <g class="neumes"><path d="M30 13h10v14H30zM30 41h10v14H30z" class="clef"/><path d="M30 13v42" class="clefbar"/><rect x="64" y="36.5" width="9" height="9" rx="1.5"/><rect x="90" y="36.5" width="9" height="9" rx="1.5"/><rect x="116" y="29.5" width="9" height="9" rx="1.5"/><rect x="142" y="22.5" width="9" height="9" rx="1.5"/><rect x="168" y="29.5" width="9" height="9" rx="1.5"/><rect x="194" y="29.5" width="9" height="9" rx="1.5"/><rect x="220" y="36.5" width="9" height="9" rx="1.5"/><rect x="246" y="43.5" width="9" height="9" rx="1.5"/><rect x="272" y="36.5" width="9" height="9" rx="1.5"/><rect x="298" y="29.5" width="9" height="9" rx="1.5"/><rect x="324" y="29.5" width="9" height="9" rx="1.5"/><rect x="350" y="36.5" width="9" height="9" rx="1.5"/><rect x="376" y="43.5" width="9" height="9" rx="1.5"/><rect x="402" y="50.5" width="9" height="9" rx="1.5"/><rect x="428" y="43.5" width="9" height="9" rx="1.5"/><rect x="454" y="36.5" width="9" height="9" rx="1.5"/><rect x="480" y="36.5" width="9" height="9" rx="1.5"/><rect x="506" y="22.5" width="9" height="9" rx="1.5"/><rect x="532" y="29.5" width="9" height="9" rx="1.5"/><rect x="558" y="36.5" width="9" height="9" rx="1.5"/><rect x="584" y="43.5" width="9" height="9" rx="1.5"/><rect x="610" y="36.5" width="9" height="9" rx="1.5"/><rect x="636" y="36.5" width="9" height="9" rx="1.5"/></g>
+      </svg>
+      <div class="masthead__inner">
+        <a class="masthead__brand" href="#/" aria-label="Breviario MLG, torna al giorno di oggi">
+          <svg class="masthead__logo" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" fill="#b0261c"/><path d="M9 10h6v6H9zM17 16h6v6h-6z" fill="#fff"/></svg>
+          <span class="masthead__words">
+            <span class="masthead__eyebrow">Movimento Liturgico Giovanile</span>
+            <span class="masthead__name">Breviario <span>MLG</span></span>
+            <span class="masthead__tag">Lodi e Compieta in canto gregoriano</span>
+          </span>
+        </a>
+        <button type="button" class="theme-toggle" id="theme-toggle" hidden></button>
+      </div>
+    </header>
     <div id="app"><p class="loading-page">Caricamento del breviario…</p></div>
     <footer class="colophon">
       Movimento Liturgico Giovanile · Melodie da <em>Lodi complete</em> e <em>Compieta piccola</em>, trascritte in GABC (GregoBase) e rese con exsurge.

@@ -1,4 +1,5 @@
 import 'exsurge';
+import './fonts/fonts.css';
 import './style.css';
 import {
   addDays, formatCivilDate, liturgicalDay, parseIsoDate, todayLocal, toIsoDate,

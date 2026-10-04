@@ -1,0 +1,141 @@
+[
+  {
+    "id": "ordinario.DLM-feriale",
+    "office": "lodi",
+    "role": "invitatorio",
+    "printedIncipit": "Domine, labia mea aperies",
+    "printedContext": "inizio dell'Invitatorio, tono feriale",
+    "pdfPage": "—",
+    "status": "found",
+    "file": "futuro/invitatorio/chants/gregobase-domine-labia-feriale.gabc",
+    "matchNotes": "Non nel libretto: Antiphonale Romanum I (2020), GregoBase 18107."
+  },
+  {
+    "id": "ordinario.DLM-festivo",
+    "office": "lodi",
+    "role": "invitatorio",
+    "printedIncipit": "Domine, labia mea aperies",
+    "printedContext": "inizio dell'Invitatorio, tono festivo",
+    "pdfPage": "—",
+    "status": "found",
+    "file": "futuro/invitatorio/chants/gregobase-domine-labia-festivo.gabc",
+    "matchNotes": "Non nel libretto: Antiphonale Romanum I (2020), GregoBase 18108."
+  },
+  {
+    "id": "invitatorio.domenica",
+    "office": "lodi",
+    "role": "invitatorio",
+    "printedIncipit": "Venite exsultemus Domino",
+    "printedContext": "antifona all'Invitatorio per annum (domenica)",
+    "pdfPage": "—",
+    "status": "found",
+    "file": "futuro/invitatorio/chants/gregobase-invitatorio-domenica.gabc",
+    "matchNotes": "Non nel libretto: Liber Hymnarius (1983), pp. 179-180, GregoBase 15595.",
+    "venite": "invitatorio.venite-e"
+  },
+  {
+    "id": "invitatorio.lunedi",
+    "office": "lodi",
+    "role": "invitatorio",
+    "printedIncipit": "Iubilemus Deo salutari nostro",
+    "printedContext": "antifona all'Invitatorio per annum (lunedi)",
+    "pdfPage": "—",
+    "status": "found",
+    "file": "futuro/invitatorio/chants/gregobase-invitatorio-lunedi.gabc",
+    "matchNotes": "Non nel libretto: Liber Hymnarius (1983), pp. 179-180, GregoBase 4666.",
+    "venite": "invitatorio.venite-6"
+  },
+  {
+    "id": "invitatorio.martedi",
+    "office": "lodi",
+    "role": "invitatorio",
+    "printedIncipit": "Regem magnum Dominum, venite adoremus",
+    "printedContext": "antifona all'Invitatorio per annum (martedi)",
+    "pdfPage": "—",
+    "status": "found",
+    "file": "futuro/invitatorio/chants/gregobase-invitatorio-martedi.gabc",
+    "matchNotes": "Non nel libretto: Liber Hymnarius (1983), pp. 179-180, GregoBase 15596.",
+    "venite": "invitatorio.venite-e"
+  },
+  {
+    "id": "invitatorio.mercoledi",
+    "office": "lodi",
+    "role": "invitatorio",
+    "printedIncipit": "Dominum qui fecit nos, venite adoremus",
+    "printedContext": "antifona all'Invitatorio per annum (mercoledi)",
+    "pdfPage": "—",
+    "status": "found",
+    "file": "futuro/invitatorio/chants/gregobase-invitatorio-mercoledi.gabc",
+    "matchNotes": "Non nel libretto: Liber Hymnarius (1983), pp. 179-180, GregoBase 15597.",
+    "venite": "invitatorio.venite-6"
+  },
+  {
+    "id": "invitatorio.giovedi",
+    "office": "lodi",
+    "role": "invitatorio",
+    "printedIncipit": "Adoremus Dominum qui fecit nos",
+    "printedContext": "antifona all'Invitatorio per annum (giovedi)",
+    "pdfPage": "—",
+    "status": "found",
+    "file": "futuro/invitatorio/chants/gregobase-invitatorio-giovedi.gabc",
+    "matchNotes": "Non nel libretto: Liber Hymnarius (1983), pp. 179-180, GregoBase 15598.",
+    "venite": "invitatorio.venite-e"
+  },
+  {
+    "id": "invitatorio.venerdi",
+    "office": "lodi",
+    "role": "invitatorio",
+    "printedIncipit": "Dominum Deum nostrum, venite adoremus",
+    "printedContext": "antifona all'Invitatorio per annum (venerdi)",
+    "pdfPage": "—",
+    "status": "found",
+    "file": "futuro/invitatorio/chants/gregobase-invitatorio-venerdi.gabc",
+    "matchNotes": "Non nel libretto: Liber Hymnarius (1983), pp. 179-180, GregoBase 15599.",
+    "venite": "invitatorio.venite-e"
+  },
+  {
+    "id": "invitatorio.sabato",
+    "office": "lodi",
+    "role": "invitatorio",
+    "printedIncipit": "Populus Domini et oves pascuae eius",
+    "printedContext": "antifona all'Invitatorio per annum (sabato)",
+    "pdfPage": "—",
+    "status": "found",
+    "file": "futuro/invitatorio/chants/gregobase-invitatorio-sabato.gabc",
+    "matchNotes": "Non nel libretto: Liber Hymnarius (1983), pp. 179-180, GregoBase 15600.",
+    "venite": "invitatorio.venite-d"
+  },
+  {
+    "id": "invitatorio.venite-e",
+    "office": "lodi",
+    "role": "invitatorio",
+    "printedIncipit": "Venite exsultemus Domino",
+    "printedContext": "salmo invitatoriale (Sal 94), tono E",
+    "pdfPage": "—",
+    "status": "found",
+    "file": "futuro/invitatorio/chants/gregobase-venite-e.gabc",
+    "matchNotes": "Non nel libretto: Liber Hymnarius (1983), GregoBase 9642."
+  },
+  {
+    "id": "invitatorio.venite-6",
+    "office": "lodi",
+    "role": "invitatorio",
+    "printedIncipit": "Venite exsultemus Domino",
+    "printedContext": "salmo invitatoriale (Sal 94), tono 6",
+    "pdfPage": "—",
+    "status": "found",
+    "file": "futuro/invitatorio/chants/gregobase-venite-6.gabc",
+    "matchNotes": "Non nel libretto: Liber Hymnarius (1983), GregoBase 9664."
+  },
+  {
+    "id": "invitatorio.venite-d",
+    "office": "lodi",
+    "role": "invitatorio",
+    "printedIncipit": "Venite exsultemus Domino",
+    "printedContext": "salmo invitatoriale (Sal 94), tono D",
+    "pdfPage": "—",
+    "status": "found",
+    "file": "futuro/invitatorio/chants/gregobase-venite-d.gabc",
+    "matchNotes": "Non nel libretto: Liber Hymnarius (1983), GregoBase 9707."
+  }
+]

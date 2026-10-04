@@ -20,12 +20,23 @@ async function buildChant(id: string, repeat = false): Promise<Node> {
   }
   const { mode, body: full } = await fetchGabc(id);
   // the antiphon repeated after the psalm is sung without the EUOUAE
-  const body = repeat ? splitEuouae(full).main.trimEnd() : full;
+  const body = joinLines(repeat ? splitEuouae(full).main.trimEnd() : full);
   // <chant-visual> reads its source and attributes when it is connected
   const cv = document.createElement('chant-visual');
   if (mode) cv.setAttribute('annotation', modeLabel(mode));
   cv.textContent = body;
   return h('div', { class: 'score' }, h('div', {}, cv), playerControls(body, (entry.file ?? id).split('/').pop() ?? id, mode, repeat));
+}
+
+/**
+ * Removes the forced line breaks of the source (z, Z, z-, Z-, often after a
+ * custos as in "(::h+Z)"), so stanzas and verses run on one after the other
+ * and exsurge breaks lines only where the width requires. "z0" (automatic
+ * custos) is kept.
+ */
+export function joinLines(body: string): string {
+  return body.replace(/\(([^)]*)\)/g, (_, g: string) =>
+    '(' + g.replace(/[a-mA-M]\+(?=\s*[zZ](?!0))/g, '').replace(/[zZ](?!0)[+-]?/g, '') + ')');
 }
 
 const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
@@ -38,11 +49,52 @@ function modeLabel(mode: string): string {
 export const chant = (id: string, opts: { repeat?: boolean } = {}): HTMLElement =>
   deferred(() => buildChant(id, opts.repeat ?? false));
 
+// --- psalm language ---------------------------------------------------------------
+
+export type PsalmLang = 'it' | 'la' | 'both';
+const LANG_KEY = 'psalmLang';
+const LANG_LABELS: [PsalmLang, string][] = [['it', 'Italiano'], ['la', 'Latino'], ['both', 'Entrambi']];
+const langBars = new Set<HTMLElement>();
+
+function savedLang(): PsalmLang {
+  try {
+    const v = localStorage.getItem(LANG_KEY);
+    if (v === 'it' || v === 'la' || v === 'both') return v;
+  } catch { /* storage unavailable */ }
+  return 'it';
+}
+
+/** The language of the psalm texts, shared by every psalm on the page (and remembered). */
+function setPsalmLang(lang: PsalmLang): void {
+  document.documentElement.dataset.psalmLang = lang;
+  try { localStorage.setItem(LANG_KEY, lang); } catch { /* ignore */ }
+  for (const bar of langBars) {
+    if (!bar.isConnected) { langBars.delete(bar); continue; }
+    bar.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+  }
+}
+document.documentElement.dataset.psalmLang = savedLang();
+
+function langToggle(): HTMLElement {
+  const current = document.documentElement.dataset.psalmLang;
+  const bar = h('div', { class: 'lang-toggle', role: 'group', 'aria-label': 'Lingua del salmo' },
+    ...LANG_LABELS.map(([lang, label]) => {
+      const b = h('button', { type: 'button', class: 'lang-toggle__button', 'data-lang': lang, 'aria-pressed': String(current === lang) }, label);
+      b.addEventListener('click', () => setPsalmLang(lang));
+      return b;
+    }));
+  langBars.add(bar);
+  return bar;
+}
+
 export function psalmText(doc: PsalmDoc): HTMLElement {
   const bilingual = doc.verses.some((v) => v.la);
-  return h('div', { class: `psalm${bilingual ? ' psalm--bilingual' : ''}` },
-    h('h3', { class: 'psalm__title' }, doc.ref, h('span', { class: 'psalm__subtitle' }, doc.title)),
+  return h('div', { class: `psalm${bilingual ? ' psalm--bilingual' : ' psalm--it-only'}` },
+    h('div', { class: 'psalm__head' },
+      h('h3', { class: 'psalm__title' }, doc.ref, h('span', { class: 'psalm__subtitle' }, doc.title)),
+      langToggle()),
     doc.epigraph ? h('p', { class: 'psalm__epigraph' }, doc.epigraph) : null,
+    bilingual ? null : h('p', { class: 'psalm__no-la' }, 'Il testo latino di questo salmo non è ancora nel breviario: qui c’è quello italiano.'),
     h('div', { class: 'psalm__verses' },
       ...doc.verses.map((v) => h('div', { class: 'psalm__verse' },
         verseLines(v.it, 'psalm__it'),
@@ -88,7 +140,19 @@ function lettura(doc: LetturaDoc): HTMLElement {
 export function letturaBreve(ref: SlotRef): HTMLElement {
   if (ref.kind === 'gap') return notice(ref.note, 'gap');
   const file = ref.file;
-  return deferred(async () => lettura(await fetchLettura(file)));
+  return h('div', {}, deferred(async () => lettura(await fetchLettura(file))), lectioTone());
+}
+
+/** How to sing the short reading: the model of the libretto (p. 311). */
+export function lectioTone(): HTMLElement {
+  return h('details', { class: 'alternative' },
+    h('summary', {}, 'Come cantare la lettura (tono della lettura breve)'),
+    h('p', { class: 'rubric-text' },
+      'Si recita sulla corda (do). Flessa (†): dopo l’ultimo accento si scende di una terza (la). ' +
+      'Metro (*): le sillabe prima dell’ultimo accento scendono do-si-la, l’accento torna sul do. ' +
+      'Punto (fine della lettura): l’ultimo accento scende al la, le sillabe seguenti al sol e l’ultima risale sol-la. ' +
+      'Le note vuote si cantano solo se ci sono sillabe in più dopo l’accento.'),
+    chant('ordinario.LECTIO'));
 }
 
 /**
@@ -130,9 +194,21 @@ export function invocations(inv: LodiConclusion['invocazioni']): HTMLElement {
   );
 }
 
-export function paterNoster(): HTMLElement {
+const PN_TONES: { tone: 'A' | 'B' | 'C'; label: string }[] = [
+  { tone: 'A', label: 'Tono A · ferie del T.O.' },
+  { tone: 'B', label: 'Tono B · Avvento e Quaresima' },
+  { tone: 'C', label: 'Tono C · Pasqua e feste' },
+];
+
+/** Invitation, the Pater noster sung in the tone of the day (libretto pp. 316-318), and its text. */
+export function paterNoster(tone: 'A' | 'B' | 'C'): HTMLElement {
   const { paterNoster: pn } = getTexts().ordinario;
-  return h('div', {}, h('div', { class: 'prayer-invite' }, bilingual(pn.invito)), bilingual(pn));
+  return h('div', {},
+    h('div', { class: 'prayer-invite' }, bilingual(pn.invito)),
+    choice('Tono del Pater noster',
+      PN_TONES.map((t) => ({ label: t.label, build: () => chant(`ordinario.PN-${t.tone}`) })),
+      PN_TONES.findIndex((t) => t.tone === tone)),
+    h('details', { class: 'alternative' }, h('summary', {}, 'Testo e traduzione'), bilingual(pn)));
 }
 
 const BENEDICAMUS_LABEL: Record<string, string> = {

@@ -1,8 +1,9 @@
 import type { LiturgicalDay } from '../calendar/calendar';
-import { benedicamusKey, lodiPlan, solemnBlessing } from '../calendar/plan';
+import { benedicamusKey, lodiPlan, paterNosterTone, solemnBlessing } from '../calendar/plan';
 import { fetchGabc, fetchPsalm, getTexts } from '../data/loader';
 import type { AntiphonSlot, LiturgyData } from '../data/types';
 import { deferred, h, notice } from './dom';
+import { lodiOpening } from './opening';
 import { antiphonWithPsalm, chant, finalBlessing, invocations, letturaBreve, paterNoster, psalmText, rubric, section } from './pieces';
 
 const BENEDICTUS = 'salmi/cant-lc-1-68-79-benedictus.json';
@@ -54,6 +55,7 @@ export function renderLodi(day: LiturgicalDay, liturgy: LiturgyData, showAnyway 
   }
 
   root.append(
+    section('Introduzione', lodiOpening(day)),
     section('Inno', chant(data.hymn)),
     section('Salmodia', ...data.psalmAntiphons.map((slot) =>
       plan.paschal ? paschalAntiphon(slot) : antiphonWithPsalm(slot.primary, SLOT_LABEL[slot.slot]))),
@@ -82,7 +84,7 @@ function conclusion(week: number, dayName: string, day: LiturgicalDay): HTMLElem
   const c = getTexts().lodi.find((e) => e.week === week && e.day === dayName);
   return [
     section('Invocazioni', c ? invocations(c.invocazioni) : notice('Invocazioni non trovate nel database.', 'error')),
-    section('Padre nostro', paterNoster()),
+    section('Padre nostro', paterNoster(paterNosterTone(day))),
     section('Orazione', c?.orazione
       ? h('p', { class: 'prayer__single' }, c.orazione)
       : notice('La domenica l’orazione è quella propria della domenica, che non è nel libretto delle Lodi.', 'gap')),

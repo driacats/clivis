@@ -1,0 +1,97 @@
+// Beginning of Lodi. «Domine, labia mea aperies» opens the Invitatory, which
+// begins the first prayer of the day; when Lodi is not the first prayer, the
+// hour begins instead with «Deus, in adiutorium meum intende».
+
+import type { LiturgicalDay } from '../calendar/calendar';
+import { domineLabiaRef, invitatoryKey, openingRef, openingTone, type OpeningTone } from '../calendar/plan';
+import { getEntry, getTexts } from '../data/loader';
+import { h, notice } from './dom';
+import { bilingual, chant, choice, rubric } from './pieces';
+
+const KEY = 'lodiOpening';
+
+const TONE_LABELS: Record<OpeningTone, string> = {
+  ferie: 'Nelle ferie',
+  feste: 'Domeniche del Tempo Ordinario e feste',
+  solenne: 'Domeniche dei tempi forti e solennità',
+};
+
+function savedChoice(): number {
+  try { return localStorage.getItem(KEY) === 'deus' ? 1 : 0; } catch { return 0; }
+}
+
+export function lodiOpening(day: LiturgicalDay): HTMLElement {
+  const remember = (v: string) => { try { localStorage.setItem(KEY, v); } catch { /* ignore */ } };
+  return h('div', {},
+    choice('Inizio delle Lodi', [
+      { label: 'Prima preghiera del giorno: Invitatorio', build: () => { remember('inv'); return invitatory(day); } },
+      { label: 'Deus, in adiutórium', build: () => { remember('deus'); return deusInAdiutorium(day); } },
+    ], savedChoice()));
+}
+
+function deusInAdiutorium(day: LiturgicalDay): HTMLElement {
+  const tone = openingTone(day);
+  const lent = day.season === 'quaresima' || day.season === 'triduo';
+  const others = (Object.keys(TONE_LABELS) as OpeningTone[]).filter((t) => t !== tone);
+  return h('div', {},
+    h('p', { class: 'rubric-text' }, 'Se le Lodi non sono la prima preghiera del giorno (l’Invitatorio è già stato detto), si comincia così.'),
+    rubric(TONE_LABELS[tone]),
+    chant(openingRef(day)),
+    lent ? notice('In Quaresima si omette l’Allelúia finale.', 'info') : null,
+    h('details', { class: 'alternative' },
+      h('summary', {}, 'Gli altri toni dell’introduzione'),
+      ...others.map((t) => h('div', {}, rubric(TONE_LABELS[t]), chant(openingRef(day, t))))));
+}
+
+function invitatory(day: LiturgicalDay): HTMLElement {
+  const inv = getTexts().invitatorio;
+  const key = invitatoryKey(day);
+  const antiphonId = `invitatorio.${key}`;
+  const venite = getEntry(antiphonId)?.venite;
+  return h('div', {},
+    h('p', { class: 'rubric-text' }, 'Quando le Lodi sono la prima preghiera del giorno, si comincia con l’Invitatorio.'),
+    chant(domineLabiaRef(day)),
+    h('details', { class: 'alternative' }, h('summary', {}, 'Traduzione'), bilingual(inv.domineLabia)),
+    rubric('Antifona all’Invitatorio'),
+    chant(antiphonId),
+    h('p', { class: 'translation' }, inv.antifone[key]),
+    rubric('Salmo 94'),
+    h('p', { class: 'rubric-text' }, 'L’antifona si canta all’inizio, si ripete dopo ogni strofa e alla fine, dopo il Gloria.'),
+    venite ? chant(venite) : notice('Tono del salmo invitatoriale non trovato.', 'error'),
+    h('details', { class: 'alternative' },
+      h('summary', {}, 'Testo italiano del Salmo 94'),
+      psalm94()),
+    notice('Domine, labia mea, le antifone dell’Invitatorio e il Salmo 94 non sono nel libretto: le melodie sono quelle di Solesmes (Antiphonale Romanum, Liber Hymnarius). Le antifone sono quelle per annum, una per giorno della settimana.', 'info'));
+}
+
+function psalm94(): HTMLElement {
+  const p = getTexts().invitatorio.salmo94;
+  return h('div', { class: 'psalm' },
+    h('h3', { class: 'psalm__title' }, p.ref, h('span', { class: 'psalm__subtitle' }, p.title)),
+    h('p', { class: 'psalm__epigraph' }, p.epigraph),
+    h('div', { class: 'psalm__verses' },
+      ...p.strofe.map((strofa) => h('div', { class: 'psalm__strophe' },
+        ...strofa.map((v) => h('p', { class: 'psalm__it' },
+          ...v.split(/(?<=[*†])\s+/).map((part, i) => h('span', { class: i === 0 ? 'psalm__line' : 'psalm__line psalm__line--cont' }, part))))))));
+}
+
+
+// --- da site/src/calendar/plan.ts ---
+/** «Domine, labia mea»: festive tone on Sundays, feasts and solemnities. */
+export const domineLabiaRef = (day: LiturgicalDay): string =>
+  openingTone(day) === 'ferie' ? 'ordinario.DLM-feriale' : 'ordinario.DLM-festivo';
+
+const INVITATORY_DAYS = ['domenica', 'lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', 'sabato'];
+
+/** Invitatory antiphon key: the per annum antiphon of the weekday (Liber Hymnarius pp. 179-180). */
+export const invitatoryKey = (day: LiturgicalDay): string => INVITATORY_DAYS[day.weekday];
+
+
+// --- da site/src/data/types.ts (Texts.invitatorio) ---
+
+/** testi/invitatorio.json: Italian texts for the Invitatory. */
+export interface Invitatorio {
+  domineLabia: Bilingual;
+  /** Italian of the invitatory antiphon, by weekday key ("domenica" … "sabato"). */
+  antifone: Record<string, string>;
+  salmo94: { ref: string; title: string; epigraph: string; strofe: string[][] }

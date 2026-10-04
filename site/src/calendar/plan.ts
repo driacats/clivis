@@ -212,3 +212,41 @@ export function benedicamusKey(day: LiturgicalDay): BenedicamusKey {
 export function solemnBlessing(day: LiturgicalDay): boolean {
   return day.celebration !== null || day.inOctave !== null;
 }
+
+// --- Introduction, Pater noster ----------------------------------------------------
+
+export type OpeningTone = 'ferie' | 'feste' | 'solenne';
+
+/** "Strong" seasons, whose Sundays take the solemn tone of the introduction. */
+const STRONG_SEASONS = new Set(['avvento', 'natale', 'quaresima', 'pasqua', 'triduo']);
+
+/**
+ * Which of the three tones of «Deus, in adiutorium» the libretto prescribes
+ * (pp. 301-302): weekdays; Sundays of Ordinary Time and feasts; Sundays of the
+ * strong seasons and solemnities.
+ */
+export function openingTone(day: LiturgicalDay): OpeningTone {
+  if (day.celebration?.rank === 'solennità') return 'solenne';
+  if (day.weekday === 0) return STRONG_SEASONS.has(day.season) ? 'solenne' : 'feste';
+  if (day.celebration?.rank === 'festa' || day.inOctave) return 'feste';
+  return 'ferie';
+}
+
+/** index id of the «Deus, in adiutorium» to sing today (in Lent, without Alleluia). */
+export function openingRef(day: LiturgicalDay, tone: OpeningTone = openingTone(day)): string {
+  const lent = day.season === 'quaresima' || day.season === 'triduo';
+  return `ordinario.DEUS-${tone}${lent ? '-q' : ''}`;
+}
+
+export type PaterNosterTone = 'A' | 'B' | 'C';
+
+/**
+ * Tone of the sung Pater noster (libretto pp. 316-318): A on weekdays of
+ * Ordinary Time, B in Lent and Advent, C in Eastertide and on feasts
+ * (Sundays included).
+ */
+export function paterNosterTone(day: LiturgicalDay): PaterNosterTone {
+  if (day.season === 'quaresima' || day.season === 'avvento' || day.season === 'triduo') return 'B';
+  if (day.season === 'pasqua' || day.season === 'natale' || day.celebration || day.weekday === 0) return 'C';
+  return 'A';
+}

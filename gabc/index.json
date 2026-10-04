@@ -278,7 +278,7 @@
     ],
     "_reuseKey": "nunc dimittis servum tuum domine|cantico (tono salmodico)|",
     "psalm": {
-      "ref": "Lc 2,29-33",
+      "ref": "Lc 2,29-32",
       "title": "Cantico di Simeone",
       "file": "salmi/cant-lc-2-29-32-ora-lascia-signore.json"
     }
@@ -4830,7 +4830,7 @@
     ],
     "psalm": {
       "ref": "Ps 142 (1-11)",
-      "title": "Peghiera nella tribolazione",
+      "title": "Preghiera nella tribolazione",
       "file": "salmi/ps-142-1-11-signore-ascolta-la-mia-preghiera.json"
     }
   },
@@ -4974,7 +4974,7 @@
     ],
     "psalm": {
       "ref": "Cant. Tob 13,8-11.13.14ab.16",
-      "title": "Ringraziamento per la liberazione del popoplo",
+      "title": "Ringraziamento per la liberazione del popolo",
       "file": "salmi/cant-tob-13-8-11-13-14ab-16-tutti-parlino-del-signore.json"
     }
   },
@@ -4988,7 +4988,7 @@
     "status": "found",
     "psalm": {
       "ref": "Cant. Tob 13,8-11.13.14ab.16",
-      "title": "Ringraziamento per la liberazione del popoplo",
+      "title": "Ringraziamento per la liberazione del popolo",
       "file": "salmi/cant-tob-13-8-11-13-14ab-16-tutti-parlino-del-signore.json"
     },
     "file": "gabc/chants/manual-ierusalem-civitas-dei.gabc",
@@ -5277,5 +5277,115 @@
     "status": "found",
     "file": "gabc/chants/manual-benedicamus-avvento-quaresima.gabc",
     "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.DEUS-ferie",
+    "office": "lodi",
+    "role": "introduzione",
+    "printedIncipit": "Deus, in adiutorium meum intende",
+    "printedContext": "introduzione alle ore, nelle ferie",
+    "pdfPage": "p. 301",
+    "status": "found",
+    "file": "gabc/chants/manual-deus-in-adiutorium-ferie.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.DEUS-ferie-q",
+    "office": "lodi",
+    "role": "introduzione",
+    "printedIncipit": "Deus, in adiutorium meum intende",
+    "printedContext": "introduzione alle ore, nelle ferie di Quaresima",
+    "pdfPage": "p. 301",
+    "status": "found",
+    "file": "gabc/chants/manual-deus-in-adiutorium-ferie-quaresima.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.DEUS-feste",
+    "office": "lodi",
+    "role": "introduzione",
+    "printedIncipit": "Deus, in adiutorium meum intende",
+    "printedContext": "introduzione alle ore, domeniche del T.O. e feste",
+    "pdfPage": "pp. 301-302",
+    "status": "found",
+    "file": "gabc/chants/manual-deus-in-adiutorium-feste.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.DEUS-feste-q",
+    "office": "lodi",
+    "role": "introduzione",
+    "printedIncipit": "Deus, in adiutorium meum intende",
+    "printedContext": "introduzione alle ore, feste in Quaresima (senza Alleluia)",
+    "pdfPage": "pp. 301-302",
+    "status": "found",
+    "file": "gabc/chants/manual-deus-in-adiutorium-feste-quaresima.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.DEUS-solenne",
+    "office": "lodi",
+    "role": "introduzione",
+    "printedIncipit": "Deus, in adiutorium meum intende",
+    "printedContext": "introduzione alle ore, domeniche dei tempi forti e solennità",
+    "pdfPage": "p. 302",
+    "status": "found",
+    "file": "gabc/chants/manual-deus-in-adiutorium-solenne.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.DEUS-solenne-q",
+    "office": "lodi",
+    "role": "introduzione",
+    "printedIncipit": "Deus, in adiutorium meum intende",
+    "printedContext": "introduzione alle ore, domeniche di Quaresima (senza Alleluia)",
+    "pdfPage": "p. 302",
+    "status": "found",
+    "file": "gabc/chants/manual-deus-in-adiutorium-solenne-quaresima.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.LECTIO",
+    "office": "lodi",
+    "role": "lettura breve",
+    "printedIncipit": "Benedictus Deus et Pater",
+    "printedContext": "tono della lettura breve",
+    "pdfPage": "p. 311",
+    "status": "found",
+    "file": "gabc/chants/manual-tono-lettura-breve.gabc",
+    "matchNotes": "Trascritto manualmente dallo spartito stampato nel libretto (Ordinario dell'Ufficio) — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.PN-A",
+    "office": "lodi",
+    "role": "padre nostro",
+    "printedIncipit": "Pater noster",
+    "printedContext": "Pater noster, tono A",
+    "pdfPage": "pp. 316-318",
+    "status": "found",
+    "file": "gabc/chants/gregobase-pater-noster-a.gabc",
+    "matchNotes": "GregoBase 3326 (Missale Romanum), stesso tono del libretto — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.PN-B",
+    "office": "lodi",
+    "role": "padre nostro",
+    "printedIncipit": "Pater noster",
+    "printedContext": "Pater noster, tono B",
+    "pdfPage": "pp. 316-318",
+    "status": "found",
+    "file": "gabc/chants/gregobase-pater-noster-b.gabc",
+    "matchNotes": "GregoBase 16073 (Missale Romanum), stesso tono del libretto — in attesa di revisione."
+  },
+  {
+    "id": "ordinario.PN-C",
+    "office": "lodi",
+    "role": "padre nostro",
+    "printedIncipit": "Pater noster",
+    "printedContext": "Pater noster, tono C",
+    "pdfPage": "pp. 316-318",
+    "status": "found",
+    "file": "gabc/chants/gregobase-pater-noster-c.gabc",
+    "matchNotes": "GregoBase 14470 (Missale Romanum), stesso tono del libretto — in attesa di revisione."
   }
 ]

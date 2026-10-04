@@ -13,6 +13,31 @@ export function setSpeed(i: number): void { speedIndex = i; }
 export function getSpeed(): number { return speedIndex; }
 export const secondsPerBeat = () => SPEEDS[speedIndex];
 
+/**
+ * iPhone/iPad: Web Audio counts as "ambient" sound and is muted by the silent
+ * switch. Declaring a playback session (Safari 16.4+) makes it play like music;
+ * on older iOS, playing a short silent <audio> element during the tap does the
+ * same. Both are harmless elsewhere.
+ */
+let unlocked = false;
+function unlockAudio(): void {
+  if (unlocked) return;
+  unlocked = true;
+  const nav = navigator as Navigator & { audioSession?: { type: string } };
+  try { if (nav.audioSession) nav.audioSession.type = 'playback'; } catch { /* not supported */ }
+  try {
+    const el = new Audio(SILENT_WAV);
+    el.setAttribute('playsinline', '');
+    void el.play().catch(() => { /* ignore */ });
+  } catch { /* no HTMLAudioElement */ }
+}
+
+/** 0.05 s of silence, 8 kHz mono 8-bit WAV. */
+const SILENT_WAV = 'data:audio/wav;base64,' + btoa(
+  'RIFF' + String.fromCharCode(0xb4, 0x01, 0, 0) + 'WAVEfmt ' +
+  String.fromCharCode(16, 0, 0, 0, 1, 0, 1, 0, 0x40, 0x1f, 0, 0, 0x40, 0x1f, 0, 0, 1, 0, 8, 0) +
+  'data' + String.fromCharCode(144, 1, 0, 0) + String.fromCharCode(128).repeat(400));
+
 const freq = (midi: number) => 440 * Math.pow(2, (midi - 69) / 12);
 
 /**
@@ -20,9 +45,13 @@ const freq = (midi: number) => 440 * Math.pow(2, (midi - 69) / 12);
  */
 export function play(events: MelodyEvent[], onEnd: () => void): () => void {
   current?.stop();
-  ctx ??= new AudioContext();
+  unlockAudio();
+  const AC = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+  if (!AC) { onEnd(); return () => {}; }
+  ctx ??= new AC();
   const audio = ctx;
-  void audio.resume();
+  // resume() must be called inside the tap; "interrupted" (iOS, after a call) also needs it
+  if (audio.state !== 'running') void audio.resume();
 
   const master = audio.createGain();
   master.gain.value = 0.22;
