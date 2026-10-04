@@ -123,6 +123,12 @@ export function renderHome(): HTMLElement {
       h('p', {},
         'Le Lodi e la Compieta come le canta il Movimento Liturgico Giovanile: testi e melodie gregoriane dai libretti ',
         h('em', {}, 'Lodi complete'), ' e ', h('em', {}, 'Compieta piccola'),
-        ', trascritti e confrontati spartito per spartito. Il breviario cresce poco a poco: i tempi forti e le altre ore si aggiungono man mano.')),
+        ', trascritti e confrontati spartito per spartito. Il breviario cresce poco a poco: i tempi forti e le altre ore si aggiungono man mano.'),
+      h('p', { class: 'home-links' },
+        'Il codice è su GitHub: ',
+        h('a', { class: 'more-link', href: 'https://github.com/driacats/mlg-breviary' }, 'Clivis'),
+        ' (sito e database) · ',
+        h('a', { class: 'more-link', href: 'https://github.com/driacats/exsurge' }, 'exsurge'),
+        ' (il motore degli spartiti).')),
   );
 }
