@@ -11,6 +11,7 @@ import { renderCompieta } from './ui/compieta';
 import { h, notice } from './ui/dom';
 import { renderLodi } from './ui/lodi';
 import { renderEsamePage } from './ui/esame';
+import { renderHome } from './ui/home';
 import { setupThemeToggle } from './theme';
 
 // --- routing: #/2026-10-03/lodi ----------------------------------------------
@@ -58,6 +59,10 @@ function dayHeader(day: LiturgicalDay, route: Route): HTMLElement {
       h('a', { class: 'date-nav__step', href: hrefFor({ ...route, date: addDays(day.date, 1) }), 'aria-label': 'Giorno successivo' }, '›')),
     h('h1', { class: 'day__title' }, day.celebration?.name ?? day.label),
     day.celebration ? h('p', { class: 'day__subtitle' }, `${day.celebration.rank === 'solennità' ? 'Solennità' : 'Festa'} · ${day.label}`) : null,
+    !day.celebration && day.memorials.length
+      ? h('p', { class: 'day__subtitle' }, day.memorials.map((m) =>
+        `${m.commemoration ? 'Commemorazione' : m.rank === 'memoria' ? 'Memoria' : 'Memoria facoltativa'}: ${m.name}`).join(' · '))
+      : null,
     h('p', { class: 'day__meta' },
       h('span', { class: 'swatch', 'data-color': day.color, 'aria-hidden': 'true' }),
       `Colore ${COLOR_NAME[day.color]}`,
@@ -76,7 +81,15 @@ const app = document.getElementById('app')!;
 
 function render(): void {
   if (!liturgy) return;
-  if (location.hash.replace(/^#\/?/, '') === 'esame') {
+  const path = location.hash.replace(/^#\/?/, '');
+  if (path === '') {
+    document.documentElement.dataset.season = liturgicalDay(todayLocal()).color;
+    document.title = 'Breviario MLG · Lodi e Compieta in canto gregoriano';
+    app.replaceChildren(renderHome());
+    window.scrollTo({ top: 0 });
+    return;
+  }
+  if (path === 'esame') {
     document.title = 'Esame di coscienza · Breviario MLG';
     app.replaceChildren(h('main', { class: 'office-wrap' }, renderEsamePage()));
     window.scrollTo({ top: 0 });

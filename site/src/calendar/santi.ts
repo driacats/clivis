@@ -1,0 +1,225 @@
+// Memorials of the General Roman Calendar (Italian names, with the additions
+// of recent years), each linked to the Comune of the libretto (pp. 203-299)
+// used for its Lodi. The libretto has no Proprio dei Santi, so every saint is
+// celebrated with a Comune.
+//
+// Solemnities and feasts are in calendar.ts (FIXED), which also gives their Comune.
+
+export type ComuneId =
+  | 'dedicazione' | 'bvm' | 'apostoli' | 'piu-martiri' | 'un-martire' | 'pastori' | 'dottori'
+  | 'monaci' | 'monache' | 'vergini' | 'santi' | 'sante' | 'religiosi';
+
+export interface Memorial {
+  name: string;
+  rank: 'memoria' | 'memoria facoltativa';
+  /** Comuni that can be used, the first one is the default. */
+  comuni: ComuneId[];
+  color: 'bianco' | 'rosso';
+}
+
+type Row = [month: number, day: number, rank: 'M' | 'F', name: string, comuni: string];
+
+// comuni: space-separated ids, the first is the default
+const ROWS: Row[] = [
+  [1, 2, 'M', 'Santi Basilio Magno e Gregorio Nazianzeno, vescovi e dottori della Chiesa', 'dottori pastori'],
+  [1, 7, 'F', 'San Raimondo di Peñafort, sacerdote', 'pastori'],
+  [1, 13, 'F', "Sant'Ilario, vescovo e dottore della Chiesa", 'dottori pastori'],
+  [1, 17, 'M', "Sant'Antonio, abate", 'monaci'],
+  [1, 20, 'F', 'San Fabiano, papa e martire', 'un-martire pastori'],
+  [1, 20, 'F', 'San Sebastiano, martire', 'un-martire'],
+  [1, 21, 'M', "Sant'Agnese, vergine e martire", 'un-martire vergini'],
+  [1, 22, 'F', 'San Vincenzo, diacono e martire', 'un-martire'],
+  [1, 24, 'M', 'San Francesco di Sales, vescovo e dottore della Chiesa', 'dottori pastori'],
+  [1, 26, 'M', 'Santi Timoteo e Tito, vescovi', 'pastori'],
+  [1, 27, 'F', "Sant'Angela Merici, vergine", 'vergini sante'],
+  [1, 28, 'M', "San Tommaso d'Aquino, sacerdote e dottore della Chiesa", 'dottori pastori'],
+  [1, 31, 'M', 'San Giovanni Bosco, sacerdote', 'pastori santi'],
+  [2, 3, 'F', 'San Biagio, vescovo e martire', 'un-martire pastori'],
+  [2, 3, 'F', "Sant'Oscar, vescovo", 'pastori'],
+  [2, 5, 'M', "Sant'Agata, vergine e martire", 'un-martire vergini'],
+  [2, 6, 'M', 'Santi Paolo Miki e compagni, martiri', 'piu-martiri'],
+  [2, 8, 'F', 'San Girolamo Emiliani', 'santi'],
+  [2, 8, 'F', 'Santa Giuseppina Bakhita, vergine', 'vergini'],
+  [2, 10, 'M', 'Santa Scolastica, vergine', 'vergini monache'],
+  [2, 11, 'F', 'Beata Vergine Maria di Lourdes', 'bvm'],
+  [2, 17, 'F', 'Santi Sette Fondatori dei Servi della Beata Vergine Maria', 'religiosi santi'],
+  [2, 21, 'F', 'San Pier Damiani, vescovo e dottore della Chiesa', 'dottori pastori'],
+  [2, 23, 'M', 'San Policarpo, vescovo e martire', 'un-martire pastori'],
+  [2, 27, 'F', 'San Gregorio di Narek, abate e dottore della Chiesa', 'dottori monaci'],
+  [3, 4, 'F', 'San Casimiro', 'santi'],
+  [3, 7, 'M', 'Sante Perpetua e Felicita, martiri', 'piu-martiri'],
+  [3, 8, 'F', 'San Giovanni di Dio, religioso', 'religiosi santi'],
+  [3, 9, 'F', 'Santa Francesca Romana, religiosa', 'sante'],
+  [3, 17, 'F', 'San Patrizio, vescovo', 'pastori'],
+  [3, 18, 'F', 'San Cirillo di Gerusalemme, vescovo e dottore della Chiesa', 'dottori pastori'],
+  [3, 23, 'F', 'San Turibio de Mogrovejo, vescovo', 'pastori'],
+  [4, 2, 'F', 'San Francesco di Paola, eremita', 'religiosi santi'],
+  [4, 4, 'F', "Sant'Isidoro, vescovo e dottore della Chiesa", 'dottori pastori'],
+  [4, 5, 'F', 'San Vincenzo Ferrer, sacerdote', 'pastori'],
+  [4, 7, 'M', 'San Giovanni Battista de la Salle, sacerdote', 'pastori santi'],
+  [4, 11, 'M', 'San Stanislao, vescovo e martire', 'un-martire pastori'],
+  [4, 13, 'F', 'San Martino I, papa e martire', 'un-martire pastori'],
+  [4, 21, 'F', "Sant'Anselmo, vescovo e dottore della Chiesa", 'dottori pastori'],
+  [4, 23, 'F', 'San Giorgio, martire', 'un-martire'],
+  [4, 23, 'F', "Sant'Adalberto, vescovo e martire", 'un-martire pastori'],
+  [4, 24, 'F', 'San Fedele da Sigmaringen, sacerdote e martire', 'un-martire pastori'],
+  [4, 28, 'F', 'San Pietro Chanel, sacerdote e martire', 'un-martire pastori'],
+  [4, 28, 'F', 'San Luigi Maria Grignion de Montfort, sacerdote', 'pastori'],
+  [4, 30, 'F', 'San Pio V, papa', 'pastori'],
+  [5, 1, 'F', 'San Giuseppe lavoratore', 'santi'],
+  [5, 2, 'M', "Sant'Atanasio, vescovo e dottore della Chiesa", 'dottori pastori'],
+  [5, 10, 'F', "San Giovanni d'Avila, sacerdote e dottore della Chiesa", 'dottori pastori'],
+  [5, 12, 'F', 'Santi Nereo e Achilleo, martiri', 'piu-martiri'],
+  [5, 12, 'F', 'San Pancrazio, martire', 'un-martire'],
+  [5, 13, 'F', 'Beata Vergine Maria di Fatima', 'bvm'],
+  [5, 18, 'F', 'San Giovanni I, papa e martire', 'un-martire pastori'],
+  [5, 20, 'F', 'San Bernardino da Siena, sacerdote', 'pastori'],
+  [5, 21, 'F', 'Santi Cristoforo Magallanes, sacerdote, e compagni, martiri', 'piu-martiri'],
+  [5, 22, 'F', 'Santa Rita da Cascia, religiosa', 'sante'],
+  [5, 25, 'F', 'San Beda il Venerabile, sacerdote e dottore della Chiesa', 'dottori monaci'],
+  [5, 25, 'F', 'San Gregorio VII, papa', 'pastori'],
+  [5, 25, 'F', "Santa Maria Maddalena de' Pazzi, vergine", 'vergini'],
+  [5, 26, 'M', 'San Filippo Neri, sacerdote', 'pastori santi'],
+  [5, 27, 'F', "Sant'Agostino di Canterbury, vescovo", 'pastori'],
+  [5, 29, 'F', 'San Paolo VI, papa', 'pastori'],
+  [6, 1, 'M', 'San Giustino, martire', 'un-martire'],
+  [6, 2, 'F', 'Santi Marcellino e Pietro, martiri', 'piu-martiri'],
+  [6, 3, 'M', 'Santi Carlo Lwanga e compagni, martiri', 'piu-martiri'],
+  [6, 5, 'M', 'San Bonifacio, vescovo e martire', 'un-martire pastori'],
+  [6, 6, 'F', 'San Norberto, vescovo', 'pastori'],
+  [6, 9, 'F', "Sant'Efrem, diacono e dottore della Chiesa", 'dottori'],
+  [6, 11, 'M', 'San Barnaba, apostolo', 'apostoli'],
+  [6, 13, 'M', "Sant'Antonio di Padova, sacerdote e dottore della Chiesa", 'dottori pastori'],
+  [6, 19, 'F', 'San Romualdo, abate', 'monaci'],
+  [6, 21, 'M', 'San Luigi Gonzaga, religioso', 'santi religiosi'],
+  [6, 22, 'F', 'San Paolino da Nola, vescovo', 'pastori'],
+  [6, 22, 'F', 'Santi Giovanni Fisher, vescovo, e Tommaso More, martiri', 'piu-martiri'],
+  [6, 27, 'F', 'San Cirillo di Alessandria, vescovo e dottore della Chiesa', 'dottori pastori'],
+  [6, 28, 'M', "Sant'Ireneo, vescovo, martire e dottore della Chiesa", 'un-martire dottori'],
+  [6, 30, 'F', 'Santi Primi Martiri della Santa Chiesa di Roma', 'piu-martiri'],
+  [7, 4, 'F', 'Santa Elisabetta di Portogallo', 'sante'],
+  [7, 5, 'F', "Sant'Antonio Maria Zaccaria, sacerdote", 'pastori'],
+  [7, 6, 'F', 'Santa Maria Goretti, vergine e martire', 'un-martire vergini'],
+  [7, 9, 'F', 'Santi Agostino Zhao Rong, sacerdote, e compagni, martiri', 'piu-martiri'],
+  [7, 13, 'F', "Sant'Enrico", 'santi'],
+  [7, 14, 'F', 'San Camillo de Lellis, sacerdote', 'santi pastori'],
+  [7, 15, 'M', 'San Bonaventura, vescovo e dottore della Chiesa', 'dottori pastori'],
+  [7, 16, 'F', 'Beata Vergine Maria del Monte Carmelo', 'bvm'],
+  [7, 20, 'F', "Sant'Apollinare, vescovo e martire", 'un-martire pastori'],
+  [7, 21, 'F', 'San Lorenzo da Brindisi, sacerdote e dottore della Chiesa', 'dottori pastori'],
+  [7, 24, 'F', 'San Charbel Makhlūf, sacerdote', 'monaci'],
+  [7, 26, 'M', 'Santi Gioacchino e Anna, genitori della Beata Vergine Maria', 'santi'],
+  [7, 29, 'M', 'Santi Marta, Maria e Lazzaro', 'santi'],
+  [7, 30, 'F', 'San Pietro Crisologo, vescovo e dottore della Chiesa', 'dottori pastori'],
+  [7, 31, 'M', "Sant'Ignazio di Loyola, sacerdote", 'pastori'],
+  [8, 1, 'M', "Sant'Alfonso Maria de' Liguori, vescovo e dottore della Chiesa", 'dottori pastori'],
+  [8, 2, 'F', "Sant'Eusebio di Vercelli, vescovo", 'pastori'],
+  [8, 2, 'F', 'San Pietro Giuliano Eymard, sacerdote', 'pastori'],
+  [8, 4, 'M', 'San Giovanni Maria Vianney, sacerdote', 'pastori'],
+  [8, 5, 'F', 'Dedicazione della Basilica di Santa Maria Maggiore', 'bvm'],
+  [8, 7, 'F', 'Santi Sisto II, papa, e compagni, martiri', 'piu-martiri'],
+  [8, 7, 'F', 'San Gaetano, sacerdote', 'pastori'],
+  [8, 8, 'M', 'San Domenico, sacerdote', 'pastori'],
+  [8, 11, 'M', 'Santa Chiara, vergine', 'vergini monache'],
+  [8, 12, 'F', 'Santa Giovanna Francesca de Chantal, religiosa', 'sante'],
+  [8, 13, 'F', 'Santi Ponziano, papa, e Ippolito, sacerdote, martiri', 'piu-martiri'],
+  [8, 14, 'M', 'San Massimiliano Maria Kolbe, sacerdote e martire', 'un-martire'],
+  [8, 16, 'F', "Santo Stefano d'Ungheria", 'santi'],
+  [8, 19, 'F', 'San Giovanni Eudes, sacerdote', 'pastori'],
+  [8, 20, 'M', 'San Bernardo, abate e dottore della Chiesa', 'dottori monaci'],
+  [8, 21, 'M', 'San Pio X, papa', 'pastori'],
+  [8, 22, 'M', 'Beata Vergine Maria Regina', 'bvm'],
+  [8, 23, 'F', 'Santa Rosa da Lima, vergine', 'vergini'],
+  [8, 25, 'F', 'San Ludovico', 'santi'],
+  [8, 25, 'F', 'San Giuseppe Calasanzio, sacerdote', 'pastori'],
+  [8, 27, 'M', 'Santa Monica', 'sante'],
+  [8, 28, 'M', "Sant'Agostino, vescovo e dottore della Chiesa", 'dottori pastori'],
+  [8, 29, 'M', 'Martirio di San Giovanni Battista', 'un-martire'],
+  [9, 3, 'M', 'San Gregorio Magno, papa e dottore della Chiesa', 'dottori pastori'],
+  [9, 9, 'F', 'San Pietro Claver, sacerdote', 'pastori'],
+  [9, 12, 'F', 'Santissimo Nome di Maria', 'bvm'],
+  [9, 13, 'M', 'San Giovanni Crisostomo, vescovo e dottore della Chiesa', 'dottori pastori'],
+  [9, 15, 'M', 'Beata Vergine Maria Addolorata', 'bvm'],
+  [9, 16, 'M', 'Santi Cornelio, papa, e Cipriano, vescovo, martiri', 'piu-martiri'],
+  [9, 17, 'F', 'San Roberto Bellarmino, vescovo e dottore della Chiesa', 'dottori pastori'],
+  [9, 17, 'F', 'Santa Ildegarda di Bingen, vergine e dottore della Chiesa', 'vergini'],
+  [9, 19, 'F', 'San Gennaro, vescovo e martire', 'un-martire pastori'],
+  [9, 20, 'M', 'Santi Andrea Kim Taegon, sacerdote, Paolo Chong Hasang e compagni, martiri', 'piu-martiri'],
+  [9, 23, 'M', 'San Pio da Pietrelcina, sacerdote', 'pastori religiosi'],
+  [9, 26, 'F', 'Santi Cosma e Damiano, martiri', 'piu-martiri'],
+  [9, 27, 'M', "San Vincenzo de' Paoli, sacerdote", 'pastori santi'],
+  [9, 28, 'F', 'San Venceslao, martire', 'un-martire'],
+  [9, 28, 'F', 'Santi Lorenzo Ruiz e compagni, martiri', 'piu-martiri'],
+  [9, 30, 'M', 'San Girolamo, sacerdote e dottore della Chiesa', 'dottori'],
+  [10, 1, 'M', 'Santa Teresa di Gesù Bambino, vergine e dottore della Chiesa', 'vergini'],
+  [10, 5, 'F', 'Santa Faustina Kowalska, vergine', 'vergini'],
+  [10, 6, 'F', 'San Bruno, sacerdote', 'monaci'],
+  [10, 7, 'M', 'Beata Vergine Maria del Rosario', 'bvm'],
+  [10, 9, 'F', 'Santi Dionigi, vescovo, e compagni, martiri', 'piu-martiri'],
+  [10, 9, 'F', 'San Giovanni Leonardi, sacerdote', 'pastori'],
+  [10, 11, 'F', 'San Giovanni XXIII, papa', 'pastori'],
+  [10, 14, 'F', 'San Callisto I, papa e martire', 'un-martire pastori'],
+  [10, 15, 'M', 'Santa Teresa di Gesù, vergine e dottore della Chiesa', 'vergini'],
+  [10, 16, 'F', 'Santa Edvige, religiosa', 'sante'],
+  [10, 16, 'F', 'Santa Margherita Maria Alacoque, vergine', 'vergini'],
+  [10, 17, 'M', "Sant'Ignazio di Antiochia, vescovo e martire", 'un-martire pastori'],
+  [10, 19, 'F', 'Santi Giovanni de Brébeuf e Isacco Jogues, sacerdoti, e compagni, martiri', 'piu-martiri'],
+  [10, 19, 'F', 'San Paolo della Croce, sacerdote', 'pastori'],
+  [10, 22, 'F', 'San Giovanni Paolo II, papa', 'pastori'],
+  [10, 23, 'F', 'San Giovanni da Capestrano, sacerdote', 'pastori'],
+  [10, 24, 'F', "Sant'Antonio Maria Claret, vescovo", 'pastori'],
+  [11, 3, 'F', 'San Martino de Porres, religioso', 'religiosi santi'],
+  [11, 4, 'M', 'San Carlo Borromeo, vescovo', 'pastori'],
+  [11, 10, 'M', 'San Leone Magno, papa e dottore della Chiesa', 'dottori pastori'],
+  [11, 11, 'M', 'San Martino di Tours, vescovo', 'pastori'],
+  [11, 12, 'M', 'San Giosafat, vescovo e martire', 'un-martire pastori'],
+  [11, 15, 'F', "Sant'Alberto Magno, vescovo e dottore della Chiesa", 'dottori pastori'],
+  [11, 16, 'F', 'Santa Margherita di Scozia', 'sante'],
+  [11, 16, 'F', 'Santa Geltrude, vergine', 'vergini'],
+  [11, 17, 'M', "Santa Elisabetta d'Ungheria, religiosa", 'sante'],
+  [11, 18, 'F', 'Dedicazione delle Basiliche dei Santi Pietro e Paolo apostoli', 'dedicazione'],
+  [11, 21, 'M', 'Presentazione della Beata Vergine Maria', 'bvm'],
+  [11, 22, 'M', 'Santa Cecilia, vergine e martire', 'un-martire vergini'],
+  [11, 23, 'F', 'San Clemente I, papa e martire', 'un-martire pastori'],
+  [11, 23, 'F', 'San Colombano, abate', 'monaci'],
+  [11, 24, 'M', 'Santi Andrea Dung-Lac, sacerdote, e compagni, martiri', 'piu-martiri'],
+  [11, 25, 'F', "Santa Caterina d'Alessandria, vergine e martire", 'un-martire vergini'],
+  [12, 3, 'M', 'San Francesco Saverio, sacerdote', 'pastori'],
+  [12, 4, 'F', 'San Giovanni Damasceno, sacerdote e dottore della Chiesa', 'dottori'],
+  [12, 6, 'F', 'San Nicola, vescovo', 'pastori'],
+  [12, 7, 'M', "Sant'Ambrogio, vescovo e dottore della Chiesa", 'dottori pastori'],
+  [12, 9, 'F', 'San Juan Diego Cuauhtlatoatzin', 'santi'],
+  [12, 10, 'F', 'Beata Vergine Maria di Loreto', 'bvm'],
+  [12, 11, 'F', 'San Damaso I, papa', 'pastori'],
+  [12, 12, 'F', 'Beata Vergine Maria di Guadalupe', 'bvm'],
+  [12, 13, 'M', 'Santa Lucia, vergine e martire', 'un-martire vergini'],
+  [12, 14, 'M', 'San Giovanni della Croce, sacerdote e dottore della Chiesa', 'dottori pastori'],
+  [12, 21, 'F', 'San Pietro Canisio, sacerdote e dottore della Chiesa', 'dottori pastori'],
+  [12, 23, 'F', 'San Giovanni da Kęty, sacerdote', 'pastori'],
+  [12, 29, 'F', 'San Tommaso Becket, vescovo e martire', 'un-martire pastori'],
+  [12, 31, 'F', 'San Silvestro I, papa', 'pastori'],
+];
+
+const BY_DATE = new Map<string, Memorial[]>();
+for (const [m, d, r, name, comuni] of ROWS) {
+  const key = `${m}-${d}`;
+  const memo: Memorial = {
+    name,
+    rank: r === 'M' ? 'memoria' : 'memoria facoltativa',
+    comuni: comuni.split(' ') as ComuneId[],
+    color: /martir|Martirio/.test(name) ? 'rosso' : 'bianco',
+  };
+  BY_DATE.set(key, [...(BY_DATE.get(key) ?? []), memo]);
+}
+
+/** Memorials fixed to this calendar day (before any precedence rule). */
+export function fixedMemorials(month: number, day: number): Memorial[] {
+  return BY_DATE.get(`${month}-${day}`) ?? [];
+}
+
+/** Monday after Pentecost. */
+export const MARY_MOTHER_OF_CHURCH: Memorial = { name: 'Beata Vergine Maria, Madre della Chiesa', rank: 'memoria', comuni: ['bvm'], color: 'bianco' };
+/** Saturday after the Sacred Heart. */
+export const IMMACULATE_HEART: Memorial = { name: 'Cuore Immacolato della Beata Vergine Maria', rank: 'memoria', comuni: ['bvm'], color: 'bianco' };
+/** Saturdays of Ordinary Time without an obligatory memorial. */
+export const SATURDAY_OF_MARY: Memorial = { name: 'Memoria di Santa Maria in sabato', rank: 'memoria facoltativa', comuni: ['bvm'], color: 'bianco' };

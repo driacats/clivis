@@ -481,3 +481,151 @@ chant-visual svg .playhead--rest { opacity: 0.45; }
 }
 :root[data-theme='dark'] chant-visual svg .playhead__band { fill-opacity: 0.2; }
 
+/* --- home page ------------------------------------------------------------------ */
+:root {
+  --lit-viola: #6b3d99; --lit-bianco: #c9a43a; --lit-verde: #2f7a4a; --lit-rosso: #b0261c; --lit-rosaceo: #c76a92;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --lit-viola: #a888d6; --lit-bianco: #d9b552; --lit-verde: #6cbf86; --lit-rosso: #e0675d; --lit-rosaceo: #e59bbb;
+  }
+}
+:root[data-theme='dark'] {
+  --lit-viola: #a888d6; --lit-bianco: #d9b552; --lit-verde: #6cbf86; --lit-rosso: #e0675d; --lit-rosaceo: #e59bbb;
+}
+
+.home { max-width: var(--measure); margin: 0 auto; padding-block: 8px 56px; }
+
+.home-today { text-align: center; padding-block: 30px 6px; }
+.home-today__date {
+  font-family: var(--ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--season);
+  margin: 0;
+}
+.home-today__date::first-letter { text-transform: uppercase; }
+.home-today__title {
+  font-weight: 500;
+  font-size: clamp(1.8rem, 5.5vw, 2.6rem);
+  line-height: 1.12;
+  text-wrap: balance;
+  margin: 10px 0 6px;
+}
+.home-today .day__meta { margin-bottom: 10px; }
+
+.home-icon { display: inline-grid; place-items: center; flex: none; }
+.home-icon svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.home-icon svg .fill { fill: currentColor; stroke: none; }
+.home-icon svg .thin { stroke-width: 1; opacity: 0.55; }
+.home-icon svg .soft { fill: currentColor; fill-opacity: 0.16; stroke: none; }
+
+/* the two offices */
+.office-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 22px 0 8px; }
+.office-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px 20px 22px;
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  background: var(--page);
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+.office-card:hover, .office-card:focus-visible { border-color: var(--rubric); box-shadow: 0 6px 22px -12px rgb(0 0 0 / 0.35); }
+.office-card--now { border-color: var(--rubric); }
+.office-card .home-icon {
+  width: 46px; height: 46px; padding: 10px;
+  border-radius: 12px;
+  color: var(--rubric);
+  background: color-mix(in srgb, var(--rubric) 9%, transparent);
+}
+.office-card__text { display: grid; gap: 2px; min-width: 0; }
+.office-card__kicker { font-family: var(--ui); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+.office-card__name { font-size: 1.75rem; line-height: 1.1; font-weight: 500; }
+.office-card__desc { font-size: 0.98rem; color: var(--muted); line-height: 1.35; margin-top: 4px; }
+.office-card__badge {
+  position: absolute; top: 14px; right: 14px;
+  font-family: var(--ui); font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--page); background: var(--rubric);
+  padding: 3px 8px; border-radius: 999px;
+}
+.office-card__neume { position: absolute; right: 16px; bottom: 14px; width: 27px; height: 24px; color: var(--muted); transition: color 0.2s; }
+.office-card__neume svg { width: 100%; height: 100%; display: block; fill: currentColor; overflow: visible; }
+.office-card__neume .n2 { opacity: 0; transform: translate(-3px, -3px); }
+.office-card:hover .office-card__neume, .office-card:focus-visible .office-card__neume { color: var(--rubric); }
+.office-card:hover .office-card__neume .n2, .office-card:focus-visible .office-card__neume .n2 { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .office-card__neume .n2 { transition: opacity 0.22s ease-out, transform 0.22s ease-out; }
+}
+
+.home-block { padding-block: 26px 4px; border-top: 1px solid var(--rule); margin-top: 22px; }
+.home-block + .home-block { margin-top: 0; }
+
+/* the week ahead */
+.week { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.week li { --dot: var(--lit-verde); min-width: 0; }
+.week li[data-season='viola'] { --dot: var(--lit-viola); }
+.week li[data-season='bianco'] { --dot: var(--lit-bianco); }
+.week li[data-season='rosso'] { --dot: var(--lit-rosso); }
+.week li[data-season='rosaceo'] { --dot: var(--lit-rosaceo); }
+.week__day {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 3px;
+  height: 100%;
+  padding: 10px 4px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  text-align: center;
+  font-family: var(--ui);
+}
+.week__day:hover { background: var(--info-bg); }
+.week__day--today { border-color: var(--rule); background: var(--page); }
+.week__wd { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.week__day--today .week__wd { color: var(--rubric); }
+.week__num { font-family: var(--text); font-size: 1.45rem; line-height: 1.1; }
+.week__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--dot); box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12); }
+.week__name {
+  font-size: 0.68rem; line-height: 1.2; color: var(--muted); margin-top: 3px;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  hyphens: auto;
+}
+
+/* how to use */
+.guide { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 22px; }
+.guide__item { display: flex; gap: 12px; align-items: flex-start; font-size: 1.02rem; line-height: 1.4; }
+.guide__item strong { font-weight: 600; }
+.guide__item .home-icon { width: 30px; height: 30px; padding: 5px; color: var(--rubric); border-radius: 8px; background: color-mix(in srgb, var(--rubric) 8%, transparent); margin-top: 1px; }
+.home-links { margin: 20px 0 0; font-family: var(--ui); font-size: 0.9rem; color: var(--muted); }
+.home-about p { margin: 0 0 8px; }
+
+@media (max-width: 640px) {
+  .office-cards { grid-template-columns: 1fr; }
+  .office-card--now { order: -1; }
+  .guide { grid-template-columns: 1fr; }
+  .week { gap: 2px; }
+  .week__day { padding: 8px 1px 10px; }
+  .week__num { font-size: 1.2rem; }
+  .week__name { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .office-card, .office-card__neume { transition: none; }
+}
+
+/* Santo del giorno (homepage) */
+.saints { display:inline-block; margin:8px auto 4px; padding:12px 22px 14px; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); min-width:min(100%,22rem) }
+.saints__label { font-family:var(--text); font-variant:small-caps; font-weight:600; letter-spacing:.06em; color:var(--rubric); margin:0 0 4px }
+.saints__list { list-style:none; margin:0; padding:0; display:grid; gap:8px }
+.saints__item { display:grid; gap:1px }
+.saints__name { font-size:1.22rem; line-height:1.25; text-wrap:balance }
+.saints__kind { font-family:var(--ui); font-size:.74rem; color:var(--muted); text-transform:uppercase; letter-spacing:.08em }
+.saints__off { font-style:italic; color:var(--muted); font-size:.95rem; line-height:1.35; margin-top:2px; text-wrap:balance }
+.saints__note { font-style:italic; color:var(--muted); font-size:.98rem; margin:6px auto 0; max-width:34rem; text-wrap:balance }

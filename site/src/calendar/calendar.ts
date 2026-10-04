@@ -1,3 +1,5 @@
+import { fixedMemorials, IMMACULATE_HEART, MARY_MOTHER_OF_CHURCH, SATURDAY_OF_MARY, type ComuneId, type Memorial } from './santi';
+
 // Liturgical calendar for the Roman Rite as celebrated in Italy (CEI calendar:
 // Epiphany on 6 January, Ascension and Corpus Domini moved to Sunday).
 //
@@ -8,7 +10,8 @@
 //   - solemnities and feasts of the General Roman Calendar (plus Italy's
 //     patrons), because on those days the office is proper and the psalter page
 //     is NOT what is prayed.
-// Memorials are ignored: on a memorial the ferial psalter is still used.
+// Memorials (santi.ts) are listed separately: on a memorial the ferial psalter is
+// still used, with the other parts from the Comune of the saint.
 //
 // Dates are handled as plain calendar days (no time of day, no time zone): a
 // `CivilDate` is { year, month (1-12), day }, converted to a day number for
@@ -30,6 +33,17 @@ export interface Celebration {
   name: string;
   rank: Rank;
   color: LiturgicalColor;
+  /** Comune of the libretto used for the Lodi of a saint, Our Lady or a dedication. */
+  comune?: ComuneId;
+}
+
+/** A memorial that can be celebrated today. */
+export interface DayMemorial extends Memorial {
+  /**
+   * In Lent and from 17 to 24 December memorials are only commemorated: the
+   * weekday office is said, the memorial can be recalled.
+   */
+  commemoration: boolean;
 }
 
 export interface LiturgicalDay {
@@ -47,6 +61,8 @@ export interface LiturgicalDay {
   psalterWeek: 1 | 2 | 3 | 4;
   /** Solemnity or feast celebrated today, if any (memorials are ignored). */
   celebration: Celebration | null;
+  /** Memorials of the day (none on Sundays, solemnities, feasts, octaves, Holy Week). */
+  memorials: DayMemorial[];
   /** Easter octave or Christmas octave: the whole office is proper. */
   inOctave: 'pasqua' | 'natale' | null;
   /** Lodi uses the paschal (alleluia) form of the antiphons. */
@@ -189,43 +205,47 @@ interface FixedCelebration extends Celebration {
 }
 
 const FIXED: FixedCelebration[] = [
-  { month: 1, day: 1, name: 'Maria Santissima Madre di Dio', rank: 'solennità', color: 'bianco' },
+  { month: 1, day: 1, name: 'Maria Santissima Madre di Dio', rank: 'solennità', color: 'bianco', comune: 'bvm' },
   { month: 1, day: 6, name: 'Epifania del Signore', rank: 'solennità', color: 'bianco' },
-  { month: 1, day: 25, name: 'Conversione di San Paolo apostolo', rank: 'festa', color: 'bianco' },
+  { month: 1, day: 25, name: 'Conversione di San Paolo apostolo', rank: 'festa', color: 'bianco', comune: 'apostoli' },
   { month: 2, day: 2, name: 'Presentazione del Signore', rank: 'festa', color: 'bianco', ofTheLord: true },
-  { month: 2, day: 22, name: 'Cattedra di San Pietro apostolo', rank: 'festa', color: 'bianco' },
-  { month: 3, day: 19, name: 'San Giuseppe, sposo della Beata Vergine Maria', rank: 'solennità', color: 'bianco' },
+  { month: 2, day: 14, name: 'Santi Cirillo, monaco, e Metodio, vescovo, patroni d’Europa', rank: 'festa', color: 'bianco', comune: 'pastori' },
+  { month: 2, day: 22, name: 'Cattedra di San Pietro apostolo', rank: 'festa', color: 'bianco', comune: 'apostoli' },
+  { month: 3, day: 19, name: 'San Giuseppe, sposo della Beata Vergine Maria', rank: 'solennità', color: 'bianco', comune: 'santi' },
   { month: 3, day: 25, name: 'Annunciazione del Signore', rank: 'solennità', color: 'bianco' },
-  { month: 4, day: 25, name: 'San Marco evangelista', rank: 'festa', color: 'rosso' },
-  { month: 4, day: 29, name: "Santa Caterina da Siena, patrona d'Italia", rank: 'festa', color: 'bianco' },
-  { month: 5, day: 3, name: 'Santi Filippo e Giacomo apostoli', rank: 'festa', color: 'rosso' },
-  { month: 5, day: 14, name: 'San Mattia apostolo', rank: 'festa', color: 'rosso' },
-  { month: 5, day: 31, name: 'Visitazione della Beata Vergine Maria', rank: 'festa', color: 'bianco' },
-  { month: 6, day: 24, name: 'Natività di San Giovanni Battista', rank: 'solennità', color: 'bianco' },
-  { month: 6, day: 29, name: 'Santi Pietro e Paolo apostoli', rank: 'solennità', color: 'rosso' },
-  { month: 7, day: 3, name: 'San Tommaso apostolo', rank: 'festa', color: 'rosso' },
-  { month: 7, day: 22, name: 'Santa Maria Maddalena', rank: 'festa', color: 'bianco' },
-  { month: 7, day: 25, name: 'San Giacomo apostolo', rank: 'festa', color: 'rosso' },
+  { month: 4, day: 25, name: 'San Marco evangelista', rank: 'festa', color: 'rosso', comune: 'apostoli' },
+  { month: 4, day: 29, name: "Santa Caterina da Siena, patrona d'Italia", rank: 'festa', color: 'bianco', comune: 'vergini' },
+  { month: 5, day: 3, name: 'Santi Filippo e Giacomo apostoli', rank: 'festa', color: 'rosso', comune: 'apostoli' },
+  { month: 5, day: 14, name: 'San Mattia apostolo', rank: 'festa', color: 'rosso', comune: 'apostoli' },
+  { month: 5, day: 31, name: 'Visitazione della Beata Vergine Maria', rank: 'festa', color: 'bianco', comune: 'bvm' },
+  { month: 6, day: 24, name: 'Natività di San Giovanni Battista', rank: 'solennità', color: 'bianco', comune: 'santi' },
+  { month: 6, day: 29, name: 'Santi Pietro e Paolo apostoli', rank: 'solennità', color: 'rosso', comune: 'apostoli' },
+  { month: 7, day: 3, name: 'San Tommaso apostolo', rank: 'festa', color: 'rosso', comune: 'apostoli' },
+  { month: 7, day: 11, name: 'San Benedetto, abate, patrono d’Europa', rank: 'festa', color: 'bianco', comune: 'monaci' },
+  { month: 7, day: 22, name: 'Santa Maria Maddalena', rank: 'festa', color: 'bianco', comune: 'sante' },
+  { month: 7, day: 23, name: 'Santa Brigida, religiosa, patrona d’Europa', rank: 'festa', color: 'bianco', comune: 'sante' },
+  { month: 7, day: 25, name: 'San Giacomo apostolo', rank: 'festa', color: 'rosso', comune: 'apostoli' },
   { month: 8, day: 6, name: 'Trasfigurazione del Signore', rank: 'festa', color: 'bianco', ofTheLord: true },
-  { month: 8, day: 10, name: 'San Lorenzo, diacono e martire', rank: 'festa', color: 'rosso' },
-  { month: 8, day: 15, name: 'Assunzione della Beata Vergine Maria', rank: 'solennità', color: 'bianco' },
-  { month: 8, day: 24, name: 'San Bartolomeo apostolo', rank: 'festa', color: 'rosso' },
-  { month: 9, day: 8, name: 'Natività della Beata Vergine Maria', rank: 'festa', color: 'bianco' },
+  { month: 8, day: 9, name: 'Santa Teresa Benedetta della Croce, vergine e martire, patrona d’Europa', rank: 'festa', color: 'rosso', comune: 'un-martire' },
+  { month: 8, day: 10, name: 'San Lorenzo, diacono e martire', rank: 'festa', color: 'rosso', comune: 'un-martire' },
+  { month: 8, day: 15, name: 'Assunzione della Beata Vergine Maria', rank: 'solennità', color: 'bianco', comune: 'bvm' },
+  { month: 8, day: 24, name: 'San Bartolomeo apostolo', rank: 'festa', color: 'rosso', comune: 'apostoli' },
+  { month: 9, day: 8, name: 'Natività della Beata Vergine Maria', rank: 'festa', color: 'bianco', comune: 'bvm' },
   { month: 9, day: 14, name: 'Esaltazione della Santa Croce', rank: 'festa', color: 'rosso', ofTheLord: true },
-  { month: 9, day: 21, name: 'San Matteo apostolo ed evangelista', rank: 'festa', color: 'rosso' },
+  { month: 9, day: 21, name: 'San Matteo apostolo ed evangelista', rank: 'festa', color: 'rosso', comune: 'apostoli' },
   { month: 9, day: 29, name: 'Santi Michele, Gabriele e Raffaele arcangeli', rank: 'festa', color: 'bianco' },
-  { month: 10, day: 4, name: "San Francesco d'Assisi, patrono d'Italia", rank: 'festa', color: 'bianco' },
-  { month: 10, day: 18, name: 'San Luca evangelista', rank: 'festa', color: 'rosso' },
-  { month: 10, day: 28, name: 'Santi Simone e Giuda apostoli', rank: 'festa', color: 'rosso' },
-  { month: 11, day: 1, name: 'Tutti i Santi', rank: 'solennità', color: 'bianco' },
+  { month: 10, day: 4, name: "San Francesco d'Assisi, patrono d'Italia", rank: 'festa', color: 'bianco', comune: 'santi' },
+  { month: 10, day: 18, name: 'San Luca evangelista', rank: 'festa', color: 'rosso', comune: 'apostoli' },
+  { month: 10, day: 28, name: 'Santi Simone e Giuda apostoli', rank: 'festa', color: 'rosso', comune: 'apostoli' },
+  { month: 11, day: 1, name: 'Tutti i Santi', rank: 'solennità', color: 'bianco', comune: 'santi' },
   { month: 11, day: 2, name: 'Commemorazione di tutti i fedeli defunti', rank: 'solennità', color: 'viola' },
-  { month: 11, day: 9, name: 'Dedicazione della Basilica Lateranense', rank: 'festa', color: 'bianco', ofTheLord: true },
-  { month: 11, day: 30, name: 'Sant’Andrea apostolo', rank: 'festa', color: 'rosso' },
-  { month: 12, day: 8, name: 'Immacolata Concezione della Beata Vergine Maria', rank: 'solennità', color: 'bianco' },
+  { month: 11, day: 9, name: 'Dedicazione della Basilica Lateranense', rank: 'festa', color: 'bianco', ofTheLord: true, comune: 'dedicazione' },
+  { month: 11, day: 30, name: 'Sant’Andrea apostolo', rank: 'festa', color: 'rosso', comune: 'apostoli' },
+  { month: 12, day: 8, name: 'Immacolata Concezione della Beata Vergine Maria', rank: 'solennità', color: 'bianco', comune: 'bvm' },
   { month: 12, day: 25, name: 'Natale del Signore', rank: 'solennità', color: 'bianco' },
-  { month: 12, day: 26, name: 'Santo Stefano, primo martire', rank: 'festa', color: 'rosso' },
-  { month: 12, day: 27, name: 'San Giovanni apostolo ed evangelista', rank: 'festa', color: 'bianco' },
-  { month: 12, day: 28, name: 'Santi Innocenti martiri', rank: 'festa', color: 'rosso' },
+  { month: 12, day: 26, name: 'Santo Stefano, primo martire', rank: 'festa', color: 'rosso', comune: 'un-martire' },
+  { month: 12, day: 27, name: 'San Giovanni apostolo ed evangelista', rank: 'festa', color: 'bianco', comune: 'apostoli' },
+  { month: 12, day: 28, name: 'Santi Innocenti martiri', rank: 'festa', color: 'rosso', comune: 'piu-martiri' },
 ];
 
 /** Movable celebrations of the temporal cycle that are not ordinary Sundays/weekdays. */
@@ -286,6 +306,20 @@ function fixedCelebration(n: number, mv: MovableDates, seasonIsPrivileged: boole
     return c;
   }
   return null;
+}
+
+/**
+ * The fixed solemnity or feast of this calendar date when it is not celebrated
+ * on it (impeded by a Sunday, Ash Wednesday, Holy Week or the Easter octave, or
+ * transferred), with the day it is moved to, if any.
+ */
+export function displacedCelebration(date: CivilDate): { name: string; rank: Rank; movedTo: CivilDate | null } | null {
+  const c = FIXED.find((f) => f.month === date.month && f.day === date.day);
+  if (!c) return null;
+  const n = toDayNumber(date);
+  if (liturgicalDay(date).celebration?.name === c.name) return null;
+  const at = transferredFixedDate(c, date.year, movableDates(date.year));
+  return { name: c.name, rank: c.rank, movedTo: at !== n ? fromDayNumber(at) : null };
 }
 
 // --- season computation -----------------------------------------------------
@@ -391,6 +425,7 @@ export function liturgicalDay(date: CivilDate): LiturgicalDay {
     ?? fixedCelebration(n, mv, privileged);
 
   const paschal = season === 'pasqua';
+  const memorials = celebration ? [] : memorialsOf(n, date, weekday, season, inOctave, mv);
 
   let color: LiturgicalColor;
   if (celebration) color = celebration.color;
@@ -402,8 +437,27 @@ export function liturgicalDay(date: CivilDate): LiturgicalDay {
     color = 'rosaceo'; // Gaudete / Laetare
   }
   if (n === mv.palmSunday) color = 'rosso';
+  // an obligatory memorial outside the privileged days gives its colour to the day
+  const main = memorials.find((m) => m.rank === 'memoria' && !m.commemoration);
+  if (main && !celebration) color = main.color;
 
-  return { date, weekday, season, seasonWeek, psalterWeek, celebration, inOctave, paschal, color, label };
+  return { date, weekday, season, seasonWeek, psalterWeek, celebration, memorials, inOctave, paschal, color, label };
+}
+
+function memorialsOf(n: number, date: CivilDate, weekday: number, season: Season, inOctave: LiturgicalDay['inOctave'],
+  mv: MovableDates): DayMemorial[] {
+  if (weekday === 0 || inOctave || season === 'triduo') return [];
+  // Ash Wednesday and Holy Week: no memorials at all
+  if (n === mv.ashWednesday || (n >= mv.palmSunday && n < mv.easter)) return [];
+  const commemoration = season === 'quaresima' || (date.month === 12 && date.day >= 17 && date.day <= 24);
+  const list: Memorial[] = [...fixedMemorials(date.month, date.day)];
+  if (n === mv.pentecost + 1) list.unshift(MARY_MOTHER_OF_CHURCH);
+  if (n === mv.sacredHeart + 1) list.unshift(IMMACULATE_HEART);
+  // an obligatory memorial excludes the optional ones of the same day
+  const obligatory = list.filter((m) => m.rank === 'memoria');
+  const result = obligatory.length ? obligatory : list;
+  if (weekday === 6 && season === 'ordinario' && obligatory.length === 0) result.push(SATURDAY_OF_MARY);
+  return result.map((m) => ({ ...m, commemoration }));
 }
 
 export function addDays(d: CivilDate, days: number): CivilDate {
