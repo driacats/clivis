@@ -1,6 +1,7 @@
 import { melodyToMidi, parseGabcMelody, splitEuouae, type MelodyEvent } from './gabcMelody';
 import { getSpeed, play, secondsPerBeat, setSpeed } from './player';
 import { psalmToneFor } from './psalmTone';
+import { followScore, type Follower } from './follow';
 
 const SPEED_LABELS = ['lento', 'normale', 'veloce'];
 const KEY = 'speed';
@@ -21,7 +22,8 @@ function el<K extends keyof HTMLElementTagNameMap>(tag: K, cls: string, text = '
 
 /** Listen / speed / MIDI bar shown under a score. */
 /** `repeat`: the antiphon sung again after the psalm — only the antiphon itself, no EUOUAE or psalm tone. */
-export function playerControls(gabcBody: string, fileName: string, mode: string | null = null, repeat = false): HTMLElement {
+/** `score`: the <chant-visual> showing this body, to follow the notes on it while they play. */
+export function playerControls(gabcBody: string, fileName: string, mode: string | null = null, repeat = false, score: Element | null = null): HTMLElement {
   const bar = el('div', 'player');
   const events = parseGabcMelody(gabcBody);
   if (events.length === 0) return bar;
@@ -30,11 +32,15 @@ export function playerControls(gabcBody: string, fileName: string, mode: string 
   const mainEvents = split.euouae ? parseGabcMelody(split.main) : events;
   const euEvents = split.euouae ? parseGabcMelody(split.euouae) : [];
 
+  const pitched = (evs: MelodyEvent[]) => evs.filter((e) => e.pitch !== null).length;
+  const total = pitched(events);
+  const follow = (offset: number) => (score ? followScore(score, offset, total) : null);
+
   const playButtons = repeat && euEvents.length && mainEvents.length
-    ? [playButton('Antifona', mainEvents)]
+    ? [playButton('Antifona', mainEvents, follow(0))]
     : euEvents.length && mainEvents.length
-    ? [playButton('Antifona', mainEvents), playButton('Euouae', euEvents)]
-    : [playButton('Ascolta', events)];
+    ? [playButton('Antifona', mainEvents, follow(0)), playButton('Euouae', euEvents, follow(pitched(mainEvents)))]
+    : [playButton('Ascolta', events, follow(0))];
 
   const tone = repeat ? null : psalmToneFor(gabcBody, mode);
   if (tone) {
@@ -73,12 +79,13 @@ export function playerControls(gabcBody: string, fileName: string, mode: string 
 
 
 /** A play/stop button for one part; plays once, then returns to idle. */
-function playButton(label: string, events: MelodyEvent[]): HTMLButtonElement {
+function playButton(label: string, events: MelodyEvent[], follower: Follower | null = null): HTMLButtonElement {
   const btn = el('button', 'player__play');
   btn.type = 'button';
   let stop: (() => void) | null = null;
   const idle = () => {
     stop = null;
+    follower?.clear();
     btn.innerHTML = `<span aria-hidden="true">▶</span> ${label}`;
     btn.setAttribute('aria-pressed', 'false');
   };
@@ -87,7 +94,7 @@ function playButton(label: string, events: MelodyEvent[]): HTMLButtonElement {
     if (stop) { stop(); return; }
     btn.innerHTML = '<span aria-hidden="true">■</span> Ferma';
     btn.setAttribute('aria-pressed', 'true');
-    stop = play(events, idle);
+    stop = play(events, idle, follower ? (i) => follower.show(i) : undefined);
   });
   return btn;
 }

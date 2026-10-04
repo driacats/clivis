@@ -42,8 +42,10 @@ const freq = (midi: number) => 440 * Math.pow(2, (midi - 69) / 12);
 
 /**
  * Starts playing; calls onEnd when finished or stopped. Returns a stop function.
+ * `onNote` is told which note is sounding (its index among the pitched events,
+ * or null during a rest) each time that changes.
  */
-export function play(events: MelodyEvent[], onEnd: () => void): () => void {
+export function play(events: MelodyEvent[], onEnd: () => void, onNote?: (index: number | null) => void): () => void {
   current?.stop();
   unlockAudio();
   const AC = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
@@ -60,8 +62,12 @@ export function play(events: MelodyEvent[], onEnd: () => void): () => void {
   const spb = secondsPerBeat();
   let t = audio.currentTime + 0.08;
   const nodes: OscillatorNode[] = [];
+  /** start time and pitched-note index of every event (null for rests) */
+  const cues: { at: number; index: number | null }[] = [];
+  let pitched = 0;
   for (const e of events) {
     const dur = e.beats * spb;
+    cues.push({ at: t, index: e.pitch !== null ? pitched++ : null });
     if (e.pitch !== null) {
       const env = audio.createGain();
       env.connect(master);
@@ -87,9 +93,25 @@ export function play(events: MelodyEvent[], onEnd: () => void): () => void {
 
   const total = (t - audio.currentTime) * 1000;
   let done = false;
+
+  // follow the audio clock to tell which note is sounding
+  let frame = 0;
+  let shown: number | null | undefined;
+  const follow = () => {
+    const now = audio.currentTime;
+    let index: number | null = null;
+    for (let k = cues.length - 1; k >= 0; k--) {
+      if (cues[k].at <= now) { index = cues[k].index; break; }
+    }
+    if (index !== shown) { shown = index; onNote?.(index); }
+    frame = requestAnimationFrame(follow);
+  };
+  if (onNote) frame = requestAnimationFrame(follow);
+
   const finish = () => {
     if (done) return;
     done = true;
+    cancelAnimationFrame(frame);
     clearTimeout(timer);
     master.gain.cancelScheduledValues(audio.currentTime);
     master.gain.setTargetAtTime(0, audio.currentTime, 0.02);
