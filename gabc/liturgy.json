@@ -1010,6 +1010,18 @@
           }
         ]
       }
+    ],
+    "proprioTempo": [
+      {
+        "id": "avvento-1",
+        "label": "Avvento fino al 16 dicembre",
+        "pdfPage": "pp. 177-179",
+        "hymn": "lodi.PT1",
+        "responsory": {
+          "domeniche": "lodi.PT2",
+          "ferie": "lodi.PT3"
+        }
+      }
     ]
   }
 }

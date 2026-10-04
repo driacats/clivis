@@ -115,6 +115,12 @@ describe('lodiPlan', () => {
     expect(lodiPlan(day('2026-11-01')).properNotice).toMatch(/solennità/);
     expect(lodiPlan(day('2026-04-07')).properNotice).toMatch(/Ottava di Pasqua/);
     expect(lodiPlan(day('2026-12-02')).seasonalNotice).toMatch(/Avvento/);
+    expect(lodiPlan(day('2026-12-02'))).toMatchObject({ seasonProper: 'avvento-1', seasonProperResponsory: 'ferie' });
+    expect(lodiPlan(day('2026-11-29'))).toMatchObject({ seasonProper: 'avvento-1', seasonProperResponsory: 'domeniche' });
+    expect(lodiPlan(day('2026-12-16')).seasonProper).toBe('avvento-1');
+    expect(lodiPlan(day('2026-12-17')).seasonProper).toBeNull();
+    expect(lodiPlan(day('2026-12-08')).seasonProper).toBeNull(); // Immacolata: Lodi proprie
+    expect(lodiPlan(day('2026-11-28')).seasonProper).toBeNull();
     expect(lodiPlan(day('2026-11-01')).fallback).toEqual({ week: 1, dayName: 'Domenica' });
     expect(lodiPlan(day('2026-12-30')).fallback).toEqual({ week: 1, dayName: 'Mercoledì' });
     expect(lodiPlan(day('2026-10-03')).fallback).toBeNull();

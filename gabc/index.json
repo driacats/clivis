@@ -5387,5 +5387,38 @@
     "status": "found",
     "file": "gabc/chants/gregobase-pater-noster-c.gabc",
     "matchNotes": "GregoBase 14470 (Missale Romanum), stesso tono del libretto — in attesa di revisione."
+  },
+  {
+    "id": "lodi.PT1",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Vox clara ecce íntonat",
+    "printedContext": "Proprio del Tempo: Avvento fino al 16 dicembre",
+    "pdfPage": "p. 177-178",
+    "status": "found",
+    "file": "gabc/chants/manual-vox-clara-ecce-intonat.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Proprio del Tempo); in revisione nella pagina di confronto."
+  },
+  {
+    "id": "lodi.PT2",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Christe, Fili Dei vivi, Miserére nobis. Qui venturus es in mundum",
+    "printedContext": "Proprio del Tempo: Avvento fino al 16 dicembre, nelle domeniche",
+    "pdfPage": "p. 178",
+    "status": "found",
+    "file": "gabc/chants/manual-christe-fili-dei-vivi-avvento.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Proprio del Tempo); in revisione nella pagina di confronto."
+  },
+  {
+    "id": "lodi.PT3",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Super te Ierúsalem Oriétur Dóminus. Et glória eius in te vidébitur",
+    "printedContext": "Proprio del Tempo: Avvento fino al 16 dicembre, nelle ferie",
+    "pdfPage": "p. 179",
+    "status": "found",
+    "file": "gabc/chants/manual-super-te-ierusalem.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Proprio del Tempo); in revisione nella pagina di confronto."
   }
 ]

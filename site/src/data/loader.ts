@@ -29,7 +29,7 @@ let indexById: Map<string, IndexEntry> | null = null;
 let texts: Texts | null = null;
 
 export async function loadDatabase(): Promise<LiturgyData> {
-  const [index, liturgy, lodi, compietaOrazioni, ordinario, esame, marianeIt] = await Promise.all([
+  const [index, liturgy, lodi, compietaOrazioni, ordinario, esame, marianeIt, proprioTempoIt] = await Promise.all([
     cached('index', () => fetchJson<IndexEntry[]>('gabc/index.json')),
     cached('liturgy', () => fetchJson<LiturgyData>('gabc/liturgy.json')),
     cached('lodi-conclusioni', () => fetchJson<Texts['lodi']>('testi/lodi-conclusioni.json')),
@@ -37,9 +37,10 @@ export async function loadDatabase(): Promise<LiturgyData> {
     cached('ordinario', () => fetchJson<Texts['ordinario']>('testi/ordinario.json')),
     cached('esame', () => fetchJson<Texts['esame']>('testi/esame-coscienza.json')),
     cached('mariane', () => fetchJson<Texts['marianeIt']>('testi/antifone-mariane-it.json')),
+    cached('proprio-tempo-it', () => fetchJson<Texts['proprioTempoIt']>('testi/proprio-tempo-it.json')),
   ]);
   indexById = new Map(index.map((e) => [e.id, e]));
-  texts = { lodi, compietaOrazioni, ordinario, esame, marianeIt };
+  texts = { lodi, compietaOrazioni, ordinario, esame, marianeIt, proprioTempoIt };
   return liturgy;
 }
 

@@ -19,6 +19,13 @@ export interface LodiPlan {
   /** Parts proper to the season that the site does not contain yet. */
   seasonalNotice: string | null;
   /**
+   * id of the gabc/liturgy.json `lodi.proprioTempo` entry whose hymn and short
+   * responsory replace those of the psalter today, if the site has it.
+   */
+  seasonProper: string | null;
+  /** Which responsory of the proper: the libretto has one for Sundays and one for weekdays. */
+  seasonProperResponsory: 'domeniche' | 'ferie';
+  /**
    * On proper days, the psalter page whose psalms are used (Sunday of week 1
    * for solemnities, feasts and the Easter octave), offered as a fallback.
    */
@@ -38,10 +45,14 @@ export function lodiPlan(day: LiturgicalDay): LodiPlan {
     properNotice = `${what}: ${day.celebration.name}. Le Lodi sono proprie (salmi della Domenica della I settimana) e non sono ancora in questo breviario.`;
   }
 
+  const seasonProper = properNotice ? null : seasonProperId(day);
+
   let seasonalNotice: string | null = null;
   if (!properNotice && day.season !== 'ordinario') {
     const tempo = { avvento: "d'Avvento", natale: 'di Natale', quaresima: 'di Quaresima', pasqua: 'di Pasqua', triduo: '', ordinario: '' }[day.season];
-    seasonalNotice = `Nel Tempo ${tempo} alcune parti delle Lodi (inno, lettura breve, responsorio, antifona al Benedictus) sono proprie del tempo e non sono ancora in questo breviario: qui trovi quelle del salterio.`;
+    seasonalNotice = seasonProper
+      ? `Nel Tempo ${tempo} l’inno e il responsorio breve sono quelli propri del tempo, dal libretto. La lettura breve, l’antifona al Benedictus e l’orazione proprie del tempo non sono nel libretto: qui trovi quelle del salterio.`
+      : `Nel Tempo ${tempo} alcune parti delle Lodi (inno, lettura breve, responsorio, antifona al Benedictus) sono proprie del tempo e non sono ancora in questo breviario: qui trovi quelle del salterio.`;
   }
 
   const sundayPsalms = day.celebration !== null || day.inOctave === 'pasqua';
@@ -55,8 +66,20 @@ export function lodiPlan(day: LiturgicalDay): LodiPlan {
     paschal: day.paschal,
     properNotice,
     seasonalNotice,
+    seasonProper,
+    seasonProperResponsory: day.weekday === 0 ? 'domeniche' : 'ferie',
     fallback,
   };
+}
+
+/**
+ * The section of the libretto's Proprio del Tempo (pp. 177 ff.) that applies
+ * to the day, among those already in the database. Advent until 16 December
+ * has its own hymn; from 17 December on the libretto changes hymn.
+ */
+export function seasonProperId(day: LiturgicalDay): string | null {
+  if (day.season === 'avvento' && !(day.date.month === 12 && day.date.day >= 17)) return 'avvento-1';
+  return null;
 }
 
 // --- Compieta -------------------------------------------------------------------

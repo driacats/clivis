@@ -54,17 +54,42 @@ export function renderLodi(day: LiturgicalDay, liturgy: LiturgyData, showAnyway 
     return root;
   }
 
+  // Proprio del Tempo: hymn and short responsory of the season replace the psalter's
+  const proper = plan.seasonProper && !showAnyway
+    ? liturgy.lodi.proprioTempo?.find((p) => p.id === plan.seasonProper) ?? null
+    : null;
+  const hymn = proper
+    ? withTranslation(proper.hymn, `Inno proprio · ${proper.label} (libretto, ${proper.pdfPage})`, true)
+    : chant(data.hymn);
+  const responsory = proper
+    ? withTranslation(proper.responsory[plan.seasonProperResponsory],
+      `${proper.label} · ${plan.seasonProperResponsory === 'domeniche' ? 'nelle domeniche' : 'nelle ferie'}`)
+    : chant(data.responsory);
+
   root.append(
     section('Introduzione', lodiOpening(day)),
-    section('Inno', chant(data.hymn)),
+    section('Inno', hymn),
     section('Salmodia', ...data.psalmAntiphons.map((slot) =>
       plan.paschal ? paschalAntiphon(slot) : antiphonWithPsalm(slot.primary, SLOT_LABEL[slot.slot]))),
     section('Lettura breve', letturaBreve(data.letturaBreve)),
-    section('Responsorio breve', chant(data.responsory)),
+    section('Responsorio breve', responsory),
     section('Cantico di Zaccaria', ...benedictus(data.benedictusAntiphon)),
     ...conclusion(page.week, page.dayName, day),
   );
   return root;
+}
+
+/**
+ * A chant of the Proprio del Tempo with its rubric and the Italian translation
+ * printed in the libretto (folded away for the longer hymns).
+ */
+function withTranslation(id: string, label: string, folded = false): HTMLElement {
+  const it = getTexts().proprioTempoIt[id];
+  const translation = !it ? null
+    : folded
+      ? h('details', { class: 'alternative' }, h('summary', {}, 'Traduzione'), h('p', { class: 'translation' }, it.replace(/\n/g, '\n\n').replace(/ \/ /g, '\n')))
+      : h('p', { class: 'translation' }, it);
+  return h('div', {}, rubric(label), chant(id), translation);
 }
 
 function benedictus(antiphon: string | { note: string }): Node[] {

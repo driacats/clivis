@@ -58,9 +58,18 @@ export interface LodiDay {
   letturaBreve: SlotRef;
 }
 
+/** Proprio del Tempo of the libretto (pp. 177 ff.): hymn and short responsory of a season. */
+export interface LodiSeasonProper {
+  id: string;
+  label: string;
+  pdfPage: string;
+  hymn: string;
+  responsory: { domeniche: string; ferie: string };
+}
+
 export interface LiturgyData {
   compieta: CompietaStructure;
-  lodi: { weeks: { week: number; days: LodiDay[] }[] };
+  lodi: { weeks: { week: number; days: LodiDay[] }[]; proprioTempo: LodiSeasonProper[] };
 }
 
 export interface PsalmDoc {
@@ -109,6 +118,8 @@ export interface Texts {
   esame: EsameCoscienza;
   /** Italian translation of the Marian antiphons, by index id. */
   marianeIt: Record<string, string>;
+  /** Italian translation of the hymns and responsories of the Proprio del Tempo, by index id. */
+  proprioTempoIt: Record<string, string>;
 }
 
 export interface EsameCoscienza {
