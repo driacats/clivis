@@ -1,13 +1,14 @@
-import type { LiturgicalDay } from '../calendar/calendar';
+import { ROMAN, type LiturgicalDay } from '../calendar/calendar';
 import { benedicamusKey, lodiCelebrations, lodiPlan, paterNosterTone, solemnBlessing, type LodiCelebration } from '../calendar/plan';
-import { fetchGabc, fetchPsalm, getTexts } from '../data/loader';
+import { fetchGabc, getTexts } from '../data/loader';
 import type { AntiphonSlot, LiturgyData } from '../data/types';
 import { deferred, h, notice } from './dom';
 import { lodiOpening } from './opening';
 import { comuneTitle, renderComuneLodi } from './comune';
-import { antiphonWithPsalm, chant, choice, finalBlessing, invocations, letturaBreve, paterNoster, psalmText, rubric, section } from './pieces';
-
-const BENEDICTUS = 'salmi/cant-lc-1-68-79-benedictus.json';
+import {
+  antiphonWithPsalm, benedictus as benedictusText, chant, choice, finalBlessing, invocations, letturaBreve,
+  paterNoster, rubric, section, translation,
+} from './pieces';
 
 const SLOT_LABEL: Record<AntiphonSlot['slot'], string> = {
   '1a': '1ª antifona', '2a': '2ª antifona', '3a': '3ª antifona', unica: 'Antifona',
@@ -73,12 +74,12 @@ function renderFeria(day: LiturgicalDay, liturgy: LiturgyData, showAnyway = fals
   const root = h('div', { class: 'office' });
 
   const page = showAnyway && plan.fallback ? plan.fallback : { week: plan.week, dayName: plan.dayName };
-  const pageName = `${page.dayName} della ${['', 'I', 'II', 'III', 'IV'][page.week]} settimana`;
+  const pageName = `${page.dayName} della ${ROMAN[page.week]} settimana`;
 
   if (plan.properNotice && plan.fallback && !showAnyway) {
     const f = plan.fallback;
     const button = h('button', { type: 'button', class: 'link-button' },
-      `Mostra i salmi del salterio: ${f.dayName} della ${['', 'I', 'II', 'III', 'IV'][f.week]} settimana`);
+      `Mostra i salmi del salterio: ${f.dayName} della ${ROMAN[f.week]} settimana`);
     button.addEventListener('click', () => root.replaceWith(renderFeria(day, liturgy, true)));
     root.append(notice(plan.properNotice, 'info'), button);
     return root;
@@ -122,17 +123,12 @@ function renderFeria(day: LiturgicalDay, liturgy: LiturgyData, showAnyway = fals
  * A chant of the Proprio del Tempo with its rubric and the Italian translation
  * printed in the libretto (folded away for the longer hymns).
  */
-function withTranslation(id: string, label: string, folded = false): HTMLElement {
-  const it = getTexts().proprioTempoIt[id];
-  const translation = !it ? null
-    : folded
-      ? h('details', { class: 'alternative' }, h('summary', {}, 'Traduzione'), h('p', { class: 'translation' }, it.replace(/\n/g, '\n\n').replace(/ \/ /g, '\n')))
-      : h('p', { class: 'translation' }, it);
-  return h('div', {}, rubric(label), chant(id), translation);
+function withTranslation(id: string, label: string, hymn = false): HTMLElement {
+  return h('div', {}, rubric(label), chant(id), translation(getTexts().proprioTempoIt[id], { hymn }));
 }
 
 function benedictus(antiphon: string | { note: string }): Node[] {
-  const text = deferred(async () => psalmText(await fetchPsalm(BENEDICTUS)));
+  const text = benedictusText();
   if (typeof antiphon !== 'string') {
     return [notice('La domenica l’antifona al Benedictus è propria e cambia ogni settimana: non è nel libretto delle Lodi.', 'gap'), text];
   }

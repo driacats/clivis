@@ -1,109 +1,50 @@
 import 'exsurge';
 import './fonts/fonts.css';
 import './style.css';
-import {
-  addDays, formatCivilDate, liturgicalDay, parseIsoDate, todayLocal, toIsoDate,
-  type CivilDate, type LiturgicalColor, type LiturgicalDay,
-} from './calendar/calendar';
+import { formatCivilDate, liturgicalDay, parseIsoDate, todayLocal } from './calendar/calendar';
+import { suggestedOffice } from './calendar/plan';
 import { loadDatabase } from './data/loader';
 import type { LiturgyData, Office } from './data/types';
 import { renderCompieta } from './ui/compieta';
+import { dayHeader, OFFICE_NAME } from './ui/day';
 import { h, notice } from './ui/dom';
-import { renderLodi } from './ui/lodi';
 import { renderEsamePage } from './ui/esame';
 import { renderHome } from './ui/home';
+import { renderLodi } from './ui/lodi';
 import { setupThemeToggle } from './theme';
 
-// --- routing: #/2026-10-03/lodi ----------------------------------------------
+// Routes: #/ home · #/esame examination of conscience · #/2026-10-03/lodi an office
+// (a missing or wrong date is today, a missing office the one for this hour).
 
-interface Route { date: CivilDate; office: Office }
-
-function defaultOffice(now = new Date()): Office {
-  return now.getHours() < 14 ? 'lodi' : 'compieta';
-}
-
-function readRoute(): Route {
-  const [d, o] = location.hash.replace(/^#\/?/, '').split('/');
-  const date = (d && parseIsoDate(d)) || todayLocal();
-  const office: Office = o === 'lodi' || o === 'compieta' ? o : defaultOffice();
-  return { date, office };
-}
-
-function hrefFor(r: Route): string {
-  return `#/${toIsoDate(r.date)}/${r.office}`;
-}
-
-// --- page ----------------------------------------------------------------------
-
-const COLOR_NAME: Record<LiturgicalColor, string> = {
-  viola: 'viola', bianco: 'bianco', verde: 'verde', rosso: 'rosso', rosaceo: 'rosaceo',
-};
-const ROMAN = ['', 'I', 'II', 'III', 'IV'];
-
-function dayHeader(day: LiturgicalDay, route: Route): HTMLElement {
-  const isToday = toIsoDate(day.date) === toIsoDate(todayLocal());
-  const datePicker = h('input', { type: 'date', class: 'date-nav__picker', value: toIsoDate(day.date), 'aria-label': 'Scegli una data' });
-  datePicker.addEventListener('change', () => {
-    const d = parseIsoDate(datePicker.value);
-    if (d) location.hash = hrefFor({ ...route, date: d });
-  });
-
-  return h('header', { class: 'day' },
-    h('nav', { class: 'date-nav', 'aria-label': 'Giorno' },
-      h('a', { class: 'date-nav__step', href: hrefFor({ ...route, date: addDays(day.date, -1) }), 'aria-label': 'Giorno precedente' }, '‹'),
-      h('div', { class: 'date-nav__center' },
-        h('span', { class: 'date-nav__date' }, formatCivilDate(day.date)),
-        isToday ? h('span', { class: 'date-nav__today' }, 'oggi')
-          : h('a', { class: 'date-nav__today date-nav__today--link', href: hrefFor({ ...route, date: todayLocal() }) }, 'torna a oggi'),
-        datePicker),
-      h('a', { class: 'date-nav__step', href: hrefFor({ ...route, date: addDays(day.date, 1) }), 'aria-label': 'Giorno successivo' }, '›')),
-    h('h1', { class: 'day__title' }, day.celebration?.name ?? day.label),
-    day.celebration ? h('p', { class: 'day__subtitle' }, `${day.celebration.rank === 'solennità' ? 'Solennità' : 'Festa'} · ${day.label}`) : null,
-    !day.celebration && day.memorials.length
-      ? h('p', { class: 'day__subtitle' }, day.memorials.map((m) =>
-        `${m.commemoration ? 'Commemorazione' : m.rank === 'memoria' ? 'Memoria' : 'Memoria facoltativa'}: ${m.name}`).join(' · '))
-      : null,
-    h('p', { class: 'day__meta' },
-      h('span', { class: 'swatch', 'data-color': day.color, 'aria-hidden': 'true' }),
-      `Colore ${COLOR_NAME[day.color]}`,
-      h('span', { class: 'day__dot', 'aria-hidden': 'true' }, '·'),
-      `${ROMAN[day.psalterWeek]} settimana del salterio`),
-    h('nav', { class: 'office-tabs', 'aria-label': 'Ufficio' },
-      ...(['lodi', 'compieta'] as Office[]).map((o) => h('a', {
-        class: 'office-tabs__tab', href: hrefFor({ ...route, office: o }),
-        'aria-current': route.office === o ? 'page' : undefined,
-      }, o === 'lodi' ? 'Lodi' : 'Compieta'))),
-  );
-}
+const SITE_TITLE = 'Clivis · Liturgia delle Ore in canto gregoriano';
 
 let liturgy: LiturgyData | null = null;
 const app = document.getElementById('app')!;
+
+function show(title: string, season: string | null, ...content: Node[]): void {
+  document.title = title;
+  if (season) document.documentElement.dataset.season = season;
+  app.replaceChildren(...content);
+  window.scrollTo({ top: 0 });
+}
 
 function render(): void {
   if (!liturgy) return;
   const path = location.hash.replace(/^#\/?/, '');
   if (path === '') {
-    document.documentElement.dataset.season = liturgicalDay(todayLocal()).color;
-    document.title = 'Clivis · Liturgia delle Ore in canto gregoriano';
-    app.replaceChildren(renderHome());
-    window.scrollTo({ top: 0 });
+    show(SITE_TITLE, liturgicalDay(todayLocal()).color, renderHome());
     return;
   }
   if (path === 'esame') {
-    document.title = 'Esame di coscienza · Clivis';
-    app.replaceChildren(h('main', { class: 'office-wrap' }, renderEsamePage()));
-    window.scrollTo({ top: 0 });
+    show('Esame di coscienza · Clivis', null, h('main', { class: 'office-wrap' }, renderEsamePage()));
     return;
   }
-  const route = readRoute();
-  const day = liturgicalDay(route.date);
-  document.documentElement.dataset.season = day.color;
-  document.title = `${route.office === 'lodi' ? 'Lodi' : 'Compieta'} · ${formatCivilDate(day.date, false)} · Clivis`;
-  app.replaceChildren(
-    dayHeader(day, route),
-    h('main', { class: 'office-wrap' }, route.office === 'lodi' ? renderLodi(day, liturgy) : renderCompieta(day, liturgy)),
-  );
-  window.scrollTo({ top: 0 });
+  const [d, o] = path.split('/');
+  const day = liturgicalDay((d && parseIsoDate(d)) || todayLocal());
+  const office: Office = o === 'lodi' || o === 'compieta' ? o : suggestedOffice();
+  show(`${OFFICE_NAME[office]} · ${formatCivilDate(day.date, false)} · Clivis`, day.color,
+    dayHeader(day, office),
+    h('main', { class: 'office-wrap' }, office === 'lodi' ? renderLodi(day, liturgy) : renderCompieta(day, liturgy)));
 }
 
 window.addEventListener('hashchange', render);

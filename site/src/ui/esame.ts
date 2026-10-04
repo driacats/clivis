@@ -37,16 +37,15 @@ export function attoPenitenziale(): HTMLElement {
 /** Full page with every scheme printed in the libretto. */
 export function renderEsamePage(): HTMLElement {
   const e = getTexts().esame;
-  const days = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
   return h('div', { class: 'office' },
-    h('p', {}, h('a', { href: '#/', class: 'back-link' }, '‹ Torna all’ufficio di oggi')),
+    h('p', {}, h('a', { href: '#/', class: 'back-link' }, '‹ Torna alla pagina di oggi')),
     h('h1', { class: 'day__title' }, 'Esame di coscienza'),
     h('p', { class: 'esame__intro' }, e.introduzione),
     ...e.schemi.map((s) => section(s.titolo,
       h('ul', { class: 'esame__voci esame__voci--plain' },
         ...s.voci.map((v) => h('li', {}, v.etichetta ? h('strong', {}, `${v.etichetta}: `) : null, v.testo))))),
     section('Per ogni giorno della settimana',
-      ...days.map((d) => h('div', { class: 'esame', id: `esame-${d}` }, rubric(d), ...(e.giorni[d] ?? []).map(gruppo)))),
+      ...WEEKDAY_NAMES.map((d) => h('div', { class: 'esame', id: `esame-${d}` }, rubric(d), ...(e.giorni[d] ?? []).map(gruppo)))),
     section('Atto penitenziale', attoPenitenziale()),
   );
 }

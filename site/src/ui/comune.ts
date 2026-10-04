@@ -9,13 +9,14 @@
 
 import type { LiturgicalDay } from '../calendar/calendar';
 import { comuneBenedicamus, paterNosterTone, solemnBlessing, type CelebrationMode } from '../calendar/plan';
-import { fetchPsalm, getEntry, getTexts } from '../data/loader';
+import { getEntry, getTexts } from '../data/loader';
 import type { Comune, ComunePart, ComuneVariant, LiturgyData, LodiConclusion } from '../data/types';
-import { deferred, h, notice } from './dom';
+import { h, notice } from './dom';
 import { lodiOpening } from './opening';
-import { antiphonWithPsalm, chant, choice, finalBlessing, invocations, lectioTone, paterNoster, psalmText, rubric, section } from './pieces';
-
-const BENEDICTUS = 'salmi/cant-lc-1-68-79-benedictus.json';
+import {
+  antiphonWithPsalm, benedictus as benedictusText, chant, choice, finalBlessing, hymnVerses, invocations, lectioTone,
+  paterNoster, psalm, rubric, section, translation,
+} from './pieces';
 
 type Scope = 'tp' | 'quaresima' | 'avvento' | 'natale' | 'ordinario' | null;
 
@@ -92,22 +93,14 @@ function textBlock(it: string, missing = true): HTMLElement {
     missing ? h('p', { class: 'comune-text__tag' }, MISSING) : null);
 }
 
-function hymnText(it: string): string {
-  return it.replace(/\n/g, '\n\n').replace(/\s*\/\s*/g, '\n');
-}
-
 /** A sung piece: the melody (with the translation) or the Italian text. */
 function piece(v: ComuneVariant, opts: { hymn?: boolean; repeat?: boolean } = {}): HTMLElement {
   const it = typeof v.it === 'string' ? v.it : null;
   if (v.canto && getEntry(v.canto)?.status === 'found') {
-    const translation = !it ? null
-      : opts.hymn
-        ? h('details', { class: 'alternative' }, h('summary', {}, 'Traduzione'), h('p', { class: 'translation' }, hymnText(it)))
-        : opts.repeat ? null : h('p', { class: 'translation' }, it);
-    return h('div', {}, chant(v.canto, { repeat: opts.repeat }), translation);
+    return h('div', {}, chant(v.canto, { repeat: opts.repeat }), opts.repeat ? null : translation(it, { hymn: opts.hymn }));
   }
   if (!it) return notice('Il libretto riporta qui solo la melodia, non ancora trascritta.', 'gap');
-  return textBlock(opts.hymn ? hymnText(it) : it, !opts.repeat);
+  return textBlock(opts.hymn ? hymnVerses(it) : it, !opts.repeat);
 }
 
 /** Variants with buttons labelled by their rubric. */
@@ -132,14 +125,14 @@ const SLOTS: { part: ComunePart; label: string }[] = [
 function festalPsalmody(comune: Comune, day: LiturgicalDay, liturgy: LiturgyData): Node[] {
   const sunday = liturgy.lodi.weeks.find((w) => w.week === 1)?.days.find((d) => d.day === 'Domenica');
   return SLOTS.map(({ part, label }, i) => {
-    const psalm = sunday ? getEntry(sunday.psalmAntiphons[i].primary)?.psalm : undefined;
+    const file = sunday ? getEntry(sunday.psalmAntiphons[i].primary)?.psalm?.file : undefined;
     const { list } = variantsFor(comune, part, day);
     const unit = (v: ComuneVariant) => {
       if (v.canto && getEntry(v.canto)?.status === 'found') return antiphonWithPsalm(v.canto, label);
       return h('div', { class: 'psalmody-unit' },
         rubric(label), piece(v),
-        psalm ? deferred(async () => psalmText(await fetchPsalm(psalm.file))) : null,
-        psalm ? rubric(label) : null, psalm ? piece(v, { repeat: true }) : null);
+        file ? psalm(file) : null,
+        file ? rubric(label) : null, file ? piece(v, { repeat: true }) : null);
     };
     if (!list.length) return notice(`${label}: non è nel libretto.`, 'gap');
     return variants(list, unit, label);
@@ -166,7 +159,7 @@ function responsory(v: ComuneVariant, others: ComuneVariant[]): HTMLElement {
 function benedictus(v: ComuneVariant): HTMLElement {
   return h('div', {},
     rubric('Antifona al Benedictus'), piece(v),
-    deferred(async () => psalmText(await fetchPsalm(BENEDICTUS))),
+    benedictusText(),
     rubric('Antifona al Benedictus'), piece(v, { repeat: true }));
 }
 

@@ -1,10 +1,10 @@
 import type { LiturgicalDay } from '../calendar/calendar';
 import { compietaPlan, MARIAN_REFS } from '../calendar/plan';
-import { fetchPsalm, getEntry, getTexts } from '../data/loader';
+import { getEntry, getTexts } from '../data/loader';
 import { attoPenitenziale, esameDelGiorno } from './esame';
 import type { LiturgyData } from '../data/types';
-import { deferred, h, notice } from './dom';
-import { antiphonWithPsalm, bilingual, chant, choice, letturaBreve, psalmText, rubric, section } from './pieces';
+import { h, notice } from './dom';
+import { antiphonWithPsalm, bilingual, chant, choice, letturaBreve, psalm, rubric, section, translation } from './pieces';
 
 export function renderCompieta(day: LiturgicalDay, liturgy: LiturgyData): HTMLElement {
   const plan = compietaPlan(day);
@@ -120,12 +120,11 @@ function toneOf(contexts: string[]): string {
 
 /** Text of the Nunc dimittis (the antiphon is sung before and after it). */
 function nuncDimittisText(canticleRef: string): HTMLElement | null {
-  const psalm = getEntry(canticleRef)?.psalm;
-  return psalm ? deferred(async () => psalmText(await fetchPsalm(psalm.file))) : null;
+  const file = getEntry(canticleRef)?.psalm?.file;
+  return file ? psalm(file) : null;
 }
 
 /** A Marian antiphon with the Italian translation printed in the libretto. */
 function marianPiece(id: string): HTMLElement {
-  const it = getTexts().marianeIt[id];
-  return h('div', {}, chant(id), it ? h('p', { class: 'translation' }, it) : null);
+  return h('div', {}, chant(id), translation(getTexts().marianeIt[id]));
 }

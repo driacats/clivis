@@ -21,9 +21,10 @@ export function h<K extends keyof HTMLElementTagNameMap>(
 /**
  * Returns a placeholder that is replaced by the node `load` resolves to, so an
  * office can be laid out in order while its pieces load in parallel.
+ * `kind: 'score'` draws the placeholder as empty staves.
  */
-export function deferred(load: () => Promise<Node>): HTMLElement {
-  const holder = h('div', { class: 'loading-piece', 'aria-busy': 'true' });
+export function deferred(load: () => Promise<Node>, kind: 'text' | 'score' = 'text'): HTMLElement {
+  const holder = h('div', { class: kind === 'score' ? 'loading-piece loading-piece--score' : 'loading-piece', 'aria-busy': 'true' });
   load()
     .then((node) => holder.replaceWith(node))
     .catch((err: Error) => holder.replaceWith(notice(`Non è stato possibile caricare questa parte: ${err.message}`, 'error')));

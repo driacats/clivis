@@ -2,22 +2,13 @@
 // first in emphasis), the week ahead with its colours, and a short guide.
 
 import {
-  addDays, formatCivilDate, liturgicalDay, todayLocal, toIsoDate, WEEKDAY_NAMES,
-  type LiturgicalDay, type Season,
+  addDays, formatCivilDate, liturgicalDay, todayLocal, WEEKDAY_NAMES, type LiturgicalDay,
 } from '../calendar/calendar';
+import { suggestedOffice } from '../calendar/plan';
 import { saintsOfDay } from '../calendar/saints';
 import type { Office } from '../data/types';
+import { celebrationSubtitle, dayMeta, dayName, OFFICE_NAME, officeHref } from './day';
 import { h } from './dom';
-
-const ROMAN = ['', 'I', 'II', 'III', 'IV'];
-const SEASON_NAME: Record<Season, string> = {
-  avvento: 'Tempo di Avvento',
-  natale: 'Tempo di Natale',
-  ordinario: 'Tempo Ordinario',
-  quaresima: 'Tempo di Quaresima',
-  triduo: 'Triduo pasquale',
-  pasqua: 'Tempo di Pasqua',
-};
 
 const svgIcon = (body: string) => {
   const span = h('span', { class: 'home-icon', 'aria-hidden': 'true' });
@@ -38,16 +29,12 @@ function saintsBlock(day: LiturgicalDay): HTMLElement | null {
   const { saints, note } = saintsOfDay(day);
   if (saints.length === 0) return note ? h('p', { class: 'saints__note' }, note) : null;
   return h('div', { class: 'saints' },
-    h('p', { class: 'saints__label' }, saints.length > 1 ? 'Santi del giorno' : 'Santo del giorno'),
+    h('p', { class: 'rubric saints__label' }, saints.length > 1 ? 'Santi del giorno' : 'Santo del giorno'),
     h('ul', { class: 'saints__list' },
       ...saints.map((s) => h('li', { class: `saints__item${s.notCelebrated ? ' saints__item--off' : ''}` },
         h('span', { class: 'saints__name' }, s.name),
         h('span', { class: 'saints__kind' }, KIND_LABEL[s.kind]),
         s.notCelebrated ? h('span', { class: 'saints__off' }, s.notCelebrated.charAt(0).toUpperCase() + s.notCelebrated.slice(1) + '.') : null))));
-}
-
-function suggestedOffice(now = new Date()): Office {
-  return now.getHours() < 14 ? 'lodi' : 'compieta';
 }
 
 /** The first note of the logo's clivis; on hover the second note joins it. */
@@ -62,11 +49,11 @@ function neume(): HTMLElement {
 
 function officeCard(day: LiturgicalDay, office: Office, suggested: boolean): HTMLElement {
   const lodi = office === 'lodi';
-  return h('a', { class: `office-card${suggested ? ' office-card--now' : ''}`, href: `#/${toIsoDate(day.date)}/${office}` },
+  return h('a', { class: `office-card${suggested ? ' office-card--now' : ''}`, href: officeHref(day.date, office) },
     svgIcon(lodi ? SUN : MOON),
     h('span', { class: 'office-card__text' },
       h('span', { class: 'office-card__kicker' }, lodi ? 'Preghiera del mattino' : 'Preghiera della sera'),
-      h('span', { class: 'office-card__name' }, lodi ? 'Lodi' : 'Compieta'),
+      h('span', { class: 'office-card__name' }, OFFICE_NAME[office]),
       h('span', { class: 'office-card__desc' }, lodi
         ? 'Inno, salmi, cantico di Zaccaria, invocazioni e orazione.'
         : 'Esame di coscienza, inno, salmi, cantico di Simeone e antifona alla Vergine.')),
@@ -80,8 +67,8 @@ function weekStrip(today: LiturgicalDay): HTMLElement {
     ...days.map((d, i) => {
       const special = d.celebration?.name ?? (d.weekday === 0 ? d.label : null);
       return h('li', { 'data-season': d.color },
-        h('a', { class: `week__day${i === 0 ? ' week__day--today' : ''}`, href: `#/${toIsoDate(d.date)}/lodi`,
-          'aria-label': `${formatCivilDate(d.date)}: ${d.celebration?.name ?? d.label}` },
+        h('a', { class: `week__day${i === 0 ? ' week__day--today' : ''}`, href: officeHref(d.date, 'lodi'),
+          'aria-label': `${formatCivilDate(d.date)}: ${dayName(d)}` },
           h('span', { class: 'week__wd' }, i === 0 ? 'Oggi' : WEEKDAY_NAMES[d.weekday].slice(0, 3)),
           h('span', { class: 'week__num' }, String(d.date.day)),
           h('span', { class: 'week__dot', 'aria-hidden': 'true' }),
@@ -106,15 +93,9 @@ export function renderHome(): HTMLElement {
   return h('main', { class: 'home' },
     h('section', { class: 'home-today', 'aria-labelledby': 'home-today-title' },
       h('p', { class: 'home-today__date' }, formatCivilDate(today.date)),
-      h('h1', { class: 'home-today__title', id: 'home-today-title' }, today.celebration?.name ?? today.label),
-      today.celebration ? h('p', { class: 'day__subtitle' }, `${today.celebration.rank === 'solennità' ? 'Solennità' : 'Festa'} · ${today.label}`) : null,
-      h('p', { class: 'day__meta' },
-        h('span', { class: 'swatch', 'aria-hidden': 'true' }),
-        `Colore ${today.color}`,
-        h('span', { class: 'day__dot', 'aria-hidden': 'true' }, '·'),
-        SEASON_NAME[today.season],
-        h('span', { class: 'day__dot', 'aria-hidden': 'true' }, '·'),
-        `${ROMAN[today.psalterWeek]} settimana del salterio`),
+      h('h1', { class: 'home-today__title', id: 'home-today-title' }, dayName(today)),
+      celebrationSubtitle(today),
+      dayMeta(today, { season: true }),
       saintsBlock(today)),
 
     h('nav', { class: 'office-cards', 'aria-label': 'Uffici di oggi' },
@@ -135,7 +116,7 @@ export function renderHome(): HTMLElement {
       h('p', { class: 'home-links' },
         h('a', { class: 'more-link', href: '#/esame' }, 'Esame di coscienza'),
         h('span', { 'aria-hidden': 'true' }, ' · '),
-        h('a', { class: 'more-link', href: `#/${toIsoDate(today.date)}/lodi` }, 'Scegli un altro giorno'))),
+        h('a', { class: 'more-link', href: officeHref(today.date, now) }, 'Scegli un altro giorno'))),
 
     h('section', { class: 'home-block home-about' },
       h('h2', { class: 'rubric' }, 'Il breviario Clivis'),

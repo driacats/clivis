@@ -6,7 +6,13 @@
     <meta name="description" content="La Liturgia delle Ore in canto gregoriano per il Movimento Liturgico Giovanile" />
     <title>Clivis · Liturgia delle Ore in canto gregoriano</title>
     <script>
-      try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+      // theme before the first paint: the reader's choice, otherwise the system's (see src/theme.ts)
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem('theme'); } catch (e) {}
+        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = t;
+      })();
     </script>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23b0261c'/%3E%3Cpath d='M3.5 6.40H28.5' stroke='%23fff' stroke-opacity='.3' stroke-width='.75'/%3E%3Cpath d='M3.5 12.80H28.5' stroke='%23fff' stroke-opacity='.3' stroke-width='.75'/%3E%3Cpath d='M3.5 19.20H28.5' stroke='%23fff' stroke-opacity='.3' stroke-width='.75'/%3E%3Cpath d='M3.5 25.60H28.5' stroke='%23fff' stroke-opacity='.3' stroke-width='.75'/%3E%3Cpath d='M8.00 9.60Q8.00 8.80 8.80 8.80L15.20 8.80Q16.00 8.80 16.00 9.60L16.00 15.20L23.20 15.20Q24.00 15.20 24.00 16.00L24.00 22.40Q24.00 23.20 23.20 23.20L16.80 23.20Q16.00 23.20 16.00 22.40L16.00 16.80L9.60 16.80L9.60 22.70Q9.60 23.20 9.10 23.20L8.50 23.20Q8.00 23.20 8.00 22.70Z' fill='%23fff'/%3E%3C/svg%3E" />
   </head>

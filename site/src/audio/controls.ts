@@ -11,7 +11,15 @@ try {
   if (s >= 0 && s < SPEED_LABELS.length && localStorage.getItem(KEY) !== null) setSpeed(s);
 } catch { /* storage unavailable: default speed */ }
 
+/** Every speed button on the page: they all show the same, shared speed. */
 const speedButtons = new Set<HTMLButtonElement>();
+
+function showSpeed(): void {
+  for (const b of speedButtons) {
+    if (!b.isConnected) { speedButtons.delete(b); continue; }
+    b.textContent = `Velocità: ${SPEED_LABELS[getSpeed()]}`;
+  }
+}
 
 function el<K extends keyof HTMLElementTagNameMap>(tag: K, cls: string, text = ''): HTMLElementTagNameMap[K] {
   const e = document.createElement(tag);
@@ -20,9 +28,11 @@ function el<K extends keyof HTMLElementTagNameMap>(tag: K, cls: string, text = '
   return e;
 }
 
-/** Listen / speed / MIDI bar shown under a score. */
-/** `repeat`: the antiphon sung again after the psalm — only the antiphon itself, no EUOUAE or psalm tone. */
-/** `score`: the <chant-visual> showing this body, to follow the notes on it while they play. */
+/**
+ * Listen / speed / MIDI bar shown under a score.
+ * `repeat`: the antiphon sung again after the psalm — only the antiphon itself, no EUOUAE or psalm tone.
+ * `score`: the <chant-visual> showing this body, to follow the notes on it while they play.
+ */
 export function playerControls(gabcBody: string, fileName: string, mode: string | null = null, repeat = false, score: Element | null = null): HTMLElement {
   const bar = el('div', 'player');
   const events = parseGabcMelody(gabcBody);
@@ -52,14 +62,13 @@ export function playerControls(gabcBody: string, fileName: string, mode: string 
   const speedBtn = el('button', 'player__speed');
   speedBtn.type = 'button';
   speedBtn.title = 'Cambia velocità';
+  speedBtn.textContent = `Velocità: ${SPEED_LABELS[getSpeed()]}`;
   speedButtons.add(speedBtn);
-  const showSpeed = () => speedButtons.forEach((b) => { b.textContent = `Velocità: ${SPEED_LABELS[getSpeed()]}`; });
   speedBtn.addEventListener('click', () => {
     setSpeed((getSpeed() + 1) % SPEED_LABELS.length);
     try { localStorage.setItem(KEY, String(getSpeed())); } catch { /* ignore */ }
     showSpeed();
   });
-  speedBtn.textContent = `Velocità: ${SPEED_LABELS[getSpeed()]}`;
 
   const midi = el('a', 'player__midi', 'Scarica MIDI');
   midi.href = '#';
@@ -76,7 +85,6 @@ export function playerControls(gabcBody: string, fileName: string, mode: string 
   bar.append(...playButtons, speedBtn, midi);
   return bar;
 }
-
 
 /** A play/stop button for one part; plays once, then returns to idle. */
 function playButton(label: string, events: MelodyEvent[], follower: Follower | null = null): HTMLButtonElement {

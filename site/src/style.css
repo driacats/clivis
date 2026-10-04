@@ -1,5 +1,9 @@
 /* Clivis — a page of a liturgical book: black text, red rubrics,
-   the day's liturgical colour as the only other accent. One reading column. */
+   the day's liturgical colour as the only other accent. One reading column.
+
+   Theme: <html data-theme="light|dark"> is always set (index.html and
+   src/theme.ts: the reader's choice, otherwise the system setting), so every
+   colour is defined once per theme. */
 :root {
   --paper: #fcfcfa;
   --band: #f6f3ec;
@@ -12,62 +16,50 @@
   --info-bg: #f3f1ec;
   --gap-bg: #fbf1df;
   --gap-ink: #7a4d00;
-  --season: #2f7a4a;
+  --playhead-opacity: 0.12;
+
+  /* liturgical colours */
+  --lit-viola: #6b3d99;
+  --lit-bianco: #b8902a;
+  --lit-verde: #2f7a4a;
+  --lit-rosso: #b0261c;
+  --lit-rosaceo: #c76a92;
 
   --text: 'EB Garamond', 'Garamond', 'Times New Roman', serif;
   --ui: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --chant: 'Crimson Text', serif;
 
   --measure: 44rem;
   color-scheme: light;
 }
-:root[data-season='viola'] { --season: #6b3d99; }
-:root[data-season='bianco'] { --season: #b8902a; }
-:root[data-season='verde'] { --season: #2f7a4a; }
-:root[data-season='rosso'] { --season: #b0261c; }
-:root[data-season='rosaceo'] { --season: #c76a92; }
-
-/* Dark theme: follows the system unless the reader picked a theme with the
-   toggle (data-theme on <html>, see src/theme.ts). */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-      --paper: #161513;
-      --band: #1f1d1a;
-      --page: #1d1c1a;
-      --ink: #ece8df;
-      --staff: #9d978b;
-      --muted: #a39e93;
-      --rule: #34312c;
-      --rubric: #e0675d;
-      --info-bg: #24221f;
-      --gap-bg: #33280f;
-      --gap-ink: #f0c36a;
-      color-scheme: dark;
-  }
-  :root:not([data-theme='light'])[data-season='viola'] { --season: #a888d6; }
-  :root:not([data-theme='light'])[data-season='bianco'] { --season: #d9b552; }
-  :root:not([data-theme='light'])[data-season='verde'] { --season: #6cbf86; }
-  :root:not([data-theme='light'])[data-season='rosso'] { --season: #e0675d; }
-  :root:not([data-theme='light'])[data-season='rosaceo'] { --season: #e59bbb; }
-}
 :root[data-theme='dark'] {
-    --paper: #161513;
-    --band: #1f1d1a;
-    --page: #1d1c1a;
-    --ink: #ece8df;
-    --staff: #9d978b;
-    --muted: #a39e93;
-    --rule: #34312c;
-    --rubric: #e0675d;
-    --info-bg: #24221f;
-    --gap-bg: #33280f;
-    --gap-ink: #f0c36a;
-    color-scheme: dark;
+  --paper: #161513;
+  --band: #1f1d1a;
+  --page: #1d1c1a;
+  --ink: #ece8df;
+  --staff: #9d978b;
+  --muted: #a39e93;
+  --rule: #34312c;
+  --rubric: #e0675d;
+  --info-bg: #24221f;
+  --gap-bg: #33280f;
+  --gap-ink: #f0c36a;
+  --playhead-opacity: 0.2;
+
+  --lit-viola: #a888d6;
+  --lit-bianco: #d9b552;
+  --lit-verde: #6cbf86;
+  --lit-rosso: #e0675d;
+  --lit-rosaceo: #e59bbb;
+  color-scheme: dark;
 }
-:root[data-theme='dark'][data-season='viola'] { --season: #a888d6; }
-:root[data-theme='dark'][data-season='bianco'] { --season: #d9b552; }
-:root[data-theme='dark'][data-season='verde'] { --season: #6cbf86; }
-:root[data-theme='dark'][data-season='rosso'] { --season: #e0675d; }
-:root[data-theme='dark'][data-season='rosaceo'] { --season: #e59bbb; }
+
+/* --season: the colour of the day (on <html>) or of a day in a list */
+:root, [data-season='verde'] { --season: var(--lit-verde); }
+[data-season='viola'] { --season: var(--lit-viola); }
+[data-season='bianco'] { --season: var(--lit-bianco); }
+[data-season='rosso'] { --season: var(--lit-rosso); }
+[data-season='rosaceo'] { --season: var(--lit-rosaceo); }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -85,7 +77,7 @@ a { color: inherit; }
 :focus-visible { outline: 2px solid var(--rubric); outline-offset: 3px; border-radius: 2px; }
 
 /* --- masthead ----------------------------------------------------------------- */
-/* Full-width band: the logo (two puncta on red, same as the favicon), the name,
+/* Full-width band: the logo (a clivis on red, same as the favicon), the name,
    and a faint red four-line staff with a few neumes drifting in from the right. */
 .masthead {
   position: relative;
@@ -159,7 +151,6 @@ a { color: inherit; }
   line-height: 1.05;
   letter-spacing: 0.005em;
 }
-.masthead__name span { color: var(--rubric); font-weight: 600; }
 .masthead__tag { font-style: italic; font-size: 0.98rem; color: var(--muted); line-height: 1.3; }
 .theme-toggle {
   margin-left: auto;
@@ -316,19 +307,42 @@ a { color: inherit; }
   text-wrap: balance;
 }
 .rubric--small { font-size: 0.95rem; margin: 14px 0 4px; }
-.rubric--after { font-variant: normal; font-weight: 400; font-style: italic; letter-spacing: 0; margin-top: 8px; }
 .rubric-text { color: var(--rubric); font-style: italic; margin: 6px 0; }
 
 .score { margin: 4px 0 6px; }
 .score > div { width: 100%; }
-chant-visual { display: block; }
+chant-visual {
+  display: block;
+  --chant-lyric-font: var(--chant);
+  --chant-rubric-color: var(--rubric);
+}
 chant-visual svg { fill: var(--ink); stroke: var(--ink); max-width: 100%; height: auto; overflow: visible; }
 chant-visual svg text { stroke: none; }
 /* exsurge writes stroke="#000" on staff, ledger and bar lines: recolour them for the theme */
 chant-visual svg .staffLine, chant-visual svg .ledgerLine { stroke: var(--staff); }
 chant-visual svg [fill='#000'], chant-visual svg [fill='black'] { fill: var(--ink); }
 chant-visual svg [stroke='#000'], chant-visual svg [stroke='black'] { stroke: var(--ink); }
+
+/* Loading. A score is announced by two empty staves (the piece being fetched,
+   then exsurge laying it out: <chant-visual> stays empty until it is drawn),
+   so the gabc source is never seen and the page does not jump much. Other
+   pieces (psalms, readings) by a soft block. */
 .loading-piece { min-height: 70px; border-radius: 6px; background: linear-gradient(90deg, var(--info-bg), transparent); }
+.loading-piece--score, chant-visual:not([rendered]) {
+  --line: linear-gradient(var(--rule), var(--rule));
+  min-height: 136px;
+  border-radius: 0;
+  background:
+    var(--line) 0 12px / 100% 1px, var(--line) 0 24px / 100% 1px, var(--line) 0 36px / 100% 1px, var(--line) 0 48px / 100% 1px,
+    var(--line) 0 84px / 100% 1px, var(--line) 0 96px / 100% 1px, var(--line) 0 108px / 100% 1px, var(--line) 0 120px / 100% 1px;
+  background-repeat: no-repeat;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .loading-piece, .loading-piece--score, chant-visual:not([rendered]) { animation: pulse 1.4s ease-in-out infinite; }
+  chant-visual[rendered] { animation: appear 0.25s ease-out; }
+  @keyframes pulse { 50% { opacity: 0.4; } }
+  @keyframes appear { from { opacity: 0; } }
+}
 
 /* psalms */
 .psalmody-unit + .psalmody-unit { margin-top: 18px; padding-top: 6px; }
@@ -427,17 +441,11 @@ details.alternative[open] summary { color: var(--ink); }
   color: var(--muted);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .loading-piece { animation: pulse 1.4s ease-in-out infinite; }
-  @keyframes pulse { 50% { opacity: 0.4; } }
-}
-
 /* prayers (invocations, Pater noster, orations, blessing) */
 .response-sign { color: var(--rubric); font-weight: 600; }
 .prayer--bilingual { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; margin: 4px 0 10px; }
 .prayer--bilingual > * { min-width: 0; margin: 0; }
 .prayer__la { font-style: italic; }
-.prayer__it { color: var(--ink); }
 .prayer-invite .prayer__la, .prayer-invite .prayer__it { color: var(--muted); font-size: 0.95rem; }
 .prayer__single { margin: 4px 0 10px; }
 @media (max-width: 640px) {
@@ -469,31 +477,15 @@ details.alternative[open] summary { color: var(--ink); }
 
 /* note being played: a band across the staff behind it, a red bar underneath */
 chant-visual svg .playhead { pointer-events: none; }
-chant-visual svg .playhead__band { fill: var(--rubric); fill-opacity: 0.12; stroke: none; }
+chant-visual svg .playhead__band { fill: var(--rubric); fill-opacity: var(--playhead-opacity); stroke: none; }
 chant-visual svg .playhead__bar { fill: var(--rubric); stroke: none; }
 chant-visual svg .playhead--rest { opacity: 0.45; }
 @media (prefers-reduced-motion: no-preference) {
   chant-visual svg .playhead { transition: transform 0.12s ease-out, opacity 0.2s; }
   chant-visual svg .playhead--jump { transition: opacity 0.2s; }
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) chant-visual svg .playhead__band { fill-opacity: 0.2; }
-}
-:root[data-theme='dark'] chant-visual svg .playhead__band { fill-opacity: 0.2; }
 
 /* --- home page ------------------------------------------------------------------ */
-:root {
-  --lit-viola: #6b3d99; --lit-bianco: #c9a43a; --lit-verde: #2f7a4a; --lit-rosso: #b0261c; --lit-rosaceo: #c76a92;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --lit-viola: #a888d6; --lit-bianco: #d9b552; --lit-verde: #6cbf86; --lit-rosso: #e0675d; --lit-rosaceo: #e59bbb;
-  }
-}
-:root[data-theme='dark'] {
-  --lit-viola: #a888d6; --lit-bianco: #d9b552; --lit-verde: #6cbf86; --lit-rosso: #e0675d; --lit-rosaceo: #e59bbb;
-}
-
 .home { max-width: var(--measure); margin: 0 auto; padding-block: 8px 56px; }
 
 .home-today { text-align: center; padding-block: 30px 6px; }
@@ -569,11 +561,7 @@ chant-visual svg .playhead--rest { opacity: 0.45; }
 
 /* the week ahead */
 .week { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
-.week li { --dot: var(--lit-verde); min-width: 0; }
-.week li[data-season='viola'] { --dot: var(--lit-viola); }
-.week li[data-season='bianco'] { --dot: var(--lit-bianco); }
-.week li[data-season='rosso'] { --dot: var(--lit-rosso); }
-.week li[data-season='rosaceo'] { --dot: var(--lit-rosaceo); }
+.week li { min-width: 0; }
 .week__day {
   display: grid;
   justify-items: center;
@@ -592,7 +580,7 @@ chant-visual svg .playhead--rest { opacity: 0.45; }
 .week__wd { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
 .week__day--today .week__wd { color: var(--rubric); }
 .week__num { font-family: var(--text); font-size: 1.45rem; line-height: 1.1; }
-.week__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--dot); box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12); }
+.week__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--season); box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12); }
 .week__name {
   font-size: 0.68rem; line-height: 1.2; color: var(--muted); margin-top: 3px;
   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
@@ -626,11 +614,18 @@ chant-visual svg .playhead--rest { opacity: 0.45; }
 .comune-text__tag { font-family: var(--ui); font-size: 0.8rem; color: var(--muted); margin: 4px 0 0; }
 
 /* Santo del giorno (homepage) */
-.saints { display:inline-block; margin:8px auto 4px; padding:12px 22px 14px; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); min-width:min(100%,22rem) }
-.saints__label { font-family:var(--text); font-variant:small-caps; font-weight:600; letter-spacing:.06em; color:var(--rubric); margin:0 0 4px }
-.saints__list { list-style:none; margin:0; padding:0; display:grid; gap:8px }
-.saints__item { display:grid; gap:1px }
-.saints__name { font-size:1.22rem; line-height:1.25; text-wrap:balance }
-.saints__kind { font-family:var(--ui); font-size:.74rem; color:var(--muted); text-transform:uppercase; letter-spacing:.08em }
-.saints__off { font-style:italic; color:var(--muted); font-size:.95rem; line-height:1.35; margin-top:2px; text-wrap:balance }
-.saints__note { font-style:italic; color:var(--muted); font-size:.98rem; margin:6px auto 0; max-width:34rem; text-wrap:balance }
+.saints {
+  display: inline-block;
+  margin: 8px auto 4px;
+  padding: 12px 22px 14px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  min-width: min(100%, 22rem);
+}
+.saints__label { margin: 0 0 4px; }
+.saints__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.saints__item { display: grid; gap: 1px; }
+.saints__name { font-size: 1.22rem; line-height: 1.25; text-wrap: balance; }
+.saints__kind { font-family: var(--ui); font-size: 0.74rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.saints__off { font-style: italic; color: var(--muted); font-size: 0.95rem; line-height: 1.35; margin-top: 2px; text-wrap: balance; }
+.saints__note { font-style: italic; color: var(--muted); font-size: 0.98rem; margin: 6px auto 0; max-width: 34rem; text-wrap: balance; }

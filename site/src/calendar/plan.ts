@@ -3,6 +3,12 @@
 // be unit-tested without loading any data.
 
 import { addDays, liturgicalDay, movableDates, toDayNumber, WEEKDAY_NAMES, type LiturgicalDay } from './calendar';
+import type { Office } from '../data/types';
+
+/** The office for this hour of the day: Lodi until 2 pm, then Compieta. */
+export function suggestedOffice(now = new Date()): Office {
+  return now.getHours() < 14 ? 'lodi' : 'compieta';
+}
 
 // --- Lodi ---------------------------------------------------------------------
 

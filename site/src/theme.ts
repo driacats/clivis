@@ -1,5 +1,7 @@
-// Light/dark toggle. By default the site follows the system setting; once the
-// reader presses the button the choice is remembered in this browser.
+// Light/dark theme. <html data-theme> is always set: index.html sets it before
+// the first paint, this module keeps it up to date. By default the site
+// follows the system setting; once the reader presses the button the choice
+// is remembered in this browser.
 
 type Theme = 'light' | 'dark';
 
@@ -18,25 +20,29 @@ function saved(): Theme | null {
   }
 }
 
+/** The reader's choice (kept in memory too, for when storage is unavailable). */
+let chosen: Theme | null = saved();
+
 function current(): Theme {
-  return saved() ?? (systemDark.matches ? 'dark' : 'light');
+  return chosen ?? (systemDark.matches ? 'dark' : 'light');
 }
 
 export function setupThemeToggle(button: HTMLButtonElement): void {
-  const update = () => {
-    const next: Theme = current() === 'dark' ? 'light' : 'dark';
+  const apply = () => {
+    const theme = current();
+    document.documentElement.dataset.theme = theme;
+    const next: Theme = theme === 'dark' ? 'light' : 'dark';
     button.innerHTML = (next === 'dark' ? MOON : SUN) + `<span>${next === 'dark' ? 'Tema scuro' : 'Tema chiaro'}</span>`;
     button.setAttribute('aria-label', next === 'dark' ? 'Passa al tema scuro' : 'Passa al tema chiaro');
   };
 
   button.addEventListener('click', () => {
-    const next: Theme = current() === 'dark' ? 'light' : 'dark';
-    document.documentElement.dataset.theme = next;
-    try { localStorage.setItem(KEY, next); } catch { /* private mode: the choice lasts until reload */ }
-    update();
+    chosen = current() === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem(KEY, chosen); } catch { /* private mode: the choice lasts until reload */ }
+    apply();
   });
-  systemDark.addEventListener('change', update);
+  systemDark.addEventListener('change', apply);
 
-  update();
+  apply();
   button.hidden = false;
 }

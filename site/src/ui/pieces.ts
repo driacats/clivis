@@ -1,3 +1,4 @@
+import { ROMAN } from '../calendar/calendar';
 import { fetchGabc, fetchLettura, fetchPsalm, getEntry, getTexts } from '../data/loader';
 import type { Bilingual, LetturaDoc, LodiConclusion, PsalmDoc, SlotRef } from '../data/types';
 import { deferred, h, notice } from './dom';
@@ -21,7 +22,8 @@ async function buildChant(id: string, repeat = false): Promise<Node> {
   const { mode, body: full } = await fetchGabc(id);
   // the antiphon repeated after the psalm is sung without the EUOUAE
   const body = joinLines(repeat ? splitEuouae(full).main.trimEnd() : full);
-  // <chant-visual> reads its source and attributes when it is connected
+  // <chant-visual> reads its source and attributes when it is connected, and
+  // stays empty (drawn as empty staves by the CSS) until the score is laid out
   const cv = document.createElement('chant-visual');
   if (mode) cv.setAttribute('annotation', modeLabel(mode));
   cv.textContent = body;
@@ -39,7 +41,6 @@ export function joinLines(body: string): string {
     '(' + g.replace(/[a-mA-M]\+(?=\s*[zZ](?!0))/g, '').replace(/[zZ](?!0)[+-]?/g, '') + ')');
 }
 
-const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
 function modeLabel(mode: string): string {
   const n = Number(mode);
   return Number.isInteger(n) && n >= 1 && n <= 8 ? ROMAN[n] : mode;
@@ -47,7 +48,23 @@ function modeLabel(mode: string): string {
 
 /** The chant of a gabc/index.json id. */
 export const chant = (id: string, opts: { repeat?: boolean } = {}): HTMLElement =>
-  deferred(() => buildChant(id, opts.repeat ?? false));
+  deferred(() => buildChant(id, opts.repeat ?? false), 'score');
+
+// --- translations -----------------------------------------------------------------
+
+/**
+ * The Italian translation printed in the libretto under a chant. Hymns are
+ * folded away and laid out one line per verse ("/" in the data), a blank
+ * line between stanzas.
+ */
+export function translation(it: string | null | undefined, opts: { hymn?: boolean } = {}): HTMLElement | null {
+  if (!it) return null;
+  if (!opts.hymn) return h('p', { class: 'translation' }, it);
+  return h('details', { class: 'alternative' }, h('summary', {}, 'Traduzione'), h('p', { class: 'translation' }, hymnVerses(it)));
+}
+
+/** A hymn text of the data ("/" between verses, a newline between stanzas), one verse per line. */
+export const hymnVerses = (it: string): string => it.replace(/\n/g, '\n\n').replace(/\s*\/\s*/g, '\n');
 
 // --- psalm language ---------------------------------------------------------------
 
@@ -87,6 +104,12 @@ function langToggle(): HTMLElement {
   return bar;
 }
 
+/** A psalm or canticle, loaded from its file. */
+export const psalm = (file: string): HTMLElement => deferred(async () => psalmText(await fetchPsalm(file)));
+
+/** The Benedictus, sung at every Lodi. */
+export const benedictus = (): HTMLElement => psalm('salmi/cant-lc-1-68-79-benedictus.json');
+
 export function psalmText(doc: PsalmDoc): HTMLElement {
   const bilingual = doc.verses.some((v) => v.la);
   return h('div', { class: `psalm${bilingual ? ' psalm--bilingual' : ' psalm--it-only'}` },
@@ -119,13 +142,13 @@ function verseLines(text: string, cls: string, lang?: string): HTMLElement {
  * after it is the antiphon.
  */
 export function antiphonWithPsalm(id: string, label: string, repeat: string = id, repeatLabel: string = label): HTMLElement {
-  const psalm = getEntry(id)?.psalm;
+  const file = getEntry(id)?.psalm?.file;
   return h('div', { class: 'psalmody-unit' },
     rubric(label),
     chant(id),
-    psalm ? deferred(async () => psalmText(await fetchPsalm(psalm.file))) : null,
-    psalm ? rubric(repeatLabel) : null,
-    psalm ? chant(repeat, { repeat: true }) : null,
+    file ? psalm(file) : null,
+    file ? rubric(repeatLabel) : null,
+    file ? chant(repeat, { repeat: true }) : null,
   );
 }
 
