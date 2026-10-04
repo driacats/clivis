@@ -1,10 +1,14 @@
 {
   "ref": "Cant. Ger 31,10-14",
   "title": "Dio libera e raduna il suo popolo nella gioia",
-  "epigraph": "Gesù doveva morire ... per riunire i figli di Dio, che erano dispersi (Gv.",
+  "epigraph": "Gesù doveva morire ... per riunire i figli di Dio, che erano dispersi (Gv. 11,51. 52)",
   "verses": [
     {
-      "it": "Ascoltate, popoli, la parola del Signore, * annunziatela alle isole lontane e dite: “Chi ha disperso Israele lo raduna * e lo custodisce come fa un pastore con il gregge”,",
+      "it": "Ascoltate, popoli, la parola del Signore, * annunziatela alle isole lontane",
+      "la": null
+    },
+    {
+      "it": "e dite: “Chi ha disperso Israele lo raduna * e lo custodisce come fa un pastore con il gregge”,",
       "la": null
     },
     {

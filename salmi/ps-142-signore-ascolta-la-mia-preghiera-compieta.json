@@ -3,19 +3,20 @@
   "title": "Preghiera nella tribolazione",
   "epigraph": "Siamo giustificati dalla fede in Cristo e non dalle opere della legge (Gal. 2,16)",
   "verses": [
-    { "it": "Signore, ascolta la mia preghiera, † porgi l'orecchio alla mia supplica, tu che sei fedele, * per la tua giustizia rispondimi.", "la": "Domine, exáudi orationem meam, † auribus pércipe obsecratiónem meam in veritáte tua; * exáudi me in tua iustítia." },
+    { "it": "Signore, ascolta la mia preghiera, † porgi l'orecchio alla mia supplica, tu che sei fedele, * e per la tua giustizia rispondimi.", "la": "Domine, exáudi orationem meam, † auribus pércipe obsecratiónem meam in veritáte tua; * exáudi me in tua iustítia." },
     { "it": "Non chiamare in giudizio il tuo servo: * nessun vivente davanti a te è giusto.", "la": "Et non intres in iudícium cum servo tuo, * quia non iustificábitur in conspéctu tuo omnis vivens." },
-    { "it": "Il nemico mi perseguita, calpesta a terra la mia vita, mi ha relegato nelle tenebre * come i morti da gran tempo.", "la": "Quia persecútus est inimícus ánimam meam, † contrívit in terra vitam meam, * collocávit me in obscúris sicut mórtuos a saéculo." },
-    { "it": "In me languisce il mio spirito, * si agghiaccia in me il mio cuore.", "la": "Et anxiátus est in me spíritus meus, * in médio mei obríguit cor meum." },
-    { "it": "Ricordo i giorni antichi, † ripenso a tutte le tue opere, medito sui tuoi prodigi.", "la": "Memor fui diérum antiquórum, † meditátus sum in ómnibus opéribus tuis, * in factis mánuum tuárum recogitábam." },
+    { "it": "Il nemico mi perseguita, † calpesta a terra la mia vita, * mi ha relegato nelle tenebre come i morti da gran tempo.", "la": "Quia persecútus est inimícus ánimam meam, † contrívit in terra vitam meam, * collocávit me in obscúris sicut mórtuos a saéculo." },
+    { "it": "In me languisce il mio spirito, * si agghiaccia il mio cuore.", "la": "Et anxiátus est in me spíritus meus, * in médio mei obríguit cor meum." },
+    { "it": "Ricordo i giorni antichi, † ripenso a tutte le tue opere, * medito sui tuoi prodigi.", "la": "Memor fui diérum antiquórum, † meditátus sum in ómnibus opéribus tuis, * in factis mánuum tuárum recogitábam." },
     { "it": "A te protendo le mie mani, * sono davanti a te come terra riarsa.", "la": "Expándi manus meas ad te, * ánima mea sicut terra sine aqua tibi." },
     { "it": "Rispondimi presto, Signore, * viene meno il mio spirito.", "la": "Velóciter exáudi me, Dómine; * defécit spíritus meus." },
     { "it": "Non nascondermi il tuo volto, * perché non sia come chi scende nella fossa.", "la": "Non abscóndas fáciem tuam a me, * ne símilis fiam descendéntibus in lacum." },
     { "it": "Al mattino fammi sentire la tua grazia, * poiché in te confido.", "la": "Audítam fac mihi mane misericórdiam tuam, * quia in te sperávi." },
     { "it": "Fammi conoscere la strada da percorrere, * perché a te si innalza l'anima mia.", "la": "Notam fac mihi viam in qua ámbulem, * quia ad te levávi ánimam meam." },
-    { "it": "Salvami dai miei nemici, * a te mi affido.", "la": "Éripe me de inimícis meis, * Dómine, ad te confúgi." },
-    { "it": "Insegnami a compiere il tuo volere, † perché sei tu il mio Dio. * Il tuo spirito buono mi guidi in terra piana.", "la": "Doce me fácere voluntátem tuam, * quia Deus meus es tu. Spíritus tuus bonus dedúcet me in terram rectam;" },
-    { "it": "Per il tuo nome, Signore, fammi vivere, * liberami dall'angoscia, per la tua giustizia.", "la": "propter nomen tuum, Dómine, vivificábis me. In iustítia tua edúces de tribulatióne ánimam meam;" },
-    { "it": "[Per la tua fedeltà disperdi i miei nemici, † fa' perire chi mi opprime, * poiché io sono tuo servo.]", "la": "et perdes omnes qui tríbulant ánimam meam, * quóniam ego servus tuus sum." }
+    { "it": "Salvami dai miei nemici, Signore, * a te mi affido.", "la": "Éripe me de inimícis meis, * Dómine, ad te confúgi." },
+    { "it": "Insegnami a compiere il tuo volere, * perché sei tu il mio Dio.", "la": "Doce me fácere voluntátem tuam, * quia Deus meus es tu." },
+    { "it": "Il tuo spirito buono * mi guidi in terra piana.", "la": "Spíritus tuus bonus dedúcet me in terram rectam; * propter nomen tuum, Dómine, vivificábis me." },
+    { "it": "Per il tuo nome, Signore, fammi vivere, * liberami dall'angoscia, per la tua giustizia.", "la": "In iustítia tua * edúces de tribulatióne ánimam meam." },
+    { "it": "[Per la tua fedeltà disperdi i miei nemici, † fa' perire chi mi opprime, * poiché io sono tuo servo.]", "la": "[Et in misericórdia tua dispérdes inimícos meos, † et perdes omnes qui tríbulant ánimam meam, * quóniam ego servus tuus sum.]" }
   ]
 }

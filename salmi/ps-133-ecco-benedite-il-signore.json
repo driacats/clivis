@@ -3,7 +3,8 @@
   "title": "Orazione notturna nel tempio",
   "epigraph": "Lodate il nostro Dio voi tutti suoi servi, voi che lo temete, piccoli e grandi (Ap.19,5)",
   "verses": [
-    { "it": "Ecco, benedite il Signore, * voi tutti, servi del Signore; voi che state nella casa del Signore * durante le notti.", "la": "Ecce benedicite Dominum, omnes servi Domini, * qui statis in domo Dómini per noctes." },
+    { "it": "Ecco, benedite il Signore, * voi tutti, servi del Signore;", "la": "Ecce benedicite Dominum, * omnes servi Domini," },
+    { "it": "voi che state nella casa del Signore * durante le notti.", "la": "qui statis in domo Dómini * per noctes." },
     { "it": "Alzate le mani verso il tempio * e benedite il Signore.", "la": "Extóllite manus vestras ad sanctuárium * et benedícite Dominum." },
     { "it": "Da Sion ti benedica il Signore, * che ha fatto cielo e terra.", "la": "Benedícat te Dòminus ex Sion, * qui fecit cælum et terram." }
   ]

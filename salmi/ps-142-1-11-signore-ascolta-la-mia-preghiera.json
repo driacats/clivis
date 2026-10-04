@@ -1,7 +1,7 @@
 {
   "ref": "Ps 142 (1-11)",
-  "title": "Peghiera nella tribolazione",
-  "epigraph": "Siamo giustificati dalla fede in Cristo e non dalle opere della legge (Gal.",
+  "title": "Preghiera nella tribolazione",
+  "epigraph": "Siamo giustificati dalla fede in Cristo e non dalle opere della legge (Gal. 2,16)",
   "verses": [
     {
       "it": "Signore, ascolta la mia preghiera, † porgi l'orecchio alla mia supplica, tu che sei fedele, * e per la tua giustizia rispondimi.",
@@ -12,7 +12,11 @@
       "la": null
     },
     {
-      "it": "Il nemico mi perseguita, * calpesta a terra la mia vita, mi ha relegato nelle tenebre * come i morti da gran tempo.",
+      "it": "Il nemico mi perseguita, * calpesta a terra la mia vita,",
+      "la": null
+    },
+    {
+      "it": "mi ha relegato nelle tenebre * come i morti da gran tempo.",
       "la": null
     },
     {

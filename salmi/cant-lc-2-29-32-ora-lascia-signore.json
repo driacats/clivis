@@ -1,31 +1,31 @@
 {
-  "ref": "Lc 2,29-33",
+  "ref": "Lc 2,29-32",
   "title": "Cantico di Simeone",
   "epigraph": "Cristo, luce delle genti e gloria d'Israele",
   "verses": [
     {
-      "it": "Ora lascia, o Signore che il tuo servo * va da in pace seconda la tua parola.",
-      "la": "[Nunc dimittis servum Domine * secundum verbum tuum in pace.]"
+      "it": "Ora lascia, o Signore, che il tuo servo * vada in pace secondo la tua parola;",
+      "la": "[Nunc dimittis servum tuum, Domine, * secundum verbum tuum in pace.]"
     },
     {
-      "it": "Perché i miei occhi ha visto la salvezza * preparata da te davanti a tutti i popoli,",
+      "it": "perché i miei occhi hanno visto * la salvezza",
       "la": "Quia viderunt oculi mei * salutare tuum,"
     },
     {
-      "it": "Luce per illuminare le genti * e gloria del tuo popolo Israele.",
+      "it": "preparata da te * davanti a tutti i popoli,",
       "la": "Quod parasti * ante faciem omnium populorum,"
     },
     {
-      "it": "Gloria al Padre, al Figlio * e allo Spirito Santo",
+      "it": "luce per illuminare le genti * e gloria del tuo popolo Israele.",
       "la": "lumen ad revelationem Gentium * et gloriam plebis tuæ Israel."
     },
     {
-      "it": "Come era nel principio e ora e sempre * nei secoli dei secoli.",
-      "la": "Gloria Patri et Filio * et Spiritui Sancto"
+      "it": "Gloria al Padre, al Figlio * e allo Spirito Santo.",
+      "la": "Gloria Patri et Filio * et Spiritui Sancto."
     },
     {
-      "it": "Amen",
-      "la": "Sicut erat in principio et nunc et semper * et in sæcula sæculorum. Amen"
+      "it": "Come era nel principio e ora e sempre * nei secoli dei secoli. Amen.",
+      "la": "Sicut erat in principio et nunc et semper * et in sæcula sæculorum. Amen."
     }
   ]
 }
