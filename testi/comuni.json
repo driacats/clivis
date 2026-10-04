@@ -1,0 +1,1744 @@
+{
+ "_comment": "Comune dei santi delle Lodi (libretto pp. 203-299): testi italiani stampati nel libretto, per ogni parte le varianti con la loro rubrica. \"canto\" = id in gabc/index.json quando la melodia è trascritta. Generato con gabc/tools/comuni/ e poi corretto a mano.",
+ "comuni": [
+  {
+   "id": "dedicazione",
+   "titolo": "Dedicazione di una chiesa",
+   "pagine": "pp. 203-208",
+   "note": [],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": null,
+      "it": "1. Cristo fu inviato come pietra per la testata d’angolo, la quale si interseca in entrambe le connessioni delle pareti: la santa Gerusalemme la ingloba e resta salda, credendo in lui.\n2. Quella città, interamente sacra a Dio e [da Lui] amata, piena di melodie di lode e armoniosamente di giubilo, con fervore celebra il Dio trino ed unico.\n3. In questo tempio, o sommo Dio, supplicato, vieni, e, con bontà clemente, accogli le preghiere di supplica; infondi continuamente qui una larga benedizione.\n4. Qui tutti ottengono di raggiungere quanto cercano e di possedere ciò che hanno conseguito, con i santi, per sempre, di entrare in paradiso, trasportati nella pace.\n5. Gloria ed onore al Dio in eterno altissimo, una sola al Padre e al Figlio e allo Spirito Santo: a loro lodi e potenza per i secoli eterni. Amen.",
+      "canto": "lodi.CS-ded-inno"
+     }
+    ],
+    "ant1": [
+     {
+      "rubrica": null,
+      "it": "La mia casa sarà chiamata casa di preghiera",
+      "canto": "lodi.CS-ded-a1"
+     }
+    ],
+    "ant2": [
+     {
+      "rubrica": null,
+      "it": "Benedetta la gloria del Signore, dal suo santuario, alleluia",
+      "canto": "lodi.CS-ded-a2"
+     }
+    ],
+    "ant3": [
+     {
+      "rubrica": null,
+      "it": "La casa del Signore è fondata bene sopra ad una salda roccia",
+      "canto": "lodi.CS-ded-a3"
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Li condurró sul mio monte santo e li colmeró di gioia nella mia casa di preghiera. I loro olocausti e i loro sacrifici saliranno graditi sul mio altare, perché il mio tempio si chiamerá casa di preghiera per tutti i popoli.",
+      "rif": "Is. 56,7"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": null,
+      "it": "Grande è il Signore e degno di ogni lode. Nella città del nostro Dio, sul suo monte santo. Gloria",
+      "canto": "lodi.CS-ded-rb"
+     },
+     {
+      "rubrica": "Nel Tempo Pasquale",
+      "tp": true,
+      "it": null,
+      "canto": "lodi.CS-ded-rb-tp"
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": null,
+      "it": "Zaccheo, affrettati a scendere, perché bisogna che oggi io mi fermi in casa tua: e questi si affrettò a scendere, e lo accolse con gioia in casa sua. Oggi Dio ha salvato questa casa, alleluia.",
+      "canto": "lodi.CS-ded-ben"
+     }
+    ],
+    "invocazioni": [
+     {
+      "rubrica": null,
+      "it": {
+       "intro": "Fratelli carissimi, noi siamo pietre vive edificate in tempio spirituale sulla pietra eletta che è Cristo. Diciamo insieme:",
+       "response": "Santifica la tua Chiesa, Signore.",
+       "intercessions": [
+        {
+         "petition": "Padre santo, mistico agricoltore, purifica, custodisci e rendi feconda la tua vigna,",
+         "answer": "perché con la tua benedizione si estenda su tutta la terra."
+        },
+        {
+         "petition": "Pastore eterno, proteggi e moltiplica il tuo gregge, che è la Chiesa,",
+         "answer": "fa’ che tutti i popoli si raccolgano in un solo ovile e sotto un solo pastore."
+        },
+        {
+         "petition": "Divino seminatore, semina la parola di vita eterna nel tuo campo, che è il mondo,",
+         "answer": "perché produca il cento per uno per la messe del tuo regno."
+        },
+        {
+         "petition": "Sapiente costruttore, mantieni compatta la tua casa e santifica la famiglia radunata nel tuo nome,",
+         "answer": "perché risplenda a tutti, come nuova Gerusalemme, la Sposa santa del tuo Figlio."
+        }
+       ]
+      }
+     }
+    ],
+    "orazione": [
+     {
+      "rubrica": "Nella chiesa dedicata",
+      "it": "Ascolta, Signore, la preghiera del tuo popolo, che ricorda con gioia il giorno della consacrazione di questo tempio, perché la comunitá che si raduna in questa santa dimora possa offrirti un servizio degno e irreprensibile e ottenga pienamente i frutti della redenzione. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Fuori della chiesa dedicata",
+      "it": "O Dio, che con pietre vive e scelte prepari il tempio della tua gloria, effondi sulla Chiesa il tuo Santo Spirito, perché edifichi il popolo dei credenti che formerá la Gerusalemme del cielo. Per Cristo nostro Signore."
+     },
+     {
+      "rubrica": "oppure",
+      "it": "O Dio, che hai voluto chiamare tua Chiesa la moltitudine dei credenti fa' che il popolo radunato nel tuo nome ti adori, ti ami, ti segua, e sotto la tua guida giunga ai beni da te promessi. Per Cristo nostro Signore."
+     }
+    ]
+   }
+  },
+  {
+   "id": "bvm",
+   "titolo": "Comune della Beata Vergine Maria",
+   "pagine": "pp. 208-215",
+   "note": [],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": null,
+      "it": "1. O gloriosa Signora,/ che t’innalzi sopra le stelle,/ tu nutri col tuo seno/ Chi nella provvidenza ti creò./\n2. Ciò che Eva purtroppo ci tolse/ tu ridoni per mezzo del Figlio tuo;/ come pallide stelle si avanzino i poveri;/ Tu, benigna, spiani un sentiero./\n3. Tu sei la porta del Re del cielo,/ la porta di una fulgida luce;/ o genti redente, applaudite/ alla vita data dalla Vergine\n4. Al Padre sia, al Paraclito / ed al tuo Nato, gloria / lor, che di mira veste / di grazia ti ammantarono."
+     }
+    ],
+    "ant1": [
+     {
+      "rubrica": null,
+      "it": "Beata sei, Maria, Madre del nostro Signore Gesù Cristo, poiché da te è venuta la salvezza del mondo: ora, Vergine gloriosa, ti rallegri al cospetto del Signore; intercedi per noi presso il Figlio"
+     }
+    ],
+    "ant2": [
+     {
+      "rubrica": null,
+      "it": "Tu gloria di Gerusalemme, tu letizia di Israele, tu onore del nostro popolo"
+     }
+    ],
+    "ant3": [
+     {
+      "rubrica": null,
+      "it": "Maria Vergine, rallegrati, tu che ti sei degnata di portare Cristo, Creatore del cielo e della terra; poiché dal tuo grembo hai generato il Salvatore del mondo, alleluia"
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Io gioisco pienamente nel Signore, la mia anima esulta nel mio Dio, perché mi ha rivestito delle vesti di salvezza, mi ha avvolto con il manto della giustizia, come uno sposo che si cinge il diadema e come una sposa che si adorna di gioielli.",
+      "rif": "Cfr. Is. 61,10"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": null,
+      "it": "Dio la ha scelta e l’ha prediletta. Nella sua tenda l’ha fatta dimorare. Gloria."
+     },
+     {
+      "rubrica": "Nel tempo pasquale",
+      "tp": true,
+      "it": null
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": null,
+      "it": "La porta del Paradiso fu chiusa per tutti per mezzo di Eva, e per mezzo di Maria Vergine fu di nuovo spalancata, alleluia"
+     }
+    ],
+    "invocazioni": [
+     {
+      "rubrica": null,
+      "it": {
+       "intro": "Rivolgiamo la nostra lode e la nostra supplica al Cristo Salvatore, nato da Maria Vergine e diciamo:",
+       "response": "Maria, la Madre tua, sostenga la nostra preghiera.",
+       "intercessions": [
+        {
+         "petition": "Sole di giustizia, che hai voluto farti precedere da Maria immacolata, mistica aurora della redenzione,",
+         "answer": "fa’ che camminiamo sempre nella luce della tua presenza."
+        },
+        {
+         "petition": "Verbo eterno, che hai scelto Maria come arca santa per la tua dimora fra noi,",
+         "answer": "liberaci dalla corruzione del peccato."
+        },
+        {
+         "petition": "Salvatore nostro, che hai voluto la Madre tua ai piedi della croce, unita nell’offerta del sacrificio,",
+         "answer": "fa’ che comunichiamo, per sua intercessione, al mistero della tua passione e della tua gloria."
+        },
+        {
+         "petition": "Gesú buono, che mentre pendevi dalla croce, hai dato per madre a Giovanni la Vergine addolorata,",
+         "answer": "concedi a noi la grazia di vivere come suoi veri figli."
+        }
+       ]
+      }
+     },
+     {
+      "rubrica": "Oppure",
+      "it": {
+       "intro": "Ringraziamo il nostro Salvatore che in Maria Vergine, ci ha dato una mediatrice potente e preghiamo con fiducia.",
+       "response": "Interceda per noi la Madre tua, o Signore.",
+       "intercessions": [
+        {
+         "petition": "Salvatore del mondo, che per i meriti della tua redenzione hai preservato tua Madre da ogni contagio di colpa,",
+         "answer": "conservaci liberi dal peccato."
+        },
+        {
+         "petition": "Redentore nostro, che in Maria, eletta come santuario dello Spirito Santo, hai posto la sede purissima della tua dimora fra noi,",
+         "answer": "trasformaci in tempio vivo del tuo Spirito."
+        },
+        {
+         "petition": "Verbo eterno, che a Maria, vergine sapiente, hai insegnato a scegliere la parte migliore,",
+         "answer": "aiutaci a cercare sempre la parola di vita eterna."
+        },
+        {
+         "petition": "Re dei re, che hai assunto accanto a te nella gloria, in corpo ed anima, Maria tua madre,",
+         "answer": "fa’ che la nostra vita sia sempre orientata verso di te."
+        },
+        {
+         "petition": "Signore del cielo e della terra, che hai incoronato Maria regina dell’universo, ponendola alla tua destra,",
+         "answer": "donaci di condividere la sua gloria."
+        }
+       ]
+      }
+     }
+    ],
+    "orazione": [
+     {
+      "rubrica": "Tempo di Avvento",
+      "it": "O Dio, che all'annunzio dell'angelo hai voluto che il tuo Verbo si facesse uomo nel grembo verginale di Maria, concedi al tuo popolo, che la onora come vera Madre di Dio, di godere sempre della sua materna intercessione. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Tempo di Natale",
+      "it": "O Dio, che nella verginitá feconda di Maria hai donato agli uomini i beni della salvezza eterna, fa' che sperimentiamo la sua intercessione poiché per mezzo di lei abbiamo ricevuto l'autore della vita Cristo tuo Figlio, che è Dio, e vive e regna con te."
+     },
+     {
+      "rubrica": "Tempo di Quaresima",
+      "it": "Infondi nel nostro spirito la tua grazia, Signore, tu che all'annunzio dell'angelo ci hai rivelato l'incarnazione del tuo Figlio, per la sua passione e la sua croce guidaci alla gloria della risurrezione. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Tempo di Pasqua",
+      "tp": true,
+      "it": "O Dio, che nella gloriosa risurrezione del tuo Figlio hai ridonato la gioia al mondo intero, per intercessione di Maria Vergine concedi a noi di godere la gioia senza fine della vita eterna. Per il nostro Signore."
+     },
+     {
+      "rubrica": "oppure",
+      "it": "O Dio, che ai tuoi apostoli riuniti nel cenacolo con Maria madre di Gesú, hai donato lo Spirito Santo, concedi anche a noi, per intercessione della Vergine, di consacrarci pienamente al tuo servizio e annunziare con la parola e con l'esempio le grandi opere del tuo amore. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Tempo ordinario",
+      "it": "Concedi ai tuoi fedeli, Signore Dio nostro, di godere sempre la salute del corpo e dello spirito e per la gloriosa intercessione di Maria santissima, sempre vergine, salvaci dai mali che ora ci rattristano e guidaci alla gioia senza fine. Per il nostro Signore."
+     },
+     {
+      "rubrica": "oppure",
+      "it": "Perdona, Signore, le colpe dei tuoi figli, e poiché non possiamo salvarci con le nostre opere ci soccorra l'intercessione della Vergine Maria, madre del tuo Figlio e nostro Signore Gesú Cristo, che è Dio, e vive e regna con te."
+     },
+     {
+      "rubrica": "oppure",
+      "it": "O Dio, Padre misericordioso, soccorri la nostra debolezza e per intercessione di Maria, Madre immacolata del tuo Figlio fa' che risorgiamo dal peccato alla vita nuova. Per il nostro Signore."
+     },
+     {
+      "rubrica": "oppure",
+      "it": "Ci soccorra, Signore, l’intercessione della beata sempre Vergine Maria perché liberi da tutti i pericoli possiamo godere la tua pace. Per il nostro Signore."
+     },
+     {
+      "rubrica": "oppure",
+      "it": "Guarda, Signore, il tuo popolo, riunito nel ricordo della beata Vergine Maria e fa' che per sua intercessione partecipi alla pienezza della tua grazia. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Oppure",
+      "it": "Dio onnipotente ed eterno, concedi al tuo popolo che confida nella materna protezione della Vergine Maria, di essere liberato da tutti i mali per giungere alla gioia eterna del cielo. Per il nostro Signore."
+     }
+    ]
+   }
+  },
+  {
+   "id": "sabato-1",
+   "titolo": "Memoria di Santa Maria in sabato, 1° schema",
+   "pagine": "pp. 215-218",
+   "salmodia": "feria",
+   "orazione": "bvm",
+   "note": [],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": null,
+      "it": "1. O Vergine, Tu sei stella risplendente / di carità per i Celesti, / fonte viva e traboccante / di speranza per noi mortali.\n2. Sei così potente, o eccelsa Signora, / sul cuore del pietosissimo Figlio, / che chi chiede con fiducia, / per Te sicuramente ottiene.\n3. La tua bontà non solo / porta aiuto a chi chiede, / ma anche spesso spontaneamente / previene i desideri di coloro che pregano.\n4. In Te misericordia, / in Te magnanimità; / Tu raccogli in Te tutto ciò che di bontà / gli esseri creati posseggono.\n5. Sia gloria al Padre, / al Paraclito e al tuo Figlio, / che ti hanno rivestito / della veste mirabile della grazia."
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Quando venne la pienezza del tempo, Dio mandó il suo Figlio, nato da donna, nato sotto la legge, per riscattare coloro che erano sotto la legge, perché ricevessimo l'adozione a figli.",
+      "rif": "Gal. 4,4-5"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": null,
+      "it": "Sei rimasta illibata dopo il parto. Madre di Dio, intercedi per noi. Gloria"
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": null,
+      "it": "Ave, Maria, piena di grazia: il Signore è con te. Tu sei benedetta fra le donne."
+     },
+     {
+      "rubrica": "oppure",
+      "it": "Ave, Regina dei cieli, Madre del Re degli Angeli; o Maria, fiori delle vergini, qual rosa, qual giglio: effondi preghiere al Signore, per la salvezza dei fedeli."
+     }
+    ],
+    "invocazioni": [
+     {
+      "rubrica": null,
+      "it": {
+       "intro": "Glorifichiamo Dio, Padre misericordioso, che ci ha dato in Maria un modello di totale dedizione all'opera della redenzione. Innalziamo a lui la nostra umile preghiera e diciamo:",
+       "response": "Conservaci fedeli nel tuo servizio, o signore.",
+       "intercessions": [
+        {
+         "petition": "Maria, acconsentendo alla tua parola, e diventata Madre di Gesú,",
+         "answer": "dona anche a noi di accogliere la tua parola di salvezza per realizzare in noi il Cristo."
+        },
+        {
+         "petition": "Tu hai guardato la tua umile serva, riempiendola di grazia,",
+         "answer": "volgi il tuo sguardo misericordioso anche a noi e rinnovaci con la tua grazia."
+        },
+        {
+         "petition": "Aderendo con tutto l'animo al tuo beneplacito di salvezza, Maria si è offerta come umile serva all'opera del tuo Figlio,",
+         "answer": "fa' che anche noi cooperiamo generosamente alla edificazione del regno di Cristo."
+        },
+        {
+         "petition": "Maria, presentata al tempio, fu per i Santi modello di perfetta consacrazione a te,",
+         "answer": "fa' che anche noi ti serviamo con crescente fervore."
+        }
+       ]
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "sabato-2",
+   "titolo": "Memoria di Santa Maria in sabato, 2° schema",
+   "pagine": "pp. 218-221",
+   "salmodia": "feria",
+   "orazione": "bvm",
+   "note": [],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": null,
+      "it": "1. O gloriosa Signora, / eccelsa più delle stelle, / Tu nutri al sacro seno / Colui che sapientemente ti ha creato.\n2. La grazia, che l’infelice Eva ci tolse, / Tu ci restituisci nell’almo Figlio; / e appiani benigna il cammino, affinché noi / deboli (possiamo) entrare nel Regno dei cieli.\n3. Tu sei l’ingresso dell’altissimo Re, / e porta splendente di luce; / o genti redente, applaudite / alla vita donataci per la Vergine.\n4. Sia gloria al Padre, / al Paraclito e al tuo Figlio, / che ti rivestirono della veste / mirabile della grazia. Amen."
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Io gioisco pienamente nel Signore, la mia anima esulta nel mio Dio, perché mi ha rivestito delle vesti di salvezza, mi ha avvolto con il manto della giustizia, come uno sposo che si cinge il diadema e come una sposa che si adorna di gioielli.",
+      "rif": "Cfr. Is.61,10"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": null,
+      "it": "Il Signore la ha scelta, e la ha prescelta. L’ha fatta abitare nelle sua tenda. Gloria"
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": null,
+      "it": "Beata Madre di Dio, Maria, sempre Vergine, tempio del Signore, sacrario dello Spirito Santo: sola, senza pari, sei piaciuta al Signore Gesù Cristo: prega per il popolo, aiuta i sacerdoti, intercedi per le figlie devote"
+     },
+     {
+      "rubrica": "oppure",
+      "it": "Madre beata e Vergine illibata, gloriosa Regina del mondo, intercedi per noi presso il Signore"
+     }
+    ],
+    "invocazioni": [
+     {
+      "rubrica": null,
+      "it": {
+       "intro": "Riuniti nella preghiera della sera, invochiamo Dio nostro Padre, che ha reso Maria tutta santa, per essere degna madre del Redentore. Diciamo con fede:",
+       "response": "Accetta, Signore, l’offerta della nostra vita.",
+       "intercessions": [
+        {
+         "petition": "Tu hai ornato Maria di mirabili doni, perché fosse degno strumento del tuo progetto di salvezza,",
+         "answer": "rendici docili alla tua parola."
+        },
+        {
+         "petition": "Tu che ispirasti Maria nel dono totale della sua vita,",
+         "answer": "rendici generosi nel tuo servizio."
+        },
+        {
+         "petition": "Tu che, per il consenso della tua umile serva e l'opera dello Spirito Santo, hai donato al mondo il Salvatore,",
+         "answer": "fa' che anche noi collaboriamo al tuo disegno di salvezza."
+        },
+        {
+         "petition": "Tu che ispirasti a molti Santi di consacrarsi con Maria al tuo servizio in questo giorno,",
+         "answer": "dona a noi di vivere generosamente la nostra consacrazione."
+        },
+        {
+         "petition": "Sacerdote sommo et eterno, che hai voluto Maria accanto a te ai piedi della croce,",
+         "answer": "per le sue preghiere donaci la gioia di comunicare alla tua passione."
+        }
+       ]
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "sabato-3",
+   "titolo": "Memoria di Santa Maria in sabato, 3° schema",
+   "pagine": "pp. 221-224",
+   "salmodia": "feria",
+   "orazione": "bvm",
+   "note": [],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": null,
+      "it": "1. Ave, stella del mare, / alma Madre di Dio, / Madre sempre Vergine, / prospera porta del cielo.\n2. Accogliendo l’ave / dalla bocca di Gabriele, / rendici saldi nella pace, / e cambia la sorte di Eva.\n3. Spezza i legami ai rei, / porta la luce ai ciechi, / allontana i nostri mali, / chiedi (per noi) ogni bene.\n4. Mostra di essere Madre, / accolga per Te le preghiere / Colui che nato per noi / volle essere tuo.\n5. O Vergine singolare, / la più mite di tutte, / fa’ mansueti e puri / noi sciolti dai vincoli del peccato.\n6. Donaci una vita pura, / prepara un cammino sicuro, / affinché, vedendo Gesù, / possiamo esser sempre lieti.\n7. Sia lode a Dio Padre, / sia onore all’eccelso Cristo, / (sia) onore allo Spirito Santo, / un medesimo (onore) ai Tre. Amen."
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Nel cielo apparve un segno grandioso: una donna vestita di sole, con la luna sotto i suoi piedi e sul suo capo una corona di dodici stelle.",
+      "rif": "Apoc. 12,1"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": null,
+      "it": "Ave, Maria, piena di grazia: il Signore è con te. Tu sei benedetta tra le donne, e benedetto il frutto del tuo grembo. Gloria."
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": null,
+      "it": "Vergine Maria, tu sei benedetta dal Signore, Dio eccelso, tra tutte le donne sulla terra"
+     },
+     {
+      "rubrica": "oppure",
+      "it": "Madre nella verginità, vergine nel parto, gioisci e rallegrati, Vergine Madre del Signore"
+     }
+    ],
+    "invocazioni": [
+     {
+      "rubrica": null,
+      "it": {
+       "intro": "A Dio Padre, che ha compiuto grandi cose nella beata Vergine Maria e opera sempre nella Chiesa i prodigi del suo amore, rivolgiamo la nostra preghiera",
+       "response": "Ascoltaci, Signore.",
+       "intercessions": [
+        {
+         "petition": "Per la Chiesa, perché in armonia con il cantico della Vergine Madre annunzi a tutti i popoli le grandi opere del Dio misericordioso, che rovescia i potenti dai troni ed esalta gli umili, preghiamo.",
+         "answer": ""
+        },
+        {
+         "petition": "Per tutte le genti, perché mediante l’azione dello Spirito Santo si raccolgano nell’unico popolo di Dio, sotto la regalitá di Cristo Signore, preghiamo.",
+         "answer": ""
+        },
+        {
+         "petition": "Per la concordia delle nazioni, perché la potenza supplice di Maria, madre e regina, apra tempi nuovi in cui, cessati gli odi e le guerre, tutto il mondo goda di una vera e stabile pace, preghiamo.",
+         "answer": ""
+        },
+        {
+         "petition": "Per quelli che soffrono nella malattia, nella miseria e nella solitudine, per i prigionieri e i perseguitati, perché la Vergine, regina di misericordia, sollevi i cuori alla speranza e li consoli con il suo materno amore, preghiamo.",
+         "answer": ""
+        },
+        {
+         "petition": "Per tutti noi qui riuniti, perché riconoscendo la singolare grandezza di Maria e crescendo nell’amore per lei, ne imitiamo l’umiltá e lo spirito di servizio, preghiamo.",
+         "answer": ""
+        }
+       ]
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "sabato-4",
+   "titolo": "Memoria di Santa Maria in sabato, 4° schema",
+   "pagine": "pp. 224-228",
+   "salmodia": "feria",
+   "orazione": "bvm",
+   "note": [],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": null,
+      "it": "1. O Maria, che accogli con amore / le preghiere degli uomini, / ecco ti preghiamo supplichevoli, / sii sempre vicina a noi.\n2. Sii vicina se ci opprime / la catena orrida dei peccati; / subito sciogli i vincoli / che legano i cuori ai peccati.\n3. Soccorrici se le illusioni / del mondo ci lusingano, / affinché la mente, dimentica del cielo, / non abbandoni la via della salvezza.\n4. Soccorrici se la sorte avversa / minaccia il corpo; / fa’ che viviamo giorni sereni, / finché non risplenda il giorno eterno.\n5. Sii per noi, tuoi figli, / anche protezione nel momento della morte, / affinché con il tuo aiuto / ci sia dato di conseguire l’eterno premio.\n6. Sia gloria al Padre, / al Paraclito e al tuo Figlio, / che ti hanno rivestito / della splendida veste della grazia. Amen"
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Un germoglio spunterà dal tronco di Iesse, un virgulto germoglierá dalle sue radici. Su di lui si poserá lo spirito del Signore, spirito di sapienza e di intelligenza, spirito di consiglio e di fortezza, spirito di conoscenza e di timore del Signore. Si compiacerá del timore del Signore.",
+      "rif": "Is. 11,1-3a"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": null,
+      "it": "Con il tuo splendore e la tua bellezza. Vieni avanti, avanza trionfalmente e regna. Gloria"
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": null,
+      "it": "Sotto la tua protezione cerchiamo rifugio, santa Madre di Dio: non disprezzare le nostre suppliche nella prova: ma liberaci sempre da tutti i pericoli, Vergine gloriosa e benedetta"
+     },
+     {
+      "rubrica": "oppure",
+      "it": "Tu, gloria di Gerusalemme, tu, letizia di Israele, tu onore del nostro popolo"
+     },
+     {
+      "rubrica": "oppure",
+      "it": "La videro le figlie di Sion e la proclamarono beata, e le regine la lodarono"
+     },
+     {
+      "rubrica": "Oppure",
+      "it": "Vergine Maria, non è nata al mondo nessuna che ti sia simile tra le donne: splendida come una rosa, fragrante come un giglio! Prega per noi, santa Madre di Dio"
+     }
+    ],
+    "invocazioni": [
+     {
+      "rubrica": null,
+      "it": {
+       "intro": "Benediciamo Dio, nostro Padre, che ha donato Maria addolorata quale mistica aurora della redenzione, e supplichiamo con fede:",
+       "response": "Interceda per noi, o Signore, la Regina dei martiri",
+       "intercessions": [
+        {
+         "petition": "Padre santo, che hai mandato nel mondo il tuo Figlio come salvatore di tutti gli uomini,",
+         "answer": "donaci di accoglierlo con l'ardente amore di Maria."
+        },
+        {
+         "petition": "Padre, sorgente di fortezza, che hai reso intrepida la Vergine Maria presso la croce del suo Figlio,",
+         "answer": "per sua intercessione sostieni il nostro animo di fronte alle pene e avversitá della vita."
+        },
+        {
+         "petition": "Padre clementissimo, che hai conservato la Vergine Maria nella fede e nella speranza, ai piedi della croce,",
+         "answer": "ravviva la nostra fede nelle lotte e prove della vita"
+        },
+        {
+         "petition": "Padre, artefice e amante della vita, ancora oggi il tuo Figlio soffre e muore nei fratelli,",
+         "answer": "concedici di essere, come la Vergine Maria, accanto ai tuoi figli che soffrono."
+        },
+        {
+         "petition": "Padre giusto, in Maria, nuova Eva, hai dato a noi le primizie dei tempi nuovi,",
+         "answer": "rendi le nostre comunitá segno manifesto della novitá di vita, donata dal Cristo"
+        }
+       ]
+      }
+     },
+     {
+      "rubrica": "Oppure",
+      "vedi": "sabato-3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "apostoli",
+   "titolo": "Comune degli Apostoli",
+   "pagine": "pp. 228-234",
+   "note": [
+    "L’inno è sempre nel Proprio dei Santi: il libretto riporta solo quelli di Quaresima e del Tempo pasquale."
+   ],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": "Nel Tempo di Quaresima",
+      "it": "1. O Principi della eterna corte / del sommo Re, / che Gesù medesimo ammaestrando / diede al mondo come Apostoli,\n2. la celeste Gerusalemme, / la cui luce è l’Agnello, / possiede, come gemme brillanti, / voi gloriose fondamenta.\n3. Ora vi celebra, congratulandosi, / anche la Chiesa Sposa di Cristo, / che la vostra predicazione chiamò, / che con il sangue consacraste.\n4. Quando alla fine dei secoli / il Redentore sederà come Giudice, / con qual lode voi sederete / Senato di alta gloria!\n5. La vostra preghiera dunque / ci corrobori sempre aiutandoci, / affinché quei semi che spargeste / fioriscano in chicchi del cielo.\n6. Sia gloria eterna a Cristo, / che vi fece annunziatori del Padre / e vi riempì della benefica / potenza dello Spirito Santo. Amen."
+     },
+     {
+      "rubrica": "Nel Tempo Pasquale",
+      "tp": true,
+      "it": "1. Nella luminosa gioia pasquale / il sole risplende di puro raggio, / allorché gli Apostoli / mirano con lo sguardo il Cristo risorto.\n2. Apertamente confessano / che a loro sono state mostrate / le ferite splendenti nella carne di Cristo, / che il Signore è risorto.\n3. O Cristo, Re clementissimo, / prendi possesso dei nostri cuori, / affinché ti rendiamo / in ogni tempo le dovute lodi.\n4. Sii perenne gioia pasquale / alle menti, o Gesù, / e noi, rinati alla grazia, / unisci ai tuoi trionfi.\n5. A Te sia gloria, o Cristo, / che, distrutto il regno della morte, / manifestasti per mezzo degli Apostoli / i sentieri della vita e della luce. Amen."
+     }
+    ],
+    "ant1": [
+     {
+      "rubrica": null,
+      "it": "Questo è il mio comandamento: che vi amiate gli uni gli altri, come io ho amato voi"
+     }
+    ],
+    "ant2": [
+     {
+      "rubrica": null,
+      "it": "Nessuno ha una carità più grande di questa: dare la vita per i propri amici"
+     }
+    ],
+    "ant3": [
+     {
+      "rubrica": null,
+      "it": "Voi siete miei amici, se farete quello che vi comando, dice il Signore"
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Voi non siete più stranieri né ospiti, ma siete concittadini dei santi e familiari di Dio, edificati sopra il fondamento degli apostoli e dei profeti, e avendo come pietra angolare lo stesso Cristo Gesù. In lui ogni costruzione cresce ben ordinata per essere tempio santo nel Signore; in lui anche voi insieme con gli altri venite edificati per diventare dimora di Dio per mezzo dello Spirito.",
+      "rif": "Eph. 2,19-22"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": null,
+      "it": "Li porrai come capi su tutta la terra. Si ricorderanno del tuo nome, o Signore. Gloria"
+     },
+     {
+      "rubrica": "Nel Tempo Pasquale",
+      "tp": true,
+      "it": null
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": null,
+      "it": "Vi consegneranno ai tribunali e vi flagelleranno nelle loro sinagoghe, e sarete condotti davanti ai re e ai governatori per causa mia, a testimonianza loro e dei pagani"
+     },
+     {
+      "rubrica": "Nel Tempo Pasquale",
+      "tp": true,
+      "it": "Santi e giusti, gioite nel Signore, alleluia: Dio vi ha scelti come sua eredità, alleluia"
+     }
+    ],
+    "invocazioni": [
+     {
+      "rubrica": null,
+      "it": {
+       "intro": "Dio nostro Padre, per mezzo degli apostoli, ci ha fatti eredi del regno dei cieli. Riconosciamo tutti i suoi benefici acclamando:",
+       "response": "Ti loda, Signore, il coro degli Apostoli.",
+       "intercessions": [
+        {
+         "petition": "Gloria a te, Signore, per la mensa del Corpo e del Sangue di Cristo, trasmessa a noi dagli Apostoli,",
+         "answer": "è il banchetto imbandito dal tuo Figlio, che ci nutre e ci dá vita."
+        },
+        {
+         "petition": "Gloria a te, Signore, per la mensa della tua parola preparata a noi dagli Apostoli,",
+         "answer": "è il Vangelo del tuo Figlio che ci illumina e ci conforta."
+        },
+        {
+         "petition": "Gloria a te, Signore, per la tua Chiesa santa, costruita sul fondamento degli Apostoli,",
+         "answer": "è il tuo tempio santo, che ci unisce in un solo corpo e in un solo"
+        },
+        {
+         "petition": "Spirito. Gloria a te, Signore, per la grazia del battesimo della penitenza affidata al ministero degli Apostoli,",
+         "answer": "è il lavacro istituito dal tuo Figlio, che ci purifica da tutte le nostre colpe."
+        }
+       ]
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "piu-martiri",
+   "titolo": "Comune di più martiri",
+   "pagine": "pp. 234-239",
+   "tempoPasquale": "martiri-tp",
+   "note": [],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": null,
+      "it": "1. Cantiamo con cuore lieto / gli eterni doni di Cristo / e le vittorie dei martiri, / innalzando convenienti lodi.\n2. Principi della Chiesa / condottieri che hanno trionfato nella lotta, / soldati della celeste reggia, / e vera luce del mondo.\n3. Vinta la paura degli uomini, / disprezzate le pene del corpo, / conclusa la vita con una santa morte, / posseggono l’eternità beata.\n4. Per mano dell’insano carnefice / effondono il sacro sangue, / ma rimangono stabili / nella grazia della vita eterna.\n5. La pia fede dei Santi, / l’invitta speranza dei credenti, / il perfetto amore di Cristo / trionfano sul principe del mondo.\n6. In essi la gloria del Padre, / in essi la volontà dello Spirito, / in essi il Figlio esulta, / il cielo si riempie di gioia.\n7. A te ora, Redentore del mondo, / chiediamo di unire per i secoli eterni / alla sorte dei martiri / i servi che ti supplicano. Amen."
+     }
+    ],
+    "ant1": [
+     {
+      "rubrica": null,
+      "it": "Il Signore ha messo alla prova gli eletti come oro nella fornace, e come olocausti li ha accolti per sempre"
+     }
+    ],
+    "ant2": [
+     {
+      "rubrica": null,
+      "it": "Martiri del Signore, benedite il Signore per sempre"
+     },
+     {
+      "rubrica": "Nel Tempo Pasquale",
+      "tp": true,
+      "it": "Spiriti santi e anime dei giusti, cantate un inno a Dio, alleluia"
+     }
+    ],
+    "ant3": [
+     {
+      "rubrica": null,
+      "it": "Coro dei martiri, loda il Signore nel più alto dei cieli"
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Sia benedetto Dio, Padre del Signore nostro Gesú Cristo, Padre misericordioso e Dio di ogni consolazione, il quale ci consola in ogni nostra tribolazione perché possiamo anche noi consolare quelli che si trovano in qualsiasi genere di afflizione con la consolazione con cui siamo consolati noi stessi da Dio. Infatti, come abbondano le sofferenze di Cristo in noi, così, per mezzo di Cristo, abbonda anche la nostra consolazione.",
+      "rif": "2 Cor 1,3-5"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": null,
+      "it": "I giusti, tuttavia, vivranno per sempre. E presso il Signore è la loro ricompensa. Gloria."
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": null,
+      "it": "Beati i perseguitati a causa della giustizia, perché di essi è il regno dei cieli"
+     }
+    ],
+    "invocazioni": [
+     {
+      "rubrica": null,
+      "it": {
+       "intro": "In unione con i santi martiri uccisi a causa del Vangelo, celebriamo e invochiamo il nostro Salvatore, testimone fedele di Dio Padre:",
+       "response": "Ci hai redenti con il tuo sangue, o Signore.",
+       "intercessions": [
+        {
+         "petition": "Per i tuoi martiri, che abbracciarono la morte a testimonianza della fede,",
+         "answer": "donaci la vera libertá di spirito."
+        },
+        {
+         "petition": "Per i tuoi martiri, che confessarono la fede sino all’effusione del sangue,",
+         "answer": "da’ a noi una fede pura e coerente."
+        },
+        {
+         "petition": "Per i tuoi martiri, che seguirono le tue orme sul cammino della croce,",
+         "answer": "fa’ che sosteniamo con fortezza le prove della vita."
+        },
+        {
+         "petition": "Per i tuoi martiri, che lavarono le vesti nel sangue dell’Agnello,",
+         "answer": "donaci di vincere le seduzioni della carne e del mondo."
+        }
+       ]
+      }
+     }
+    ],
+    "orazione": [
+     {
+      "rubrica": "Per piú martiri",
+      "it": "O Dio onnipotente ed eterno, che hai dato ai santi martiri N. e N. la grazia di comunicare alla passione del Cristo vieni in aiuto alla nostra debolezza, e, come essi non esitarono a morire per te concedi anche a noi di vivere da forti nella confessione del tuo nome. Per il nostro Signore."
+     },
+     {
+      "rubrica": "oppure",
+      "it": "La preghiera dei tuoi santi martiri N. e N. ci accrediti ai tuoi occhi, Signore, e ci confermi nella coraggiosa adesione al Vangelo. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Per le Sante, martiri e vergini",
+      "it": "O Dio, che allieti la tua Chiesa nel ricordo delle sante N. e N., vergini e martiri, per la loro intercessione e il loro esempio concedi anche a noi fortezza e puritá di spirito per seguire Cristo sulla via della croce. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Per le altre Sante, martiri",
+      "it": "O Dio, che fai risplendere la tua potenza nell'umana debolezza, concedi a noi che ricordiamo la nascita al cielo delle sante N. e N. la misteriosa fortezza che le rese invincibili nel martirio. Per il nostro Signore."
+     }
+    ]
+   }
+  },
+  {
+   "id": "un-martire",
+   "titolo": "Comune di un martire",
+   "pagine": "pp. 239-246",
+   "tempoPasquale": "martiri-tp",
+   "note": [],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": null,
+      "it": "1. O martire di Dio, che seguendo / l’Unigenito del Padre / trionfi sul vinto nemico, / e vincitore godi del premio celeste.\n2. Per dono della tua preghiera / dissolvi la nostra colpa, / fermando il contagio del male, / allontanando il tedio della vita.\n3. Sono già stati sciolti i legami / del tuo sacro corpo; / liberaci dai vincoli del mondo / per amore del Figlio di Dio.\n4. Sia onore al Padre col Figlio / e con lo Spirito Santo, / che con corona eterna / ti cingono nella Chiesa gloriosa. Amen."
+     },
+     {
+      "rubrica": "Oppure con la seguente melodia (Propria del Tempo Pasquale)",
+      "tp": true,
+      "it": "1. O martire di Dio, che seguendo / l’Unigenito del Padre / trionfi sul vinto nemico, / e vincitore godi del premio celeste.\n2. Per dono della tua preghiera / dissolvi la nostra colpa, / fermando il contagio del male, / allontanando il tedio della vita.\n3. Sono già stati sciolti i legami / del tuo sacro corpo; / liberaci dai vincoli del mondo / per amore del Figlio di Dio.\n4. Sia onore al Padre col Figlio / e con lo Spirito Santo, / che con corona eterna / ti cingono nella Chiesa gloriosa. Amen."
+     },
+     {
+      "rubrica": "Per una Vergine Martire",
+      "it": "1. O Condottiero della verginità / e fortezza dei martiri, / che doni il premio ad ambedue, / ascolta benigno coloro che ti supplicano.\n2. Questa vergine dal grande coraggio, / beata nella duplice sorte / e nobile per la duplice palma, / ora è esaltata con lodi.\n3. Costei tenace nel confessarti, / ha armato strenuamente contro di sé / l’accanito braccio del carnefice, / e per Te ha dato la vita.\n4. Così, mentre ci istruisce sul come / vincere i colpi del mondo persecutore / e le lusinghe del mondo allettatore, / ci insegna una fede integra.\n5. Per sua intercessione rimetti / ogni nostro debito, / toglici il fomite dei vizi / e sottomettici alla tua grazia.\n6. Sia gloria a Te, Gesù, / che sei nato dalla Vergine, / con il Padre e il Santo Spirito / nei secoli eterni. Amen."
+     }
+    ],
+    "ant1": [
+     {
+      "rubrica": null,
+      "it": "Le mia labbra ti loderanno per tutta la mia vita, Dio mio"
+     }
+    ],
+    "ant2": [
+     {
+      "rubrica": null,
+      "it": "Martiri del Signore, benedite il Signore per sempre"
+     },
+     {
+      "rubrica": "Nel Tempo Pasquale",
+      "tp": true,
+      "it": "Spiriti e anime dei giusti, cantate un inno al nostro Dio, alleluia, alleluia"
+     }
+    ],
+    "ant3": [
+     {
+      "rubrica": null,
+      "it": "Al vincitore darò la manna nascosta ed un nome nuovo, alleluia"
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Sia benedetto Dio, Padre del Signore nostro Gesú Cristo, Padre misericordioso e Dio di ogni consolazione, il quale ci consola in ogni nostra tribolazione perché possiamo anche noi consolare quelli che si trovano in qualsiasi genere di afflizione con la consolazione con cui siamo consolati noi stessi da Dio. Infatti, come abbondano le sofferenze di Cristo in noi, così, per mezzo di Cristo, abbonda anche la nostra consolazione.",
+      "rif": "2 Cor 1,3-5"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": "Per un martire",
+      "it": "Lo hai coronato di gloria e di onore, Signore. E lo hai posto a capo dell’opera delle tue mani. Gloria"
+     },
+     {
+      "rubrica": "Per una martire",
+      "it": "Dio l’ha eletta, e l’ha prediletta. L’ha fatta abitare nella sua tenda. Gloria"
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": null,
+      "it": "Chi odia la sua vita in questo mondo, la preserva per la vita eterna"
+     }
+    ],
+    "invocazioni": [
+     {
+      "rubrica": null,
+      "it": {
+       "intro": "In unione con i santi martiri, uccisi a causa del Vangelo, celebriamo e invochiamo il nostro Salvatore testimone fedele di Dio Padre:",
+       "response": "Ci hai redenti con il tuo sangue, o Signore.",
+       "intercessions": [
+        {
+         "petition": "Per i tuoi martiri, che abbracciarono la morte a testimonianza della fede,",
+         "answer": "donaci la vera libertá di spirito."
+        },
+        {
+         "petition": "Per i tuoi martiri, che confessarono la fede sino l’effusione del sangue,",
+         "answer": "da’ a noi una fede pura e coerente."
+        },
+        {
+         "petition": "Per i tuoi martiri, che seguirono le tue orme sul cammino della croce,",
+         "answer": "fa’ che sosteniamo con fortezza le prove della vita."
+        },
+        {
+         "petition": "Per i tuoi martiri, che lavarono le vesti nel sangue dell’Agnello,",
+         "answer": "donaci di vincere le seduzioni della carne e del mondo."
+        }
+       ]
+      }
+     }
+    ],
+    "orazione": [
+     {
+      "rubrica": "Per un martire",
+      "it": "Dio onnipotente e misericordioso, che hai dato a san N. un'invitta costanza fra i tormenti del martirio rendici sereni nelle prove della vita e salvaci dalle insidie del maligno. Per il nostro Signore."
+     },
+     {
+      "rubrica": "oppure",
+      "it": "O Dio onnipotente ed eterno che al tuo santo martire N. hai dato la forza di sostenere fino all'ultimo la pacifica battaglia della fede, concedi anche a noi di affrontare, per tuo amore, ogni avversitá, e di camminare con entusiasmo incontro a te che sei la vera vita. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Per una martire, vergine",
+      "it": "O Dio, che allieti la tua Chiesa nel ricordo di santa N. vergine e martire, per la sua intercessione e il suo esempio concedi anche a noi fortezza e puritá di spirito per seguire Cristo sulla via della croce. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Per una Santa Martire",
+      "it": "O Dio, che fai risplendere la tua potenza nell'umana debolezza, concedi a noi che ricordiamo la nascita al cielo di santa N. la misteriosa fortezza che la rese invincibile nel martirio. Per il nostro Signore."
+     }
+    ]
+   }
+  },
+  {
+   "id": "martiri-tp",
+   "titolo": "Comune dei martiri nel Tempo pasquale",
+   "pagine": "pp. 247-249",
+   "note": [
+    "Nel Tempo pasquale inno, antifone e invocazioni sono quelli del Comune di un martire o di più martiri; alle antifone si aggiunge l’alleluia e la seconda è «Spiritus et animæ iustorum»."
+   ],
+   "parti": {
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "In questo consiste l'amore di Dio, nell'osservare i suoi comandamenti; e i suoi comandamenti non sono gravosi. Tutto ció che è nato da Dio vince il mondo; e questa è la vittoria che ha sconfitto il mondo: la nostra fede. E chi è che vince il mondo se non chi crede che Gesú è il Figlio di Dio?",
+      "rif": "1 Gv. 5,3-5"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": "Per un martire",
+      "it": "Felicità eterna sui loro capi: alleluia alleluia. Avranno gioia ed esultanza. Gloria."
+     },
+     {
+      "rubrica": "Per una Martire",
+      "it": "Dio l’ha eletta, e l’ha prediletta. L’ha fatta abitare nella sua tenda. Gloria"
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": null,
+      "it": "I giusti resisteranno con grande costanza contro coloro che li hanno tormentati, alleluia"
+     }
+    ],
+    "orazione": [
+     {
+      "rubrica": "Per piú Martiri",
+      "it": "O Dio, che doni forza ai deboli, e perseveranza ai credenti per l'intercessione dei santi martiri N. e N. donaci comunione di fede e di amore con il tuo unico Figlio crocifisso e risorto, per condividere la gioia perfetta del tuo regno. Per il nostro Signore."
+     },
+     {
+      "rubrica": "oppure",
+      "it": "Esulti la tua Chiesa, Signore, nel glorioso ricordo dei santi martiri N. e N. che hanno proclamato con la parola e col sangue la passione e la risurrezione del tuo unico Figlio. Egli è Dio, e vive e regna con te."
+     },
+     {
+      "rubrica": "Per un martire",
+      "it": "O Dio, che hai associato alla passione del tuo Figlio san N. e illumini la Chiesa con la luce del suo martirio, concedi anche a noi di venire a te sulle orme dei testimoni della fede, per avere parte con loro alla gioia eterna. Per il nostro Signore."
+     },
+     {
+      "rubrica": "oppure",
+      "it": "O Signore, risplenda la tua potenza e la tua gloria: fa' che come san N. fu partecipe della morte del Cristo, tuo Figlio, sia anche un valido sostegno alla nostra debolezza. Per il nostro Signore."
+     }
+    ]
+   }
+  },
+  {
+   "id": "pastori",
+   "titolo": "Comune dei pastori",
+   "pagine": "pp. 249-257",
+   "note": [],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": "Per un pastore",
+      "it": "1. Inclito Signore e prudente Padre, / di cui onoriamo l’insigne trionfo, / questo Confessore regna lieto / in cielo eternamente.\n2. [per un Papa] Costui stabilito sulla somma cattedra di Pietro, / Presule e Maestro di uno sconfinato gregge, / diffonde efficacemente il regno dei cieli / per l’autorità ricevuta dal Signore.\n2. [per un Vescovo] Costui svolse per i popoli il sacro ministero / di sacerdote, duce e maestro, / e presule sapiente procurò / i doni della vita beata.\n2. [per un Sacerdote] Costui fu inclito duce e maestro, / che ha dato esempi di vita santa / e si è preoccupato di piacere sempre / a Dio con cuore puro.\n3. Ora con forza tutti preghiamolo, / affinchè pietoso ci purifichi dai nostri peccati, / e con la sua preghiera ci conduca / alle alte vette del cielo.\n4. Sia solo a Dio la gloria e il potere, / la lode, l’onore perenne in cielo, / che moderando governa / con le sue leggi tutto l’universo. Amen"
+     },
+     {
+      "rubrica": "Per piú Pastori",
+      "it": "1. Questi furono santi Sacerdoti del Signore, / e suoi fedeli consacratori, / e Pastori del popolo / con zelo instancabile.\n2. Infatti, conservando i doni della benedizione ricevuta, / si studiarono, con i fianchi / virilmente cinti, di portare / nelle mani le lucerne (sempre) accese.\n3. E così, tesi e vigilanti finché il Signore / non fosse venuto a bussare alla porta, / andarono prontamente incontro a Colui che / si affrettava ad aprire la soglia (del cielo).\n4. Sommo onore, gloria e lode / sia a Te, Re dei re, Dio eterno, / ogni creatura ti celebri / per ogni tempo e per i secoli. Amen."
+     }
+    ],
+    "ant1": [
+     {
+      "rubrica": null,
+      "it": "Voi siete la luce del mondo: non può restare nascosta una città posta sopra ad un monte. Né accendono una lampada e la mettono sotto al moggio, ma sopra al portalume, perché faccia luce a tutti quelli che sono in casa"
+     }
+    ],
+    "ant2": [
+     {
+      "rubrica": null,
+      "it": "Sacerdoti di Dio, benedite il Signore: servi del Signore, cantate un inno a Dio, alleluia"
+     }
+    ],
+    "ant3": [
+     {
+      "rubrica": null,
+      "it": "I giusti inneggeranno al tuo nome, e i retti abiteranno al tuo cospetto"
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Ricordatevi dei vostri capi, i quali vi hanno annunziato la parola di Dio; considerando attentamente l’esito del loro tenore di vita, imitatene la fede. Gesú Cristo è lo stesso ieri, oggi e sempre! Non lasciatevi sviare da dottrine varie e peregrine.",
+      "rif": "Hebr. 13,7-9a"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": null,
+      "it": "Su di te, Gerusalemme, ho posto delle sentinelle. Di giorno e di notte non smetteranno di annunciare il nome del Signore. Gloria."
+     },
+     {
+      "rubrica": "Nel Tempo Pasquale",
+      "tp": true,
+      "it": null
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": "Per un pastore",
+      "it": "Bene, servo buono e fedele: poiché sei stato fedele nel poco, ti darò autorità su molto, dice il Signore"
+     },
+     {
+      "rubrica": "Per più pastori",
+      "it": "Io, il Signore, vi farò entrare in Sion, e vi darò pastori secondo il mio cuore, e vi pasceranno con la sapienza e l’insegnamento"
+     }
+    ],
+    "invocazioni": [
+     {
+      "rubrica": null,
+      "it": {
+       "intro": "A Cristo, buon pastore, che ha dato la vita per le sue pecorelle, innalziamo con fiducia la nostra preghiera:",
+       "response": "O Signore, guida il tuo popolo ai pascoli della vita eterna.",
+       "intercessions": [
+        {
+         "petition": "Cristo, che nei santi pastori (in san N.) ci hai dato un’immagine viva del tuo amore misericordioso,",
+         "answer": "fa’ che sperimentiamo in coloro che ci guidano la dolcezza della tua carità."
+        },
+        {
+         "petition": "Tu, che nei tuoi vicari continui a svolgere la missione di maestro e di pastore,",
+         "answer": "non cessare mai di governarci tu stesso nella persona dei tuoi ministri."
+        },
+        {
+         "petition": "Tu, che nei santi pastori, posti al servizio del tuo popolo, ti sei fatto medico delle anime e dei corpi,",
+         "answer": "fa’ che non venga mai meno la tua presenza mediante ministri santi e santificatori."
+        },
+        {
+         "petition": "Tu, che hai animato i fedeli con la sapienza e la caritá dei santi (del santo dottore N.),",
+         "answer": "fa’ che i predicatori del Vangelo ci aiutino a conoscerti e ad amarti come vuoi tu."
+        }
+       ]
+      }
+     }
+    ],
+    "orazione": [
+     {
+      "rubrica": "Per un papa",
+      "it": "Dio grande e misericordioso, che hai scelto il papa san N. a presiedere il tuo popolo per edificarlo con il magistero e la santitá della vita custodisci i pastori della tua Chiesa e guidali sulla via della salvezza eterna. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Per un vescovo",
+      "it": "O Dio, che hai unito alla schiera dei santi pastori il vescovo N. mirabile per l'ardente caritá e per la fede intrepida che vince il mondo, per sua intercessione fa' che perseveriamo nella fede e nell'amore, per aver parte con lui alla tua gloria. Per il nostro Signore"
+     },
+     {
+      "rubrica": "Per il fondatore di una Chiesa",
+      "it": "O Dio, che con la predicazione apostolica di san N. (Vescovo) hai chiamato i nostri padri alla mirabile luce del tuo Vangelo, donaci di crescere nella conoscenza e nell'amore del tuo Figlio, Gesú Cristo, nostro Signore. Egli è Dio, e vive e regna con te."
+     },
+     {
+      "rubrica": "Per un pastore",
+      "it": "O Dio, luce e pastore dei credenti, che hai chiamato san N. (Vescovo) a illuminare la comunità cristiana con la parola e a formarla con la testimonianza della vita, fa' che custodiamo la fede che ci ha insegnato e seguiamo la via che ha tracciato con l'esempio. Per il nostro Signore."
+     },
+     {
+      "rubrica": "oppure",
+      "it": "O Dio, che hai plasmato con il tuo Spirito di veritá e di amore san N. e lo hai posto nella tua Chiesa come pastore della nuova alleanza, sostieni e conforta sempre il tuo popolo, che lo venera come maestro e intercessore. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Per un missionario",
+      "it": "O Dio, grande e misericordioso, che hai affidato a san N. la missione di annunziare alle genti le inesauribili ricchezze del Cristo per sua intercessione concedi anche a noi di crescere nella tua conoscenza e di camminare alla tua presenza nello spirito del Vangelo, portando frutti di opere buone. Per il nostro Signore."
+     }
+    ]
+   }
+  },
+  {
+   "id": "dottori",
+   "titolo": "Comune dei dottori della Chiesa",
+   "pagine": "pp. 258-261",
+   "eredita": {
+    "ant1": "pastori",
+    "ant2": "pastori",
+    "ant3": "pastori",
+    "invocazioni": "pastori"
+   },
+   "note": [
+    "Le antifone della salmodia non sono nel libretto: si prendono dal Comune dei pastori.",
+    "Invocazioni dal Comune dei pastori."
+   ],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": null,
+      "it": "1. Sei adorato, o Cristo, Maestro eterno / e pietoso, che manifesti le leggi della salvezza, / e che solo sei ritenuto di avere / parole di vita eterna.\n2. Proclamiamo, o buon Pastore del mondo, / che Tu sempre dal cielo hai confermato le parole / della Sposa, con le quali ella costantemente / è luce al mondo.\n3. Tu stesso doni servi luminosi, / che, come stelle auree brillanti, / rivelino a noi i sicuri / dogmi della vita beata.\n4. Perciò lodi echeggino per te, o Maestro, / che effondi i beni stupendi dello Spirito / nell’eloquio dei Dottori, nel quale potentemente / la luce benigna tua si manifesta.\n5. E il giusto, che ora si celebra / interceda con istanza perchè Tu conceda / al tuo popolo di progredire nelle vie amene della vita, / fino a quando non canterà a Te inni nella visione perfetta. Amen."
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Senza frode imparai la sapienza e senza invidia la dono, non nascondo le sue ricchezze. Essa è un tesoro inesauribile per gli uomini; quanti se lo procurano si attirano l’amicizia di Dio, sono a lui raccomandati per i doni del suo insegnamento.",
+      "rif": "Sap. 7,13-14"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": null,
+      "it": "I popoli raccontino la sapienza dei santi. E la Chiesa proclami le loro lodi. Gloria."
+     },
+     {
+      "rubrica": "Nel Tempo Pasquale",
+      "tp": true,
+      "it": null
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": null,
+      "it": "I saggi risplenderanno come lo splendore del firmamento e quelli che avranno insegnato a molti la giustizia risplenderanno come le stelle in eterno"
+     }
+    ],
+    "orazione": [
+     {
+      "rubrica": null,
+      "it": "Dio, fonte di ogni dono che hai riempito san N. (Vescovo) del tuo Spirito di sapienza e lo hai posto come maestro e dottore nella Chiesa donaci di custodire con fedeltá i suoi insegnamenti per godere la grandezza della tua misericordia. Per il nostro Signore."
+     }
+    ]
+   }
+  },
+  {
+   "id": "monaci",
+   "titolo": "Comune dei santi monaci",
+   "pagine": "pp. 261-270",
+   "note": [],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": null,
+      "it": "1. Vi saluto, o cedri del Libano / piante verdeggianti dell’Ordine, / che riempite di nobili semi / le praterie celesti.\n2. Vi circonda l’eterna / gloria della Trinità, / la brezza della Vergine Madre / vi blandisce con pii venti.\n3. Vi fanno corona sempre / i cori della corte degli Angeli, / e vi irrigano purissimi / ruscelletti di felicità eterna.\n4. O inclite radici, / giovate ai vostri figli, / nella triste valle rafforzate / noi deboli ramoscelli.\n5. Sia lode al Padre col Figlio / insieme al dolce Spirito, / con i quali vivete lieti / nella luce eterna. Amen."
+     },
+     {
+      "rubrica": "Oppure con la seguente melodia",
+      "it": "1. Vi saluto, o cedri del Libano / piante verdeggianti dell’Ordine, / che riempite di nobili semi / le praterie celesti.\n2. Vi circonda l’eterna / gloria della Trinità, / la brezza della Vergine Madre / vi blandisce con pii venti.\n3. Vi fanno corona sempre / i cori della corte degli Angeli, / e vi irrigano purissimi / ruscelletti di felicità eterna.\n4. O inclite radici, / giovate ai vostri figli, / nella triste valle rafforzate / noi deboli ramoscelli.\n5. Sia lode al Padre col Figlio / insieme al dolce Spirito, / con i quali vivete lieti / nella luce eterna. Amen."
+     },
+     {
+      "rubrica": "oppure, per un monaco o un abate",
+      "it": "1. O soldato, che nell’abbondante lume della fede / segui il Principe Cristo nella via stretta, / è conveniente che noi lieti ora / innalziamo a te degne lodi.\n2. Tu Lo ascolti mentre dà insegnamenti molto / aspri; non appari trepidante, abbandoni ogni cosa; / infatti a te piace affidare / ad un sì grande Signore le potenze del cuore.\n3. Sollecito intraprendi le opere che si convengono / ai giusti, docile osservi casti silenzi; / godi di queste armi con le quali / audace ti disponi a nuovi combattimenti.\n4. Mentre gioisci di inneggiare al Padre celeste / con assiduo amore, pregando nell’anelito del cuore, / ottieni più potentemente ai fratelli / i suoi splendidi doni."
+     },
+     {
+      "rubrica": "Se abate. si aggiunge",
+      "it": "5’. Sollecito Abate ammaestri i discepoli, / insegnando sapientemente con gloriosi esempi / quelle cose che i forti devono desiderare, / quelle ardue vette che Dio richiede siano salite.\n6. Sprona anche noi con gli esempi e con le pre- / ghiere, affinché ci sia concesso di conseguire il / premio del cielo, e con te cantare al Signore per / sempre inni esultanti di lode. Amen."
+     }
+    ],
+    "ant1": [
+     {
+      "rubrica": null,
+      "it": "O santi miei, che nel secolo presente avete combattuto la battaglia: io vi do la ricompensa per le fatiche, alleluia"
+     }
+    ],
+    "ant2": [
+     {
+      "rubrica": null,
+      "it": "Benedite il Signore, voi tutti suoi eletti: celebrate un giorno di letizia e lodatelo"
+     }
+    ],
+    "ant3": [
+     {
+      "rubrica": null,
+      "it": "Siete santi, dice il Signore, e aumenterò grandemente il vostro numero, perché preghiate per il mio popolo in questo luogo"
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Fratelli, il Dio del Signore nostro Gesú Cristo, il Padre della gloria, vi dia uno spirito di sapienza e di rivelazione per una piú profonda conoscenza di lui. Possa egli davvero illuminare gli occhi della vostra mente per farvi comprendere a quale speranza v ha chiamati, quale tesoro di gloria racchiude la sua eredita fra i santi.",
+      "rif": "Ef 1,17-18"
+     },
+     {
+      "rubrica": "oppure per i fondatori",
+      "it": "Ricordatevi dei vostri capi, i quali vi hanno annunziato la parola di Dio; considerando attentamente l'esito del loro tenore di vita, imitatene la fede. Gesú Cristo e lo stesso ieri, oggi e sempre! Non lasciatevi sviare da dottrine varie e peregrine.",
+      "rif": "Eb 13,7-9a"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": null,
+      "it": "Rallegratevi nel Signore, ed esultate, o giusti. E gridate di gioia, voi tutti retti di cuore. Gloria."
+     },
+     {
+      "rubrica": "Nel Tempo di Pasqua",
+      "tp": true,
+      "it": null
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": null,
+      "it": "Voi che avete lasciato tutto e mi avete seguito, riceverete il centuplo e avrete in possesso la vita eterna"
+     },
+     {
+      "rubrica": "Oppure",
+      "it": "Risplendeva in lui la purezza dei costumi, un comportamento esemplare, la grazia del volto, la vita regolare, alleluia"
+     }
+    ],
+    "invocazioni": [
+     {
+      "rubrica": null,
+      "it": {
+       "intro": "Con un'anima sola e un cuor solo rivolti verso il Padre diciamo insieme:",
+       "response": "Noi ti lodiamo e confidiamo in te, Signore.",
+       "intercessions": [
+        {
+         "petition": "Tu solo, misericordioso, dona la tua grazia a tutti i popoli della terra perché ti conoscano",
+         "answer": "senza il tuo Santo Spirito l'uomo non ti conosce e non comprende il tuo amore."
+        },
+        {
+         "petition": "Aiutaci, Signore, ad osservare la regola con amore, innamorati della bellezza spirituale, rapiti con ardore dal profumo di Cristo,",
+         "answer": "convinti della bontá del nostro genere di vita."
+        },
+        {
+         "petition": "Il dolce Consolatore vada incontro a quelli di noi piú provati dalla tentazione e li sostenga:",
+         "answer": "soccorra la loro debolezza nelle angustie e tribolazioni di questo giorno."
+        },
+        {
+         "petition": "Padre, che ci hai amati per primo,",
+         "answer": "fa' che la misura del nostro amore per te sia il non aver misura."
+        },
+        {
+         "petition": "Tu hai adornato il cielo di stelle, con nuvole l'aria, la terra coi laghi, i fiumi, i verdi giardini:",
+         "answer": "accendi in noi il desiderio di te solo, o Creatore di ogni cosa."
+        }
+       ]
+      }
+     },
+     {
+      "rubrica": "Oppure",
+      "it": {
+       "intro": "A Cristo Signore, che ha suscitato nella sua Chiesa gli ordini monastici perché siano lungo secoli una scuola del servizio divino, rivolgiamo la nostra preghiera:",
+       "response": "Fa' che rispondiamo al tuo disegno, Signore.",
+       "intercessions": [
+        {
+         "petition": "Alla vita monastica tu hai dato un sommo maestro e padre, Benedetto, che rifulse come astro nelle tenebre della notte:",
+         "answer": "concedi a tutti i suoi figli e discepoli di seguire fedelmente la dottrina e gli esempi."
+        },
+        {
+         "petition": "Tu hai ispirato la regola benedettina e tutte le regole monastiche perché nella Chiesa diano frutti di santità",
+         "answer": "conserva vigili e ardenti in ogni comunitá l'amore e l'osservanza della propria legge, fonte di vita."
+        },
+        {
+         "petition": "Ai cori celesti tu hai voluto associare sulla terra i cori monastici:",
+         "answer": "dona al sacrificio di lode delle nostre liturgie luce e fervore, sì che giunga gradito al tuo cospetto come profumo d'incenso."
+        },
+        {
+         "petition": "Tu hai ispirato a san Benedetto la misteriosa scala che fa ascendere al cielo gli umili:",
+         "answer": "dona ad ogni monaco e monaca grazia e volontá di salirla, gradino per gradino, fino alla cima della caritá perfetta."
+        },
+        {
+         "petition": "Noi veneriamo nei cieli la santitá eroica di tanti nostri fratelli e sorelle, noti e sconosciuti:",
+         "answer": "per la loro intercessione, dona agli ordini monastici uno stuolo di santi e vocazioni generose."
+        }
+       ]
+      }
+     }
+    ],
+    "orazione": [
+     {
+      "rubrica": null,
+      "it": "O Dio, tu hai dato a san (santa) N. la grazia di abbandonare ogni cosa per seguire fino in fondo il Cristo povero e umile: porta a compimento anche in noi la tua iniziativa di grazia, perché possiamo aderire al vangelo con tutto il nostro essere, fino al giorno del Cristo Gesú. Egli vive e regna.."
+     },
+     {
+      "rubrica": "Oppure",
+      "it": "Concedi, o Signore, che l’esempio dei santi monaci (di san/santa N.) ci provochi a un impegno di vita piú generoso, e la celebrazione della loro (sua) santitá ci stimoli ad imitarla. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Per un abate o per una Abbadessa",
+      "it": "O Dio, che nel santo abate (nella santa abbadessa) .. hai offerto alla tua Chiesa un modello di perfezione evangelica, concedi a noi, nelle mutevoli situazioni della vita, di aderire con tutte le forze al regno dei cieli. Per il nostro Signore."
+     }
+    ]
+   }
+  },
+  {
+   "id": "monache",
+   "titolo": "Comune delle sante monache",
+   "pagine": "pp. 270-273",
+   "eredita": {
+    "inno": "vergini"
+   },
+   "note": [
+    "Inno dal Comune delle vergini."
+   ],
+   "parti": {
+    "ant1": [
+     {
+      "rubrica": null,
+      "it": "Esulta e rallegrati, figlia di Sion, poiché ecco, io vengo, e abiterò in mezzo a te, dice il Signore"
+     }
+    ],
+    "ant2": [
+     {
+      "rubrica": null,
+      "it": "O anima beata, che hai meritato di essere sede della sapienza, essa, il cui diletto è abitare con i figli degli uomini"
+     }
+    ],
+    "ant3": [
+     {
+      "rubrica": null,
+      "it": "Ponimi come sigillo sul tuo cuore, come sigillo sul tuo braccio; poiché forte come la morte è l’amore, dura come l’inferno la gelosia: le sue vampe sono vampe di fuoco e di fiamma"
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Io sono per il mio diletto e il mio diletto è per me; egli pascola il gregge tra i gigli. Mettimi come sigillo sul tuo cuore, come sigillo sul tuo braccio; perché forte come la morte è l'amore, tenace come gli inferi è la passione: le sue vampe son vampe di fuoco, una fiamma del Signore! Le grandi acque non possono spegnere l'amore né i fiumi travolgerlo. Se uno desse tutte le ricchezze della sua casa in cambio dell'amore, non ne avrebbe che dispregio.",
+      "rif": "Cant. 6,3; 8,6-7"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": null,
+      "it": "La mia anima ha sete del Dio vivo. Il mio cuore e la mia carne esultarono. Gloria."
+     },
+     {
+      "rubrica": "Nel Tempo Pasquale",
+      "tp": true,
+      "it": null
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": null,
+      "it": "Ancella fedele e sposa diletta, entrò nel cuore e nella gioia del suo Signore, del cui amore si struggeva"
+     }
+    ],
+    "invocazioni": [
+     {
+      "rubrica": null,
+      "it": {
+       "intro": "Uniti nella liturgia della lode, invochiamo il Cristo Signore, perché ci aiuti a servirlo in santitá e giustizia tutti i giorni della nostra vita:",
+       "response": "Santifica il tuo popolo, o Signore.",
+       "intercessions": [
+        {
+         "petition": "Hai chiamato Santa N. a seguirti piú da vicino nella pratica dei consigli evangelici,",
+         "answer": "attiraci a te, o Signore."
+        },
+        {
+         "petition": "Hai concesso a Santa N. di abbandonare tutto, per accogliere il tuo amore come unico bene,",
+         "answer": "rendici premurosi nel tuo servizio."
+        },
+        {
+         "petition": "Santa N. in tutte le situazioni cercó prima di tutto la vita nascosta in te,",
+         "answer": "conduci noi alla conoscenza del tuo mistero, Signore Gesú."
+        },
+        {
+         "petition": "Hai ispirato a Santa N. di scegliersi Maria come esempio nel percorrere la via della perfezione,",
+         "answer": "concedi anche a noi di imitare le virtú della Vergine Maria."
+        }
+       ]
+      }
+     }
+    ],
+    "orazione": [
+     {
+      "rubrica": null,
+      "it": "O Dio, tu hai dato a santa N. la grazia di abbandonare ogni cosa per seguire fino in fondo il Cristo povero e umile: porta a compimento anche in noi la tua iniziativa di grazia, perché possiamo aderire al vangelo con tutto il nostro essere, fino al giorno del Cristo Gesú. Egli vive e regna."
+     }
+    ]
+   }
+  },
+  {
+   "id": "vergini",
+   "titolo": "Comune delle vergini",
+   "pagine": "pp. 274-279",
+   "note": [],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": "Per una santa vergine",
+      "it": "1. Fornita della lampada, o vergine, / sei andata alle nozze / dell’eterno Re della gloria, / che le schiere celesti lodano.\n2. Tu, commensale coi santi, / sei unita al celeste Sposo / con l’abbraccio di un casto patto, / arricchita del merito del pudore.\n3. Insegnaci le norme di vita, / con la tua preghiera rinvigoriscici, / affinché possiamo resistere / all’astuzia del nostro nemico.\n4. Maria, modello della vita verginale, / preghi il Figlio divino, / affinché la sua protezione / ci giovi durante l’esilio.\n5. Per i secoli eterni / sia gloria a Dio / per il trionfo di questa Vergine / di cui gode la corte celeste. Amen."
+     },
+     {
+      "rubrica": "Per più sante vergini",
+      "it": "1. O Gesù, corona delle vergini, / che quell’eccelsa Madre concepì / e che unica Vergine partorì, / accogli clemente questi voti,\n2. Tu che ti pasci tra i gigli, / circondato da cori verginali, / Sposo fulgente di gloria / che dài alle spose il premio.\n3. Dovunque tu vai, le vergini / ti seguono e, cantando lodi, / corrono dietro a Te / e inni dolcissimi intonano.\n4. Noi t’imploriamo, accresci sempre più / copiosamente la grazia nelle nostre / anime, così che siamo interamente / ignari di ogni ferita di male.\n5. A Te sia gloria, Gesù, / che sei nato dalla Vergine, / con il Padre e l’almo Spirito / nei secoli eterni. Amen."
+     }
+    ],
+    "ant1": [
+     {
+      "rubrica": null,
+      "it": "Con il suo anello il Signore Gesù Cristo mi ha impegnata, e, come sposa, mi ha ornato con una corona"
+     }
+    ],
+    "ant2": [
+     {
+      "rubrica": null,
+      "it": "Vergini del Signore, benedite il Signore per sempre"
+     }
+    ],
+    "ant3": [
+     {
+      "rubrica": null,
+      "it": "Rallegratevi e gioite con me, perché con tutte loro ho ricevuto una splendida dimora"
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Le grandi acque non possono spegnere l’amore né i fiumi travolgerlo. Se uno desse tutte le ricchezze della sua casa in cambio dell’amore, non ne avrebbe che dispregio.",
+      "rif": "Cant. 8,7"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": null,
+      "it": "A te disse il mio cuore: ho desiderato il tuo volto. Il tuo volto, Signore, cercherò. Gloria."
+     },
+     {
+      "rubrica": "Nel Tempo Pasquale",
+      "tp": true,
+      "it": null
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": "Per una santa vergine",
+      "it": "Ecco, già vedo ciò che ho bramato, già posseggo ciò che ho sperato: sono unita nei cieli a colui che, posta in terra, ho amato con tutto il mio cuore"
+     },
+     {
+      "rubrica": "Per più sante vergini",
+      "it": "Venne lo Sposo: e le Vergini che erano pronte, entrarono con lui alle nozze"
+     }
+    ],
+    "invocazioni": [
+     {
+      "rubrica": null,
+      "it": {
+       "intro": "A Cristo, sposo e corona delle vergini, rivolgiamo con gioia l’espressione della nostra fede:",
+       "response": "Gesú, premio e corona delle vergini, ascolta la nostra preghiera.",
+       "intercessions": [
+        {
+         "petition": "Cristo, unico sposo delle sante vergini,",
+         "answer": "fa’ che nulla ci separi mai dalla tua amicizia."
+        },
+        {
+         "petition": "Tu, che hai costituito Maria, tua Madre, regina delle vergini,",
+         "answer": "per sua intercessione donaci di servirti con fedeltá e purezza di cuore."
+        },
+        {
+         "petition": "Per le vergini che si sono consacrate a te con cuore integro e indiviso per essere sante nel corpo. e nello spirito,",
+         "answer": "fa’ che nessuna cosa al mondo ci faccia deviare dal cammino che conduce a te."
+        },
+        {
+         "petition": "Signore Gesú, atteso dalle vergini sapienti,",
+         "answer": "fa’ che siamo sempre vigilanti nell’attesa della tua venuta."
+        },
+        {
+         "petition": "Per l’intercessione di santa N., che hai fatto splendere di santitá e sapienza,",
+         "answer": "donaci saggezza evangelica e innocenza di vita."
+        }
+       ]
+      }
+     }
+    ],
+    "orazione": [
+     {
+      "rubrica": "Per una santa vergine",
+      "it": "O Dio, che ti compiaci di stabilire la tua dimora in chi ti serve con cuore semplice e puro per intercessione di santa N., vergine, fa' che viviamo con puritá evangelica per averti sempre ospite in noi tempio vivo della tua gloria. Per il nostro Signore."
+     },
+     {
+      "rubrica": "oppure",
+      "it": "Ascolta, Signore, le preghiere di questa tua famiglia, che venera con gioia la testimonianza verginale di san N. e donaci di rimanere sempre in te, per crescere di giorno in giorno nel tuo amore. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Per piú vergini",
+      "it": "Dona, Signore, grazia su grazia al tuo popolo che si allieta nel ricordo delle sante vergini N. e N. perché possa condividere la loro beatitudine nella dimora eterna del cielo. Per il nostro Signore."
+     }
+    ]
+   }
+  },
+  {
+   "id": "santi",
+   "titolo": "Comune dei santi",
+   "pagine": "pp. 279-288",
+   "note": [],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": "Per un santo",
+      "it": "1. O Gesù, premio eccelso / e verità ancor più sublime, / che al servo che ti loda / doni l’eterno premio,\n2. concedi alla schiera supplicante, / per le preghiere di questo celeste intercessore, / la remissione dei peccati, / spezzando la catena delle colpe.\n3. Non amando la vanità, / compì le cose terrene in modo / che fervente nel cuore totalmente / piacesse a Te unicamente.\n4. Confessando qui sempre Te, / o Cristo, Re pietosissimo, / vinse il forte nemico / e la sua scorta superba.\n5. Inclito per la virtù e per la fede, / costante nell’orazione, / conservando il corpo sobrio, / ottiene (di partecipare) al banchetto eterno.\n6. Sia gloria a Dio Padre, / a Te, suo Unico Figlio, / con lo Spirito Santo / nei secoli eterni. Amen."
+     },
+     {
+      "rubrica": "Per più santi",
+      "it": "1. O fedeli seguaci di Cristo, / già possedete abbondantemente / le beata gioie del cielo, / corona del servizio divino.\n2. Ascoltate con orecchio benigno / le lodi, che in vostro onore effondiamo / con sacro canto / noi ancora esuli dalla patria.\n3. Ardenti nell’amore di Cristo, / portaste l’aspra croce, / obbedienti, non pigri, / ferventi nella carità.\n4. Disprezzaste le lusinghe dei demoni / e le vanità del mondo; / confessando Cristo coi costumi, / raggiungeste il cielo.\n5. Ora, rivestiti di gloria, / accogliete i desideri di tutti / quelli che desiderano ardentemente / seguire i vostri esempi.\n6. Sia gloria alla Trinità, / che per sua bontà / e per le vostre preghiere / ci conduca al regno celeste. Amen."
+     }
+    ],
+    "ant1": [
+     {
+      "rubrica": null,
+      "it": "Beato l’uomo che tu istruisci, o Signore, e gli insegni la tua legge"
+     }
+    ],
+    "ant2": [
+     {
+      "rubrica": null,
+      "it": "I giusti inneggeranno al tuo nome, e i retti abiteranno alla tua presenza"
+     }
+    ],
+    "ant3": [
+     {
+      "rubrica": null,
+      "it": "Darò ai miei santi un luogo famoso nel regno del Padre mio, dice il Signore"
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Vi esorto, fratelli, per la misericordia di Dio, ad offrire i vostri corpi come sacrificio vivente, santo e gradito a Dio; è questo il vostro culto spirituale. Non conformatevi alla mentalitá di questo secolo, ma trasformatevi rinnovando la vostra mente, per poter discernere la volontá di Dio, ció che è buono, a lui gradito e perfetto.",
+      "rif": "Rom 12, 1-2"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": "Per un santo fuori dal Tempo Pasquale",
+      "it": "La legge del suo Dio nel suo cuore. E non sarà messo inciampo ai suoi passi. Gloria."
+     },
+     {
+      "rubrica": "Per un santo nel Tempo Pasquale",
+      "tp": true,
+      "it": null
+     },
+     {
+      "rubrica": "Per più santi fuori dal Tempo Pasquale",
+      "it": "Esultino i giusti, davanti al Signore. E si rallegrino nella letizia. Gloria"
+     },
+     {
+      "rubrica": "Per più santi nel Tempo Pasquale",
+      "tp": true,
+      "it": null
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": "Per un santo",
+      "it": "Servo buono e fedele: poiché sei stato fedele nel poco, ti darò autorità su molto: entra nella gioia del Signore Dio tuo Beati gli operatori di pace, beati i puri di cuore: poiché essi vedranno il Signore"
+     },
+     {
+      "rubrica": "Oppure",
+      "it": "Quanti sperano nel Signore riacquisteranno forza, metteranno ali come aquile, correranno senza affannarsi, cammineranno senza stancarsi."
+     },
+     {
+      "rubrica": "Per un santo della carità",
+      "it": "In questo tutti sapranno che siete miei discepoli, se avrete amore gli uni per gli altri"
+     },
+     {
+      "rubrica": "Per un educatore",
+      "it": "I loro angeli vedono sempre il volto del Padre mio che è nei cieli"
+     }
+    ],
+    "invocazioni": [
+     {
+      "rubrica": null,
+      "it": {
+       "intro": "Uniti nella liturgia di lode, invochiamo il Cristo Signore, perché ci aluti a servirlo in santitá e giustizia tutti i giorni della nostra vita:",
+       "response": "Santifica il tuo popolo, Signore.",
+       "intercessions": [
+        {
+         "petition": "Sei stato provato in ogni cosa per divenire simile a noi in tutto fuorché nel peccato,",
+         "answer": "Signore Gesú abbi pietá del tuo popolo."
+        },
+        {
+         "petition": "Chiami tutti alla caritá perfetta,",
+         "answer": "Signore Gesú, santifica il tuo popolo."
+        },
+        {
+         "petition": "Hai voluto che i tuoi discepoli siano sale della terra e luce del mondo,",
+         "answer": "Signore Gesú, illumina il tuo popolo."
+        },
+        {
+         "petition": "Sei venuto per servire e non per essere servito,",
+         "answer": "Signore Gesú, insegnaci a servirmi nei nostri fratelli."
+        },
+        {
+         "petition": "Tu sei l’irradiazione della gloria del Padre e l’impronta della sua sostanza,",
+         "answer": "Signore Gesú, fa’ che al termine della vita contempliamo il tuo volto insieme ai tuoi santi."
+        }
+       ]
+      }
+     }
+    ],
+    "orazione": [
+     {
+      "rubrica": "Per un santo",
+      "it": "Tu solo sei santo, Signore, e fuori di te non c'e luce di bontá: per l'intercessione e l'esempio di san N. fa' che viviamo una vita autenticamente cristiana, per non esser privati della tua visione nel cielo. Per il nostro Signore."
+     },
+     {
+      "rubrica": "oppure",
+      "it": "O Dio, che illumini la Chiesa con l'esempio dei tuoi santi, fa' che la testimonianza evangelica di san N. ci richiami a una vita piú degna e generosa e il ricordo delle sue gesta ci stimoli sempre all'imitazione del tuo Figlio, che è Dio, e vive e regna con te."
+     },
+     {
+      "rubrica": "Per piú santi",
+      "it": "O Dio, nostro padre che, nella testimonianza gloriosa dei santi doni alla tua Chiesa segni sempre nuovi del tuo amore misericordioso, fa' che sentiamo accanto a noi la presenza confortatrice di questi nostri fratelli per essere stimolati all'imitazione del Cristo tuo Figlio che è Dio, e vive e regna con te."
+     },
+     {
+      "rubrica": "Per un religioso",
+      "it": "O Dio, che hai dato a san N. La grazia di seguire sino in fondo Cristo povero e umile concedi anche a noi di vivere fedelmente la nostra vocazione, per giungere alla perfetta caritá che ci hai proposto nel tuo Figlio. Egli è Dio, e vive e regna con te."
+     },
+     {
+      "rubrica": "Per un abate",
+      "it": "O Dio, che nel santo abate N. hai offerto alla tua Chiesa un modello di perfezione evangelica concedi a noi, nelle mutevoli situazioni della vita, di aderire con tutte le forze al regno dei cieli. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Per un santo della caritá",
+      "it": "O Dio, che nell'amore verso di te e verso i fratelli hai compendiato i tuoi comandamenti fa' che ad imitazione di san N. dedichiamo la nostra vita a servizio del prossimo per essere da te benedetti nel regno dei cieli. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Per un educatore",
+      "it": "O Dio, che hai suscitato nella tua Chiesa san N. perché, con la parola e con l'esempio indicasse ai giovani la via della salvezza concedi anche a noi di seguire Cristo maestro e signore per giungere con i nostri fratelli nella gloria del tuo regno. Per il nostro Signore."
+     }
+    ]
+   }
+  },
+  {
+   "id": "sante",
+   "titolo": "Comune delle sante",
+   "pagine": "pp. 289-295",
+   "note": [],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": "Per una santa",
+      "it": "1. Con parole eloquenti inneggiamo / alla nobile Serva di Cristo, / che ha emulato la gloria della donna forte, / cui la Sacra Scrittura indirizzò lodi.\n2. Ella ebbe fede viva, pia speranza e amore / ardente verso Dio, / radice fertile di opere buone, / donde nasce spontaneamente l’amore dei fratelli.\n3. Mosso dai suoi meriti, / perdona a noi peccatori, o Gesù, ogni colpa, / affinché con cuore puro / possiamo innalzare a Te degne lodi.\n4. Sia gloria e onore al sommo Padre, / lode e onorevole culto a Te, Figlio, / pari potere allo Spirito Santo / ora e nei secoli eterni. Amen."
+     },
+     {
+      "rubrica": "Per più sante",
+      "it": "1. Con parole eloquenti inneggiamo / alle nobili Serve di Cristo / che hanno emulato la gloria della donna for- / te, cui la Sacra Scrittura indirizzò lodi.\n2. Il mondo non le avvince con seduzioni, / esse che volentieri si sottomettono ai comandi / del Padre celeste, per essere molto impegnate / a spargere ovunque il buon odore di Cristo.\n3. Domano il corpo, nutrono la mente / di sante preghiere, disprezzano i guadagni / passeggeri, per cercare (di meritarsi) / i premi della vita eterna.\n4. Sia gloria e potere, lode / ed onore perenne nell’alto dei cieli / a Dio solo, che tutto regolando governa con / le sue leggi il mondo. Amen."
+     }
+    ],
+    "ant1": [
+     {
+      "rubrica": null,
+      "it": "Mentre il re è sul suo divano, il mio nardo effuse profumo soave"
+     }
+    ],
+    "ant2": [
+     {
+      "rubrica": null,
+      "it": "Lodate il Signore e inneggiate a lui: poiché la sua misericordia è per sempre"
+     }
+    ],
+    "ant3": [
+     {
+      "rubrica": null,
+      "it": "Già l’inverno è passato, la pioggia se n’è andata, è cessata: alzati, amica mia, e vieni"
+     }
+    ],
+    "lettura": [
+     {
+      "rubrica": null,
+      "it": "Vi esorto, fratelli, per la misericordia di Dio, ad offrire i vostri corpi come sacrificio vivente, santo e gradito a Dio; è questo il vostro culto spirituale. Non conformatevi alla mentalitá di questo secolo, ma trasformatevi rinnovando la vostra mente, per poter discernere la volontá di Dio, ció che è buono a lui gradito e perfetto.",
+      "rif": "Rom 12, 1-2"
+     }
+    ],
+    "responsorio": [
+     {
+      "rubrica": null,
+      "it": "Dio la soccorrerà con [la luce del] suo volto. Dio è in mezzo a lei, non vacillerà. Gloria."
+     },
+     {
+      "rubrica": "Nel Tempo Pasquale",
+      "tp": true,
+      "it": null
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": null,
+      "it": "Il regno dei cieli è simile ad un uomo di commercio che cercava delle belle perle: trovatane una preziosa, diede via tutti i suoi averi e la comprò"
+     },
+     {
+      "rubrica": "Per una santa della carità",
+      "it": "Nessuno ha una carità più grande di questa: dare la propria vita per i propri amici"
+     },
+     {
+      "rubrica": "Per un’educatrice",
+      "it": "La mia bocca proclamerà la sapienza, e il pensiero del mio cuore la prudenza"
+     }
+    ],
+    "invocazioni": [
+     {
+      "rubrica": null,
+      "it": {
+       "intro": "Glorifichiamo il nostro Salvatore con tutti i santi e le sante del cielo, e supplichiamolo:",
+       "response": "Vieni, Signore Gesú.",
+       "intercessions": [
+        {
+         "petition": "Signore Gesú, che hai perdonato molto alla donna peccatrice perché aveva molto amato,",
+         "answer": "perdona i nostri debiti."
+        },
+        {
+         "petition": "Signore Gesú, che nei tuoi viaggi apostolici fosti seguito dalle sante donne e aiutato dal loro umile servizio,",
+         "answer": "concedi a noi di seguire la via della caritá."
+        },
+        {
+         "petition": "Signore Gesú, ascoltato come maestro da Maria e servito da Marta,",
+         "answer": "rendici attenti alla tua parola e generosi nella caritá."
+        },
+        {
+         "petition": "Signore Gesú, che chiami fratello, sorella e madre quanti compiono la tua volontá,",
+         "answer": "fa’ che aderiamo sempre ai tuoi desideri nelle parole e nelle opere."
+        }
+       ]
+      }
+     }
+    ],
+    "orazione": [
+     {
+      "rubrica": "Per una santa",
+      "it": "O Dio, che oggi ci allieti con la festa di santa N. fa’ che il ricordo della sua testimonianza evangelica segni un rinnovamento nella nostra vita. Per il nostro Signore."
+     },
+     {
+      "rubrica": "oppure",
+      "it": "Donaci, o Padre, lo Spirito di sapienza e di amore, che ha fatto risplendere come lampada nella Chiesa la tua umile ancella santa N. e fa' che ti serviamo con lo stesso impegno di fede e di opere, per essere degni del tuo amore. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Per piú sante",
+      "it": "Ci ottenga il tuo aiuto, Signore, l’intercessione delle sante N. e N., e il loro esempio ci stimoli a una vita nuova nella luce del Vangelo. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Per una religiosa",
+      "it": "O Dio, che hai dato a santa N. La grazia di seguire sino in fondo Cristo povero e umile, concedi anche a noi di vivere fedelmente la nostra vocazione, per giungere alla perfetta caritá che ci hai proposto nel tuo Figlio. Egli è Dio, e vive e regna con te."
+     },
+     {
+      "rubrica": "Per una santa della caritá",
+      "it": "O Dio, che nell'amore verso di te e verso i fratelli hai compendiato i tuoi comandamenti, fa’ che ad imitazione di santa N. dedichiamo la nostra vita a servizio del prossimo per essere da te benedetti nel regno dei cieli. Per il nostro Signore."
+     },
+     {
+      "rubrica": "Per una educatrice",
+      "it": "O Dio, che hai suscitato nella tua Chiesa santa N. perché, con la parola e con l'esempio, indicasse ai giovani la via della salvezza, concedi anche a noi di seguire Cristo maestro e signore, per giungere con i nostri fratelli nella gloria del tuo regno. Per il nostro Signore."
+     }
+    ]
+   }
+  },
+  {
+   "id": "religiosi",
+   "titolo": "Comune dei religiosi",
+   "pagine": "pp. 296-299",
+   "eredita": {
+    "ant1": "santi",
+    "ant2": "santi",
+    "ant3": "santi",
+    "lettura": "santi",
+    "responsorio": "santi",
+    "invocazioni": "santi"
+   },
+   "note": [
+    "Le parti che il libretto non riporta si prendono dal Comune dei santi."
+   ],
+   "parti": {
+    "inno": [
+     {
+      "rubrica": null,
+      "it": "1. O adorabile amore del Redentore, / che, desiderando che gli uomini fossero consacrati al Padre, / guidi i cuori con le ispirazioni / mirabili e varie dello Spirito!\n2. A quelli che con la tua acqua fai / figli del Dio vero, vuoi dare spesso / la grazia, nuovi germogli di amore, / o Cristo.\n3. Tu chiami: i chiamati corrono alacri, / lasciano ogni cosa, desiderando, sotto la tua guida, / per il sentiero regale della croce, / cercare continuamente soltanto il Padre.\n4. Questo Santo, così ardente per dono del cielo, / con tutte le forze dimorò pieno di amore in Te, / e desiderò vivamente di giungere / alle gioiose vette della virtù.\n5. Risuoni la lode al sommo Padre, a Te, Principe Cristo, / e ugualmente allo Spirito Santo, / che donate con cuore magnanimo / il centuplo a colui che dà piccole cose. Amen."
+     }
+    ],
+    "benedictus": [
+     {
+      "rubrica": null,
+      "it": "Nella sua fede e la sua mitezza, il Signore lo rese santo, e gli mostrò la sua gloria"
+     },
+     {
+      "rubrica": "Oppure",
+      "it": "Voi che avete lasciato tutto e mi avete seguito, riceverete il centuplo e otterrete la vita eterna"
+     },
+     {
+      "rubrica": "Per una Monaca",
+      "it": "Io, il Signore, ti sposerò per sempre; e ti sposerò nella giustizia e nella rettitudine e nella misericordia e nella compassione; e ti sposerò nella fede"
+     }
+    ],
+    "orazione": [
+     {
+      "rubrica": null,
+      "it": "O Dio, che hai dato a san N. La grazia di seguire sino in fondo Cristo povero e umile, concedi anche a noi di vivere fedelmente la nostra vocazione, per giungere alla perfetta caritá che ci hai proposto nel tuo Figlio. Egli è Dio, e vive e regna con te."
+     }
+    ]
+   }
+  }
+ ]
+}

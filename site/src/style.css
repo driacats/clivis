@@ -620,6 +620,11 @@ chant-visual svg .playhead--rest { opacity: 0.45; }
   .office-card, .office-card__neume { transition: none; }
 }
 
+/* Comune dei santi: pieces whose melody is not transcribed yet */
+.comune-text { margin: 4px 0 10px; }
+.comune-text__it { white-space: pre-line; margin: 0; }
+.comune-text__tag { font-family: var(--ui); font-size: 0.8rem; color: var(--muted); margin: 4px 0 0; }
+
 /* Santo del giorno (homepage) */
 .saints { display:inline-block; margin:8px auto 4px; padding:12px 22px 14px; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); min-width:min(100%,22rem) }
 .saints__label { font-family:var(--text); font-variant:small-caps; font-weight:600; letter-spacing:.06em; color:var(--rubric); margin:0 0 4px }

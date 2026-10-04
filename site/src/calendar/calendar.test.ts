@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { easter, adventStart, fromDayNumber, liturgicalDay, parseIsoDate, toIsoDate } from './calendar';
-import { benedicamusKey, compietaPlan, lodiPlan } from './plan';
+import { benedicamusKey, compietaPlan, lodiCelebrations, lodiPlan } from './plan';
 
 const iso = (n: number) => toIsoDate(fromDayNumber(n));
 const day = (s: string) => liturgicalDay(parseIsoDate(s)!);
@@ -112,7 +112,7 @@ describe('lodiPlan', () => {
     expect(p).toMatchObject({ week: 2, dayName: 'Sabato', properNotice: null, seasonalNotice: null, paschal: false });
   });
   it('flags proper offices', () => {
-    expect(lodiPlan(day('2026-11-01')).properNotice).toMatch(/solennità/);
+    expect(lodiPlan(day('2026-03-25')).properNotice).toMatch(/solennità/);
     expect(lodiPlan(day('2026-04-07')).properNotice).toMatch(/Ottava di Pasqua/);
     expect(lodiPlan(day('2026-12-02')).seasonalNotice).toMatch(/Avvento/);
     expect(lodiPlan(day('2026-12-02'))).toMatchObject({ seasonProper: 'avvento-1', seasonProperResponsory: 'ferie' });
@@ -121,7 +121,7 @@ describe('lodiPlan', () => {
     expect(lodiPlan(day('2026-12-17')).seasonProper).toBeNull();
     expect(lodiPlan(day('2026-12-08')).seasonProper).toBeNull(); // Immacolata: Lodi proprie
     expect(lodiPlan(day('2026-11-28')).seasonProper).toBeNull();
-    expect(lodiPlan(day('2026-11-01')).fallback).toEqual({ week: 1, dayName: 'Domenica' });
+    expect(lodiPlan(day('2026-03-25')).fallback).toEqual({ week: 1, dayName: 'Domenica' });
     expect(lodiPlan(day('2026-12-30')).fallback).toEqual({ week: 1, dayName: 'Mercoledì' });
     expect(lodiPlan(day('2026-10-03')).fallback).toBeNull();
   });
@@ -167,5 +167,41 @@ describe('benedicamusKey', () => {
     expect(benedicamusKey(day('2026-12-02'))).toBe('avvento-quaresima');
     expect(benedicamusKey(day('2026-04-08'))).toBe('pasqua');
     expect(benedicamusKey(day('2026-05-06'))).toBe('tempo-pasquale');
+  });
+});
+
+describe('memorials and Comuni', () => {
+  const names = (iso: string) => day(iso).memorials.map((m) => m.name);
+  it('lists the memorials of the day', () => {
+    expect(names('2026-10-07')).toEqual(['Beata Vergine Maria del Rosario']);
+    expect(day('2026-10-07').color).toBe('bianco');
+    expect(names('2026-10-17')).toEqual(["Sant'Ignazio di Antiochia, vescovo e martire"]);
+    expect(day('2026-10-17').color).toBe('rosso');
+  });
+  it('has no memorials on Sundays, feasts and in Holy Week', () => {
+    expect(names('2026-10-04')).toEqual([]); // Sunday (and St Francis, feast)
+    expect(names('2027-03-24')).toEqual([]); // Holy Wednesday
+  });
+  it('commemorates memorials in Lent', () => {
+    const d = day('2027-03-08'); // San Giovanni di Dio, Monday of Lent III
+    expect(d.memorials[0].commemoration).toBe(true);
+    expect(lodiCelebrations(d).initial).toBe(0);
+  });
+  it('offers Saint Mary on Saturdays of Ordinary Time', () => {
+    const c = lodiCelebrations(day('2026-10-10'));
+    expect(c.options.map((o) => o.label)).toContain('Santa Maria in sabato');
+    expect(c.options[c.initial].mode).toBe('feria');
+    expect(c.options.find((o) => o.label === 'Santa Maria in sabato')?.comuni).toEqual([`sabato-${day('2026-10-10').psalterWeek}`]);
+  });
+  it('selects obligatory memorials and celebrates feasts with their Comune', () => {
+    const c = lodiCelebrations(day('2026-10-15'));
+    expect(c.options[c.initial]).toMatchObject({ mode: 'memoria', comuni: ['vergini'] });
+    expect(lodiCelebrations(day('2026-11-09')).options).toEqual([expect.objectContaining({ mode: 'festa', comuni: ['dedicazione'] })]);
+    expect(lodiPlan(day('2026-11-09')).properNotice).toBeNull();
+    expect(lodiCelebrations(day('2028-07-11')).options[0]).toMatchObject({ mode: 'festa', comuni: ['monaci'] });
+  });
+  it('places the movable memorials of Our Lady', () => {
+    expect(names('2027-05-17')).toContain('Beata Vergine Maria, Madre della Chiesa'); // Monday after Pentecost 2027
+    expect(names('2027-06-05')).toContain('Cuore Immacolato della Beata Vergine Maria');
   });
 });

@@ -5420,5 +5420,97 @@
     "status": "found",
     "file": "gabc/chants/manual-super-te-ierusalem.gabc",
     "matchNotes": "Trascritto a mano dallo spartito del libretto (Proprio del Tempo); in revisione nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-ded-inno",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Angulare fundamentum lapis Christus missus est",
+    "printedContext": "Comune: Dedicazione di una chiesa",
+    "pdfPage": "p. 203-205",
+    "status": "found",
+    "file": "gabc/chants/manual-comune-dedicazione-inno.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-ded-a1",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Domus mea, domus orationis vocabitur",
+    "printedContext": "Comune: Dedicazione di una chiesa",
+    "pdfPage": "p. 205",
+    "status": "found",
+    "file": "gabc/chants/manual-comune-dedicazione-ant1.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto.",
+    "psalm": {
+      "ref": "Ps 62",
+      "title": "L’anima assetata del Signore",
+      "file": "salmi/ps-62-o-dio-tu-sei-il-mio.json"
+    }
+  },
+  {
+    "id": "lodi.CS-ded-a2",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Benedicta gloria Domini de loco sancto suo",
+    "printedContext": "Comune: Dedicazione di una chiesa",
+    "pdfPage": "p. 205",
+    "status": "found",
+    "file": "gabc/chants/manual-comune-dedicazione-ant2.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto.",
+    "psalm": {
+      "ref": "Cant. Dan 3,57-88.56",
+      "title": "Ogni creatura lodi il Signore",
+      "file": "salmi/cant-dan-3-57-88-56-benedite-opere-tutte-del-signore-il.json"
+    }
+  },
+  {
+    "id": "lodi.CS-ded-a3",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Bene fundata est domus Domini supra firmam petram",
+    "printedContext": "Comune: Dedicazione di una chiesa",
+    "pdfPage": "p. 205",
+    "status": "found",
+    "file": "gabc/chants/manual-comune-dedicazione-ant3.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto.",
+    "psalm": {
+      "ref": "Ps 149",
+      "title": "Festa degli amici di Dio",
+      "file": "salmi/ps-149-cantate-al-signore-un-canto-nuovo.json"
+    }
+  },
+  {
+    "id": "lodi.CS-ded-rb",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Magnus Dominus et laudabilis nimis. In civitate Dei nostri",
+    "printedContext": "Comune: Dedicazione di una chiesa",
+    "pdfPage": "p. 206",
+    "status": "found",
+    "file": "gabc/chants/manual-comune-dedicazione-rb.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-ded-rb-tp",
+    "office": "lodi",
+    "role": "responsorio breve (versione pasquale)",
+    "printedIncipit": "Magnus Dominus et laudabilis nimis, alleluia, alleluia",
+    "printedContext": "Comune: Dedicazione di una chiesa",
+    "pdfPage": "p. 206",
+    "status": "found",
+    "file": "gabc/chants/manual-comune-dedicazione-rb-tp.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-ded-ben",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Zachaee, festinans descende, quia hodie in domo tua oportet me manere",
+    "printedContext": "Comune: Dedicazione di una chiesa",
+    "pdfPage": "p. 207",
+    "status": "found",
+    "file": "gabc/chants/manual-comune-dedicazione-ben.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto."
   }
 ]

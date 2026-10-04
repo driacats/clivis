@@ -34,7 +34,9 @@ export interface LodiPlan {
 
 export function lodiPlan(day: LiturgicalDay): LodiPlan {
   let properNotice: string | null = null;
-  if (day.season === 'triduo') {
+  if (day.celebration?.comune) {
+    // celebrated with its Comune (ui/comune.ts)
+  } else if (day.season === 'triduo') {
     properNotice = 'Nel Triduo pasquale le Lodi sono interamente proprie e non sono ancora in questo breviario.';
   } else if (day.inOctave === 'pasqua') {
     properNotice = "Nell'Ottava di Pasqua le Lodi sono proprie (salmi della Domenica della I settimana con antifone pasquali) e non sono ancora in questo breviario.";
@@ -45,10 +47,10 @@ export function lodiPlan(day: LiturgicalDay): LodiPlan {
     properNotice = `${what}: ${day.celebration.name}. Le Lodi sono proprie (salmi della Domenica della I settimana) e non sono ancora in questo breviario.`;
   }
 
-  const seasonProper = properNotice ? null : seasonProperId(day);
+  const seasonProper = properNotice || day.celebration?.comune ? null : seasonProperId(day);
 
   let seasonalNotice: string | null = null;
-  if (!properNotice && day.season !== 'ordinario') {
+  if (!properNotice && !day.celebration?.comune && day.season !== 'ordinario') {
     const tempo = { avvento: "d'Avvento", natale: 'di Natale', quaresima: 'di Quaresima', pasqua: 'di Pasqua', triduo: '', ordinario: '' }[day.season];
     seasonalNotice = seasonProper
       ? `Nel Tempo ${tempo} l’inno e il responsorio breve sono quelli propri del tempo, dal libretto. La lettura breve, l’antifona al Benedictus e l’orazione proprie del tempo non sono nel libretto: qui trovi quelle del salterio.`
@@ -272,4 +274,51 @@ export function paterNosterTone(day: LiturgicalDay): PaterNosterTone {
   if (day.season === 'quaresima' || day.season === 'avvento' || day.season === 'triduo') return 'B';
   if (day.season === 'pasqua' || day.season === 'natale' || day.celebration || day.weekday === 0) return 'C';
   return 'A';
+}
+
+// --- Comune dei santi (libretto pp. 203-299) ----------------------------------------
+
+export type CelebrationMode = 'feria' | 'memoria' | 'festa';
+
+/** One way of praying today's Lodi: the weekday, or a saint with its Comune. */
+export interface LodiCelebration {
+  mode: CelebrationMode;
+  /** Button label. */
+  label: string;
+  /** Full name of the saint or celebration, null for the weekday. */
+  name: string | null;
+  /** Comuni that can be used (testi/comuni.json ids), the first is the default. */
+  comuni: string[];
+}
+
+/**
+ * The celebrations offered for Lodi today and the one selected by default.
+ * Solemnities and feasts of saints use their Comune throughout (psalms of
+ * Sunday of week I); on memorials the psalmody is the weekday's and the other
+ * parts come from the Comune. Optional memorials and commemorations are
+ * offered, the weekday stays the default.
+ */
+export function lodiCelebrations(day: LiturgicalDay): { options: LodiCelebration[]; initial: number } {
+  const c = day.celebration;
+  if (c?.comune) {
+    return { options: [{ mode: 'festa', label: c.name, name: c.name, comuni: [c.comune] }], initial: 0 };
+  }
+  if (c || day.memorials.length === 0) return { options: [{ mode: 'feria', label: 'Feria', name: null, comuni: [] }], initial: 0 };
+  const options: LodiCelebration[] = [{ mode: 'feria', label: 'Feria', name: null, comuni: [] }];
+  let initial = 0;
+  for (const m of day.memorials) {
+    const saturday = m.name === 'Memoria di Santa Maria in sabato';
+    const comuni = saturday ? [`sabato-${day.psalterWeek}`] : m.comuni;
+    options.push({ mode: 'memoria', label: saturday ? 'Santa Maria in sabato' : m.name, name: m.name, comuni });
+    if (m.rank === 'memoria' && !m.commemoration && initial === 0) initial = options.length - 1;
+  }
+  return { options, initial };
+}
+
+/** Benedicamus for an office celebrated with a Comune. */
+export function comuneBenedicamus(day: LiturgicalDay, mode: CelebrationMode, comune: string): BenedicamusKey | 'memorie' | 'bvm' | 'sabato' {
+  if (mode === 'festa') return benedicamusKey(day);
+  if (comune.startsWith('sabato')) return 'sabato';
+  if (comune === 'bvm') return 'bvm';
+  return 'memorie';
 }

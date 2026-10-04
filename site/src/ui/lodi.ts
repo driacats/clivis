@@ -1,10 +1,11 @@
 import type { LiturgicalDay } from '../calendar/calendar';
-import { benedicamusKey, lodiPlan, paterNosterTone, solemnBlessing } from '../calendar/plan';
+import { benedicamusKey, lodiCelebrations, lodiPlan, paterNosterTone, solemnBlessing, type LodiCelebration } from '../calendar/plan';
 import { fetchGabc, fetchPsalm, getTexts } from '../data/loader';
 import type { AntiphonSlot, LiturgyData } from '../data/types';
 import { deferred, h, notice } from './dom';
 import { lodiOpening } from './opening';
-import { antiphonWithPsalm, chant, finalBlessing, invocations, letturaBreve, paterNoster, psalmText, rubric, section } from './pieces';
+import { comuneTitle, renderComuneLodi } from './comune';
+import { antiphonWithPsalm, chant, choice, finalBlessing, invocations, letturaBreve, paterNoster, psalmText, rubric, section } from './pieces';
 
 const BENEDICTUS = 'salmi/cant-lc-1-68-79-benedictus.json';
 
@@ -28,7 +29,46 @@ function paschalAntiphon(slot: AntiphonSlot): HTMLElement {
   );
 }
 
-export function renderLodi(day: LiturgicalDay, liturgy: LiturgyData, showAnyway = false): HTMLElement {
+/**
+ * Lodi of the day. When a saint can be celebrated, a choice on top switches
+ * between the weekday and the saint (with its Comune).
+ */
+export function renderLodi(day: LiturgicalDay, liturgy: LiturgyData): HTMLElement {
+  const { options, initial } = lodiCelebrations(day);
+  if (options.length === 1) return renderCelebration(day, liturgy, options[0]);
+  return h('div', {},
+    choice('Celebrazione', options.map((o) => ({
+      label: o.mode === 'feria' ? 'Feria' : `${o.label}${o.mode === 'memoria' && day.memorials.find((m) => m.name === o.name)?.rank === 'memoria facoltativa' ? ' (facoltativa)' : ''}`,
+      build: () => renderCelebration(day, liturgy, o),
+    })), initial));
+}
+
+function renderCelebration(day: LiturgicalDay, liturgy: LiturgyData, o: LodiCelebration): HTMLElement {
+  if (o.mode === 'feria') {
+    const commemorations = day.memorials.filter((m) => m.commemoration);
+    return h('div', {},
+      commemorations.length ? notice(`Oggi si può fare memoria di: ${commemorations.map((m) => m.name).join('; ')}. In questo tempo le memorie si commemorano soltanto: si dicono le Lodi della feria.`, 'info') : null,
+      renderFeria(day, liturgy));
+  }
+  const build = (comune: string) => {
+    const plan = lodiPlan(day);
+    const data = liturgy.lodi.weeks.find((w) => w.week === plan.week)?.days.find((d) => d.day === plan.dayName);
+    const conc = getTexts().lodi.find((e) => e.week === plan.week && e.day === plan.dayName);
+    return renderComuneLodi(day, liturgy, {
+      mode: o.mode as 'memoria' | 'festa', name: o.name, comune,
+      psalter: () => data ? psalmody(data.psalmAntiphons, plan.paschal) : [notice('Salmodia del giorno non trovata.', 'error')],
+      ferialInvocations: conc?.invocazioni ?? null,
+    });
+  };
+  if (o.comuni.length === 1) return build(o.comuni[0]);
+  return choice('Comune', o.comuni.map((c) => ({ label: `Comune: ${comuneTitle(c)}`, build: () => build(c) })));
+}
+
+function psalmody(slots: AntiphonSlot[], paschal: boolean): HTMLElement[] {
+  return slots.map((slot) => paschal ? paschalAntiphon(slot) : antiphonWithPsalm(slot.primary, SLOT_LABEL[slot.slot]));
+}
+
+function renderFeria(day: LiturgicalDay, liturgy: LiturgyData, showAnyway = false): HTMLElement {
   const plan = lodiPlan(day);
   const root = h('div', { class: 'office' });
 
@@ -39,7 +79,7 @@ export function renderLodi(day: LiturgicalDay, liturgy: LiturgyData, showAnyway 
     const f = plan.fallback;
     const button = h('button', { type: 'button', class: 'link-button' },
       `Mostra i salmi del salterio: ${f.dayName} della ${['', 'I', 'II', 'III', 'IV'][f.week]} settimana`);
-    button.addEventListener('click', () => root.replaceWith(renderLodi(day, liturgy, true)));
+    button.addEventListener('click', () => root.replaceWith(renderFeria(day, liturgy, true)));
     root.append(notice(plan.properNotice, 'info'), button);
     return root;
   }
@@ -69,8 +109,7 @@ export function renderLodi(day: LiturgicalDay, liturgy: LiturgyData, showAnyway 
   root.append(
     section('Introduzione', lodiOpening(day)),
     section('Inno', hymn),
-    section('Salmodia', ...data.psalmAntiphons.map((slot) =>
-      plan.paschal ? paschalAntiphon(slot) : antiphonWithPsalm(slot.primary, SLOT_LABEL[slot.slot]))),
+    section('Salmodia', ...psalmody(data.psalmAntiphons, plan.paschal)),
     section('Lettura breve', letturaBreve(data.letturaBreve)),
     section('Responsorio breve', responsory),
     section('Cantico di Zaccaria', ...benedictus(data.benedictusAntiphon)),

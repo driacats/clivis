@@ -120,6 +120,42 @@ export interface Texts {
   marianeIt: Record<string, string>;
   /** Italian translation of the hymns and responsories of the Proprio del Tempo, by index id. */
   proprioTempoIt: Record<string, string>;
+  comuni: Comune[];
+}
+
+// --- Comune dei santi (testi/comuni.json) -------------------------------------------
+
+export type ComunePart = 'inno' | 'ant1' | 'ant2' | 'ant3' | 'lettura' | 'responsorio' | 'benedictus' | 'invocazioni' | 'orazione';
+
+export interface ComuneVariant {
+  /** Rubric of the libretto ("Per un martire", "Nel Tempo Pasquale", "oppure"…). */
+  rubrica: string | null;
+  /** Italian text printed in the libretto (null when only the melody is printed). */
+  it: string | LodiConclusion['invocazioni'] | null;
+  /** Biblical reference of the short reading. */
+  rif?: string;
+  /** Proper to Eastertide. */
+  tp?: boolean;
+  /** gabc/index.json id of the melody, once transcribed. */
+  canto?: string;
+  /** The libretto refers to the same part of another Comune. */
+  vedi?: string;
+}
+
+export interface Comune {
+  id: string;
+  titolo: string;
+  pagine: string;
+  /** "feria": the psalmody is always the weekday's (Saturday of Our Lady). */
+  salmodia?: 'feria';
+  /** Comune whose orations are used. */
+  orazione?: string;
+  /** Parts taken from another Comune. */
+  eredita?: Partial<Record<ComunePart, string>>;
+  /** In Eastertide these parts come from this other Comune (martyrs). */
+  tempoPasquale?: string;
+  note: string[];
+  parti: Partial<Record<ComunePart, ComuneVariant[]>>;
 }
 
 export interface EsameCoscienza {
