@@ -1,6 +1,12 @@
-# Breviario MLG
+<p align="center">
+  <img src="site/logo-mlg.svg" alt="Logo di Clivis" width="96">
+</p>
 
-La Liturgia delle Ore in canto gregoriano, per il Movimento Liturgico Giovanile.
+<h1 align="center">Clivis</h1>
+
+<p align="center">La Liturgia delle Ore in canto gregoriano, per il Movimento Liturgico Giovanile.</p>
+
+Il nome viene dalla clivis, il neuma di due note discendenti che è anche il logo del sito.
 
 Il sito apre sul giorno di oggi, calcola da solo quale ufficio pregare secondo il calendario romano in uso in Italia e mostra l'ora completa: testi in italiano e latino, spartiti in notazione quadrata e melodie da ascoltare. Il repository contiene sia il sito sia il database da cui legge, ricavato dai libretti del Movimento (Lodi e Compieta).
 

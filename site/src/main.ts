@@ -84,13 +84,13 @@ function render(): void {
   const path = location.hash.replace(/^#\/?/, '');
   if (path === '') {
     document.documentElement.dataset.season = liturgicalDay(todayLocal()).color;
-    document.title = 'Breviario MLG · Lodi e Compieta in canto gregoriano';
+    document.title = 'Clivis · Liturgia delle Ore in canto gregoriano';
     app.replaceChildren(renderHome());
     window.scrollTo({ top: 0 });
     return;
   }
   if (path === 'esame') {
-    document.title = 'Esame di coscienza · Breviario MLG';
+    document.title = 'Esame di coscienza · Clivis';
     app.replaceChildren(h('main', { class: 'office-wrap' }, renderEsamePage()));
     window.scrollTo({ top: 0 });
     return;
@@ -98,7 +98,7 @@ function render(): void {
   const route = readRoute();
   const day = liturgicalDay(route.date);
   document.documentElement.dataset.season = day.color;
-  document.title = `${route.office === 'lodi' ? 'Lodi' : 'Compieta'} · ${formatCivilDate(day.date, false)} · Breviario MLG`;
+  document.title = `${route.office === 'lodi' ? 'Lodi' : 'Compieta'} · ${formatCivilDate(day.date, false)} · Clivis`;
   app.replaceChildren(
     dayHeader(day, route),
     h('main', { class: 'office-wrap' }, route.office === 'lodi' ? renderLodi(day, liturgy) : renderCompieta(day, liturgy)),

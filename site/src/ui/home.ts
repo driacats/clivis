@@ -138,7 +138,7 @@ export function renderHome(): HTMLElement {
         h('a', { class: 'more-link', href: `#/${toIsoDate(today.date)}/lodi` }, 'Scegli un altro giorno'))),
 
     h('section', { class: 'home-block home-about' },
-      h('h2', { class: 'rubric' }, 'Il breviario'),
+      h('h2', { class: 'rubric' }, 'Il breviario Clivis'),
       h('p', {},
         'Le Lodi e la Compieta come le canta il Movimento Liturgico Giovanile: testi e melodie gregoriane dai libretti ',
         h('em', {}, 'Lodi complete'), ' e ', h('em', {}, 'Compieta piccola'),

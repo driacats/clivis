@@ -1,4 +1,4 @@
-# Breviario MLG — sito
+# Clivis — sito
 
 Lodi (salterio delle quattro settimane) e Compieta in canto gregoriano, per il
 Movimento Liturgico Giovanile. Il sito apre sul giorno di oggi e calcola da solo
