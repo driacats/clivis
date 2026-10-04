@@ -114,25 +114,29 @@
     "inno": [
      {
       "rubrica": null,
-      "it": "1. O gloriosa Signora,/ che t’innalzi sopra le stelle,/ tu nutri col tuo seno/ Chi nella provvidenza ti creò./\n2. Ciò che Eva purtroppo ci tolse/ tu ridoni per mezzo del Figlio tuo;/ come pallide stelle si avanzino i poveri;/ Tu, benigna, spiani un sentiero./\n3. Tu sei la porta del Re del cielo,/ la porta di una fulgida luce;/ o genti redente, applaudite/ alla vita data dalla Vergine\n4. Al Padre sia, al Paraclito / ed al tuo Nato, gloria / lor, che di mira veste / di grazia ti ammantarono."
+      "it": "1. O gloriosa Signora,/ che t’innalzi sopra le stelle,/ tu nutri col tuo seno/ Chi nella provvidenza ti creò./\n2. Ciò che Eva purtroppo ci tolse/ tu ridoni per mezzo del Figlio tuo;/ come pallide stelle si avanzino i poveri;/ Tu, benigna, spiani un sentiero./\n3. Tu sei la porta del Re del cielo,/ la porta di una fulgida luce;/ o genti redente, applaudite/ alla vita data dalla Vergine\n4. Al Padre sia, al Paraclito / ed al tuo Nato, gloria / lor, che di mira veste / di grazia ti ammantarono.",
+      "canto": "lodi.CS-bvm-inno"
      }
     ],
     "ant1": [
      {
       "rubrica": null,
-      "it": "Beata sei, Maria, Madre del nostro Signore Gesù Cristo, poiché da te è venuta la salvezza del mondo: ora, Vergine gloriosa, ti rallegri al cospetto del Signore; intercedi per noi presso il Figlio"
+      "it": "Beata sei, Maria, Madre del nostro Signore Gesù Cristo, poiché da te è venuta la salvezza del mondo: ora, Vergine gloriosa, ti rallegri al cospetto del Signore; intercedi per noi presso il Figlio",
+      "canto": "lodi.CS-bvm-a1"
      }
     ],
     "ant2": [
      {
       "rubrica": null,
-      "it": "Tu gloria di Gerusalemme, tu letizia di Israele, tu onore del nostro popolo"
+      "it": "Tu gloria di Gerusalemme, tu letizia di Israele, tu onore del nostro popolo",
+      "canto": "lodi.CS-bvm-a2"
      }
     ],
     "ant3": [
      {
       "rubrica": null,
-      "it": "Maria Vergine, rallegrati, tu che ti sei degnata di portare Cristo, Creatore del cielo e della terra; poiché dal tuo grembo hai generato il Salvatore del mondo, alleluia"
+      "it": "Maria Vergine, rallegrati, tu che ti sei degnata di portare Cristo, Creatore del cielo e della terra; poiché dal tuo grembo hai generato il Salvatore del mondo, alleluia",
+      "canto": "lodi.CS-bvm-a3"
      }
     ],
     "lettura": [
@@ -145,18 +149,21 @@
     "responsorio": [
      {
       "rubrica": null,
-      "it": "Dio la ha scelta e l’ha prediletta. Nella sua tenda l’ha fatta dimorare. Gloria."
+      "it": "Dio la ha scelta e l’ha prediletta. Nella sua tenda l’ha fatta dimorare. Gloria.",
+      "canto": "lodi.CS-bvm-rb"
      },
      {
       "rubrica": "Nel tempo pasquale",
       "tp": true,
-      "it": null
+      "it": null,
+      "canto": "lodi.CS-bvm-rb-tp"
      }
     ],
     "benedictus": [
      {
       "rubrica": null,
-      "it": "La porta del Paradiso fu chiusa per tutti per mezzo di Eva, e per mezzo di Maria Vergine fu di nuovo spalancata, alleluia"
+      "it": "La porta del Paradiso fu chiusa per tutti per mezzo di Eva, e per mezzo di Maria Vergine fu di nuovo spalancata, alleluia",
+      "canto": "lodi.CS-bvm-ben"
      }
     ],
     "invocazioni": [

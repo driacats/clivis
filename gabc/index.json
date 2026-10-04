@@ -5512,5 +5512,97 @@
     "status": "found",
     "file": "gabc/chants/manual-comune-dedicazione-ben.gabc",
     "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-bvm-inno",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "O gloriosa Domina, excelsa super sidera",
+    "printedContext": "Comune: Beata Vergine Maria",
+    "pdfPage": "p. 208-209",
+    "status": "found",
+    "file": "gabc/chants/manual-comune-bvm-inno.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-bvm-a1",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Beata es, Maria, Mater Domini nostri Iesu Christi",
+    "printedContext": "Comune: Beata Vergine Maria",
+    "pdfPage": "p. 210",
+    "status": "found",
+    "file": "gabc/chants/manual-comune-bvm-ant1.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto.",
+    "psalm": {
+      "ref": "Ps 62",
+      "title": "L’anima assetata del Signore",
+      "file": "salmi/ps-62-o-dio-tu-sei-il-mio.json"
+    }
+  },
+  {
+    "id": "lodi.CS-bvm-a2",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Tu gloria Ierusalem, tu laetitia Israel",
+    "printedContext": "Comune: Beata Vergine Maria",
+    "pdfPage": "p. 210",
+    "status": "found",
+    "file": "gabc/chants/manual-comune-bvm-ant2.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto.",
+    "psalm": {
+      "ref": "Cant. Dan 3,57-88.56",
+      "title": "Ogni creatura lodi il Signore",
+      "file": "salmi/cant-dan-3-57-88-56-benedite-opere-tutte-del-signore-il.json"
+    }
+  },
+  {
+    "id": "lodi.CS-bvm-a3",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Maria Virgo, semper laetare",
+    "printedContext": "Comune: Beata Vergine Maria",
+    "pdfPage": "p. 211",
+    "status": "found",
+    "file": "gabc/chants/manual-comune-bvm-ant3.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto.",
+    "psalm": {
+      "ref": "Ps 149",
+      "title": "Festa degli amici di Dio",
+      "file": "salmi/ps-149-cantate-al-signore-un-canto-nuovo.json"
+    }
+  },
+  {
+    "id": "lodi.CS-bvm-rb",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Elegit eam Deus, et praeelegit eam",
+    "printedContext": "Comune: Beata Vergine Maria",
+    "pdfPage": "p. 211",
+    "status": "found",
+    "file": "gabc/chants/manual-comune-bvm-rb.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-bvm-rb-tp",
+    "office": "lodi",
+    "role": "responsorio breve (versione pasquale)",
+    "printedIncipit": "Elegit eam Deus, alleluia",
+    "printedContext": "Comune: Beata Vergine Maria",
+    "pdfPage": "p. 212",
+    "status": "found",
+    "file": "gabc/chants/manual-comune-bvm-rb-tp.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-bvm-ben",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Paradisi porta per Evam cunctis clausa est",
+    "printedContext": "Comune: Beata Vergine Maria",
+    "pdfPage": "p. 212",
+    "status": "found",
+    "file": "gabc/chants/manual-comune-bvm-ben.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto."
   }
 ]
