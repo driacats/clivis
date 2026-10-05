@@ -282,7 +282,8 @@
     "inno": [
      {
       "rubrica": null,
-      "it": "1. O Vergine, Tu sei stella risplendente / di carità per i Celesti, / fonte viva e traboccante / di speranza per noi mortali.\n2. Sei così potente, o eccelsa Signora, / sul cuore del pietosissimo Figlio, / che chi chiede con fiducia, / per Te sicuramente ottiene.\n3. La tua bontà non solo / porta aiuto a chi chiede, / ma anche spesso spontaneamente / previene i desideri di coloro che pregano.\n4. In Te misericordia, / in Te magnanimità; / Tu raccogli in Te tutto ciò che di bontà / gli esseri creati posseggono.\n5. Sia gloria al Padre, / al Paraclito e al tuo Figlio, / che ti hanno rivestito / della veste mirabile della grazia."
+      "it": "1. O Vergine, Tu sei stella risplendente / di carità per i Celesti, / fonte viva e traboccante / di speranza per noi mortali.\n2. Sei così potente, o eccelsa Signora, / sul cuore del pietosissimo Figlio, / che chi chiede con fiducia, / per Te sicuramente ottiene.\n3. La tua bontà non solo / porta aiuto a chi chiede, / ma anche spesso spontaneamente / previene i desideri di coloro che pregano.\n4. In Te misericordia, / in Te magnanimità; / Tu raccogli in Te tutto ciò che di bontà / gli esseri creati posseggono.\n5. Sia gloria al Padre, / al Paraclito e al tuo Figlio, / che ti hanno rivestito / della veste mirabile della grazia.",
+      "canto": "lodi.CS-sabato1-inno"
      }
     ],
     "lettura": [
@@ -295,17 +296,20 @@
     "responsorio": [
      {
       "rubrica": null,
-      "it": "Sei rimasta illibata dopo il parto. Madre di Dio, intercedi per noi. Gloria"
+      "it": "Sei rimasta illibata dopo il parto. Madre di Dio, intercedi per noi. Gloria",
+      "canto": "lodi.CS-sabato1-rb"
      }
     ],
     "benedictus": [
      {
       "rubrica": null,
-      "it": "Ave, Maria, piena di grazia: il Signore è con te. Tu sei benedetta fra le donne."
+      "it": "Ave, Maria, piena di grazia: il Signore è con te. Tu sei benedetta fra le donne.",
+      "canto": "lodi.CS-sabato1-ben1"
      },
      {
       "rubrica": "oppure",
-      "it": "Ave, Regina dei cieli, Madre del Re degli Angeli; o Maria, fiori delle vergini, qual rosa, qual giglio: effondi preghiere al Signore, per la salvezza dei fedeli."
+      "it": "Ave, Regina dei cieli, Madre del Re degli Angeli; o Maria, fiori delle vergini, qual rosa, qual giglio: effondi preghiere al Signore, per la salvezza dei fedeli.",
+      "canto": "lodi.CS-sabato1-ben2"
      }
     ],
     "invocazioni": [
@@ -348,7 +352,8 @@
     "inno": [
      {
       "rubrica": null,
-      "it": "1. O gloriosa Signora, / eccelsa più delle stelle, / Tu nutri al sacro seno / Colui che sapientemente ti ha creato.\n2. La grazia, che l’infelice Eva ci tolse, / Tu ci restituisci nell’almo Figlio; / e appiani benigna il cammino, affinché noi / deboli (possiamo) entrare nel Regno dei cieli.\n3. Tu sei l’ingresso dell’altissimo Re, / e porta splendente di luce; / o genti redente, applaudite / alla vita donataci per la Vergine.\n4. Sia gloria al Padre, / al Paraclito e al tuo Figlio, / che ti rivestirono della veste / mirabile della grazia. Amen."
+      "it": "1. O gloriosa Signora, / eccelsa più delle stelle, / Tu nutri al sacro seno / Colui che sapientemente ti ha creato.\n2. La grazia, che l’infelice Eva ci tolse, / Tu ci restituisci nell’almo Figlio; / e appiani benigna il cammino, affinché noi / deboli (possiamo) entrare nel Regno dei cieli.\n3. Tu sei l’ingresso dell’altissimo Re, / e porta splendente di luce; / o genti redente, applaudite / alla vita donataci per la Vergine.\n4. Sia gloria al Padre, / al Paraclito e al tuo Figlio, / che ti rivestirono della veste / mirabile della grazia. Amen.",
+      "canto": "lodi.CS-bvm-inno"
      }
     ],
     "lettura": [
@@ -361,17 +366,20 @@
     "responsorio": [
      {
       "rubrica": null,
-      "it": "Il Signore la ha scelta, e la ha prescelta. L’ha fatta abitare nelle sua tenda. Gloria"
+      "it": "Il Signore la ha scelta, e la ha prescelta. L’ha fatta abitare nelle sua tenda. Gloria",
+      "canto": "lodi.CS-bvm-rb"
      }
     ],
     "benedictus": [
      {
       "rubrica": null,
-      "it": "Beata Madre di Dio, Maria, sempre Vergine, tempio del Signore, sacrario dello Spirito Santo: sola, senza pari, sei piaciuta al Signore Gesù Cristo: prega per il popolo, aiuta i sacerdoti, intercedi per le figlie devote"
+      "it": "Beata Madre di Dio, Maria, sempre Vergine, tempio del Signore, sacrario dello Spirito Santo: sola, senza pari, sei piaciuta al Signore Gesù Cristo: prega per il popolo, aiuta i sacerdoti, intercedi per le figlie devote",
+      "canto": "lodi.CS-sabato2-ben1"
      },
      {
       "rubrica": "oppure",
-      "it": "Madre beata e Vergine illibata, gloriosa Regina del mondo, intercedi per noi presso il Signore"
+      "it": "Madre beata e Vergine illibata, gloriosa Regina del mondo, intercedi per noi presso il Signore",
+      "canto": "lodi.CS-sabato2-ben2"
      }
     ],
     "invocazioni": [
@@ -418,7 +426,8 @@
     "inno": [
      {
       "rubrica": null,
-      "it": "1. Ave, stella del mare, / alma Madre di Dio, / Madre sempre Vergine, / prospera porta del cielo.\n2. Accogliendo l’ave / dalla bocca di Gabriele, / rendici saldi nella pace, / e cambia la sorte di Eva.\n3. Spezza i legami ai rei, / porta la luce ai ciechi, / allontana i nostri mali, / chiedi (per noi) ogni bene.\n4. Mostra di essere Madre, / accolga per Te le preghiere / Colui che nato per noi / volle essere tuo.\n5. O Vergine singolare, / la più mite di tutte, / fa’ mansueti e puri / noi sciolti dai vincoli del peccato.\n6. Donaci una vita pura, / prepara un cammino sicuro, / affinché, vedendo Gesù, / possiamo esser sempre lieti.\n7. Sia lode a Dio Padre, / sia onore all’eccelso Cristo, / (sia) onore allo Spirito Santo, / un medesimo (onore) ai Tre. Amen."
+      "it": "1. Ave, stella del mare, / alma Madre di Dio, / Madre sempre Vergine, / prospera porta del cielo.\n2. Accogliendo l’ave / dalla bocca di Gabriele, / rendici saldi nella pace, / e cambia la sorte di Eva.\n3. Spezza i legami ai rei, / porta la luce ai ciechi, / allontana i nostri mali, / chiedi (per noi) ogni bene.\n4. Mostra di essere Madre, / accolga per Te le preghiere / Colui che nato per noi / volle essere tuo.\n5. O Vergine singolare, / la più mite di tutte, / fa’ mansueti e puri / noi sciolti dai vincoli del peccato.\n6. Donaci una vita pura, / prepara un cammino sicuro, / affinché, vedendo Gesù, / possiamo esser sempre lieti.\n7. Sia lode a Dio Padre, / sia onore all’eccelso Cristo, / (sia) onore allo Spirito Santo, / un medesimo (onore) ai Tre. Amen.",
+      "canto": "lodi.CS-sabato3-inno"
      }
     ],
     "lettura": [
@@ -431,17 +440,20 @@
     "responsorio": [
      {
       "rubrica": null,
-      "it": "Ave, Maria, piena di grazia: il Signore è con te. Tu sei benedetta tra le donne, e benedetto il frutto del tuo grembo. Gloria."
+      "it": "Ave, Maria, piena di grazia: il Signore è con te. Tu sei benedetta tra le donne, e benedetto il frutto del tuo grembo. Gloria.",
+      "canto": "lodi.CS-sabato3-rb"
      }
     ],
     "benedictus": [
      {
       "rubrica": null,
-      "it": "Vergine Maria, tu sei benedetta dal Signore, Dio eccelso, tra tutte le donne sulla terra"
+      "it": "Vergine Maria, tu sei benedetta dal Signore, Dio eccelso, tra tutte le donne sulla terra",
+      "canto": "lodi.CS-sabato3-ben1"
      },
      {
       "rubrica": "oppure",
-      "it": "Madre nella verginità, vergine nel parto, gioisci e rallegrati, Vergine Madre del Signore"
+      "it": "Madre nella verginità, vergine nel parto, gioisci e rallegrati, Vergine Madre del Signore",
+      "canto": "lodi.CS-sabato3-ben2"
      }
     ],
     "invocazioni": [
@@ -488,7 +500,8 @@
     "inno": [
      {
       "rubrica": null,
-      "it": "1. O Maria, che accogli con amore / le preghiere degli uomini, / ecco ti preghiamo supplichevoli, / sii sempre vicina a noi.\n2. Sii vicina se ci opprime / la catena orrida dei peccati; / subito sciogli i vincoli / che legano i cuori ai peccati.\n3. Soccorrici se le illusioni / del mondo ci lusingano, / affinché la mente, dimentica del cielo, / non abbandoni la via della salvezza.\n4. Soccorrici se la sorte avversa / minaccia il corpo; / fa’ che viviamo giorni sereni, / finché non risplenda il giorno eterno.\n5. Sii per noi, tuoi figli, / anche protezione nel momento della morte, / affinché con il tuo aiuto / ci sia dato di conseguire l’eterno premio.\n6. Sia gloria al Padre, / al Paraclito e al tuo Figlio, / che ti hanno rivestito / della splendida veste della grazia. Amen"
+      "it": "1. O Maria, che accogli con amore / le preghiere degli uomini, / ecco ti preghiamo supplichevoli, / sii sempre vicina a noi.\n2. Sii vicina se ci opprime / la catena orrida dei peccati; / subito sciogli i vincoli / che legano i cuori ai peccati.\n3. Soccorrici se le illusioni / del mondo ci lusingano, / affinché la mente, dimentica del cielo, / non abbandoni la via della salvezza.\n4. Soccorrici se la sorte avversa / minaccia il corpo; / fa’ che viviamo giorni sereni, / finché non risplenda il giorno eterno.\n5. Sii per noi, tuoi figli, / anche protezione nel momento della morte, / affinché con il tuo aiuto / ci sia dato di conseguire l’eterno premio.\n6. Sia gloria al Padre, / al Paraclito e al tuo Figlio, / che ti hanno rivestito / della splendida veste della grazia. Amen",
+      "canto": "lodi.CS-sabato4-inno"
      }
     ],
     "lettura": [
@@ -501,25 +514,30 @@
     "responsorio": [
      {
       "rubrica": null,
-      "it": "Con il tuo splendore e la tua bellezza. Vieni avanti, avanza trionfalmente e regna. Gloria"
+      "it": "Con il tuo splendore e la tua bellezza. Vieni avanti, avanza trionfalmente e regna. Gloria",
+      "canto": "lodi.CS-sabato4-rb"
      }
     ],
     "benedictus": [
      {
       "rubrica": null,
-      "it": "Sotto la tua protezione cerchiamo rifugio, santa Madre di Dio: non disprezzare le nostre suppliche nella prova: ma liberaci sempre da tutti i pericoli, Vergine gloriosa e benedetta"
+      "it": "Sotto la tua protezione cerchiamo rifugio, santa Madre di Dio: non disprezzare le nostre suppliche nella prova: ma liberaci sempre da tutti i pericoli, Vergine gloriosa e benedetta",
+      "canto": "lodi.CS-sabato4-ben1"
      },
      {
       "rubrica": "oppure",
-      "it": "Tu, gloria di Gerusalemme, tu, letizia di Israele, tu onore del nostro popolo"
+      "it": "Tu, gloria di Gerusalemme, tu, letizia di Israele, tu onore del nostro popolo",
+      "canto": "lodi.CS-bvm-a2"
      },
      {
       "rubrica": "oppure",
-      "it": "La videro le figlie di Sion e la proclamarono beata, e le regine la lodarono"
+      "it": "La videro le figlie di Sion e la proclamarono beata, e le regine la lodarono",
+      "canto": "lodi.CS-sabato4-ben3"
      },
      {
       "rubrica": "Oppure",
-      "it": "Vergine Maria, non è nata al mondo nessuna che ti sia simile tra le donne: splendida come una rosa, fragrante come un giglio! Prega per noi, santa Madre di Dio"
+      "it": "Vergine Maria, non è nata al mondo nessuna che ti sia simile tra le donne: splendida come una rosa, fragrante come un giglio! Prega per noi, santa Madre di Dio",
+      "canto": "lodi.CS-sabato4-ben4"
      }
     ],
     "invocazioni": [

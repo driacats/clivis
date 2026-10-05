@@ -5604,5 +5604,170 @@
     "status": "found",
     "file": "gabc/chants/manual-comune-bvm-ben.gabc",
     "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); in revisione nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-sabato1-inno",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Quae caritatis fulgidum es astrum, Virgo, superis",
+    "printedContext": "Comune: Memoria di S. Maria in sabato, 1° schema",
+    "pdfPage": "p. 215-216",
+    "status": "found",
+    "file": "gabc/chants/manual-sabato1-inno.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-sabato1-rb",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Post partum Virgo inviolata permansisti",
+    "printedContext": "Comune: Memoria di S. Maria in sabato, 1° schema",
+    "pdfPage": "p. 216",
+    "status": "found",
+    "file": "gabc/chants/manual-sabato1-rb.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-sabato1-ben1",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Ave Maria, gratia plena",
+    "printedContext": "Comune: Memoria di S. Maria in sabato, 1° schema",
+    "pdfPage": "p. 216-217",
+    "status": "found",
+    "file": "gabc/chants/manual-sabato1-ben1.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-sabato1-ben2",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Ave Regina caelorum, Mater Regis Angelorum",
+    "printedContext": "Comune: Memoria di S. Maria in sabato, 1° schema",
+    "pdfPage": "p. 217",
+    "status": "found",
+    "file": "gabc/chants/manual-sabato1-ben2.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-sabato2-ben1",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Beata Dei Genitrix Maria",
+    "printedContext": "Comune: Memoria di S. Maria in sabato, 2° schema",
+    "pdfPage": "p. 219-220",
+    "status": "found",
+    "file": "gabc/chants/manual-sabato2-ben1.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-sabato2-ben2",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Beata Mater et intacta Virgo",
+    "printedContext": "Comune: Memoria di S. Maria in sabato, 2° schema",
+    "pdfPage": "p. 220",
+    "status": "found",
+    "file": "gabc/chants/manual-sabato2-ben2.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-sabato3-inno",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Ave maris stella",
+    "printedContext": "Comune: Memoria di S. Maria in sabato, 3° schema",
+    "pdfPage": "p. 221-222",
+    "status": "found",
+    "file": "gabc/chants/manual-sabato3-inno.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-sabato3-rb",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Ave Maria, gratia plena",
+    "printedContext": "Comune: Memoria di S. Maria in sabato, 3° schema",
+    "pdfPage": "p. 222",
+    "status": "found",
+    "file": "gabc/chants/manual-sabato3-rb.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-sabato3-ben1",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Benedicta es tu, Virgo Maria",
+    "printedContext": "Comune: Memoria di S. Maria in sabato, 3° schema",
+    "pdfPage": "p. 223",
+    "status": "found",
+    "file": "gabc/chants/manual-sabato3-ben1.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-sabato3-ben2",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "In flore mater, in partu virgo",
+    "printedContext": "Comune: Memoria di S. Maria in sabato, 3° schema",
+    "pdfPage": "p. 223",
+    "status": "found",
+    "file": "gabc/chants/manual-sabato3-ben2.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-sabato4-inno",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Maria quae mortalium",
+    "printedContext": "Comune: Memoria di S. Maria in sabato, 4° schema",
+    "pdfPage": "p. 224-225",
+    "status": "found",
+    "file": "gabc/chants/manual-sabato4-inno.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-sabato4-rb",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Specie tua et pulchritudine tua",
+    "printedContext": "Comune: Memoria di S. Maria in sabato, 4° schema",
+    "pdfPage": "p. 225",
+    "status": "found",
+    "file": "gabc/chants/manual-sabato4-rb.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-sabato4-ben1",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Sub tuum praesidium confugimus",
+    "printedContext": "Comune: Memoria di S. Maria in sabato, 4° schema",
+    "pdfPage": "p. 226",
+    "status": "found",
+    "file": "gabc/chants/manual-sabato4-ben1.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-sabato4-ben3",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Viderunt eam filiae Sion",
+    "printedContext": "Comune: Memoria di S. Maria in sabato, 4° schema",
+    "pdfPage": "p. 226-227",
+    "status": "found",
+    "file": "gabc/chants/manual-sabato4-ben3.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-sabato4-ben4",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Virgo Maria, non est tibi similis",
+    "printedContext": "Comune: Memoria di S. Maria in sabato, 4° schema",
+    "pdfPage": "p. 227",
+    "status": "found",
+    "file": "gabc/chants/manual-sabato4-ben4.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
   }
 ]
