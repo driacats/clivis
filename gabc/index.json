@@ -5769,5 +5769,104 @@
     "status": "found",
     "file": "gabc/chants/manual-sabato4-ben4.gabc",
     "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-apostoli-inno",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "O sempiternae curiae",
+    "printedContext": "Comune: Apostoli, inno di Quaresima",
+    "pdfPage": "p. 228-229",
+    "status": "found",
+    "file": "gabc/chants/manual-apostoli-inno.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-apostoli-inno-tp",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Claro paschali gaudio",
+    "printedContext": "Comune: Apostoli, inno del Tempo pasquale",
+    "pdfPage": "p. 229-230",
+    "status": "found",
+    "file": "gabc/chants/manual-apostoli-inno-tp.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-apostoli-ant1",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Hoc est praeceptum meum",
+    "printedContext": "Comune: Apostoli, antifona 1",
+    "pdfPage": "p. 230-231",
+    "status": "found",
+    "file": "gabc/chants/manual-apostoli-ant1.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-apostoli-ant2",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Maiorem caritatem",
+    "printedContext": "Comune: Apostoli, antifona 2",
+    "pdfPage": "p. 231",
+    "status": "found",
+    "file": "gabc/chants/manual-apostoli-ant2.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-apostoli-ant3",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Vos amici mei estis",
+    "printedContext": "Comune: Apostoli, antifona 3",
+    "pdfPage": "p. 231",
+    "status": "found",
+    "file": "gabc/chants/manual-apostoli-ant3.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-apostoli-rb",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Constitues eos principes",
+    "printedContext": "Comune: Apostoli",
+    "pdfPage": "p. 232",
+    "status": "found",
+    "file": "gabc/chants/manual-apostoli-rb.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-apostoli-rb-tp",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Constitues eos principes",
+    "printedContext": "Comune: Apostoli, Tempo pasquale",
+    "pdfPage": "p. 232",
+    "status": "found",
+    "file": "gabc/chants/manual-apostoli-rb-tp.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-apostoli-ben",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Tradent enim vos",
+    "printedContext": "Comune: Apostoli",
+    "pdfPage": "p. 232-233",
+    "status": "found",
+    "file": "gabc/chants/manual-apostoli-ben.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-apostoli-ben-tp",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Sancti et iusti",
+    "printedContext": "Comune: Apostoli, Tempo pasquale",
+    "pdfPage": "p. 233",
+    "status": "found",
+    "file": "gabc/chants/manual-apostoli-ben-tp.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
   }
 ]

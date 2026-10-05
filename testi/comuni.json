@@ -588,30 +588,35 @@
     "inno": [
      {
       "rubrica": "Nel Tempo di Quaresima",
-      "it": "1. O Principi della eterna corte / del sommo Re, / che Gesù medesimo ammaestrando / diede al mondo come Apostoli,\n2. la celeste Gerusalemme, / la cui luce è l’Agnello, / possiede, come gemme brillanti, / voi gloriose fondamenta.\n3. Ora vi celebra, congratulandosi, / anche la Chiesa Sposa di Cristo, / che la vostra predicazione chiamò, / che con il sangue consacraste.\n4. Quando alla fine dei secoli / il Redentore sederà come Giudice, / con qual lode voi sederete / Senato di alta gloria!\n5. La vostra preghiera dunque / ci corrobori sempre aiutandoci, / affinché quei semi che spargeste / fioriscano in chicchi del cielo.\n6. Sia gloria eterna a Cristo, / che vi fece annunziatori del Padre / e vi riempì della benefica / potenza dello Spirito Santo. Amen."
+      "it": "1. O Principi della eterna corte / del sommo Re, / che Gesù medesimo ammaestrando / diede al mondo come Apostoli,\n2. la celeste Gerusalemme, / la cui luce è l’Agnello, / possiede, come gemme brillanti, / voi gloriose fondamenta.\n3. Ora vi celebra, congratulandosi, / anche la Chiesa Sposa di Cristo, / che la vostra predicazione chiamò, / che con il sangue consacraste.\n4. Quando alla fine dei secoli / il Redentore sederà come Giudice, / con qual lode voi sederete / Senato di alta gloria!\n5. La vostra preghiera dunque / ci corrobori sempre aiutandoci, / affinché quei semi che spargeste / fioriscano in chicchi del cielo.\n6. Sia gloria eterna a Cristo, / che vi fece annunziatori del Padre / e vi riempì della benefica / potenza dello Spirito Santo. Amen.",
+      "canto": "lodi.CS-apostoli-inno"
      },
      {
       "rubrica": "Nel Tempo Pasquale",
       "tp": true,
-      "it": "1. Nella luminosa gioia pasquale / il sole risplende di puro raggio, / allorché gli Apostoli / mirano con lo sguardo il Cristo risorto.\n2. Apertamente confessano / che a loro sono state mostrate / le ferite splendenti nella carne di Cristo, / che il Signore è risorto.\n3. O Cristo, Re clementissimo, / prendi possesso dei nostri cuori, / affinché ti rendiamo / in ogni tempo le dovute lodi.\n4. Sii perenne gioia pasquale / alle menti, o Gesù, / e noi, rinati alla grazia, / unisci ai tuoi trionfi.\n5. A Te sia gloria, o Cristo, / che, distrutto il regno della morte, / manifestasti per mezzo degli Apostoli / i sentieri della vita e della luce. Amen."
+      "it": "1. Nella luminosa gioia pasquale / il sole risplende di puro raggio, / allorché gli Apostoli / mirano con lo sguardo il Cristo risorto.\n2. Apertamente confessano / che a loro sono state mostrate / le ferite splendenti nella carne di Cristo, / che il Signore è risorto.\n3. O Cristo, Re clementissimo, / prendi possesso dei nostri cuori, / affinché ti rendiamo / in ogni tempo le dovute lodi.\n4. Sii perenne gioia pasquale / alle menti, o Gesù, / e noi, rinati alla grazia, / unisci ai tuoi trionfi.\n5. A Te sia gloria, o Cristo, / che, distrutto il regno della morte, / manifestasti per mezzo degli Apostoli / i sentieri della vita e della luce. Amen.",
+      "canto": "lodi.CS-apostoli-inno-tp"
      }
     ],
     "ant1": [
      {
       "rubrica": null,
-      "it": "Questo è il mio comandamento: che vi amiate gli uni gli altri, come io ho amato voi"
+      "it": "Questo è il mio comandamento: che vi amiate gli uni gli altri, come io ho amato voi",
+      "canto": "lodi.CS-apostoli-ant1"
      }
     ],
     "ant2": [
      {
       "rubrica": null,
-      "it": "Nessuno ha una carità più grande di questa: dare la vita per i propri amici"
+      "it": "Nessuno ha una carità più grande di questa: dare la vita per i propri amici",
+      "canto": "lodi.CS-apostoli-ant2"
      }
     ],
     "ant3": [
      {
       "rubrica": null,
-      "it": "Voi siete miei amici, se farete quello che vi comando, dice il Signore"
+      "it": "Voi siete miei amici, se farete quello che vi comando, dice il Signore",
+      "canto": "lodi.CS-apostoli-ant3"
      }
     ],
     "lettura": [
@@ -624,23 +629,27 @@
     "responsorio": [
      {
       "rubrica": null,
-      "it": "Li porrai come capi su tutta la terra. Si ricorderanno del tuo nome, o Signore. Gloria"
+      "it": "Li porrai come capi su tutta la terra. Si ricorderanno del tuo nome, o Signore. Gloria",
+      "canto": "lodi.CS-apostoli-rb"
      },
      {
       "rubrica": "Nel Tempo Pasquale",
       "tp": true,
-      "it": null
+      "it": null,
+      "canto": "lodi.CS-apostoli-rb-tp"
      }
     ],
     "benedictus": [
      {
       "rubrica": null,
-      "it": "Vi consegneranno ai tribunali e vi flagelleranno nelle loro sinagoghe, e sarete condotti davanti ai re e ai governatori per causa mia, a testimonianza loro e dei pagani"
+      "it": "Vi consegneranno ai tribunali e vi flagelleranno nelle loro sinagoghe, e sarete condotti davanti ai re e ai governatori per causa mia, a testimonianza loro e dei pagani",
+      "canto": "lodi.CS-apostoli-ben"
      },
      {
       "rubrica": "Nel Tempo Pasquale",
       "tp": true,
-      "it": "Santi e giusti, gioite nel Signore, alleluia: Dio vi ha scelti come sua eredità, alleluia"
+      "it": "Santi e giusti, gioite nel Signore, alleluia: Dio vi ha scelti come sua eredità, alleluia",
+      "canto": "lodi.CS-apostoli-ben-tp"
      }
     ],
     "invocazioni": [
