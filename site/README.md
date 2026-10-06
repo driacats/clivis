@@ -40,6 +40,7 @@ npm run build    # static site in dist/, ready to publish as is
   `comune.ts`, `compieta.ts`, `esame.ts`; the shared pieces (score, psalm,
   reading, choices) are in `pieces.ts`.
 - `src/audio/` — listening to the melodies, psalm tone, MIDI and follow-the-note.
+- `src/revisione/` — the score review page (`revisione.html`): list of the chants with their state, visual editor (`gabcModel.ts` reads and writes gabc without losing anything, `score.ts` makes the notes clickable), reviewers and export. It talks to `../server/revisione.mjs` under `/api/` (`npm run dev` forwards it to port 3000).
 - `src/style.css` — all of the styling. The colours are defined once per theme
   at the top of the file (`data-theme` on `<html>`).
 

@@ -39,6 +39,7 @@ npm run build    # sito statico in dist/, pubblicabile così com'è
   `lodi.ts`, `comune.ts`, `compieta.ts`, `esame.ts`; i pezzi comuni (spartito,
   salmo, lettura, scelte) sono in `pieces.ts`.
 - `src/audio/` — ascolto delle melodie, tono del salmo, MIDI e segui-nota.
+- `src/revisione/` — la pagina di revisione degli spartiti (`revisione.html`): elenco dei canti con il loro stato, editor visuale (`gabcModel.ts` legge e scrive il gabc senza perdere nulla, `score.ts` rende cliccabili le note), revisori ed esportazione. Parla con `../server/revisione.mjs` sotto `/api/` (`npm run dev` lo inoltra alla porta 3000).
 - `src/style.css` — tutta la grafica. I colori sono definiti una volta per
   tema in cima al file (`data-theme` su `<html>`).
 

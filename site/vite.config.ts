@@ -17,6 +17,16 @@ export default defineConfig({
   },
   server: {
     fs: { allow: ['..', '../../exsurge'] },
+    // the review service (../server/revisione.mjs) in development
+    proxy: { '/api': 'http://localhost:3000' },
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: fileURLToPath(new URL('./index.html', import.meta.url)),
+        revisione: fileURLToPath(new URL('./revisione.html', import.meta.url)),
+      },
+    },
   },
   test: {
     include: ['src/**/*.test.ts'],

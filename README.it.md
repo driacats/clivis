@@ -21,6 +21,7 @@ Il sito apre sul giorno di oggi, calcola da solo quale ufficio pregare secondo i
 - **Ascolto delle melodie**: antifona, intonazione (Euouae) e tono del salmo, con velocità regolabile, esportazione MIDI e segui-nota che evidenzia sullo spartito la nota che sta suonando.
 - **Salmi** in italiano, latino o entrambi affiancati.
 - **Tema chiaro e scuro**, impaginazione pensata anche per il telefono.
+- **Revisione degli spartiti** (`revisione.html`, protetta da password): i revisori correggono gli spartiti con un editor visuale (clic su una nota per spostarla, cambiarne la forma, aggiungere o togliere note, sillabe e divisioni) e li inviano per l'approvazione; una pagina mostra che cosa è stato rivisto e che cosa manca.
 
 ## Come si usa
 
@@ -44,3 +45,11 @@ npm run build    # sito statico in dist/, pubblicabile su qualsiasi hosting (anc
 - `gabc/` — i canti in formato GABC (`chants/`), l'indice dei pezzi (`index.json`) e la struttura delle ore (`liturgy.json`).
 - `salmi/`, `letture/`, `testi/` — salmi e cantici, letture brevi, inni tradotti, orazioni e altri testi, in JSON.
 - `gabc/tools/` — gli script usati per costruire e verificare il database.
+- `server/` — il piccolo servizio Node dietro la pagina di revisione (accesso, stato di ogni canto, correzioni proposte), senza dipendenze.
+- `deploy/` — configurazione di Docker Compose e nginx per il sito con il servizio di revisione.
+
+## Revisione degli spartiti
+
+La pagina di revisione ha bisogno del servizio `server/revisione.mjs` accanto al sito: nginx serve il sito e gli passa `/api/` (vedi `deploy/`). Il servizio non scrive mai nei file del sito: le correzioni approvate si scaricano dalla pagina e si applicano al repository con `node gabc/tools/applica-revisioni.mjs revisioni-….json`; poi commit e nuova pubblicazione del sito.
+
+I revisori li crea un amministratore dalla pagina («Revisori ed esportazione») oppure da riga di comando con `node server/revisione.mjs utente NOME [--admin]`. Test: `node --test server/revisione.test.mjs`.
