@@ -4,7 +4,7 @@
 // Lodi complete pp. 303-308); the second half is the antiphon's own EUOUAE,
 // which is exactly the termination ("differentia") to use with it.
 
-import { parseGabcMelody, splitEuouae, type MelodyEvent } from './gabcMelody';
+import { parseGabcMelody, splitEuouae, type MelodyEvent } from 'exsurge';
 
 interface Tone {
   clef: string;

@@ -326,6 +326,9 @@ chant-visual {
   display: block;
   --chant-lyric-font: var(--chant);
   --chant-rubric-color: var(--rubric);
+  /* the band behind the note being played (exsurge, followScore) */
+  --chant-playhead-color: var(--rubric);
+  --chant-playhead-opacity: var(--playhead-opacity);
 }
 /* exsurge measures the lyrics in a 1×1 svg appended to <body>: keep it out of the flow */
 #TextMeasurer { position: absolute; top: 0; left: 0; pointer-events: none; }
@@ -487,16 +490,6 @@ details.alternative[open] summary { color: var(--ink); }
 .more-link, .back-link { font-family: var(--ui); font-size: 0.9rem; color: var(--rubric); }
 
 .translation { white-space: pre-line; color: var(--muted); font-style: italic; font-size: 0.98rem; margin: 6px 0 12px; }
-
-/* note being played: a band across the staff behind it, a red bar underneath */
-chant-visual svg .playhead { pointer-events: none; }
-chant-visual svg .playhead__band { fill: var(--rubric); fill-opacity: var(--playhead-opacity); stroke: none; }
-chant-visual svg .playhead__bar { fill: var(--rubric); stroke: none; }
-chant-visual svg .playhead--rest { opacity: 0.45; }
-@media (prefers-reduced-motion: no-preference) {
-  chant-visual svg .playhead { transition: transform 0.12s ease-out, opacity 0.2s; }
-  chant-visual svg .playhead--jump { transition: opacity 0.2s; }
-}
 
 /* --- home page ------------------------------------------------------------------ */
 .home { max-width: var(--measure); margin: 0 auto; padding-block: 8px 56px; }

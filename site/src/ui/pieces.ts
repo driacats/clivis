@@ -3,7 +3,7 @@ import { fetchGabc, fetchLettura, fetchPsalm, getEntry, getTexts } from '../data
 import type { Bilingual, LetturaDoc, LodiConclusion, PsalmDoc, SlotRef } from '../data/types';
 import { deferred, h, notice } from './dom';
 import { playerControls } from '../audio/controls';
-import { splitEuouae } from '../audio/gabcMelody';
+import { splitEuouae } from 'exsurge';
 
 /** A section of an office: rubric-red heading and its content. */
 export function section(title: string, ...content: (Node | null)[]): HTMLElement {

@@ -1,10 +1,17 @@
-import { melodyToMidi, parseGabcMelody, splitEuouae, type MelodyEvent } from './gabcMelody';
-import { getSpeed, play, secondsPerBeat, setSpeed } from './player';
+// The listen / speed / MIDI bar under each score. Playback, MIDI and following
+// the notes on the score come from exsurge; what to play (antiphon, EUOUAE,
+// psalm tone) is decided here.
+import { followScore, melodyToMidi, parseGabcMelody, playMelody, splitEuouae, type Follower, type MelodyEvent } from 'exsurge';
 import { psalmToneFor } from './psalmTone';
-import { followScore, type Follower } from './follow';
 
 const SPEED_LABELS = ['lento', 'normale', 'veloce'];
+const SPEEDS = [0.65, 0.45, 0.32]; // seconds per beat
 const KEY = 'speed';
+
+let speed = 1;
+const getSpeed = () => speed;
+const setSpeed = (i: number) => { speed = i; };
+const secondsPerBeat = () => SPEEDS[speed];
 
 try {
   const s = Number(localStorage.getItem(KEY));
@@ -102,7 +109,11 @@ function playButton(label: string, events: MelodyEvent[], follower: Follower | n
     if (stop) { stop(); return; }
     btn.innerHTML = '<span aria-hidden="true">■</span> Ferma';
     btn.setAttribute('aria-pressed', 'true');
-    stop = play(events, idle, follower ? (i) => follower.show(i) : undefined);
+    stop = playMelody(events, {
+      secondsPerBeat: secondsPerBeat(),
+      onEnd: idle,
+      onNote: follower ? (i) => follower.show(i) : undefined,
+    });
   });
   return btn;
 }
