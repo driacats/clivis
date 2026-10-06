@@ -1,7 +1,7 @@
 // The reviewers' guide (#/guida): how the review works and every command of the editor.
 import { h } from '../ui/dom';
 import type { Utente } from './api';
-import { icon } from './icons';
+import { notationIcon } from 'exsurge';
 import { resetTours } from './tour';
 import { statoPill } from './ui';
 
@@ -10,7 +10,7 @@ const kbd = (...keys: string[]): HTMLElement =>
 
 function pic(key: string): HTMLElement {
   const el = h('span', { class: 'guide-pic', 'aria-hidden': 'true' });
-  el.innerHTML = icon(key) ?? '';
+  el.innerHTML = notationIcon(key) ?? '';
   return el;
 }
 
@@ -92,14 +92,14 @@ export function renderGuide(me: Utente): HTMLElement {
       options([
         ['liq-none', 'Nessuna', 'nota normale.'],
         ['liq-deminutus', 'Deminutus', 'l’ultima nota di un neuma più piccola (il segno ~).'],
-        ['liq-ascendente', 'Ascendente', 'liquescente verso l’alto, come nell’epiphonus.'],
-        ['liq-discendente', 'Discendente', 'liquescente verso il basso, come nel cephalicus.'],
+        ['liq-ascending', 'Ascendente', 'liquescente verso l’alto, come nell’epiphonus.'],
+        ['liq-descending', 'Discendente', 'liquescente verso il basso, come nel cephalicus.'],
       ]),
       h('h3', { class: 'guide-sub' }, 'Alterazione'),
       options([
-        ['acc-nessuna', 'Nessuna', 'nessun segno prima della nota.'],
-        ['acc-x', 'Bemolle', 'il bemolle prima della nota (di solito sul si). Vale fino alla fine della parola o alla prossima stanghetta.'],
-        ['acc-y', 'Bequadro', 'annulla un bemolle precedente.'],
+        ['acc-none', 'Nessuna', 'nessun segno prima della nota.'],
+        ['acc-flat', 'Bemolle', 'il bemolle prima della nota (di solito sul si). Vale fino alla fine della parola o alla prossima stanghetta.'],
+        ['acc-natural', 'Bequadro', 'annulla un bemolle precedente.'],
       ]),
       p('Se sposti una nota che ha il bemolle, il bemolle si sposta con lei. Il si bemolle in chiave si sceglie invece nella scheda «Brano» (chiave «Do♭»).'),
       h('h3', { class: 'guide-sub' }, 'Segni'),
@@ -112,10 +112,10 @@ export function renderGuide(me: Utente): HTMLElement {
       h('h3', { class: 'guide-sub' }, 'Con la nota seguente'),
       p('Dice quanto la nota è vicina alla successiva nella stessa sillaba: «Unita» le lega nello stesso neuma (un pes, una clivis…), «Vicina», «Staccata» e «Separata» lasciano spazi sempre più grandi.'),
       options([
-        ['unita', 'Unita', 'stesso neuma.'],
-        ['vicina', 'Vicina', 'un piccolo spazio.'],
-        ['staccata', 'Staccata', 'uno spazio medio.'],
-        ['separata', 'Separata', 'neumi distinti.'],
+        ['joined', 'Unita', 'stesso neuma.'],
+        ['close', 'Vicina', 'un piccolo spazio.'],
+        ['spaced', 'Staccata', 'uno spazio medio.'],
+        ['separate', 'Separata', 'neumi distinti.'],
       ]),
       h('h3', { class: 'guide-sub' }, 'Aggiungere ed eliminare'),
       p('«+ Unita» aggiunge una nota subito dopo, nello stesso neuma; «+ Staccata» la aggiunge un po’ più in là. La nuova nota nasce alla stessa altezza: poi la sposti con ▲ ▼. «Elimina» (o il tasto Canc) toglie le note selezionate; ogni sillaba però deve tenerne almeno una.')),

@@ -3,7 +3,7 @@ import { fetchGabc, fetchLettura, fetchPsalm, getEntry, getTexts } from '../data
 import type { Bilingual, LetturaDoc, LodiConclusion, PsalmDoc, SlotRef } from '../data/types';
 import { deferred, h, notice } from './dom';
 import { playerControls } from '../audio/controls';
-import { splitEuouae } from 'exsurge';
+import { splitEuouae, withoutLineBreaks } from 'exsurge';
 
 /** A section of an office: rubric-red heading and its content. */
 export function section(title: string, ...content: (Node | null)[]): HTMLElement {
@@ -31,15 +31,10 @@ async function buildChant(id: string, repeat = false): Promise<Node> {
 }
 
 /**
- * Removes the forced line breaks of the source (z, Z, z-, Z-, often after a
- * custos as in "(::h+Z)"), so stanzas and verses run on one after the other
- * and exsurge breaks lines only where the width requires. "z0" (automatic
- * custos) is kept.
+ * Removes the forced line breaks of the source, so stanzas and verses run on
+ * one after the other and exsurge breaks lines only where the width requires.
  */
-export function joinLines(body: string): string {
-  return body.replace(/\(([^)]*)\)/g, (_, g: string) =>
-    '(' + g.replace(/[a-mA-M]\+(?=\s*[zZ](?!0))/g, '').replace(/[zZ](?!0)[+-]?/g, '') + ')');
-}
+export const joinLines = withoutLineBreaks;
 
 function modeLabel(mode: string): string {
   const n = Number(mode);

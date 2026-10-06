@@ -753,15 +753,8 @@ details.alternative[open] summary { color: var(--ink); }
 .ed-status__dirty { color: var(--stato-in-corso); font-weight: 600; }
 .ed-status__changed::before { content: ''; display: inline-block; width: 10px; height: 10px; margin-right: 5px; border-radius: 2px; background: color-mix(in srgb, var(--stato-in-corso) 35%, transparent); vertical-align: -1px; }
 
-.ed-score { position: relative; }
-.ed-score__next { position: absolute; inset: 0 0 auto 0; visibility: hidden; }
-.ed-score chant-visual svg .ed-hit { fill: transparent; stroke: none; cursor: pointer; }
-.ed-score chant-visual svg .ed-hit:hover { fill: none; stroke: var(--rubric); stroke-opacity: 0.6; stroke-width: 1; stroke-dasharray: 2 1.5; }
-.ed-score--live { user-select: none; -webkit-user-select: none; }
-.ed-score chant-visual svg .ed-sel { fill: var(--rubric); fill-opacity: 0.16; stroke: var(--rubric); stroke-opacity: 0.55; stroke-width: 1; }
-.ed-score chant-visual svg .ed-sel--focus { fill-opacity: 0.24; stroke-opacity: 1; stroke-width: 1.4; }
-.ed-score chant-visual svg .ed-sel__bar { fill: var(--rubric); stroke: none; }
-.ed-score chant-visual svg .ed-mark { fill: var(--stato-in-corso); fill-opacity: 0.22; stroke: none; }
+/* the score is exsurge's <chant-editor>: selection in the rubric red, changed syllables marked */
+.ed-score { --chant-select-color: var(--rubric); --chant-mark-color: var(--stato-in-corso); }
 .ed-legend { font-family: var(--ui); font-size: 0.78rem; color: var(--muted); margin: 0 0 8px; display: flex; align-items: center; gap: 6px; }
 .ed-legend__mark { width: 14px; height: 14px; border-radius: 3px; background: color-mix(in srgb, var(--stato-in-corso) 30%, transparent); }
 .ed-compare .ed-score { opacity: 0.85; margin-top: 6px; }
