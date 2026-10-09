@@ -1,14 +1,14 @@
 import { WEEKDAY_NAMES } from '../calendar/calendar';
 import { getTexts } from '../data/loader';
 import type { EsameCoscienza } from '../data/types';
-import { bilingual, rubric, section } from './pieces';
-import { h } from './dom';
+import { bilingual, rubric, rubricText, section } from './pieces';
+import { foldable, h } from './dom';
 
 type Gruppo = EsameCoscienza['giorni'][string][number];
 
 function gruppo(g: Gruppo): HTMLElement {
   return h('div', { class: 'esame__gruppo' },
-    g.nota ? h('p', { class: 'rubric-text' }, g.nota) : null,
+    g.nota ? rubricText(g.nota) : null,
     h('ol', { class: 'esame__voci' },
       ...g.voci.map((v) => h('li', { value: v.n }, v.testo))));
 }
@@ -25,12 +25,11 @@ export function attoPenitenziale(): HTMLElement {
   const a = getTexts().esame.attoPenitenziale;
   const sign = (s: string) => h('span', { class: 'response-sign' }, s === 'V' ? '℣. ' : '℟. ');
   return h('div', {},
-    h('p', { class: 'rubric-text' }, a.rubrica),
+    rubricText(a.rubrica),
     bilingual(a.confiteor),
-    ...a.alternative.map((alt) => h('details', { class: 'alternative' },
-      h('summary', {}, `Oppure: ${alt[0][1]}`),
+    ...a.alternative.map((alt) => foldable(`Oppure: ${alt[0][1]}`,
       ...alt.map(([who, text]) => h('p', { class: 'prayer__single' }, sign(who), text)))),
-    h('p', { class: 'rubric-text' }, a.conclusione.rubrica),
+    rubricText(a.conclusione.rubrica),
     bilingual(a.conclusione));
 }
 

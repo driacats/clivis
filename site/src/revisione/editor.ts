@@ -7,17 +7,18 @@
 // review.
 import { ROMAN } from '../calendar/calendar';
 import { playerControls } from '../audio/controls';
-import { h, notice } from '../ui/dom';
-import { api, ApiError, type Azione, type Revisione, type Utente } from './api';
-import { descrizione, type Canto } from './catalog';
+import { button as domButton, foldable, h, notice } from '../ui/dom';
+import { api, type Azione, type Revisione, type Utente } from './api';
+import { cantoHref, descrizione, uso, type Canto } from './catalog';
 import {
   BARS, CLEFS, JOINS, LIQUESCENCES, NOTE_ACCIDENTALS, SHAPES, deleteSyllable, firstClef, getAccidental, getBarAfter,
   hasSign, headerField, joinAfter, movePitch, neumeOf, notationIcon, noteLiquescence, noteRefs, noteShape, parseBody, scaleDegree,
   serializeBody, setAccidental, setBarAfter, setDebilis, setFirstClef, setHeaderField, setJoinAfter, setLiquescence,
   setShape, setSyllableText, splitFile, splitNote, toggleSign, wordOf,
-  type Bar, type ChantEditorElement, type Join, type Liquescence, type NoteAccidental, type NoteRef, type Shape, type Sign,
+  type ChantEditorElement, type NoteRef, type Sign,
 } from 'exsurge';
-import { statoPill, quando } from './ui';
+import { ACCIDENTAL, BAR, ICON, JOIN, LIQUESCENCE, SHAPE, SIGN } from './notation';
+import { backToList, errorMessage, quando, statoPill } from './ui';
 
 // --- names ------------------------------------------------------------------------------
 
@@ -28,18 +29,12 @@ function pitchName(score: ChantEditorElement, ref: NoteRef): string {
   return NOMI[degree] + (flat ? '♭' : '');
 }
 
-const SHAPE_NAMES: Record<Shape, string> = {
-  punctum: 'Punctum', virga: 'Virga', inclinatum: 'Rombo', quilisma: 'Quilisma', oriscus: 'Oriscus', stropha: 'Stropha', cavum: 'Cavum',
-};
-const LIQ_NAMES: Record<Liquescence, string> = { none: 'Nessuna', deminutus: 'Deminutus', ascending: 'Ascend.', descending: 'Discend.' };
-const ACC_NAMES: Record<NoteAccidental, string> = { none: 'Nessuna', flat: 'Bemolle', natural: 'Bequadro' };
-const JOIN_NAMES: Record<Join, string> = { joined: 'Unita', close: 'Vicina', spaced: 'Staccata', separate: 'Separata' };
-const BAR_NAMES: Record<Bar, string> = { none: 'Nessuna', '`': 'Virgula', ',': 'Quarto', ';': 'Mezza', ':': 'Intera', '::': 'Doppia' };
-const named = <T extends string>(values: T[], names: Record<T, string>): [T, string][] => values.map((v) => [v, names[v]]);
+/** The options of a control with their names (the short one, on the narrow buttons, when there is one). */
+const named = <T extends string>(values: T[], options: Record<T, { name: string; short?: string }>): [T, string][] =>
+  values.map((v) => [v, options[v].short ?? options[v].name]);
 
 // --- small UI helpers -----------------------------------------------------------------
 
-/** A row of mutually exclusive options, as a segmented control of `cols` columns. */
 /** A button's content: the little picture of what it does (if there is one) and its name. */
 function optContent(b: HTMLButtonElement, text: string, iconKey: string | null): HTMLButtonElement {
   const svg = iconKey === null ? null : notationIcon(iconKey);
@@ -51,6 +46,7 @@ function optContent(b: HTMLButtonElement, text: string, iconKey: string | null):
   return b;
 }
 
+/** A row of mutually exclusive options, as a segmented control of `cols` columns. */
 function seg<T extends string>(label: string, options: [T, string][], current: T | null, pick: (v: T) => void, cols: number, disabled = false, iconFor?: (v: T) => string): HTMLElement {
   const g = h('div', { class: 'ed-seg', role: 'group', 'aria-label': label },
     ...options.map(([v, text]) => {
@@ -76,11 +72,9 @@ function toggles<T extends string>(label: string, options: [T, string, boolean][
   return h('div', { class: 'ed-field' }, h('span', { class: 'ed-field__label' }, label), g);
 }
 
-function button(text: string, onClick: () => void, opts: { cls?: string; title?: string; disabled?: boolean } = {}): HTMLButtonElement {
-  const b = h('button', { type: 'button', class: opts.cls ?? 'ed-button', title: opts.title, disabled: opts.disabled }, text);
-  b.addEventListener('click', onClick);
-  return b;
-}
+/** A button of the editor (class ed-button unless another is given). */
+const button = (text: string, onClick: () => void, attrs: { class?: string; title?: string; disabled?: boolean } = {}): HTMLButtonElement =>
+  domButton(text, onClick, { class: 'ed-button', ...attrs });
 
 // --- the page -------------------------------------------------------------------------
 
@@ -180,10 +174,10 @@ export function renderEditor(canto: Canto, rev: Revisione, me: Utente, nav: { pr
     const ro = readOnly();
 
     const head = h('div', { class: 'ed-panel__head' },
-      button('↶', () => score.undo(), { cls: 'ed-icon', disabled: !score.canUndo || ro, title: 'Annulla (Ctrl+Z)' }),
-      button('↷', () => score.redo(), { cls: 'ed-icon', disabled: !score.canRedo || ro, title: 'Ripeti (Ctrl+Maiusc+Z)' }),
+      button('↶', () => score.undo(), { class: 'ed-icon', disabled: !score.canUndo || ro, title: 'Annulla (Ctrl+Z)' }),
+      button('↷', () => score.redo(), { class: 'ed-icon', disabled: !score.canRedo || ro, title: 'Ripeti (Ctrl+Maiusc+Z)' }),
       h('span', { class: `ed-panel__state${dirty() ? ' ed-panel__state--dirty' : ''}` }, ro ? 'Sola lettura' : dirty() ? 'Modifiche non salvate' : 'Tutto salvato'),
-      ro ? null : button('Salva', () => act('salva'), { cls: 'ed-button ed-button--primary ed-button--small', disabled: !dirty(), title: 'Salva la bozza (Ctrl+S)' }));
+      ro ? null : button('Salva', () => act('salva'), { class: 'ed-button ed-button--primary ed-button--small', disabled: !dirty(), title: 'Salva la bozza (Ctrl+S)' }));
 
     const tabs = h('div', { class: 'ed-tabs', role: 'tablist', 'aria-label': 'Strumenti' },
       ...([['nota', 'Nota'], ['sillaba', 'Sillaba'], ['brano', 'Brano']] as [Tab, string][]).map(([t, label]) => {
@@ -207,48 +201,48 @@ export function renderEditor(canto: Canto, rev: Revisione, me: Utente, nav: { pr
       const set = (f: Parameters<ChantEditorElement['editNotes']>[0]) => score.editNotes(f);
       content.push(where(ref, many > 1 ? `${many} note selezionate` : `Nota ${focus + 1} di ${refs.length}`));
       content.push(h('div', { class: 'ed-pitch' },
-        button('▲', () => set((x) => movePitch(x, 1)), { cls: 'ed-icon', title: 'Più in alto (freccia su)' }),
+        button('▲', () => set((x) => movePitch(x, 1)), { class: 'ed-icon', title: 'Più in alto (freccia su)' }),
         h('span', { class: `ed-pitch__name${many > 1 ? ' ed-pitch__name--many' : ''}` }, many > 1 ? selected.map((i) => pitchName(score, refs[i])).join(' ') : pitchName(score, ref)),
-        button('▼', () => set((x) => movePitch(x, -1)), { cls: 'ed-icon', title: 'Più in basso (freccia giù)' }),
+        button('▼', () => set((x) => movePitch(x, -1)), { class: 'ed-icon', title: 'Più in basso (freccia giù)' }),
         h('span', { class: 'ed-pitch__nav' },
           button('Neuma', () => score.selectNeume(),
-            { cls: 'ed-button ed-button--small', title: 'Seleziona tutte le note del neuma (doppio clic su una nota)', disabled: neumeOf(body(), focus).length < 2 }),
-          button('‹', () => score.move(-1), { cls: 'ed-icon', title: 'Nota precedente (freccia sinistra)', disabled: focus === 0 }),
-          button('›', () => score.move(1), { cls: 'ed-icon', title: 'Nota seguente (freccia destra)', disabled: focus === refs.length - 1 }))));
-      content.push(seg('Forma', named(SHAPES, SHAPE_NAMES), common(noteShape), (v) => set((x) => setShape(x, v)), 4, false, (v) => v));
-      content.push(seg('Liquescenza', named(LIQUESCENCES, LIQ_NAMES), common(noteLiquescence),
-        (v) => set((x) => setLiquescence(x, v)), 4, false, (v) => `liq-${v}`));
+            { class: 'ed-button ed-button--small', title: 'Seleziona tutte le note del neuma (doppio clic su una nota)', disabled: neumeOf(body(), focus).length < 2 }),
+          button('‹', () => score.move(-1), { class: 'ed-icon', title: 'Nota precedente (freccia sinistra)', disabled: focus === 0 }),
+          button('›', () => score.move(1), { class: 'ed-icon', title: 'Nota seguente (freccia destra)', disabled: focus === refs.length - 1 }))));
+      content.push(seg('Forma', named(SHAPES, SHAPE), common(noteShape), (v) => set((x) => setShape(x, v)), 4, false, ICON.shape));
+      content.push(seg('Liquescenza', named(LIQUESCENCES, LIQUESCENCE), common(noteLiquescence),
+        (v) => set((x) => setLiquescence(x, v)), 4, false, ICON.liquescence));
       // a sign is on when every selected note has it; a click puts it on all of them, or takes it off all
       const all = (has: (p: ReturnType<typeof splitNote>) => boolean) => common(has) === true;
       const signs: [Sign | 'debilis', string, boolean][] = [
-        ['mora', 'Mora', all((p) => hasSign(p, 'mora'))], ['episema', 'Episema', all((p) => hasSign(p, 'episema'))],
-        ['ictus', 'Ictus', all((p) => hasSign(p, 'ictus'))], ['debilis', 'Debilis', all((p) => p.debilis)],
+        ['mora', SIGN.mora.name, all((p) => hasSign(p, 'mora'))], ['episema', SIGN.episema.name, all((p) => hasSign(p, 'episema'))],
+        ['ictus', SIGN.ictus.name, all((p) => hasSign(p, 'ictus'))], ['debilis', SIGN.debilis.name, all((p) => p.debilis)],
       ];
       content.push(toggles('Segni', signs, (v) => {
         const on = !signs.find((x) => x[0] === v)![2];
         set((x) => (v === 'debilis' ? setDebilis(x, on) : hasSign(x, v) === on ? x : toggleSign(x, v)));
       }));
-      // flat / natural before the note (from the last note back: inserting moves the later atoms)
+      // flat / natural before the note
       const accs = selected.map((i) => getAccidental(body(), refs[i]));
-      content.push(seg('Alterazione', named(NOTE_ACCIDENTALS, ACC_NAMES), accs.every((a) => a === accs[0]) ? accs[0] : null, (v) => {
+      content.push(seg('Alterazione', named(NOTE_ACCIDENTALS, ACCIDENTAL), accs.every((a) => a === accs[0]) ? accs[0] : null, (v) => {
         // from the last note back: inserting moves the later atoms
         let out = body();
         for (const i of [...selected].reverse()) out = setAccidental(out, noteRefs(out)[i], v);
         score.apply(out);
-      }, 3, false, (v) => `acc-${v}`));
+      }, 3, false, ICON.accidental));
       const withNext = selected.filter((i) => joinAfter(body(), refs[i]) !== null);
       const joins = withNext.map((i) => joinAfter(body(), refs[i]));
       const j = joins.length && joins.every((x) => x === joins[0]) ? joins[0] : null;
-      content.push(seg('Con la nota seguente', named(JOINS, JOIN_NAMES), j, (v) => {
+      content.push(seg('Con la nota seguente', named(JOINS, JOIN), j, (v) => {
         // from the last note back, so the earlier positions do not move
         let out = body();
         for (const i of [...withNext].reverse()) out = setJoinAfter(out, noteRefs(out)[i], v);
         score.apply(out);
-      }, 4, withNext.length === 0, (v) => v));
+      }, 4, withNext.length === 0, ICON.join));
       content.push(h('div', { class: 'ed-grid3' },
         button('+ Unita', () => score.addNote('joined'), { title: 'Aggiunge una nota dopo questa, nello stesso neuma' }),
         button('+ Staccata', () => score.addNote('separate'), { title: 'Aggiunge una nota dopo questa, staccata' }),
-        button('Elimina', () => score.deleteSelected(), { cls: 'ed-button ed-button--danger', title: many > 1 ? 'Elimina le note selezionate (Canc)' : 'Elimina la nota (Canc)' })));
+        button('Elimina', () => score.deleteSelected(), { class: 'ed-button ed-button--danger', title: many > 1 ? 'Elimina le note selezionate (Canc)' : 'Elimina la nota (Canc)' })));
     } else if (tab === 'sillaba' && ref) {
       const syl = body().syllables[ref.syl];
       content.push(where(ref, 'Sillaba'));
@@ -256,19 +250,19 @@ export function renderEditor(canto: Canto, rev: Revisione, me: Utente, nav: { pr
       input.addEventListener('change', () => score.apply(setSyllableText(body(), ref.syl, input.value)));
       input.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') input.blur(); });
       content.push(h('label', { class: 'ed-field' }, h('span', { class: 'ed-field__label' }, 'Testo'), input));
-      content.push(seg('Divisione dopo la sillaba', named(BARS, BAR_NAMES), getBarAfter(body(), ref.syl), (v) => score.apply(setBarAfter(body(), ref.syl, v)), 3, false, (v) => `bar-${v}`));
+      content.push(seg('Divisione dopo la sillaba', named(BARS, BAR), getBarAfter(body(), ref.syl), (v) => score.apply(setBarAfter(body(), ref.syl, v)), 3, false, ICON.bar));
       if (adding) {
         const nuovo = h('input', { type: 'text', class: 'ed-input', placeholder: adding === 'parola' ? 'Nuova parola (o la sua prima sillaba)' : 'Nuova sillaba', 'aria-label': 'Testo da aggiungere' });
         const ok = () => { const newWord = adding === 'parola'; adding = null; score.addSyllable(nuovo.value, newWord); };
         nuovo.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') ok(); if (ev.key === 'Escape') { adding = null; renderPanel(); } });
         content.push(h('div', { class: 'ed-field' }, h('span', { class: 'ed-field__label' }, adding === 'parola' ? 'Nuova parola dopo questa sillaba' : 'Nuova sillaba nella stessa parola'), nuovo,
-          h('div', { class: 'ed-grid3' }, button('Aggiungi', ok, { cls: 'ed-button ed-button--primary' }), button('Annulla', () => { adding = null; renderPanel(); }))));
+          h('div', { class: 'ed-grid3' }, button('Aggiungi', ok, { class: 'ed-button ed-button--primary' }), button('Annulla', () => { adding = null; renderPanel(); }))));
         requestAnimationFrame(() => nuovo.focus());
       } else {
         content.push(h('div', { class: 'ed-grid3' },
           button('+ Sillaba', () => { adding = 'sillaba'; renderPanel(); }, { title: 'Aggiunge una sillaba dopo questa, nella stessa parola' }),
           button('+ Parola', () => { adding = 'parola'; renderPanel(); }, { title: 'Aggiunge una parola dopo questa sillaba' }),
-          button('Elimina', () => score.apply(deleteSyllable(body(), ref.syl), null), { cls: 'ed-button ed-button--danger', title: 'Elimina la sillaba con le sue note' })));
+          button('Elimina', () => score.apply(deleteSyllable(body(), ref.syl), null), { class: 'ed-button ed-button--danger', title: 'Elimina la sillaba con le sue note' })));
       }
       hint('La nuova sillaba nasce con una nota alla stessa altezza: poi la sposti dalla scheda «Nota».');
     } else {
@@ -336,12 +330,13 @@ export function renderEditor(canto: Canto, rev: Revisione, me: Utente, nav: { pr
       renderReview();
       refresh();
     } catch (e) {
-      flash((e as ApiError).message, true);
+      flash(errorMessage(e), true);
     } finally {
       reviewBox.classList.remove('ed-review--busy');
     }
   }
 
+  const TOAST_MS = { info: 2800, error: 6000 };
   const toast = h('div', { class: 'ed-toast', role: 'status', 'aria-live': 'polite' });
   let toastTimer = 0;
   function flash(msg: string, error = false): void {
@@ -349,7 +344,7 @@ export function renderEditor(canto: Canto, rev: Revisione, me: Utente, nav: { pr
     toast.classList.toggle('ed-toast--error', error);
     toast.classList.add('ed-toast--on');
     clearTimeout(toastTimer);
-    toastTimer = window.setTimeout(() => toast.classList.remove('ed-toast--on'), error ? 6000 : 2800);
+    toastTimer = window.setTimeout(() => toast.classList.remove('ed-toast--on'), error ? TOAST_MS.error : TOAST_MS.info);
   }
 
   function renderStatus(): void {
@@ -369,14 +364,14 @@ export function renderEditor(canto: Canto, rev: Revisione, me: Utente, nav: { pr
     const buttons: Node[] = [];
     if (!readOnly() && s !== 'approvato') {
       buttons.push(button('Salva bozza', () => act('salva'), { disabled: !dirty() }));
-      if (!admin) buttons.push(button(changed ? 'Invia per l’approvazione' : 'Conforme al libretto: invia', () => act('invia'), { cls: 'ed-button ed-button--primary' }));
+      if (!admin) buttons.push(button(changed ? 'Invia per l’approvazione' : 'Conforme al libretto: invia', () => act('invia'), { class: 'ed-button ed-button--primary' }));
     }
     if (admin) {
-      if (s !== 'approvato') buttons.push(button(changed ? 'Approva la correzione' : 'Approva così com’è', () => act('approva'), { cls: 'ed-button ed-button--approve' }));
+      if (s !== 'approvato') buttons.push(button(changed ? 'Approva la correzione' : 'Approva così com’è', () => act('approva'), { class: 'ed-button ed-button--approve' }));
       if (s === 'inviato') buttons.push(button('Rimanda al revisore', () => act('rimanda')));
       if (s === 'approvato') buttons.push(button('Riapri la revisione', () => act('riapri')));
     }
-    buttons.push(button('Solo commento', () => act('commenta'), { cls: 'ed-button ed-button--quiet' }));
+    buttons.push(button('Solo commento', () => act('commenta'), { class: 'ed-button ed-button--quiet' }));
 
     // the history, each comment with the action it came with; repeated drafts once
     const AZ: Record<Azione, string> = { salva: 'ha salvato una bozza', invia: 'ha inviato per l’approvazione', commenta: 'ha commentato', approva: 'ha approvato', rimanda: 'ha rimandato al revisore', riapri: 'ha riaperto la revisione' };
@@ -415,17 +410,17 @@ export function renderEditor(canto: Canto, rev: Revisione, me: Utente, nav: { pr
 
   // -- layout
   const usi = canto.usi.length > 1
-    ? h('details', { class: 'alternative' }, h('summary', {}, `Usato in ${canto.usi.length} punti del breviario`),
-      h('ul', { class: 'ed-uses' }, ...canto.usi.map((e) => h('li', {}, [e.role, e.printedContext, e.pdfPage].filter(Boolean).join(' · ')))))
+    ? foldable(`Usato in ${canto.usi.length} punti del breviario`,
+      h('ul', { class: 'ed-uses' }, ...canto.usi.map((e) => h('li', {}, uso(e)))))
     : null;
 
   const el = h('main', { class: 'ed-page' },
     h('div', { class: 'ed-main' },
       h('nav', { class: 'ed-nav' },
-        h('a', { href: '#/', class: 'back-link' }, '← Tutti i canti'),
+        backToList(),
         h('span', { class: 'ed-nav__steps' },
-          nav.prev ? h('a', { href: `#/canto/${nav.prev.key}`, class: 'back-link', title: nav.prev.incipit }, '‹ Precedente') : null,
-          nav.next ? h('a', { href: `#/canto/${nav.next.key}`, class: 'back-link', title: nav.next.incipit }, 'Successivo ›') : null)),
+          nav.prev ? h('a', { href: cantoHref(nav.prev.key), class: 'back-link', title: nav.prev.incipit }, '‹ Precedente') : null,
+          nav.next ? h('a', { href: cantoHref(nav.next.key), class: 'back-link', title: nav.next.incipit }, 'Successivo ›') : null)),
       h('header', { class: 'ed-head' },
         h('h1', { class: 'ed-head__title' }, canto.incipit),
         h('p', { class: 'ed-head__meta' }, descrizione(canto)),

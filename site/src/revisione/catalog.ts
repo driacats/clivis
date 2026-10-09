@@ -1,5 +1,8 @@
 // The chants to review: one per gabc file of gabc/index.json (a file can serve
 // several places of the breviary), grouped as in the libretti.
+import { ROMAN } from '../calendar/calendar';
+import { chantFileName } from '../data/ids';
+import { loadIndex } from '../data/loader';
 import type { IndexEntry } from '../data/types';
 
 export interface Canto {
@@ -11,15 +14,13 @@ export interface Canto {
   gruppo: string;
 }
 
-const ROMANI = ['', 'I', 'II', 'III', 'IV'];
-
 function gruppo(e: IndexEntry): [number, string] {
   const id = e.id;
   const ctx = e.printedContext ?? '';
   if (id.startsWith('lodi.LH')) return [10, 'Lodi · Inni del salterio'];
   if (id.startsWith('lodi.LA')) {
     const w = /settimana (\d)/.exec(ctx)?.[1];
-    return [20 + Number(w ?? 0), `Lodi · Antifone dei salmi, settimana ${ROMANI[Number(w)] ?? ''}`.trim()];
+    return [20 + Number(w ?? 0), `Lodi · Antifone dei salmi, settimana ${w ? ROMAN[Number(w)] : ''}`.trim()];
   }
   if (id.startsWith('lodi.LB')) return [30, 'Lodi · Antifone al Benedictus'];
   if (id.startsWith('lodi.LR')) return [31, 'Lodi · Responsori brevi'];
@@ -37,13 +38,11 @@ const pagina = (e: IndexEntry) => Number(/\d+/.exec(e.pdfPage ?? '')?.[0] ?? 999
 const numero = (id: string) => Number(/(\d+)/.exec(id)?.[1] ?? 0);
 
 export async function loadCatalog(): Promise<Canto[]> {
-  const res = await fetch(new URL('gabc/index.json', document.baseURI));
-  if (!res.ok) throw new Error(`impossibile caricare l’indice dei canti (${res.status})`);
-  const index = (await res.json()) as IndexEntry[];
+  const index = await loadIndex();
   const byKey = new Map<string, Canto & { ordine: number[] }>();
   for (const e of index) {
     if (!e.file || e.status !== 'found') continue;
-    const key = e.file.split('/').pop()!.replace(/\.gabc$/, '');
+    const key = chantFileName(e.file).replace(/\.gabc$/, '');
     const c = byKey.get(key);
     if (c) { c.usi.push(e); continue; }
     const [g, nome] = gruppo(e);
@@ -54,8 +53,11 @@ export async function loadCatalog(): Promise<Canto[]> {
   return list.map(({ ordine: _o, ...c }) => c);
 }
 
-/** "inno · p. 8" for the first use, "+2 altri usi" when there are more. */
-export function descrizione(c: Canto): string {
-  const e = c.usi[0];
-  return [e.role, e.printedContext, e.pdfPage].filter(Boolean).join(' · ');
-}
+/** One place of the breviary that uses a chant: "inno · Lunedì della I settimana · p. 8". */
+export const uso = (e: IndexEntry): string => [e.role, e.printedContext, e.pdfPage].filter(Boolean).join(' · ');
+
+/** The first place that uses the chant. */
+export const descrizione = (c: Canto): string => uso(c.usi[0]);
+
+/** Link to the review of a chant. */
+export const cantoHref = (key: string): string => `#/canto/${encodeURIComponent(key)}`;

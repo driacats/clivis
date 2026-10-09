@@ -1,3 +1,5 @@
+import { headerField, splitFile } from 'exsurge';
+import { DATA_FILES, READINGS_DIR } from './ids';
 import type { GabcPiece, IndexEntry, LetturaDoc, LiturgyData, PsalmDoc, Texts } from './types';
 
 // Data files are served next to the site (public/ links to the database
@@ -24,21 +26,24 @@ async function fetchText(path: string): Promise<string> {
 
 const fetchJson = async <T>(path: string): Promise<T> => JSON.parse(await fetchText(path)) as T;
 
+/** gabc/index.json, loaded once (the review page reads it too). */
+export const loadIndex = () => cached('index', () => fetchJson<IndexEntry[]>(DATA_FILES.index));
+
 let indexById: Map<string, IndexEntry> | null = null;
 
 let texts: Texts | null = null;
 
 export async function loadDatabase(): Promise<LiturgyData> {
   const [index, liturgy, lodi, compietaOrazioni, ordinario, esame, marianeIt, proprioTempoIt, comuni] = await Promise.all([
-    cached('index', () => fetchJson<IndexEntry[]>('gabc/index.json')),
-    cached('liturgy', () => fetchJson<LiturgyData>('gabc/liturgy.json')),
-    cached('lodi-conclusioni', () => fetchJson<Texts['lodi']>('testi/lodi-conclusioni.json')),
-    cached('compieta-orazioni', () => fetchJson<Texts['compietaOrazioni']>('testi/compieta-orazioni.json')),
-    cached('ordinario', () => fetchJson<Texts['ordinario']>('testi/ordinario.json')),
-    cached('esame', () => fetchJson<Texts['esame']>('testi/esame-coscienza.json')),
-    cached('mariane', () => fetchJson<Texts['marianeIt']>('testi/antifone-mariane-it.json')),
-    cached('proprio-tempo-it', () => fetchJson<Texts['proprioTempoIt']>('testi/proprio-tempo-it.json')),
-    cached('comuni', () => fetchJson<{ comuni: Texts['comuni'] }>('testi/comuni.json')),
+    loadIndex(),
+    fetchJson<LiturgyData>(DATA_FILES.liturgy),
+    fetchJson<Texts['lodi']>(DATA_FILES.lodiConclusions),
+    fetchJson<Texts['compietaOrazioni']>(DATA_FILES.compietaOrations),
+    fetchJson<Texts['ordinario']>(DATA_FILES.ordinario),
+    fetchJson<Texts['esame']>(DATA_FILES.esame),
+    fetchJson<Texts['marianeIt']>(DATA_FILES.marianIt),
+    fetchJson<Texts['proprioTempoIt']>(DATA_FILES.seasonProperIt),
+    fetchJson<{ comuni: Texts['comuni'] }>(DATA_FILES.comuni),
   ]);
   indexById = new Map(index.map((e) => [e.id, e]));
   texts = { lodi, compietaOrazioni, ordinario, esame, marianeIt, proprioTempoIt, comuni: comuni.comuni };
@@ -60,19 +65,13 @@ export function fetchGabc(id: string): Promise<GabcPiece> {
   return cached(`gabc:${id}`, async () => {
     const entry = getEntry(id);
     if (!entry?.file || entry.status !== 'found') throw new Error(`nessuno spartito per ${id}`);
-    const raw = await fetchText(entry.file);
-    // Some GregoBase files carry a second header block (a copy of the
-    // metadata ending with another "%%" line): the notation is after the last one.
-    const separators = [...raw.matchAll(/^%%\s*$/gm)];
-    const first = separators[0]?.index ?? -1;
-    const last = separators[separators.length - 1];
-    const header = first >= 0 ? raw.slice(0, first) : '';
-    const body = (last ? raw.slice(last.index! + last[0].length) : raw).trim();
-    const mode = /^mode:\s*([^;\n]+)/m.exec(header)?.[1].trim() ?? null;
-    return { mode, body };
+    // some GregoBase files carry a second header block: splitFile takes the
+    // notation after the last "%%", and the mode from the first block
+    const { header, body } = splitFile(await fetchText(entry.file));
+    return { mode: headerField(header, 'mode') || null, body: body.trim() };
   });
 }
 
 export const fetchPsalm = (file: string) => cached(`psalm:${file}`, () => fetchJson<PsalmDoc>(file));
 
-export const fetchLettura = (file: string) => cached(`lettura:${file}`, () => fetchJson<LetturaDoc>(`letture/${file}`));
+export const fetchLettura = (file: string) => cached(`lettura:${file}`, () => fetchJson<LetturaDoc>(READINGS_DIR + file));

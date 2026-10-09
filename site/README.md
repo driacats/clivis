@@ -30,7 +30,7 @@ npm run build    # static site in dist/, ready to publish as is
     week, colour, solemnities and feasts (transferred ones included) and
     memorials;
   - `santi.ts` is the single list of the saints' memorials, each with its
-    Common; `saints.ts` prepares the «saint of the day» of the home page;
+    Common; `saintOfDay.ts` prepares the «saint of the day» of the home page;
   - `plan.ts` turns the day into pieces of the database: psalter week and day,
     Proper of Seasons, Common of Saints, tones of the opening, of the Pater
     noster and of the dismissal; for Compieta, Sunday I or II Vespers or

@@ -4,9 +4,9 @@
 // is not celebrated this year (and why), or that the day is a feria.
 
 import {
-  displacedCelebration, formatCivilDate, movableDates, toDayNumber, type LiturgicalDay,
+  displacedCelebration, formatCivilDate, memorialsAllowed, movableDates, onlyCommemorated, toDayNumber, type LiturgicalDay,
 } from './calendar';
-import { fixedMemorials } from './santi';
+import { fixedMemorials, SATURDAY_OF_MARY } from './santi';
 
 export interface SaintOfDay {
   name: string;
@@ -59,14 +59,13 @@ export function saintsOfDay(day: LiturgicalDay): SaintsResult {
   }
 
   const extra = WITHOUT_COMUNE.filter((m) => m.month === day.date.month && m.day === day.date.day);
-  const allowed = day.weekday !== 0 && day.season !== 'triduo' && day.inOctave === null
-    && n !== mv.ashWednesday && !(n >= mv.palmSunday && n < mv.easter);
-  const commemoration = day.season === 'quaresima' || (day.date.month === 12 && day.date.day >= 17 && day.date.day <= 24);
+  const allowed = memorialsAllowed(day);
+  const commemoration = onlyCommemorated(day.season, day.date);
 
   if (day.memorials.length || (allowed && extra.length)) {
     const fromExtra: SaintOfDay[] = allowed ? extra.map((m) => ({ name: m.name, kind: commemoration ? 'commemorazione' : m.rank })) : [];
     // an obligatory memorial without Comune (Guardian Angels) excludes the optional ones
-    const listed = fromExtra.some((s) => s.kind === 'memoria') ? [] : day.memorials.filter((m) => !/Santa Maria in sabato/.test(m.name) || !fromExtra.length);
+    const listed = fromExtra.some((s) => s.kind === 'memoria') ? [] : day.memorials.filter((m) => m.name !== SATURDAY_OF_MARY.name || !fromExtra.length);
     return {
       saints: [...fromExtra, ...listed.map((m): SaintOfDay => ({
         name: displayName(m.name),

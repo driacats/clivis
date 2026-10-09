@@ -25,6 +25,12 @@ export interface CivilDate {
 
 export type Season = 'avvento' | 'natale' | 'ordinario' | 'quaresima' | 'triduo' | 'pasqua';
 
+/** Lent and the Triduum: no Alleluia at the opening, Lenten hymns and tones. */
+export const isLent = (season: Season): boolean => season === 'quaresima' || season === 'triduo';
+
+/** 17-24 December: the last days of Advent, with their own hymns; memorials are only commemorated. */
+export const isLateAdvent = (d: CivilDate): boolean => d.month === 12 && d.day >= 17 && d.day <= 24;
+
 export type LiturgicalColor = 'viola' | 'bianco' | 'verde' | 'rosso' | 'rosaceo';
 
 export type Rank = 'solennità' | 'festa';
@@ -74,14 +80,14 @@ export interface LiturgicalDay {
 
 // --- day arithmetic ---------------------------------------------------------
 
-const DAY = 86400000;
+export const DAY_MS = 86400000;
 
 export function toDayNumber(d: CivilDate): number {
-  return Math.round(Date.UTC(d.year, d.month - 1, d.day) / DAY);
+  return Math.round(Date.UTC(d.year, d.month - 1, d.day) / DAY_MS);
 }
 
 export function fromDayNumber(n: number): CivilDate {
-  const date = new Date(n * DAY);
+  const date = new Date(n * DAY_MS);
   return { year: date.getUTCFullYear(), month: date.getUTCMonth() + 1, day: date.getUTCDate() };
 }
 
@@ -143,7 +149,7 @@ export function adventStart(year: number): number {
 }
 
 /** Baptism of the Lord: the Sunday after 6 January (Italy keeps Epiphany on the 6th). */
-export function baptismOfTheLord(year: number): number {
+function baptismOfTheLord(year: number): number {
   return sundayAfter(dayNum(year, 1, 6));
 }
 
@@ -331,7 +337,7 @@ export const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX'
 
 export const WEEKDAY_NAMES = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
 
-const MONTH_NAMES = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre',
+export const MONTH_NAMES = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre',
   'ottobre', 'novembre', 'dicembre'];
 
 export function formatCivilDate(d: CivilDate, withWeekday = true): string {
@@ -445,12 +451,24 @@ export function liturgicalDay(date: CivilDate): LiturgicalDay {
   return { date, weekday, season, seasonWeek, psalterWeek, celebration, memorials, inOctave, paschal, color, label };
 }
 
+/**
+ * Whether memorials can be kept on a day: not on Sundays, in the octaves, on
+ * Ash Wednesday, in Holy Week or in the Triduum.
+ */
+export function memorialsAllowed(day: Pick<LiturgicalDay, 'date' | 'weekday' | 'season' | 'inOctave'>): boolean {
+  const n = toDayNumber(day.date);
+  const mv = movableDates(day.date.year);
+  return day.weekday !== 0 && day.season !== 'triduo' && day.inOctave === null
+    && n !== mv.ashWednesday && !(n >= mv.palmSunday && n < mv.easter);
+}
+
+/** In Lent and in late Advent the memorials are only commemorated. */
+export const onlyCommemorated = (season: Season, date: CivilDate): boolean => season === 'quaresima' || isLateAdvent(date);
+
 function memorialsOf(n: number, date: CivilDate, weekday: number, season: Season, inOctave: LiturgicalDay['inOctave'],
   mv: MovableDates): DayMemorial[] {
-  if (weekday === 0 || inOctave || season === 'triduo') return [];
-  // Ash Wednesday and Holy Week: no memorials at all
-  if (n === mv.ashWednesday || (n >= mv.palmSunday && n < mv.easter)) return [];
-  const commemoration = season === 'quaresima' || (date.month === 12 && date.day >= 17 && date.day <= 24);
+  if (!memorialsAllowed({ date, weekday, season, inOctave })) return [];
+  const commemoration = onlyCommemorated(season, date);
   const list: Memorial[] = [...fixedMemorials(date.month, date.day)];
   if (n === mv.pentecost + 1) list.unshift(MARY_MOTHER_OF_CHURCH);
   if (n === mv.sacredHeart + 1) list.unshift(IMMACULATE_HEART);

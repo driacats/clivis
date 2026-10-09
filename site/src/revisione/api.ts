@@ -85,4 +85,5 @@ export const STATO_NOME: Record<Stato, string> = {
   approvato: 'Approvato',
 };
 
+/** The states in the order of the filters (the service lists the same ones in its own order, server/revisione.mjs). */
 export const STATI: Stato[] = ['da-rivedere', 'in-corso', 'rimandato', 'inviato', 'approvato'];

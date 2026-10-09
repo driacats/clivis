@@ -5,24 +5,23 @@ import {
   addDays, formatCivilDate, liturgicalDay, todayLocal, WEEKDAY_NAMES, type LiturgicalDay,
 } from '../calendar/calendar';
 import { suggestedOffice } from '../calendar/plan';
-import { saintsOfDay } from '../calendar/saints';
+import { saintsOfDay } from '../calendar/saintOfDay';
 import type { Office } from '../data/types';
-import { celebrationSubtitle, dayMeta, dayName, OFFICE_NAME, officeHref } from './day';
-import { h } from './dom';
+import { celebrationSubtitle, dayMeta, dayName, OFFICE_NAME, officeHref, RANK_LABEL } from './day';
+import { h, svgSpan } from './dom';
 
-const svgIcon = (body: string) => {
-  const span = h('span', { class: 'home-icon', 'aria-hidden': 'true' });
-  span.innerHTML = `<svg viewBox="0 0 24 24">${body}</svg>`;
-  return span;
+const REPOSITORIES = {
+  site: 'https://github.com/driacats/mlg-breviary',
+  exsurge: 'https://github.com/driacats/exsurge',
 };
+
+const svgIcon = (body: string) => svgSpan(`<svg viewBox="0 0 24 24">${body}</svg>`, { class: 'home-icon', 'aria-hidden': 'true' });
 const SUN = '<circle cx="12" cy="14" r="4"/><path d="M12 5.5v2M5.2 8.2l1.4 1.4M18.8 8.2l-1.4 1.4M3 14h2M19 14h2M3 19h18"/>';
 const MOON = '<path d="M19 15.5A7.5 7.5 0 0 1 8.5 5a7.5 7.5 0 1 0 10.5 10.5z"/><path d="M17 4.5l.6 1.3 1.4.2-1 1 .2 1.4-1.2-.7-1.2.7.2-1.4-1-1 1.4-.2z" class="fill"/>';
 const PLAY = '<path d="M8 5.5v13l10-6.5z"/>';
 const FOLLOW = '<path d="M3 7h18M3 12h18M3 17h18" class="thin"/><rect x="9" y="4.5" width="5" height="15" rx="1.2" class="soft"/><path d="M9 20.5h5"/>';
 const LANG = '<path d="M4 6h9M8.5 4v2M6 6c.5 3 2.5 5.5 5 6.5M11 6c-.5 3-2.5 5.5-5 6.5"/><path d="M13 20l3.5-8 3.5 8M14.2 17.3h4.6"/>';
 const CHECK = '<path d="M5 4.5h11l3 3V19.5H5z"/><path d="M8.5 11l2 2 4-4M8.5 16h7"/>';
-
-const KIND_LABEL = { festa: 'Festa', 'solennità': 'Solennità', memoria: 'Memoria', 'memoria facoltativa': 'Memoria facoltativa', commemorazione: 'Commemorazione' } as const;
 
 /** The saints (memorials) of the day, under the title. */
 function saintsBlock(day: LiturgicalDay): HTMLElement | null {
@@ -33,18 +32,16 @@ function saintsBlock(day: LiturgicalDay): HTMLElement | null {
     h('ul', { class: 'saints__list' },
       ...saints.map((s) => h('li', { class: `saints__item${s.notCelebrated ? ' saints__item--off' : ''}` },
         h('span', { class: 'saints__name' }, s.name),
-        h('span', { class: 'saints__kind' }, KIND_LABEL[s.kind]),
+        h('span', { class: 'saints__kind' }, RANK_LABEL[s.kind]),
         s.notCelebrated ? h('span', { class: 'saints__off' }, s.notCelebrated.charAt(0).toUpperCase() + s.notCelebrated.slice(1) + '.') : null))));
 }
 
 /** The first note of the logo's clivis; on hover the second note joins it. */
 function neume(): HTMLElement {
-  const span = h('span', { class: 'office-card__neume', 'aria-hidden': 'true' });
-  span.innerHTML = '<svg viewBox="7 8 18 16">'
+  return svgSpan('<svg viewBox="7 8 18 16">'
     + '<path class="n1" d="M8 9.6Q8 8.8 8.8 8.8L15.2 8.8Q16 8.8 16 9.6L16 16Q16 16.8 15.2 16.8L9.6 16.8L9.6 22.7Q9.6 23.2 9.1 23.2L8.5 23.2Q8 23.2 8 22.7Z"/>'
     + '<path class="n2" d="M15.2 15.2L23.2 15.2Q24 15.2 24 16L24 22.4Q24 23.2 23.2 23.2L16.8 23.2Q16 23.2 16 22.4L16 16.8L15.2 16.8Z"/>'
-    + '</svg>';
-  return span;
+    + '</svg>', { class: 'office-card__neume', 'aria-hidden': 'true' });
 }
 
 function officeCard(day: LiturgicalDay, office: Office, suggested: boolean): HTMLElement {
@@ -66,7 +63,7 @@ function weekStrip(today: LiturgicalDay): HTMLElement {
   return h('ol', { class: 'week' },
     ...days.map((d, i) => {
       const special = d.celebration?.name ?? (d.weekday === 0 ? d.label : null);
-      return h('li', { 'data-season': d.color },
+      return h('li', { 'data-color': d.color },
         h('a', { class: `week__day${i === 0 ? ' week__day--today' : ''}`, href: officeHref(d.date, 'lodi'),
           'aria-label': `${formatCivilDate(d.date)}: ${dayName(d)}` },
           h('span', { class: 'week__wd' }, i === 0 ? 'Oggi' : WEEKDAY_NAMES[d.weekday].slice(0, 3)),
@@ -126,9 +123,9 @@ export function renderHome(): HTMLElement {
         ', trascritti e confrontati spartito per spartito. Il breviario cresce poco a poco: i tempi forti e le altre ore si aggiungono man mano.'),
       h('p', { class: 'home-links' },
         'Il codice è su GitHub: ',
-        h('a', { class: 'more-link', href: 'https://github.com/driacats/mlg-breviary' }, 'Clivis'),
+        h('a', { class: 'more-link', href: REPOSITORIES.site }, 'Clivis'),
         ' (sito e database) · ',
-        h('a', { class: 'more-link', href: 'https://github.com/driacats/exsurge' }, 'exsurge'),
+        h('a', { class: 'more-link', href: REPOSITORIES.exsurge }, 'exsurge'),
         ' (il motore degli spartiti).')),
   );
 }

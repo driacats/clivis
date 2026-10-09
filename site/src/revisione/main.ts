@@ -10,6 +10,7 @@ import { renderEditor, type EditorPage } from './editor';
 import { renderGuide } from './guide';
 import { filtroSalvato, passa, renderList } from './list';
 import { startTour, stopTour, tourSeen, type TourStep } from './tour';
+import { backToList, errorMessage } from './ui';
 
 // Routes: #/ the list · #/canto/<file> one chant · #/account own password · #/utenti reviewers (admin)
 
@@ -79,7 +80,7 @@ async function route(): Promise<void> {
     if (m) {
       const key = decodeURIComponent(m[1]);
       const i = catalogo.findIndex((c) => c.key === key);
-      if (i < 0) return show('Canto sconosciuto', h('main', { class: 'rev-wrap' }, notice('Questo canto non è nel breviario.', 'error'), h('a', { href: '#/', class: 'back-link' }, '← Tutti i canti')));
+      if (i < 0) return show('Canto sconosciuto', h('main', { class: 'rev-wrap' }, notice('Questo canto non è nel breviario.', 'error'), backToList()));
       const [rev] = await Promise.all([api.canto(key), refreshStati()]);
       // previous / next within the chants the list is showing
       const f = filtroSalvato();
@@ -91,7 +92,7 @@ async function route(): Promise<void> {
       document.body.classList.add('ed-mode');
       editor = page;
       // the first time: a short tour of the editor, once the score is drawn
-      if (!tourSeen('editor')) page.el.addEventListener('chant-rendered', () => setTimeout(() => { if (editor === page) startTour('editor', EDITOR_TOUR); }, 300), { once: true });
+      if (!tourSeen('editor')) page.el.addEventListener('chant-rendered', () => setTimeout(() => { if (editor === page) startTour('editor', EDITOR_TOUR); }, TOUR_DELAY_MS), { once: true });
       return;
     }
 
@@ -99,14 +100,16 @@ async function route(): Promise<void> {
     const y = path === '' ? listScroll : 0;
     show('Canti', renderList(catalogo, stati, nomi, me));
     if (y) window.scrollTo({ top: y });
-    if (!tourSeen('elenco')) setTimeout(() => startTour('elenco', LIST_TOUR), 300);
+    if (!tourSeen('elenco')) setTimeout(() => startTour('elenco', LIST_TOUR), TOUR_DELAY_MS);
   } catch (e) {
     if (e instanceof ApiError && e.status === 401) return;
-    show('Errore', h('main', { class: 'rev-wrap' }, notice(`Qualcosa non ha funzionato: ${(e as Error).message}`, 'error')));
+    show('Errore', h('main', { class: 'rev-wrap' }, notice(`Qualcosa non ha funzionato: ${errorMessage(e)}`, 'error')));
   }
 }
 
-// first-visit tours (the guide can show them again)
+// first-visit tours (the guide can show them again), started once the page has settled
+const TOUR_DELAY_MS = 300;
+
 const LIST_TOUR: TourStep[] = [
   { title: 'Benvenuto nella revisione di Clivis', text: 'Qui si controllano le melodie del breviario confrontandole con il libretto, e si correggono se serve. In un minuto ti mostro come funziona.' },
   { target: '.rev-progress', title: 'A che punto siamo', text: 'Quanti canti sono già approvati e quanti sono stati rivisti. Ogni colore è uno stato: da rivedere, in revisione, da approvare, da correggere, approvato.' },
@@ -145,7 +148,7 @@ window.addEventListener('revisione:uscita', () => {
   route();
 });
 
-setupThemeToggle(document.getElementById('theme-toggle') as HTMLButtonElement);
+setupThemeToggle(document.querySelector<HTMLButtonElement>('#theme-toggle')!);
 
 api.io()
   .then((u) => { me = u; })

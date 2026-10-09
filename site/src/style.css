@@ -65,12 +65,12 @@
   color-scheme: dark;
 }
 
-/* --season: the colour of the day (on <html>) or of a day in a list */
-:root, [data-season='verde'] { --season: var(--lit-verde); }
-[data-season='viola'] { --season: var(--lit-viola); }
-[data-season='bianco'] { --season: var(--lit-bianco); }
-[data-season='rosso'] { --season: var(--lit-rosso); }
-[data-season='rosaceo'] { --season: var(--lit-rosaceo); }
+/* --day-color: the colour of the day (on <html>) or of a day in a list */
+:root, [data-color='verde'] { --day-color: var(--lit-verde); }
+[data-color='viola'] { --day-color: var(--lit-viola); }
+[data-color='bianco'] { --day-color: var(--lit-bianco); }
+[data-color='rosso'] { --day-color: var(--lit-rosso); }
+[data-color='rosaceo'] { --day-color: var(--lit-rosaceo); }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -106,7 +106,7 @@ a { color: inherit; }
   position: absolute;
   inset: auto 0 0 0;
   height: 3px;
-  background: var(--season);
+  background: var(--day-color);
 }
 .masthead__staff {
   position: absolute;
@@ -235,7 +235,7 @@ a { color: inherit; }
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--season);
+  color: var(--day-color);
   font-weight: 600;
 }
 .date-nav__today--link { color: var(--rubric); }
@@ -266,7 +266,7 @@ a { color: inherit; }
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--season);
+  background: var(--day-color);
   box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12);
 }
 
@@ -328,7 +328,7 @@ a { color: inherit; }
   cursor: pointer;
 }
 .aside-list__item:hover { color: var(--ink); }
-.aside-list__item[aria-pressed='true'] { color: var(--season); border-bottom-color: var(--season); }
+.aside-list__item[aria-pressed='true'] { color: var(--day-color); border-bottom-color: var(--day-color); }
 .aside-list__item--static { cursor: default; }
 .aside-list__item--static:hover { color: var(--muted); }
 .aside-list__kind {
@@ -347,13 +347,13 @@ a { color: inherit; }
   padding: 14px 16px 12px;
 }
 .month-cal__head { display: grid; grid-template-columns: 40px 1fr 40px; align-items: center; text-align: center; }
-.month-cal__title { font-weight: 600; color: var(--season); text-transform: lowercase; }
+.month-cal__title { font-weight: 600; color: var(--day-color); text-transform: lowercase; }
 .month-cal__step {
   font: inherit;
   font-size: 1.5rem;
   line-height: 1;
   height: 40px;
-  color: var(--season);
+  color: var(--day-color);
   background: none;
   border: 0;
   border-radius: 50%;
@@ -373,8 +373,8 @@ a { color: inherit; }
 }
 .month-cal__day:hover { background: var(--info-bg); }
 .month-cal__day--out { color: var(--muted); opacity: 0.5; }
-.month-cal__day--today { font-weight: 700; color: var(--season); }
-.month-cal__day[aria-current='date'] { background: var(--info-bg); box-shadow: inset 0 0 0 1px var(--season); font-weight: 600; }
+.month-cal__day--today { font-weight: 700; color: var(--day-color); }
+.month-cal__day[aria-current='date'] { background: var(--info-bg); box-shadow: inset 0 0 0 1px var(--day-color); font-weight: 600; }
 
 @media (max-width: 960px) {
   .office-page {
@@ -590,7 +590,7 @@ details.alternative[open] summary { color: var(--ink); }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--season);
+  color: var(--day-color);
   margin: 0;
 }
 .home-today__date::first-letter { text-transform: uppercase; }
@@ -675,7 +675,7 @@ details.alternative[open] summary { color: var(--ink); }
 .week__wd { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
 .week__day--today .week__wd { color: var(--rubric); }
 .week__num { font-family: var(--text); font-size: 1.45rem; line-height: 1.1; }
-.week__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--season); box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12); }
+.week__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--day-color); box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12); }
 .week__name {
   font-size: 0.68rem; line-height: 1.2; color: var(--muted); margin-top: 3px;
   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;

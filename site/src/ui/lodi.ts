@@ -1,19 +1,17 @@
 import { ROMAN, type LiturgicalDay } from '../calendar/calendar';
 import { benedicamusKey, lodiCelebrations, lodiPlan, paterNosterTone, solemnBlessing, type LodiCelebration } from '../calendar/plan';
 import { fetchGabc, getTexts } from '../data/loader';
-import type { AntiphonSlot, LiturgyData } from '../data/types';
-import { deferred, h, notice } from './dom';
+import type { AntiphonSlot, LiturgyData, LodiDay } from '../data/types';
+import { button, deferred, h, notice } from './dom';
 import type { CelebrationSelect } from './aside';
 import { lodiOpening } from './opening';
 import { comuneTitle, renderComuneLodi } from './comune';
 import {
-  antiphonWithPsalm, benedictus as benedictusText, chant, choice, finalBlessing, invocations, letturaBreve,
-  paterNoster, rubric, section, translation,
+  antiphonFrame, antiphonWithPsalm, benedictus as benedictusText, chant, choice, finalBlessing, invocations, letturaBreve, lodiConclusion,
+  paterNoster, psalterDay, rubric, section, SLOT_LABEL, translation,
 } from './pieces';
 
-const SLOT_LABEL: Record<AntiphonSlot['slot'], string> = {
-  '1a': '1ª antifona', '2a': '2ª antifona', '3a': '3ª antifona', unica: 'Antifona',
-};
+type Plan = ReturnType<typeof lodiPlan>;
 
 /** In Eastertide: the paschal antiphon, or a note that the generic Alleluia is missing. */
 function paschalAntiphon(slot: AntiphonSlot): HTMLElement {
@@ -38,25 +36,25 @@ function paschalAntiphon(slot: AntiphonSlot): HTMLElement {
  */
 export function renderLodi(day: LiturgicalDay, liturgy: LiturgyData): { main: HTMLElement; select: CelebrationSelect | null } {
   const { options, initial } = lodiCelebrations(day);
-  if (options.length === 1) return { main: renderCelebration(day, liturgy, options[0]), select: null };
+  const plan = lodiPlan(day);
+  if (options.length === 1) return { main: renderCelebration(day, plan, liturgy, options[0]), select: null };
   const main = h('div', { class: 'choice__panel' });
-  const onSelect = (i: number) => main.replaceChildren(renderCelebration(day, liturgy, options[i]));
+  const onSelect = (i: number) => main.replaceChildren(renderCelebration(day, plan, liturgy, options[i]));
   return { main, select: { initial, onSelect } };
 }
 
-function renderCelebration(day: LiturgicalDay, liturgy: LiturgyData, o: LodiCelebration): HTMLElement {
+function renderCelebration(day: LiturgicalDay, plan: Plan, liturgy: LiturgyData, o: LodiCelebration): HTMLElement {
   if (o.mode === 'feria') {
     const commemorations = day.memorials.filter((m) => m.commemoration);
     return h('div', {},
       commemorations.length ? notice(`Oggi si può fare memoria di: ${commemorations.map((m) => m.name).join('; ')}. In questo tempo le memorie si commemorano soltanto: si dicono le Lodi della feria.`, 'info') : null,
-      renderFeria(day, liturgy));
+      renderFeria(day, plan, liturgy));
   }
   const build = (comune: string) => {
-    const plan = lodiPlan(day);
-    const data = liturgy.lodi.weeks.find((w) => w.week === plan.week)?.days.find((d) => d.day === plan.dayName);
-    const conc = getTexts().lodi.find((e) => e.week === plan.week && e.day === plan.dayName);
+    const data = psalterDay(liturgy, plan.week, plan.dayName);
+    const conc = lodiConclusion(plan.week, plan.dayName);
     return renderComuneLodi(day, liturgy, {
-      mode: o.mode as 'memoria' | 'festa', name: o.name, comune,
+      mode: o.mode, name: o.name, comune,
       psalter: () => data ? psalmody(data.psalmAntiphons, plan.paschal) : [notice('Salmodia del giorno non trovata.', 'error')],
       ferialInvocations: conc?.invocazioni ?? null,
     });
@@ -69,8 +67,7 @@ function psalmody(slots: AntiphonSlot[], paschal: boolean): HTMLElement[] {
   return slots.map((slot) => paschal ? paschalAntiphon(slot) : antiphonWithPsalm(slot.primary, SLOT_LABEL[slot.slot]));
 }
 
-function renderFeria(day: LiturgicalDay, liturgy: LiturgyData, showAnyway = false): HTMLElement {
-  const plan = lodiPlan(day);
+function renderFeria(day: LiturgicalDay, plan: Plan, liturgy: LiturgyData, showAnyway = false): HTMLElement {
   const root = h('div', { class: 'office' });
 
   const page = showAnyway && plan.fallback ? plan.fallback : { week: plan.week, dayName: plan.dayName };
@@ -78,10 +75,9 @@ function renderFeria(day: LiturgicalDay, liturgy: LiturgyData, showAnyway = fals
 
   if (plan.properNotice && plan.fallback && !showAnyway) {
     const f = plan.fallback;
-    const button = h('button', { type: 'button', class: 'link-button' },
-      `Mostra i salmi del salterio: ${f.dayName} della ${ROMAN[f.week]} settimana`);
-    button.addEventListener('click', () => root.replaceWith(renderFeria(day, liturgy, true)));
-    root.append(notice(plan.properNotice, 'info'), button);
+    root.append(notice(plan.properNotice, 'info'),
+      button(`Mostra i salmi del salterio: ${f.dayName} della ${ROMAN[f.week]} settimana`,
+        () => root.replaceWith(renderFeria(day, plan, liturgy, true)), { class: 'link-button' }));
     return root;
   }
   if (plan.properNotice) {
@@ -89,7 +85,7 @@ function renderFeria(day: LiturgicalDay, liturgy: LiturgyData, showAnyway = fals
   }
   if (plan.seasonalNotice) root.append(notice(plan.seasonalNotice, 'info'));
 
-  const data = liturgy.lodi.weeks.find((w) => w.week === page.week)?.days.find((d) => d.day === page.dayName);
+  const data = psalterDay(liturgy, page.week, page.dayName);
   if (!data) {
     root.append(notice(`Nel database mancano le Lodi di ${pageName}.`, 'error'));
     return root;
@@ -127,21 +123,16 @@ function withTranslation(id: string, label: string, hymn = false): HTMLElement {
   return h('div', {}, rubric(label), chant(id), translation(getTexts().proprioTempoIt[id], { hymn }));
 }
 
-function benedictus(antiphon: string | { note: string }): Node[] {
-  const text = benedictusText();
+function benedictus(antiphon: LodiDay['benedictusAntiphon']): (Node | null)[] {
   if (typeof antiphon !== 'string') {
-    return [notice('La domenica l’antifona al Benedictus è propria e cambia ogni settimana: non è nel libretto delle Lodi.', 'gap'), text];
+    return [notice('La domenica l’antifona al Benedictus è propria e cambia ogni settimana: non è nel libretto delle Lodi.', 'gap'), benedictusText()];
   }
-  return [
-    rubric('Antifona al Benedictus'), chant(antiphon),
-    text,
-    rubric('Antifona al Benedictus'), chant(antiphon, { repeat: true }),
-  ];
+  return antiphonFrame('Antifona al Benedictus', chant(antiphon), benedictusText(), chant(antiphon, { repeat: true }));
 }
 
 /** Invocations, Our Father, oration and blessing of the psalter day. */
 function conclusion(week: number, dayName: string, day: LiturgicalDay): HTMLElement[] {
-  const c = getTexts().lodi.find((e) => e.week === week && e.day === dayName);
+  const c = lodiConclusion(week, dayName);
   return [
     section('Invocazioni', c ? invocations(c.invocazioni) : notice('Invocazioni non trovate nel database.', 'error')),
     section('Padre nostro', paterNoster(paterNosterTone(day))),

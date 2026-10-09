@@ -2,17 +2,24 @@
 // Lodi (four-week psalter) and Compieta. Pure functions over ids, so they can
 // be unit-tested without loading any data.
 
-import { addDays, liturgicalDay, movableDates, toDayNumber, WEEKDAY_NAMES, type LiturgicalDay } from './calendar';
+import {
+  addDays, isLateAdvent, isLent, liturgicalDay, movableDates, toDayNumber, WEEKDAY_NAMES, type LiturgicalDay, type Season,
+} from './calendar';
+import { SATURDAY_OF_MARY } from './santi';
+import { compietaId as C, CUSTODI, ORDINARIO } from '../data/ids';
 import type { Office } from '../data/types';
+
+/** Hour from which the site suggests Compieta instead of Lodi. */
+const COMPIETA_FROM_HOUR = 14;
 
 /** The office for this hour of the day: Lodi until 2 pm, then Compieta. */
 export function suggestedOffice(now = new Date()): Office {
-  return now.getHours() < 14 ? 'lodi' : 'compieta';
+  return now.getHours() < COMPIETA_FROM_HOUR ? 'lodi' : 'compieta';
 }
 
 // --- Lodi ---------------------------------------------------------------------
 
-export interface LodiPlan {
+interface LodiPlan {
   week: 1 | 2 | 3 | 4;
   /** Day name as used in liturgy.json ("Domenica" … "Sabato"). */
   dayName: string;
@@ -85,17 +92,17 @@ export function lodiPlan(day: LiturgicalDay): LodiPlan {
  * to the day, among those already in the database. Advent until 16 December
  * has its own hymn; from 17 December on the libretto changes hymn.
  */
-export function seasonProperId(day: LiturgicalDay): string | null {
-  if (day.season === 'avvento' && !(day.date.month === 12 && day.date.day >= 17)) return 'avvento-1';
+function seasonProperId(day: LiturgicalDay): string | null {
+  if (day.season === 'avvento' && !isLateAdvent(day.date)) return 'avvento-1';
   return null;
 }
 
 // --- Compieta -------------------------------------------------------------------
 
-export type HymnText = 'te-lucis' | 'christe' | 'iesu';
-export type MarianSeason = 'alma' | 'ave' | 'regina' | 'salve';
+type HymnText = 'te-lucis' | 'christe' | 'iesu';
+type MarianSeason = 'alma' | 'ave' | 'regina' | 'salve';
 
-export interface CompietaPlan {
+interface CompietaPlan {
   /** id of the vespersBlocks entry in liturgy.json */
   blockId: string;
   /** Which hymn texts are allowed today, in order of preference. */
@@ -113,10 +120,10 @@ export interface CompietaPlan {
   notice: string | null;
 }
 
-const BLOCK_BY_WEEKDAY = ['domenica-II-vespri', 'lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', 'domenica-I-vespri'];
-
-/** Compieta ids in gabc/index.json (see gabc/tools/archivio/PDF-INVENTORY.md). */
-const C = (n: number) => `compieta.C${n}`;
+/** The Compieta of Sunday, after the I Vespers (Saturday evening) and the II Vespers (Sunday evening). */
+const SUNDAY_I_VESPERS = 'domenica-I-vespri';
+const SUNDAY_II_VESPERS = 'domenica-II-vespri';
+const BLOCK_BY_WEEKDAY = [SUNDAY_II_VESPERS, 'lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', SUNDAY_I_VESPERS];
 
 const HYMNS_ORDINARY: Record<'feria' | 'memoria' | 'festa' | 'domenica' | 'solennita', Record<'te-lucis' | 'christe', string>> = {
   feria: { 'te-lucis': C(2), christe: C(7) },
@@ -136,13 +143,13 @@ export function compietaPlan(day: LiturgicalDay): CompietaPlan {
   let rank: keyof typeof HYMNS_ORDINARY = day.weekday === 0 ? 'domenica' : 'feria';
   const isHolyThursday = n === mv.holyThursday;
   if (day.season === 'triduo' || isHolyThursday || day.inOctave) {
-    blockId = 'domenica-II-vespri';
+    blockId = SUNDAY_II_VESPERS;
   } else if (day.celebration?.rank === 'solennità') {
-    blockId = 'domenica-II-vespri';
+    blockId = SUNDAY_II_VESPERS;
     rank = 'solennita';
   } else if (tomorrow.celebration?.rank === 'solennità' && day.weekday !== 6) {
     // the solemnity begins with its I Vespers this evening
-    blockId = 'domenica-I-vespri';
+    blockId = SUNDAY_I_VESPERS;
     rank = 'solennita';
   } else if (day.celebration?.rank === 'festa') {
     rank = 'festa';
@@ -151,7 +158,7 @@ export function compietaPlan(day: LiturgicalDay): CompietaPlan {
   // hymn
   let hymnRefs: CompietaPlan['hymnRefs'];
   let hymnTexts: HymnText[];
-  const dec17 = day.date.month === 12 && day.date.day >= 17;
+  const dec17 = isLateAdvent(day.date);
   if (day.season === 'avvento') {
     hymnTexts = [dec17 ? 'christe' : 'te-lucis'];
     hymnRefs = dec17 ? { christe: C(31) } : { 'te-lucis': C(30) };
@@ -159,7 +166,7 @@ export function compietaPlan(day: LiturgicalDay): CompietaPlan {
     const beforeEpiphany = day.date.month === 12 || day.date.day < 6;
     hymnTexts = [beforeEpiphany ? 'te-lucis' : 'christe'];
     hymnRefs = beforeEpiphany ? { 'te-lucis': C(32) } : { christe: C(33) };
-  } else if (day.season === 'quaresima' || day.season === 'triduo') {
+  } else if (isLent(day.season)) {
     const evenWeek = day.season === 'quaresima' && (day.seasonWeek === 2 || day.seasonWeek === 4);
     hymnTexts = [evenWeek ? 'christe' : 'te-lucis'];
     hymnRefs = evenWeek ? { christe: C(35) } : { 'te-lucis': C(34) };
@@ -178,8 +185,8 @@ export function compietaPlan(day: LiturgicalDay): CompietaPlan {
   else if (day.season === 'pasqua') responsoryRef = C(40);
   else if (day.season === 'avvento' || day.season === 'quaresima') responsoryRef = C(37);
   else responsoryRef = C(12);
-  const versicleRef = responsoryRef === C(40) ? 'compieta.custodi-tp'
-    : responsoryRef === C(12) || responsoryRef === C(37) ? 'compieta.custodi' : null;
+  const versicleRef = responsoryRef === C(40) ? CUSTODI.paschal
+    : responsoryRef === C(12) || responsoryRef === C(37) ? CUSTODI.ordinary : null;
 
   // Marian antiphon (libretto p. 42-45): Alma from Advent until 2 February,
   // Ave Regina from 2 February until Holy Week, Regina caeli in Eastertide,
@@ -195,7 +202,7 @@ export function compietaPlan(day: LiturgicalDay): CompietaPlan {
   let notice: string | null = null;
   if (day.season === 'triduo' || isHolyThursday) {
     notice = 'Nel Triduo pasquale la Compieta è quella della Domenica dopo i II Vespri, con il responsorio proprio.';
-  } else if (blockId === 'domenica-I-vespri' && day.weekday !== 6) {
+  } else if (blockId === SUNDAY_I_VESPERS && day.weekday !== 6) {
     notice = `Domani è solennità (${tomorrow.celebration?.name}): stasera si dice la Compieta dopo i I Vespri della Domenica.`;
   } else if (day.celebration?.rank === 'solennità' && day.weekday !== 0) {
     notice = `Oggi è solennità (${day.celebration.name}): si dice la Compieta dopo i II Vespri della Domenica.`;
@@ -211,16 +218,19 @@ export function compietaPlan(day: LiturgicalDay): CompietaPlan {
     versicleRef,
     marian,
     orationKey: day.celebration?.rank === 'solennità' || day.season === 'triduo' || isHolyThursday ? 'solennita' : blockId,
-    openingWithoutAlleluia: day.season === 'quaresima' || day.season === 'triduo',
+    openingWithoutAlleluia: isLent(day.season),
     notice,
   };
 }
 
-/** Marian antiphon ids per season: simple tone first, then solemn (monastic) tone. */
-export const MARIAN_REFS: Record<MarianSeason, { title: string; simple: string; solemn: string }> = {
+/**
+ * Marian antiphon ids per season: simple tone, solemn (monastic) tone and, for
+ * the Regina caeli, the tone of the Officium parvum.
+ */
+export const MARIAN_REFS: Record<MarianSeason, { title: string; simple: string; solemn: string; parvum?: string }> = {
   alma: { title: 'Alma Redemptóris Mater', simple: C(41), solemn: C(51) },
   ave: { title: 'Ave, Regína cælórum', simple: C(42), solemn: C(52) },
-  regina: { title: 'Regína cæli', simple: C(43), solemn: C(53) },
+  regina: { title: 'Regína cæli', simple: C(43), solemn: C(53), parvum: C(50) },
   salve: { title: 'Salve, Regína', simple: C(44), solemn: C(54) },
 };
 
@@ -239,7 +249,7 @@ export function benedicamusKey(day: LiturgicalDay): BenedicamusKey {
   if (day.celebration?.rank === 'solennità') return 'solennita';
   if (day.celebration?.rank === 'festa') return 'feste';
   if (day.season === 'pasqua') return 'tempo-pasquale';
-  if (day.season === 'avvento' || day.season === 'quaresima' || day.season === 'triduo') return 'avvento-quaresima';
+  if (day.season === 'avvento' || isLent(day.season)) return 'avvento-quaresima';
   if (day.weekday === 0) return 'domeniche';
   return 'ferie';
 }
@@ -254,7 +264,7 @@ export function solemnBlessing(day: LiturgicalDay): boolean {
 export type OpeningTone = 'ferie' | 'feste' | 'solenne';
 
 /** "Strong" seasons, whose Sundays take the solemn tone of the introduction. */
-const STRONG_SEASONS = new Set(['avvento', 'natale', 'quaresima', 'pasqua', 'triduo']);
+const STRONG_SEASONS = new Set<Season>(['avvento', 'natale', 'quaresima', 'pasqua', 'triduo']);
 
 /**
  * Which of the three tones of «Deus, in adiutorium» the libretto prescribes
@@ -270,8 +280,7 @@ export function openingTone(day: LiturgicalDay): OpeningTone {
 
 /** index id of the «Deus, in adiutorium» to sing today (in Lent, without Alleluia). */
 export function openingRef(day: LiturgicalDay, tone: OpeningTone = openingTone(day)): string {
-  const lent = day.season === 'quaresima' || day.season === 'triduo';
-  return `ordinario.DEUS-${tone}${lent ? '-q' : ''}`;
+  return ORDINARIO.opening(tone, isLent(day.season));
 }
 
 export type PaterNosterTone = 'A' | 'B' | 'C';
@@ -282,25 +291,33 @@ export type PaterNosterTone = 'A' | 'B' | 'C';
  * (Sundays included).
  */
 export function paterNosterTone(day: LiturgicalDay): PaterNosterTone {
-  if (day.season === 'quaresima' || day.season === 'avvento' || day.season === 'triduo') return 'B';
+  if (isLent(day.season) || day.season === 'avvento') return 'B';
   if (day.season === 'pasqua' || day.season === 'natale' || day.celebration || day.weekday === 0) return 'C';
   return 'A';
 }
 
 // --- Comune dei santi (libretto pp. 203-299) ----------------------------------------
 
-export type CelebrationMode = 'feria' | 'memoria' | 'festa';
-
 /** One way of praying today's Lodi: the weekday, or a saint with its Comune. */
-export interface LodiCelebration {
-  mode: CelebrationMode;
-  /** Button label. */
-  label: string;
-  /** Full name of the saint or celebration, null for the weekday. */
-  name: string | null;
-  /** Comuni that can be used (testi/comuni.json ids), the first is the default. */
-  comuni: string[];
-}
+export type LodiCelebration =
+  | { mode: 'feria'; label: string; name: null; comuni: [] }
+  | {
+    mode: 'memoria' | 'festa';
+    /** Button label. */
+    label: string;
+    /** Full name of the saint or celebration. */
+    name: string;
+    /** Comuni that can be used (testi/comuni.json ids), the first is the default. */
+    comuni: string[];
+  };
+
+export type CelebrationMode = LodiCelebration['mode'];
+
+const FERIA: LodiCelebration = { mode: 'feria', label: 'Feria', name: null, comuni: [] };
+
+/** The Comune of Santa Maria in sabato, one per week of the psalter (testi/comuni.json: sabato-1 … sabato-4). */
+const SATURDAY_COMUNE = 'sabato-';
+const saturdayComune = (week: number) => SATURDAY_COMUNE + week;
 
 /**
  * The celebrations offered for Lodi today and the one selected by default.
@@ -314,12 +331,12 @@ export function lodiCelebrations(day: LiturgicalDay): { options: LodiCelebration
   if (c?.comune) {
     return { options: [{ mode: 'festa', label: c.name, name: c.name, comuni: [c.comune] }], initial: 0 };
   }
-  if (c || day.memorials.length === 0) return { options: [{ mode: 'feria', label: 'Feria', name: null, comuni: [] }], initial: 0 };
-  const options: LodiCelebration[] = [{ mode: 'feria', label: 'Feria', name: null, comuni: [] }];
+  if (c || day.memorials.length === 0) return { options: [FERIA], initial: 0 };
+  const options: LodiCelebration[] = [FERIA];
   let initial = 0;
   for (const m of day.memorials) {
-    const saturday = m.name === 'Memoria di Santa Maria in sabato';
-    const comuni = saturday ? [`sabato-${day.psalterWeek}`] : m.comuni;
+    const saturday = m.name === SATURDAY_OF_MARY.name;
+    const comuni = saturday ? [saturdayComune(day.psalterWeek)] : m.comuni;
     options.push({ mode: 'memoria', label: saturday ? 'Santa Maria in sabato' : m.name, name: m.name, comuni });
     if (m.rank === 'memoria' && !m.commemoration && initial === 0) initial = options.length - 1;
   }
@@ -327,9 +344,11 @@ export function lodiCelebrations(day: LiturgicalDay): { options: LodiCelebration
 }
 
 /** Benedicamus for an office celebrated with a Comune. */
-export function comuneBenedicamus(day: LiturgicalDay, mode: CelebrationMode, comune: string): BenedicamusKey | 'memorie' | 'bvm' | 'sabato' {
+export type ComuneBenedicamus = 'memorie' | 'bvm' | 'sabato';
+
+export function comuneBenedicamus(day: LiturgicalDay, mode: Exclude<CelebrationMode, 'feria'>, comune: string): BenedicamusKey | ComuneBenedicamus {
   if (mode === 'festa') return benedicamusKey(day);
-  if (comune.startsWith('sabato')) return 'sabato';
+  if (comune.startsWith(SATURDAY_COMUNE)) return 'sabato';
   if (comune === 'bvm') return 'bvm';
   return 'memorie';
 }

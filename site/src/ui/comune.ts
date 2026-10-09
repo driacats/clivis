@@ -7,15 +7,15 @@
 // Pieces whose melody is not transcribed yet show the Italian text printed in
 // the libretto.
 
-import type { LiturgicalDay } from '../calendar/calendar';
+import { isLent, WEEKDAY_NAMES, type LiturgicalDay } from '../calendar/calendar';
 import { comuneBenedicamus, paterNosterTone, solemnBlessing, type CelebrationMode } from '../calendar/plan';
 import { getEntry, getTexts } from '../data/loader';
 import type { Comune, ComunePart, ComuneVariant, LiturgyData, LodiConclusion } from '../data/types';
 import { h, notice } from './dom';
 import { lodiOpening } from './opening';
 import {
-  antiphonWithPsalm, benedictus as benedictusText, chant, choice, finalBlessing, hymnVerses, invocations, lectioTone,
-  paterNoster, psalm, rubric, section, translation,
+  antiphonFrame, antiphonWithPsalm, benedictus as benedictusText, chant, choice, finalBlessing, hymnVerses, invocations,
+  lectioTone, paterNoster, psalm, psalmFile, psalterDay, rubric, rubricText, section, SLOT_LABEL, translation,
 } from './pieces';
 
 type Scope = 'tp' | 'quaresima' | 'avvento' | 'natale' | 'ordinario' | null;
@@ -43,7 +43,7 @@ function scopes(variants: ComuneVariant[]): Scope[] {
 
 function seasonScope(day: LiturgicalDay): Exclude<Scope, null> {
   if (day.season === 'pasqua') return 'tp';
-  if (day.season === 'quaresima' || day.season === 'triduo') return 'quaresima';
+  if (isLent(day.season)) return 'quaresima';
   if (day.season === 'avvento') return 'avvento';
   if (day.season === 'natale') return 'natale';
   return 'ordinario';
@@ -118,14 +118,14 @@ function variants(list: ComuneVariant[], build: (v: ComuneVariant) => Node, labe
 }
 
 const SLOTS: { part: ComunePart; label: string }[] = [
-  { part: 'ant1', label: '1ª antifona' }, { part: 'ant2', label: '2ª antifona' }, { part: 'ant3', label: '3ª antifona' },
+  { part: 'ant1', label: SLOT_LABEL['1a'] }, { part: 'ant2', label: SLOT_LABEL['2a'] }, { part: 'ant3', label: SLOT_LABEL['3a'] },
 ];
 
 /** Psalmody of a feast: the Comune's antiphons with the psalms of Sunday of week I. */
 function festalPsalmody(comune: Comune, day: LiturgicalDay, liturgy: LiturgyData): Node[] {
-  const sunday = liturgy.lodi.weeks.find((w) => w.week === 1)?.days.find((d) => d.day === 'Domenica');
+  const sunday = psalterDay(liturgy, 1, WEEKDAY_NAMES[0]);
   return SLOTS.map(({ part, label }, i) => {
-    const file = sunday ? getEntry(sunday.psalmAntiphons[i].primary)?.psalm?.file : undefined;
+    const file = sunday ? psalmFile(sunday.psalmAntiphons[i].primary) : undefined;
     const { list } = variantsFor(comune, part, day);
     const unit = (v: ComuneVariant) => {
       if (v.canto && getEntry(v.canto)?.status === 'found') return antiphonWithPsalm(v.canto, label);
@@ -150,29 +150,26 @@ function lettura(v: ComuneVariant): HTMLElement {
 function responsory(v: ComuneVariant, others: ComuneVariant[]): HTMLElement {
   if (v.it || v.canto) return piece(v);
   // Eastertide responsory printed only as a melody: the text is the ordinary one with alleluia
-  const base = others.find((o) => typeof o.it === 'string');
+  const base = others.map((o) => o.it).find((it): it is string => typeof it === 'string');
   return h('div', {},
     notice('Nel Tempo pasquale il libretto dà solo la melodia di questo responsorio (con l’alleluia), non ancora trascritta: qui c’è il testo ordinario.', 'gap'),
-    base ? textBlock(base.it as string, false) : null);
+    base ? textBlock(base, false) : null);
 }
 
 function benedictus(v: ComuneVariant): HTMLElement {
-  return h('div', {},
-    rubric('Antifona al Benedictus'), piece(v),
-    benedictusText(),
-    rubric('Antifona al Benedictus'), piece(v, { repeat: true }));
+  return h('div', {}, ...antiphonFrame('Antifona al Benedictus', piece(v), benedictusText(), piece(v, { repeat: true })));
 }
 
 function oration(v: ComuneVariant, name: string | null): HTMLElement {
   const text = typeof v.it === 'string' ? v.it : '';
   return h('div', {},
     h('p', { class: 'prayer__single' }, text),
-    /\bN\./.test(text) && name ? h('p', { class: 'rubric-text' }, `Al posto di N. si dice il nome: ${name}.`) : null);
+    /\bN\./.test(text) && name ? rubricText(`Al posto di N. si dice il nome: ${name}.`) : null);
 }
 
 /** Notes of the Comune (what is taken from elsewhere), in the libretto's words. */
 function comuneNotes(comune: Comune): Node[] {
-  return comune.note.map((n) => h('p', { class: 'rubric-text' }, n));
+  return comune.note.map((n) => rubricText(n));
 }
 
 /** The Lodi of a celebration with its Comune. `psalter` renders the weekday psalmody (memorials). */

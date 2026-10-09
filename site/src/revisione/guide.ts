@@ -1,9 +1,10 @@
 // The reviewers' guide (#/guida): how the review works and every command of the editor.
 import { h } from '../ui/dom';
 import type { Utente } from './api';
-import { notationIcon } from 'exsurge';
+import { BARS, JOINS, LIQUESCENCES, NOTE_ACCIDENTALS, notationIcon, SHAPES } from 'exsurge';
+import { ACCIDENTAL, BAR, ICON, JOIN, LIQUESCENCE, SHAPE, SIGN } from './notation';
 import { resetTours } from './tour';
-import { statoPill } from './ui';
+import { backToList, statoPill } from './ui';
 
 const kbd = (...keys: string[]): HTMLElement =>
   h('span', { class: 'kbd-group' }, ...keys.flatMap((k, i) => [i ? ' + ' : '', h('kbd', {}, k)]));
@@ -15,10 +16,10 @@ function pic(key: string): HTMLElement {
 }
 
 /** A list of options with their little picture, as on the editor's buttons. */
-const options = (rows: [string, string, string][]): HTMLElement =>
-  h('dl', { class: 'guide-options' }, ...rows.flatMap(([key, name, text]) => [
-    h('dt', {}, pic(key), name),
-    h('dd', {}, text),
+const options = <T extends string>(values: T[], names: Record<T, { name: string; help: string }>, icon: (v: T) => string): HTMLElement =>
+  h('dl', { class: 'guide-options' }, ...values.flatMap((v) => [
+    h('dt', {}, pic(icon(v)), names[v].name),
+    h('dd', {}, names[v].help),
   ]));
 
 const table = (rows: [Node | string, string][]): HTMLElement =>
@@ -42,7 +43,7 @@ export function renderGuide(me: Utente): HTMLElement {
   ];
 
   return h('main', { class: 'rev-wrap rev-guide' },
-    h('a', { href: '#/', class: 'back-link' }, '← Tutti i canti'),
+    backToList(),
     h('h1', { class: 'rev-title' }, 'Guida alla revisione'),
     h('p', { class: 'rev-intro' }, 'Tutto quello che serve per controllare e correggere le melodie di Clivis, con i comandi dell’editor.'),
     h('nav', { class: 'guide-toc', 'aria-label': 'Indice' },
@@ -79,44 +80,17 @@ export function renderGuide(me: Utente): HTMLElement {
     section('nota', 'La scheda «Nota»',
       p('Le frecce ▲ ▼ (o i tasti ↑ ↓) alzano e abbassano le note selezionate di un grado; accanto c’è il nome della nota secondo la chiave.'),
       h('h3', { class: 'guide-sub' }, 'Forma'),
-      options([
-        ['punctum', 'Punctum', 'la nota quadrata normale.'],
-        ['virga', 'Virga', 'nota con il gambo a destra.'],
-        ['inclinatum', 'Rombo', 'punctum inclinatum, le note a losanga nelle discese.'],
-        ['quilisma', 'Quilisma', 'la nota dentellata, «a zig zag».'],
-        ['oriscus', 'Oriscus', 'la nota ondulata.'],
-        ['stropha', 'Stropha', 'la nota con la piccola coda, ripetuta nelle bistrophae e tristrophae.'],
-        ['cavum', 'Cavum', 'nota vuota (rara).'],
-      ]),
+      options(SHAPES, SHAPE, ICON.shape),
       h('h3', { class: 'guide-sub' }, 'Liquescenza'),
-      options([
-        ['liq-none', 'Nessuna', 'nota normale.'],
-        ['liq-deminutus', 'Deminutus', 'l’ultima nota di un neuma più piccola (il segno ~).'],
-        ['liq-ascending', 'Ascendente', 'liquescente verso l’alto, come nell’epiphonus.'],
-        ['liq-descending', 'Discendente', 'liquescente verso il basso, come nel cephalicus.'],
-      ]),
+      options(LIQUESCENCES, LIQUESCENCE, ICON.liquescence),
       h('h3', { class: 'guide-sub' }, 'Alterazione'),
-      options([
-        ['acc-none', 'Nessuna', 'nessun segno prima della nota.'],
-        ['acc-flat', 'Bemolle', 'il bemolle prima della nota (di solito sul si). Vale fino alla fine della parola o alla prossima stanghetta.'],
-        ['acc-natural', 'Bequadro', 'annulla un bemolle precedente.'],
-      ]),
+      options(NOTE_ACCIDENTALS, ACCIDENTAL, ICON.accidental),
       p('Se sposti una nota che ha il bemolle, il bemolle si sposta con lei. Il si bemolle in chiave si sceglie invece nella scheda «Brano» (chiave «Do♭»).'),
       h('h3', { class: 'guide-sub' }, 'Segni'),
-      options([
-        ['mora', 'Mora', 'il punto dopo la nota (raddoppia la durata).'],
-        ['episema', 'Episema', 'la lineetta orizzontale sopra la nota.'],
-        ['ictus', 'Ictus', 'la lineetta verticale sotto la nota.'],
-        ['debilis', 'Debilis', 'initio debilis: la prima nota del neuma più piccola.'],
-      ]),
+      options(['mora', 'episema', 'ictus', 'debilis'], SIGN, ICON.sign),
       h('h3', { class: 'guide-sub' }, 'Con la nota seguente'),
       p('Dice quanto la nota è vicina alla successiva nella stessa sillaba: «Unita» le lega nello stesso neuma (un pes, una clivis…), «Vicina», «Staccata» e «Separata» lasciano spazi sempre più grandi.'),
-      options([
-        ['joined', 'Unita', 'stesso neuma.'],
-        ['close', 'Vicina', 'un piccolo spazio.'],
-        ['spaced', 'Staccata', 'uno spazio medio.'],
-        ['separate', 'Separata', 'neumi distinti.'],
-      ]),
+      options(JOINS, JOIN, ICON.join),
       h('h3', { class: 'guide-sub' }, 'Aggiungere ed eliminare'),
       p('«+ Unita» aggiunge una nota subito dopo, nello stesso neuma; «+ Staccata» la aggiunge un po’ più in là. La nuova nota nasce alla stessa altezza: poi la sposti con ▲ ▼. «Elimina» (o il tasto Canc) toglie le note selezionate; ogni sillaba però deve tenerne almeno una.')),
 
@@ -125,13 +99,7 @@ export function renderGuide(me: Utente): HTMLElement {
       h('ul', {},
         h('li', {}, h('strong', {}, 'Testo'), ': correggi la sillaba e premi Invio.'),
         h('li', {}, h('strong', {}, 'Divisione dopo la sillaba'), ': le stanghette tra le frasi.')),
-      options([
-        ['bar-`', 'Virgula', 'un respiro breve.'],
-        ['bar-,', 'Quarto', 'la divisione minima (quarto di stanghetta).'],
-        ['bar-;', 'Mezza', 'mezza stanghetta.'],
-        ['bar-:', 'Intera', 'stanghetta intera, fine di frase.'],
-        ['bar-::', 'Doppia', 'doppia stanghetta, fine del canto o di una strofa.'],
-      ]),
+      options(BARS.filter((b) => b !== 'none'), BAR, ICON.bar),
       p('«+ Sillaba» aggiunge una sillaba nella stessa parola, «+ Parola» una parola nuova; «Elimina» toglie la sillaba con le sue note.')),
 
     section('brano', 'La scheda «Brano»',

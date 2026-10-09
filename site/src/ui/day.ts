@@ -8,7 +8,7 @@ import {
 import type { Office } from '../data/types';
 import { h } from './dom';
 
-export const SEASON_NAME: Record<Season, string> = {
+const SEASON_NAME: Record<Season, string> = {
   avvento: 'Tempo di Avvento',
   natale: 'Tempo di Natale',
   ordinario: 'Tempo Ordinario',
@@ -19,20 +19,28 @@ export const SEASON_NAME: Record<Season, string> = {
 
 export const OFFICE_NAME: Record<Office, string> = { lodi: 'Lodi', compieta: 'Compieta' };
 
+/** The offices of the site, in the order of the day. */
+export const OFFICES = Object.keys(OFFICE_NAME) as Office[];
+
 /** Link to an office: #/2026-10-03/lodi */
 export const officeHref = (date: CivilDate, office: Office) => `#/${toIsoDate(date)}/${office}`;
 
 /** The day's name: the celebration if there is one, otherwise the weekday of the season. */
 export const dayName = (day: LiturgicalDay) => day.celebration?.name ?? day.label;
 
+/** Names of the ranks of a celebration, as the reader sees them. */
+export const RANK_LABEL = {
+  'solennità': 'Solennità', festa: 'Festa', memoria: 'Memoria', 'memoria facoltativa': 'Memoria facoltativa', commemorazione: 'Commemorazione',
+} as const;
+
 /** What a memorial is called in the sidebar: Commemorazione, Memoria, Memoria facoltativa. */
-export const memorialKind = (m: { commemoration: boolean; rank: string }) =>
-  m.commemoration ? 'Commemorazione' : m.rank === 'memoria' ? 'Memoria' : 'Memoria facoltativa';
+export const memorialKind = (m: { commemoration: boolean; rank: 'memoria' | 'memoria facoltativa' }) =>
+  RANK_LABEL[m.commemoration ? 'commemorazione' : m.rank];
 
 /** "Solennità · XXVII Domenica…" under the name of a solemnity or feast. */
 export function celebrationSubtitle(day: LiturgicalDay): HTMLElement | null {
   if (!day.celebration) return null;
-  return h('p', { class: 'day__subtitle' }, `${day.celebration.rank === 'solennità' ? 'Solennità' : 'Festa'} · ${day.label}`);
+  return h('p', { class: 'day__subtitle' }, `${RANK_LABEL[day.celebration.rank]} · ${day.label}`);
 }
 
 /** Colour · (season ·) psalter week. */
@@ -64,7 +72,7 @@ export function dayHeader(day: LiturgicalDay, office: Office): HTMLElement {
     celebrationSubtitle(day),
     dayMeta(day),
     h('nav', { class: 'office-tabs', 'aria-label': 'Ufficio' },
-      ...(['lodi', 'compieta'] as Office[]).map((o) => h('a', {
+      ...OFFICES.map((o) => h('a', {
         class: 'office-tabs__tab', href: officeHref(day.date, o),
         'aria-current': office === o ? 'page' : undefined,
       }, OFFICE_NAME[o]))),

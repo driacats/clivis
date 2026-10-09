@@ -3,10 +3,10 @@
 // preceded by the Invitatory («Domine, labia mea aperies»), which is not in
 // the libretto and not yet in this breviary (material kept in futuro/invitatorio).
 
-import type { LiturgicalDay } from '../calendar/calendar';
+import { isLent, type LiturgicalDay } from '../calendar/calendar';
 import { openingRef, openingTone, type OpeningTone } from '../calendar/plan';
 import { h, notice } from './dom';
-import { chant, choice } from './pieces';
+import { chant, choice, NOTICE_LENT_NO_ALLELUIA, rubricText } from './pieces';
 
 const TONE_LABELS: Record<OpeningTone, string> = {
   ferie: 'Nelle ferie',
@@ -16,12 +16,11 @@ const TONE_LABELS: Record<OpeningTone, string> = {
 
 export function lodiOpening(day: LiturgicalDay): HTMLElement {
   const tones = Object.keys(TONE_LABELS) as OpeningTone[];
-  const lent = day.season === 'quaresima' || day.season === 'triduo';
   return h('div', {},
     choice('Tono dell’introduzione',
       tones.map((t) => ({ label: TONE_LABELS[t], build: () => chant(openingRef(day, t)) })),
       tones.indexOf(openingTone(day))),
-    lent ? notice('In Quaresima si omette l’Allelúia finale.', 'info') : null,
-    h('p', { class: 'rubric-text' },
+    isLent(day.season) ? notice(NOTICE_LENT_NO_ALLELUIA, 'info') : null,
+    rubricText(
       'Se le Lodi sono la prima preghiera del giorno, al posto di questa introduzione si dice l’Invitatorio («Dómine, lábia mea apéries»), che non è nel libretto e non è ancora in questo breviario.'));
 }

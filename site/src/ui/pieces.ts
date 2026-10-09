@@ -1,7 +1,10 @@
 import { ROMAN } from '../calendar/calendar';
+import type { BenedicamusKey, ComuneBenedicamus, PaterNosterTone } from '../calendar/plan';
+import { BENEDICTUS_FILE, chantFileName, ORDINARIO } from '../data/ids';
 import { fetchGabc, fetchLettura, fetchPsalm, getEntry, getTexts } from '../data/loader';
-import type { Bilingual, LetturaDoc, LodiConclusion, PsalmDoc, SlotRef } from '../data/types';
-import { deferred, h, notice } from './dom';
+import type { AntiphonSlot, Bilingual, LetturaDoc, LiturgyData, LodiConclusion, LodiDay, PsalmDoc, SlotRef } from '../data/types';
+import { load, save, STORAGE_KEYS } from '../storage';
+import { deferred, foldable, h, notice, selectOne } from './dom';
 import { playerControls } from '../audio/controls';
 import { splitEuouae, withoutLineBreaks } from 'exsurge';
 
@@ -12,6 +15,24 @@ export function section(title: string, ...content: (Node | null)[]): HTMLElement
 
 /** Small rubric label inside a section ("1ª antifona", "oppure"…). */
 export const rubric = (text: string) => h('p', { class: 'rubric rubric--small' }, text);
+
+/** A rubric of the libretto in running text (what to do, where a part comes from). */
+export const rubricText = (...content: (Node | string)[]) => h('p', { class: 'rubric-text' }, ...content);
+
+/** Labels of the antiphons of the psalmody, by slot. */
+export const SLOT_LABEL: Record<AntiphonSlot['slot'], string> = {
+  '1a': '1ª antifona', '2a': '2ª antifona', '3a': '3ª antifona', unica: 'Antifona',
+};
+
+export const NOTICE_LENT_NO_ALLELUIA = 'In Quaresima si omette l’Allelúia finale.';
+
+/** The psalter page of a day of the four weeks in liturgy.json. */
+export const psalterDay = (liturgy: LiturgyData, week: number, dayName: string): LodiDay | undefined =>
+  liturgy.lodi.weeks.find((w) => w.week === week)?.days.find((d) => d.day === dayName);
+
+/** Invocations and oration of a day of the psalter (testi/lodi-conclusioni.json). */
+export const lodiConclusion = (week: number, dayName: string): LodiConclusion | undefined =>
+  getTexts().lodi.find((e) => e.week === week && e.day === dayName);
 
 async function buildChant(id: string, repeat = false): Promise<Node> {
   const entry = getEntry(id);
@@ -27,14 +48,14 @@ async function buildChant(id: string, repeat = false): Promise<Node> {
   const cv = document.createElement('chant-visual');
   if (mode) cv.setAttribute('annotation', modeLabel(mode));
   cv.textContent = body;
-  return h('div', { class: 'score' }, h('div', {}, cv), playerControls(body, (entry.file ?? id).split('/').pop() ?? id, mode, repeat, cv));
+  return h('div', { class: 'score' }, h('div', {}, cv), playerControls(body, chantFileName(entry.file ?? id), mode, repeat, cv));
 }
 
 /**
  * Removes the forced line breaks of the source, so stanzas and verses run on
  * one after the other and exsurge breaks lines only where the width requires.
  */
-export const joinLines = withoutLineBreaks;
+const joinLines = withoutLineBreaks;
 
 function modeLabel(mode: string): string {
   const n = Number(mode);
@@ -55,7 +76,7 @@ export const chant = (id: string, opts: { repeat?: boolean } = {}): HTMLElement 
 export function translation(it: string | null | undefined, opts: { hymn?: boolean } = {}): HTMLElement | null {
   if (!it) return null;
   if (!opts.hymn) return h('p', { class: 'translation' }, it);
-  return h('details', { class: 'alternative' }, h('summary', {}, 'Traduzione'), h('p', { class: 'translation' }, hymnVerses(it)));
+  return foldable('Traduzione', h('p', { class: 'translation' }, hymnVerses(it)));
 }
 
 /** A hymn text of the data ("/" between verses, a newline between stanzas), one verse per line. */
@@ -63,23 +84,19 @@ export const hymnVerses = (it: string): string => it.replace(/\n/g, '\n\n').repl
 
 // --- psalm language ---------------------------------------------------------------
 
-export type PsalmLang = 'it' | 'la' | 'both';
-const LANG_KEY = 'psalmLang';
+type PsalmLang = 'it' | 'la' | 'both';
 const LANG_LABELS: [PsalmLang, string][] = [['it', 'Italiano'], ['la', 'Latino'], ['both', 'Entrambi']];
 const langBars = new Set<HTMLElement>();
 
 function savedLang(): PsalmLang {
-  try {
-    const v = localStorage.getItem(LANG_KEY);
-    if (v === 'it' || v === 'la' || v === 'both') return v;
-  } catch { /* storage unavailable */ }
-  return 'it';
+  const v = load(STORAGE_KEYS.psalmLang);
+  return v === 'it' || v === 'la' || v === 'both' ? v : 'it';
 }
 
 /** The language of the psalm texts, shared by every psalm on the page (and remembered). */
 function setPsalmLang(lang: PsalmLang): void {
   document.documentElement.dataset.psalmLang = lang;
-  try { localStorage.setItem(LANG_KEY, lang); } catch { /* ignore */ }
+  save(STORAGE_KEYS.psalmLang, lang);
   for (const bar of langBars) {
     if (!bar.isConnected) { langBars.delete(bar); continue; }
     bar.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
@@ -103,9 +120,9 @@ function langToggle(): HTMLElement {
 export const psalm = (file: string): HTMLElement => deferred(async () => psalmText(await fetchPsalm(file)));
 
 /** The Benedictus, sung at every Lodi. */
-export const benedictus = (): HTMLElement => psalm('salmi/cant-lc-1-68-79-benedictus.json');
+export const benedictus = (): HTMLElement => psalm(BENEDICTUS_FILE);
 
-export function psalmText(doc: PsalmDoc): HTMLElement {
+function psalmText(doc: PsalmDoc): HTMLElement {
   const bilingual = doc.verses.some((v) => v.la);
   return h('div', { class: `psalm${bilingual ? ' psalm--bilingual' : ' psalm--it-only'}` },
     h('div', { class: 'psalm__head' },
@@ -130,6 +147,9 @@ function verseLines(text: string, cls: string, lang?: string): HTMLElement {
     ...parts.map((part, i) => h('span', { class: i === 0 ? 'psalm__line' : 'psalm__line psalm__line--cont' }, part)));
 }
 
+/** The psalm or canticle that a chant (antiphon, canticle tone) belongs to, if any. */
+export const psalmFile = (id: string): string | undefined => getEntry(id)?.psalm?.file;
+
 /**
  * Antiphon, the psalm or canticle it belongs to, and the antiphon again after
  * it, written out exactly as above. `repeat`/`repeatLabel` are for the Nunc
@@ -137,7 +157,7 @@ function verseLines(text: string, cls: string, lang?: string): HTMLElement {
  * after it is the antiphon.
  */
 export function antiphonWithPsalm(id: string, label: string, repeat: string = id, repeatLabel: string = label): HTMLElement {
-  const file = getEntry(id)?.psalm?.file;
+  const file = psalmFile(id);
   return h('div', { class: 'psalmody-unit' },
     rubric(label),
     chant(id),
@@ -146,6 +166,13 @@ export function antiphonWithPsalm(id: string, label: string, repeat: string = id
     file ? chant(repeat, { repeat: true }) : null,
   );
 }
+
+/**
+ * A canticle (or psalm) between its antiphon and the antiphon sung again,
+ * each under the same rubric: the Benedictus and the Nunc dimittis.
+ */
+export const antiphonFrame = (label: string, before: Node, text: Node | null, after: Node): (Node | null)[] =>
+  [rubric(label), before, text, rubric(label), after];
 
 function lettura(doc: LetturaDoc): HTMLElement {
   return h('div', { class: 'lettura' },
@@ -163,14 +190,13 @@ export function letturaBreve(ref: SlotRef): HTMLElement {
 
 /** How to sing the short reading: the model of the libretto (p. 311). */
 export function lectioTone(): HTMLElement {
-  return h('details', { class: 'alternative' },
-    h('summary', {}, 'Come cantare la lettura (tono della lettura breve)'),
-    h('p', { class: 'rubric-text' },
+  return foldable('Come cantare la lettura (tono della lettura breve)',
+    rubricText(
       'Si recita sulla corda (do). Flessa (†): dopo l’ultimo accento si scende di una terza (la). ' +
       'Metro (*): le sillabe prima dell’ultimo accento scendono do-si-la, l’accento torna sul do. ' +
       'Punto (fine della lettura): l’ultimo accento scende al la, le sillabe seguenti al sol e l’ultima risale sol-la. ' +
       'Le note vuote si cantano solo se ci sono sillabe in più dopo l’accento.'),
-    chant('ordinario.LECTIO'));
+    chant(ORDINARIO.lectio));
 }
 
 /**
@@ -180,16 +206,8 @@ export function lectioTone(): HTMLElement {
  */
 export function choice(label: string, options: { label: string; build: () => Node }[], initial = 0): HTMLElement {
   const panel = h('div', { class: 'choice__panel' });
-  const buttons = options.map((opt, i) => {
-    const b = h('button', { type: 'button', class: 'choice__button', 'aria-pressed': String(i === initial) }, opt.label);
-    b.addEventListener('click', () => select(i));
-    return b;
-  });
-  function select(i: number) {
-    buttons.forEach((b, j) => b.setAttribute('aria-pressed', String(i === j)));
-    panel.replaceChildren(options[i].build());
-  }
-  select(initial);
+  const buttons = options.map((opt) => h('button', { type: 'button', class: 'choice__button' }, opt.label));
+  selectOne(buttons, (i) => panel.replaceChildren(options[i].build()))(initial);
   return h('div', { class: 'choice' },
     h('div', { class: 'choice__bar', role: 'group', 'aria-label': label }, ...buttons),
     panel);
@@ -212,24 +230,24 @@ export function invocations(inv: LodiConclusion['invocazioni']): HTMLElement {
   );
 }
 
-const PN_TONES: { tone: 'A' | 'B' | 'C'; label: string }[] = [
+const PN_TONES: { tone: PaterNosterTone; label: string }[] = [
   { tone: 'A', label: 'Tono A · ferie del T.O.' },
   { tone: 'B', label: 'Tono B · Avvento e Quaresima' },
   { tone: 'C', label: 'Tono C · Pasqua e feste' },
 ];
 
 /** Invitation, the Pater noster sung in the tone of the day (libretto pp. 316-318), and its text. */
-export function paterNoster(tone: 'A' | 'B' | 'C'): HTMLElement {
+export function paterNoster(tone: PaterNosterTone): HTMLElement {
   const { paterNoster: pn } = getTexts().ordinario;
   return h('div', {},
     h('div', { class: 'prayer-invite' }, bilingual(pn.invito)),
     choice('Tono del Pater noster',
-      PN_TONES.map((t) => ({ label: t.label, build: () => chant(`ordinario.PN-${t.tone}`) })),
+      PN_TONES.map((t) => ({ label: t.label, build: () => chant(ORDINARIO.paterNoster(t.tone)) })),
       PN_TONES.findIndex((t) => t.tone === tone)),
-    h('details', { class: 'alternative' }, h('summary', {}, 'Testo e traduzione'), bilingual(pn)));
+    foldable('Testo e traduzione', bilingual(pn)));
 }
 
-const BENEDICAMUS_LABEL: Record<string, string> = {
+const BENEDICAMUS_LABEL: Record<BenedicamusKey | ComuneBenedicamus | 'memorie-alt', string> = {
   solennita: 'Nelle solennità', feste: 'Nelle feste', 'memorie': 'Nelle memorie', 'memorie-alt': 'Nelle memorie (oppure)',
   bvm: 'Nelle feste della B. V. Maria', sabato: 'Nell’ufficio di S. Maria in sabato', domeniche: 'Nelle domeniche per annum',
   pasqua: 'A Pasqua e durante l’Ottava', 'tempo-pasquale': 'Nel Tempo pasquale', ferie: 'Nelle ferie per annum',
@@ -237,19 +255,18 @@ const BENEDICAMUS_LABEL: Record<string, string> = {
 };
 
 /** Blessing and dismissal at the end of Lodi, sung as in the libretto (pp. 318-321). */
-export function finalBlessing(benedicamus: string, solemn: boolean): HTMLElement {
+export function finalBlessing(benedicamus: BenedicamusKey | ComuneBenedicamus, solemn: boolean): HTMLElement {
   const b = getTexts().ordinario.benedizione;
-  const others = Object.keys(BENEDICAMUS_LABEL).filter((k) => k !== benedicamus);
+  const others = (Object.keys(BENEDICAMUS_LABEL) as (keyof typeof BENEDICAMUS_LABEL)[]).filter((k) => k !== benedicamus);
   return h('div', {},
     rubric(b.conMinistro.titolo),
     choice('Tono della benedizione', [
-      { label: 'Tono semplice', build: () => chant('ordinario.BEN1') },
-      { label: 'Tono solenne', build: () => chant('ordinario.BEN2') },
+      { label: 'Tono semplice', build: () => chant(ORDINARIO.blessing.simple) },
+      { label: 'Tono solenne', build: () => chant(ORDINARIO.blessing.solemn) },
     ], solemn ? 1 : 0),
     rubric(b.senzaMinistro.titolo), bilingual(b.senzaMinistro),
     rubric(`Congedo · ${BENEDICAMUS_LABEL[benedicamus]}`),
-    chant(`ordinario.BD-${benedicamus}`),
-    h('details', { class: 'alternative' },
-      h('summary', {}, 'Altre melodie del Benedicamus Domino'),
-      ...others.map((k) => h('div', {}, rubric(BENEDICAMUS_LABEL[k]), chant(`ordinario.BD-${k}`)))));
+    chant(ORDINARIO.benedicamus(benedicamus)),
+    foldable('Altre melodie del Benedicamus Domino',
+      ...others.map((k) => h('div', {}, rubric(BENEDICAMUS_LABEL[k]), chant(ORDINARIO.benedicamus(k))))));
 }

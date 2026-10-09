@@ -3,8 +3,14 @@ import { compietaPlan, MARIAN_REFS } from '../calendar/plan';
 import { getEntry, getTexts } from '../data/loader';
 import { attoPenitenziale, esameDelGiorno } from './esame';
 import type { LiturgyData } from '../data/types';
-import { h, notice } from './dom';
-import { antiphonWithPsalm, bilingual, chant, choice, letturaBreve, psalm, rubric, section, translation } from './pieces';
+import { foldable, h, notice } from './dom';
+import {
+  antiphonFrame, antiphonWithPsalm, bilingual, chant, choice, letturaBreve, NOTICE_LENT_NO_ALLELUIA, psalm, psalmFile,
+  rubric, rubricText, section, SLOT_LABEL, translation,
+} from './pieces';
+
+/** Sources of the alternative antiphons, by the tag used in liturgy.json. */
+const SOURCE_NAME: Record<string, string> = { LHG: 'Les Heures Grégoriennes' };
 
 export function renderCompieta(day: LiturgicalDay, liturgy: LiturgyData): HTMLElement {
   const plan = compietaPlan(day);
@@ -18,51 +24,46 @@ export function renderCompieta(day: LiturgicalDay, liturgy: LiturgyData): HTMLEl
     return root;
   }
 
-  const hymnOptions = hymnChoices(c, plan.hymnRefs[plan.hymnTexts[0]]!);
+  const hymnOptions = hymnChoices(c, plan.hymnRefs[plan.hymnTexts[0]] ?? '');
 
   const psalmody = block.psalmAntiphons.flatMap((slot) => {
-    const label = block.psalmAntiphons.length > 1 ? `${slot.slot === '1a' ? '1ª' : '2ª'} antifona` : 'Antifona';
+    const label = SLOT_LABEL[slot.slot];
     const alternatives = (slot.alternatives ?? []).map((alt) =>
-      h('details', { class: 'alternative' },
-        h('summary', {}, `Oppure l’antifona di ${alt.tag === 'LHG' ? 'Les Heures Grégoriennes' : alt.tag}`),
+      foldable(`Oppure l’antifona di ${SOURCE_NAME[alt.tag] ?? alt.tag}`,
         chant(alt.ref)));
     return [antiphonWithPsalm(slot.primary, label), ...alternatives];
   });
 
   const marian = MARIAN_REFS[plan.marian];
+  const parvum = marian.parvum;
   const adLibitum = c.marianAntiphons.adLibitum.map((id) =>
-    h('details', { class: 'alternative' },
-      h('summary', {}, getEntry(id)?.printedIncipit?.split(/[,.!]/)[0] ?? id),
+    foldable(getEntry(id)?.printedIncipit?.split(/[,.!]/)[0] ?? id,
       marianPiece(id)));
 
   root.append(
     section('Introduzione',
       chant(c.openingVersicle),
-      plan.openingWithoutAlleluia ? notice('In Quaresima si omette l’Allelúia finale.', 'info') : null),
+      plan.openingWithoutAlleluia ? notice(NOTICE_LENT_NO_ALLELUIA, 'info') : null),
     section('Esame di coscienza',
-      h('p', { class: 'rubric-text' }, 'Breve silenzio per l’esame di coscienza. Uno schema per oggi:'),
+      rubricText('Breve silenzio per l’esame di coscienza. Uno schema per oggi:'),
       esameDelGiorno(day.weekday),
       h('p', {}, h('a', { href: '#/esame', class: 'more-link' }, 'Tutti gli schemi di esame di coscienza ›')),
-      h('details', { class: 'alternative' }, h('summary', {}, 'Atto penitenziale'), attoPenitenziale())),
+      foldable('Atto penitenziale', attoPenitenziale())),
     section('Inno', choice('Inno', hymnOptions.options, hymnOptions.initial)),
     section('Salmodia', ...psalmody),
     section('Lettura breve', letturaBreve(block.letturaBreve)),
     section('Responsorio breve', chant(plan.responsoryRef), plan.versicleRef ? chant(plan.versicleRef) : null),
-    section('Cantico di Simeone',
-      rubric('Antifona'),
+    section('Cantico di Simeone', ...antiphonFrame('Antifona',
       chant(c.nuncDimittis.antiphonRef),
       nuncDimittisText(c.nuncDimittis.canticleRef),
-      rubric('Antifona'),
-      chant(c.nuncDimittis.antiphonRef, { repeat: true })),
+      chant(c.nuncDimittis.antiphonRef, { repeat: true }))),
     section('Orazione', ...oration(plan.orationKey)),
     section('Congedo', chant(c.congedo)),
     section(`Antifona mariana · ${marian.title}`,
       choice('Tono dell’antifona', [
         { label: 'Tono semplice', build: () => marianPiece(marian.simple) },
         { label: 'Tono solenne', build: () => marianPiece(marian.solemn) },
-        ...(plan.marian === 'regina'
-          ? [{ label: 'Officium parvum', build: () => marianPiece('compieta.C50') }]
-          : []),
+        ...(parvum ? [{ label: 'Officium parvum', build: () => marianPiece(parvum) }] : []),
       ]),
       h('div', { class: 'ad-libitum' }, rubric('Oppure, ad libitum'), ...adLibitum)),
   );
@@ -95,9 +96,9 @@ function hymnChoices(c: LiturgyData['compieta'], todayRef: string) {
   const initial = Math.max(0, list.findIndex((g) => g.refs.includes(todayRef)));
   const options = list.map((g) => {
     return {
-      label: g.text.replace('terminum', 'términum').replace('Christe qui', 'Christe, qui').replace('redemptor saeculi', 'redémptor sæculi'),
+      label: g.text,
       build: () => h('div', {},
-        h('p', { class: 'rubric-text' }, g.contexts.join(' · ')),
+        rubricText(g.contexts.join(' · ')),
         chant(g.refs[0])),
     };
   });
@@ -120,7 +121,7 @@ function toneOf(contexts: string[]): string {
 
 /** Text of the Nunc dimittis (the antiphon is sung before and after it). */
 function nuncDimittisText(canticleRef: string): HTMLElement | null {
-  const file = getEntry(canticleRef)?.psalm?.file;
+  const file = psalmFile(canticleRef);
   return file ? psalm(file) : null;
 }
 

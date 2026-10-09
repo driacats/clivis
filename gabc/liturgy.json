@@ -142,7 +142,7 @@
     ],
     "hymns": [
       {
-        "text": "Te lucis ante terminum",
+        "text": "Te lucis ante términum",
         "variants": [
           {
             "context": "ferie durante l'anno",
@@ -179,7 +179,7 @@
         ]
       },
       {
-        "text": "Christe qui splendor et dies",
+        "text": "Christe, qui splendor et dies",
         "variants": [
           {
             "context": "ferie durante l'anno",
@@ -216,7 +216,7 @@
         ]
       },
       {
-        "text": "Iesu redemptor saeculi",
+        "text": "Iesu redémptor sæculi",
         "variants": [
           {
             "context": "Pasqua e Pentecoste",

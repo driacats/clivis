@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { liturgicalDay } from './calendar';
-import { saintsOfDay } from './saints';
+import { saintsOfDay } from './saintOfDay';
 
 const on = (year: number, month: number, day: number) => saintsOfDay(liturgicalDay({ year, month, day }));
 

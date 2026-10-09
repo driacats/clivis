@@ -1,6 +1,7 @@
 // A short guided tour: the page darkens, one part of it stays lit, and a card
 // next to it says what it is for. Shown once per page and per browser (it can be
 // seen again from the guide).
+import { forget, load, save, STORAGE_KEYS } from '../storage';
 import { h } from '../ui/dom';
 
 export interface TourStep {
@@ -10,22 +11,15 @@ export interface TourStep {
   text: string;
 }
 
-const KEY = (name: string) => `revisioneTour:${name}`;
+const key = (name: string) => STORAGE_KEYS.tourPrefix + name;
 
-export function tourSeen(name: string): boolean {
-  try { return localStorage.getItem(KEY(name)) === '1'; } catch { return false; }
-}
+export const tourSeen = (name: string): boolean => load(key(name)) === '1';
 
-function markSeen(name: string): void {
-  try { localStorage.setItem(KEY(name), '1'); } catch { /* storage unavailable: it will show again */ }
-}
+/** Without storage the tour shows again next time. */
+const markSeen = (name: string): void => save(key(name), '1');
 
 /** Forgets every tour, so each shows again on its page. */
-export function resetTours(): void {
-  try {
-    for (const k of Object.keys(localStorage)) if (k.startsWith('revisioneTour:')) localStorage.removeItem(k);
-  } catch { /* ignore */ }
-}
+export const resetTours = (): void => forget(STORAGE_KEYS.tourPrefix);
 
 let running: (() => void) | null = null;
 

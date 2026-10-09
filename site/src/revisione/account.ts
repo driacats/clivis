@@ -1,6 +1,7 @@
 // Login, own password, reviewers (admin) and the export of approved corrections.
-import { h, notice } from '../ui/dom';
+import { downloadBlob, h, notice } from '../ui/dom';
 import { api, ApiError, type Ruolo, type Utente } from './api';
+import { backToList, errorMessage } from './ui';
 
 function form(onSubmit: (data: FormData, msg: HTMLElement, btn: HTMLButtonElement) => Promise<void>, ...fields: Node[]): HTMLFormElement {
   const msg = h('div', { class: 'rev-form__msg', role: 'alert' });
@@ -10,10 +11,13 @@ function form(onSubmit: (data: FormData, msg: HTMLElement, btn: HTMLButtonElemen
     ev.preventDefault();
     msg.replaceChildren();
     btn.disabled = true;
-    try { await onSubmit(new FormData(f), msg, btn); } catch (e) { msg.replaceChildren(notice((e as ApiError).message, 'error')); } finally { btn.disabled = false; }
+    try { await onSubmit(new FormData(f), msg, btn); } catch (e) { msg.replaceChildren(notice(errorMessage(e), 'error')); } finally { btn.disabled = false; }
   });
   return f;
 }
+
+/** Minimum length of a password, as required by the service (server/revisione.mjs). */
+const MIN_PASSWORD = 8;
 
 const field = (label: string, input: HTMLElement) => h('label', { class: 'ed-field' }, h('span', { class: 'ed-field__label' }, label), input);
 const input = (name: string, type = 'text', attrs: Record<string, string | boolean> = {}) =>
@@ -43,11 +47,11 @@ export function renderAccount(me: Utente): HTMLElement {
     msg.replaceChildren(notice('Password cambiata.'));
   },
   field('Password attuale', input('attuale', 'password', { autocomplete: 'current-password' })),
-  field('Nuova password (almeno 8 caratteri)', input('nuova', 'password', { autocomplete: 'new-password', minlength: '8' })),
-  field('Ripeti la nuova password', input('ripeti', 'password', { autocomplete: 'new-password', minlength: '8' })));
+  field(`Nuova password (almeno ${MIN_PASSWORD} caratteri)`, input('nuova', 'password', { autocomplete: 'new-password', minlength: String(MIN_PASSWORD) })),
+  field('Ripeti la nuova password', input('ripeti', 'password', { autocomplete: 'new-password', minlength: String(MIN_PASSWORD) })));
   f.querySelector('button')!.textContent = 'Cambia password';
   return h('main', { class: 'rev-wrap' },
-    h('a', { href: '#/', class: 'back-link' }, '← Tutti i canti'),
+    backToList(),
     h('h1', { class: 'rev-title' }, 'Il tuo account'),
     h('p', { class: 'rev-intro' }, `Sei entrato come ${me.nomeVisibile} (${me.nome}).`),
     h('section', { class: 'rev-card' }, h('h2', { class: 'rubric' }, 'Cambia password'), f));
@@ -65,12 +69,12 @@ export function renderUsers(me: Utente): HTMLElement {
         const msg = h('span', { class: 'rev-users__msg', role: 'status' });
         const reset = h('button', { type: 'button', class: 'ed-button' }, 'Imposta password');
         reset.addEventListener('click', async () => {
-          try { await api.modificaUtente(u.nome, { password: pw.value }); pw.value = ''; msg.textContent = 'Password impostata.'; } catch (e) { msg.textContent = (e as ApiError).message; }
+          try { await api.modificaUtente(u.nome, { password: pw.value }); pw.value = ''; msg.textContent = 'Password impostata.'; } catch (e) { msg.textContent = errorMessage(e); }
         });
         const del = h('button', { type: 'button', class: 'ed-button ed-button--danger', disabled: u.nome === me.nome }, 'Elimina');
         del.addEventListener('click', async () => {
           if (!confirm(`Eliminare l’utente ${u.nomeVisibile}? Le sue revisioni restano.`)) return;
-          try { await api.eliminaUtente(u.nome); load(); } catch (e) { msg.textContent = (e as ApiError).message; }
+          try { await api.eliminaUtente(u.nome); load(); } catch (e) { msg.textContent = errorMessage(e); }
         });
         return h('li', { class: 'rev-users__item' },
           h('div', { class: 'rev-users__name' }, h('strong', {}, u.nomeVisibile), ` · ${u.nome} · ${ROLE[u.ruolo]}`),
@@ -78,7 +82,7 @@ export function renderUsers(me: Utente): HTMLElement {
           msg);
       })));
     } catch (e) {
-      list.replaceChildren(notice((e as ApiError).message, 'error'));
+      list.replaceChildren(notice(errorMessage(e), 'error'));
     }
   }
   load();
@@ -96,12 +100,12 @@ export function renderUsers(me: Utente): HTMLElement {
     field('Nome utente', input('nome', 'text', { pattern: '[a-z0-9._\\-]{2,32}', autocapitalize: 'none', placeholder: 'es. mario.rossi' })),
     field('Nome e cognome', input('nomeVisibile', 'text', { placeholder: 'es. Mario Rossi' }))),
   h('div', { class: 'ed-row' },
-    field('Password (almeno 8 caratteri)', input('password', 'text', { minlength: '8', autocomplete: 'off' })),
+    field(`Password (almeno ${MIN_PASSWORD} caratteri)`, input('password', 'text', { minlength: String(MIN_PASSWORD), autocomplete: 'off' })),
     field('Ruolo', h('select', { class: 'ed-input', name: 'ruolo' }, h('option', { value: 'revisore' }, 'Revisore'), h('option', { value: 'admin' }, 'Amministratore')))));
   add.querySelector('button')!.textContent = 'Aggiungi';
 
   return h('main', { class: 'rev-wrap' },
-    h('a', { href: '#/', class: 'back-link' }, '← Tutti i canti'),
+    backToList(),
     h('h1', { class: 'rev-title' }, 'Revisori'),
     h('p', { class: 'rev-intro' }, 'I revisori correggono e inviano; solo gli amministratori approvano, gestiscono gli utenti ed esportano le correzioni.'),
     list,
@@ -116,14 +120,10 @@ function exportBox(): HTMLElement {
     try {
       const data = await api.esporta();
       if (data.correzioni.length === 0) { msg.replaceChildren(notice('Non ci sono correzioni approvate da portare sul sito.')); return; }
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
-      a.download = `revisioni-${data.esportato.slice(0, 10)}.json`;
-      a.click();
-      URL.revokeObjectURL(a.href);
+      downloadBlob(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }), `revisioni-${data.esportato.slice(0, 10)}.json`);
       msg.replaceChildren(notice(`${data.correzioni.length} correzioni esportate.`));
     } catch (e) {
-      msg.replaceChildren(notice((e as ApiError).message, 'error'));
+      msg.replaceChildren(notice(errorMessage(e), 'error'));
     }
   });
   return h('section', { class: 'rev-card', id: 'esporta' },

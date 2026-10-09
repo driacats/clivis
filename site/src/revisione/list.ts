@@ -1,28 +1,25 @@
 // The reviewer's page: how far the review has got, and every chant with its state.
-import { h } from '../ui/dom';
+import { load, save, STORAGE_KEYS } from '../storage';
+import { h, selectOne, svgSpan } from '../ui/dom';
 import { STATI, STATO_NOME, type Riassunto, type Stato, type Utente } from './api';
-import type { Canto } from './catalog';
+import { cantoHref, type Canto } from './catalog';
 import { quando, statoPill } from './ui';
 
 export interface Filtro { stato: Stato | 'tutti' | 'da-applicare' | 'miei'; gruppo: string; cerca: string }
 
-const KEY = 'revisioneFiltro';
-
 export function filtroSalvato(): Filtro {
   try {
-    const f = JSON.parse(localStorage.getItem(KEY) ?? 'null');
+    const f = JSON.parse(load(STORAGE_KEYS.reviewFilter) ?? 'null');
     if (f && typeof f === 'object') return { stato: f.stato ?? 'tutti', gruppo: f.gruppo ?? '', cerca: f.cerca ?? '' };
-  } catch { /* storage unavailable */ }
+  } catch { /* not valid JSON */ }
   return { stato: 'tutti', gruppo: '', cerca: '' };
 }
 
-function salvaFiltro(f: Filtro): void {
-  try { localStorage.setItem(KEY, JSON.stringify(f)); } catch { /* ignore */ }
-}
+const salvaFiltro = (f: Filtro): void => save(STORAGE_KEYS.reviewFilter, JSON.stringify(f));
 
 function commenti(n: number): HTMLElement {
-  const el = h('span', { class: 'rev-row__comments', title: n === 1 ? '1 commento' : `${n} commenti` });
-  el.innerHTML = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 3.5h11v7h-6l-3 2.5v-2.5h-2z"/></svg>';
+  const el = svgSpan('<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 3.5h11v7h-6l-3 2.5v-2.5h-2z"/></svg>',
+    { class: 'rev-row__comments', title: n === 1 ? '1 commento' : `${n} commenti` });
   el.append(String(n));
   return el;
 }
@@ -84,13 +81,11 @@ export function renderList(catalogo: Canto[], stati: Record<string, Riassunto>, 
     ['miei', 'Toccati da me', null],
     ...(admin ? [['da-applicare', 'Da portare sul sito', daApplicare] as [Filtro['stato'], string, number]] : []),
   ];
-  const chipBar = h('div', { class: 'choice__bar rev-filters', role: 'group', 'aria-label': 'Filtra per stato' },
-    ...chips.map(([v, label, n]) => {
-      const b = h('button', { type: 'button', class: `choice__button rev-chip${v !== 'tutti' && v !== 'miei' && v !== 'da-applicare' ? ` rev-chip--${v}` : ''}`, 'aria-pressed': String(f.stato === v) },
-        label, n !== null ? h('span', { class: 'rev-chip__n' }, String(n)) : null);
-      b.addEventListener('click', () => { f.stato = v; apply(); chipBar.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); });
-      return b;
-    }));
+  const chipButtons = chips.map(([v, label, n]) =>
+    h('button', { type: 'button', class: `choice__button rev-chip${v !== 'tutti' && v !== 'miei' && v !== 'da-applicare' ? ` rev-chip--${v}` : ''}`, 'aria-pressed': String(f.stato === v) },
+      label, n !== null ? h('span', { class: 'rev-chip__n' }, String(n)) : null));
+  selectOne(chipButtons, (i) => { f.stato = chips[i][0]; apply(); });
+  const chipBar = h('div', { class: 'choice__bar rev-filters', role: 'group', 'aria-label': 'Filtra per stato' }, ...chipButtons);
 
   const gruppi = [...new Set(catalogo.map((c) => c.gruppo))];
   const sel = h('select', { class: 'ed-input rev-select', 'aria-label': 'Sezione' },
@@ -110,7 +105,7 @@ export function renderList(catalogo: Canto[], stati: Record<string, Riassunto>, 
     const e = c.usi[0];
     const extra = r?.stato === 'approvato' && r.cambiato ? (r.applicato ? 'sul sito' : 'da portare sul sito') : undefined;
     return h('li', {},
-      h('a', { class: 'rev-row', href: `#/canto/${c.key}` },
+      h('a', { class: 'rev-row', href: cantoHref(c.key) },
         h('span', { class: 'rev-row__text' },
           h('span', { class: 'rev-row__incipit' }, c.incipit),
           h('span', { class: 'rev-row__meta' }, [e.role, e.printedContext].filter(Boolean).join(' · '), c.usi.length > 1 ? ` · +${c.usi.length - 1}` : '')),

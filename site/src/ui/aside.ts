@@ -1,15 +1,15 @@
 // The sidebar of an office page: the memorials of the day and a month calendar.
 
 import {
-  fromDayNumber, toDayNumber, toIsoDate, todayLocal, weekdayOf,
+  formatCivilDate, fromDayNumber, MONTH_NAMES, toDayNumber, toIsoDate, todayLocal, weekdayOf,
   type CivilDate, type LiturgicalDay,
 } from '../calendar/calendar';
 import { lodiCelebrations } from '../calendar/plan';
 import type { Office } from '../data/types';
 import { memorialKind, officeHref } from './day';
-import { h } from './dom';
+import { h, selectOne } from './dom';
 
-export interface CelebrationItem {
+interface CelebrationItem {
   label: string;
   /** "Memoria facoltativa", "Feria"… shown small under the name */
   kind?: string;
@@ -22,16 +22,8 @@ const item = (it: CelebrationItem) => [it.label, it.kind ? h('span', { class: 'a
  * calls `onSelect` (also once at the start, with `initial`).
  */
 function celebrationPicker(items: CelebrationItem[], initial: number, onSelect: (i: number) => void): HTMLElement {
-  const buttons = items.map((it, i) => {
-    const b = h('button', { type: 'button', class: 'aside-list__item', 'aria-pressed': String(i === initial) }, ...item(it));
-    b.addEventListener('click', () => select(i));
-    return b;
-  });
-  function select(i: number) {
-    buttons.forEach((b, j) => b.setAttribute('aria-pressed', String(i === j)));
-    onSelect(i);
-  }
-  onSelect(initial);
+  const buttons = items.map((it) => h('button', { type: 'button', class: 'aside-list__item' }, ...item(it)));
+  selectOne(buttons, onSelect)(initial);
   return h('nav', { class: 'aside-list', 'aria-label': 'Celebrazione' }, ...buttons);
 }
 
@@ -68,8 +60,9 @@ export function celebrationList(day: LiturgicalDay, select?: CelebrationSelect):
     ...items.map((it) => h('p', { class: 'aside-list__item aside-list__item--static', role: 'listitem' }, ...item(it))));
 }
 
-const MONTH_NAMES = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto',
-  'settembre', 'ottobre', 'novembre', 'dicembre'];
+/** Six weeks always hold a month; a fifth row is enough when the month ends by then. */
+const GRID_CELLS = 6 * 7;
+const FIVE_ROWS = 5 * 7;
 const WEEKDAY_SHORT = ['DOM', 'LUN', 'MAR', 'MER', 'GIO', 'VEN', 'SAB'];
 
 /** Month grid starting on Sunday; each day links to the same office on that date. */
@@ -96,15 +89,15 @@ export function monthCalendar(selected: CivilDate, office: Office): HTMLElement 
     next.addEventListener('click', () => step(1));
 
     const cells: HTMLElement[] = [];
-    for (let i = 0; i < 42; i++) {
+    for (let i = 0; i < GRID_CELLS; i++) {
       const date = fromDayNumber(start + i);
-      if (i >= 35 && date.month !== month) break; // five rows are enough
+      if (i >= FIVE_ROWS && date.month !== month) break;
       const iso = toIsoDate(date);
       cells.push(h('a', {
         class: `month-cal__day${date.month !== month ? ' month-cal__day--out' : ''}${iso === todayIso ? ' month-cal__day--today' : ''}`,
         href: officeHref(date, office),
         'aria-current': iso === selectedIso ? 'date' : undefined,
-        'aria-label': `${date.day} ${MONTH_NAMES[date.month - 1]} ${date.year}`,
+        'aria-label': formatCivilDate(date, false),
       }, String(date.day)));
     }
 
