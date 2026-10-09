@@ -5,12 +5,11 @@ import { formatCivilDate, liturgicalDay, parseIsoDate, todayLocal } from './cale
 import { suggestedOffice } from './calendar/plan';
 import { loadDatabase } from './data/loader';
 import type { LiturgyData, Office } from './data/types';
-import { renderCompieta } from './ui/compieta';
-import { dayHeader, OFFICE_NAME } from './ui/day';
+import { OFFICE_NAME } from './ui/day';
 import { h, notice } from './ui/dom';
 import { renderEsamePage } from './ui/esame';
 import { renderHome } from './ui/home';
-import { renderLodi } from './ui/lodi';
+import { officePage } from './ui/office-page';
 import { setupThemeToggle } from './theme';
 
 // Routes: #/ home · #/esame examination of conscience · #/2026-10-03/lodi an office
@@ -43,8 +42,7 @@ function render(): void {
   const day = liturgicalDay((d && parseIsoDate(d)) || todayLocal());
   const office: Office = o === 'lodi' || o === 'compieta' ? o : suggestedOffice();
   show(`${OFFICE_NAME[office]} · ${formatCivilDate(day.date, false)} · Clivis`, day.color,
-    dayHeader(day, office),
-    h('main', { class: 'office-wrap' }, office === 'lodi' ? renderLodi(day, liturgy) : renderCompieta(day, liturgy)));
+    officePage(day, office, liturgy));
 }
 
 window.addEventListener('hashchange', render);

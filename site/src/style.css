@@ -113,7 +113,7 @@ a { color: inherit; }
   top: 50%;
   right: 0;
   width: min(62%, 720px);
-  height: 100px;
+  height: 56px;
   transform: translateY(-50%);
   pointer-events: none;
   -webkit-mask-image: linear-gradient(to right, transparent, #000 45%);
@@ -124,9 +124,9 @@ a { color: inherit; }
 .masthead__staff .clefbar { stroke: var(--ink); stroke-width: 2; }
 .masthead__inner {
   position: relative;
-  max-width: var(--measure);
+  max-width: 72rem;
   margin: 0 auto;
-  padding-block: 30px 32px;
+  padding-block: 10px 12px;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -140,9 +140,9 @@ a { color: inherit; }
 }
 .masthead__logo {
   flex: none;
-  width: 64px;
-  height: 64px;
-  border-radius: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
   box-shadow: 0 1px 2px rgb(0 0 0 / 0.12), 0 6px 18px -6px color-mix(in srgb, var(--rubric) 55%, transparent);
 }
 .masthead__brand:hover .masthead__logo { transform: rotate(-4deg); }
@@ -157,12 +157,12 @@ a { color: inherit; }
 }
 .masthead__name {
   font-family: var(--text);
-  font-size: clamp(1.7rem, 5vw, 2.15rem);
+  font-size: clamp(1.35rem, 4vw, 1.6rem);
   font-weight: 500;
   line-height: 1.05;
   letter-spacing: 0.005em;
 }
-.masthead__tag { font-style: italic; font-size: 0.98rem; color: var(--muted); line-height: 1.3; }
+.masthead__tag { display: none; }
 .theme-toggle {
   margin-left: auto;
   align-self: center;
@@ -188,12 +188,11 @@ a { color: inherit; }
   .masthead__logo { transition: transform 0.25s ease; }
 }
 @media (max-width: 560px) {
-  .masthead__inner { padding-block: 18px 20px; gap: 10px; }
+  .masthead__inner { padding-block: 8px 10px; gap: 10px; }
   .masthead__brand { gap: 11px; }
-  .masthead__logo { width: 46px; height: 46px; border-radius: 10px; }
+  .masthead__logo { width: 36px; height: 36px; border-radius: 8px; }
   .masthead__eyebrow { font-size: 0.62rem; letter-spacing: 0.1em; }
-  .masthead__tag { font-size: 0.88rem; }
-  .masthead__staff { width: 42%; height: 76px; opacity: 0.8; }
+  .masthead__staff { width: 42%; height: 48px; opacity: 0.8; }
   .theme-toggle { width: 40px; height: 40px; padding: 0; justify-content: center; }
   .theme-toggle span { display: none; }
 }
@@ -240,15 +239,6 @@ a { color: inherit; }
   font-weight: 600;
 }
 .date-nav__today--link { color: var(--rubric); }
-.date-nav__picker {
-  font: inherit;
-  font-size: 0.8rem;
-  color: var(--muted);
-  background: transparent;
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-  padding: 2px 6px;
-}
 
 .day__title {
   font-weight: 500;
@@ -299,6 +289,102 @@ a { color: inherit; }
 }
 .office-tabs__tab:hover { color: var(--ink); }
 .office-tabs__tab[aria-current='page'] { color: var(--ink); border-bottom-color: var(--rubric); }
+
+/* --- office page: prayer left, memorials and calendar right ------------------------ */
+.office-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 21.5rem;
+  grid-template-areas: 'head memo' 'text cal';
+  column-gap: 40px;
+  align-items: start;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+.office-page > .day { grid-area: head; max-width: var(--measure); margin: 0; width: 100%; }
+.office-page > .office-page__memorials { grid-area: memo; padding-top: 20px; }
+.office-page > .office-wrap { grid-area: text; max-width: var(--measure); margin: 0; width: 100%; min-width: 0; }
+.office-page > .office-page__calendar { grid-area: cal; position: sticky; top: 16px; padding-top: 8px; }
+.office-page .date-nav { grid-template-columns: 44px auto 44px; justify-content: start; }
+.office-page .day__title,
+.office-page .day__subtitle,
+.office-page .day__meta { text-align: left; justify-content: flex-start; }
+.office-page .office-tabs { justify-content: flex-start; }
+.office-page .office-tabs__tab:first-child { padding-left: 0; }
+
+.aside-list { display: grid; gap: 2px; font-family: var(--ui); }
+.aside-list__item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  padding: 10px 0;
+  margin: 0;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+.aside-list__item:hover { color: var(--ink); }
+.aside-list__item[aria-pressed='true'] { color: var(--season); border-bottom-color: var(--season); }
+.aside-list__item--static { cursor: default; }
+.aside-list__item--static:hover { color: var(--muted); }
+.aside-list__kind {
+  display: block;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.month-cal {
+  font-family: var(--ui);
+  background: var(--page);
+  border: 1px solid var(--rule);
+  border-radius: 18px;
+  padding: 14px 16px 12px;
+}
+.month-cal__head { display: grid; grid-template-columns: 40px 1fr 40px; align-items: center; text-align: center; }
+.month-cal__title { font-weight: 600; color: var(--season); text-transform: lowercase; }
+.month-cal__step {
+  font: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  height: 40px;
+  color: var(--season);
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.month-cal__step:hover { background: var(--info-bg); }
+.month-cal__grid { display: grid; grid-template-columns: repeat(7, 1fr); margin-top: 6px; text-align: center; }
+.month-cal__weekday { font-size: 0.7rem; letter-spacing: 0.04em; color: var(--muted); padding-block: 8px; }
+.month-cal__day {
+  display: grid;
+  place-items: center;
+  height: 40px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--ink);
+  border-radius: 8px;
+}
+.month-cal__day:hover { background: var(--info-bg); }
+.month-cal__day--out { color: var(--muted); opacity: 0.5; }
+.month-cal__day--today { font-weight: 700; color: var(--season); }
+.month-cal__day[aria-current='date'] { background: var(--info-bg); box-shadow: inset 0 0 0 1px var(--season); font-weight: 600; }
+
+@media (max-width: 960px) {
+  .office-page {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'head' 'memo' 'text' 'cal';
+    max-width: var(--measure);
+  }
+  .office-page > .office-page__memorials { padding-top: 12px; }
+  .office-page > .office-page__calendar { position: static; padding-bottom: 32px; }
+}
 
 /* --- office ----------------------------------------------------------------------- */
 .office-wrap { max-width: var(--measure); margin: 0 auto; padding-block: 8px 56px; }
@@ -383,6 +469,9 @@ chant-visual svg [stroke='#000'], chant-visual svg [stroke='black'] { stroke: va
 .psalm__line--cont { padding-left: 1.4em; }
 :root[data-psalm-lang='both'] .psalm--bilingual .psalm__verse { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
 .psalm--bilingual .psalm__verse > * { min-width: 0; }
+/* EB Garamond, with the language set to Latin (locl LAT), draws u as a pointed v
+   (the lapidary form): keep the ordinary u */
+:lang(la) { font-feature-settings: 'locl' 0; }
 .psalm__la { color: var(--muted); font-style: italic; }
 :root[data-psalm-lang='la'] .psalm__la { color: inherit; font-style: normal; }
 @media (max-width: 640px) {

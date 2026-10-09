@@ -2,7 +2,7 @@
 // week. Shared by the home page and the header of an office.
 
 import {
-  addDays, formatCivilDate, parseIsoDate, ROMAN, todayLocal, toIsoDate,
+  addDays, formatCivilDate, ROMAN, todayLocal, toIsoDate,
   type CivilDate, type LiturgicalDay, type Season,
 } from '../calendar/calendar';
 import type { Office } from '../data/types';
@@ -25,6 +25,10 @@ export const officeHref = (date: CivilDate, office: Office) => `#/${toIsoDate(da
 /** The day's name: the celebration if there is one, otherwise the weekday of the season. */
 export const dayName = (day: LiturgicalDay) => day.celebration?.name ?? day.label;
 
+/** What a memorial is called in the sidebar: Commemorazione, Memoria, Memoria facoltativa. */
+export const memorialKind = (m: { commemoration: boolean; rank: string }) =>
+  m.commemoration ? 'Commemorazione' : m.rank === 'memoria' ? 'Memoria' : 'Memoria facoltativa';
+
 /** "Solennità · XXVII Domenica…" under the name of a solemnity or feast. */
 export function celebrationSubtitle(day: LiturgicalDay): HTMLElement | null {
   if (!day.celebration) return null;
@@ -42,30 +46,22 @@ export function dayMeta(day: LiturgicalDay, opts: { season?: boolean } = {}): HT
     `${ROMAN[day.psalterWeek]} settimana del salterio`);
 }
 
-/** Header of an office page: date navigation, the day, the Lodi / Compieta tabs. */
+/**
+ * Header of an office page: date navigation, the day, the Lodi / Compieta tabs.
+ * Memorials and the month calendar live in the sidebar (ui/aside.ts).
+ */
 export function dayHeader(day: LiturgicalDay, office: Office): HTMLElement {
   const isToday = toIsoDate(day.date) === toIsoDate(todayLocal());
-  const datePicker = h('input', { type: 'date', class: 'date-nav__picker', value: toIsoDate(day.date), 'aria-label': 'Scegli una data' });
-  datePicker.addEventListener('change', () => {
-    const d = parseIsoDate(datePicker.value);
-    if (d) location.hash = officeHref(d, office);
-  });
-
   return h('header', { class: 'day' },
     h('nav', { class: 'date-nav', 'aria-label': 'Giorno' },
       h('a', { class: 'date-nav__step', href: officeHref(addDays(day.date, -1), office), 'aria-label': 'Giorno precedente' }, '‹'),
       h('div', { class: 'date-nav__center' },
         h('span', { class: 'date-nav__date' }, formatCivilDate(day.date)),
         isToday ? h('span', { class: 'date-nav__today' }, 'oggi')
-          : h('a', { class: 'date-nav__today date-nav__today--link', href: officeHref(todayLocal(), office) }, 'torna a oggi'),
-        datePicker),
+          : h('a', { class: 'date-nav__today date-nav__today--link', href: officeHref(todayLocal(), office) }, 'torna a oggi')),
       h('a', { class: 'date-nav__step', href: officeHref(addDays(day.date, 1), office), 'aria-label': 'Giorno successivo' }, '›')),
     h('h1', { class: 'day__title' }, dayName(day)),
     celebrationSubtitle(day),
-    !day.celebration && day.memorials.length
-      ? h('p', { class: 'day__subtitle' }, day.memorials.map((m) =>
-        `${m.commemoration ? 'Commemorazione' : m.rank === 'memoria' ? 'Memoria' : 'Memoria facoltativa'}: ${m.name}`).join(' · '))
-      : null,
     dayMeta(day),
     h('nav', { class: 'office-tabs', 'aria-label': 'Ufficio' },
       ...(['lodi', 'compieta'] as Office[]).map((o) => h('a', {
