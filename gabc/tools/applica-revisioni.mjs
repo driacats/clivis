@@ -7,23 +7,22 @@
 // Every correction replaces the whole gabc file it refers to. Then check the
 // diff, commit and publish the site again.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
-import { dirname, join, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { join } from 'node:path';
+import { ROOT, readJson } from './lib/paths.mjs';
 
-const repo = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const file = process.argv[2];
 if (!file) {
   console.error('uso: node gabc/tools/applica-revisioni.mjs revisioni-AAAA-MM-GG.json');
   process.exit(1);
 }
-const { correzioni } = JSON.parse(readFileSync(file, 'utf8'));
+const { correzioni } = readJson(file);
 let n = 0;
 for (const c of correzioni) {
   if (!/^gabc\/chants\/[A-Za-z0-9._-]+\.gabc$/.test(c.file)) {
     console.warn(`saltato (percorso non valido): ${c.file}`);
     continue;
   }
-  const path = join(repo, c.file);
+  const path = join(ROOT, c.file);
   if (!existsSync(path)) {
     console.warn(`saltato (non esiste nel repository): ${c.file}`);
     continue;

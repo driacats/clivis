@@ -1,7 +1,9 @@
 import re, json, subprocess, sys
 PDF = sys.argv[1]
+# pagine del Comune dei santi nel libretto delle Lodi
+FIRST_PAGE, LAST_PAGE = 203, 299
 pages = {}
-for p in range(203, 300):
+for p in range(FIRST_PAGE, LAST_PAGE + 1):
     t = subprocess.run(['pdftotext','-f',str(p),'-l',str(p),'-layout',PDF,'-'],capture_output=True,text=True).stdout
     lines = [l.rstrip() for l in t.split('\n') if l.strip()]
     pages[p] = lines[1:]  # drop running header

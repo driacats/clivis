@@ -5,7 +5,8 @@
   "version": "0.0.0",
   "description": "Scripts to build and verify the GABC chant database for mlg-breviary",
   "scripts": {
-    "verify": "node verify-render.mjs"
+    "verify": "node verify-render.mjs",
+    "check": "node check-responsories.mjs"
   },
   "devDependencies": {
     "exsurge": "file:../../../exsurge",

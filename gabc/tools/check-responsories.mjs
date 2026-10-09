@@ -5,13 +5,12 @@
 //
 //   node gabc/tools/check-responsories.mjs
 import { readFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { join } from 'node:path';
+import { ROOT, INDEX, readJson } from './lib/paths.mjs';
 // plain TypeScript without imports: Node runs it directly
 import { parseGabcMelody, responsorySequence, splitResponsory } from '../../../exsurge/src/Exsurge.Audio.ts';
 
-const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
-const index = JSON.parse(readFileSync(join(root, 'gabc', 'index.json'), 'utf8'));
+const index = readJson(INDEX);
 
 /** Runs of notes separated by a double bar (a rest of 1.5 beats or more). */
 function phrases(gabc) {
@@ -28,7 +27,7 @@ let ok = 0;
 const bad = [];
 for (const entry of index) {
   if (!entry.role?.startsWith('responsorio breve') || !entry.file) continue;
-  const raw = readFileSync(join(root, entry.file), 'utf8');
+  const raw = readFileSync(join(ROOT, entry.file), 'utf8');
   // as the site reads it: the body after the last "%%"
   const body = raw.slice(raw.lastIndexOf('%%') + 2).trim();
   const verses = (body.match(/<sp>V\/<\/sp>/g) ?? []).length;

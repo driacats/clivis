@@ -1,13 +1,10 @@
 // Verification gate: every .gabc file in ../chants/ must parse, lay out, and
 // render to SVG via exsurge without throwing. Run with `npm run verify`.
 import { readdirSync, readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { JSDOM } from 'jsdom';
 import { splitGabc } from './gabc-utils.mjs';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const chantsDir = path.join(__dirname, '..', 'chants');
+import { CHANTS as chantsDir } from './lib/paths.mjs';
 
 // exsurge calls document.createElementNS/createElement at layout/render time
 // (not at module-import time), so it's enough to install these globals before
