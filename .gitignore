@@ -1,2 +1,5 @@
 _da_eliminare/
 .DS_Store
+node_modules/
+dist/
+.env

@@ -6,10 +6,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fetchWithCache } from './gregobase-client.mjs';
-import { parseHeader } from './gabc-utils.mjs';
+import { parseHeader } from '../gabc-utils.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const GABC_DIR = path.resolve(__dirname, '..');
+const GABC_DIR = path.resolve(__dirname, '..', '..');
 const CHANT_CACHE_DIR = path.join(GABC_DIR, 'cache', 'chant');
 
 // Returns { id, exists, header: {...}, gabcRaw, htmlPath } for a GregoBase chant id.

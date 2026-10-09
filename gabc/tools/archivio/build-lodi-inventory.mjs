@@ -8,8 +8,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT = path.resolve(__dirname, '..', '..');
-const MD_PATH = path.join(ROOT, 'PDF-INVENTORY.md');
+const ROOT = path.resolve(__dirname, '..', '..', '..');
+const MD_PATH = path.join(__dirname, 'PDF-INVENTORY.md');
 const INVENTORY_PATH = path.join(ROOT, 'gabc', 'inventory.json');
 
 const md = fs.readFileSync(MD_PATH, 'utf8');

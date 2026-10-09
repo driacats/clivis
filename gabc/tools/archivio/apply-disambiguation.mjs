@@ -9,7 +9,7 @@ import { getChantDetail } from './fetch-chant.mjs';
 import { normalizeLatin } from './gregobase-client.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const GABC_DIR = path.resolve(__dirname, '..');
+const GABC_DIR = path.resolve(__dirname, '..', '..');
 const INDEX_PATH = path.join(GABC_DIR, 'index.json');
 const CHANTS_DIR = path.join(GABC_DIR, 'chants');
 

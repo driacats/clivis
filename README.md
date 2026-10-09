@@ -46,7 +46,7 @@ npm run build    # static site in dist/, ready for any hosting (GitHub Pages too
 - `site/` — the site (TypeScript + Vite). How it picks the office of the day is explained in [`site/README.md`](site/README.md).
 - `gabc/` — the chants in GABC format (`chants/`), the index of the pieces (`index.json`) and the structure of the hours (`liturgy.json`).
 - `salmi/`, `letture/`, `testi/` — psalms and canticles, short readings, hymn translations, collects and other texts, in JSON.
-- `gabc/tools/` — the scripts used to build and check the database.
+- `gabc/tools/` — the scripts used to check the database and apply review corrections; `gabc/tools/archivio/` keeps the one-off scripts that built it (already applied, do not run them again).
 - `server/` — the small Node service behind the review page (login, state of each chant, proposed corrections); no dependencies.
 - `deploy/` — Docker Compose and nginx configuration for the site with the review service.
 

@@ -115,7 +115,7 @@ export interface CompietaPlan {
 
 const BLOCK_BY_WEEKDAY = ['domenica-II-vespri', 'lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', 'domenica-I-vespri'];
 
-/** Compieta ids in gabc/index.json (see PDF-INVENTORY.md). */
+/** Compieta ids in gabc/index.json (see gabc/tools/archivio/PDF-INVENTORY.md). */
 const C = (n: number) => `compieta.C${n}`;
 
 const HYMNS_ORDINARY: Record<'feria' | 'memoria' | 'festa' | 'domenica' | 'solennita', Record<'te-lucis' | 'christe', string>> = {

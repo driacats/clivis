@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { fetchWithCache, normalizeLatin } from './gregobase-client.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const GABC_DIR = path.resolve(__dirname, '..');
+const GABC_DIR = path.resolve(__dirname, '..', '..');
 const INVENTORY_PATH = path.join(GABC_DIR, 'inventory.json');
 const INCIPIT_CACHE_DIR = path.join(GABC_DIR, 'cache', 'incipit');
 const COMBINED_INDEX_PATH = path.join(GABC_DIR, 'cache', 'incipit-index.json');

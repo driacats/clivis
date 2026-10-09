@@ -6,8 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const GABC_DIR = path.resolve(__dirname, '..');
-const ROOT_DIR = path.resolve(GABC_DIR, '..');
+const GABC_DIR = path.resolve(__dirname, '..', '..');
 
 const inventory = JSON.parse(fs.readFileSync(path.join(GABC_DIR, 'inventory.json'), 'utf8')).rows;
 const index = JSON.parse(fs.readFileSync(path.join(GABC_DIR, 'index.json'), 'utf8'));
@@ -129,5 +128,5 @@ for (const row of laRows) {
   md += `- ${statusLine(row)}\n`;
 }
 
-fs.writeFileSync(path.join(ROOT_DIR, 'REPORT.md'), md);
+fs.writeFileSync(path.join(__dirname, 'REPORT.md'), md);
 console.log('Wrote REPORT.md,', md.length, 'bytes');

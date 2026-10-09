@@ -44,7 +44,7 @@ npm run build    # sito statico in dist/, pubblicabile su qualsiasi hosting (anc
 - `site/` — il sito (TypeScript + Vite). Dettagli su calendario e scelta dell'ufficio in [`site/README.it.md`](site/README.it.md).
 - `gabc/` — i canti in formato GABC (`chants/`), l'indice dei pezzi (`index.json`) e la struttura delle ore (`liturgy.json`).
 - `salmi/`, `letture/`, `testi/` — salmi e cantici, letture brevi, inni tradotti, orazioni e altri testi, in JSON.
-- `gabc/tools/` — gli script usati per costruire e verificare il database.
+- `gabc/tools/` — gli script per verificare il database e applicare le revisioni; `gabc/tools/archivio/` conserva gli script una tantum con cui è stato costruito (già applicati, da non rilanciare).
 - `server/` — il piccolo servizio Node dietro la pagina di revisione (accesso, stato di ogni canto, correzioni proposte), senza dipendenze.
 - `deploy/` — configurazione di Docker Compose e nginx per il sito con il servizio di revisione.
 

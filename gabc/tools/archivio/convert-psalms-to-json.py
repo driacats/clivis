@@ -2,7 +2,7 @@
 import json, re, sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 SALMI = ROOT / "salmi"
 
 def group_verses(lines):
@@ -65,8 +65,8 @@ def build_verses(it_verses, la_verses):
     return [{"it": iv, "la": lv} for iv, lv in zip(it_verses, la_verses)]
 
 def main():
-    compieta_links = json.loads((ROOT / "gabc/tools/compieta-psalm-links.json").read_text())
-    lodi_links = json.loads((ROOT / "gabc/tools/lodi-psalm-links.json").read_text())
+    compieta_links = json.loads((Path(__file__).parent / "compieta-psalm-links.json").read_text())
+    lodi_links = json.loads((Path(__file__).parent / "lodi-psalm-links.json").read_text())
 
     # unique file -> {ref, title} (first occurrence wins; verified same across dup rows)
     unique = {}

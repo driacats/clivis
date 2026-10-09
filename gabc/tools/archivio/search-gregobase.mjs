@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { normalizeLatin } from './gregobase-client.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const INDEX_PATH = path.resolve(__dirname, '..', 'cache', 'incipit-index.json');
+const INDEX_PATH = path.resolve(__dirname, '..', '..', 'cache', 'incipit-index.json');
 
 let cachedIndex = null;
 function loadIndex() {

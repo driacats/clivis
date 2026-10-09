@@ -4,7 +4,7 @@
 // being folded into the final file — this script is not run automatically.
 import { readFileSync, writeFileSync } from 'node:fs';
 
-const inv = JSON.parse(readFileSync(new URL('../inventory.json', import.meta.url)));
+const inv = JSON.parse(readFileSync(new URL('../../inventory.json', import.meta.url)));
 const rows = inv.rows.filter(r => r.office === 'lodi');
 
 const DAYS = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
@@ -72,5 +72,5 @@ if (unparsed.length) {
   for (const [id, ctx] of unparsed) console.error(' ', id, '|', ctx);
 }
 
-writeFileSync(new URL('../liturgy-lodi.generated.json', import.meta.url), JSON.stringify({ weeks }, null, 2));
+writeFileSync(new URL('../../liturgy-lodi.generated.json', import.meta.url), JSON.stringify({ weeks }, null, 2));
 console.log('wrote gabc/liturgy-lodi.generated.json,', unparsed.length, 'unparsed rows');

@@ -1,7 +1,7 @@
 """Estrae invocazioni e orazione di ogni giorno delle Lodi (settimane 1-4)
 da sources/Lodi complete.2.pdf (pp. 1-176) in testi/lodi-conclusioni.json.
 
-Uso: python3 gabc/tools/extract-lodi-conclusioni.py  (dalla radice del repo)
+Uso: python3 gabc/tools/archivio/extract-lodi-conclusioni.py  (dalla radice del repo)
 Richiede pdftotext (poppler)."""
 import json, re, subprocess
 
