@@ -12,6 +12,7 @@
 //   SITO                   cartella del sito pubblicato, in sola lettura (/sito)
 //   CLIVIS_ADMIN           nome dell'amministratore creato al primo avvio (andrea)
 //   CLIVIS_ADMIN_PASSWORD  la sua password: serve solo finché non esistono utenti
+//   PASSWORD               per il comando «utente»: la password, senza chiederla
 //
 // Comandi:
 //   node revisione.mjs                         avvia il servizio
@@ -25,9 +26,20 @@ import { basename, join } from 'node:path';
 import { createInterface } from 'node:readline';
 import { fileURLToPath } from 'node:url';
 
+const PORTA_PREDEFINITA = 3000;
 const SESSIONE_GIORNI = 30;
+const SESSIONE_SECONDI = SESSIONE_GIORNI * 86400;
 const COOKIE = 'clivis_revisione';
+/** corpo massimo di una richiesta: tenerlo uguale a client_max_body_size in deploy/nginx.conf */
 const MAX_CORPO = 1024 * 1024;
+const MAX_GABC = 200_000;
+const MAX_COMMENTO = 4000;
+const PASSWORD_MINIMA = 8;
+/** tentativi di accesso sbagliati concessi in una finestra di tempo */
+const TENTATIVI_MAX = 10;
+const TENTATIVI_FINESTRA_MS = 15 * 60e3;
+/** lunghezza in byte dell'hash scrypt delle password */
+const HASH_BYTE = 64;
 
 export const STATI = ['da-rivedere', 'in-corso', 'inviato', 'rimandato', 'approvato'];
 
@@ -75,9 +87,9 @@ export function apriArchivio({ dati, sito }) {
       u.ruolo = ruolo;
     }
     if (password) {
-      if (String(password).length < 8) throw new Errore(400, 'La password deve avere almeno 8 caratteri.');
+      if (String(password).length < PASSWORD_MINIMA) throw new Errore(400, `La password deve avere almeno ${PASSWORD_MINIMA} caratteri.`);
       u.sale = randomBytes(16).toString('hex');
-      u.hash = scryptSync(String(password), u.sale, 64).toString('hex');
+      u.hash = scryptSync(String(password), u.sale, HASH_BYTE).toString('hex');
     }
     if (!lista.some((x) => x.ruolo === 'admin')) throw new Errore(400, 'Deve restare almeno un amministratore.');
     salvaUtenti(lista);
@@ -94,8 +106,8 @@ export function apriArchivio({ dati, sito }) {
     const u = utenti().find((x) => x.nome === String(nome ?? '').trim().toLowerCase());
     // stesso lavoro anche per un utente che non esiste
     const sale = u?.sale ?? '00';
-    const atteso = Buffer.from(u?.hash ?? '0'.repeat(128), 'hex');
-    const dato = scryptSync(String(password ?? ''), sale, 64);
+    const atteso = Buffer.from(u?.hash ?? '00'.repeat(HASH_BYTE), 'hex');
+    const dato = scryptSync(String(password ?? ''), sale, HASH_BYTE);
     return u && timingSafeEqual(atteso, dato) ? u : null;
   }
 
@@ -103,7 +115,7 @@ export function apriArchivio({ dati, sito }) {
   const firma = (nome, scade, hash) => createHmac('sha256', segreto).update(`${nome}.${scade}.${hash}`).digest('hex');
 
   function creaSessione(u) {
-    const scade = Date.now() + SESSIONE_GIORNI * 864e5;
+    const scade = Date.now() + SESSIONE_SECONDI * 1000;
     return `${u.nome}.${scade}.${firma(u.nome, scade, u.hash)}`;
   }
 
@@ -197,13 +209,13 @@ export function apriArchivio({ dati, sito }) {
       throw new Errore(409, `Questo canto è stato modificato nel frattempo${r.da ? ` da ${nomeDi(r.da)}` : ''}: ricarica la pagina.`);
     }
     if (r.stato === 'approvato' && !admin && azione !== 'commenta') throw new Errore(409, 'Questo canto è già approvato.');
-    const testo = String(commento ?? '').trim().slice(0, 4000);
+    const testo = String(commento ?? '').trim().slice(0, MAX_COMMENTO);
     if (a.commento && !testo) throw new Errore(400, 'Scrivi che cosa va rivisto.');
 
     const sitoOra = testoSito(key);
     if (r.originale === null) r.originale = sitoOra;
     if (gabc !== undefined && azione !== 'commenta') {
-      if (gabc !== null && (typeof gabc !== 'string' || !gabc.includes('%%') || gabc.length > 200_000)) throw new Errore(400, 'Spartito non valido.');
+      if (gabc !== null && (typeof gabc !== 'string' || !gabc.includes('%%') || gabc.length > MAX_GABC)) throw new Errore(400, 'Spartito non valido.');
       r.gabc = gabc === sitoOra ? null : gabc;
     }
     if (azione === 'approva') r.cambiato = r.gabc !== null && r.gabc !== sitoOra;
@@ -279,12 +291,12 @@ export function creaServizio(arch) {
   function limita(req) {
     const k = ip(req);
     const t = tentativi.get(k);
-    if (t && t.fino > Date.now() && t.n >= 10) throw new Errore(429, 'Troppi tentativi: riprova tra qualche minuto.');
+    if (t && t.fino > Date.now() && t.n >= TENTATIVI_MAX) throw new Errore(429, 'Troppi tentativi: riprova tra qualche minuto.');
   }
   function sbagliato(req) {
     const k = ip(req);
     const t = tentativi.get(k);
-    if (!t || t.fino < Date.now()) tentativi.set(k, { n: 1, fino: Date.now() + 15 * 60e3 });
+    if (!t || t.fino < Date.now()) tentativi.set(k, { n: 1, fino: Date.now() + TENTATIVI_FINESTRA_MS });
     else t.n++;
   }
 
@@ -310,7 +322,7 @@ export function creaServizio(arch) {
         const { nome, password } = await leggiCorpo(req);
         const u = arch.verifica(nome, password);
         if (!u) { sbagliato(req); throw new Errore(401, 'Nome o password non corretti.'); }
-        return invia(200, pubblico(u), { 'Set-Cookie': cookieSessione(arch.creaSessione(u), SESSIONE_GIORNI * 86400) });
+        return invia(200, pubblico(u), { 'Set-Cookie': cookieSessione(arch.creaSessione(u), SESSIONE_SECONDI) });
       }
       if (path === '/uscita' && metodo === 'POST') {
         return invia(200, {}, { 'Set-Cookie': cookieSessione('', 0) });
@@ -327,7 +339,7 @@ export function creaServizio(arch) {
         if (!arch.verifica(utente.nome, attuale)) throw new Errore(400, 'La password attuale non è corretta.');
         const u = arch.impostaUtente({ nome: utente.nome, password: nuova });
         const fresco = arch.utenti().find((x) => x.nome === u.nome);
-        return invia(200, u, { 'Set-Cookie': cookieSessione(arch.creaSessione(fresco), SESSIONE_GIORNI * 86400) });
+        return invia(200, u, { 'Set-Cookie': cookieSessione(arch.creaSessione(fresco), SESSIONE_SECONDI) });
       }
 
       if (path === '/canti' && metodo === 'GET') {
@@ -419,7 +431,7 @@ async function main() {
     }
   }
 
-  const porta = Number(process.env.PORTA ?? 3000);
+  const porta = Number(process.env.PORTA ?? PORTA_PREDEFINITA);
   createServer(creaServizio(arch)).listen(porta, () => console.log(`Revisione Clivis in ascolto sulla porta ${porta}`));
 }
 

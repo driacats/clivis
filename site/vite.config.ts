@@ -17,8 +17,8 @@ export default defineConfig({
   },
   server: {
     fs: { allow: ['..', '../../exsurge'] },
-    // the review service (../server/revisione.mjs) in development
-    proxy: { '/api': 'http://localhost:3000' },
+    // the review service (../server/revisione.mjs) in development, on its PORTA
+    proxy: { '/api': `http://localhost:${process.env.PORTA ?? 3000}` },
   },
   build: {
     rollupOptions: {
