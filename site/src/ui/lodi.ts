@@ -3,8 +3,7 @@ import { benedicamusKey, lodiCelebrations, lodiPlan, paterNosterTone, solemnBles
 import { fetchGabc, getTexts } from '../data/loader';
 import type { AntiphonSlot, LiturgyData } from '../data/types';
 import { deferred, h, notice } from './dom';
-import { celebrationPicker } from './aside';
-import { memorialKind } from './day';
+import type { CelebrationSelect } from './aside';
 import { lodiOpening } from './opening';
 import { comuneTitle, renderComuneLodi } from './comune';
 import {
@@ -33,20 +32,16 @@ function paschalAntiphon(slot: AntiphonSlot): HTMLElement {
 }
 
 /**
- * Lodi of the day. When a saint can be celebrated the sidebar `picker` switches
- * the text between the weekday and the saint (with its Comune); it is null when
- * there is nothing to choose.
+ * Lodi of the day. When a saint can be celebrated, `select` lets the sidebar
+ * switch the text between the weekday and the saint (with its Comune); it is
+ * null when there is nothing to choose.
  */
-export function renderLodi(day: LiturgicalDay, liturgy: LiturgyData): { main: HTMLElement; picker: HTMLElement | null } {
+export function renderLodi(day: LiturgicalDay, liturgy: LiturgyData): { main: HTMLElement; select: CelebrationSelect | null } {
   const { options, initial } = lodiCelebrations(day);
-  if (options.length === 1) return { main: renderCelebration(day, liturgy, options[0]), picker: null };
+  if (options.length === 1) return { main: renderCelebration(day, liturgy, options[0]), select: null };
   const main = h('div', { class: 'choice__panel' });
-  const picker = celebrationPicker(options.map((o) => {
-    if (o.mode === 'feria') return { label: day.label, kind: 'Feria' };
-    const m = day.memorials.find((x) => x.name === o.name);
-    return { label: o.label, kind: m ? memorialKind(m) : undefined };
-  }), initial, (i) => main.replaceChildren(renderCelebration(day, liturgy, options[i])));
-  return { main, picker };
+  const onSelect = (i: number) => main.replaceChildren(renderCelebration(day, liturgy, options[i]));
+  return { main, select: { initial, onSelect } };
 }
 
 function renderCelebration(day: LiturgicalDay, liturgy: LiturgyData, o: LodiCelebration): HTMLElement {

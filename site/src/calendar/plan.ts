@@ -103,6 +103,8 @@ export interface CompietaPlan {
   /** liturgy.json hymn variant id for each allowed text */
   hymnRefs: Partial<Record<HymnText, string>>;
   responsoryRef: string;
+  /** The versicle "Custodi nos" after the responsory; none in the Triduum and the Easter Octave. */
+  versicleRef: string | null;
   marian: MarianSeason;
   /** testi/compieta-orazioni.json key: the block id, or "solennita". */
   orationKey: string;
@@ -176,6 +178,8 @@ export function compietaPlan(day: LiturgicalDay): CompietaPlan {
   else if (day.season === 'pasqua') responsoryRef = C(40);
   else if (day.season === 'avvento' || day.season === 'quaresima') responsoryRef = C(37);
   else responsoryRef = C(12);
+  const versicleRef = responsoryRef === C(40) ? 'compieta.custodi-tp'
+    : responsoryRef === C(12) || responsoryRef === C(37) ? 'compieta.custodi' : null;
 
   // Marian antiphon (libretto p. 42-45): Alma from Advent until 2 February,
   // Ave Regina from 2 February until Holy Week, Regina caeli in Eastertide,
@@ -204,6 +208,7 @@ export function compietaPlan(day: LiturgicalDay): CompietaPlan {
     hymnTexts,
     hymnRefs,
     responsoryRef,
+    versicleRef,
     marian,
     orationKey: day.celebration?.rank === 'solennità' || day.season === 'triduo' || isHolyThursday ? 'solennita' : blockId,
     openingWithoutAlleluia: day.season === 'quaresima' || day.season === 'triduo',

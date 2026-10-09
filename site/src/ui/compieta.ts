@@ -47,7 +47,7 @@ export function renderCompieta(day: LiturgicalDay, liturgy: LiturgyData): HTMLEl
     section('Inno', choice('Inno', hymnOptions.options, hymnOptions.initial)),
     section('Salmodia', ...psalmody),
     section('Lettura breve', letturaBreve(block.letturaBreve)),
-    section('Responsorio breve', chant(plan.responsoryRef)),
+    section('Responsorio breve', chant(plan.responsoryRef), plan.versicleRef ? chant(plan.versicleRef) : null),
     section('Cantico di Simeone',
       rubric('Antifona'),
       chant(c.nuncDimittis.antiphonRef),

@@ -953,6 +953,26 @@
     "_reuseKey": "in manus tuas domine commendo spiritum meum alleluia alleluia|responsorio breve (versione pasquale)|"
   },
   {
+    "id": "compieta.custodi",
+    "office": "compieta",
+    "role": "versicolo",
+    "printedIncipit": "Custodi nos, Dómine, ut pupíllam óculi",
+    "printedContext": "dopo il responsorio breve (tempo ordinario, Natale, Avvento e Quaresima)",
+    "status": "found",
+    "file": "gabc/chants/manual-compieta-custodi-nos.gabc",
+    "matchNotes": "Separato dal responsorio In manus tuas (GregoBase 13059), dove era scritto in coda: il file del responsorio resta nella sola forma breve."
+  },
+  {
+    "id": "compieta.custodi-tp",
+    "office": "compieta",
+    "role": "versicolo (versione pasquale)",
+    "printedIncipit": "Custodi nos, Dómine, ut pupíllam óculi, allelúia",
+    "printedContext": "dopo il responsorio breve, Tempo di Pasqua",
+    "status": "found",
+    "file": "gabc/chants/manual-compieta-custodi-nos-tp.gabc",
+    "matchNotes": "Separato dal responsorio In manus tuas pasquale (GregoBase 12649), dove era scritto in coda."
+  },
+  {
     "id": "compieta.C41",
     "office": "compieta",
     "role": "antifona mariana, tono semplice",

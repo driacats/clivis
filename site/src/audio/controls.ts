@@ -1,7 +1,7 @@
 // The listen / speed / MIDI bar under each score. Playback, MIDI and following
 // the notes on the score come from exsurge; what to play (antiphon, EUOUAE,
 // psalm tone) is decided here.
-import { followScore, melodyToMidi, parseGabcMelody, playMelody, splitEuouae, type Follower, type MelodyEvent } from 'exsurge';
+import { followScore, melodyToMidi, parseGabcMelody, playMelody, responsorySequence, splitEuouae, type Follower, type MelodyEvent } from 'exsurge';
 import { psalmToneFor } from './psalmTone';
 
 const SPEED_LABELS = ['lento', 'normale', 'veloce'];
@@ -53,13 +53,21 @@ export function playerControls(gabcBody: string, fileName: string, mode: string 
   const total = pitched(events);
   const follow = (offset: number) => (score ? followScore(score, offset, total) : null);
 
-  const playButtons = repeat && euEvents.length && mainEvents.length
+  // a short responsory is played as it is sung, with its repeats; the score
+  // shows it once, so the follower jumps back to the notes being repeated
+  const responsory = responsorySequence(gabcBody);
+  const responsoryFollower = (follower: Follower | null, notes: number[]): Follower | null =>
+    follower && { ...follower, show: (i) => follower.show(i === null ? null : notes[i]) };
+
+  const playButtons = responsory
+    ? [playButton('Come si canta', responsory.events, responsoryFollower(follow(0), responsory.notes))]
+    : repeat && euEvents.length && mainEvents.length
     ? [playButton('Antifona', mainEvents, follow(0))]
     : euEvents.length && mainEvents.length
     ? [playButton('Antifona', mainEvents, follow(0)), playButton('Euouae', euEvents, follow(pitched(mainEvents)))]
     : [playButton('Ascolta', events, follow(0))];
 
-  const tone = repeat ? null : psalmToneFor(gabcBody, mode);
+  const tone = repeat || responsory ? null : psalmToneFor(gabcBody, mode);
   if (tone) {
     const b = playButton('Tono del salmo', tone);
     b.title = 'Come intonare il primo versetto: intonazione, corda di recita, mediante e terminazione';
@@ -81,7 +89,7 @@ export function playerControls(gabcBody: string, fileName: string, mode: string 
   midi.href = '#';
   midi.addEventListener('click', (ev) => {
     ev.preventDefault();
-    const blob = new Blob([melodyToMidi(events, secondsPerBeat()).buffer as ArrayBuffer], { type: 'audio/midi' });
+    const blob = new Blob([melodyToMidi(responsory?.events ?? events, secondsPerBeat()).buffer as ArrayBuffer], { type: 'audio/midi' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
     a.download = fileName.replace(/\.gabc$/, '') + '.mid';

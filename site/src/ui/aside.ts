@@ -4,6 +4,7 @@ import {
   fromDayNumber, toDayNumber, toIsoDate, todayLocal, weekdayOf,
   type CivilDate, type LiturgicalDay,
 } from '../calendar/calendar';
+import { lodiCelebrations } from '../calendar/plan';
 import type { Office } from '../data/types';
 import { memorialKind, officeHref } from './day';
 import { h } from './dom';
@@ -20,7 +21,7 @@ const item = (it: CelebrationItem) => [it.label, it.kind ? h('span', { class: 'a
  * The celebrations the Lodi can be said for, as a list of buttons: choosing one
  * calls `onSelect` (also once at the start, with `initial`).
  */
-export function celebrationPicker(items: CelebrationItem[], initial: number, onSelect: (i: number) => void): HTMLElement {
+function celebrationPicker(items: CelebrationItem[], initial: number, onSelect: (i: number) => void): HTMLElement {
   const buttons = items.map((it, i) => {
     const b = h('button', { type: 'button', class: 'aside-list__item', 'aria-pressed': String(i === initial) }, ...item(it));
     b.addEventListener('click', () => select(i));
@@ -34,12 +35,37 @@ export function celebrationPicker(items: CelebrationItem[], initial: number, onS
   return h('nav', { class: 'aside-list', 'aria-label': 'Celebrazione' }, ...buttons);
 }
 
-/** The memorials of the day when there is nothing to choose (Compieta, solemnities). */
-export function memorialList(day: LiturgicalDay): HTMLElement | null {
+/** The memorials of the day when there is nothing to choose (solemnities, feasts). */
+function memorialList(day: LiturgicalDay): HTMLElement | null {
   if (day.memorials.length === 0) return null;
   return h('div', { class: 'aside-list', role: 'list' },
     ...day.memorials.map((m) => h('p', { class: 'aside-list__item aside-list__item--static', role: 'listitem' },
       ...item({ label: m.name, kind: memorialKind(m) }))));
+}
+
+/** What can be chosen in the sidebar of the Lodi: `onSelect` is called with the index of the celebration. */
+export interface CelebrationSelect {
+  initial: number;
+  onSelect: (i: number) => void;
+}
+
+/**
+ * The celebrations of the day in the sidebar, the same for every office: the
+ * feria and its memorials. With `select` (the Lodi, whose text changes with the
+ * celebration) they are buttons; without (Compieta) they are just listed.
+ * When there is nothing to choose it is the day's memorials, or null.
+ */
+export function celebrationList(day: LiturgicalDay, select?: CelebrationSelect): HTMLElement | null {
+  const { options } = lodiCelebrations(day);
+  if (options.length === 1) return memorialList(day);
+  const items = options.map((o): CelebrationItem => {
+    if (o.mode === 'feria') return { label: day.label, kind: 'Feria' };
+    const m = day.memorials.find((x) => x.name === o.name);
+    return { label: o.label, kind: m ? memorialKind(m) : undefined };
+  });
+  if (select) return celebrationPicker(items, select.initial, select.onSelect);
+  return h('div', { class: 'aside-list', role: 'list' },
+    ...items.map((it) => h('p', { class: 'aside-list__item aside-list__item--static', role: 'listitem' }, ...item(it))));
 }
 
 const MONTH_NAMES = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto',
