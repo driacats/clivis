@@ -691,30 +691,35 @@
     "inno": [
      {
       "rubrica": null,
-      "it": "1. Cantiamo con cuore lieto / gli eterni doni di Cristo / e le vittorie dei martiri, / innalzando convenienti lodi.\n2. Principi della Chiesa / condottieri che hanno trionfato nella lotta, / soldati della celeste reggia, / e vera luce del mondo.\n3. Vinta la paura degli uomini, / disprezzate le pene del corpo, / conclusa la vita con una santa morte, / posseggono l’eternità beata.\n4. Per mano dell’insano carnefice / effondono il sacro sangue, / ma rimangono stabili / nella grazia della vita eterna.\n5. La pia fede dei Santi, / l’invitta speranza dei credenti, / il perfetto amore di Cristo / trionfano sul principe del mondo.\n6. In essi la gloria del Padre, / in essi la volontà dello Spirito, / in essi il Figlio esulta, / il cielo si riempie di gioia.\n7. A te ora, Redentore del mondo, / chiediamo di unire per i secoli eterni / alla sorte dei martiri / i servi che ti supplicano. Amen."
+      "it": "1. Cantiamo con cuore lieto / gli eterni doni di Cristo / e le vittorie dei martiri, / innalzando convenienti lodi.\n2. Principi della Chiesa / condottieri che hanno trionfato nella lotta, / soldati della celeste reggia, / e vera luce del mondo.\n3. Vinta la paura degli uomini, / disprezzate le pene del corpo, / conclusa la vita con una santa morte, / posseggono l’eternità beata.\n4. Per mano dell’insano carnefice / effondono il sacro sangue, / ma rimangono stabili / nella grazia della vita eterna.\n5. La pia fede dei Santi, / l’invitta speranza dei credenti, / il perfetto amore di Cristo / trionfano sul principe del mondo.\n6. In essi la gloria del Padre, / in essi la volontà dello Spirito, / in essi il Figlio esulta, / il cielo si riempie di gioia.\n7. A te ora, Redentore del mondo, / chiediamo di unire per i secoli eterni / alla sorte dei martiri / i servi che ti supplicano. Amen.",
+      "canto": "lodi.CS-piu-martiri-inno"
      }
     ],
     "ant1": [
      {
       "rubrica": null,
-      "it": "Il Signore ha messo alla prova gli eletti come oro nella fornace, e come olocausti li ha accolti per sempre"
+      "it": "Il Signore ha messo alla prova gli eletti come oro nella fornace, e come olocausti li ha accolti per sempre",
+      "canto": "lodi.CS-piu-martiri-ant1"
      }
     ],
     "ant2": [
      {
       "rubrica": null,
-      "it": "Martiri del Signore, benedite il Signore per sempre"
+      "it": "Martiri del Signore, benedite il Signore per sempre",
+      "canto": "lodi.CS-piu-martiri-ant2"
      },
      {
       "rubrica": "Nel Tempo Pasquale",
       "tp": true,
-      "it": "Spiriti santi e anime dei giusti, cantate un inno a Dio, alleluia"
+      "it": "Spiriti santi e anime dei giusti, cantate un inno a Dio, alleluia",
+      "canto": "lodi.CS-piu-martiri-ant2-tp"
      }
     ],
     "ant3": [
      {
       "rubrica": null,
-      "it": "Coro dei martiri, loda il Signore nel più alto dei cieli"
+      "it": "Coro dei martiri, loda il Signore nel più alto dei cieli",
+      "canto": "lodi.CS-piu-martiri-ant3"
      }
     ],
     "lettura": [
@@ -727,13 +732,15 @@
     "responsorio": [
      {
       "rubrica": null,
-      "it": "I giusti, tuttavia, vivranno per sempre. E presso il Signore è la loro ricompensa. Gloria."
+      "it": "I giusti, tuttavia, vivranno per sempre. E presso il Signore è la loro ricompensa. Gloria.",
+      "canto": "lodi.CS-piu-martiri-rb"
      }
     ],
     "benedictus": [
      {
       "rubrica": null,
-      "it": "Beati i perseguitati a causa della giustizia, perché di essi è il regno dei cieli"
+      "it": "Beati i perseguitati a causa della giustizia, perché di essi è il regno dei cieli",
+      "canto": "lodi.CS-piu-martiri-ben"
      }
     ],
     "invocazioni": [

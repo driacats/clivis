@@ -5888,5 +5888,82 @@
     "status": "found",
     "file": "gabc/chants/manual-apostoli-ben-tp.gabc",
     "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-piu-martiri-inno",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Ætérna Christi múnera",
+    "printedContext": "Comune: Più martiri, inno",
+    "pdfPage": "p. 234-236",
+    "status": "found",
+    "file": "gabc/chants/manual-piu-martiri-inno.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-piu-martiri-ant1",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Tamquam aurum in fornáce",
+    "printedContext": "Comune: Più martiri, antifona 1",
+    "pdfPage": "p. 236",
+    "status": "found",
+    "file": "gabc/chants/manual-piu-martiri-ant1.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-piu-martiri-ant2",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Mártyres Dómini",
+    "printedContext": "Comune: Più martiri, antifona 2",
+    "pdfPage": "p. 236",
+    "status": "found",
+    "file": "gabc/chants/manual-piu-martiri-ant2.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-piu-martiri-ant2-tp",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Sancti spíritus et ánimæ iustórum",
+    "printedContext": "Comune: Più martiri, antifona 2 del Tempo pasquale",
+    "pdfPage": "p. 237",
+    "status": "found",
+    "file": "gabc/chants/manual-piu-martiri-ant2-tp.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-piu-martiri-ant3",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Mártyrum chorus",
+    "printedContext": "Comune: Più martiri, antifona 3",
+    "pdfPage": "p. 237",
+    "status": "found",
+    "file": "gabc/chants/manual-piu-martiri-ant3.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-piu-martiri-rb",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Iusti autem in perpétuum vivent",
+    "printedContext": "Comune: Più martiri",
+    "pdfPage": "p. 237-238",
+    "status": "found",
+    "file": "gabc/chants/manual-piu-martiri-rb.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-piu-martiri-ben",
+    "office": "lodi",
+    "role": "antifona (Benedictus)",
+    "printedIncipit": "Beáti qui persecutiónem",
+    "printedContext": "Comune: Più martiri",
+    "pdfPage": "p. 238",
+    "status": "found",
+    "file": "gabc/chants/manual-piu-martiri-ben.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
   }
 ]
