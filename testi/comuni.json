@@ -988,30 +988,45 @@
    "parti": {
     "inno": [
      {
-      "rubrica": "Per un pastore",
-      "it": "1. Inclito Signore e prudente Padre, / di cui onoriamo l’insigne trionfo, / questo Confessore regna lieto / in cielo eternamente.\n2. [per un Papa] Costui stabilito sulla somma cattedra di Pietro, / Presule e Maestro di uno sconfinato gregge, / diffonde efficacemente il regno dei cieli / per l’autorità ricevuta dal Signore.\n2. [per un Vescovo] Costui svolse per i popoli il sacro ministero / di sacerdote, duce e maestro, / e presule sapiente procurò / i doni della vita beata.\n2. [per un Sacerdote] Costui fu inclito duce e maestro, / che ha dato esempi di vita santa / e si è preoccupato di piacere sempre / a Dio con cuore puro.\n3. Ora con forza tutti preghiamolo, / affinchè pietoso ci purifichi dai nostri peccati, / e con la sua preghiera ci conduca / alle alte vette del cielo.\n4. Sia solo a Dio la gloria e il potere, / la lode, l’onore perenne in cielo, / che moderando governa / con le sue leggi tutto l’universo. Amen"
+      "rubrica": "Per un pastore (papa)",
+      "it": "1. Inclito Signore e prudente Padre, / di cui onoriamo l’insigne trionfo, / questo Confessore regna lieto / in cielo eternamente.\n2. Costui stabilito sulla somma cattedra di Pietro, / Presule e Maestro di uno sconfinato gregge, / diffonde efficacemente il regno dei cieli / per l’autorità ricevuta dal Signore.\n3. Ora con forza tutti preghiamolo, / affinchè pietoso ci purifichi dai nostri peccati, / e con la sua preghiera ci conduca / alle alte vette del cielo.\n4. Sia solo a Dio la gloria e il potere, / la lode, l’onore perenne in cielo, / che moderando governa / con le sue leggi tutto l’universo. Amen",
+      "canto": "lodi.CS-pastori-inno-papa"
+     },
+     {
+      "rubrica": "Per un pastore (vescovo)",
+      "it": "1. Inclito Signore e prudente Padre, / di cui onoriamo l’insigne trionfo, / questo Confessore regna lieto / in cielo eternamente.\n2. Costui svolse per i popoli il sacro ministero / di sacerdote, duce e maestro, / e presule sapiente procurò / i doni della vita beata.\n3. Ora con forza tutti preghiamolo, / affinchè pietoso ci purifichi dai nostri peccati, / e con la sua preghiera ci conduca / alle alte vette del cielo.\n4. Sia solo a Dio la gloria e il potere, / la lode, l’onore perenne in cielo, / che moderando governa / con le sue leggi tutto l’universo. Amen",
+      "canto": "lodi.CS-pastori-inno-vescovo"
+     },
+     {
+      "rubrica": "Per un pastore (sacerdote)",
+      "it": "1. Inclito Signore e prudente Padre, / di cui onoriamo l’insigne trionfo, / questo Confessore regna lieto / in cielo eternamente.\n2. Costui fu inclito duce e maestro, / che ha dato esempi di vita santa / e si è preoccupato di piacere sempre / a Dio con cuore puro.\n3. Ora con forza tutti preghiamolo, / affinchè pietoso ci purifichi dai nostri peccati, / e con la sua preghiera ci conduca / alle alte vette del cielo.\n4. Sia solo a Dio la gloria e il potere, / la lode, l’onore perenne in cielo, / che moderando governa / con le sue leggi tutto l’universo. Amen",
+      "canto": "lodi.CS-pastori-inno-sacerdote"
      },
      {
       "rubrica": "Per piú Pastori",
-      "it": "1. Questi furono santi Sacerdoti del Signore, / e suoi fedeli consacratori, / e Pastori del popolo / con zelo instancabile.\n2. Infatti, conservando i doni della benedizione ricevuta, / si studiarono, con i fianchi / virilmente cinti, di portare / nelle mani le lucerne (sempre) accese.\n3. E così, tesi e vigilanti finché il Signore / non fosse venuto a bussare alla porta, / andarono prontamente incontro a Colui che / si affrettava ad aprire la soglia (del cielo).\n4. Sommo onore, gloria e lode / sia a Te, Re dei re, Dio eterno, / ogni creatura ti celebri / per ogni tempo e per i secoli. Amen."
+      "it": "1. Questi furono santi Sacerdoti del Signore, / e suoi fedeli consacratori, / e Pastori del popolo / con zelo instancabile.\n2. Infatti, conservando i doni della benedizione ricevuta, / si studiarono, con i fianchi / virilmente cinti, di portare / nelle mani le lucerne (sempre) accese.\n3. E così, tesi e vigilanti finché il Signore / non fosse venuto a bussare alla porta, / andarono prontamente incontro a Colui che / si affrettava ad aprire la soglia (del cielo).\n4. Sommo onore, gloria e lode / sia a Te, Re dei re, Dio eterno, / ogni creatura ti celebri / per ogni tempo e per i secoli. Amen.",
+      "canto": "lodi.CS-pastori-inno-piu"
      }
     ],
     "ant1": [
      {
       "rubrica": null,
-      "it": "Voi siete la luce del mondo: non può restare nascosta una città posta sopra ad un monte. Né accendono una lampada e la mettono sotto al moggio, ma sopra al portalume, perché faccia luce a tutti quelli che sono in casa"
+      "it": "Voi siete la luce del mondo: non può restare nascosta una città posta sopra ad un monte. Né accendono una lampada e la mettono sotto al moggio, ma sopra al portalume, perché faccia luce a tutti quelli che sono in casa",
+      "canto": "lodi.CS-pastori-ant1"
      }
     ],
     "ant2": [
      {
       "rubrica": null,
-      "it": "Sacerdoti di Dio, benedite il Signore: servi del Signore, cantate un inno a Dio, alleluia"
+      "it": "Sacerdoti di Dio, benedite il Signore: servi del Signore, cantate un inno a Dio, alleluia",
+      "canto": "lodi.CS-pastori-ant2"
      }
     ],
     "ant3": [
      {
       "rubrica": null,
-      "it": "I giusti inneggeranno al tuo nome, e i retti abiteranno al tuo cospetto"
+      "it": "I giusti inneggeranno al tuo nome, e i retti abiteranno al tuo cospetto",
+      "canto": "lodi.CS-pastori-ant3"
      }
     ],
     "lettura": [
@@ -1024,22 +1039,26 @@
     "responsorio": [
      {
       "rubrica": null,
-      "it": "Su di te, Gerusalemme, ho posto delle sentinelle. Di giorno e di notte non smetteranno di annunciare il nome del Signore. Gloria."
+      "it": "Su di te, Gerusalemme, ho posto delle sentinelle. Di giorno e di notte non smetteranno di annunciare il nome del Signore. Gloria.",
+      "canto": "lodi.CS-pastori-rb"
      },
      {
       "rubrica": "Nel Tempo Pasquale",
       "tp": true,
-      "it": null
+      "it": null,
+      "canto": "lodi.CS-pastori-rb-tp"
      }
     ],
     "benedictus": [
      {
       "rubrica": "Per un pastore",
-      "it": "Bene, servo buono e fedele: poiché sei stato fedele nel poco, ti darò autorità su molto, dice il Signore"
+      "it": "Bene, servo buono e fedele: poiché sei stato fedele nel poco, ti darò autorità su molto, dice il Signore",
+      "canto": "lodi.CS-pastori-ben"
      },
      {
       "rubrica": "Per più pastori",
-      "it": "Io, il Signore, vi farò entrare in Sion, e vi darò pastori secondo il mio cuore, e vi pasceranno con la sapienza e l’insegnamento"
+      "it": "Io, il Signore, vi farò entrare in Sion, e vi darò pastori secondo il mio cuore, e vi pasceranno con la sapienza e l’insegnamento",
+      "canto": "lodi.CS-pastori-ben-piu"
      }
     ],
     "invocazioni": [

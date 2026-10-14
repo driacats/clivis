@@ -6119,5 +6119,126 @@
     "status": "found",
     "file": "gabc/chants/manual-martiri-tp-ben.gabc",
     "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-pastori-inno-papa",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Inclitus rector pater",
+    "printedContext": "Comune: Pastori, inno (per un pastore, strofa 2 per un papa)",
+    "pdfPage": "pp. 249-251",
+    "status": "found",
+    "file": "gabc/chants/manual-pastori-inno-papa.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-pastori-inno-vescovo",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Inclitus rector pater",
+    "printedContext": "Comune: Pastori, inno (per un pastore, strofa 2 per un vescovo)",
+    "pdfPage": "pp. 249-251",
+    "status": "found",
+    "file": "gabc/chants/manual-pastori-inno-vescovo.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-pastori-inno-sacerdote",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Inclitus rector pater",
+    "printedContext": "Comune: Pastori, inno (per un pastore, strofa 2 per un sacerdote)",
+    "pdfPage": "pp. 249-251",
+    "status": "found",
+    "file": "gabc/chants/manual-pastori-inno-sacerdote.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-pastori-inno-piu",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Hi sacerdotes Domini sacrati",
+    "printedContext": "Comune: Pastori, inno per più pastori",
+    "pdfPage": "pp. 251-253",
+    "status": "found",
+    "file": "gabc/chants/manual-pastori-inno-piu.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-pastori-ant1",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Vos estis lux mundi",
+    "printedContext": "Comune: Pastori, antifona 1",
+    "pdfPage": "p. 253",
+    "status": "found",
+    "file": "gabc/chants/manual-pastori-ant1.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-pastori-ant2",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Sacerdotes Dei",
+    "printedContext": "Comune: Pastori, antifona 2",
+    "pdfPage": "pp. 253-254",
+    "status": "found",
+    "file": "gabc/chants/manual-pastori-ant2.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-pastori-ant3",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Iusti confitebuntur",
+    "printedContext": "Comune: Pastori, antifona 3",
+    "pdfPage": "p. 254",
+    "status": "found",
+    "file": "gabc/chants/manual-pastori-ant3.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-pastori-rb",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Super te Jerusalem",
+    "printedContext": "Comune: Pastori, responsorio breve",
+    "pdfPage": "p. 254",
+    "status": "found",
+    "file": "gabc/chants/manual-pastori-rb.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-pastori-rb-tp",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Super te Jerusalem",
+    "printedContext": "Comune: Pastori, responsorio breve, Tempo pasquale",
+    "pdfPage": "p. 255",
+    "status": "found",
+    "file": "gabc/chants/manual-pastori-rb-tp.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-pastori-ben",
+    "office": "lodi",
+    "role": "antifona al Benedictus",
+    "printedIncipit": "Euge serve bone",
+    "printedContext": "Comune: Pastori, antifona al Benedictus, per un pastore",
+    "pdfPage": "p. 255",
+    "status": "found",
+    "file": "gabc/chants/manual-pastori-ben.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-pastori-ben-piu",
+    "office": "lodi",
+    "role": "antifona al Benedictus",
+    "printedIncipit": "Ego Dominus",
+    "printedContext": "Comune: Pastori, antifona al Benedictus, per più pastori",
+    "pdfPage": "p. 256",
+    "status": "found",
+    "file": "gabc/chants/manual-pastori-ben-piu.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
   }
 ]
