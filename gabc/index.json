@@ -269,7 +269,7 @@
       "url": "https://gregobase.selapa.net/chant.php?id=13718"
     },
     "file": "gabc/chants/13718-nunc-dimittis-servum-tuum-domine.gabc",
-    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\".",
+    "matchNotes": "incipit corrispondente; office-part=\"Antiphona\". Corretto (revisione del 14 ott.): tono del cantico di Simeone ricopiato dal libretto p. 14, modo III a (prima c'era una formula inglese in modo 5). Le note vuote del libretto sono rese come note normali; il grassetto marca le sillabe accentate.",
     "candidatesConsidered": [
       13718,
       13505,
@@ -398,7 +398,7 @@
       "url": "https://gregobase.selapa.net/chant.php?id=9007"
     },
     "file": "gabc/chants/9007-angelis-suis-deus-mandavit-de-te.gabc",
-    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase).",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase). Aggiunto l'EUOUAE di VIII g (revisione del 14 ott.).",
     "candidatesConsidered": [
       9007,
       11975,
@@ -637,7 +637,7 @@
       "url": "https://gregobase.selapa.net/chant.php?id=10086"
     },
     "file": "gabc/chants/10086-caro-mea-requiescet-in-spe.gabc",
-    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase). Nota dell'utente: C'è un pezzo in più qui: \"Consérva me, Deus\" non fa parte dell'antifona, credo sia l'incipit del salmo ma non la voglio così Corretto: rimosso l'incipit salmico aggiuntivo (\"Consérva me, Deus\" + formula EUOUAE) che non fa parte dell'antifona, segnalato dall'utente.",
+    "matchNotes": "Confermato dall'utente durante la disambiguazione visiva (immagine del libretto + anteprima GregoBase). Nota dell'utente: C'è un pezzo in più qui: \"Consérva me, Deus\" non fa parte dell'antifona, credo sia l'incipit del salmo ma non la voglio così Corretto: rimosso l'incipit salmico aggiuntivo (\"Consérva me, Deus\" + formula EUOUAE) che non fa parte dell'antifona, segnalato dall'utente. Reinserito l'EUOUAE stampato nel libretto p. 29 (revisione del 14 ott.): serve per la salmodia.",
     "candidatesConsidered": [
       19318,
       2667,
