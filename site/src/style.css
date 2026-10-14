@@ -319,6 +319,7 @@ a { color: inherit; }
 
 /* --- office page: prayer left, memorials and calendar right ------------------------ */
 .office-page {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) var(--aside);
   grid-template-areas: 'head memo' 'text cal';
@@ -338,6 +339,7 @@ a { color: inherit; }
 .office-page .office-tabs { justify-content: flex-start; }
 .office-page .office-tabs__tab:first-child { padding-left: 0; }
 
+.memo-opener, .memo-sheet__head { display: none; }
 .aside-list { display: grid; gap: 2px; font-family: var(--ui); }
 .aside-list__item {
   display: block;
@@ -409,7 +411,35 @@ a { color: inherit; }
     grid-template-areas: 'head' 'memo' 'text' 'cal';
     max-width: var(--measure);
   }
-  .office-page > .office-page__memorials { padding-top: 12px; }
+  /* memorials: out of the page, in a pop-up opened by the MF button */
+  .office-page > .office-page__memorials { display: none; padding-top: 0; }
+  .office-page > .office-page__memorials.is-open {
+    display: flex; justify-content: center; align-items: flex-start;
+    position: fixed; inset: 0; z-index: var(--z-panel);
+    padding: 72px var(--gutter) 16px;
+    background: var(--veil);
+  }
+  .memo-sheet {
+    width: min(100%, 24rem); max-height: 100%; overflow-y: auto;
+    background: var(--page); border: 1px solid var(--rule); border-radius: var(--r-card);
+    padding: 8px 18px 10px;
+  }
+  .memo-sheet__head { display: flex; align-items: center; justify-content: space-between; }
+  .memo-sheet__title { margin: 0; }
+  .memo-sheet__close {
+    font: inherit; font-size: 1.6rem; line-height: 1; width: 40px; height: 40px; margin-right: -10px;
+    color: var(--muted); background: none; border: 0; border-radius: 50%; cursor: pointer;
+  }
+  .memo-sheet__close:hover { color: var(--ink); background: var(--info-bg); }
+  .memo-opener {
+    display: block;
+    position: absolute; top: 20px; right: 0;
+    height: 32px; padding: 0 12px;
+    font-family: var(--ui); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em;
+    color: var(--day-color); background: var(--page);
+    border: 1px solid var(--rule); border-radius: var(--r-pill); cursor: pointer;
+  }
+  .memo-opener:hover { border-color: var(--day-color); }
   .office-page > .office-page__calendar { position: static; padding-bottom: 32px; }
 }
 
@@ -610,7 +640,7 @@ details.alternative[open] summary { color: var(--ink); }
 /* --- home page ------------------------------------------------------------------ */
 .home { max-width: var(--measure); margin: 0 auto; padding-block: 8px 56px; }
 
-.home-today { text-align: center; padding-block: 30px 6px; }
+.home-today { text-align: center; padding-block: 22px 4px; }
 .home-today__date {
   font-family: var(--ui);
   font-size: 0.8rem;
@@ -623,10 +653,10 @@ details.alternative[open] summary { color: var(--ink); }
 .home-today__date::first-letter { text-transform: uppercase; }
 .home-today__title {
   font-weight: 500;
-  font-size: clamp(1.8rem, 5.5vw, 2.6rem);
-  line-height: 1.12;
+  font-size: clamp(1.3rem, 4.2vw, 1.85rem);
+  line-height: 1.15;
   text-wrap: balance;
-  margin: 10px 0 6px;
+  margin: 6px 0 4px;
 }
 .home-today .day__meta { margin-bottom: 10px; }
 
@@ -636,76 +666,34 @@ details.alternative[open] summary { color: var(--ink); }
 .home-icon svg .thin { stroke-width: 1; opacity: 0.55; }
 .home-icon svg .soft { fill: currentColor; fill-opacity: 0.16; stroke: none; }
 
-/* the two offices */
-.office-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 22px 0 8px; }
+/* the two offices: two quiet tiles */
+.office-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0 4px; }
 .office-card {
   position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 20px 20px 22px;
+  display: grid;
+  gap: 1px;
+  padding: 12px 48px 13px 16px;
   text-decoration: none;
   color: var(--ink);
 }
-.office-card:hover, .office-card:focus-visible { border-color: var(--rubric); box-shadow: 0 6px 22px -12px var(--shadow); }
+.office-card:hover, .office-card:focus-visible { border-color: var(--rubric); }
 .office-card--now { border-color: var(--rubric); }
-.office-card .home-icon {
-  width: 46px; height: 46px; padding: 10px;
-  border-radius: 12px;
-  color: var(--rubric);
-  background: color-mix(in srgb, var(--rubric) 9%, transparent);
-}
-.office-card__text { display: grid; gap: 2px; min-width: 0; }
-.office-card__kicker { font-family: var(--ui); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
-.office-card__name { font-size: 1.75rem; line-height: 1.1; font-weight: 500; }
-.office-card__desc { font-size: 0.98rem; color: var(--muted); line-height: 1.35; margin-top: 4px; }
-.office-card__badge {
-  position: absolute; top: 14px; right: 14px;
-  font-family: var(--ui); font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
-  color: var(--page); background: var(--rubric);
-  padding: 3px 8px; border-radius: var(--r-pill);
-}
-.office-card__neume { position: absolute; right: 16px; bottom: 14px; width: 27px; height: 24px; color: var(--muted); }
+.office-card__kicker { font-family: var(--ui); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+.office-card--now .office-card__kicker { color: var(--rubric); }
+.office-card__name { font-size: 1.45rem; line-height: 1.15; font-weight: 500; }
+.office-card__neume { position: absolute; right: 16px; top: 50%; margin-top: -12px; width: 27px; height: 24px; color: var(--muted); }
 .office-card__neume svg { width: 100%; height: 100%; display: block; fill: currentColor; overflow: visible; }
 .office-card__neume .n2 { opacity: 0; transform: translate(-3px, -3px); }
 .office-card:hover .office-card__neume, .office-card:focus-visible .office-card__neume { color: var(--rubric); }
 .office-card:hover .office-card__neume .n2, .office-card:focus-visible .office-card__neume .n2 { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: no-preference) {
-  .office-card { transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s; }
+  .office-card { transition: border-color 0.15s; }
   .office-card__neume { transition: color 0.2s; }
   .office-card__neume .n2 { transition: opacity 0.22s ease-out, transform 0.22s ease-out; }
 }
 
 .home-block { padding-block: 26px 4px; border-top: 1px solid var(--rule); margin-top: 22px; }
 .home-block + .home-block { margin-top: 0; }
-
-/* the week ahead */
-.week { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
-.week li { min-width: 0; }
-.week__day {
-  display: grid;
-  justify-items: center;
-  align-content: start;
-  gap: 3px;
-  height: 100%;
-  padding: 10px 4px 12px;
-  border-radius: 10px;
-  border: 1px solid transparent;
-  text-decoration: none;
-  text-align: center;
-  font-family: var(--ui);
-}
-.week__day:hover { background: var(--info-bg); }
-.week__day--today { border-color: var(--rule); background: var(--page); }
-.week__wd { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
-.week__day--today .week__wd { color: var(--rubric); }
-.week__num { font-family: var(--text); font-size: 1.45rem; line-height: 1.1; }
-.week__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--day-color); box-shadow: inset 0 0 0 1px var(--edge); }
-.week__name {
-  font-size: 0.68rem; line-height: 1.2; color: var(--muted); margin-top: 3px;
-  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-  hyphens: auto;
-}
 
 /* how to use */
 .guide { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 22px; }
@@ -716,13 +704,7 @@ details.alternative[open] summary { color: var(--ink); }
 .home-about p { margin: 0 0 8px; }
 
 @media (max-width: 640px) {
-  .office-cards { grid-template-columns: 1fr; }
-  .office-card--now { order: -1; }
   .guide { grid-template-columns: 1fr; }
-  .week { gap: 2px; }
-  .week__day { padding: 8px 1px 10px; }
-  .week__num { font-size: 1.2rem; }
-  .week__name { display: none; }
 }
 
 /* Comune dei santi: pieces whose melody is not transcribed yet */

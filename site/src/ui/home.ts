@@ -1,9 +1,7 @@
 // Home page: today's liturgical day, the two offices (the one for this hour
-// first in emphasis), the week ahead with its colours, and a short guide.
+// in emphasis) and a short guide.
 
-import {
-  addDays, formatCivilDate, liturgicalDay, todayLocal, WEEKDAY_NAMES, type LiturgicalDay,
-} from '../calendar/calendar';
+import { formatCivilDate, liturgicalDay, todayLocal, type LiturgicalDay } from '../calendar/calendar';
 import { suggestedOffice } from '../calendar/plan';
 import { saintsOfDay } from '../calendar/saintOfDay';
 import type { Office } from '../data/types';
@@ -16,8 +14,6 @@ const REPOSITORIES = {
 };
 
 const svgIcon = (body: string) => svgSpan(`<svg viewBox="0 0 24 24">${body}</svg>`, { class: 'home-icon', 'aria-hidden': 'true' });
-const SUN = '<circle cx="12" cy="14" r="4"/><path d="M12 5.5v2M5.2 8.2l1.4 1.4M18.8 8.2l-1.4 1.4M3 14h2M19 14h2M3 19h18"/>';
-const MOON = '<path d="M19 15.5A7.5 7.5 0 0 1 8.5 5a7.5 7.5 0 1 0 10.5 10.5z"/><path d="M17 4.5l.6 1.3 1.4.2-1 1 .2 1.4-1.2-.7-1.2.7.2-1.4-1-1 1.4-.2z" class="fill"/>';
 const PLAY = '<path d="M8 5.5v13l10-6.5z"/>';
 const FOLLOW = '<path d="M3 7h18M3 12h18M3 17h18" class="thin"/><rect x="9" y="4.5" width="5" height="15" rx="1.2" class="soft"/><path d="M9 20.5h5"/>';
 const LANG = '<path d="M4 6h9M8.5 4v2M6 6c.5 3 2.5 5.5 5 6.5M11 6c-.5 3-2.5 5.5-5 6.5"/><path d="M13 20l3.5-8 3.5 8M14.2 17.3h4.6"/>';
@@ -45,37 +41,10 @@ function neume(): HTMLElement {
 }
 
 function officeCard(day: LiturgicalDay, office: Office, suggested: boolean): HTMLElement {
-  const lodi = office === 'lodi';
   return h('a', { class: `office-card${suggested ? ' office-card--now' : ''}`, href: officeHref(day.date, office) },
-    svgIcon(lodi ? SUN : MOON),
-    h('span', { class: 'office-card__text' },
-      h('span', { class: 'office-card__kicker' }, lodi ? 'Preghiera del mattino' : 'Preghiera della sera'),
-      h('span', { class: 'office-card__name' }, OFFICE_NAME[office]),
-      h('span', { class: 'office-card__desc' }, lodi
-        ? 'Inno, salmi, cantico di Zaccaria, invocazioni e orazione.'
-        : 'Esame di coscienza, inno, salmi, cantico di Simeone e antifona alla Vergine.')),
-    suggested ? h('span', { class: 'office-card__badge' }, 'Adesso') : null,
+    h('span', { class: 'office-card__kicker' }, suggested ? 'Adesso' : office === 'lodi' ? 'Mattino' : 'Sera'),
+    h('span', { class: 'office-card__name' }, OFFICE_NAME[office]),
     neume());
-}
-
-function weekStrip(today: LiturgicalDay): HTMLElement {
-  const days = Array.from({ length: 7 }, (_, i) => liturgicalDay(addDays(today.date, i)));
-  return h('ol', { class: 'week' },
-    ...days.map((d, i) => {
-      const special = d.celebration?.name ?? (d.weekday === 0 ? d.label : null);
-      return h('li', { 'data-color': d.color },
-        h('a', { class: `week__day${i === 0 ? ' week__day--today' : ''}`, href: officeHref(d.date, 'lodi'),
-          'aria-label': `${formatCivilDate(d.date)}: ${dayName(d)}` },
-          h('span', { class: 'week__wd' }, i === 0 ? 'Oggi' : WEEKDAY_NAMES[d.weekday].slice(0, 3)),
-          h('span', { class: 'week__num' }, String(d.date.day)),
-          h('span', { class: 'week__dot', 'aria-hidden': 'true' }),
-          special ? h('span', { class: 'week__name' }, shortName(special)) : null));
-    }));
-}
-
-/** "XXVIII Domenica del Tempo Ordinario" → "XXVIII Domenica"; long feast names are cut by CSS. */
-function shortName(name: string): string {
-  return name.replace(/ del Tempo Ordinario$/, '').replace(/ di (Avvento|Quaresima|Pasqua)$/, '');
 }
 
 function guideItem(icon: string, title: string, text: string): HTMLElement {
@@ -98,10 +67,6 @@ export function renderHome(): HTMLElement {
     h('nav', { class: 'office-cards', 'aria-label': 'Uffici di oggi' },
       officeCard(today, 'lodi', now === 'lodi'),
       officeCard(today, 'compieta', now === 'compieta')),
-
-    h('section', { class: 'home-block' },
-      h('h2', { class: 'rubric' }, 'I prossimi giorni'),
-      weekStrip(today)),
 
     h('section', { class: 'home-block' },
       h('h2', { class: 'rubric' }, 'Come si usa'),
