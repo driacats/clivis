@@ -1,0 +1,9 @@
+{
+ "name": "Chiesa italiana (CEI)",
+ "source": "Calendario romano per le diocesi d’Italia (Messale Romano, 3ª ed. CEI 2020)",
+ "settings": {"epiphanyOnSunday": false, "ascensionOnSunday": true, "corpusDominiOnSunday": true},
+ "celebrations": [
+  {"id": "caterina-da-siena", "name": "Santa Caterina da Siena, patrona d'Italia", "rank": "feast"},
+  {"id": "francesco-d-assisi", "name": "San Francesco d'Assisi, patrono d'Italia", "rank": "feast"}
+ ]
+}

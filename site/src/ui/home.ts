@@ -1,9 +1,8 @@
 // Home page: today's liturgical day, the two offices (the one for this hour
 // in emphasis) and a short guide.
 
-import { formatCivilDate, liturgicalDay, todayLocal, type LiturgicalDay } from '../calendar/calendar';
+import { formatCivilDate, type LiturgicalDay } from '../calendar/calendar';
 import { suggestedOffice } from '../calendar/plan';
-import { saintsOfDay } from '../calendar/saintOfDay';
 import type { Office } from '../data/types';
 import { celebrationSubtitle, dayMeta, dayName, OFFICE_NAME, officeHref, RANK_LABEL } from './day';
 import { h, svgSpan } from './dom';
@@ -21,7 +20,7 @@ const CHECK = '<path d="M5 4.5h11l3 3V19.5H5z"/><path d="M8.5 11l2 2 4-4M8.5 16h
 
 /** The saints (memorials) of the day, under the title. */
 function saintsBlock(day: LiturgicalDay): HTMLElement | null {
-  const { saints, note } = saintsOfDay(day);
+  const { saints, note } = day.saints;
   if (saints.length === 0) return note ? h('p', { class: 'saints__note' }, note) : null;
   return h('div', { class: 'saints' },
     h('p', { class: 'rubric saints__label' }, saints.length > 1 ? 'Santi del giorno' : 'Santo del giorno'),
@@ -52,8 +51,7 @@ function guideItem(icon: string, title: string, text: string): HTMLElement {
     h('span', {}, h('strong', {}, title), ' ', text));
 }
 
-export function renderHome(): HTMLElement {
-  const today = liturgicalDay(todayLocal());
+export function renderHome(today: LiturgicalDay): HTMLElement {
   const now = suggestedOffice();
 
   return h('main', { class: 'home' },

@@ -2,10 +2,7 @@
 // Lodi (four-week psalter) and Compieta. Pure functions over ids, so they can
 // be unit-tested without loading any data.
 
-import {
-  addDays, isLateAdvent, isLent, liturgicalDay, movableDates, toDayNumber, WEEKDAY_NAMES, type LiturgicalDay, type Season,
-} from './calendar';
-import { SATURDAY_OF_MARY } from './santi';
+import { isLateAdvent, isLent, SATURDAY_OF_MARY, WEEKDAY_NAMES, type LiturgicalDay, type Season } from './calendar';
 import { compietaId as C, CUSTODI, ORDINARIO } from '../data/ids';
 import type { Office } from '../data/types';
 
@@ -134,20 +131,16 @@ const HYMNS_ORDINARY: Record<'feria' | 'memoria' | 'festa' | 'domenica' | 'solen
 };
 
 export function compietaPlan(day: LiturgicalDay): CompietaPlan {
-  const n = toDayNumber(day.date);
-  const mv = movableDates(day.date.year);
-  const tomorrow = liturgicalDay(addDays(day.date, 1));
-
   // which Compieta: Sunday-type after the I or II Vespers of a Sunday or solemnity
   let blockId = BLOCK_BY_WEEKDAY[day.weekday];
   let rank: keyof typeof HYMNS_ORDINARY = day.weekday === 0 ? 'domenica' : 'feria';
-  const isHolyThursday = n === mv.holyThursday;
+  const isHolyThursday = day.holyThursday;
   if (day.season === 'triduo' || isHolyThursday || day.inOctave) {
     blockId = SUNDAY_II_VESPERS;
   } else if (day.celebration?.rank === 'solennità') {
     blockId = SUNDAY_II_VESPERS;
     rank = 'solennita';
-  } else if (tomorrow.celebration?.rank === 'solennità' && day.weekday !== 6) {
+  } else if (day.tomorrowSolemnity && day.weekday !== 6) {
     // the solemnity begins with its I Vespers this evening
     blockId = SUNDAY_I_VESPERS;
     rank = 'solennita';
@@ -188,22 +181,14 @@ export function compietaPlan(day: LiturgicalDay): CompietaPlan {
   const versicleRef = responsoryRef === C(40) ? CUSTODI.paschal
     : responsoryRef === C(12) || responsoryRef === C(37) ? CUSTODI.ordinary : null;
 
-  // Marian antiphon (libretto p. 42-45): Alma from Advent until 2 February,
-  // Ave Regina from 2 February until Holy Week, Regina caeli in Eastertide,
-  // Salve Regina in Ordinary Time after Pentecost.
-  let marian: MarianSeason;
-  const feb2 = toDayNumber({ year: day.date.year, month: 2, day: 2 });
-  // the Saturday evening before Advent already belongs to Advent
-  if (n >= mv.adventStart - 1 || n < feb2) marian = 'alma';
-  else if (n < mv.easter) marian = 'ave';
-  else if (n <= mv.pentecost) marian = 'regina';
-  else marian = 'salve';
+  // Marian antiphon (libretto p. 42-45), chosen by the calendar (calendaria/tempus.ts)
+  const marian: MarianSeason = day.marian;
 
   let notice: string | null = null;
   if (day.season === 'triduo' || isHolyThursday) {
     notice = 'Nel Triduo pasquale la Compieta è quella della Domenica dopo i II Vespri, con il responsorio proprio.';
   } else if (blockId === SUNDAY_I_VESPERS && day.weekday !== 6) {
-    notice = `Domani è solennità (${tomorrow.celebration?.name}): stasera si dice la Compieta dopo i I Vespri della Domenica.`;
+    notice = `Domani è solennità (${day.tomorrowSolemnity}): stasera si dice la Compieta dopo i I Vespri della Domenica.`;
   } else if (day.celebration?.rank === 'solennità' && day.weekday !== 0) {
     notice = `Oggi è solennità (${day.celebration.name}): si dice la Compieta dopo i II Vespri della Domenica.`;
   } else if (day.inOctave) {
@@ -335,6 +320,7 @@ export function lodiCelebrations(day: LiturgicalDay): { options: LodiCelebration
   const options: LodiCelebration[] = [FERIA];
   let initial = 0;
   for (const m of day.memorials) {
+    if (m.comuni.length === 0) continue; // proper office, not in the libretto (Guardian Angels…)
     const saturday = m.name === SATURDAY_OF_MARY.name;
     const comuni = saturday ? [saturdayComune(day.psalterWeek)] : m.comuni;
     options.push({ mode: 'memoria', label: saturday ? 'Santa Maria in sabato' : m.name, name: m.name, comuni });

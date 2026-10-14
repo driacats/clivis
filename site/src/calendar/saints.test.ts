@@ -1,8 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { liturgicalDay } from './calendar';
-import { saintsOfDay } from './saintOfDay';
+import { toIsoDate } from '../../../calendaria/tempus';
+import { dayIn, ITALIA } from './testDays';
 
-const on = (year: number, month: number, day: number) => saintsOfDay(liturgicalDay({ year, month, day }));
+const day = dayIn(ITALIA);
+const on = (year: number, month: number, d: number) => day(toIsoDate({ year, month, day: d })).saints;
 
 describe('saintsOfDay', () => {
   it('gives the memorial of the day', () => {

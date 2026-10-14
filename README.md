@@ -10,7 +10,7 @@
 
 The name comes from the clivis, the two-note descending neume that is also the site's logo.
 
-The site opens on today's date, works out which office to pray according to the Roman calendar in use in Italy, and shows the whole hour: texts in Italian and Latin, scores in square notation and melodies you can listen to. The repository holds both the site and the database it reads, drawn from the Movimento's booklets (Lodi and Compieta).
+The site opens on today's date, works out which office to pray according to the Roman calendar of Italy and of the Archdiocese of Genoa (or of any other diocese, see below), and shows the whole hour: texts in Italian and Latin, scores in square notation and melodies you can listen to. The repository holds both the site and the database it reads, drawn from the Movimento's booklets (Lodi and Compieta).
 
 ## Features
 
@@ -38,12 +38,13 @@ cd mlg-breviary/site
 npm install
 npm run dev      # local site at http://localhost:5173
 npm test         # tests of the liturgical calendar and of the player
-npm run build    # static site in dist/, ready for any hosting (GitHub Pages too)
+npm run build    # static site in dist/, ready for any hosting (GitHub Pages too); ANNUS=2027 for another year
 ```
 
 ## Structure
 
 - `site/` — the site (TypeScript + Vite). How it picks the office of the day is explained in [`site/README.md`](site/README.md).
+- `calendaria/` — the liturgical calendar in layers: `generale.json` (General Roman Calendar), `europa.json` (patrons of Europe), `italia.json` (Italian Bishops' Conference), `genua.json` (Archdiocese of Genoa). `loca.json` says which chain of layers each place uses and which one the site shows; the build computes the days of the current year from them (`compone.ts`) and publishes them in `calendarium/`. To use the site elsewhere, add a layer for your diocese (same format as `genua.json`, described in `strata.ts`), point `loca.json` to it and rebuild.
 - `gabc/` — the chants in GABC format (`chants/`), the index of the pieces (`index.json`) and the structure of the hours (`liturgy.json`).
 - `salmi/`, `letture/`, `testi/` — psalms and canticles, short readings, hymn translations, collects and other texts, in JSON.
 - `gabc/tools/` — the scripts used to check the database and apply review corrections; `gabc/tools/archivio/` keeps the one-off scripts that built it (already applied, do not run them again).

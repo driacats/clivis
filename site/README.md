@@ -24,14 +24,19 @@ npm run build    # static site in dist/, ready to publish as is
 
 ## How it is built
 
-- `src/calendar/` — the calendar, with no user interface:
-  - `calendar.ts` computes the liturgical day according to the General Roman
-    Calendar with the choices of the Italian Bishops' Conference (Epiphany on
-    6 January, Ascension and Corpus Christi on Sunday): season, week, psalter
-    week, colour, solemnities and feasts (transferred ones included) and
-    memorials;
-  - `santi.ts` is the single list of the saints' memorials, each with its
-    Common; `saintOfDay.ts` prepares the «saint of the day» of the home page;
+- `../calendaria/` — the liturgical calendar, computed at build time (the
+  Vite plugin in `vite.config.ts`, also during `npm run dev`):
+  - the layers `generale.json`, `europa.json`, `italia.json`, `genua.json`,
+    merged and checked by `strata.ts` (which also describes the format);
+    `loca.json` chooses the place;
+  - `tempus.ts`: dates, movable feasts, seasons and the four-week psalter;
+    `dies.ts`: the days of a year with the table of precedence (transfers
+    included), the memorials and the «saint of the day»;
+  - `compone.ts` writes `calendarium/index.json` and
+    `calendarium/<place>/<year>.json` (the current year, or `ANNUS`).
+- `src/calendar/` — the calendar in the site, with no user interface:
+  - `calendar.ts` loads the generated year and looks the days up; a date
+    outside it shows a notice;
   - `plan.ts` turns the day into pieces of the database: psalter week and day,
     Proper of Seasons, Common of Saints, tones of the opening, of the Pater
     noster and of the dismissal; for Compieta, Sunday I or II Vespers or
@@ -55,7 +60,7 @@ Scores are exsurge `<chant-visual>` elements: until they are drawn they stay
 empty and the site shows an empty staff in their place, so the GABC code is
 never seen.
 
-Edge dates are covered by the tests in `src/calendar/*.test.ts`.
+Edge dates are covered by the tests in `src/calendar/*.test.ts`, which compute the days straight from the layers (`testDays.ts`).
 
 ## Still missing
 

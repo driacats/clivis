@@ -24,13 +24,19 @@ npm run build    # sito statico in dist/, pubblicabile così com'è
 
 ## Come è fatto
 
-- `src/calendar/` — il calendario, senza interfaccia:
-  - `calendar.ts` calcola il giorno liturgico secondo il calendario romano
-    generale con le scelte della CEI (Epifania il 6 gennaio, Ascensione e
-    Corpus Domini la domenica): tempo, settimana, settimana del salterio,
-    colore, solennità e feste (comprese le trasferite) e memorie;
-  - `santi.ts` è l'unico elenco delle memorie dei santi, ciascuna con il suo
-    Comune; `saintOfDay.ts` prepara il «santo del giorno» della homepage;
+- `../calendaria/` — il calendario liturgico, calcolato in fase di build (il
+  plugin di Vite in `vite.config.ts`, anche durante `npm run dev`):
+  - gli strati `generale.json`, `europa.json`, `italia.json`, `genua.json`,
+    uniti e controllati da `strata.ts` (che ne descrive anche il formato);
+    `loca.json` sceglie il luogo;
+  - `tempus.ts`: date, feste mobili, tempi e salterio di quattro settimane;
+    `dies.ts`: i giorni di un anno con la tabella di precedenza (compresi i
+    trasferimenti), le memorie e il «santo del giorno»;
+  - `compone.ts` scrive `calendarium/index.json` e
+    `calendarium/<luogo>/<anno>.json` (l'anno in corso, o `ANNUS`).
+- `src/calendar/` — il calendario nel sito, senza interfaccia:
+  - `calendar.ts` carica l'anno generato e vi cerca i giorni; una data fuori
+    dall'anno mostra un avviso;
   - `plan.ts` traduce il giorno in pezzi del database: settimana e giorno del
     salterio, Proprio del Tempo, Comune dei santi, toni dell'introduzione, del
     Pater noster e del congedo; per la Compieta Domenica I o II Vespri o giorno
@@ -54,7 +60,7 @@ Gli spartiti sono elementi `<chant-visual>` di exsurge: finché non sono
 disegnati restano vuoti e il sito mostra un rigo vuoto al loro posto, così il
 codice GABC non compare mai.
 
-Le date di confine sono coperte dai test in `src/calendar/*.test.ts`.
+Le date di confine sono coperte dai test in `src/calendar/*.test.ts`, che calcolano i giorni direttamente dagli strati (`testDays.ts`).
 
 ## Cosa manca
 

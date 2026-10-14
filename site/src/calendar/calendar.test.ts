@@ -1,9 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import { easter, adventStart, fromDayNumber, liturgicalDay, parseIsoDate, toIsoDate } from './calendar';
+import { adventStart, easter, fromDayNumber, toIsoDate } from '../../../calendaria/tempus';
 import { benedicamusKey, compietaPlan, lodiCelebrations, lodiPlan } from './plan';
+import { dayIn, GENUA, ITALIA } from './testDays';
 
 const iso = (n: number) => toIsoDate(fromDayNumber(n));
-const day = (s: string) => liturgicalDay(parseIsoDate(s)!);
+const day = dayIn(ITALIA);
+const genova = dayIn(GENUA);
 
 describe('movable dates', () => {
   it('computes Easter', () => {
@@ -203,5 +205,59 @@ describe('memorials and Comuni', () => {
   it('places the movable memorials of Our Lady', () => {
     expect(names('2027-05-17')).toContain('Beata Vergine Maria, Madre della Chiesa'); // Monday after Pentecost 2027
     expect(names('2027-06-05')).toContain('Cuore Immacolato della Beata Vergine Maria');
+  });
+});
+
+describe('layers', () => {
+  it('raises the patrons of Europe and Italy to feasts', () => {
+    expect(day('2027-10-04').celebration?.name).toBe("San Francesco d'Assisi, patrono d'Italia");
+    expect(dayIn(['generale'])('2027-10-04').celebration).toBeNull();
+    expect(dayIn(['generale'])('2027-10-04').memorials.map((m) => m.name)).toEqual(["San Francesco d'Assisi"]);
+    expect(dayIn(['generale', 'europa'])('2027-07-12').celebration).toBeNull();
+    expect(dayIn(['generale', 'europa'])('2028-07-11').celebration?.rank).toBe('festa');
+  });
+  it('a feast on Ash Wednesday is not celebrated', () => {
+    expect(day('2024-02-14').celebration).toBeNull();
+    expect(day('2024-02-14').saints.saints[0].notCelebrated).toMatch(/Ceneri/);
+  });
+  it('anticipates the Nativity of St John the Baptist when it meets the Sacred Heart (2022)', () => {
+    expect(day('2022-06-24').celebration?.name).toBe('Sacratissimo Cuore di Gesù');
+    expect(day('2022-06-23').celebration?.name).toBe('Natività di San Giovanni Battista');
+  });
+  it('the Guardian Angels: shown, not offered for the Lodi (proper office)', () => {
+    const d = day('2026-10-02');
+    expect(d.saints.saints[0].name).toBe('Santi Angeli custodi');
+    expect(lodiCelebrations(d).options.map((o) => o.mode)).toEqual(['feria']);
+  });
+  it('the Compieta knows tomorrow\'s solemnity across the new year', () => {
+    expect(day('2026-12-31').tomorrowSolemnity).toBe('Maria Santissima Madre di Dio');
+    expect(day('2027-12-07').tomorrowSolemnity).toMatch(/Immacolata/);
+  });
+});
+
+describe('Genova', () => {
+  it('adds the feasts of the Church of Genoa', () => {
+    expect(genova('2027-07-07').celebration).toMatchObject({ name: 'San Siro, vescovo di Genova', rank: 'festa', comune: 'pastori' });
+    expect(day('2027-07-07').celebration).toBeNull();
+    expect(genova('2026-08-29').celebration?.name).toBe('Beata Vergine Maria della Guardia');
+    expect(genova('2026-10-10').celebration?.name).toBe('Dedicazione della Chiesa Cattedrale'); // a Saturday
+    expect(genova('2027-10-10').celebration).toBeNull(); // a Sunday: the Sunday wins
+  });
+  it('moves the Martyrdom of St John the Baptist to 30 August', () => {
+    expect(genova('2027-08-30').memorials.map((m) => m.name)).toEqual(['Martirio di San Giovanni Battista']);
+    expect(day('2027-08-30').memorials).toEqual([]);
+  });
+  it('a proper obligatory memorial excludes the optional ones', () => {
+    expect(genova('2026-04-28').memorials.map((m) => m.name)).toEqual(['Santa Gianna Beretta Molla']);
+    expect(lodiCelebrations(genova('2026-04-28')).initial).toBe(1);
+  });
+  it('offers the celebrations of the city and of the Cathedral as optional', () => {
+    expect(genova('2026-04-23').memorials.map((m) => m.name)).toContain('San Giorgio, martire, patrono secondario della Città di Genova');
+    expect(genova('2027-10-16').memorials.map((m) => m.name)[0]).toBe('Beata Vergine Maria della Pietà e del Soccorso'); // Saturday before the III Sunday of October
+    expect(genova('2026-10-17').memorials.map((m) => m.name)).toEqual(["Sant'Ignazio di Antiochia, vescovo e martire"]); // the obligatory memorial excludes it
+    expect(genova('2027-10-25').memorials[0].comuni).toEqual(['dedicazione']);
+  });
+  it('local memorials come first', () => {
+    expect(genova('2026-10-12').memorials.map((m) => m.name)[0]).toBe('Beata Maria Teresa Fasce, vergine');
   });
 });

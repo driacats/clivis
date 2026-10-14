@@ -1,7 +1,7 @@
 import 'exsurge';
 import './fonts/fonts.css';
 import './style.css';
-import { formatCivilDate, liturgicalDay, parseIsoDate, todayLocal, type LiturgicalColor } from './calendar/calendar';
+import { calendarYears, formatCivilDate, liturgicalDay, loadCalendar, parseIsoDate, todayLocal, type CivilDate, type LiturgicalColor } from './calendar/calendar';
 import { suggestedOffice } from './calendar/plan';
 import { loadDatabase } from './data/loader';
 import type { LiturgyData } from './data/types';
@@ -29,11 +29,21 @@ function show(title: string, color: LiturgicalColor | null, ...content: Node[]):
   window.scrollTo({ top: 0 });
 }
 
+/** A date the calendar was not built for (calendaria/compone.ts generates one year at a time). */
+function outOfCalendar(date: CivilDate): HTMLElement {
+  return h('main', { class: 'office-wrap' },
+    notice(`Il calendario di questo sito copre per ora il ${calendarYears().join(', ')}: `
+      + `${formatCivilDate(date, false)} non è ancora disponibile.`, 'gap'),
+    h('p', {}, h('a', { class: 'back-link', href: '#/' }, 'Torna a oggi')));
+}
+
 function render(): void {
   if (!liturgy) return;
   const path = location.hash.replace(/^#\/?/, '');
   if (path === '') {
-    show(SITE_TITLE, liturgicalDay(todayLocal()).color, renderHome());
+    const today = liturgicalDay(todayLocal());
+    if (today) show(SITE_TITLE, today.color, renderHome(today));
+    else show(SITE_TITLE, null, outOfCalendar(todayLocal()));
     return;
   }
   if (path === 'esame') {
@@ -41,7 +51,12 @@ function render(): void {
     return;
   }
   const [d, o] = path.split('/');
-  const day = liturgicalDay((d && parseIsoDate(d)) || todayLocal());
+  const date = (d && parseIsoDate(d)) || todayLocal();
+  const day = liturgicalDay(date);
+  if (!day) {
+    show(`${formatCivilDate(date, false)} · ${SITE_NAME}`, null, outOfCalendar(date));
+    return;
+  }
   const office = OFFICES.find((x) => x === o) ?? suggestedOffice();
   show(`${OFFICE_NAME[office]} · ${formatCivilDate(day.date, false)} · ${SITE_NAME}`, day.color,
     officePage(day, office, liturgy));
@@ -50,6 +65,6 @@ function render(): void {
 window.addEventListener('hashchange', render);
 setupThemeToggle(document.querySelector<HTMLButtonElement>('#theme-toggle')!);
 
-loadDatabase()
-  .then((data) => { liturgy = data; render(); })
+Promise.all([loadDatabase(), loadCalendar()])
+  .then(([data]) => { liturgy = data; render(); })
   .catch((err: Error) => app.replaceChildren(notice(`Non è stato possibile caricare il breviario: ${err.message}`, 'error')));

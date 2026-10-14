@@ -1,0 +1,7 @@
+{
+ "default": "genua",
+ "places": {
+  "genua": {"name": "Arcidiocesi di Genova", "layers": ["generale", "europa", "italia", "genua"]},
+  "italia": {"name": "Italia", "layers": ["generale", "europa", "italia"]}
+ }
+}

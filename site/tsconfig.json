@@ -15,5 +15,6 @@
     "types": ["vite/client"],
     "paths": { "exsurge/src/*": ["../../exsurge/src/*"] }
   },
-  "include": ["src"]
+  "include": ["src", "../calendaria"],
+  "exclude": ["../calendaria/compone.ts"]
 }

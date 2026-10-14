@@ -10,7 +10,7 @@
 
 Il nome viene dalla clivis, il neuma di due note discendenti che è anche il logo del sito.
 
-Il sito apre sul giorno di oggi, calcola da solo quale ufficio pregare secondo il calendario romano in uso in Italia e mostra l'ora completa: testi in italiano e latino, spartiti in notazione quadrata e melodie da ascoltare. Il repository contiene sia il sito sia il database da cui legge, ricavato dai libretti del Movimento (Lodi e Compieta).
+Il sito apre sul giorno di oggi, calcola da solo quale ufficio pregare secondo il calendario romano dell'Italia e dell'Arcidiocesi di Genova (o di un'altra diocesi, vedi sotto) e mostra l'ora completa: testi in italiano e latino, spartiti in notazione quadrata e melodie da ascoltare. Il repository contiene sia il sito sia il database da cui legge, ricavato dai libretti del Movimento (Lodi e Compieta).
 
 ## Funzionalità
 
@@ -36,12 +36,13 @@ cd mlg-breviary/site
 npm install
 npm run dev      # sito in locale su http://localhost:5173
 npm test         # test del calendario liturgico e del player
-npm run build    # sito statico in dist/, pubblicabile su qualsiasi hosting (anche GitHub Pages)
+npm run build    # sito statico in dist/, pubblicabile su qualsiasi hosting (anche GitHub Pages); ANNUS=2027 per un altro anno
 ```
 
 ## Struttura
 
 - `site/` — il sito (TypeScript + Vite). Dettagli su calendario e scelta dell'ufficio in [`site/README.it.md`](site/README.it.md).
+- `calendaria/` — il calendario liturgico a strati: `generale.json` (calendario romano generale), `europa.json` (patroni d'Europa), `italia.json` (CEI), `genua.json` (Arcidiocesi di Genova). `loca.json` dice quale catena di strati usa ogni luogo e quale mostra il sito; la build ne ricava i giorni dell'anno in corso (`compone.ts`) e li pubblica in `calendarium/`. Per usare il sito altrove basta aggiungere lo strato della propria diocesi (stesso formato di `genua.json`, descritto in `strata.ts`), indicarlo in `loca.json` e rifare la build.
 - `gabc/` — i canti in formato GABC (`chants/`), l'indice dei pezzi (`index.json`) e la struttura delle ore (`liturgy.json`).
 - `salmi/`, `letture/`, `testi/` — salmi e cantici, letture brevi, inni tradotti, orazioni e altri testi, in JSON.
 - `gabc/tools/` — gli script per verificare il database e applicare le revisioni; `gabc/tools/archivio/` conserva gli script una tantum con cui è stato costruito (già applicati, da non rilanciare).

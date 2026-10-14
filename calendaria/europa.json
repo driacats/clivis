@@ -1,0 +1,11 @@
+{
+ "name": "Patroni d’Europa",
+ "source": "Feste dei patroni d’Europa (Paolo VI 1964, Giovanni Paolo II 1980 e 1999)",
+ "celebrations": [
+  {"id": "cirillo-e-metodio", "name": "Santi Cirillo, monaco, e Metodio, vescovo, patroni d’Europa", "rank": "feast"},
+  {"id": "caterina-da-siena", "name": "Santa Caterina da Siena, vergine e dottore della Chiesa, patrona d’Europa", "rank": "feast"},
+  {"id": "benedetto", "name": "San Benedetto, abate, patrono d’Europa", "rank": "feast"},
+  {"id": "brigida", "name": "Santa Brigida, religiosa, patrona d’Europa", "rank": "feast"},
+  {"id": "teresa-benedetta-della-croce", "name": "Santa Teresa Benedetta della Croce, vergine e martire, patrona d’Europa", "rank": "feast"}
+ ]
+}
