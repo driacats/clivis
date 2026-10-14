@@ -5965,5 +5965,159 @@
     "status": "found",
     "file": "gabc/chants/manual-piu-martiri-ben.gabc",
     "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-un-martire-inno",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Martyr Dei qui unicum",
+    "printedContext": "Comune: Un martire, inno (maschile)",
+    "pdfPage": "pp. 239-240",
+    "status": "found",
+    "file": "gabc/chants/manual-un-martire-inno.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-un-martire-inno-f",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Martyr Dei quae unicum",
+    "printedContext": "Comune: Un martire, inno (femminile)",
+    "pdfPage": "pp. 239-240",
+    "status": "found",
+    "file": "gabc/chants/manual-un-martire-inno-f.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-un-martire-inno-tp",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Martyr Dei qui unicum",
+    "printedContext": "Comune: Un martire, inno, melodia del Tempo pasquale (maschile)",
+    "pdfPage": "pp. 240-241",
+    "status": "found",
+    "file": "gabc/chants/manual-un-martire-inno-tp.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-un-martire-inno-tp-f",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "Martyr Dei quae unicum",
+    "printedContext": "Comune: Un martire, inno, melodia del Tempo pasquale (femminile)",
+    "pdfPage": "pp. 240-241",
+    "status": "found",
+    "file": "gabc/chants/manual-un-martire-inno-tp-f.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-un-martire-inno-vergine",
+    "office": "lodi",
+    "role": "inno",
+    "printedIncipit": "O castitatis signifer",
+    "printedContext": "Comune: Un martire, inno per una vergine martire",
+    "pdfPage": "pp. 241-243",
+    "status": "found",
+    "file": "gabc/chants/manual-un-martire-inno-vergine.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-un-martire-ant1",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Labia mea laudabunt te",
+    "printedContext": "Comune: Un martire, antifona 1",
+    "pdfPage": "p. 243",
+    "status": "found",
+    "file": "gabc/chants/manual-un-martire-ant1.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-un-martire-ant2-tp",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Spiritus et animae iustorum",
+    "printedContext": "Comune: Un martire, antifona 2, Tempo pasquale",
+    "pdfPage": "pp. 243-244",
+    "status": "found",
+    "file": "gabc/chants/manual-un-martire-ant2-tp.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-un-martire-ant3",
+    "office": "lodi",
+    "role": "antifona (salmo/cantico)",
+    "printedIncipit": "Vincenti dabo manna absconditum",
+    "printedContext": "Comune: Un martire, antifona 3",
+    "pdfPage": "p. 244",
+    "status": "found",
+    "file": "gabc/chants/manual-un-martire-ant3.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-un-martire-rb",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Gloria et honore coronasti eum",
+    "printedContext": "Comune: Un martire, responsorio breve, per un martire",
+    "pdfPage": "pp. 244-245",
+    "status": "found",
+    "file": "gabc/chants/manual-un-martire-rb.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-un-martire-rb-f",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Elegit eam Deus",
+    "printedContext": "Comune: Un martire, responsorio breve, per una martire",
+    "pdfPage": "p. 245",
+    "status": "found",
+    "file": "gabc/chants/manual-un-martire-rb-f.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-un-martire-ben",
+    "office": "lodi",
+    "role": "antifona al Benedictus",
+    "printedIncipit": "Qui odit animam suam",
+    "printedContext": "Comune: Un martire, antifona al Benedictus",
+    "pdfPage": "p. 245",
+    "status": "found",
+    "file": "gabc/chants/manual-un-martire-ben.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-martiri-tp-rb",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Laetitia sempiterna super capita eorum",
+    "printedContext": "Comune: Martiri nel Tempo pasquale, responsorio breve, per un martire",
+    "pdfPage": "p. 247",
+    "status": "found",
+    "file": "gabc/chants/manual-martiri-tp-rb.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-martiri-tp-rb-f",
+    "office": "lodi",
+    "role": "responsorio breve",
+    "printedIncipit": "Elegit eam Deus",
+    "printedContext": "Comune: Martiri nel Tempo pasquale, responsorio breve, per una martire",
+    "pdfPage": "pp. 247-248",
+    "status": "found",
+    "file": "gabc/chants/manual-martiri-tp-rb-f.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
+  },
+  {
+    "id": "lodi.CS-martiri-tp-ben",
+    "office": "lodi",
+    "role": "antifona al Benedictus",
+    "printedIncipit": "Stabunt iusti in magna constantia",
+    "printedContext": "Comune: Martiri nel Tempo pasquale, antifona al Benedictus",
+    "pdfPage": "p. 248",
+    "status": "found",
+    "file": "gabc/chants/manual-martiri-tp-ben.gabc",
+    "matchNotes": "Trascritto a mano dallo spartito del libretto (Comune dei santi); approvato nella pagina di confronto."
   }
 ]

@@ -799,40 +799,58 @@
    "parti": {
     "inno": [
      {
-      "rubrica": null,
-      "it": "1. O martire di Dio, che seguendo / l’Unigenito del Padre / trionfi sul vinto nemico, / e vincitore godi del premio celeste.\n2. Per dono della tua preghiera / dissolvi la nostra colpa, / fermando il contagio del male, / allontanando il tedio della vita.\n3. Sono già stati sciolti i legami / del tuo sacro corpo; / liberaci dai vincoli del mondo / per amore del Figlio di Dio.\n4. Sia onore al Padre col Figlio / e con lo Spirito Santo, / che con corona eterna / ti cingono nella Chiesa gloriosa. Amen."
+      "rubrica": "Per un martire",
+      "it": "1. O martire di Dio, che seguendo / l’Unigenito del Padre / trionfi sul vinto nemico, / e vincitore godi del premio celeste.\n2. Per dono della tua preghiera / dissolvi la nostra colpa, / fermando il contagio del male, / allontanando il tedio della vita.\n3. Sono già stati sciolti i legami / del tuo sacro corpo; / liberaci dai vincoli del mondo / per amore del Figlio di Dio.\n4. Sia onore al Padre col Figlio / e con lo Spirito Santo, / che con corona eterna / ti cingono nella Chiesa gloriosa. Amen.",
+      "canto": "lodi.CS-un-martire-inno"
      },
      {
-      "rubrica": "Oppure con la seguente melodia (Propria del Tempo Pasquale)",
+      "rubrica": "Per una martire",
+      "it": "1. O martire di Dio, che seguendo / l’Unigenito del Padre / trionfi sul vinto nemico, / e vincitrice godi del premio celeste.\n2. Per dono della tua preghiera / dissolvi la nostra colpa, / fermando il contagio del male, / allontanando il tedio della vita.\n3. Sono già stati sciolti i legami / del tuo sacro corpo; / liberaci dai vincoli del mondo / per amore del Figlio di Dio.\n4. Sia onore al Padre col Figlio / e con lo Spirito Santo, / che con corona eterna / ti cingono nella Chiesa gloriosa. Amen.",
+      "canto": "lodi.CS-un-martire-inno-f"
+     },
+     {
+      "rubrica": "Oppure con la seguente melodia (Propria del Tempo Pasquale), per un martire",
       "tp": true,
-      "it": "1. O martire di Dio, che seguendo / l’Unigenito del Padre / trionfi sul vinto nemico, / e vincitore godi del premio celeste.\n2. Per dono della tua preghiera / dissolvi la nostra colpa, / fermando il contagio del male, / allontanando il tedio della vita.\n3. Sono già stati sciolti i legami / del tuo sacro corpo; / liberaci dai vincoli del mondo / per amore del Figlio di Dio.\n4. Sia onore al Padre col Figlio / e con lo Spirito Santo, / che con corona eterna / ti cingono nella Chiesa gloriosa. Amen."
+      "it": "1. O martire di Dio, che seguendo / l’Unigenito del Padre / trionfi sul vinto nemico, / e vincitore godi del premio celeste.\n2. Per dono della tua preghiera / dissolvi la nostra colpa, / fermando il contagio del male, / allontanando il tedio della vita.\n3. Sono già stati sciolti i legami / del tuo sacro corpo; / liberaci dai vincoli del mondo / per amore del Figlio di Dio.\n4. Sia onore al Padre col Figlio / e con lo Spirito Santo, / che con corona eterna / ti cingono nella Chiesa gloriosa. Amen.",
+      "canto": "lodi.CS-un-martire-inno-tp"
+     },
+     {
+      "rubrica": "Oppure con la seguente melodia (Propria del Tempo Pasquale), per una martire",
+      "tp": true,
+      "it": "1. O martire di Dio, che seguendo / l’Unigenito del Padre / trionfi sul vinto nemico, / e vincitrice godi del premio celeste.\n2. Per dono della tua preghiera / dissolvi la nostra colpa, / fermando il contagio del male, / allontanando il tedio della vita.\n3. Sono già stati sciolti i legami / del tuo sacro corpo; / liberaci dai vincoli del mondo / per amore del Figlio di Dio.\n4. Sia onore al Padre col Figlio / e con lo Spirito Santo, / che con corona eterna / ti cingono nella Chiesa gloriosa. Amen.",
+      "canto": "lodi.CS-un-martire-inno-tp-f"
      },
      {
       "rubrica": "Per una Vergine Martire",
-      "it": "1. O Condottiero della verginità / e fortezza dei martiri, / che doni il premio ad ambedue, / ascolta benigno coloro che ti supplicano.\n2. Questa vergine dal grande coraggio, / beata nella duplice sorte / e nobile per la duplice palma, / ora è esaltata con lodi.\n3. Costei tenace nel confessarti, / ha armato strenuamente contro di sé / l’accanito braccio del carnefice, / e per Te ha dato la vita.\n4. Così, mentre ci istruisce sul come / vincere i colpi del mondo persecutore / e le lusinghe del mondo allettatore, / ci insegna una fede integra.\n5. Per sua intercessione rimetti / ogni nostro debito, / toglici il fomite dei vizi / e sottomettici alla tua grazia.\n6. Sia gloria a Te, Gesù, / che sei nato dalla Vergine, / con il Padre e il Santo Spirito / nei secoli eterni. Amen."
+      "it": "1. O Condottiero della verginità / e fortezza dei martiri, / che doni il premio ad ambedue, / ascolta benigno coloro che ti supplicano.\n2. Questa vergine dal grande coraggio, / beata nella duplice sorte / e nobile per la duplice palma, / ora è esaltata con lodi.\n3. Costei tenace nel confessarti, / ha armato strenuamente contro di sé / l’accanito braccio del carnefice, / e per Te ha dato la vita.\n4. Così, mentre ci istruisce sul come / vincere i colpi del mondo persecutore / e le lusinghe del mondo allettatore, / ci insegna una fede integra.\n5. Per sua intercessione rimetti / ogni nostro debito, / toglici il fomite dei vizi / e sottomettici alla tua grazia.\n6. Sia gloria a Te, Gesù, / che sei nato dalla Vergine, / con il Padre e il Santo Spirito / nei secoli eterni. Amen.",
+      "canto": "lodi.CS-un-martire-inno-vergine"
      }
     ],
     "ant1": [
      {
       "rubrica": null,
-      "it": "Le mia labbra ti loderanno per tutta la mia vita, Dio mio"
+      "it": "Le mia labbra ti loderanno per tutta la mia vita, Dio mio",
+      "canto": "lodi.CS-un-martire-ant1"
      }
     ],
     "ant2": [
      {
       "rubrica": null,
-      "it": "Martiri del Signore, benedite il Signore per sempre"
+      "it": "Martiri del Signore, benedite il Signore per sempre",
+      "canto": "lodi.CS-piu-martiri-ant2"
      },
      {
       "rubrica": "Nel Tempo Pasquale",
       "tp": true,
-      "it": "Spiriti e anime dei giusti, cantate un inno al nostro Dio, alleluia, alleluia"
+      "it": "Spiriti e anime dei giusti, cantate un inno al nostro Dio, alleluia, alleluia",
+      "canto": "lodi.CS-un-martire-ant2-tp"
      }
     ],
     "ant3": [
      {
       "rubrica": null,
-      "it": "Al vincitore darò la manna nascosta ed un nome nuovo, alleluia"
+      "it": "Al vincitore darò la manna nascosta ed un nome nuovo, alleluia",
+      "canto": "lodi.CS-un-martire-ant3"
      }
     ],
     "lettura": [
@@ -845,17 +863,20 @@
     "responsorio": [
      {
       "rubrica": "Per un martire",
-      "it": "Lo hai coronato di gloria e di onore, Signore. E lo hai posto a capo dell’opera delle tue mani. Gloria"
+      "it": "Lo hai coronato di gloria e di onore, Signore. E lo hai posto a capo dell’opera delle tue mani. Gloria",
+      "canto": "lodi.CS-un-martire-rb"
      },
      {
       "rubrica": "Per una martire",
-      "it": "Dio l’ha eletta, e l’ha prediletta. L’ha fatta abitare nella sua tenda. Gloria"
+      "it": "Dio l’ha eletta, e l’ha prediletta. L’ha fatta abitare nella sua tenda. Gloria",
+      "canto": "lodi.CS-un-martire-rb-f"
      }
     ],
     "benedictus": [
      {
       "rubrica": null,
-      "it": "Chi odia la sua vita in questo mondo, la preserva per la vita eterna"
+      "it": "Chi odia la sua vita in questo mondo, la preserva per la vita eterna",
+      "canto": "lodi.CS-un-martire-ben"
      }
     ],
     "invocazioni": [
@@ -923,17 +944,20 @@
     "responsorio": [
      {
       "rubrica": "Per un martire",
-      "it": "Felicità eterna sui loro capi: alleluia alleluia. Avranno gioia ed esultanza. Gloria."
+      "it": "Felicità eterna sui loro capi: alleluia alleluia. Avranno gioia ed esultanza. Gloria.",
+      "canto": "lodi.CS-martiri-tp-rb"
      },
      {
       "rubrica": "Per una Martire",
-      "it": "Dio l’ha eletta, e l’ha prediletta. L’ha fatta abitare nella sua tenda. Gloria"
+      "it": "Dio l’ha eletta, e l’ha prediletta. L’ha fatta abitare nella sua tenda. Gloria",
+      "canto": "lodi.CS-martiri-tp-rb-f"
      }
     ],
     "benedictus": [
      {
       "rubrica": null,
-      "it": "I giusti resisteranno con grande costanza contro coloro che li hanno tormentati, alleluia"
+      "it": "I giusti resisteranno con grande costanza contro coloro che li hanno tormentati, alleluia",
+      "canto": "lodi.CS-martiri-tp-ben"
      }
     ],
     "orazione": [
